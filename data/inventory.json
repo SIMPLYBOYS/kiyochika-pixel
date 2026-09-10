@@ -1,0 +1,2723 @@
+{
+ "_": "Phase 0 盤點。works 是粗分組，title_ja／subject／published 待人工填。",
+ "fetched": "2026-09-10",
+ "works": [
+  {
+   "key": "asakusa/day:asakusa-ayase-dera-enkei",
+   "place": "asakusa",
+   "motif": "day",
+   "series": "musashi-hyakkei",
+   "best": {
+    "file": "File:Kobayashi Kiyochika (1885) Musashi Hyakkei no uchi - Ayase-gawa Asakusa-dera enkei.jpg",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/7/76/Kobayashi_Kiyochika_%281885%29_Musashi_Hyakkei_no_uchi_-_Ayase-gawa_Asakusa-dera_enkei.jpg",
+    "px": [
+     1654,
+     2500
+    ],
+    "series": "musashi-hyakkei",
+    "institution": null,
+    "year": 1885,
+    "license": "Public domain",
+    "title_hint": "Kobayashi Kiyochika (1885) Musashi Hyakkei no uchi - Ayase-gawa Asakusa-dera enkei",
+    "credit": "British Museum (by request)"
+   },
+   "candidates": [
+    {
+     "file": "File:Kobayashi Kiyochika (1885) Musashi Hyakkei no uchi - Ayase-gawa Asakusa-dera enkei.jpg",
+     "image_url": "https://upload.wikimedia.org/wikipedia/commons/7/76/Kobayashi_Kiyochika_%281885%29_Musashi_Hyakkei_no_uchi_-_Ayase-gawa_Asakusa-dera_enkei.jpg",
+     "px": [
+      1654,
+      2500
+     ],
+     "series": "musashi-hyakkei",
+     "institution": null,
+     "year": 1885,
+     "license": "Public domain",
+     "title_hint": "Kobayashi Kiyochika (1885) Musashi Hyakkei no uchi - Ayase-gawa Asakusa-dera enkei",
+     "credit": "British Museum (by request)"
+    }
+   ],
+   "title_ja": null,
+   "subject": null,
+   "published": null
+  },
+  {
+   "key": "asakusa/day:asakusa-inari-ricefields-shrine",
+   "place": "asakusa",
+   "motif": "day",
+   "series": "kosenga",
+   "best": {
+    "file": "File:Kobayashi Kiyochika (1881) Before Tarō Inari Shrine at the Asakusa Ricefields.jpg",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/b/be/Kobayashi_Kiyochika_%281881%29_Before_Tar%C5%8D_Inari_Shrine_at_the_Asakusa_Ricefields.jpg",
+    "px": [
+     2576,
+     1730
+    ],
+    "series": "kosenga",
+    "institution": null,
+    "year": 1881,
+    "license": "Public domain",
+    "title_hint": "Kobayashi Kiyochika (1881) Before Tarō Inari Shrine at the Asakusa Ricefields",
+    "credit": "Newsdesk: Newsroom of the Smithsonian"
+   },
+   "candidates": [
+    {
+     "file": "File:Kobayashi Kiyochika (1881) Before Tarō Inari Shrine at the Asakusa Ricefields.jpg",
+     "image_url": "https://upload.wikimedia.org/wikipedia/commons/b/be/Kobayashi_Kiyochika_%281881%29_Before_Tar%C5%8D_Inari_Shrine_at_the_Asakusa_Ricefields.jpg",
+     "px": [
+      2576,
+      1730
+     ],
+     "series": "kosenga",
+     "institution": null,
+     "year": 1881,
+     "license": "Public domain",
+     "title_hint": "Kobayashi Kiyochika (1881) Before Tarō Inari Shrine at the Asakusa Ricefields",
+     "credit": "Newsdesk: Newsroom of the Smithsonian"
+    },
+    {
+     "file": "File:The Taro Inari Shrine in the Asakusa Ricefields LACMA M.71.100.74.jpg",
+     "image_url": "https://upload.wikimedia.org/wikipedia/commons/b/b1/The_Taro_Inari_Shrine_in_the_Asakusa_Ricefields_LACMA_M.71.100.74.jpg",
+     "px": [
+      2100,
+      1348
+     ],
+     "series": "kosenga",
+     "institution": "LACMA",
+     "year": 1877,
+     "license": "Public domain",
+     "title_hint": "The Tarō Inari Shrine in the Asakusa Ricefields",
+     "credit": "Image: http://collections.lacma.org/sites/default/files/remote_images/piction/ma-31809064-O3.jpg Gal"
+    }
+   ],
+   "title_ja": null,
+   "subject": null,
+   "published": null
+  },
+  {
+   "key": "asakusa/day:untitled",
+   "place": "asakusa",
+   "motif": "day",
+   "series": "musashi-hyakkei",
+   "best": {
+    "file": "File:武蔵百景之内綾瀬川浅草寺.jpg",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/c/cd/%E6%AD%A6%E8%94%B5%E7%99%BE%E6%99%AF%E4%B9%8B%E5%86%85%E7%B6%BE%E7%80%AC%E5%B7%9D%E6%B5%85%E8%8D%89%E5%AF%BA.jpg",
+    "px": [
+     557,
+     820
+    ],
+    "series": "musashi-hyakkei",
+    "institution": null,
+    "year": null,
+    "license": "Public domain",
+    "title_hint": "武蔵百景之内綾瀬川浅草寺",
+    "credit": "http://www.sobi2pallas.jp/uki217.html"
+   },
+   "candidates": [
+    {
+     "file": "File:武蔵百景之内綾瀬川浅草寺.jpg",
+     "image_url": "https://upload.wikimedia.org/wikipedia/commons/c/cd/%E6%AD%A6%E8%94%B5%E7%99%BE%E6%99%AF%E4%B9%8B%E5%86%85%E7%B6%BE%E7%80%AC%E5%B7%9D%E6%B5%85%E8%8D%89%E5%AF%BA.jpg",
+     "px": [
+      557,
+      820
+     ],
+     "series": "musashi-hyakkei",
+     "institution": null,
+     "year": null,
+     "license": "Public domain",
+     "title_hint": "武蔵百景之内綾瀬川浅草寺",
+     "credit": "http://www.sobi2pallas.jp/uki217.html"
+    },
+    {
+     "file": "File:浅草寺年乃市.jpg",
+     "image_url": "https://upload.wikimedia.org/wikipedia/commons/e/e9/%E6%B5%85%E8%8D%89%E5%AF%BA%E5%B9%B4%E4%B9%83%E5%B8%82.jpg",
+     "px": [
+      818,
+      550
+     ],
+     "series": "kosenga",
+     "institution": null,
+     "year": null,
+     "license": "Public domain",
+     "title_hint": "浅草寺年乃市",
+     "credit": "http://www.sobi2pallas.jp/uki216.html"
+    }
+   ],
+   "title_ja": null,
+   "subject": null,
+   "published": null
+  },
+  {
+   "key": "asakusa/night",
+   "place": "asakusa",
+   "motif": "night",
+   "series": "kosenga",
+   "best": {
+    "file": "File:Night Stalls at Asakusa by Kobayashi Kiyochika, 1881, woodblock print, Honolulu Museum of Art.jpg",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/9/96/Night_Stalls_at_Asakusa_by_Kobayashi_Kiyochika%2C_1881%2C_woodblock_print%2C_Honolulu_Museum_of_Art.jpg",
+    "px": [
+     2031,
+     1326
+    ],
+    "series": "kosenga",
+    "institution": "Honolulu Museum of Art",
+    "year": 1881,
+    "license": "Public domain",
+    "title_hint": "Night Stalls at Asakusa by Kobayashi Kiyochika, 1881, woodblock print, Honolulu Museum of Art",
+    "credit": "Self-scanned"
+   },
+   "candidates": [
+    {
+     "file": "File:Night Stalls at Asakusa by Kobayashi Kiyochika, 1881, woodblock print, Honolulu Museum of Art.jpg",
+     "image_url": "https://upload.wikimedia.org/wikipedia/commons/9/96/Night_Stalls_at_Asakusa_by_Kobayashi_Kiyochika%2C_1881%2C_woodblock_print%2C_Honolulu_Museum_of_Art.jpg",
+     "px": [
+      2031,
+      1326
+     ],
+     "series": "kosenga",
+     "institution": "Honolulu Museum of Art",
+     "year": 1881,
+     "license": "Public domain",
+     "title_hint": "Night Stalls at Asakusa by Kobayashi Kiyochika, 1881, woodblock print, Honolulu Museum of Art",
+     "credit": "Self-scanned"
+    }
+   ],
+   "title_ja": null,
+   "subject": null,
+   "published": null
+  },
+  {
+   "key": "asakusa/snow",
+   "place": "asakusa",
+   "motif": "snow",
+   "series": "kosenga",
+   "best": {
+    "file": "File:Snow Scene at Asakusa Temple LACMA M.71.100.76.jpg",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/1/16/Snow_Scene_at_Asakusa_Temple_LACMA_M.71.100.76.jpg",
+    "px": [
+     2100,
+     1370
+    ],
+    "series": "kosenga",
+    "institution": "LACMA",
+    "year": 1881,
+    "license": "Public domain",
+    "title_hint": "Snow Scene at Asakusa Temple",
+    "credit": "Image: http://collections.lacma.org/sites/default/files/remote_images/piction/ma-31795632-O3.jpg Gal"
+   },
+   "candidates": [
+    {
+     "file": "File:Snow Scene at Asakusa Temple LACMA M.71.100.76.jpg",
+     "image_url": "https://upload.wikimedia.org/wikipedia/commons/1/16/Snow_Scene_at_Asakusa_Temple_LACMA_M.71.100.76.jpg",
+     "px": [
+      2100,
+      1370
+     ],
+     "series": "kosenga",
+     "institution": "LACMA",
+     "year": 1881,
+     "license": "Public domain",
+     "title_hint": "Snow Scene at Asakusa Temple",
+     "credit": "Image: http://collections.lacma.org/sites/default/files/remote_images/piction/ma-31795632-O3.jpg Gal"
+    }
+   ],
+   "title_ja": null,
+   "subject": null,
+   "published": null
+  },
+  {
+   "key": "bandai/dawn",
+   "place": "bandai",
+   "motif": "dawn",
+   "series": "kosenga",
+   "best": {
+    "file": "File:Sunrise at Bandai Bridge by Kobayashi Koyochika, 1877, Honolulu Museum of Art.jpg",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/c/cb/Sunrise_at_Bandai_Bridge_by_Kobayashi_Koyochika%2C_1877%2C_Honolulu_Museum_of_Art.jpg",
+    "px": [
+     2154,
+     1383
+    ],
+    "series": "kosenga",
+    "institution": "Honolulu Museum of Art",
+    "year": 1877,
+    "license": "Public domain",
+    "title_hint": "Sunrise at Bandai Bridge by Kobayashi Koyochika, 1877, Honolulu Museum of Art",
+    "credit": "Self-scanned"
+   },
+   "candidates": [
+    {
+     "file": "File:Sunrise at Bandai Bridge by Kobayashi Koyochika, 1877, Honolulu Museum of Art.jpg",
+     "image_url": "https://upload.wikimedia.org/wikipedia/commons/c/cb/Sunrise_at_Bandai_Bridge_by_Kobayashi_Koyochika%2C_1877%2C_Honolulu_Museum_of_Art.jpg",
+     "px": [
+      2154,
+      1383
+     ],
+     "series": "kosenga",
+     "institution": "Honolulu Museum of Art",
+     "year": 1877,
+     "license": "Public domain",
+     "title_hint": "Sunrise at Bandai Bridge by Kobayashi Koyochika, 1877, Honolulu Museum of Art",
+     "credit": "Self-scanned"
+    },
+    {
+     "file": "File:Rising Sun from Bandai Bridge LACMA M.71.100.75.jpg",
+     "image_url": "https://upload.wikimedia.org/wikipedia/commons/5/50/Rising_Sun_from_Bandai_Bridge_LACMA_M.71.100.75.jpg",
+     "px": [
+      2100,
+      1360
+     ],
+     "series": "kosenga",
+     "institution": "LACMA",
+     "year": 1877,
+     "license": "Public domain",
+     "title_hint": "Rising Sun from Bandai Bridge",
+     "credit": "Image: http://collections.lacma.org/sites/default/files/remote_images/piction/ma-31809078-O3.jpg Gal"
+    }
+   ],
+   "title_ja": null,
+   "subject": null,
+   "published": null
+  },
+  {
+   "key": "fukagawa/day:kiba",
+   "place": "fukagawa",
+   "motif": "day",
+   "series": "musashi-hyakkei",
+   "best": {
+    "file": "File:Kiyochika-kobayashi-kiba.jpg",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/b/b4/Kiyochika-kobayashi-kiba.jpg",
+    "px": [
+     725,
+     1075
+    ],
+    "series": "musashi-hyakkei",
+    "institution": null,
+    "year": null,
+    "license": "Public domain",
+    "title_hint": "Kiyochika-kobayashi-kiba",
+    "credit": "http://blogimg.goo.ne.jp/user_image/13/d6/7d00fd6926a3a59f994bc467386a00e8.jpg"
+   },
+   "candidates": [
+    {
+     "file": "File:Kiyochika-kobayashi-kiba.jpg",
+     "image_url": "https://upload.wikimedia.org/wikipedia/commons/b/b4/Kiyochika-kobayashi-kiba.jpg",
+     "px": [
+      725,
+      1075
+     ],
+     "series": "musashi-hyakkei",
+     "institution": null,
+     "year": null,
+     "license": "Public domain",
+     "title_hint": "Kiyochika-kobayashi-kiba",
+     "credit": "http://blogimg.goo.ne.jp/user_image/13/d6/7d00fd6926a3a59f994bc467386a00e8.jpg"
+    }
+   ],
+   "title_ja": null,
+   "subject": null,
+   "published": null
+  },
+  {
+   "key": "kaiko/day:bridge-castle-grounds-suspension",
+   "place": "kaiko",
+   "motif": "day",
+   "series": "kosenga",
+   "best": {
+    "file": "File:Kobayashi Kiyochika (c. 1879) Suspension Bridge on Castle Grounds.jpg",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/0/01/Kobayashi_Kiyochika_%28c._1879%29_Suspension_Bridge_on_Castle_Grounds.jpg",
+    "px": [
+     2476,
+     1583
+    ],
+    "series": "kosenga",
+    "institution": null,
+    "year": 1879,
+    "license": "Public domain",
+    "title_hint": "Kobayashi Kiyochika (c. 1879) Suspension Bridge on Castle Grounds",
+    "credit": "Smithsonian Studio Arts Blog ( archive )"
+   },
+   "candidates": [
+    {
+     "file": "File:Kobayashi Kiyochika (c. 1879) Suspension Bridge on Castle Grounds.jpg",
+     "image_url": "https://upload.wikimedia.org/wikipedia/commons/0/01/Kobayashi_Kiyochika_%28c._1879%29_Suspension_Bridge_on_Castle_Grounds.jpg",
+     "px": [
+      2476,
+      1583
+     ],
+     "series": "kosenga",
+     "institution": null,
+     "year": 1879,
+     "license": "Public domain",
+     "title_hint": "Kobayashi Kiyochika (c. 1879) Suspension Bridge on Castle Grounds",
+     "credit": "Smithsonian Studio Arts Blog ( archive )"
+    }
+   ],
+   "title_ja": null,
+   "subject": null,
+   "published": null
+  },
+  {
+   "key": "kaiko/day:drawbridge-entrance-imperial-palace",
+   "place": "kaiko",
+   "motif": "day",
+   "series": "kosenga",
+   "best": {
+    "file": "File:Drawbridge at the entrance of the Imperial palace.jpg",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/e/e7/Drawbridge_at_the_entrance_of_the_Imperial_palace.jpg",
+    "px": [
+     3498,
+     2337
+    ],
+    "series": "kosenga",
+    "institution": null,
+    "year": 1876,
+    "license": "Public domain",
+    "title_hint": "Drawbridge at the entrance of the Imperial palace",
+    "credit": "Library of Congress [1]"
+   },
+   "candidates": [
+    {
+     "file": "File:Drawbridge at the entrance of the Imperial palace.jpg",
+     "image_url": "https://upload.wikimedia.org/wikipedia/commons/e/e7/Drawbridge_at_the_entrance_of_the_Imperial_palace.jpg",
+     "px": [
+      3498,
+      2337
+     ],
+     "series": "kosenga",
+     "institution": null,
+     "year": 1876,
+     "license": "Public domain",
+     "title_hint": "Drawbridge at the entrance of the Imperial palace",
+     "credit": "Library of Congress [1]"
+    }
+   ],
+   "title_ja": null,
+   "subject": null,
+   "published": null
+  },
+  {
+   "key": "kanda/dawn",
+   "place": "kanda",
+   "motif": "dawn",
+   "series": "kosenga",
+   "best": {
+    "file": "File:Dawn at Kanda Shrine by Kobayashi Kiyochika, 1882, woodblock print, Honolulu Museum of Art.jpg",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/4/4b/Dawn_at_Kanda_Shrine_by_Kobayashi_Kiyochika%2C_1882%2C_woodblock_print%2C_Honolulu_Museum_of_Art.jpg",
+    "px": [
+     2332,
+     1520
+    ],
+    "series": "kosenga",
+    "institution": "Honolulu Museum of Art",
+    "year": 1882,
+    "license": "Public domain",
+    "title_hint": "Dawn at Kanda Shrine by Kobayashi Kiyochika, 1882, woodblock print, Honolulu Museum of Art",
+    "credit": "Self-scanned"
+   },
+   "candidates": [
+    {
+     "file": "File:Dawn at Kanda Shrine by Kobayashi Kiyochika, 1882, woodblock print, Honolulu Museum of Art.jpg",
+     "image_url": "https://upload.wikimedia.org/wikipedia/commons/4/4b/Dawn_at_Kanda_Shrine_by_Kobayashi_Kiyochika%2C_1882%2C_woodblock_print%2C_Honolulu_Museum_of_Art.jpg",
+     "px": [
+      2332,
+      1520
+     ],
+     "series": "kosenga",
+     "institution": "Honolulu Museum of Art",
+     "year": 1882,
+     "license": "Public domain",
+     "title_hint": "Dawn at Kanda Shrine by Kobayashi Kiyochika, 1882, woodblock print, Honolulu Museum of Art",
+     "credit": "Self-scanned"
+    }
+   ],
+   "title_ja": null,
+   "subject": null,
+   "published": null
+  },
+  {
+   "key": "kanda/moon",
+   "place": "kanda",
+   "motif": "moon",
+   "series": "kosenga",
+   "best": {
+    "file": "File:Kanda Shrine at Dawn LACMA M.71.100.63.jpg",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/e/e4/Kanda_Shrine_at_Dawn_LACMA_M.71.100.63.jpg",
+    "px": [
+     2100,
+     1364
+    ],
+    "series": "kosenga",
+    "institution": "LACMA",
+    "year": 1880,
+    "license": "Public domain",
+    "title_hint": "Kanda Shrine at Dawn",
+    "credit": "Image: http://collections.lacma.org/sites/default/files/remote_images/piction/ma-31808939-O3.jpg Gal"
+   },
+   "candidates": [
+    {
+     "file": "File:Kanda Shrine at Dawn LACMA M.71.100.63.jpg",
+     "image_url": "https://upload.wikimedia.org/wikipedia/commons/e/e4/Kanda_Shrine_at_Dawn_LACMA_M.71.100.63.jpg",
+     "px": [
+      2100,
+      1364
+     ],
+     "series": "kosenga",
+     "institution": "LACMA",
+     "year": 1880,
+     "license": "Public domain",
+     "title_hint": "Kanda Shrine at Dawn",
+     "credit": "Image: http://collections.lacma.org/sites/default/files/remote_images/piction/ma-31808939-O3.jpg Gal"
+    }
+   ],
+   "title_ja": null,
+   "subject": null,
+   "published": null
+  },
+  {
+   "key": "kawaguchi/day:and-foundry-iron-kawaguchi",
+   "place": "kawaguchi",
+   "motif": "day",
+   "series": "kosenga",
+   "best": {
+    "file": "File:Iron Pot and Pan Foundry at Kawaguchi LACMA M.71.100.42.jpg",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/2/2b/Iron_Pot_and_Pan_Foundry_at_Kawaguchi_LACMA_M.71.100.42.jpg",
+    "px": [
+     2100,
+     1384
+    ],
+    "series": "kosenga",
+    "institution": "LACMA",
+    "year": 1879,
+    "license": "Public domain",
+    "title_hint": "Iron Pot and Pan Foundry at Kawaguchi",
+    "credit": "Image: http://collections.lacma.org/sites/default/files/remote_images/piction/ma-31808764-O3.jpg Gal"
+   },
+   "candidates": [
+    {
+     "file": "File:Iron Pot and Pan Foundry at Kawaguchi LACMA M.71.100.42.jpg",
+     "image_url": "https://upload.wikimedia.org/wikipedia/commons/2/2b/Iron_Pot_and_Pan_Foundry_at_Kawaguchi_LACMA_M.71.100.42.jpg",
+     "px": [
+      2100,
+      1384
+     ],
+     "series": "kosenga",
+     "institution": "LACMA",
+     "year": 1879,
+     "license": "Public domain",
+     "title_hint": "Iron Pot and Pan Foundry at Kawaguchi",
+     "credit": "Image: http://collections.lacma.org/sites/default/files/remote_images/piction/ma-31808764-O3.jpg Gal"
+    }
+   ],
+   "title_ja": null,
+   "subject": null,
+   "published": null
+  },
+  {
+   "key": "kawaguchi/rain",
+   "place": "kawaguchi",
+   "motif": "rain",
+   "series": "kosenga",
+   "best": {
+    "file": "File:川口善光寺雨晴.jpg",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/f/fd/%E5%B7%9D%E5%8F%A3%E5%96%84%E5%85%89%E5%AF%BA%E9%9B%A8%E6%99%B4.jpg",
+    "px": [
+     795,
+     550
+    ],
+    "series": "kosenga",
+    "institution": null,
+    "year": null,
+    "license": "Public domain",
+    "title_hint": "川口善光寺雨晴",
+    "credit": "http://www.sobi2pallas.jp/uki177.html"
+   },
+   "candidates": [
+    {
+     "file": "File:川口善光寺雨晴.jpg",
+     "image_url": "https://upload.wikimedia.org/wikipedia/commons/f/fd/%E5%B7%9D%E5%8F%A3%E5%96%84%E5%85%89%E5%AF%BA%E9%9B%A8%E6%99%B4.jpg",
+     "px": [
+      795,
+      550
+     ],
+     "series": "kosenga",
+     "institution": null,
+     "year": null,
+     "license": "Public domain",
+     "title_hint": "川口善光寺雨晴",
+     "credit": "http://www.sobi2pallas.jp/uki177.html"
+    }
+   ],
+   "title_ja": null,
+   "subject": null,
+   "published": null
+  },
+  {
+   "key": "koume/night",
+   "place": "koume",
+   "motif": "night",
+   "series": "kosenga",
+   "best": {
+    "file": "File:Nightly View of Hiki-fune at Koume in Tokyo by Kobayashi Kiyochika, 1876, Honolulu Museum of Art.jpg",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/b/b8/Nightly_View_of_Hiki-fune_at_Koume_in_Tokyo_by_Kobayashi_Kiyochika%2C_1876%2C_Honolulu_Museum_of_Art.jpg",
+    "px": [
+     2060,
+     1452
+    ],
+    "series": "kosenga",
+    "institution": "Honolulu Museum of Art",
+    "year": 1876,
+    "license": "Public domain",
+    "title_hint": "Nightly View of Hiki-fune at Koume in Tokyo by Kobayashi Kiyochika, 1876, Honolulu Museum of Art",
+    "credit": "Self-scanned"
+   },
+   "candidates": [
+    {
+     "file": "File:Nightly View of Hiki-fune at Koume in Tokyo by Kobayashi Kiyochika, 1876, Honolulu Museum of Art.jpg",
+     "image_url": "https://upload.wikimedia.org/wikipedia/commons/b/b8/Nightly_View_of_Hiki-fune_at_Koume_in_Tokyo_by_Kobayashi_Kiyochika%2C_1876%2C_Honolulu_Museum_of_Art.jpg",
+     "px": [
+      2060,
+      1452
+     ],
+     "series": "kosenga",
+     "institution": "Honolulu Museum of Art",
+     "year": 1876,
+     "license": "Public domain",
+     "title_hint": "Nightly View of Hiki-fune at Koume in Tokyo by Kobayashi Kiyochika, 1876, Honolulu Museum of Art",
+     "credit": "Self-scanned"
+    }
+   ],
+   "title_ja": null,
+   "subject": null,
+   "published": null
+  },
+  {
+   "key": "kudan/night",
+   "place": "kudan",
+   "motif": "night",
+   "series": "kosenga",
+   "best": {
+    "file": "File:Kobayashi Kiyochika (1880) Kudanzaka at Night in Early Summer.jpg",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/e/e7/Kobayashi_Kiyochika_%281880%29_Kudanzaka_at_Night_in_Early_Summer.jpg",
+    "px": [
+     2612,
+     1681
+    ],
+    "series": "kosenga",
+    "institution": null,
+    "year": 1880,
+    "license": "Public domain",
+    "title_hint": "Kobayashi Kiyochika (1880) Kudanzaka at Night in Early Summer",
+    "credit": "Newsdesk: Newsroom of the Smithsonian"
+   },
+   "candidates": [
+    {
+     "file": "File:Kobayashi Kiyochika (1880) Kudanzaka at Night in Early Summer.jpg",
+     "image_url": "https://upload.wikimedia.org/wikipedia/commons/e/e7/Kobayashi_Kiyochika_%281880%29_Kudanzaka_at_Night_in_Early_Summer.jpg",
+     "px": [
+      2612,
+      1681
+     ],
+     "series": "kosenga",
+     "institution": null,
+     "year": 1880,
+     "license": "Public domain",
+     "title_hint": "Kobayashi Kiyochika (1880) Kudanzaka at Night in Early Summer",
+     "credit": "Newsdesk: Newsroom of the Smithsonian"
+    },
+    {
+     "file": "File:May Evening on Kudanzaka LACMA M.71.100.65.jpg",
+     "image_url": "https://upload.wikimedia.org/wikipedia/commons/5/5d/May_Evening_on_Kudanzaka_LACMA_M.71.100.65.jpg",
+     "px": [
+      2100,
+      1347
+     ],
+     "series": "kosenga",
+     "institution": "LACMA",
+     "year": 1880,
+     "license": "Public domain",
+     "title_hint": "May Evening on Kudanzaka",
+     "credit": "Image: http://collections.lacma.org/sites/default/files/remote_images/piction/ma-31808967-O3.jpg Gal"
+    }
+   ],
+   "title_ja": null,
+   "subject": null,
+   "published": null
+  },
+  {
+   "key": "nihonbashi/day:bridge-edobashi-hundred-kuni",
+   "place": "nihonbashi",
+   "motif": "day",
+   "series": "kosenga",
+   "best": {
+    "file": "File:View of Nihonbashi-bridge from Edobashi-bridge(One Hundred views of Musahi-no-kuni, Tokyo).jpg",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/0/01/View_of_Nihonbashi-bridge_from_Edobashi-bridge%28One_Hundred_views_of_Musahi-no-kuni%2C_Tokyo%29.jpg",
+    "px": [
+     2932,
+     4455
+    ],
+    "series": "kosenga",
+    "institution": null,
+    "year": 1884,
+    "license": "CC BY-SA 3.0",
+    "title_hint": "View of Nihonbashi-bridge from Edobashi-bridge(One Hundred views of Musahi-no-kuni, Tokyo)",
+    "credit": "https://dl.ndl.go.jp/info:ndljp/pid/1309850"
+   },
+   "candidates": [
+    {
+     "file": "File:View of Nihonbashi-bridge from Edobashi-bridge(One Hundred views of Musahi-no-kuni, Tokyo).jpg",
+     "image_url": "https://upload.wikimedia.org/wikipedia/commons/0/01/View_of_Nihonbashi-bridge_from_Edobashi-bridge%28One_Hundred_views_of_Musahi-no-kuni%2C_Tokyo%29.jpg",
+     "px": [
+      2932,
+      4455
+     ],
+     "series": "kosenga",
+     "institution": null,
+     "year": 1884,
+     "license": "CC BY-SA 3.0",
+     "title_hint": "View of Nihonbashi-bridge from Edobashi-bridge(One Hundred views of Musahi-no-kuni, Tokyo)",
+     "credit": "https://dl.ndl.go.jp/info:ndljp/pid/1309850"
+    }
+   ],
+   "title_ja": null,
+   "subject": null,
+   "published": null
+  },
+  {
+   "key": "nihonbashi/dusk",
+   "place": "nihonbashi",
+   "motif": "dusk",
+   "series": "kosenga",
+   "best": {
+    "file": "File:Mt. Fuji at Dusk from Edo Bridge LACMA M.73.37.462.jpg",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/b/b3/Mt._Fuji_at_Dusk_from_Edo_Bridge_LACMA_M.73.37.462.jpg",
+    "px": [
+     2100,
+     1368
+    ],
+    "series": "kosenga",
+    "institution": "LACMA",
+    "year": 1879,
+    "license": "Public domain",
+    "title_hint": "Mt. Fuji at Dusk from Edo Bridge",
+    "credit": "Image: http://collections.lacma.org/sites/default/files/remote_images/piction/ma-31795757-O3.jpg Gal"
+   },
+   "candidates": [
+    {
+     "file": "File:Mt. Fuji at Dusk from Edo Bridge LACMA M.73.37.462.jpg",
+     "image_url": "https://upload.wikimedia.org/wikipedia/commons/b/b3/Mt._Fuji_at_Dusk_from_Edo_Bridge_LACMA_M.73.37.462.jpg",
+     "px": [
+      2100,
+      1368
+     ],
+     "series": "kosenga",
+     "institution": "LACMA",
+     "year": 1879,
+     "license": "Public domain",
+     "title_hint": "Mt. Fuji at Dusk from Edo Bridge",
+     "credit": "Image: http://collections.lacma.org/sites/default/files/remote_images/piction/ma-31795757-O3.jpg Gal"
+    },
+    {
+     "file": "File:Kobayashi Kiyochika (1879) Edobashi yūgure Fuji.jpg",
+     "image_url": "https://upload.wikimedia.org/wikipedia/commons/3/3e/Kobayashi_Kiyochika_%281879%29_Edobashi_y%C5%ABgure_Fuji.jpg",
+     "px": [
+      1654,
+      1113
+     ],
+     "series": "kosenga",
+     "institution": null,
+     "year": 1879,
+     "license": "Public domain",
+     "title_hint": "Kobayashi Kiyochika (1879) Edobashi yūgure Fuji",
+     "credit": "Ota Memorial Museum of Art ( archive )"
+    }
+   ],
+   "title_ja": null,
+   "subject": null,
+   "published": null
+  },
+  {
+   "key": "nihonbashi/snow",
+   "place": "nihonbashi",
+   "motif": "snow",
+   "series": "kosenga",
+   "best": {
+    "file": "File:Night Snow on Honchō-dōri by Kobayashi Kiyochika, c. 1880, Honolulu Museum of Art.jpg",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/b/bb/Night_Snow_on_Honch%C5%8D-d%C5%8Dri_by_Kobayashi_Kiyochika%2C_c._1880%2C_Honolulu_Museum_of_Art.jpg",
+    "px": [
+     2300,
+     1542
+    ],
+    "series": "kosenga",
+    "institution": "Honolulu Museum of Art",
+    "year": 1880,
+    "license": "Public domain",
+    "title_hint": "Night Snow on Honchō-dōri by Kobayashi Kiyochika, c. 1880, Honolulu Museum of Art",
+    "credit": "Self-scanned"
+   },
+   "candidates": [
+    {
+     "file": "File:Night Snow on Honchō-dōri by Kobayashi Kiyochika, c. 1880, Honolulu Museum of Art.jpg",
+     "image_url": "https://upload.wikimedia.org/wikipedia/commons/b/bb/Night_Snow_on_Honch%C5%8D-d%C5%8Dri_by_Kobayashi_Kiyochika%2C_c._1880%2C_Honolulu_Museum_of_Art.jpg",
+     "px": [
+      2300,
+      1542
+     ],
+     "series": "kosenga",
+     "institution": "Honolulu Museum of Art",
+     "year": 1880,
+     "license": "Public domain",
+     "title_hint": "Night Snow on Honchō-dōri by Kobayashi Kiyochika, c. 1880, Honolulu Museum of Art",
+     "credit": "Self-scanned"
+    },
+    {
+     "file": "File:Kobayashi Kiyochika (1879) Suruga-chō yuki.jpg",
+     "image_url": "https://upload.wikimedia.org/wikipedia/commons/1/1c/Kobayashi_Kiyochika_%281879%29_Suruga-ch%C5%8D_yuki.jpg",
+     "px": [
+      1654,
+      1082
+     ],
+     "series": "kosenga",
+     "institution": null,
+     "year": 1879,
+     "license": "Public domain",
+     "title_hint": "Kobayashi Kiyochika (1879) Suruga-chō yuki",
+     "credit": "Ota Memorial Museum of Art ( archive )"
+    }
+   ],
+   "title_ja": null,
+   "subject": null,
+   "published": null
+  },
+  {
+   "key": "ochanomizu/fireflies",
+   "place": "ochanomizu",
+   "motif": "fireflies",
+   "series": "kosenga",
+   "best": {
+    "file": "File:Fireflies at Ochanomizu LACMA M.71.100.82.jpg",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/5/51/Fireflies_at_Ochanomizu_LACMA_M.71.100.82.jpg",
+    "px": [
+     2100,
+     1352
+    ],
+    "series": "kosenga",
+    "institution": "LACMA",
+    "year": 1880,
+    "license": "Public domain",
+    "title_hint": "Fireflies at Ochanomizu",
+    "credit": "Image: http://collections.lacma.org/sites/default/files/remote_images/piction/ma-31809148-O3.jpg Gal"
+   },
+   "candidates": [
+    {
+     "file": "File:Fireflies at Ochanomizu LACMA M.71.100.82.jpg",
+     "image_url": "https://upload.wikimedia.org/wikipedia/commons/5/51/Fireflies_at_Ochanomizu_LACMA_M.71.100.82.jpg",
+     "px": [
+      2100,
+      1352
+     ],
+     "series": "kosenga",
+     "institution": "LACMA",
+     "year": 1880,
+     "license": "Public domain",
+     "title_hint": "Fireflies at Ochanomizu",
+     "credit": "Image: http://collections.lacma.org/sites/default/files/remote_images/piction/ma-31809148-O3.jpg Gal"
+    }
+   ],
+   "title_ja": null,
+   "subject": null,
+   "published": null
+  },
+  {
+   "key": "ochanomizu/snow",
+   "place": "ochanomizu",
+   "motif": "snow",
+   "series": "kosenga",
+   "best": {
+    "file": "File:Snow at Ochanomizu LACMA M.71.100.81.jpg",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/0/0f/Snow_at_Ochanomizu_LACMA_M.71.100.81.jpg",
+    "px": [
+     2100,
+     1337
+    ],
+    "series": "kosenga",
+    "institution": "LACMA",
+    "year": 1880,
+    "license": "Public domain",
+    "title_hint": "Snow at Ochanomizu",
+    "credit": "Image: http://collections.lacma.org/sites/default/files/remote_images/piction/ma-31809134-O3.jpg Gal"
+   },
+   "candidates": [
+    {
+     "file": "File:Snow at Ochanomizu LACMA M.71.100.81.jpg",
+     "image_url": "https://upload.wikimedia.org/wikipedia/commons/0/0f/Snow_at_Ochanomizu_LACMA_M.71.100.81.jpg",
+     "px": [
+      2100,
+      1337
+     ],
+     "series": "kosenga",
+     "institution": "LACMA",
+     "year": 1880,
+     "license": "Public domain",
+     "title_hint": "Snow at Ochanomizu",
+     "credit": "Image: http://collections.lacma.org/sites/default/files/remote_images/piction/ma-31809134-O3.jpg Gal"
+    }
+   ],
+   "title_ja": null,
+   "subject": null,
+   "published": null
+  },
+  {
+   "key": "ryogoku/day:and-breakwater-bridge-ryogoku",
+   "place": "ryogoku",
+   "motif": "day",
+   "series": "kosenga",
+   "best": {
+    "file": "File:Breakwater Stakes and Ryogoku Bridge LACMA M.71.100.64.jpg",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/d/d8/Breakwater_Stakes_and_Ryogoku_Bridge_LACMA_M.71.100.64.jpg",
+    "px": [
+     2100,
+     1365
+    ],
+    "series": "kosenga",
+    "institution": "LACMA",
+    "year": 1880,
+    "license": "Public domain",
+    "title_hint": "Breakwater Stakes and Ryōgoku Bridge",
+    "credit": "Image: http://collections.lacma.org/sites/default/files/remote_images/piction/ma-31808953-O3.jpg Gal"
+   },
+   "candidates": [
+    {
+     "file": "File:Breakwater Stakes and Ryogoku Bridge LACMA M.71.100.64.jpg",
+     "image_url": "https://upload.wikimedia.org/wikipedia/commons/d/d8/Breakwater_Stakes_and_Ryogoku_Bridge_LACMA_M.71.100.64.jpg",
+     "px": [
+      2100,
+      1365
+     ],
+     "series": "kosenga",
+     "institution": "LACMA",
+     "year": 1880,
+     "license": "Public domain",
+     "title_hint": "Breakwater Stakes and Ryōgoku Bridge",
+     "credit": "Image: http://collections.lacma.org/sites/default/files/remote_images/piction/ma-31808953-O3.jpg Gal"
+    }
+   ],
+   "title_ja": null,
+   "subject": null,
+   "published": null
+  },
+  {
+   "key": "ryogoku/day:bridge-distant-motoyanagi-ryogoku",
+   "place": "ryogoku",
+   "motif": "day",
+   "series": "kosenga",
+   "best": {
+    "file": "File:Distant View of Ryogoku from Motoyanagi Bridge (5758958001).jpg",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/2/2d/Distant_View_of_Ryogoku_from_Motoyanagi_Bridge_%285758958001%29.jpg",
+    "px": [
+     3940,
+     2688
+    ],
+    "series": "kosenga",
+    "institution": null,
+    "year": 1880,
+    "license": "Public domain",
+    "title_hint": "Distant View of Ryogoku from Motoyanagi Bridge (5758958001)",
+    "credit": "Flickr"
+   },
+   "candidates": [
+    {
+     "file": "File:Distant View of Ryogoku from Motoyanagi Bridge (5758958001).jpg",
+     "image_url": "https://upload.wikimedia.org/wikipedia/commons/2/2d/Distant_View_of_Ryogoku_from_Motoyanagi_Bridge_%285758958001%29.jpg",
+     "px": [
+      3940,
+      2688
+     ],
+     "series": "kosenga",
+     "institution": null,
+     "year": 1880,
+     "license": "Public domain",
+     "title_hint": "Distant View of Ryogoku from Motoyanagi Bridge (5758958001)",
+     "credit": "Flickr"
+    },
+    {
+     "file": "File:Distant View of Ryogoku from Motoyanagi Bridge LACMA M.71.100.84.jpg",
+     "image_url": "https://upload.wikimedia.org/wikipedia/commons/2/25/Distant_View_of_Ryogoku_from_Motoyanagi_Bridge_LACMA_M.71.100.84.jpg",
+     "px": [
+      2100,
+      1399
+     ],
+     "series": "kosenga",
+     "institution": "LACMA",
+     "year": 1879,
+     "license": "Public domain",
+     "title_hint": "Distant View of Ryōgoku from Motoyanagi Bridge",
+     "credit": "Image: http://collections.lacma.org/sites/default/files/remote_images/piction/ma-31809170-O3.jpg Gal"
+    }
+   ],
+   "title_ja": null,
+   "subject": null,
+   "published": null
+  },
+  {
+   "key": "ryogoku/fire",
+   "place": "ryogoku",
+   "motif": "fire",
+   "series": "kosenga",
+   "best": {
+    "file": "File:Kobayashi Kiyochika 小林清親 - The Great Fire at Ryōgoku Bridge - 2009-77 - Princeton University Art Museum.jpg",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/c/c6/Kobayashi_Kiyochika_%E5%B0%8F%E6%9E%97%E6%B8%85%E8%A6%AA_-_The_Great_Fire_at_Ry%C5%8Dgoku_Bridge_-_2009-77_-_Princeton_University_Art_Museum.jpg",
+    "px": [
+     2000,
+     1714
+    ],
+    "series": "kosenga",
+    "institution": null,
+    "year": null,
+    "license": "Public domain",
+    "title_hint": "The Great Fire at Ryōgoku Bridge title QS:P1476,en:\"The Great Fire at Ryōgoku Bridge \" label QS:Len,\"The Great Fire at R",
+    "credit": "Princeton Art Museum"
+   },
+   "candidates": [
+    {
+     "file": "File:Kobayashi Kiyochika 小林清親 - The Great Fire at Ryōgoku Bridge - 2009-77 - Princeton University Art Museum.jpg",
+     "image_url": "https://upload.wikimedia.org/wikipedia/commons/c/c6/Kobayashi_Kiyochika_%E5%B0%8F%E6%9E%97%E6%B8%85%E8%A6%AA_-_The_Great_Fire_at_Ry%C5%8Dgoku_Bridge_-_2009-77_-_Princeton_University_Art_Museum.jpg",
+     "px": [
+      2000,
+      1714
+     ],
+     "series": "kosenga",
+     "institution": null,
+     "year": null,
+     "license": "Public domain",
+     "title_hint": "The Great Fire at Ryōgoku Bridge title QS:P1476,en:\"The Great Fire at Ryōgoku Bridge \" label QS:Len,\"The Great Fire at R",
+     "credit": "Princeton Art Museum"
+    },
+    {
+     "file": "File:Kobayashi Kiyochika (1881) Ryōgoku After the Fire.jpg",
+     "image_url": "https://upload.wikimedia.org/wikipedia/commons/f/f1/Kobayashi_Kiyochika_%281881%29_Ry%C5%8Dgoku_After_the_Fire.jpg",
+     "px": [
+      2156,
+      1390
+     ],
+     "series": "kosenga",
+     "institution": null,
+     "year": 1881,
+     "license": "Public domain",
+     "title_hint": "Kobayashi Kiyochika (1881) Ryōgoku After the Fire",
+     "credit": "Smithsonian Studio Arts Blog ( archive )"
+    },
+    {
+     "file": "File:The Great Fire at Ryogoku Bridge, Viewed from Asakusa Bridge on the 26th of January, 1881 LACMA M.71.100.50.jpg",
+     "image_url": "https://upload.wikimedia.org/wikipedia/commons/3/30/The_Great_Fire_at_Ryogoku_Bridge%2C_Viewed_from_Asakusa_Bridge_on_the_26th_of_January%2C_1881_LACMA_M.71.100.50.jpg",
+     "px": [
+      2100,
+      1425
+     ],
+     "series": "kosenga",
+     "institution": "LACMA",
+     "year": 1881,
+     "license": "Public domain",
+     "title_hint": "The Great Fire at Ryōgoku Bridge, Viewed from Asakusa Bridge on the 26th of January, 1881",
+     "credit": "Image: http://collections.lacma.org/sites/default/files/remote_images/piction/ma-31808847-O3.jpg Gal"
+    },
+    {
+     "file": "File:The Ryogoku Fire Sketched from Hamacho on the 26th of January, 1881 LACMA M.71.100.49.jpg",
+     "image_url": "https://upload.wikimedia.org/wikipedia/commons/c/cb/The_Ryogoku_Fire_Sketched_from_Hamacho_on_the_26th_of_January%2C_1881_LACMA_M.71.100.49.jpg",
+     "px": [
+      2100,
+      1419
+     ],
+     "series": "kosenga",
+     "institution": "LACMA",
+     "year": 1881,
+     "license": "Public domain",
+     "title_hint": "The Ryōgoku Fire Sketched from Hamachō on the 26th of January, 1881",
+     "credit": "Image: http://collections.lacma.org/sites/default/files/remote_images/piction/ma-31795569-O3.jpg Gal"
+    },
+    {
+     "file": "File:The Ryogoku Fire Sketched from Hamacho on the 26th of January, 1881 LACMA M.71.100.77.jpg",
+     "image_url": "https://upload.wikimedia.org/wikipedia/commons/a/a1/The_Ryogoku_Fire_Sketched_from_Hamacho_on_the_26th_of_January%2C_1881_LACMA_M.71.100.77.jpg",
+     "px": [
+      2100,
+      1358
+     ],
+     "series": "kosenga",
+     "institution": "LACMA",
+     "year": 1881,
+     "license": "Public domain",
+     "title_hint": "The Ryōgoku Fire Sketched from Hamachō on the 26th of January, 1881",
+     "credit": "Image: http://collections.lacma.org/sites/default/files/remote_images/piction/ma-31795646-O3.jpg Gal"
+    }
+   ],
+   "title_ja": null,
+   "subject": null,
+   "published": null
+  },
+  {
+   "key": "ryogoku/fireworks",
+   "place": "ryogoku",
+   "motif": "fireworks",
+   "series": "kosenga",
+   "best": {
+    "file": "File:Kobayashi Kiyochika (1880) Ryōgoku hanabi no zu.jpg",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/3/34/Kobayashi_Kiyochika_%281880%29_Ry%C5%8Dgoku_hanabi_no_zu.jpg",
+    "px": [
+     1654,
+     1143
+    ],
+    "series": "kosenga",
+    "institution": null,
+    "year": 1880,
+    "license": "Public domain",
+    "title_hint": "Kobayashi Kiyochika (1880) Ryōgoku hanabi no zu",
+    "credit": "Ota Memorial Museum of Art ( archive )"
+   },
+   "candidates": [
+    {
+     "file": "File:Kobayashi Kiyochika (1880) Ryōgoku hanabi no zu.jpg",
+     "image_url": "https://upload.wikimedia.org/wikipedia/commons/3/34/Kobayashi_Kiyochika_%281880%29_Ry%C5%8Dgoku_hanabi_no_zu.jpg",
+     "px": [
+      1654,
+      1143
+     ],
+     "series": "kosenga",
+     "institution": null,
+     "year": 1880,
+     "license": "Public domain",
+     "title_hint": "Kobayashi Kiyochika (1880) Ryōgoku hanabi no zu",
+     "credit": "Ota Memorial Museum of Art ( archive )"
+    },
+    {
+     "file": "File:KOBAYASHI Kiyochika View of Fireworks at Ryohgoku,Tokyo.jpg",
+     "image_url": "https://upload.wikimedia.org/wikipedia/commons/8/88/KOBAYASHI_Kiyochika_View_of_Fireworks_at_Ryohgoku%2CTokyo.jpg",
+     "px": [
+      1304,
+      689
+     ],
+     "series": "kosenga",
+     "institution": null,
+     "year": 1880,
+     "license": "CC BY-SA 4.0",
+     "title_hint": "KOBAYASHI Kiyochika View of Fireworks at Ryohgoku,Tokyo",
+     "credit": "https://www.britishmuseum.org/collection/object/A_1941-0208-0-14"
+    }
+   ],
+   "title_ja": null,
+   "subject": null,
+   "published": null
+  },
+  {
+   "key": "sakurada/snow",
+   "place": "sakurada",
+   "motif": "snow",
+   "series": "kosenga",
+   "best": {
+    "file": "File:Snow at Soto-Sakurada, Kasumigaseki LACMA M.71.100.52.jpg",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/3/30/Snow_at_Soto-Sakurada%2C_Kasumigaseki_LACMA_M.71.100.52.jpg",
+    "px": [
+     2100,
+     1429
+    ],
+    "series": "kosenga",
+    "institution": "LACMA",
+    "year": 1884,
+    "license": "Public domain",
+    "title_hint": "Snow at Soto-Sakurada, Kasumigaseki",
+    "credit": "Image: http://collections.lacma.org/sites/default/files/remote_images/piction/ma-31808875-O3.jpg Gal"
+   },
+   "candidates": [
+    {
+     "file": "File:Snow at Soto-Sakurada, Kasumigaseki LACMA M.71.100.52.jpg",
+     "image_url": "https://upload.wikimedia.org/wikipedia/commons/3/30/Snow_at_Soto-Sakurada%2C_Kasumigaseki_LACMA_M.71.100.52.jpg",
+     "px": [
+      2100,
+      1429
+     ],
+     "series": "kosenga",
+     "institution": "LACMA",
+     "year": 1884,
+     "license": "Public domain",
+     "title_hint": "Snow at Soto-Sakurada, Kasumigaseki",
+     "credit": "Image: http://collections.lacma.org/sites/default/files/remote_images/piction/ma-31808875-O3.jpg Gal"
+    }
+   ],
+   "title_ja": null,
+   "subject": null,
+   "published": null
+  },
+  {
+   "key": "shin-ohashi/rain",
+   "place": "shin-ohashi",
+   "motif": "rain",
+   "series": "kosenga",
+   "best": {
+    "file": "File:Kobayashi Kiyochika (1876) View of Tokyo's Shin-Ohashi bridge in Rain.jpg",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Kobayashi_Kiyochika_%281876%29_View_of_Tokyo%27s_Shin-Ohashi_bridge_in_Rain.jpg",
+    "px": [
+     2669,
+     1722
+    ],
+    "series": "kosenga",
+    "institution": null,
+    "year": 1876,
+    "license": "Public domain",
+    "title_hint": "Kobayashi Kiyochika (1876) View of Tokyo's Shin-Ohashi bridge in Rain",
+    "credit": "Newsdesk: Newsroom of the Smithsonian"
+   },
+   "candidates": [
+    {
+     "file": "File:Kobayashi Kiyochika (1876) View of Tokyo's Shin-Ohashi bridge in Rain.jpg",
+     "image_url": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Kobayashi_Kiyochika_%281876%29_View_of_Tokyo%27s_Shin-Ohashi_bridge_in_Rain.jpg",
+     "px": [
+      2669,
+      1722
+     ],
+     "series": "kosenga",
+     "institution": null,
+     "year": 1876,
+     "license": "Public domain",
+     "title_hint": "Kobayashi Kiyochika (1876) View of Tokyo's Shin-Ohashi bridge in Rain",
+     "credit": "Newsdesk: Newsroom of the Smithsonian"
+    },
+    {
+     "file": "File:View of Rainfall on Shin-Ou-hashi in To-kei LACMA M.71.100.71.jpg",
+     "image_url": "https://upload.wikimedia.org/wikipedia/commons/5/52/View_of_Rainfall_on_Shin-Ou-hashi_in_To-kei_LACMA_M.71.100.71.jpg",
+     "px": [
+      2100,
+      1442
+     ],
+     "series": "kosenga",
+     "institution": "LACMA",
+     "year": 1876,
+     "license": "Public domain",
+     "title_hint": "View of Rainfall on Shin-Ou-hashi in To-kei",
+     "credit": "Image: http://collections.lacma.org/sites/default/files/remote_images/piction/ma-31809036-O3.jpg Gal"
+    },
+    {
+     "file": "File:Kobayashi Kiyochika (1876) Tōkyō Shin-Ōhashi uchū.jpg",
+     "image_url": "https://upload.wikimedia.org/wikipedia/commons/6/6a/Kobayashi_Kiyochika_%281876%29_T%C5%8Dky%C5%8D_Shin-%C5%8Chashi_uch%C5%AB.jpg",
+     "px": [
+      1654,
+      1124
+     ],
+     "series": "kosenga",
+     "institution": null,
+     "year": 1876,
+     "license": "Public domain",
+     "title_hint": "Kobayashi Kiyochika (1876) Tōkyō Shin-Ōhashi uchū",
+     "credit": "Ota Memorial Museum of Art ( archive )"
+    }
+   ],
+   "title_ja": null,
+   "subject": null,
+   "published": null
+  },
+  {
+   "key": "shinagawa/day:untitled",
+   "place": "shinagawa",
+   "motif": "day",
+   "series": "kosenga",
+   "best": {
+    "file": "File:品川海上眺望図.jpg",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/d/d4/%E5%93%81%E5%B7%9D%E6%B5%B7%E4%B8%8A%E7%9C%BA%E6%9C%9B%E5%9B%B3.jpg",
+    "px": [
+     819,
+     550
+    ],
+    "series": "kosenga",
+    "institution": null,
+    "year": null,
+    "license": "Public domain",
+    "title_hint": "品川海上眺望図",
+    "credit": "http://www.sobi2pallas.jp/uki163.html"
+   },
+   "candidates": [
+    {
+     "file": "File:品川海上眺望図.jpg",
+     "image_url": "https://upload.wikimedia.org/wikipedia/commons/d/d4/%E5%93%81%E5%B7%9D%E6%B5%B7%E4%B8%8A%E7%9C%BA%E6%9C%9B%E5%9B%B3.jpg",
+     "px": [
+      819,
+      550
+     ],
+     "series": "kosenga",
+     "institution": null,
+     "year": null,
+     "license": "Public domain",
+     "title_hint": "品川海上眺望図",
+     "credit": "http://www.sobi2pallas.jp/uki163.html"
+    }
+   ],
+   "title_ja": null,
+   "subject": null,
+   "published": null
+  },
+  {
+   "key": "shinagawa/moon",
+   "place": "shinagawa",
+   "motif": "moon",
+   "series": "kosenga",
+   "best": {
+    "file": "File:Kobayashi Kiyochika (1879) View of Takanawa Ushimachi under a Shrouded Moon.jpg",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/1/12/Kobayashi_Kiyochika_%281879%29_View_of_Takanawa_Ushimachi_under_a_Shrouded_Moon.jpg",
+    "px": [
+     2609,
+     1669
+    ],
+    "series": "kosenga",
+    "institution": null,
+    "year": 1879,
+    "license": "Public domain",
+    "title_hint": "Kobayashi Kiyochika (1879) View of Takanawa Ushimachi under a Shrouded Moon",
+    "credit": "Newsdesk: Newsroom of the Smithsonian"
+   },
+   "candidates": [
+    {
+     "file": "File:Kobayashi Kiyochika (1879) View of Takanawa Ushimachi under a Shrouded Moon.jpg",
+     "image_url": "https://upload.wikimedia.org/wikipedia/commons/1/12/Kobayashi_Kiyochika_%281879%29_View_of_Takanawa_Ushimachi_under_a_Shrouded_Moon.jpg",
+     "px": [
+      2609,
+      1669
+     ],
+     "series": "kosenga",
+     "institution": null,
+     "year": 1879,
+     "license": "Public domain",
+     "title_hint": "Kobayashi Kiyochika (1879) View of Takanawa Ushimachi under a Shrouded Moon",
+     "credit": "Newsdesk: Newsroom of the Smithsonian"
+    }
+   ],
+   "title_ja": null,
+   "subject": null,
+   "published": null
+  },
+  {
+   "key": "shinbashi/night",
+   "place": "shinbashi",
+   "motif": "night",
+   "series": "kosenga",
+   "best": {
+    "file": "File:Shinbashi Station,Tokyo.jpg",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/0/0f/Shinbashi_Station%2CTokyo.jpg",
+    "px": [
+     629,
+     450
+    ],
+    "series": "kosenga",
+    "institution": null,
+    "year": 1877,
+    "license": "CC BY-SA 3.0",
+    "title_hint": "Shinbashi Station,Tokyo",
+    "credit": "https://www.britishmuseum.org/collection/object/A_1939-0524-0-71-2"
+   },
+   "candidates": [
+    {
+     "file": "File:Shinbashi Station,Tokyo.jpg",
+     "image_url": "https://upload.wikimedia.org/wikipedia/commons/0/0f/Shinbashi_Station%2CTokyo.jpg",
+     "px": [
+      629,
+      450
+     ],
+     "series": "kosenga",
+     "institution": null,
+     "year": 1877,
+     "license": "CC BY-SA 3.0",
+     "title_hint": "Shinbashi Station,Tokyo",
+     "credit": "https://www.britishmuseum.org/collection/object/A_1939-0524-0-71-2"
+    }
+   ],
+   "title_ja": null,
+   "subject": null,
+   "published": null
+  },
+  {
+   "key": "sumida/day:and-bridge-lightning-thunder",
+   "place": "sumida",
+   "motif": "day",
+   "series": "kosenga",
+   "best": {
+    "file": "File:Thunder and Lightning at Umaya Bridge LACMA M.71.100.68.jpg",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/f/f6/Thunder_and_Lightning_at_Umaya_Bridge_LACMA_M.71.100.68.jpg",
+    "px": [
+     2100,
+     1364
+    ],
+    "series": "kosenga",
+    "institution": "LACMA",
+    "year": 1879,
+    "license": "Public domain",
+    "title_hint": "Thunder and Lightning at Umaya Bridge",
+    "credit": "Image: http://collections.lacma.org/sites/default/files/remote_images/piction/ma-31808995-O3.jpg Gal"
+   },
+   "candidates": [
+    {
+     "file": "File:Thunder and Lightning at Umaya Bridge LACMA M.71.100.68.jpg",
+     "image_url": "https://upload.wikimedia.org/wikipedia/commons/f/f6/Thunder_and_Lightning_at_Umaya_Bridge_LACMA_M.71.100.68.jpg",
+     "px": [
+      2100,
+      1364
+     ],
+     "series": "kosenga",
+     "institution": "LACMA",
+     "year": 1879,
+     "license": "Public domain",
+     "title_hint": "Thunder and Lightning at Umaya Bridge",
+     "credit": "Image: http://collections.lacma.org/sites/default/files/remote_images/piction/ma-31808995-O3.jpg Gal"
+    }
+   ],
+   "title_ja": null,
+   "subject": null,
+   "published": null
+  },
+  {
+   "key": "sumida/day:ariakero-imado",
+   "place": "sumida",
+   "motif": "day",
+   "series": "kosenga",
+   "best": {
+    "file": "File:The Ariakero in Imado LACMA M.73.37.463.jpg",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/b/b8/The_Ariakero_in_Imado_LACMA_M.73.37.463.jpg",
+    "px": [
+     2100,
+     1373
+    ],
+    "series": "kosenga",
+    "institution": "LACMA",
+    "year": 1879,
+    "license": "Public domain",
+    "title_hint": "The Ariakerō in Imado",
+    "credit": "Image: http://collections.lacma.org/sites/default/files/remote_images/piction/ma-31818023-O3.jpg Gal"
+   },
+   "candidates": [
+    {
+     "file": "File:The Ariakero in Imado LACMA M.73.37.463.jpg",
+     "image_url": "https://upload.wikimedia.org/wikipedia/commons/b/b8/The_Ariakero_in_Imado_LACMA_M.73.37.463.jpg",
+     "px": [
+      2100,
+      1373
+     ],
+     "series": "kosenga",
+     "institution": "LACMA",
+     "year": 1879,
+     "license": "Public domain",
+     "title_hint": "The Ariakerō in Imado",
+     "credit": "Image: http://collections.lacma.org/sites/default/files/remote_images/piction/ma-31818023-O3.jpg Gal"
+    }
+   ],
+   "title_ja": null,
+   "subject": null,
+   "published": null
+  },
+  {
+   "key": "sumida/day:berg-bij-februari-matsuchi",
+   "place": "sumida",
+   "motif": "day",
+   "series": "kosenga",
+   "best": {
+    "file": "File:Kobayashi Kiyochika (1847-1915), Februari, riviermond bij de berg Matsuchi in de winter (1880-90).jpg",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/7/71/Kobayashi_Kiyochika_%281847-1915%29%2C_Februari%2C_riviermond_bij_de_berg_Matsuchi_in_de_winter_%281880-90%29.jpg",
+    "px": [
+     1896,
+     966
+    ],
+    "series": "kosenga",
+    "institution": null,
+    "year": 1880,
+    "license": "Public domain",
+    "title_hint": "Kobayashi Kiyochika (1847-1915), Februari, riviermond bij de berg Matsuchi in de winter (1880-90)",
+    "credit": "http://centreceramique.adlibhosting.com/brief.aspx"
+   },
+   "candidates": [
+    {
+     "file": "File:Kobayashi Kiyochika (1847-1915), Februari, riviermond bij de berg Matsuchi in de winter (1880-90).jpg",
+     "image_url": "https://upload.wikimedia.org/wikipedia/commons/7/71/Kobayashi_Kiyochika_%281847-1915%29%2C_Februari%2C_riviermond_bij_de_berg_Matsuchi_in_de_winter_%281880-90%29.jpg",
+     "px": [
+      1896,
+      966
+     ],
+     "series": "kosenga",
+     "institution": null,
+     "year": 1880,
+     "license": "Public domain",
+     "title_hint": "Kobayashi Kiyochika (1847-1915), Februari, riviermond bij de berg Matsuchi in de winter (1880-90)",
+     "credit": "http://centreceramique.adlibhosting.com/brief.aspx"
+    }
+   ],
+   "title_ja": null,
+   "subject": null,
+   "published": null
+  },
+  {
+   "key": "sumida/day:bridge-ishihara-okawabata",
+   "place": "sumida",
+   "motif": "day",
+   "series": "kosenga",
+   "best": {
+    "file": "File:View of Ishihara Bridge at Okawabata LACMA M.71.100.62.jpg",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/a/a3/View_of_Ishihara_Bridge_at_Okawabata_LACMA_M.71.100.62.jpg",
+    "px": [
+     2100,
+     1368
+    ],
+    "series": "kosenga",
+    "institution": "LACMA",
+    "year": 1880,
+    "license": "Public domain",
+    "title_hint": "View of Ishihara Bridge at Ōkawabata",
+    "credit": "Image: http://collections.lacma.org/sites/default/files/remote_images/piction/ma-31808931-O3.jpg Gal"
+   },
+   "candidates": [
+    {
+     "file": "File:View of Ishihara Bridge at Okawabata LACMA M.71.100.62.jpg",
+     "image_url": "https://upload.wikimedia.org/wikipedia/commons/a/a3/View_of_Ishihara_Bridge_at_Okawabata_LACMA_M.71.100.62.jpg",
+     "px": [
+      2100,
+      1368
+     ],
+     "series": "kosenga",
+     "institution": "LACMA",
+     "year": 1880,
+     "license": "Public domain",
+     "title_hint": "View of Ishihara Bridge at Ōkawabata",
+     "credit": "Image: http://collections.lacma.org/sites/default/files/remote_images/piction/ma-31808931-O3.jpg Gal"
+    }
+   ],
+   "title_ja": null,
+   "subject": null,
+   "published": null
+  },
+  {
+   "key": "sumida/day:ferry-fujimi-okawa",
+   "place": "sumida",
+   "motif": "day",
+   "series": "kosenga",
+   "best": {
+    "file": "File:Fujimi Ferry, the River Okawa LACMA M.71.100.83.jpg",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/e/e3/Fujimi_Ferry%2C_the_River_Okawa_LACMA_M.71.100.83.jpg",
+    "px": [
+     2100,
+     1332
+    ],
+    "series": "kosenga",
+    "institution": "LACMA",
+    "year": 1880,
+    "license": "Public domain",
+    "title_hint": "Fujimi Ferry, the River Ōkawa",
+    "credit": "Image: http://collections.lacma.org/sites/default/files/remote_images/piction/ma-31809162-O3.jpg Gal"
+   },
+   "candidates": [
+    {
+     "file": "File:Fujimi Ferry, the River Okawa LACMA M.71.100.83.jpg",
+     "image_url": "https://upload.wikimedia.org/wikipedia/commons/e/e3/Fujimi_Ferry%2C_the_River_Okawa_LACMA_M.71.100.83.jpg",
+     "px": [
+      2100,
+      1332
+     ],
+     "series": "kosenga",
+     "institution": "LACMA",
+     "year": 1880,
+     "license": "Public domain",
+     "title_hint": "Fujimi Ferry, the River Ōkawa",
+     "credit": "Image: http://collections.lacma.org/sites/default/files/remote_images/piction/ma-31809162-O3.jpg Gal"
+    }
+   ],
+   "title_ja": null,
+   "subject": null,
+   "published": null
+  },
+  {
+   "key": "sumida/day:hyakkei-musashino-suijinmori-sumidagawa",
+   "place": "sumida",
+   "motif": "day",
+   "series": "musashi-hyakkei",
+   "best": {
+    "file": "File:Kobayashi Kiyochika (1884) Musashino hyakkei no uchi Sumidagawa Suijinmori.jpg",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/b/b0/Kobayashi_Kiyochika_%281884%29_Musashino_hyakkei_no_uchi_Sumidagawa_Suijinmori.jpg",
+    "px": [
+     1092,
+     1654
+    ],
+    "series": "musashi-hyakkei",
+    "institution": null,
+    "year": 1884,
+    "license": "Public domain",
+    "title_hint": "Kobayashi Kiyochika (1884) Musashino hyakkei no uchi Sumidagawa Suijinmori",
+    "credit": "Ota Memorial Museum of Art ( archive )"
+   },
+   "candidates": [
+    {
+     "file": "File:Kobayashi Kiyochika (1884) Musashino hyakkei no uchi Sumidagawa Suijinmori.jpg",
+     "image_url": "https://upload.wikimedia.org/wikipedia/commons/b/b0/Kobayashi_Kiyochika_%281884%29_Musashino_hyakkei_no_uchi_Sumidagawa_Suijinmori.jpg",
+     "px": [
+      1092,
+      1654
+     ],
+     "series": "musashi-hyakkei",
+     "institution": null,
+     "year": 1884,
+     "license": "Public domain",
+     "title_hint": "Kobayashi Kiyochika (1884) Musashino hyakkei no uchi Sumidagawa Suijinmori",
+     "credit": "Ota Memorial Museum of Art ( archive )"
+    }
+   ],
+   "title_ja": null,
+   "subject": null,
+   "published": null
+  },
+  {
+   "key": "sumida/dusk",
+   "place": "sumida",
+   "motif": "dusk",
+   "series": "kosenga",
+   "best": {
+    "file": "File:View at dusk, Hashiba Ferry, Tokyo LACMA M.71.100.78.jpg",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/6/67/View_at_dusk%2C_Hashiba_Ferry%2C_Tokyo_LACMA_M.71.100.78.jpg",
+    "px": [
+     2100,
+     1323
+    ],
+    "series": "kosenga",
+    "institution": "LACMA",
+    "year": 1880,
+    "license": "Public domain",
+    "title_hint": "View at dusk, Hashiba Ferry, Tokyo",
+    "credit": "Image: http://collections.lacma.org/sites/default/files/remote_images/piction/ma-31809092-O3.jpg Gal"
+   },
+   "candidates": [
+    {
+     "file": "File:View at dusk, Hashiba Ferry, Tokyo LACMA M.71.100.78.jpg",
+     "image_url": "https://upload.wikimedia.org/wikipedia/commons/6/67/View_at_dusk%2C_Hashiba_Ferry%2C_Tokyo_LACMA_M.71.100.78.jpg",
+     "px": [
+      2100,
+      1323
+     ],
+     "series": "kosenga",
+     "institution": "LACMA",
+     "year": 1880,
+     "license": "Public domain",
+     "title_hint": "View at dusk, Hashiba Ferry, Tokyo",
+     "credit": "Image: http://collections.lacma.org/sites/default/files/remote_images/piction/ma-31809092-O3.jpg Gal"
+    }
+   ],
+   "title_ja": null,
+   "subject": null,
+   "published": null
+  },
+  {
+   "key": "sumida/night",
+   "place": "sumida",
+   "motif": "night",
+   "series": "kosenga",
+   "best": {
+    "file": "File:The Sumida River at Night by Kobayashi Kiyochika, 1881, Honolulu Museum of Art.jpg",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/b/b9/The_Sumida_River_at_Night_by_Kobayashi_Kiyochika%2C_1881%2C_Honolulu_Museum_of_Art.jpg",
+    "px": [
+     2469,
+     1614
+    ],
+    "series": "kosenga",
+    "institution": "Honolulu Museum of Art",
+    "year": 1881,
+    "license": "Public domain",
+    "title_hint": "The Sumida River at Night by Kobayashi Kiyochika, 1881, Honolulu Museum of Art",
+    "credit": "Self-scanned"
+   },
+   "candidates": [
+    {
+     "file": "File:The Sumida River at Night by Kobayashi Kiyochika, 1881, Honolulu Museum of Art.jpg",
+     "image_url": "https://upload.wikimedia.org/wikipedia/commons/b/b9/The_Sumida_River_at_Night_by_Kobayashi_Kiyochika%2C_1881%2C_Honolulu_Museum_of_Art.jpg",
+     "px": [
+      2469,
+      1614
+     ],
+     "series": "kosenga",
+     "institution": "Honolulu Museum of Art",
+     "year": 1881,
+     "license": "Public domain",
+     "title_hint": "The Sumida River at Night by Kobayashi Kiyochika, 1881, Honolulu Museum of Art",
+     "credit": "Self-scanned"
+    },
+    {
+     "file": "File:Night on the Sumida River LACMA M.71.100.73.jpg",
+     "image_url": "https://upload.wikimedia.org/wikipedia/commons/4/4e/Night_on_the_Sumida_River_LACMA_M.71.100.73.jpg",
+     "px": [
+      2100,
+      1358
+     ],
+     "series": "kosenga",
+     "institution": "LACMA",
+     "year": 1881,
+     "license": "Public domain",
+     "title_hint": "Night on the Sumida River",
+     "credit": "Image: http://collections.lacma.org/sites/default/files/remote_images/piction/ma-31809050-O3.jpg Gal"
+    },
+    {
+     "file": "File:隅田川夜.jpg",
+     "image_url": "https://upload.wikimedia.org/wikipedia/commons/6/6f/%E9%9A%85%E7%94%B0%E5%B7%9D%E5%A4%9C.jpg",
+     "px": [
+      800,
+      550
+     ],
+     "series": "kosenga",
+     "institution": null,
+     "year": null,
+     "license": "Public domain",
+     "title_hint": "隅田川夜",
+     "credit": "http://www.sobi2pallas.jp/uki178.html"
+    }
+   ],
+   "title_ja": null,
+   "subject": null,
+   "published": null
+  },
+  {
+   "key": "sumida/rain",
+   "place": "sumida",
+   "motif": "rain",
+   "series": "kosenga",
+   "best": {
+    "file": "File:Spring Rain near the Great Riverbank- A Crossing Ferry Boat LACMA M.71.100.53.jpg",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/9/9c/Spring_Rain_near_the_Great_Riverbank-_A_Crossing_Ferry_Boat_LACMA_M.71.100.53.jpg",
+    "px": [
+     2100,
+     1412
+    ],
+    "series": "kosenga",
+    "institution": "LACMA",
+    "year": 1884,
+    "license": "Public domain",
+    "title_hint": "Spring Rain near the Great Riverbank: A Crossing Ferry Boat",
+    "credit": "Image: http://collections.lacma.org/sites/default/files/remote_images/piction/ma-31808889-O3.jpg Gal"
+   },
+   "candidates": [
+    {
+     "file": "File:Spring Rain near the Great Riverbank- A Crossing Ferry Boat LACMA M.71.100.53.jpg",
+     "image_url": "https://upload.wikimedia.org/wikipedia/commons/9/9c/Spring_Rain_near_the_Great_Riverbank-_A_Crossing_Ferry_Boat_LACMA_M.71.100.53.jpg",
+     "px": [
+      2100,
+      1412
+     ],
+     "series": "kosenga",
+     "institution": "LACMA",
+     "year": 1884,
+     "license": "Public domain",
+     "title_hint": "Spring Rain near the Great Riverbank: A Crossing Ferry Boat",
+     "credit": "Image: http://collections.lacma.org/sites/default/files/remote_images/piction/ma-31808889-O3.jpg Gal"
+    }
+   ],
+   "title_ja": null,
+   "subject": null,
+   "published": null
+  },
+  {
+   "key": "toranomon/dusk",
+   "place": "toranomon",
+   "motif": "dusk",
+   "series": "kosenga",
+   "best": {
+    "file": "File:虎ノ門夕景.jpg",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/a/af/%E8%99%8E%E3%83%8E%E9%96%80%E5%A4%95%E6%99%AF.jpg",
+    "px": [
+     821,
+     550
+    ],
+    "series": "kosenga",
+    "institution": null,
+    "year": null,
+    "license": "Public domain",
+    "title_hint": "虎ノ門夕景",
+    "credit": "http://www.sobi2pallas.jp/uki198.html"
+   },
+   "candidates": [
+    {
+     "file": "File:虎ノ門夕景.jpg",
+     "image_url": "https://upload.wikimedia.org/wikipedia/commons/a/af/%E8%99%8E%E3%83%8E%E9%96%80%E5%A4%95%E6%99%AF.jpg",
+     "px": [
+      821,
+      550
+     ],
+     "series": "kosenga",
+     "institution": null,
+     "year": null,
+     "license": "Public domain",
+     "title_hint": "虎ノ門夕景",
+     "credit": "http://www.sobi2pallas.jp/uki198.html"
+    }
+   ],
+   "title_ja": null,
+   "subject": null,
+   "published": null
+  },
+  {
+   "key": "ueno/day:bei-calle-croquis-dans",
+   "place": "ueno",
+   "motif": "day",
+   "series": "kosenga",
+   "best": {
+    "file": "File:Mitsui Store at Surugacho in Edo (5758988567).jpg",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/9/9f/Mitsui_Store_at_Surugacho_in_Edo_%285758988567%29.jpg",
+    "px": [
+     2305,
+     1555
+    ],
+    "series": "kosenga",
+    "institution": null,
+    "year": null,
+    "license": "Public domain",
+    "title_hint": "Mitsui Shop at Surugachō in Edo title QS:P1476,en:\"Mitsui Shop at Surugachō in Edo \" label QS:Len,\"Mitsui Shop at Suruga",
+    "credit": "Flickr"
+   },
+   "candidates": [
+    {
+     "file": "File:Mitsui Store at Surugacho in Edo (5758988567).jpg",
+     "image_url": "https://upload.wikimedia.org/wikipedia/commons/9/9f/Mitsui_Store_at_Surugacho_in_Edo_%285758988567%29.jpg",
+     "px": [
+      2305,
+      1555
+     ],
+     "series": "kosenga",
+     "institution": null,
+     "year": null,
+     "license": "Public domain",
+     "title_hint": "Mitsui Shop at Surugachō in Edo title QS:P1476,en:\"Mitsui Shop at Surugachō in Edo \" label QS:Len,\"Mitsui Shop at Suruga",
+     "credit": "Flickr"
+    }
+   ],
+   "title_ja": null,
+   "subject": null,
+   "published": null
+  },
+  {
+   "key": "ueno/day:gezicht-het-park-ueno",
+   "place": "ueno",
+   "motif": "day",
+   "series": "kosenga",
+   "best": {
+    "file": "File:Kobayashi Kiyochika (1847-1915), Gezicht in het Ueno park (1885).jpg",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/5/54/Kobayashi_Kiyochika_%281847-1915%29%2C_Gezicht_in_het_Ueno_park_%281885%29.jpg",
+    "px": [
+     1906,
+     1257
+    ],
+    "series": "kosenga",
+    "institution": null,
+    "year": 1885,
+    "license": "Public domain",
+    "title_hint": "Kobayashi Kiyochika (1847-1915), Gezicht in het Ueno park (1885)",
+    "credit": "http://centreceramique.adlibhosting.com/brief.aspx"
+   },
+   "candidates": [
+    {
+     "file": "File:Kobayashi Kiyochika (1847-1915), Gezicht in het Ueno park (1885).jpg",
+     "image_url": "https://upload.wikimedia.org/wikipedia/commons/5/54/Kobayashi_Kiyochika_%281847-1915%29%2C_Gezicht_in_het_Ueno_park_%281885%29.jpg",
+     "px": [
+      1906,
+      1257
+     ],
+     "series": "kosenga",
+     "institution": null,
+     "year": 1885,
+     "license": "Public domain",
+     "title_hint": "Kobayashi Kiyochika (1847-1915), Gezicht in het Ueno park (1885)",
+     "credit": "http://centreceramique.adlibhosting.com/brief.aspx"
+    }
+   ],
+   "title_ja": null,
+   "subject": null,
+   "published": null
+  },
+  {
+   "key": "ueno/day:park-sketching-ueno",
+   "place": "ueno",
+   "motif": "day",
+   "series": "kosenga",
+   "best": {
+    "file": "File:Sketching in Ueno Park - Kobayashi Kiyochika.jpeg",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/4/4b/Sketching_in_Ueno_Park_-_Kobayashi_Kiyochika.jpeg",
+    "px": [
+     2000,
+     1366
+    ],
+    "series": "kosenga",
+    "institution": null,
+    "year": 1880,
+    "license": "Public domain",
+    "title_hint": "Sketching in Ueno Park - Kobayashi Kiyochika",
+    "credit": "https://ukiyo-e.org/image/mfa/sc165250"
+   },
+   "candidates": [
+    {
+     "file": "File:Sketching in Ueno Park - Kobayashi Kiyochika.jpeg",
+     "image_url": "https://upload.wikimedia.org/wikipedia/commons/4/4b/Sketching_in_Ueno_Park_-_Kobayashi_Kiyochika.jpeg",
+     "px": [
+      2000,
+      1366
+     ],
+     "series": "kosenga",
+     "institution": null,
+     "year": 1880,
+     "license": "Public domain",
+     "title_hint": "Sketching in Ueno Park - Kobayashi Kiyochika",
+     "credit": "https://ukiyo-e.org/image/mfa/sc165250"
+    }
+   ],
+   "title_ja": null,
+   "subject": null,
+   "published": null
+  },
+  {
+   "key": "ueno/day:shinobazu",
+   "place": "ueno",
+   "motif": "day",
+   "series": "kosenga",
+   "best": {
+    "file": "File:Kiyochika Shinobazu.jpg",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/6/69/Kiyochika_Shinobazu.jpg",
+    "px": [
+     1771,
+     1139
+    ],
+    "series": "kosenga",
+    "institution": null,
+    "year": 1880,
+    "license": "Public domain",
+    "title_hint": "Kiyochika Shinobazu",
+    "credit": "Catalogue"
+   },
+   "candidates": [
+    {
+     "file": "File:Kiyochika Shinobazu.jpg",
+     "image_url": "https://upload.wikimedia.org/wikipedia/commons/6/69/Kiyochika_Shinobazu.jpg",
+     "px": [
+      1771,
+      1139
+     ],
+     "series": "kosenga",
+     "institution": null,
+     "year": 1880,
+     "license": "Public domain",
+     "title_hint": "Kiyochika Shinobazu",
+     "credit": "Catalogue"
+    }
+   ],
+   "title_ja": null,
+   "subject": null,
+   "published": null
+  },
+  {
+   "key": "ueno/fireworks",
+   "place": "ueno",
+   "motif": "fireworks",
+   "series": "kosenga",
+   "best": {
+    "file": "File:Fireworks at Ikenohata MET DP-603-001.jpg",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/b/bc/Fireworks_at_Ikenohata_MET_DP-603-001.jpg",
+    "px": [
+     3999,
+     2797
+    ],
+    "series": "kosenga",
+    "institution": "Met",
+    "year": 1881,
+    "license": "CC0",
+    "title_hint": "Fireworks at Ikenohata",
+    "credit": "This file was donated to Wikimedia Commons as part of a project by the Metropolitan Museum of Art . "
+   },
+   "candidates": [
+    {
+     "file": "File:Fireworks at Ikenohata MET DP-603-001.jpg",
+     "image_url": "https://upload.wikimedia.org/wikipedia/commons/b/bc/Fireworks_at_Ikenohata_MET_DP-603-001.jpg",
+     "px": [
+      3999,
+      2797
+     ],
+     "series": "kosenga",
+     "institution": "Met",
+     "year": 1881,
+     "license": "CC0",
+     "title_hint": "Fireworks at Ikenohata",
+     "credit": "This file was donated to Wikimedia Commons as part of a project by the Metropolitan Museum of Art . "
+    },
+    {
+     "file": "File:Kobayashi Kiyochika (1847-1915), Vuurwerk boven de vijver van Ikenohata (1881).jpg",
+     "image_url": "https://upload.wikimedia.org/wikipedia/commons/8/8e/Kobayashi_Kiyochika_%281847-1915%29%2C_Vuurwerk_boven_de_vijver_van_Ikenohata_%281881%29.jpg",
+     "px": [
+      1525,
+      998
+     ],
+     "series": "kosenga",
+     "institution": null,
+     "year": 1881,
+     "license": "Public domain",
+     "title_hint": "Kobayashi Kiyochika (1847-1915), Vuurwerk boven de vijver van Ikenohata (1881)",
+     "credit": "http://centreceramique.adlibhosting.com/brief.aspx"
+    }
+   ],
+   "title_ja": null,
+   "subject": null,
+   "published": null
+  },
+  {
+   "key": "ueno/night",
+   "place": "ueno",
+   "motif": "night",
+   "series": "kosenga",
+   "best": {
+    "file": "File:Evening at Toshogu Shrine, Ueno, Tokyo LACMA M.71.100.51.jpg",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/5/5b/Evening_at_Toshogu_Shrine%2C_Ueno%2C_Tokyo_LACMA_M.71.100.51.jpg",
+    "px": [
+     2100,
+     1389
+    ],
+    "series": "kosenga",
+    "institution": "LACMA",
+    "year": 1881,
+    "license": "Public domain",
+    "title_hint": "Evening at Tōshōgū Shrine, Ueno, Tokyo",
+    "credit": "Image: http://collections.lacma.org/sites/default/files/remote_images/piction/ma-31808861-O3.jpg Gal"
+   },
+   "candidates": [
+    {
+     "file": "File:Evening at Toshogu Shrine, Ueno, Tokyo LACMA M.71.100.51.jpg",
+     "image_url": "https://upload.wikimedia.org/wikipedia/commons/5/5b/Evening_at_Toshogu_Shrine%2C_Ueno%2C_Tokyo_LACMA_M.71.100.51.jpg",
+     "px": [
+      2100,
+      1389
+     ],
+     "series": "kosenga",
+     "institution": "LACMA",
+     "year": 1881,
+     "license": "Public domain",
+     "title_hint": "Evening at Tōshōgū Shrine, Ueno, Tokyo",
+     "credit": "Image: http://collections.lacma.org/sites/default/files/remote_images/piction/ma-31808861-O3.jpg Gal"
+    }
+   ],
+   "title_ja": null,
+   "subject": null,
+   "published": null
+  },
+  {
+   "key": "ueno/snow",
+   "place": "ueno",
+   "motif": "snow",
+   "series": "kosenga",
+   "best": {
+    "file": "File:Heavy Snow at Toshogu Shrine in Ueno LACMA M.71.100.79.jpg",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/b/b4/Heavy_Snow_at_Toshogu_Shrine_in_Ueno_LACMA_M.71.100.79.jpg",
+    "px": [
+     2100,
+     1341
+    ],
+    "series": "kosenga",
+    "institution": "LACMA",
+    "year": 1879,
+    "license": "Public domain",
+    "title_hint": "Heavy Snow at Tōshōgū Shrine in Ueno",
+    "credit": "Image: http://collections.lacma.org/sites/default/files/remote_images/piction/ma-31809106-O3.jpg Gal"
+   },
+   "candidates": [
+    {
+     "file": "File:Heavy Snow at Toshogu Shrine in Ueno LACMA M.71.100.79.jpg",
+     "image_url": "https://upload.wikimedia.org/wikipedia/commons/b/b4/Heavy_Snow_at_Toshogu_Shrine_in_Ueno_LACMA_M.71.100.79.jpg",
+     "px": [
+      2100,
+      1341
+     ],
+     "series": "kosenga",
+     "institution": "LACMA",
+     "year": 1879,
+     "license": "Public domain",
+     "title_hint": "Heavy Snow at Tōshōgū Shrine in Ueno",
+     "credit": "Image: http://collections.lacma.org/sites/default/files/remote_images/piction/ma-31809106-O3.jpg Gal"
+    },
+    {
+     "file": "File:Heavy Snow at the Toshogu Shrine in Ueno.jpg",
+     "image_url": "https://upload.wikimedia.org/wikipedia/commons/5/5c/Heavy_Snow_at_the_Toshogu_Shrine_in_Ueno.jpg",
+     "px": [
+      2000,
+      1349
+     ],
+     "series": "kosenga",
+     "institution": null,
+     "year": 1879,
+     "license": "Public domain",
+     "title_hint": "Heavy Snow at the Toshogu Shrine in Ueno",
+     "credit": "https://ukiyo-e.org/image/mfa/sc165270"
+    }
+   ],
+   "title_ja": null,
+   "subject": null,
+   "published": null
+  },
+  {
+   "key": "umewaka/day:jinja-umewaka",
+   "place": "umewaka",
+   "motif": "day",
+   "series": "kosenga",
+   "best": {
+    "file": "File:Kobayashi Kiyochika (c. 1879) Umewaka jinja.jpg",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/b/b6/Kobayashi_Kiyochika_%28c._1879%29_Umewaka_jinja.jpg",
+    "px": [
+     1654,
+     1144
+    ],
+    "series": "kosenga",
+    "institution": null,
+    "year": 1879,
+    "license": "Public domain",
+    "title_hint": "Kobayashi Kiyochika (c. 1879) Umewaka jinja",
+    "credit": "Ota Memorial Museum of Art ( archive )"
+   },
+   "candidates": [
+    {
+     "file": "File:Kobayashi Kiyochika (c. 1879) Umewaka jinja.jpg",
+     "image_url": "https://upload.wikimedia.org/wikipedia/commons/b/b6/Kobayashi_Kiyochika_%28c._1879%29_Umewaka_jinja.jpg",
+     "px": [
+      1654,
+      1144
+     ],
+     "series": "kosenga",
+     "institution": null,
+     "year": 1879,
+     "license": "Public domain",
+     "title_hint": "Kobayashi Kiyochika (c. 1879) Umewaka jinja",
+     "credit": "Ota Memorial Museum of Art ( archive )"
+    }
+   ],
+   "title_ja": null,
+   "subject": null,
+   "published": null
+  },
+  {
+   "key": "umewaka/day:shrine-umewaka",
+   "place": "umewaka",
+   "motif": "day",
+   "series": "kosenga",
+   "best": {
+    "file": "File:Umewaka Shrine (5759501554).jpg",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/d/dd/Umewaka_Shrine_%285759501554%29.jpg",
+    "px": [
+     3760,
+     2622
+    ],
+    "series": "kosenga",
+    "institution": null,
+    "year": 1880,
+    "license": "Public domain",
+    "title_hint": "Umewaka Shrine (5759501554)",
+    "credit": "Flickr"
+   },
+   "candidates": [
+    {
+     "file": "File:Umewaka Shrine (5759501554).jpg",
+     "image_url": "https://upload.wikimedia.org/wikipedia/commons/d/dd/Umewaka_Shrine_%285759501554%29.jpg",
+     "px": [
+      3760,
+      2622
+     ],
+     "series": "kosenga",
+     "institution": null,
+     "year": 1880,
+     "license": "Public domain",
+     "title_hint": "Umewaka Shrine (5759501554)",
+     "credit": "Flickr"
+    },
+    {
+     "file": "File:Umewaka Shrine by Kobayashi Kiyochika, c. 1879, Honolulu Museum of Art.jpg",
+     "image_url": "https://upload.wikimedia.org/wikipedia/commons/6/61/Umewaka_Shrine_by_Kobayashi_Kiyochika%2C_c._1879%2C_Honolulu_Museum_of_Art.jpg",
+     "px": [
+      2492,
+      1608
+     ],
+     "series": "kosenga",
+     "institution": "Honolulu Museum of Art",
+     "year": 1879,
+     "license": "Public domain",
+     "title_hint": "Umewaka Shrine by Kobayashi Kiyochika, c. 1879, Honolulu Museum of Art",
+     "credit": "Self-scanned"
+    }
+   ],
+   "title_ja": null,
+   "subject": null,
+   "published": null
+  },
+  {
+   "key": "yushima/day:confucian-former-hall-yoshima",
+   "place": "yushima",
+   "motif": "day",
+   "series": "kosenga",
+   "best": {
+    "file": "File:View of the Former Confucian Hall at Yoshima by Kobayashi Kiyochika, 1879, Honolulu Museum of Art.jpg",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/9/9f/View_of_the_Former_Confucian_Hall_at_Yoshima_by_Kobayashi_Kiyochika%2C_1879%2C_Honolulu_Museum_of_Art.jpg",
+    "px": [
+     2022,
+     1401
+    ],
+    "series": "kosenga",
+    "institution": "Honolulu Museum of Art",
+    "year": 1879,
+    "license": "Public domain",
+    "title_hint": "View of the Former Confucian Hall at Yoshima by Kobayashi Kiyochika, 1879, Honolulu Museum of Art",
+    "credit": "Self-scanned"
+   },
+   "candidates": [
+    {
+     "file": "File:View of the Former Confucian Hall at Yoshima by Kobayashi Kiyochika, 1879, Honolulu Museum of Art.jpg",
+     "image_url": "https://upload.wikimedia.org/wikipedia/commons/9/9f/View_of_the_Former_Confucian_Hall_at_Yoshima_by_Kobayashi_Kiyochika%2C_1879%2C_Honolulu_Museum_of_Art.jpg",
+     "px": [
+      2022,
+      1401
+     ],
+     "series": "kosenga",
+     "institution": "Honolulu Museum of Art",
+     "year": 1879,
+     "license": "Public domain",
+     "title_hint": "View of the Former Confucian Hall at Yoshima by Kobayashi Kiyochika, 1879, Honolulu Museum of Art",
+     "credit": "Self-scanned"
+    }
+   ],
+   "title_ja": null,
+   "subject": null,
+   "published": null
+  }
+ ],
+ "bins": {
+  "outside-years": [
+   "File:\"What makes Japanese soldiers so strong?\" asks Russia. \"We are filled with Yamato Damashii\" (spirit of old Japan) says Japan. \"Please give me some Yamato Damashii\" (says) Russia LCCN2009630472.jpg",
+   "File:\"What makes Japanese soldiers so strong?\" asks Russia. \"We are filled with Yamato Damashii\" (spirit of old Japan) says Japan. \"Please give me some Yamato Damashii\" (says) Russia LCCN2009630472.tif",
+   "File:16126.d.1(1)-Scene aboard the battleship Matsushima during the Battle of the Yalu River.jpg",
+   "File:16126.d.1(11)-Japanese army launches a night attack on Pyongyang.jpg",
+   "File:16126.d.1(3)-The Battle of Seonghwan.jpg",
+   "File:16126.d.1(30)-Single-handedly opening the Hyonmu Gate under a hail of bullets.jpg",
+   "File:16126.d.1(37)-The Battle of the Yalu River. 1.jpg",
+   "File:16126.d.1(43)-The Japanese fleet bombarding Dalian Bay.jpg",
+   "File:16126.d.1(48)-The Battle of the Yalu River. 4.jpg",
+   "File:16126.d.1(52)-The Japanese army victorious at the Battle of Seonghwan.jpg",
+   "File:16126.d.1(7)-The Japanese 2nd Army attacks Port Arthur.jpg",
+   "File:16126.d.2(102)-The Battle of the Yalu River. 1.jpg",
+   "File:16126.d.2(104)-The Battle of Pungdo.jpg",
+   "File:16126.d.2(16)-\"Mirror of Army and Navy Heroes\"- Lieutenant-General Yamaji Motoharu.jpg",
+   "File:16126.d.2(23)-Mirror of Army and Navy Heroes- Engineer Onoguchi Tokuji.jpg",
+   "File:16126.d.2(24)-\"Mirror of Army and Navy Heroes\"- Captain Asakawa and Trooper 2nd Class Kimura Genmatsu.jpg",
+   "File:16126.d.2(25)-\"Long Live Japan- One Hundred Victories, One Hundred Laughs\" - The general's tearful farewell.jpg",
+   "File:16126.d.2(27)-\"Long Live Japan- One Hundred Victories, One Hundred Laughs\" - The Blockhead.jpg",
+   "File:16126.d.2(28)-\"Long Live Japan- One Hundred Victories, One Hundred Laughs\"- The pig's embarrassment.jpg",
+   "File:16126.d.2(29)-\"Long Live Japan- One Hundred Victories, One Hundred Laughs\"- Uproar in the Palace of the Dragon King.jpg",
+   "File:16126.d.2(30)-\"Long Live Japan- One Hundred Victories, One Hundred Laughs\"- The burden of Fengtian Prefecture.jpg",
+   "File:16126.d.2(31)-\"Long Live Japan- One Hundred Victories, One Hundred Laughs\"- The single-mindedness of the Japanese soldier.jpg",
+   "File:16126.d.2(32)-\"Long Live Japan- One Hundred Victories, One Hundred Laughs\"- The plunder bird.jpg",
+   "File:16126.d.2(50)-The fall of the city of Jinzhoucheng.jpg",
+   "File:16126.d.2(55)-The fall of the Yongan Gate at Jinzhoucheng Private 1st Class Onoguchi Tokuji.jpg",
+   "File:16126.d.2(59)-Single-handedly opening the Hyonmu Gate under a hail of bullets.jpg",
+   "File:16126.d.2(81)-The Japanese army landing to occupy Rongcheng Bay.jpg",
+   "File:16126.d.2(87)-Japanese victory at the Battle of Pyongyang.jpg",
+   "File:16126.d.3(19)-The use of electricity during the attack on Pyongyang.jpg",
+   "File:16126.d.3(21)-Long Live Japan! - Victory song at Pyongyang.jpg",
+   "File:16126.d.3(28)-The assault at the Ford of Ancheng during the Battle of Asan.jpg",
+   "File:16126.d.3(4)-The Saikyōmaru fights valiantly off Haiyang Island.jpg",
+   "File:A Russian civilian gets upset during a game of dai shogi, while his Japanese opponent appears confident of victory LCCN2009630498.jpg",
+   "File:A Russian civilian gets upset during a game of dai shogi, while his Japanese opponent appears confident of victory LCCN2009630498.tif",
+   "File:A Russian general, shaking with fear, telephones the Czar(?) who is also being annoyed by the Czarina(?) LCCN2009630499.jpg",
+   "File:A Russian general, shaking with fear, telephones the Czar(?) who is also being annoyed by the Czarina(?) LCCN2009630499.tif",
+   "File:A Russian officer and a Japanese officer are standing on a large map, the Japanese officer has pulled up a piece of the map causing the Russian officer to slip and fall LCCN2009630491.jpg",
+   "File:A Russian officer and a Japanese officer are standing on a large map, the Japanese officer has pulled up a piece of the map causing the Russian officer to slip and fall LCCN2009630491.tif",
+   "File:A Russian soldier protests as two Japanese soldiers interrupt his dinner preparations LCCN2009630496.jpg",
+   "File:A Russian soldier protests as two Japanese soldiers interrupt his dinner preparations LCCN2009630496.tif",
+   "File:A rear view of a lady walking with a large umbrella in the snow by Kobayashi Kiyochika.jpg",
+   "File:A whale and three fish sitting down to a formal dinner of Russian sailors LCCN2009631600.jpg",
+   "File:A whale and three fish sitting down to a formal dinner of Russian sailors LCCN2009631600.tif",
+   "File:American editor is greatly surprised at Japanese sharp-shooter as he hits Kiulencheng (sic), Hoojo, Kuichow, Motienluig, Haicheng, & next Liaoyang LCCN2009630473.jpg",
+   "File:American editor is greatly surprised at Japanese sharp-shooter as he hits Kiulencheng (sic), Hoojo, Kuichow, Motienluig, Haicheng, & next Liaoyang LCCN2009630473.tif",
+   "File:Arashiyama, Kyoto LACMA M.71.100.93.jpg",
+   "File:As the Japanese bayonets draw nearer to Port Arthur, Russian forces make more desperate (?) for safety LCCN2009630326.jpg",
+   "File:As the Japanese bayonets draw nearer to Port Arthur, Russian forces make more desperate (?) for safety LCCN2009630326.tif",
+   "File:Battle of the Yalu River. Kobayashi Kiyochika.jpg",
+   "File:BattleofWeihaidesant.jpg",
+   "File:BattleofWeihaijKiyochika.jpg",
+   "File:Blocking - shutting the mouth of Port Arthur LCCN2009630475.jpg",
+   "File:Blocking - shutting the mouth of Port Arthur LCCN2009630475.tif",
+   "File:Buruburu taishō LCCN2009615027.jpg",
+   "File:Byakkotai eiyū kagami.jpg",
+   "File:Cherry Tree (IA mma cherry tree 55988).jpg",
+   "File:Chin'en no keshō - shin nippon LCCN2009615030.jpg",
+   "File:Chinese Emperor(?) and Empress(?) seated on raised platform with musicians seated in front of them; the Emperor appears to have lost his nose and part of his right shoulder, the Empress part LCCN2009630464.jpg",
+   "File:Chinese Emperor(?) and Empress(?) seated on raised platform with musicians seated in front of them; the Emperor appears to have lost his nose and part of his right shoulder, the Empress part LCCN2009630464.tif",
+   "File:Chinese man frightened by two toy figures of Japanese soldiers and a turtle hanging by strings LCCN2009630463.jpg",
+   "File:Chinese man frightened by two toy figures of Japanese soldiers and a turtle hanging by strings LCCN2009630463.tif",
+   "File:Chinese soldier frightened by scarecrow or straw figure of a Japanese soldier LCCN2009631603.jpg",
+   "File:Chinese soldier frightened by scarecrow or straw figure of a Japanese soldier LCCN2009631603.tif",
+   "File:Czar Nicholas II tightrope walking on a line between three rifles on shore and a sinking ship LCCN2008660185.jpg",
+   "File:Czar Nicholas II tightrope walking on a line between three rifles on shore and a sinking ship LCCN2008660185.tif",
+   "File:De kapitein-luitenant ter zee Takeo Hirose-Rijksmuseum RP-P-1983-163.jpeg",
+   "File:Dreams of a Russian general LCCN2008660180.jpg",
+   "File:Dreams of a Russian general LCCN2008660180.tif",
+   "File:Emperor Meiji and his Consort in the Plum Garden, by Kobayashi Kiyochika, Japan, Meiji period, 1887 AD, woodblock on paper - Sackler Museum - Harvard University - DSC01702.jpg",
+   "File:Farewell present of useful white flag, which Russian General's wife thoughtfully gives when he leaves for front, telling him to use it as soon as he sees Japanese army LCCN2009630469.jpg",
+   "File:Farewell present of useful white flag, which Russian General's wife thoughtfully gives when he leaves for front, telling him to use it as soon as he sees Japanese army LCCN2009630469.tif",
+   "File:Fire of First National Diet Building by Kobayashi Kiyochika.jpg",
+   "File:Forces returning.jpg",
+   "File:Forces returning 2.jpg",
+   "File:Fukuro no nezumi LCCN2009615024.jpg",
+   "File:Fukuro no nezumi LCCN2009615024.tif",
+   "File:Futamigaura, the Wedded Rocks LACMA M.71.100.88.jpg",
+   "File:General Kuropatkin & his staff joyfully leaving St. Petersburg for the front LCCN2008660181.jpg",
+   "File:General Kuropatkin & his staff joyfully leaving St. Petersburg for the front LCCN2008660181.tif",
+   "File:General Kuropatkin in a safe place LCCN2008660179.jpg",
+   "File:General Kuropatkin in a safe place LCCN2008660179.tif",
+   "File:Genl. Kuropatkin ready for anything awaits the coming of the Japanese LCCN2008660182.jpg",
+   "File:Genl. Kuropatkin ready for anything awaits the coming of the Japanese LCCN2008660182.tif",
+   "File:Gū no ne mo denpō LCCN2009615215.jpg",
+   "File:Hoori riding a Crocodile.jpg",
+   "File:Humorous picture showing Chinese religious practices (Raijin, the Japanese God of Thunder, ranting to a crowd of Chinese Buddhist worshippers) LCCN2009630488.jpg",
+   "File:Humorous picture showing Chinese religious practices (Raijin, the Japanese God of Thunder, ranting to a crowd of Chinese Buddhist worshippers) LCCN2009630488.tif",
+   "File:Humorous picture showing a Chinese man, kneeling, speaking to a woman sitting on a sofa, crying profusely LCCN2009630489.jpg",
+   "File:Humorous picture showing a Chinese man, kneeling, speaking to a woman sitting on a sofa, crying profusely LCCN2009630489.tif",
+   "File:Humorous picture showing a monster on a boat or raft collecting Chinese Buddhist worshippers in a river LCCN2009630494.jpg",
+   "File:Humorous picture showing a monster on a boat or raft collecting Chinese Buddhist worshippers in a river LCCN2009630494.tif",
+   "File:Humorous picture showing a soldier extracting teeth from a Chinese man LCCN2009630482.jpg",
+   "File:Humorous picture showing a soldier extracting teeth from a Chinese man LCCN2009630482.tif",
+   "File:Humorous pictures depicting the Chinese LCCN2009630476.jpg",
+   "File:Humorous pictures depicting the Chinese LCCN2009630476.tif",
+   "File:Humorous pictures showing Chinese military tactics LCCN2009630481.jpg",
+   "File:Humorous pictures showing Chinese military tactics LCCN2009630481.tif",
+   "File:Humorous pictures showing Chinese religious practices (may include Raijin, the Japanese God of Thunder, seated in front in bottom cartoon) LCCN2009630480.jpg",
+   "File:Humorous pictures showing Chinese religious practices (may include Raijin, the Japanese God of Thunder, seated in front in bottom cartoon) LCCN2009630480.tif",
+   "File:Humorous pictures showing damaged Chinese battleships receiving first aid and Chinese men running with sails (as from Chinese junks) on their backs and carrying rifles LCCN2009630477.jpg",
+   "File:Humorous pictures showing damaged Chinese battleships receiving first aid and Chinese men running with sails (as from Chinese junks) on their backs and carrying rifles LCCN2009630477.tif",
+   "File:Humorous pictures showing the Chinese mode of transportation (four men harnessed to a carriage by their long pigtails) and a scene depicting the silk industry LCCN2009630479.jpg",
+   "File:Humorous pictures showing the Chinese mode of transportation (four men harnessed to a carriage by their long pigtails) and a scene depicting the silk industry LCCN2009630479.tif",
+   "File:Humorous pictures showing various Chinese clothing and grooming habits LCCN2009630478.jpg",
+   "File:Humorous pictures showing various Chinese clothing and grooming habits LCCN2009630478.tif",
+   "File:Illmination.jpg",
+   "File:Inner Valley at Tsukigase LACMA M.71.100.95.jpg",
+   "File:Itsukushima Shrine LACMA M.71.100.97.jpg",
+   "File:Japan holds the string when Russia reaches to grasp LCCN2008660186.jpg",
+   "File:Japan holds the string when Russia reaches to grasp LCCN2008660186.tif",
+   "File:Japan takes away Kinchow Castle LCCN2008660171.jpg",
+   "File:Japan takes away Kinchow Castle LCCN2008660171.tif",
+   "File:Japanese sailor, with his bare hands, is fighting with two Russian battleships (with arms, legs, and faces), a third battleship runs away LCCN2009630487.jpg",
+   "File:Japanese sailor, with his bare hands, is fighting with two Russian battleships (with arms, legs, and faces), a third battleship runs away LCCN2009630487.tif",
+   "File:Japanese sailor and soldier are tending to the wounds in the legs and back of a Russian soldier LCCN2009630486.jpg",
+   "File:Japanese sailor and soldier are tending to the wounds in the legs and back of a Russian soldier LCCN2009630486.tif",
+   "File:Japanese sailor with rifle holding three Chinese battleships at bay LCCN2009630483.jpg",
+   "File:Japanese sailor with rifle holding three Chinese battleships at bay LCCN2009630483.tif",
+   "File:Kitai taihora-The Spiraling (Effect) of the Fundamental Law on the Fearful Party (Russians) MET DP143066.jpg",
+   "File:Kobayahi Kiyochika - Kaika no Tōkyō Ryōgokubashi no zu.jpg",
+   "File:Kobayashi Kiyochika.jpg",
+   "File:Kobayashi Kiyochika (1847-1915), De landing van onze troepen op Wei-Hai-Wei (1895).jpg",
+   "File:Kobayashi Kiyochika (1847-1915), De veldkanonnen van ons leger. Beschieting van Kyuren-jo in de regen (1904).jpg",
+   "File:Kobayashi Kiyochika (1847-1915), Zeeslag bij Phung-To, Korea (1894).jpg",
+   "File:Kobayashi Kiyochika - Braving the Bitter Cold, Our Troops Set Up Camp at Yigkou.jpg",
+   "File:Kobayashi Kiyochika - The Majesty of the Empire - 1060-2010 - Saint Louis Art Museum.jpg",
+   "File:Kobayashi Kiyochika Battle of Nanshan.jpg",
+   "File:Kobayashi Kiyochika Photograph c1873.png",
+   "File:Kobayashii Kameido.jpg",
+   "File:Koganei, Cherry Blossoms LACMA M.71.100.90.jpg",
+   "File:Kouropatkin (sic) is surprised at his dinner by wounded from the front LCCN2009630328.jpg",
+   "File:Kouropatkin (sic) is surprised at his dinner by wounded from the front LCCN2009630328.tif",
+   "File:Kouropatkin (sic) secures safety - your flag does not work, try another LCCN2009630327.jpg",
+   "File:Kouropatkin (sic) secures safety - your flag does not work, try another LCCN2009630327.tif",
+   "File:Kundō shōgakkō kyōdō no zu.jpg",
+   "File:Kuropatkin(?) as town crier LCCN2009630329.jpg",
+   "File:Kuropatkin(?) as town crier LCCN2009630329.tif",
+   "File:Kuropatkin on his knees amid ruined battleships appealing to Saint Andrew, the patron saint of Russia, who is holding a large sword and shield LCCN2009630331.jpg",
+   "File:Kuropatkin on his knees amid ruined battleships appealing to Saint Andrew, the patron saint of Russia, who is holding a large sword and shield LCCN2009630331.tif",
+   "File:Kuropatkin plays too roughly with his toys LCCN2008660176.jpg",
+   "File:Kuropatkin plays too roughly with his toys LCCN2008660176.tif",
+   "File:Lady Sei Shonagon LACMA M.71.100.59a-c (1 of 3).jpg",
+   "File:Lady Sei Shonagon LACMA M.71.100.59a-c (2 of 3).jpg",
+   "File:Lady Sei Shonagon LACMA M.71.100.59a-c (3 of 3).jpg",
+   "File:MET DP143065.jpg",
+   "File:MET DP143067.jpg",
+   "File:MET DP143068.jpg",
+   "File:MET DP144021.jpg",
+   "File:MatsushimaGunJapanesePrint.jpg",
+   "File:Matsushima LACMA M.71.100.87.jpg",
+   "File:Miss Jiuliancheng and the Russian soldier (Kyûrenjô no heiki) LCCN2009630462.jpg",
+   "File:Monkey Bridge LACMA M.71.100.98.jpg",
+   "File:Mt. Yoshino, Cherry Blossoms LACMA M.71.100.96.jpg",
+   "File:NDL-DC 2542755-01 Kobayashi Kiyochika T070429.jpg",
+   "File:NDL-DC 2542755-02 Kobayashi Kiyochika T070429.jpg",
+   "File:NDL-DC 2542755-04 Kobayashi Kiyochika M291101.jpg",
+   "File:NDL-DC 2542755-04 Kobayashi Kiyochika M291101 crd.jpg",
+   "File:NDL-DC 2542755-06 Kobayashi Kiyochika M291105.jpg",
+   "File:NDL-DC 2542755-06 Kobayashi Kiyochika M291105 crd.jpg",
+   "File:NDL-DC 2542755-08 Kobayashi Kiyochika M291101.jpg",
+   "File:NDL-DC 2542755-08 Kobayashi Kiyochika M291101 crd.jpg",
+   "File:NDL-DC 2542755-10 Kobayashi Kiyochika M291101.jpg",
+   "File:NDL-DC 2542755-10 Kobayashi Kiyochika M291101 crd.jpg",
+   "File:NDL-DC 2542755-12 Kobayashi Kiyochika M291101.jpg",
+   "File:NDL-DC 2542755-12 Kobayashi Kiyochika M291101 crd.jpg",
+   "File:NDL-DC 2542755-14 Kobayashi Kiyochika M291105.jpg",
+   "File:NDL-DC 2542755-14 Kobayashi Kiyochika M291105 crd.jpg",
+   "File:NDL-DC 2542755-16 Kobayashi Kiyochika M291101.jpg",
+   "File:NDL-DC 2542755-16 Kobayashi Kiyochika M291101 crd.jpg",
+   "File:NDL-DC 2542755-18 Kobayashi Kiyochika M291105.jpg",
+   "File:NDL-DC 2542755-18 Kobayashi Kiyochika M291105 crd.jpg",
+   "File:NDL-DC 2542755-20 Kobayashi Kiyochika M2911.jpg",
+   "File:NDL-DC 2542755-20 Kobayashi Kiyochika M2911 crd.jpg",
+   "File:NDL-DC 2542755-22 Kobayashi Kiyochika M2911.jpg",
+   "File:NDL-DC 2542755-22 Kobayashi Kiyochika M2911 crd.jpg",
+   "File:NDL-DC 2542755-24 Kobayashi Kiyochika M2911.jpg",
+   "File:NDL-DC 2542755-24 Kobayashi Kiyochika M2911 crd.jpg",
+   "File:NDL-DC 2542755-26 Kobayashi Kiyochika M2912.jpg",
+   "File:NDL-DC 2542755-26 Kobayashi Kiyochika M2912 crd.jpg",
+   "File:NDL-DC 2542755-28 Kobayashi Kiyochika M2912.jpg",
+   "File:NDL-DC 2542755-28 Kobayashi Kiyochika M2912 crd.jpg",
+   "File:NDL-DC 2542755-30 Kobayashi Kiyochika M3001.jpg",
+   "File:NDL-DC 2542755-30 Kobayashi Kiyochika M3001 crd.jpg",
+   "File:NDL-DC 2542755-32 Kobayashi Kiyochika M3001.jpg",
+   "File:NDL-DC 2542755-32 Kobayashi Kiyochika M3001 crd.jpg",
+   "File:NDL-DC 2542755-34 Kobayashi Kiyochika M3002.jpg",
+   "File:NDL-DC 2542755-34 Kobayashi Kiyochika M3002 crd.jpg",
+   "File:NDL-DC 2542755-36 Kobayashi Kiyochika M3003.jpg",
+   "File:NDL-DC 2542755-36 Kobayashi Kiyochika M3003 crd.jpg",
+   "File:NDL-DC 2542755-38 Kobayashi Kiyochika M3003.jpg",
+   "File:NDL-DC 2542755-38 Kobayashi Kiyochika M3003 crd.jpg",
+   "File:NDL-DC 2542755-40 Kobayashi Kiyochika M3003.jpg",
+   "File:NDL-DC 2542755-40 Kobayashi Kiyochika M3003 crd.jpg",
+   "File:NDL-DC 2542755-42 Kobayashi Kiyochika M3004.jpg",
+   "File:NDL-DC 2542755-42 Kobayashi Kiyochika M3004 crd.jpg",
+   "File:NDL-DC 2542755-44 Kobayashi Kiyochika M3004.jpg",
+   "File:NDL-DC 2542755-44 Kobayashi Kiyochika M3004 crd.jpg",
+   "File:NDL-DC 2542755-46 Kobayashi Kiyochika M3004.jpg",
+   "File:NDL-DC 2542755-46 Kobayashi Kiyochika M3004 crd.jpg",
+   "File:NDL-DC 2542755-48 Kobayashi Kiyochika M3004.jpg",
+   "File:NDL-DC 2542755-48 Kobayashi Kiyochika M3004 crd.jpg",
+   "File:NDL-DC 2542755-50 Kobayashi Kiyochika M30.jpg",
+   "File:NDL-DC 2542755-50 Kobayashi Kiyochika M30 crd.jpg",
+   "File:NDL-DC 2542755-52 Kobayashi Kiyochika M30.jpg",
+   "File:NDL-DC 2542755-52 Kobayashi Kiyochika M30 crd.jpg",
+   "File:NDL-DC 2542755-54 Kobayashi Kiyochika M3002.jpg",
+   "File:NDL-DC 2542755-54 Kobayashi Kiyochika M3002 crd.jpg",
+   "File:NDL-DC 2542755-56 Kobayashi Kiyochika M3002.jpg",
+   "File:NDL-DC 2542755-56 Kobayashi Kiyochika M3002 crd.jpg",
+   "File:Navy Commander Hirose Takeo by Kobayashi Kiyochika.jpg",
+   "File:O'Fuko throwing beans for good luck and to drive the girls away on New Years Eve LCCN2009630466.jpg",
+   "File:O'Fuko throwing beans for good luck and to drive the girls away on New Years Eve LCCN2009630466.tif",
+   "File:ORB.99-230 (ORB40-1008)-The Battle at Jinzhoucheng on the way to Port Arthur.jpg",
+   "File:Okame leading the deer of Jurojin by Kobayashi Kiyochika, c. 1905-1910.jpg",
+   "File:Old man carrying a flag is leading a group of male citizens in a procession at night LCCN2008660177.jpg",
+   "File:Old man carrying a flag is leading a group of male citizens in a procession at night LCCN2008660177.tif",
+   "File:Raijin, the God of Thunder, frightens the Russians out of Tokuriji (near Nanshan) LCCN2009630471.jpg",
+   "File:Raijin, the God of Thunder, frightens the Russians out of Tokuriji (near Nanshan) LCCN2009630471.tif",
+   "File:Rainy Day at Ochanomizu, Tokyo.jpg",
+   "File:Regimentscommandant Kumamoto Masaji van de Eerste Keizerlijke Wacht-Rijksmuseum RP-P-2010-310-73.jpeg",
+   "File:Rokoku no senji kannon LCCN2009630335.jpg",
+   "File:Rokoku no senji kannon LCCN2009630335.tif",
+   "File:Rooster and hen - Kobayashi Kiyochika.jpg",
+   "File:Russian General Kuropatkin in a sack LCCN2009630334.jpg",
+   "File:Russian General Kuropatkin in a sack LCCN2009630334.tif",
+   "File:Russian admiral has but one leg to stand on LCCN2008660193.jpg",
+   "File:Russian admiral has but one leg to stand on LCCN2008660193.tif",
+   "File:Russian battleship casualties LCCN2009630333.jpg",
+   "File:Russian battleship casualties LCCN2009630333.tif",
+   "File:Russian general, possibly meant to be A.N. Kuropatkin, holding sword in raised right hand while doctors and a nurse tend to wounds in his left arm LCCN2009630490.jpg",
+   "File:Russian general, possibly meant to be A.N. Kuropatkin, holding sword in raised right hand while doctors and a nurse tend to wounds in his left arm LCCN2009630490.tif",
+   "File:Russian o'shishi (acrobatic street dancer) master entertains the children of Japan LCCN2009630467.jpg",
+   "File:Russian o'shishi (acrobatic street dancer) master entertains the children of Japan LCCN2009630467.tif",
+   "File:Russian sailors making cannon balls for their battleship's guns LCCN2009630330.jpg",
+   "File:Russian sailors making cannon balls for their battleship's guns LCCN2009630330.tif",
+   "File:Russian soldier on horseback, carrying a sword in right hand, a spear in left hand, and a rifle mounted on his chest with a string extending from the trigger to his mouth LCCN2009631602.jpg",
+   "File:Russian soldier on horseback, carrying a sword in right hand, a spear in left hand, and a rifle mounted on his chest with a string extending from the trigger to his mouth LCCN2009631602.tif",
+   "File:Russian soldier shows white flag plainly to Japanese army \"oh! say can you see?\" LCCN2009630470.jpg",
+   "File:Russian soldier shows white flag plainly to Japanese army \"oh! say can you see?\" LCCN2009630470.tif",
+   "File:Russian soldiers frightened by toy figures of Japanese soldiers hanging by strings LCCN2009631601.jpg",
+   "File:Russian soldiers frightened by toy figures of Japanese soldiers hanging by strings LCCN2009631601.tif",
+   "File:Satta Pass on the Tokaido LACMA M.71.100.70.jpg",
+   "File:Shakkyō no shinikyōgen LCCN2009615028.jpg",
+   "File:Shinkyo, Sacred Bridge at Nikko LACMA M.71.100.94.jpg",
+   "File:Sign board says, \"Do not climb this tree\" (black pine tree) LCCN2008660184.jpg",
+   "File:Sign board says, \"Do not climb this tree\" (black pine tree) LCCN2008660184.tif",
+   "File:Sina kurofune nihon shirofune - buta no taibyō LCCN2009615026.jpg",
+   "File:Stinging power LCCN2009630461.jpg",
+   "File:Stinging power LCCN2009630461.tif",
+   "File:Sumida River LACMA M.71.100.99.jpg",
+   "File:Tagonoura, near Fuji LACMA M.71.100.92.jpg",
+   "File:Tako no asirai LCCN2009615031.jpg",
+   "File:Tako no asirai LCCN2009615031.tif",
+   "File:Tehidoi tsubushigata LCCN2002700078.jpg",
+   "File:Tehidoi tsubushigata LCCN2002700078.tif",
+   "File:The Bridge Tsutenkyo, Kyoto LACMA M.71.100.86 (2 of 2).jpg",
+   "File:The Czar sees his forces returning LCCN2008660178.jpg",
+   "File:The Czar sees his forces returning LCCN2008660178.tif",
+   "File:The Dancer Hotoke Gozen at Gioji LACMA M.71.100.58a-c (1 of 3).jpg",
+   "File:The Dancer Hotoke Gozen at Gioji LACMA M.71.100.58a-c (2 of 3).jpg",
+   "File:The Dancer Hotoke Gozen at Gioji LACMA M.71.100.58a-c (3 of 3).jpg",
+   "File:The Fall of Chinchow Fort LACMA M.83.41a-c.jpg",
+   "File:The Island Enoshima LACMA M.71.100.89.jpg",
+   "File:The Labor world first issue 1897.jpg",
+   "File:The Russian generals very politely lay down their arms LCCN2009630465.jpg",
+   "File:The Russian generals very politely lay down their arms LCCN2009630465.tif",
+   "File:The Russians retreat north to land of snow and ice where Japanese cannot follow LCCN2009630332.jpg",
+   "File:The Russians retreat north to land of snow and ice where Japanese cannot follow LCCN2009630332.tif",
+   "File:The Yumoto Sulfur Spring, Nikko LACMA M.71.100.91.jpg",
+   "File:The army of the north melts away before the Rising Sun LCCN2008660175.jpg",
+   "File:The army of the north melts away before the Rising Sun LCCN2008660175.tif",
+   "File:Three lobster soldiers, two with picks chopping up the ground and the third is standing on the wall of a fort LCCN2009630495.jpg",
+   "File:Three lobster soldiers, two with picks chopping up the ground and the third is standing on the wall of a fort LCCN2009630495.tif",
+   "File:Tokugawa Yoshinobu organizing defenses at Osaka castle.jpg",
+   "File:Tsukuba Mountain Seen from Sakura River at Hitachi LACMA M.71.100.69.jpg",
+   "File:Two children wearing sailor outfits are playing with a balloon tethered to a Russian battleship, the balloon has burst revealing the head of a Russian admiral or czar and the battleship has LCCN2009630485.jpg",
+   "File:Two children wearing sailor outfits are playing with a balloon tethered to a Russian battleship, the balloon has burst revealing the head of a Russian admiral or czar and the battleship has LCCN2009630485.tif",
+   "File:Urami Waterfall LACMA M.71.100.61.jpg",
+   "File:View of Fuji from the Coast of Kiyomigata LACMA M.71.100.60.jpg",
+   "File:Yamamairi makenu kijō.jpg",
+   "File:Yomeimon Gate at Nikko Toshogu Shrine LACMA M.71.100.85.jpg",
+   "File:凱旋新橋ステーション御着之図-Illustration of the Arrival of the Emperor at Shinbashi Station Following a Victory (Gaisen Shinbashi stēshon gochaku no zu) MET DP147664.jpg",
+   "File:参謀本部行啓之図-Illustration of the Empress Visiting the General Staff Headquarters -to present a tray of bandages- (Sanbō honbu gyōkei no zu) MET DP147674.jpg",
+   "File:威海衛進軍配置之図 - 小林清新 - btv1b53087272n.jpg",
+   "File:小林清親筆 頼豪阿闍梨-The Fury of Monk Raigō MET DP-14063-021.jpg",
+   "File:小林清親筆 頼豪阿闍梨-The Fury of Monk Raigō MET DP-14063-022.jpg",
+   "File:小林清親筆 頼豪阿闍梨-The Fury of Monk Raigō MET LC-TR 84ab 2017 sr1-012.jpg",
+   "File:小林清親筆 頼豪阿闍梨-The Fury of Monk Raigō MET LC-TR 84ab 2017 sr1-015.jpg",
+   "File:我軍歩兵之一部隊を以て鳳凰城を占領す - 小林清新 - btv1b530872968 (1 of 2).jpg",
+   "File:我軍歩兵之一部隊を以て鳳凰城を占領す - 小林清新 - btv1b530872968 (2 of 2).jpg",
+   "File:野戦病院行幸之図-Illustration of the Empress Visiting a Field Hospital -in Hiroshima- (Yasen byōin gyōkō no zu) MET DP147684.jpg",
+   "File:金州城示安門陥落之図 - 小林清新 - btv1b530872716.jpg"
+  ],
+  "excluded": [
+   "File:16126.d.2(26)-\"Long Live Japan- One Hundred Victories, One Hundred Laughs\"- Beware ! Beware!.jpg",
+   "File:1881 fire in Japanese art - De vuurzee gezien vanuit de wijk Hisamatsu Hisamatsucho yori miru shukka (titel op object), RP-P-1988-281 (cropped).jpg",
+   "File:A Russian officer sitting at a table is about to eat, but a Japanese soldier is taking the meal away, indicating a Japanese victory over Russian forces LCCN2009630492.jpg",
+   "File:A Russian officer sitting at a table is about to eat, but a Japanese soldier is taking the meal away, indicating a Japanese victory over Russian forces LCCN2009630492.tif",
+   "File:A Russian woman is having a nightmare showing disasterous defeats of the Russian army and navy on all fronts in the war against Japan; she is being attended to by a doctor who is taking her LCCN2009630493.jpg",
+   "File:A Russian woman is having a nightmare showing disasterous defeats of the Russian army and navy on all fronts in the war against Japan; she is being attended to by a doctor who is taking her LCCN2009630493.tif",
+   "File:A scheme to save the Russian fleet when Japanese torpedo boats come LCCN2008660173.jpg",
+   "File:A scheme to save the Russian fleet when Japanese torpedo boats come LCCN2008660173.tif",
+   "File:A strange visitor brings a war telegram to the Czar LCCN2008660183.jpg",
+   "File:A strange visitor brings a war telegram to the Czar LCCN2008660183.tif",
+   "File:Afbeeldingen van beroemde plaatsen in Tokyo- compleet-Rijksmuseum RP-P-OB-102.050.jpeg",
+   "File:Afbeeldingen van beroemde plaatsen in Tokyo- compleet Tokyo meisho zu - zen (titel op object), RP-P-OB-102.050.jpg",
+   "File:Battle of Nanshan.jpg",
+   "File:Battle of Phungdo.jpg",
+   "File:Benten Shrine at Ikenohata (5759501732).jpg",
+   "File:Canvas and Cats LACMA M.71.100.66.jpg",
+   "File:Cat and Lantern.jpg",
+   "File:De Komoro rivier bij Tennoji, RP-P-1988-282.jpg",
+   "File:De Komoro rivier bij Tennoji-Rijksmuseum RP-P-1988-282.jpeg",
+   "File:De heftige slag bij Asan, aanval via de Ansung rivier Gazan gekisen Anjô no watashi shingeki no zu, RP-P-2010-310-7.jpg",
+   "File:De kapitein-luitenant ter zee Takeo Hirose Kaigun chusa Hirose Takeo kun (titel op object), RP-P-1983-163.jpg",
+   "File:De kou trotserend, zetten onze troepen bivak op te Yingkou. Eiko no genkan o okashite waga gun roei o haru no zu (titel op object), RP-P-1989-177.jpg",
+   "File:De maan bij Shinagawa-Rijksmuseum RP-P-1983-102.jpeg",
+   "File:De maan bij Shinagawa Shinagawa mikoshi no tsuki (titel op object) Honderd gezichten op de provincie Musashi (serietitel) Musashi hyakkei no uchi (serietitel op object), RP-P-1983-102.jpg",
+   "File:De vuurzee gezien vanuit de wijk Hisamatsu Hisamatsucho yori miru shukka (titel op object), RP-P-1988-281.jpg",
+   "File:Een elektrisch zoeklicht gebruiken bij de aanval op Pyongyang-Rijksmuseum RP-P-2010-310-14.jpeg",
+   "File:Een elektrisch zoeklicht gebruiken bij de aanval op Pyongyang Heijô kôgeki denki shiyô no zu, RP-P-2010-310-14.jpg",
+   "File:Electrified Manchurian.jpg",
+   "File:Gezicht op Matsuchiyama vanaf de Sumida rivier-Rijksmuseum RP-P-1988-418.jpeg",
+   "File:Gezicht op Matsuchiyama vanaf de Sumida rivier Sumidagawa yori Matsuchiyama no enkei (titel op object) Honderd gezichten op de provincie Musashi (serietitel) Musashi hyakkei no uchi (serietitel op object), RP-P-1988-418.jpg",
+   "File:Gezicht op de Karasaki pijnboom terwijl Akechi Samanosuke Mitsuharu het meer overzwemt.-Rijksmuseum RP-P-1985-484.jpeg",
+   "File:Gezicht op de Karasaki pijnboom terwijl Akechi Samanosuke Mitsuharu het meer overzwemt. Akechi Samanosuke Mitsuharu kosui noriuchi Karasaki matsu no zu. (titel op object), RP-P-1985-484.jpg",
+   "File:Het Benten heiligdom te Ikenohata-Rijksmuseum RP-P-1988-277.jpeg",
+   "File:Het Benten heiligdom te Ikenohata De rand van de vijver bij het Benten heiligdom Ikenohata Benten (titel op object), RP-P-1988-277.jpg",
+   "File:Het Hakone heiligdom in de sneeuw-Rijksmuseum RP-P-1988-286.jpeg",
+   "File:Het Hakone heiligdom in de sneeuw Hakone jinja yuki (titel op object), RP-P-1988-286.jpg",
+   "File:Het Taro Inari heiligdom in de rijstvelden te Asakusa-Rijksmuseum RP-P-1988-279.jpeg",
+   "File:Het Taro Inari heiligdom in de rijstvelden te Asakusa Asakusa tanbo Taro Inari (titel op object), RP-P-1988-279.jpg",
+   "File:Het hart van de vallei te Tsukigase-Rijksmuseum RP-P-1989-217.jpeg",
+   "File:Het hart van de vallei te Tsukigase Tsukigase oku no tani (titel op object) Afbeeldingen van beroemde plekken in Japan (serietitel) Nihon meisho zue (serietitel op object), RP-P-1989-217.jpg",
+   "File:Hotoke bij de nonnen-Rijksmuseum RP-P-1986-9.jpeg",
+   "File:Hotoke bij de nonnen Hotoke (titel op object) Patronen uit het verleden (serietitel) Kodai moyo (serietitel op object), RP-P-1986-9.jpg",
+   "File:Hunter Spying Hawk, Kobayashi Kiyochika, c. 1878-1880, print - Jordan Schnitzer Museum of Art, University of Oregon - Eugene, Oregon - DSC09314.jpg",
+   "File:Hurrah for Japan.JPG",
+   "File:IWASHITA Kiyochika.jpg",
+   "File:Japan makes Russia disgorge her brave threats of days before the war LCCN2009630468.jpg",
+   "File:Japan makes Russia disgorge her brave threats of days before the war LCCN2009630468.tif",
+   "File:Japan splits the Russian torpedo fleet LCCN2008660174.jpg",
+   "File:Japan splits the Russian torpedo fleet LCCN2008660174.tif",
+   "File:Japanese soldiers in 1895 art - De kou trotserend, zetten onze troepen bivak op te Yingkou. Eiko no genkan o okashite waga gun roei o haru no zu (titel op object), RP-P-1989-177 (cropped).jpg",
+   "File:Kiyochika (1904) Nichiro Jinsenk-o kaisen dai Nihon kaigundaishōri Banzai.jpg",
+   "File:Kobayashi Kiyochika (1877) Neko to chouchin.jpg",
+   "File:Kobayashi Kiyochika (1881) Year-end Market at Sensōji temple.jpg",
+   "File:Kyodō risshi no motoi, Butsu Sorai.jpg",
+   "File:Kyodō risshi no motoi, Echizen Shōshō.jpg",
+   "File:Kyodō risshi no motoi, Hosokawa Yūsai.jpg",
+   "File:Kyodō risshi no motoi, Hōjō Yasutoki.jpg",
+   "File:Kyodō risshi no motoi, Kamitsukeno no Katana.jpg",
+   "File:Kyodō risshi no motoi, Kesa gozen.jpg",
+   "File:Kyodō risshi no motoi, Kikuchi Takemitsu.jpg",
+   "File:Kyodō risshi no motoi, Koshikibu no Naishi.jpg",
+   "File:Kyodō risshi no motoi, Minamoto no Yoshiie.jpg",
+   "File:Kyodō risshi no motoi, Oda Nobunaga.jpg",
+   "File:Kyodō risshi no motoi, Ono no Michikaze.jpg",
+   "File:Kyodō risshi no motoi, Satō Tsugunobu.jpg",
+   "File:Kyodō risshi no motoi, Sugawara no Michizane kō.jpg",
+   "File:Kyodō risshi no motoi, Tokugawa Takechiyo.jpg",
+   "File:Kyodō risshi no motoi, Uesugi Torachiyo.jpg",
+   "File:Kyōdō risshi no motoi, Hanawa Hokiichi by Kobayashi Kiyochika.jpg",
+   "File:Kyōdō risshi no motoi, Kesa gozen (new edition).jpg",
+   "File:Kyōdō risshi no motoi, Sugawara no Michizane kō.jpg",
+   "File:Kyōdō risshi no motoi, Sugawara no Michizane kō (new edition).jpg",
+   "File:Kyōdō risshi no motoi, Tokugawa Yoshinobu.jpg",
+   "File:Lang leve Japan! Overwinningslied bij Pyongyang-Rijksmuseum RP-P-2010-310-31.jpeg",
+   "File:Lang leve Japan Overwinningslied bij Pyongyang Nippon banzai, Heijô no gaika (titel op object), RP-P-2010-310-31.jpg",
+   "File:Matsuke Heikichi - Nihon banzai - Hyakusen hyakusho - Walters 95437.jpg",
+   "File:Matsuke Heikichi - Nihon banzai - Hyakusen hyakusho - Walters 95438.jpg",
+   "File:Matsuke Heikichi - Nihon banzai - Hyakusen hyakusho - Walters 95439.jpg",
+   "File:Matsuke Heikichi - Nihon banzai - Hyakusen hyakusho - Walters 95659.jpg",
+   "File:Matsuke Heikichi - Nihon banzai - Hyakusen hyakusho - Walters 95661.jpg",
+   "File:Moon Lit Night in Takanawa.jpg",
+   "File:Nachtelijke aanval van onze gewapende troepen op het Chinese kamp te Pyongyang.-Rijksmuseum RP-P-1983-154.jpeg",
+   "File:Nachtelijke aanval van onze gewapende troepen op het Chinese kamp te Pyongyang. Wagagun Heijo no seiei o osou (titel op object), RP-P-1983-154.jpg",
+   "File:Nachtelijke aanval van onze gewapende troepen op het Chinese kamp te Pyongyang. Wagagun Heijô no Shin'ei o osu, RP-P-2010-310-15.jpg",
+   "File:Occupation of the Pescadores by Kobayashi Kiyochika.jpg",
+   "File:Oden Takahashi.JPG",
+   "File:Onze elite troepen bezetten de Penghu-eilanden bij Taiwan-Rijksmuseum RP-P-1980-125.jpeg",
+   "File:Onze elite troepen bezetten de Penghu-eilanden bij Taiwan Seiei naru wagagun Taiwan Bokoto o senryo suru no zu (titel op object), RP-P-1980-125.jpg",
+   "File:Onze vloot brengt Chinese oorlogsschepen tot zinken tijdens de slag in de Gele Zee.-Rijksmuseum RP-P-1983-153.jpeg",
+   "File:Onze vloot brengt Chinese oorlogsschepen tot zinken tijdens de slag in de Gele Zee. Waga kantai o kokai ni shinkan o uchi shizumeru zu. (titel op object), RP-P-1983-153.jpg",
+   "File:Portrait of Takahashi Oden LACMA M.71.100.46.jpg",
+   "File:Portrait of Three Geisha- Kayo of Kyoto, Ikkaku of Osaka, and Kokichi of Tokyo LACMA M.71.100.47.jpg",
+   "File:Portret van de overleden minister Okubo Toshimichi., RP-P-1999-70.jpg",
+   "File:Recueil. Album Cent victoires cent rires. Travaux graphiques - (Dessins de Kiyochika Kobayachi) ; (Textes de Takeki Nishimori) - btv1b10105050q (01 of 39).jpg",
+   "File:Recueil. Album Cent victoires cent rires. Travaux graphiques - (Dessins de Kiyochika Kobayachi) ; (Textes de Takeki Nishimori) - btv1b10105050q (02 of 39).jpg",
+   "File:Recueil. Album Cent victoires cent rires. Travaux graphiques - (Dessins de Kiyochika Kobayachi) ; (Textes de Takeki Nishimori) - btv1b10105050q (03 of 39).jpg",
+   "File:Recueil. Album Cent victoires cent rires. Travaux graphiques - (Dessins de Kiyochika Kobayachi) ; (Textes de Takeki Nishimori) - btv1b10105050q (04 of 39).jpg",
+   "File:Recueil. Album Cent victoires cent rires. Travaux graphiques - (Dessins de Kiyochika Kobayachi) ; (Textes de Takeki Nishimori) - btv1b10105050q (05 of 39).jpg",
+   "File:Recueil. Album Cent victoires cent rires. Travaux graphiques - (Dessins de Kiyochika Kobayachi) ; (Textes de Takeki Nishimori) - btv1b10105050q (06 of 39).jpg",
+   "File:Recueil. Album Cent victoires cent rires. Travaux graphiques - (Dessins de Kiyochika Kobayachi) ; (Textes de Takeki Nishimori) - btv1b10105050q (07 of 39).jpg",
+   "File:Recueil. Album Cent victoires cent rires. Travaux graphiques - (Dessins de Kiyochika Kobayachi) ; (Textes de Takeki Nishimori) - btv1b10105050q (08 of 39).jpg",
+   "File:Recueil. Album Cent victoires cent rires. Travaux graphiques - (Dessins de Kiyochika Kobayachi) ; (Textes de Takeki Nishimori) - btv1b10105050q (09 of 39).jpg",
+   "File:Recueil. Album Cent victoires cent rires. Travaux graphiques - (Dessins de Kiyochika Kobayachi) ; (Textes de Takeki Nishimori) - btv1b10105050q (10 of 39).jpg",
+   "File:Recueil. Album Cent victoires cent rires. Travaux graphiques - (Dessins de Kiyochika Kobayachi) ; (Textes de Takeki Nishimori) - btv1b10105050q (11 of 39).jpg",
+   "File:Recueil. Album Cent victoires cent rires. Travaux graphiques - (Dessins de Kiyochika Kobayachi) ; (Textes de Takeki Nishimori) - btv1b10105050q (12 of 39).jpg",
+   "File:Recueil. Album Cent victoires cent rires. Travaux graphiques - (Dessins de Kiyochika Kobayachi) ; (Textes de Takeki Nishimori) - btv1b10105050q (13 of 39).jpg",
+   "File:Recueil. Album Cent victoires cent rires. Travaux graphiques - (Dessins de Kiyochika Kobayachi) ; (Textes de Takeki Nishimori) - btv1b10105050q (14 of 39).jpg",
+   "File:Recueil. Album Cent victoires cent rires. Travaux graphiques - (Dessins de Kiyochika Kobayachi) ; (Textes de Takeki Nishimori) - btv1b10105050q (15 of 39).jpg",
+   "File:Recueil. Album Cent victoires cent rires. Travaux graphiques - (Dessins de Kiyochika Kobayachi) ; (Textes de Takeki Nishimori) - btv1b10105050q (16 of 39).jpg",
+   "File:Recueil. Album Cent victoires cent rires. Travaux graphiques - (Dessins de Kiyochika Kobayachi) ; (Textes de Takeki Nishimori) - btv1b10105050q (17 of 39).jpg",
+   "File:Recueil. Album Cent victoires cent rires. Travaux graphiques - (Dessins de Kiyochika Kobayachi) ; (Textes de Takeki Nishimori) - btv1b10105050q (18 of 39).jpg",
+   "File:Recueil. Album Cent victoires cent rires. Travaux graphiques - (Dessins de Kiyochika Kobayachi) ; (Textes de Takeki Nishimori) - btv1b10105050q (19 of 39).jpg",
+   "File:Recueil. Album Cent victoires cent rires. Travaux graphiques - (Dessins de Kiyochika Kobayachi) ; (Textes de Takeki Nishimori) - btv1b10105050q (20 of 39).jpg",
+   "File:Recueil. Album Cent victoires cent rires. Travaux graphiques - (Dessins de Kiyochika Kobayachi) ; (Textes de Takeki Nishimori) - btv1b10105050q (21 of 39).jpg",
+   "File:Recueil. Album Cent victoires cent rires. Travaux graphiques - (Dessins de Kiyochika Kobayachi) ; (Textes de Takeki Nishimori) - btv1b10105050q (22 of 39).jpg",
+   "File:Recueil. Album Cent victoires cent rires. Travaux graphiques - (Dessins de Kiyochika Kobayachi) ; (Textes de Takeki Nishimori) - btv1b10105050q (23 of 39).jpg",
+   "File:Recueil. Album Cent victoires cent rires. Travaux graphiques - (Dessins de Kiyochika Kobayachi) ; (Textes de Takeki Nishimori) - btv1b10105050q (24 of 39).jpg",
+   "File:Recueil. Album Cent victoires cent rires. Travaux graphiques - (Dessins de Kiyochika Kobayachi) ; (Textes de Takeki Nishimori) - btv1b10105050q (25 of 39).jpg",
+   "File:Recueil. Album Cent victoires cent rires. Travaux graphiques - (Dessins de Kiyochika Kobayachi) ; (Textes de Takeki Nishimori) - btv1b10105050q (26 of 39).jpg",
+   "File:Recueil. Album Cent victoires cent rires. Travaux graphiques - (Dessins de Kiyochika Kobayachi) ; (Textes de Takeki Nishimori) - btv1b10105050q (27 of 39).jpg",
+   "File:Recueil. Album Cent victoires cent rires. Travaux graphiques - (Dessins de Kiyochika Kobayachi) ; (Textes de Takeki Nishimori) - btv1b10105050q (28 of 39).jpg",
+   "File:Recueil. Album Cent victoires cent rires. Travaux graphiques - (Dessins de Kiyochika Kobayachi) ; (Textes de Takeki Nishimori) - btv1b10105050q (29 of 39).jpg",
+   "File:Recueil. Album Cent victoires cent rires. Travaux graphiques - (Dessins de Kiyochika Kobayachi) ; (Textes de Takeki Nishimori) - btv1b10105050q (30 of 39).jpg",
+   "File:Recueil. Album Cent victoires cent rires. Travaux graphiques - (Dessins de Kiyochika Kobayachi) ; (Textes de Takeki Nishimori) - btv1b10105050q (31 of 39).jpg",
+   "File:Recueil. Album Cent victoires cent rires. Travaux graphiques - (Dessins de Kiyochika Kobayachi) ; (Textes de Takeki Nishimori) - btv1b10105050q (32 of 39).jpg",
+   "File:Recueil. Album Cent victoires cent rires. Travaux graphiques - (Dessins de Kiyochika Kobayachi) ; (Textes de Takeki Nishimori) - btv1b10105050q (33 of 39).jpg",
+   "File:Recueil. Album Cent victoires cent rires. Travaux graphiques - (Dessins de Kiyochika Kobayachi) ; (Textes de Takeki Nishimori) - btv1b10105050q (34 of 39).jpg",
+   "File:Recueil. Album Cent victoires cent rires. Travaux graphiques - (Dessins de Kiyochika Kobayachi) ; (Textes de Takeki Nishimori) - btv1b10105050q (35 of 39).jpg",
+   "File:Recueil. Album Cent victoires cent rires. Travaux graphiques - (Dessins de Kiyochika Kobayachi) ; (Textes de Takeki Nishimori) - btv1b10105050q (36 of 39).jpg",
+   "File:Recueil. Album Cent victoires cent rires. Travaux graphiques - (Dessins de Kiyochika Kobayachi) ; (Textes de Takeki Nishimori) - btv1b10105050q (37 of 39).jpg",
+   "File:Recueil. Album Cent victoires cent rires. Travaux graphiques - (Dessins de Kiyochika Kobayachi) ; (Textes de Takeki Nishimori) - btv1b10105050q (38 of 39).jpg",
+   "File:Recueil. Album Cent victoires cent rires. Travaux graphiques - (Dessins de Kiyochika Kobayachi) ; (Textes de Takeki Nishimori) - btv1b10105050q (39 of 39).jpg",
+   "File:Regen te Sanmaibashi in Hakone Hakone Sanmaibashi ame (titel op object), RP-P-1988-285.jpg",
+   "File:Regimentscommandant Kumamoto Masaji van de Eerste Keizerlijke Wacht Konoe hôhei taisa rentaichô Kumamoto Masaji (titel op object), RP-P-2010-310-73.jpg",
+   "File:Sarubashi-Rijksmuseum RP-P-1989-308.jpeg",
+   "File:Sarubashi (titel op object) Afbeeldingen van beroemde plekken in Japan (serietitel) Nihon meisho zue (serietitel op object), RP-P-1989-308.jpg",
+   "File:Schemersneeuw te Matsuchiyama-Rijksmuseum RP-P-1968-273.jpeg",
+   "File:Schemersneeuw te Matsuchiyama Nieuwe gezichten op beroemde plekken in Tokyo (serietitel) Tokyo meisho shinkei no uchi (serietitel), RP-P-1968-273.jpg",
+   "File:Self-portrait by Taguchi Beisaku.jpg",
+   "File:Sneeuw te Ochanomizu-Rijksmuseum RP-P-1988-283.jpeg",
+   "File:Sneeuw te Ochanomizu Chanomizu yuki (titel op object), RP-P-1988-283.jpg",
+   "File:Sneeuwlandschap bij Hikifune in Koume-Rijksmuseum RP-P-1988-280.jpeg",
+   "File:Sneeuwlandschap bij Hikifune in Koume Koume Hikifunedo sekkei (titel op object), RP-P-1988-280.jpg",
+   "File:Snowy Morning at Koishikawa (5758988303).jpg",
+   "File:Straatartiest uit Edo-Rijksmuseum RP-P-1989-220.jpeg",
+   "File:Straatartiest uit Edo Edo no kenba (titel op object) Honderd gezichten op de provincie Musashi (serietitel) Musashi hyakkei no uchi (serietitel op object), RP-P-1989-220.jpg",
+   "File:Such mild news comes from the war that Nicholas says, \"I will go to the front. Where shall I go?\" \"To Harbin, Little Father\" LCCN2008661269.jpg",
+   "File:Such mild news comes from the war that Nicholas says, \"I will go to the front. Where shall I go?\" \"To Harbin, Little Father\" LCCN2008661269.tif",
+   "File:Sugawara Michizane in Exile by Kobayashi Kiyochika.jpg",
+   "File:Suijin bos aan de rivier de Sumida-Rijksmuseum RP-P-2008-204.jpeg",
+   "File:Suijin bos aan de rivier de Sumida Sumidagawa Suijin mori (titel op object) Honderd gezichten op de provincie Musashi (serietitel) Musashi hyakkei no uchi (serietitel op object), RP-P-2008-204.jpg",
+   "File:Taira no Tadanori onder een kersenboom, RP-P-1989-176.jpg",
+   "File:Taira no Tadanori onder een kersenboom-Rijksmuseum RP-P-1989-176.jpeg",
+   "File:The Japanese torpedo boat delivers a knock-out blow to Russian man-of-war LCCN2009630474.jpg",
+   "File:The Japanese torpedo boat delivers a knock-out blow to Russian man-of-war LCCN2009630474.tif",
+   "File:The Mukōjima embankment; a street vendor sells articles Wellcome V0047316.jpg",
+   "File:Tijger en bliksem, RP-P-2004-341.jpg",
+   "File:Tijger en bliksem-Rijksmuseum RP-P-2004-341.jpeg",
+   "File:Uitzicht op de Fuji in de Hakone bergen, RP-P-1988-284.jpg",
+   "File:Urban fires in 1881 Japanese art - De vuurzee gezien vanuit de wijk Hisamatsu Hisamatsucho yori miru shukka (titel op object), RP-P-1988-281 (cropped).jpg",
+   "File:Vuurwerk te Ikenohata Vuurwerk aan de rand van de vijver Ikenohata hanabi (titel op object), RP-P-1988-278.jpg",
+   "File:Waga kantai Kôkai ni oite Shinkan gekichin no zu.png",
+   "File:Warrior Taira-no-Tadanori about to Sleep under a Cherry Tree LACMA M.71.100.56a-c (1 of 3).jpg",
+   "File:Warrior Taira-no-Tadanori about to Sleep under a Cherry Tree LACMA M.71.100.56a-c (2 of 3).jpg",
+   "File:Warrior Taira-no-Tadanori about to Sleep under a Cherry Tree LACMA M.71.100.56a-c (3 of 3).jpg",
+   "File:Weergave van klederdracht in alle landen, RP-P-2012-103-40-1.jpg",
+   "File:Weergave van klederdracht in alle landen, RP-P-2012-103-40-2.jpg",
+   "File:Weergave van klederdracht in alle landen, RP-P-2012-103-40-3.jpg",
+   "File:Weergave van klederdracht in alle landen Bankoku isho kagami (titel op object), RP-P-2012-103-40.jpg",
+   "File:朝鮮大戦争之図-Illustration of the Great Korean War (Chōsen dai sensō no zu) MET DP143110.jpg"
+  ],
+  "not-kiyochika": [
+   "File:Battle of the Yellow Sea by Korechika.jpg",
+   "File:British Museum - Room 94 (22994800616).jpg",
+   "File:Hana moyo (Flower Designs) (BM 1906,1220,0.1636.1-3).jpg",
+   "File:Hana moyo (Flower Designs) (BM 1906,1220,0.1636.1-3 1).jpg",
+   "File:Hana moyo (Flower Designs) (BM 1906,1220,0.1636.1-3 2).jpg",
+   "File:Hana moyo (Flower Designs) (BM 1906,1220,0.1636.1-3 3).jpg",
+   "File:Hana moyo (Flower Designs) (BM 1906,1220,0.1636.1-3 4).jpg",
+   "File:Hana moyo (Flower Designs) (BM 1906,1220,0.1641.1-3).jpg",
+   "File:Hana moyo (Flower Designs) (BM 1906,1220,0.1641.1-3 1).jpg",
+   "File:Hana moyo (Flower Designs) (BM 1906,1220,0.1641.1-3 2).jpg",
+   "File:Hana moyo (Flower Designs) (BM 1906,1220,0.1641.1-3 3).jpg",
+   "File:Hana moyo (Flower Designs) (BM 1906,1220,0.1641.1-3 4).jpg",
+   "File:Imado ariake takadono no kei 今戸有明楼の景 (View of Houses of Entertainment in Imado at Dawn) (BM 1954,0410,0.17).jpg",
+   "File:Manya Sonbei - Tokyo meisho sanjuroku gisen - Walters 95670.jpg",
+   "File:NDL-DC 1312586-Utagawa Hirokage-明治十歳鹿児嶋征討図-明治10-cmb.jpg",
+   "File:NDL-DC 1312586 01-Utagawa Hirokage-明治十歳鹿児嶋征討図-明治10-crd.jpg",
+   "File:NDL-DC 1312586 02-Utagawa Hirokage-明治十歳鹿児嶋征討図-明治10-crd.jpg",
+   "File:NDL-DC 1312586 03-Utagawa Hirokage-明治十歳鹿児嶋征討図-明治10-crd.jpg",
+   "File:NDL-DC 1312586 04-Utagawa Hirokage-明治十歳鹿児嶋征討図-明治10-crd.jpg",
+   "File:NDL-DC 1312586 05-Utagawa Hirokage-明治十歳鹿児嶋征討図-明治10-crd.jpg",
+   "File:Sailor and officer in 1894 art detail, Battle of the Yellow Sea by Korechika (cropped).jpg",
+   "File:Sailor gun crew in 1894 art detail, Battle of the Yellow Sea by Korechika (cropped).jpg",
+   "File:Sinking of the Petropavlovsk.jpg",
+   "File:Tōkyō kaika meishō.jpg",
+   "File:Японские солдаты банзай.jpg"
+  ],
+  "unplaced": [
+   "File:Ducks and Withered Lotus LACMA M.73.37.464.jpg",
+   "File:Gas Lighting Performance.jpg",
+   "File:Gojō nai tsuribashi no zu LCCN2002700192.jpg",
+   "File:Kiyochika Iwashita.jpg",
+   "File:Kobayashi Kiyochika (1880) Sunshū mizuumi nichibotsu no Fuji.jpg",
+   "File:Koromo River below the Temple Tennoji LACMA M.73.37.465.jpg",
+   "File:KubotaKiyochika20140102.jpg",
+   "File:Kubota Kiyochika.jpg",
+   "File:MET DP123645.jpg",
+   "File:MET DP143146.jpg",
+   "File:MET DP148175.jpg",
+   "File:MET DP148182.jpg",
+   "File:Minamoto Yoshitsune Leaping from Boat to Boat LACMA AC1996.84.1.jpg",
+   "File:NDL-DC 1301654-Kobayashi Kiyochika-（美人図）-crd.jpg",
+   "File:NDL-DC 1301654-Kobayashi Kiyochika-（美人図）.jpg",
+   "File:NDL-DC 1301655-Kobayashi Kiyochika-（美人図）-crd.jpg",
+   "File:NDL-DC 1301655-Kobayashi Kiyochika-（美人図）.jpg",
+   "File:Navy Commander Hirose Takeo by Kobayashi Kiyochika Detail.jpg",
+   "File:Niwatori ni tombo by Kobayashi Kiyochika.jpg",
+   "File:P-3700 E0064960.jpg",
+   "File:P-3700 E0064961.jpg",
+   "File:People standing on a bridge in Edo as a rickshaw passes by. Wellcome V0047332.jpg",
+   "File:Persimmons and White-Eyes LACMA M.71.100.100.jpg",
+   "File:Portret van de overleden minister Okubo Toshimichi.-Rijksmuseum RP-P-1999-70.jpeg",
+   "File:Six renditions of an older boy; the normal countenance is in Wellcome V0047353.jpg",
+   "File:Sogo at the Ferry Landing--An Authentic View LACMA M.71.100.57a-c.jpg",
+   "File:Taira no Tadamori Captures the Priest of Mido LACMA M.71.100.45a-c.jpg",
+   "File:The Koromo River Below the Temple of Tennoji LACMA M.71.100.80.jpg",
+   "File:The Rear Side of Sanno from Akasaka Paulownia Field, from One Hundred Views of Musashi, Kobayashi Kiyochika, 1884, print - Jordan Schnitzer Museum of Art, University of Oregon - Eugene, Oregon - DSC09394.jpg",
+   "File:Tiger and Lightning LACMA M.71.100.44.jpg",
+   "File:Tiger and Lightning LACMA M.71.100.54.jpg",
+   "File:Yamauchi Katsutoyo and his wife.jpg",
+   "File:『万国衣装鑑』-Mirror of National Costumes of All Nations (Bankoku ishō kagami) MET DP148176.jpg"
+  ],
+  "outside-tokyo": [
+   "File:Kobayashi Kiyochika, Hakone Sokokura Yumoto. The bridge at Sokokura hot spring, 1881.jpg",
+   "File:Lake View against Mount Fuji from Suruga by Kobayashi Kiyochika, c. 1881, Honolulu Museum of Art.jpg",
+   "File:MET DP147698.jpg",
+   "File:Mt. Fuji from Satta, Sketched at 9-00 a.m. in Mid-January, 1881 LACMA M.71.100.48.jpg",
+   "File:Mt. Fuji from Satta, Sketched at 9-00 a.m. in Mid-January, 1881 LACMA M.71.100.72.jpg",
+   "File:Regen te Sanmaibashi in Hakone-Rijksmuseum RP-P-1988-285.jpeg",
+   "File:Sweet Sake House at the Foot of Mt. Hakone, 6-00 p.m. on a Spring Day, 1881 LACMA M.71.100.67.jpg",
+   "File:View of Mount Fuji from the Hakone Mountains by Kobayashi Kiyochika, 1878, Honolulu Museum of Art.jpg"
+  ]
+ }
+}

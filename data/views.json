@@ -1,0 +1,4184 @@
+[
+  {
+    "id": 1,
+    "title": {
+      "ja": "東京銀座街日報社",
+      "romaji": null,
+      "en": null
+    },
+    "attribution": "kiyochika",
+    "include": true,
+    "exclude_reason": null,
+    "published": "1876-08-21",
+    "published_confidence": "exact",
+    "viewpoint": {
+      "lat": null,
+      "lng": null,
+      "confidence": "unknown"
+    },
+    "subject": {
+      "lat": 35.672097,
+      "lng": 139.764254
+    },
+    "bearing": null,
+    "place": {
+      "meiji_ku": null,
+      "modern_ward": null,
+      "modern_landmark": null,
+      "anchor": {
+        "how": "osm-cluster×4",
+        "name": "銀座",
+        "osm": "node/6271990033",
+        "kind": "station",
+        "confidence": "district"
+      }
+    },
+    "conditions": {
+      "time_of_day": null
+    },
+    "notes": {
+      "geo": null,
+      "commentary": null
+    },
+    "source": {
+      "institution": "国立国会図書館デジタルコレクション",
+      "item": "清親畫帖",
+      "call_number": "寄別1-9-2-3",
+      "pid": 2605147,
+      "page": 4,
+      "manifest": "https://www.dl.ndl.go.jp/api/iiif/2605147/manifest.json",
+      "image_url": "https://dl.ndl.go.jp/api/iiif/2605147/R0000004/full/full,/0/default.jpg",
+      "license": "Public domain",
+      "commons_file": null
+    }
+  },
+  {
+    "id": 2,
+    "title": {
+      "ja": "二重橋前乗馬圖",
+      "romaji": null,
+      "en": null
+    },
+    "attribution": "kiyochika",
+    "include": true,
+    "exclude_reason": null,
+    "published": null,
+    "published_confidence": null,
+    "viewpoint": {
+      "lat": null,
+      "lng": null,
+      "confidence": "unknown"
+    },
+    "subject": {
+      "lat": 35.68,
+      "lng": 139.75333
+    },
+    "bearing": null,
+    "place": {
+      "meiji_ku": null,
+      "modern_ward": null,
+      "modern_landmark": null,
+      "anchor": {
+        "how": "manual",
+        "name": "二重橋",
+        "source": "wikidata:Q17211768",
+        "confidence": "wikidata"
+      }
+    },
+    "conditions": {
+      "time_of_day": null
+    },
+    "notes": {
+      "geo": "題名即地名。Wikidata「二重橋」（皇居内の橋）。OSM 另有 way/43933152『皇居正門鉄橋「二重橋」』在 139.7536，兩者相距 20m。",
+      "commentary": null
+    },
+    "source": {
+      "institution": "国立国会図書館デジタルコレクション",
+      "item": "清親畫帖",
+      "call_number": "寄別1-9-2-3",
+      "pid": 2605147,
+      "page": 6,
+      "manifest": "https://www.dl.ndl.go.jp/api/iiif/2605147/manifest.json",
+      "image_url": "https://dl.ndl.go.jp/api/iiif/2605147/R0000006/full/full,/0/default.jpg",
+      "license": "Public domain",
+      "commons_file": null
+    }
+  },
+  {
+    "id": 3,
+    "title": {
+      "ja": "東京橋場渡黄昏景",
+      "romaji": null,
+      "en": null
+    },
+    "attribution": "kiyochika",
+    "include": true,
+    "exclude_reason": null,
+    "published": null,
+    "published_confidence": null,
+    "viewpoint": {
+      "lat": null,
+      "lng": null,
+      "confidence": "unknown"
+    },
+    "subject": {
+      "lat": 35.725733,
+      "lng": 139.80674
+    },
+    "bearing": null,
+    "place": {
+      "meiji_ku": null,
+      "modern_ward": null,
+      "modern_landmark": null,
+      "anchor": {
+        "how": "osm",
+        "name": "橋場",
+        "osm": "node/12582191631",
+        "kind": "place",
+        "confidence": "district"
+      }
+    },
+    "conditions": {
+      "time_of_day": null
+    },
+    "notes": {
+      "geo": null,
+      "commentary": null
+    },
+    "source": {
+      "institution": "国立国会図書館デジタルコレクション",
+      "item": "清親畫帖",
+      "call_number": "寄別1-9-2-3",
+      "pid": 2605147,
+      "page": 8,
+      "manifest": "https://www.dl.ndl.go.jp/api/iiif/2605147/manifest.json",
+      "image_url": "https://dl.ndl.go.jp/api/iiif/2605147/R0000008/full/full,/0/default.jpg",
+      "license": "Public domain",
+      "commons_file": null
+    }
+  },
+  {
+    "id": 4,
+    "title": {
+      "ja": "海運橋（第一銀行雪）",
+      "romaji": null,
+      "en": null
+    },
+    "attribution": "kiyochika",
+    "include": true,
+    "exclude_reason": null,
+    "published": null,
+    "published_confidence": null,
+    "viewpoint": {
+      "lat": null,
+      "lng": null,
+      "confidence": "unknown"
+    },
+    "subject": {
+      "lat": 35.682222,
+      "lng": 139.777627
+    },
+    "bearing": null,
+    "place": {
+      "meiji_ku": null,
+      "modern_ward": null,
+      "modern_landmark": null,
+      "anchor": {
+        "how": "osm",
+        "name": "海運橋",
+        "osm": "node/6155692899",
+        "kind": "historic",
+        "confidence": "osm"
+      }
+    },
+    "conditions": {
+      "time_of_day": null
+    },
+    "notes": {
+      "geo": null,
+      "commentary": null
+    },
+    "source": {
+      "institution": "国立国会図書館デジタルコレクション",
+      "item": "清親畫帖",
+      "call_number": "寄別1-9-2-3",
+      "pid": 2605147,
+      "page": 10,
+      "manifest": "https://www.dl.ndl.go.jp/api/iiif/2605147/manifest.json",
+      "image_url": "https://dl.ndl.go.jp/api/iiif/2605147/R0000010/full/full,/0/default.jpg",
+      "license": "Public domain",
+      "commons_file": null
+    }
+  },
+  {
+    "id": 5,
+    "title": {
+      "ja": "柳島日没",
+      "romaji": null,
+      "en": null
+    },
+    "attribution": "kiyochika",
+    "include": true,
+    "exclude_reason": null,
+    "published": null,
+    "published_confidence": null,
+    "viewpoint": {
+      "lat": null,
+      "lng": null,
+      "confidence": "unknown"
+    },
+    "subject": {
+      "lat": 35.7078,
+      "lng": 139.8187
+    },
+    "bearing": null,
+    "place": {
+      "meiji_ku": null,
+      "modern_ward": null,
+      "modern_landmark": null,
+      "anchor": {
+        "how": "manual",
+        "name": "柳島",
+        "source": "osm:way/956136641",
+        "confidence": "district"
+      }
+    },
+    "conditions": {
+      "time_of_day": null
+    },
+    "notes": {
+      "geo": "OSM 無「柳島」町名，取同名的柳島橋（北十間川）當那一帶的錨。⚠️ 只到街區級。",
+      "commentary": null
+    },
+    "source": {
+      "institution": "国立国会図書館デジタルコレクション",
+      "item": "清親畫帖",
+      "call_number": "寄別1-9-2-3",
+      "pid": 2605147,
+      "page": 12,
+      "manifest": "https://www.dl.ndl.go.jp/api/iiif/2605147/manifest.json",
+      "image_url": "https://dl.ndl.go.jp/api/iiif/2605147/R0000012/full/full,/0/default.jpg",
+      "license": "Public domain",
+      "commons_file": null
+    }
+  },
+  {
+    "id": 6,
+    "title": {
+      "ja": "上野公園画家写生図",
+      "romaji": null,
+      "en": null
+    },
+    "attribution": "kiyochika",
+    "include": true,
+    "exclude_reason": null,
+    "published": null,
+    "published_confidence": null,
+    "viewpoint": {
+      "lat": null,
+      "lng": null,
+      "confidence": "unknown"
+    },
+    "subject": {
+      "lat": 35.715309,
+      "lng": 139.773267
+    },
+    "bearing": null,
+    "place": {
+      "meiji_ku": null,
+      "modern_ward": null,
+      "modern_landmark": null,
+      "anchor": {
+        "how": "osm-cluster×2",
+        "name": "上野公園",
+        "osm": "relation/5413419",
+        "kind": "park",
+        "confidence": "osm"
+      }
+    },
+    "conditions": {
+      "time_of_day": null
+    },
+    "notes": {
+      "geo": null,
+      "commentary": null
+    },
+    "source": {
+      "institution": "国立国会図書館デジタルコレクション",
+      "item": "清親畫帖",
+      "call_number": "寄別1-9-2-3",
+      "pid": 2605147,
+      "page": 14,
+      "manifest": "https://www.dl.ndl.go.jp/api/iiif/2605147/manifest.json",
+      "image_url": "https://dl.ndl.go.jp/api/iiif/2605147/R0000014/full/full,/0/default.jpg",
+      "license": "Public domain",
+      "commons_file": null
+    }
+  },
+  {
+    "id": 7,
+    "title": {
+      "ja": "兩國雪中・元兩國廣小路",
+      "romaji": null,
+      "en": null
+    },
+    "attribution": "kiyochika",
+    "include": true,
+    "exclude_reason": null,
+    "published": null,
+    "published_confidence": null,
+    "viewpoint": {
+      "lat": null,
+      "lng": null,
+      "confidence": "unknown"
+    },
+    "subject": {
+      "lat": 35.696337,
+      "lng": 139.795198
+    },
+    "bearing": null,
+    "place": {
+      "meiji_ku": null,
+      "modern_ward": null,
+      "modern_landmark": null,
+      "anchor": {
+        "how": "osm-cluster×2",
+        "name": "両国",
+        "osm": "node/2558121937",
+        "kind": "station",
+        "confidence": "district"
+      }
+    },
+    "conditions": {
+      "time_of_day": null
+    },
+    "notes": {
+      "geo": null,
+      "commentary": null
+    },
+    "source": {
+      "institution": "国立国会図書館デジタルコレクション",
+      "item": "清親畫帖",
+      "call_number": "寄別1-9-2-3",
+      "pid": 2605147,
+      "page": 16,
+      "manifest": "https://www.dl.ndl.go.jp/api/iiif/2605147/manifest.json",
+      "image_url": "https://dl.ndl.go.jp/api/iiif/2605147/R0000016/full/full,/0/default.jpg",
+      "license": "Public domain",
+      "commons_file": null
+    }
+  },
+  {
+    "id": 8,
+    "title": {
+      "ja": "淺草田甫太郎稲荷",
+      "romaji": null,
+      "en": null
+    },
+    "attribution": "kiyochika",
+    "include": true,
+    "exclude_reason": null,
+    "published": null,
+    "published_confidence": "blank",
+    "viewpoint": {
+      "lat": null,
+      "lng": null,
+      "confidence": "unknown"
+    },
+    "subject": {
+      "lat": 35.712593,
+      "lng": 139.796546
+    },
+    "bearing": null,
+    "place": {
+      "meiji_ku": null,
+      "modern_ward": null,
+      "modern_landmark": null,
+      "anchor": {
+        "how": "osm-cluster×5",
+        "name": "浅草",
+        "osm": "node/3666779220",
+        "kind": "station",
+        "confidence": "district"
+      }
+    },
+    "conditions": {
+      "time_of_day": null
+    },
+    "notes": {
+      "geo": null,
+      "commentary": null
+    },
+    "source": {
+      "institution": "国立国会図書館デジタルコレクション",
+      "item": "清親畫帖",
+      "call_number": "寄別1-9-2-3",
+      "pid": 2605147,
+      "page": 18,
+      "manifest": "https://www.dl.ndl.go.jp/api/iiif/2605147/manifest.json",
+      "image_url": "https://dl.ndl.go.jp/api/iiif/2605147/R0000018/full/full,/0/default.jpg",
+      "license": "Public domain",
+      "commons_file": null
+    }
+  },
+  {
+    "id": 9,
+    "title": {
+      "ja": "梅若神社",
+      "romaji": null,
+      "en": null
+    },
+    "attribution": "kiyochika",
+    "include": true,
+    "exclude_reason": null,
+    "published": null,
+    "published_confidence": null,
+    "viewpoint": {
+      "lat": null,
+      "lng": null,
+      "confidence": "unknown"
+    },
+    "subject": {
+      "lat": 35.7338,
+      "lng": 139.8163
+    },
+    "bearing": null,
+    "place": {
+      "meiji_ku": null,
+      "modern_ward": null,
+      "modern_landmark": null,
+      "anchor": {
+        "how": "manual",
+        "name": "梅若",
+        "source": "osm:way/173704085",
+        "confidence": "district"
+      }
+    },
+    "conditions": {
+      "time_of_day": null
+    },
+    "notes": {
+      "geo": "梅若神社本體不在 OSM；取名字含「梅若」的梅若公園。旁證：Wikidata Q11519189 木母寺在其西 200m。⛔ 沒有把兩者等同起來，錨用的是名字對得上的那個。",
+      "commentary": null
+    },
+    "source": {
+      "institution": "国立国会図書館デジタルコレクション",
+      "item": "清親畫帖",
+      "call_number": "寄別1-9-2-3",
+      "pid": 2605147,
+      "page": 20,
+      "manifest": "https://www.dl.ndl.go.jp/api/iiif/2605147/manifest.json",
+      "image_url": "https://dl.ndl.go.jp/api/iiif/2605147/R0000020/full/full,/0/default.jpg",
+      "license": "Public domain",
+      "commons_file": null
+    }
+  },
+  {
+    "id": 10,
+    "title": {
+      "ja": "瀧の川の圖",
+      "romaji": null,
+      "en": null
+    },
+    "attribution": "kiyochika",
+    "include": true,
+    "exclude_reason": null,
+    "published": null,
+    "published_confidence": null,
+    "viewpoint": {
+      "lat": null,
+      "lng": null,
+      "confidence": "unknown"
+    },
+    "subject": {
+      "lat": 35.74841,
+      "lng": 139.72952
+    },
+    "bearing": null,
+    "place": {
+      "meiji_ku": null,
+      "modern_ward": null,
+      "modern_landmark": null,
+      "anchor": {
+        "how": "manual",
+        "name": "滝野川",
+        "source": "wikidata:Q11565312",
+        "confidence": "district"
+      }
+    },
+    "conditions": {
+      "time_of_day": null
+    },
+    "notes": {
+      "geo": "題名「瀧の川」＝滝野川。Wikidata 為北区町名的代表點。⚠️ 只到街區級。",
+      "commentary": null
+    },
+    "source": {
+      "institution": "国立国会図書館デジタルコレクション",
+      "item": "清親畫帖",
+      "call_number": "寄別1-9-2-3",
+      "pid": 2605147,
+      "page": 22,
+      "manifest": "https://www.dl.ndl.go.jp/api/iiif/2605147/manifest.json",
+      "image_url": "https://dl.ndl.go.jp/api/iiif/2605147/R0000022/full/full,/0/default.jpg",
+      "license": "Public domain",
+      "commons_file": null
+    }
+  },
+  {
+    "id": 11,
+    "title": {
+      "ja": "池の端弁天",
+      "romaji": null,
+      "en": null
+    },
+    "attribution": "kiyochika",
+    "include": true,
+    "exclude_reason": null,
+    "published": "1880",
+    "published_confidence": "year",
+    "viewpoint": {
+      "lat": null,
+      "lng": null,
+      "confidence": "unknown"
+    },
+    "subject": {
+      "lat": 35.716406,
+      "lng": 139.768767
+    },
+    "bearing": null,
+    "place": {
+      "meiji_ku": null,
+      "modern_ward": null,
+      "modern_landmark": null,
+      "anchor": {
+        "how": "osm",
+        "name": "池ノ端",
+        "osm": "node/12591766679",
+        "kind": "place",
+        "confidence": "district"
+      }
+    },
+    "conditions": {
+      "time_of_day": null
+    },
+    "notes": {
+      "geo": null,
+      "commentary": null
+    },
+    "source": {
+      "institution": "国立国会図書館デジタルコレクション",
+      "item": "清親畫帖",
+      "call_number": "寄別1-9-2-3",
+      "pid": 2605147,
+      "page": 24,
+      "manifest": "https://www.dl.ndl.go.jp/api/iiif/2605147/manifest.json",
+      "image_url": "https://dl.ndl.go.jp/api/iiif/2605147/R0000024/full/full,/0/default.jpg",
+      "license": "Public domain",
+      "commons_file": null
+    }
+  },
+  {
+    "id": 12,
+    "title": {
+      "ja": "駿賀町雪",
+      "romaji": null,
+      "en": null
+    },
+    "attribution": "kiyochika",
+    "include": true,
+    "exclude_reason": null,
+    "published": null,
+    "published_confidence": null,
+    "viewpoint": {
+      "lat": null,
+      "lng": null,
+      "confidence": "unknown"
+    },
+    "subject": null,
+    "bearing": null,
+    "place": {
+      "meiji_ku": null,
+      "modern_ward": null,
+      "modern_landmark": null
+    },
+    "conditions": {
+      "time_of_day": null
+    },
+    "notes": {
+      "geo": null,
+      "commentary": null
+    },
+    "source": {
+      "institution": "国立国会図書館デジタルコレクション",
+      "item": "清親畫帖",
+      "call_number": "寄別1-9-2-3",
+      "pid": 2605147,
+      "page": 26,
+      "manifest": "https://www.dl.ndl.go.jp/api/iiif/2605147/manifest.json",
+      "image_url": "https://dl.ndl.go.jp/api/iiif/2605147/R0000026/full/full,/0/default.jpg",
+      "license": "Public domain",
+      "commons_file": null
+    }
+  },
+  {
+    "id": 13,
+    "title": {
+      "ja": "小梅曳舟通雪景",
+      "romaji": null,
+      "en": null
+    },
+    "attribution": "kiyochika",
+    "include": true,
+    "exclude_reason": null,
+    "published": null,
+    "published_confidence": null,
+    "viewpoint": {
+      "lat": null,
+      "lng": null,
+      "confidence": "unknown"
+    },
+    "subject": {
+      "lat": 35.7128,
+      "lng": 139.8048
+    },
+    "bearing": null,
+    "place": {
+      "meiji_ku": null,
+      "modern_ward": null,
+      "modern_landmark": null,
+      "anchor": {
+        "how": "manual",
+        "name": "小梅",
+        "source": "osm:way/813401245",
+        "confidence": "district"
+      }
+    },
+    "conditions": {
+      "time_of_day": null
+    },
+    "notes": {
+      "geo": "取名字含「小梅」的小梅稲荷神社。曳舟通自此往北。⚠️ 只到街區級。",
+      "commentary": null
+    },
+    "source": {
+      "institution": "国立国会図書館デジタルコレクション",
+      "item": "清親畫帖",
+      "call_number": "寄別1-9-2-3",
+      "pid": 2605147,
+      "page": 28,
+      "manifest": "https://www.dl.ndl.go.jp/api/iiif/2605147/manifest.json",
+      "image_url": "https://dl.ndl.go.jp/api/iiif/2605147/R0000028/full/full,/0/default.jpg",
+      "license": "Public domain",
+      "commons_file": null
+    }
+  },
+  {
+    "id": 14,
+    "title": {
+      "ja": "上野東照宮積雪之圖",
+      "romaji": null,
+      "en": null
+    },
+    "attribution": "kiyochika",
+    "include": true,
+    "exclude_reason": null,
+    "published": null,
+    "published_confidence": null,
+    "viewpoint": {
+      "lat": null,
+      "lng": null,
+      "confidence": "unknown"
+    },
+    "subject": {
+      "lat": 35.715398,
+      "lng": 139.770632
+    },
+    "bearing": null,
+    "place": {
+      "meiji_ku": null,
+      "modern_ward": null,
+      "modern_landmark": null,
+      "anchor": {
+        "how": "osm",
+        "name": "上野東照宮",
+        "osm": "way/145344085",
+        "kind": "worship",
+        "confidence": "osm"
+      }
+    },
+    "conditions": {
+      "time_of_day": null
+    },
+    "notes": {
+      "geo": null,
+      "commentary": null
+    },
+    "source": {
+      "institution": "国立国会図書館デジタルコレクション",
+      "item": "清親畫帖",
+      "call_number": "寄別1-9-2-3",
+      "pid": 2605147,
+      "page": 30,
+      "manifest": "https://www.dl.ndl.go.jp/api/iiif/2605147/manifest.json",
+      "image_url": "https://dl.ndl.go.jp/api/iiif/2605147/R0000030/full/full,/0/default.jpg",
+      "license": "Public domain",
+      "commons_file": null
+    }
+  },
+  {
+    "id": 15,
+    "title": {
+      "ja": "上野公園内之景",
+      "romaji": null,
+      "en": null
+    },
+    "attribution": "kiyochika",
+    "include": true,
+    "exclude_reason": null,
+    "published": null,
+    "published_confidence": null,
+    "viewpoint": {
+      "lat": null,
+      "lng": null,
+      "confidence": "unknown"
+    },
+    "subject": {
+      "lat": 35.715309,
+      "lng": 139.773267
+    },
+    "bearing": null,
+    "place": {
+      "meiji_ku": null,
+      "modern_ward": null,
+      "modern_landmark": null,
+      "anchor": {
+        "how": "osm-cluster×2",
+        "name": "上野公園",
+        "osm": "relation/5413419",
+        "kind": "park",
+        "confidence": "osm"
+      }
+    },
+    "conditions": {
+      "time_of_day": null
+    },
+    "notes": {
+      "geo": null,
+      "commentary": null
+    },
+    "source": {
+      "institution": "国立国会図書館デジタルコレクション",
+      "item": "清親畫帖",
+      "call_number": "寄別1-9-2-3",
+      "pid": 2605147,
+      "page": 32,
+      "manifest": "https://www.dl.ndl.go.jp/api/iiif/2605147/manifest.json",
+      "image_url": "https://dl.ndl.go.jp/api/iiif/2605147/R0000032/full/full,/0/default.jpg",
+      "license": "Public domain",
+      "commons_file": null
+    }
+  },
+  {
+    "id": 16,
+    "title": {
+      "ja": "川口鍋釜製造圖",
+      "romaji": null,
+      "en": null
+    },
+    "attribution": "kiyochika",
+    "include": true,
+    "exclude_reason": null,
+    "published": null,
+    "published_confidence": null,
+    "viewpoint": {
+      "lat": null,
+      "lng": null,
+      "confidence": "unknown"
+    },
+    "subject": {
+      "lat": 35.80192,
+      "lng": 139.717527
+    },
+    "bearing": null,
+    "place": {
+      "meiji_ku": null,
+      "modern_ward": null,
+      "modern_landmark": null,
+      "anchor": {
+        "how": "osm",
+        "name": "川口",
+        "osm": "node/2670191219",
+        "kind": "station",
+        "confidence": "district"
+      }
+    },
+    "conditions": {
+      "time_of_day": null
+    },
+    "notes": {
+      "geo": null,
+      "commentary": null
+    },
+    "source": {
+      "institution": "国立国会図書館デジタルコレクション",
+      "item": "清親畫帖",
+      "call_number": "寄別1-9-2-3",
+      "pid": 2605147,
+      "page": 34,
+      "manifest": "https://www.dl.ndl.go.jp/api/iiif/2605147/manifest.json",
+      "image_url": "https://dl.ndl.go.jp/api/iiif/2605147/R0000034/full/full,/0/default.jpg",
+      "license": "Public domain",
+      "commons_file": null
+    }
+  },
+  {
+    "id": 17,
+    "title": {
+      "ja": "川口善光寺雨晴",
+      "romaji": null,
+      "en": null
+    },
+    "attribution": "kiyochika",
+    "include": true,
+    "exclude_reason": null,
+    "published": null,
+    "published_confidence": null,
+    "viewpoint": {
+      "lat": null,
+      "lng": null,
+      "confidence": "unknown"
+    },
+    "subject": {
+      "lat": 35.794,
+      "lng": 139.7216
+    },
+    "bearing": null,
+    "place": {
+      "meiji_ku": null,
+      "modern_ward": null,
+      "modern_landmark": null,
+      "anchor": {
+        "how": "manual",
+        "name": "善光寺",
+        "source": "osm:way/156321317",
+        "confidence": "osm"
+      }
+    },
+    "conditions": {
+      "time_of_day": null
+    },
+    "notes": {
+      "geo": "題名兩個地名都比中。OSM 五座同名善光寺裡，只有這一座在川口（距川口駅 0.95km），其餘四座在 4–15km 外。⚠️ 自動比對取到的是「川口」（駅），這筆是升級。",
+      "commentary": null
+    },
+    "source": {
+      "institution": "国立国会図書館デジタルコレクション",
+      "item": "清親畫帖",
+      "call_number": "寄別1-9-2-3",
+      "pid": 2605147,
+      "page": 36,
+      "manifest": "https://www.dl.ndl.go.jp/api/iiif/2605147/manifest.json",
+      "image_url": "https://dl.ndl.go.jp/api/iiif/2605147/R0000036/full/full,/0/default.jpg",
+      "license": "Public domain",
+      "commons_file": null
+    }
+  },
+  {
+    "id": 18,
+    "title": {
+      "ja": "高輪牛町朧月景",
+      "romaji": null,
+      "en": null
+    },
+    "attribution": "kiyochika",
+    "include": true,
+    "exclude_reason": null,
+    "published": null,
+    "published_confidence": null,
+    "viewpoint": {
+      "lat": null,
+      "lng": null,
+      "confidence": "unknown"
+    },
+    "subject": {
+      "lat": 35.634974,
+      "lng": 139.735716
+    },
+    "bearing": null,
+    "place": {
+      "meiji_ku": null,
+      "modern_ward": null,
+      "modern_landmark": null,
+      "anchor": {
+        "how": "osm",
+        "name": "高輪",
+        "osm": "node/12630144302",
+        "kind": "place",
+        "confidence": "district"
+      }
+    },
+    "conditions": {
+      "time_of_day": null
+    },
+    "notes": {
+      "geo": null,
+      "commentary": null
+    },
+    "source": {
+      "institution": "国立国会図書館デジタルコレクション",
+      "item": "清親畫帖",
+      "call_number": "寄別1-9-2-3",
+      "pid": 2605147,
+      "page": 38,
+      "manifest": "https://www.dl.ndl.go.jp/api/iiif/2605147/manifest.json",
+      "image_url": "https://dl.ndl.go.jp/api/iiif/2605147/R0000038/full/full,/0/default.jpg",
+      "license": "Public domain",
+      "commons_file": null
+    }
+  },
+  {
+    "id": 19,
+    "title": {
+      "ja": "品川海上眺望圖",
+      "romaji": null,
+      "en": null
+    },
+    "attribution": "kiyochika",
+    "include": true,
+    "exclude_reason": null,
+    "published": null,
+    "published_confidence": null,
+    "viewpoint": {
+      "lat": null,
+      "lng": null,
+      "confidence": "unknown"
+    },
+    "subject": {
+      "lat": 35.62846,
+      "lng": 139.739081
+    },
+    "bearing": null,
+    "place": {
+      "meiji_ku": null,
+      "modern_ward": null,
+      "modern_landmark": null,
+      "anchor": {
+        "how": "osm-cluster×3",
+        "name": "品川",
+        "osm": "node/2546879674",
+        "kind": "station",
+        "confidence": "district"
+      }
+    },
+    "conditions": {
+      "time_of_day": null
+    },
+    "notes": {
+      "geo": null,
+      "commentary": null
+    },
+    "source": {
+      "institution": "国立国会図書館デジタルコレクション",
+      "item": "清親畫帖",
+      "call_number": "寄別1-9-2-3",
+      "pid": 2605147,
+      "page": 40,
+      "manifest": "https://www.dl.ndl.go.jp/api/iiif/2605147/manifest.json",
+      "image_url": "https://dl.ndl.go.jp/api/iiif/2605147/R0000040/full/full,/0/default.jpg",
+      "license": "Public domain",
+      "commons_file": null
+    }
+  },
+  {
+    "id": 20,
+    "title": {
+      "ja": "湯島元聖堂之景",
+      "romaji": null,
+      "en": null
+    },
+    "attribution": "kiyochika",
+    "include": true,
+    "exclude_reason": null,
+    "published": null,
+    "published_confidence": null,
+    "viewpoint": {
+      "lat": null,
+      "lng": null,
+      "confidence": "unknown"
+    },
+    "subject": {
+      "lat": 35.707363,
+      "lng": 139.768912
+    },
+    "bearing": null,
+    "place": {
+      "meiji_ku": null,
+      "modern_ward": null,
+      "modern_landmark": null,
+      "anchor": {
+        "how": "osm-cluster×2",
+        "name": "湯島",
+        "osm": "node/6190974817",
+        "kind": "station",
+        "confidence": "district"
+      }
+    },
+    "conditions": {
+      "time_of_day": null
+    },
+    "notes": {
+      "geo": null,
+      "commentary": null
+    },
+    "source": {
+      "institution": "国立国会図書館デジタルコレクション",
+      "item": "清親畫帖",
+      "call_number": "寄別1-9-2-3",
+      "pid": 2605147,
+      "page": 42,
+      "manifest": "https://www.dl.ndl.go.jp/api/iiif/2605147/manifest.json",
+      "image_url": "https://dl.ndl.go.jp/api/iiif/2605147/R0000042/full/full,/0/default.jpg",
+      "license": "Public domain",
+      "commons_file": null
+    }
+  },
+  {
+    "id": 21,
+    "title": {
+      "ja": "東京兩國百本杭暁之圖",
+      "romaji": null,
+      "en": null
+    },
+    "attribution": "kiyochika",
+    "include": true,
+    "exclude_reason": null,
+    "published": "1879-07",
+    "published_confidence": "month",
+    "viewpoint": {
+      "lat": null,
+      "lng": null,
+      "confidence": "unknown"
+    },
+    "subject": {
+      "lat": 35.696337,
+      "lng": 139.795198
+    },
+    "bearing": null,
+    "place": {
+      "meiji_ku": null,
+      "modern_ward": null,
+      "modern_landmark": null,
+      "anchor": {
+        "how": "osm-cluster×2",
+        "name": "両国",
+        "osm": "node/2558121937",
+        "kind": "station",
+        "confidence": "district"
+      }
+    },
+    "conditions": {
+      "time_of_day": null
+    },
+    "notes": {
+      "geo": null,
+      "commentary": null
+    },
+    "source": {
+      "institution": "国立国会図書館デジタルコレクション",
+      "item": "清親畫帖",
+      "call_number": "寄別1-9-2-3",
+      "pid": 2605147,
+      "page": 44,
+      "manifest": "https://www.dl.ndl.go.jp/api/iiif/2605147/manifest.json",
+      "image_url": "https://dl.ndl.go.jp/api/iiif/2605147/R0000044/full/full,/0/default.jpg",
+      "license": "Public domain",
+      "commons_file": null
+    }
+  },
+  {
+    "id": 22,
+    "title": {
+      "ja": "元柳橋兩國遠景",
+      "romaji": null,
+      "en": null
+    },
+    "attribution": "kiyochika",
+    "include": true,
+    "exclude_reason": null,
+    "published": null,
+    "published_confidence": null,
+    "viewpoint": {
+      "lat": null,
+      "lng": null,
+      "confidence": "unknown"
+    },
+    "subject": {
+      "lat": 35.69275,
+      "lng": 139.78589
+    },
+    "bearing": null,
+    "place": {
+      "meiji_ku": null,
+      "modern_ward": null,
+      "modern_landmark": null,
+      "anchor": {
+        "how": "manual",
+        "name": "元柳橋",
+        "source": "wikidata:Q60210654 + wikidata:Q11622502",
+        "confidence": "low"
+      }
+    },
+    "conditions": {
+      "time_of_day": null
+    },
+    "notes": {
+      "geo": "元柳橋已不存，Wikidata 有詞條但無座標，描述為「薬研堀の河口に架かっていた橋」⇒ 錨在薬研堀僅存的地標・薬研堀不動院。🔴 河口在其東南約 200m，這個點是「薬研堀那一帶」不是橋位，待 1882 地圖收斂。",
+      "commentary": null
+    },
+    "source": {
+      "institution": "国立国会図書館デジタルコレクション",
+      "item": "清親畫帖",
+      "call_number": "寄別1-9-2-3",
+      "pid": 2605147,
+      "page": 46,
+      "manifest": "https://www.dl.ndl.go.jp/api/iiif/2605147/manifest.json",
+      "image_url": "https://dl.ndl.go.jp/api/iiif/2605147/R0000046/full/full,/0/default.jpg",
+      "license": "Public domain",
+      "commons_file": null
+    }
+  },
+  {
+    "id": 23,
+    "title": {
+      "ja": "江戸橋夕暮富士",
+      "romaji": null,
+      "en": null
+    },
+    "attribution": "kiyochika",
+    "include": true,
+    "exclude_reason": null,
+    "published": null,
+    "published_confidence": null,
+    "viewpoint": {
+      "lat": null,
+      "lng": null,
+      "confidence": "unknown"
+    },
+    "subject": {
+      "lat": 35.6843,
+      "lng": 139.7769
+    },
+    "bearing": null,
+    "place": {
+      "meiji_ku": null,
+      "modern_ward": null,
+      "modern_landmark": null,
+      "anchor": {
+        "how": "manual",
+        "name": "江戸橋",
+        "source": "osm:way/551941835",
+        "confidence": "osm"
+      }
+    },
+    "conditions": {
+      "time_of_day": null
+    },
+    "notes": {
+      "geo": "OSM 有兩座江戸橋。取日本橋川上的這座，依據是同一畫帖的海運橋（node/6155692899）與一石橋（way/552407565）都在其 500m 內、同一條川；另一座在 5.5km 外的北区。",
+      "commentary": null
+    },
+    "source": {
+      "institution": "国立国会図書館デジタルコレクション",
+      "item": "清親畫帖",
+      "call_number": "寄別1-9-2-3",
+      "pid": 2605147,
+      "page": 48,
+      "manifest": "https://www.dl.ndl.go.jp/api/iiif/2605147/manifest.json",
+      "image_url": "https://dl.ndl.go.jp/api/iiif/2605147/R0000048/full/full,/0/default.jpg",
+      "license": "Public domain",
+      "commons_file": null
+    }
+  },
+  {
+    "id": 24,
+    "title": {
+      "ja": "堀切花菖蒲",
+      "romaji": null,
+      "en": null
+    },
+    "attribution": "kiyochika",
+    "include": true,
+    "exclude_reason": null,
+    "published": null,
+    "published_confidence": null,
+    "viewpoint": {
+      "lat": null,
+      "lng": null,
+      "confidence": "unknown"
+    },
+    "subject": {
+      "lat": 35.744863,
+      "lng": 139.822371
+    },
+    "bearing": null,
+    "place": {
+      "meiji_ku": null,
+      "modern_ward": null,
+      "modern_landmark": null,
+      "anchor": {
+        "how": "osm-cluster×2",
+        "name": "堀切",
+        "osm": "node/7482043457",
+        "kind": "station",
+        "confidence": "district"
+      }
+    },
+    "conditions": {
+      "time_of_day": null
+    },
+    "notes": {
+      "geo": null,
+      "commentary": null
+    },
+    "source": {
+      "institution": "国立国会図書館デジタルコレクション",
+      "item": "清親畫帖",
+      "call_number": "寄別1-9-2-3",
+      "pid": 2605147,
+      "page": 50,
+      "manifest": "https://www.dl.ndl.go.jp/api/iiif/2605147/manifest.json",
+      "image_url": "https://dl.ndl.go.jp/api/iiif/2605147/R0000050/full/full,/0/default.jpg",
+      "license": "Public domain",
+      "commons_file": null
+    }
+  },
+  {
+    "id": 25,
+    "title": {
+      "ja": "亀戸梅屋敷",
+      "romaji": null,
+      "en": null
+    },
+    "attribution": "kiyochika",
+    "include": true,
+    "exclude_reason": null,
+    "published": null,
+    "published_confidence": null,
+    "viewpoint": {
+      "lat": null,
+      "lng": null,
+      "confidence": "unknown"
+    },
+    "subject": {
+      "lat": 35.701604,
+      "lng": 139.82557
+    },
+    "bearing": null,
+    "place": {
+      "meiji_ku": null,
+      "modern_ward": null,
+      "modern_landmark": null,
+      "anchor": {
+        "how": "osm",
+        "name": "亀戸梅屋敷",
+        "osm": "node/4879948722",
+        "kind": "historic",
+        "confidence": "osm"
+      }
+    },
+    "conditions": {
+      "time_of_day": null
+    },
+    "notes": {
+      "geo": null,
+      "commentary": null
+    },
+    "source": {
+      "institution": "国立国会図書館デジタルコレクション",
+      "item": "清親畫帖",
+      "call_number": "寄別1-9-2-3",
+      "pid": 2605147,
+      "page": 52,
+      "manifest": "https://www.dl.ndl.go.jp/api/iiif/2605147/manifest.json",
+      "image_url": "https://dl.ndl.go.jp/api/iiif/2605147/R0000052/full/full,/0/default.jpg",
+      "license": "Public domain",
+      "commons_file": null
+    }
+  },
+  {
+    "id": 26,
+    "title": {
+      "ja": "道灌山夕日暮",
+      "romaji": null,
+      "en": null
+    },
+    "attribution": "kiyochika",
+    "include": true,
+    "exclude_reason": null,
+    "published": null,
+    "published_confidence": null,
+    "viewpoint": {
+      "lat": null,
+      "lng": null,
+      "confidence": "unknown"
+    },
+    "subject": {
+      "lat": 35.73274,
+      "lng": 139.76468
+    },
+    "bearing": null,
+    "place": {
+      "meiji_ku": null,
+      "modern_ward": null,
+      "modern_landmark": null,
+      "anchor": {
+        "how": "manual",
+        "name": "道灌山",
+        "source": "wikidata:Q17229269",
+        "confidence": "wikidata"
+      }
+    },
+    "conditions": {
+      "time_of_day": null
+    },
+    "notes": {
+      "geo": "題名即地名。Wikidata「道灌山」（荒川区西日暮里四丁目の高台）。OSM 只有中野区的道灌橋與皇居的道灌濠，都不是這個。",
+      "commentary": null
+    },
+    "source": {
+      "institution": "国立国会図書館デジタルコレクション",
+      "item": "清親畫帖",
+      "call_number": "寄別1-9-2-3",
+      "pid": 2605147,
+      "page": 54,
+      "manifest": "https://www.dl.ndl.go.jp/api/iiif/2605147/manifest.json",
+      "image_url": "https://dl.ndl.go.jp/api/iiif/2605147/R0000054/full/full,/0/default.jpg",
+      "license": "Public domain",
+      "commons_file": null
+    }
+  },
+  {
+    "id": 27,
+    "title": {
+      "ja": "三ッ又永代橋遠景",
+      "romaji": null,
+      "en": null
+    },
+    "attribution": "kiyochika",
+    "include": true,
+    "exclude_reason": null,
+    "published": null,
+    "published_confidence": null,
+    "viewpoint": {
+      "lat": null,
+      "lng": null,
+      "confidence": "unknown"
+    },
+    "subject": {
+      "lat": 35.676337,
+      "lng": 139.787578
+    },
+    "bearing": null,
+    "place": {
+      "meiji_ku": null,
+      "modern_ward": null,
+      "modern_landmark": null,
+      "anchor": {
+        "how": "osm-cluster×3",
+        "name": "永代橋",
+        "osm": "way/168663963",
+        "kind": "bridge",
+        "confidence": "osm"
+      }
+    },
+    "conditions": {
+      "time_of_day": null
+    },
+    "notes": {
+      "geo": null,
+      "commentary": null
+    },
+    "source": {
+      "institution": "国立国会図書館デジタルコレクション",
+      "item": "清親畫帖",
+      "call_number": "寄別1-9-2-3",
+      "pid": 2605147,
+      "page": 56,
+      "manifest": "https://www.dl.ndl.go.jp/api/iiif/2605147/manifest.json",
+      "image_url": "https://dl.ndl.go.jp/api/iiif/2605147/R0000056/full/full,/0/default.jpg",
+      "license": "Public domain",
+      "commons_file": null
+    }
+  },
+  {
+    "id": 28,
+    "title": {
+      "ja": "隅田川夜",
+      "romaji": null,
+      "en": null
+    },
+    "attribution": "kiyochika",
+    "include": true,
+    "exclude_reason": null,
+    "published": null,
+    "published_confidence": null,
+    "viewpoint": {
+      "lat": null,
+      "lng": null,
+      "confidence": "unknown"
+    },
+    "subject": null,
+    "bearing": null,
+    "place": {
+      "meiji_ku": null,
+      "modern_ward": null,
+      "modern_landmark": null
+    },
+    "conditions": {
+      "time_of_day": null
+    },
+    "notes": {
+      "geo": null,
+      "commentary": null
+    },
+    "source": {
+      "institution": "国立国会図書館デジタルコレクション",
+      "item": "清親畫帖",
+      "call_number": "寄別1-9-2-3",
+      "pid": 2605147,
+      "page": 58,
+      "manifest": "https://www.dl.ndl.go.jp/api/iiif/2605147/manifest.json",
+      "image_url": "https://dl.ndl.go.jp/api/iiif/2605147/R0000058/full/full,/0/default.jpg",
+      "license": "Public domain",
+      "commons_file": null
+    }
+  },
+  {
+    "id": 29,
+    "title": {
+      "ja": "御城内釣橋之圖",
+      "romaji": null,
+      "en": null
+    },
+    "attribution": "kiyochika",
+    "include": true,
+    "exclude_reason": null,
+    "published": null,
+    "published_confidence": null,
+    "viewpoint": {
+      "lat": null,
+      "lng": null,
+      "confidence": "unknown"
+    },
+    "subject": {
+      "lat": 35.6839,
+      "lng": 139.7508
+    },
+    "bearing": null,
+    "place": {
+      "meiji_ku": null,
+      "modern_ward": null,
+      "modern_landmark": null,
+      "anchor": {
+        "how": "manual",
+        "name": "皇居",
+        "source": "osm:way/534754971",
+        "confidence": "district"
+      }
+    },
+    "conditions": {
+      "time_of_day": null
+    },
+    "notes": {
+      "geo": "題名「御城内」＝皇居（旧江戸城）内。釣橋（吊り橋）本體不在 OSM ⇒ 只錨到城域。⚠️ 街區級。",
+      "commentary": null
+    },
+    "source": {
+      "institution": "国立国会図書館デジタルコレクション",
+      "item": "清親畫帖",
+      "call_number": "寄別1-9-2-3",
+      "pid": 2605147,
+      "page": 60,
+      "manifest": "https://www.dl.ndl.go.jp/api/iiif/2605147/manifest.json",
+      "image_url": "https://dl.ndl.go.jp/api/iiif/2605147/R0000060/full/full,/0/default.jpg",
+      "license": "Public domain",
+      "commons_file": null
+    }
+  },
+  {
+    "id": 30,
+    "title": {
+      "ja": "一石橋夕景",
+      "romaji": null,
+      "en": null
+    },
+    "attribution": "kiyochika",
+    "include": true,
+    "exclude_reason": null,
+    "published": null,
+    "published_confidence": null,
+    "viewpoint": {
+      "lat": null,
+      "lng": null,
+      "confidence": "unknown"
+    },
+    "subject": {
+      "lat": 35.684663,
+      "lng": 139.771328
+    },
+    "bearing": null,
+    "place": {
+      "meiji_ku": null,
+      "modern_ward": null,
+      "modern_landmark": null,
+      "anchor": {
+        "how": "osm",
+        "name": "一石橋",
+        "osm": "way/552407565",
+        "kind": "bridge",
+        "confidence": "osm"
+      }
+    },
+    "conditions": {
+      "time_of_day": null
+    },
+    "notes": {
+      "geo": null,
+      "commentary": null
+    },
+    "source": {
+      "institution": "国立国会図書館デジタルコレクション",
+      "item": "清親畫帖",
+      "call_number": "寄別1-9-2-3",
+      "pid": 2605147,
+      "page": 62,
+      "manifest": "https://www.dl.ndl.go.jp/api/iiif/2605147/manifest.json",
+      "image_url": "https://dl.ndl.go.jp/api/iiif/2605147/R0000062/full/full,/0/default.jpg",
+      "license": "Public domain",
+      "commons_file": null
+    }
+  },
+  {
+    "id": 31,
+    "title": {
+      "ja": "隅田川小春凪",
+      "romaji": null,
+      "en": null
+    },
+    "attribution": "kiyochika",
+    "include": true,
+    "exclude_reason": null,
+    "published": null,
+    "published_confidence": null,
+    "viewpoint": {
+      "lat": null,
+      "lng": null,
+      "confidence": "unknown"
+    },
+    "subject": null,
+    "bearing": null,
+    "place": {
+      "meiji_ku": null,
+      "modern_ward": null,
+      "modern_landmark": null
+    },
+    "conditions": {
+      "time_of_day": null
+    },
+    "notes": {
+      "geo": null,
+      "commentary": null
+    },
+    "source": {
+      "institution": "国立国会図書館デジタルコレクション",
+      "item": "清親畫帖",
+      "call_number": "寄別1-9-2-3",
+      "pid": 2605148,
+      "page": 4,
+      "manifest": "https://www.dl.ndl.go.jp/api/iiif/2605148/manifest.json",
+      "image_url": "https://dl.ndl.go.jp/api/iiif/2605148/R0000004/full/full,/0/default.jpg",
+      "license": "Public domain",
+      "commons_file": null
+    }
+  },
+  {
+    "id": 32,
+    "title": {
+      "ja": "不忍池畔雨中圖",
+      "romaji": null,
+      "en": null
+    },
+    "attribution": "kiyochika",
+    "include": true,
+    "exclude_reason": null,
+    "published": null,
+    "published_confidence": null,
+    "viewpoint": {
+      "lat": null,
+      "lng": null,
+      "confidence": "unknown"
+    },
+    "subject": {
+      "lat": 35.712302,
+      "lng": 139.771823
+    },
+    "bearing": null,
+    "place": {
+      "meiji_ku": null,
+      "modern_ward": null,
+      "modern_landmark": null,
+      "anchor": {
+        "how": "osm",
+        "name": "不忍池",
+        "osm": "node/6515739586",
+        "kind": "historic",
+        "confidence": "osm"
+      }
+    },
+    "conditions": {
+      "time_of_day": null
+    },
+    "notes": {
+      "geo": null,
+      "commentary": null
+    },
+    "source": {
+      "institution": "国立国会図書館デジタルコレクション",
+      "item": "清親畫帖",
+      "call_number": "寄別1-9-2-3",
+      "pid": 2605148,
+      "page": 6,
+      "manifest": "https://www.dl.ndl.go.jp/api/iiif/2605148/manifest.json",
+      "image_url": "https://dl.ndl.go.jp/api/iiif/2605148/R0000006/full/full,/0/default.jpg",
+      "license": "Public domain",
+      "commons_file": null
+    }
+  },
+  {
+    "id": 33,
+    "title": {
+      "ja": "大川端石原橋",
+      "romaji": null,
+      "en": null
+    },
+    "attribution": "kiyochika",
+    "include": true,
+    "exclude_reason": null,
+    "published": null,
+    "published_confidence": null,
+    "viewpoint": {
+      "lat": null,
+      "lng": null,
+      "confidence": "unknown"
+    },
+    "subject": {
+      "lat": 35.7003,
+      "lng": 139.7985
+    },
+    "bearing": null,
+    "place": {
+      "meiji_ku": null,
+      "modern_ward": null,
+      "modern_landmark": null,
+      "anchor": {
+        "how": "manual",
+        "name": "石原",
+        "source": "osm:place/8392822615",
+        "confidence": "district"
+      }
+    },
+    "conditions": {
+      "time_of_day": null
+    },
+    "notes": {
+      "geo": "石原橋不在 OSM；題名另一個地名「石原」（本所石原町，今墨田区石原一丁目）有點位，且與題名的「大川端」（隅田川東岸）相符。⚠️ 街區級。",
+      "commentary": null
+    },
+    "source": {
+      "institution": "国立国会図書館デジタルコレクション",
+      "item": "清親畫帖",
+      "call_number": "寄別1-9-2-3",
+      "pid": 2605148,
+      "page": 8,
+      "manifest": "https://www.dl.ndl.go.jp/api/iiif/2605148/manifest.json",
+      "image_url": "https://dl.ndl.go.jp/api/iiif/2605148/R0000008/full/full,/0/default.jpg",
+      "license": "Public domain",
+      "commons_file": null
+    }
+  },
+  {
+    "id": 34,
+    "title": {
+      "ja": "九段坂五月夜",
+      "romaji": null,
+      "en": null
+    },
+    "attribution": "kiyochika",
+    "include": true,
+    "exclude_reason": null,
+    "published": null,
+    "published_confidence": null,
+    "viewpoint": {
+      "lat": null,
+      "lng": null,
+      "confidence": "unknown"
+    },
+    "subject": {
+      "lat": 35.69464,
+      "lng": 139.74836
+    },
+    "bearing": null,
+    "place": {
+      "meiji_ku": null,
+      "modern_ward": null,
+      "modern_landmark": null,
+      "anchor": {
+        "how": "manual",
+        "name": "九段坂",
+        "source": "wikidata:Q42311495",
+        "confidence": "wikidata"
+      }
+    },
+    "conditions": {
+      "time_of_day": null
+    },
+    "notes": {
+      "geo": "Wikidata「九段坂公園」——名字含題名的「九段坂」，公園就在坂上。",
+      "commentary": null
+    },
+    "source": {
+      "institution": "国立国会図書館デジタルコレクション",
+      "item": "清親畫帖",
+      "call_number": "寄別1-9-2-3",
+      "pid": 2605148,
+      "page": 10,
+      "manifest": "https://www.dl.ndl.go.jp/api/iiif/2605148/manifest.json",
+      "image_url": "https://dl.ndl.go.jp/api/iiif/2605148/R0000010/full/full,/0/default.jpg",
+      "license": "Public domain",
+      "commons_file": null
+    }
+  },
+  {
+    "id": 35,
+    "title": {
+      "ja": "大森朝の海",
+      "romaji": null,
+      "en": null
+    },
+    "attribution": "kiyochika",
+    "include": true,
+    "exclude_reason": null,
+    "published": null,
+    "published_confidence": null,
+    "viewpoint": {
+      "lat": null,
+      "lng": null,
+      "confidence": "unknown"
+    },
+    "subject": {
+      "lat": 35.588505,
+      "lng": 139.727853
+    },
+    "bearing": null,
+    "place": {
+      "meiji_ku": null,
+      "modern_ward": null,
+      "modern_landmark": null,
+      "anchor": {
+        "how": "osm",
+        "name": "大森",
+        "osm": "node/3547330608",
+        "kind": "station",
+        "confidence": "district"
+      }
+    },
+    "conditions": {
+      "time_of_day": null
+    },
+    "notes": {
+      "geo": null,
+      "commentary": null
+    },
+    "source": {
+      "institution": "国立国会図書館デジタルコレクション",
+      "item": "清親畫帖",
+      "call_number": "寄別1-9-2-3",
+      "pid": 2605148,
+      "page": 12,
+      "manifest": "https://www.dl.ndl.go.jp/api/iiif/2605148/manifest.json",
+      "image_url": "https://dl.ndl.go.jp/api/iiif/2605148/R0000012/full/full,/0/default.jpg",
+      "license": "Public domain",
+      "commons_file": null
+    }
+  },
+  {
+    "id": 36,
+    "title": {
+      "ja": "根津神社秋色",
+      "romaji": null,
+      "en": null
+    },
+    "attribution": "kiyochika",
+    "include": true,
+    "exclude_reason": null,
+    "published": null,
+    "published_confidence": null,
+    "viewpoint": {
+      "lat": null,
+      "lng": null,
+      "confidence": "unknown"
+    },
+    "subject": {
+      "lat": 35.720004,
+      "lng": 139.760763
+    },
+    "bearing": null,
+    "place": {
+      "meiji_ku": null,
+      "modern_ward": null,
+      "modern_landmark": null,
+      "anchor": {
+        "how": "osm-cluster×3",
+        "name": "根津神社",
+        "osm": "way/464629204",
+        "kind": "worship",
+        "confidence": "osm"
+      }
+    },
+    "conditions": {
+      "time_of_day": null
+    },
+    "notes": {
+      "geo": null,
+      "commentary": null
+    },
+    "source": {
+      "institution": "国立国会図書館デジタルコレクション",
+      "item": "清親畫帖",
+      "call_number": "寄別1-9-2-3",
+      "pid": 2605148,
+      "page": 14,
+      "manifest": "https://www.dl.ndl.go.jp/api/iiif/2605148/manifest.json",
+      "image_url": "https://dl.ndl.go.jp/api/iiif/2605148/R0000014/full/full,/0/default.jpg",
+      "license": "Public domain",
+      "commons_file": null
+    }
+  },
+  {
+    "id": 37,
+    "title": {
+      "ja": "芝葉増上寺日中",
+      "romaji": null,
+      "en": null
+    },
+    "attribution": "kiyochika",
+    "include": true,
+    "exclude_reason": null,
+    "published": null,
+    "published_confidence": "blank",
+    "viewpoint": {
+      "lat": null,
+      "lng": null,
+      "confidence": "unknown"
+    },
+    "subject": {
+      "lat": 35.657191,
+      "lng": 139.748212
+    },
+    "bearing": null,
+    "place": {
+      "meiji_ku": null,
+      "modern_ward": null,
+      "modern_landmark": null,
+      "anchor": {
+        "how": "osm",
+        "name": "増上寺",
+        "osm": "way/744348814",
+        "kind": "worship",
+        "confidence": "osm"
+      }
+    },
+    "conditions": {
+      "time_of_day": null
+    },
+    "notes": {
+      "geo": null,
+      "commentary": null
+    },
+    "source": {
+      "institution": "国立国会図書館デジタルコレクション",
+      "item": "清親畫帖",
+      "call_number": "寄別1-9-2-3",
+      "pid": 2605148,
+      "page": 16,
+      "manifest": "https://www.dl.ndl.go.jp/api/iiif/2605148/manifest.json",
+      "image_url": "https://dl.ndl.go.jp/api/iiif/2605148/R0000016/full/full,/0/default.jpg",
+      "license": "Public domain",
+      "commons_file": null
+    }
+  },
+  {
+    "id": 38,
+    "title": {
+      "ja": "神田八雲神社暁",
+      "romaji": null,
+      "en": null
+    },
+    "attribution": "kiyochika",
+    "include": true,
+    "exclude_reason": null,
+    "published": null,
+    "published_confidence": null,
+    "viewpoint": {
+      "lat": null,
+      "lng": null,
+      "confidence": "unknown"
+    },
+    "subject": {
+      "lat": 35.7021,
+      "lng": 139.7676
+    },
+    "bearing": null,
+    "place": {
+      "meiji_ku": null,
+      "modern_ward": null,
+      "modern_landmark": null,
+      "anchor": {
+        "how": "manual",
+        "name": "八雲神社",
+        "source": "osm:way/91234942 + wikidata:Q137321831",
+        "confidence": "osm"
+      }
+    },
+    "conditions": {
+      "time_of_day": null
+    },
+    "notes": {
+      "geo": "OSM「大伝馬町八雲神社」，Wikidata 同名詞條寫明是**神田明神の境内社** ⇒ 題名「神田八雲神社」指的就是它。座標與 OSM 神田明神（way/89431876）相距 20m。⚠️ 自動比對取到的是「神田」（駅），這筆是升級。",
+      "commentary": null
+    },
+    "source": {
+      "institution": "国立国会図書館デジタルコレクション",
+      "item": "清親畫帖",
+      "call_number": "寄別1-9-2-3",
+      "pid": 2605148,
+      "page": 18,
+      "manifest": "https://www.dl.ndl.go.jp/api/iiif/2605148/manifest.json",
+      "image_url": "https://dl.ndl.go.jp/api/iiif/2605148/R0000018/full/full,/0/default.jpg",
+      "license": "Public domain",
+      "commons_file": null
+    }
+  },
+  {
+    "id": 39,
+    "title": {
+      "ja": "御茶の水雪",
+      "romaji": null,
+      "en": null
+    },
+    "attribution": "kiyochika",
+    "include": true,
+    "exclude_reason": null,
+    "published": null,
+    "published_confidence": null,
+    "viewpoint": {
+      "lat": null,
+      "lng": null,
+      "confidence": "unknown"
+    },
+    "subject": {
+      "lat": 35.700086,
+      "lng": 139.764549
+    },
+    "bearing": null,
+    "place": {
+      "meiji_ku": null,
+      "modern_ward": null,
+      "modern_landmark": null,
+      "anchor": {
+        "how": "osm-cluster×2",
+        "name": "御茶ノ水",
+        "osm": "node/2559434143",
+        "kind": "station",
+        "confidence": "district"
+      }
+    },
+    "conditions": {
+      "time_of_day": null
+    },
+    "notes": {
+      "geo": null,
+      "commentary": null
+    },
+    "source": {
+      "institution": "国立国会図書館デジタルコレクション",
+      "item": "清親畫帖",
+      "call_number": "寄別1-9-2-3",
+      "pid": 2605148,
+      "page": 20,
+      "manifest": "https://www.dl.ndl.go.jp/api/iiif/2605148/manifest.json",
+      "image_url": "https://dl.ndl.go.jp/api/iiif/2605148/R0000020/full/full,/0/default.jpg",
+      "license": "Public domain",
+      "commons_file": null
+    }
+  },
+  {
+    "id": 40,
+    "title": {
+      "ja": "櫻田弁慶堀原",
+      "romaji": null,
+      "en": null
+    },
+    "attribution": "kiyochika",
+    "include": true,
+    "exclude_reason": null,
+    "published": null,
+    "published_confidence": null,
+    "viewpoint": {
+      "lat": null,
+      "lng": null,
+      "confidence": "unknown"
+    },
+    "subject": {
+      "lat": 35.67972,
+      "lng": 139.73484
+    },
+    "bearing": null,
+    "place": {
+      "meiji_ku": null,
+      "modern_ward": null,
+      "modern_landmark": null,
+      "anchor": {
+        "how": "manual",
+        "name": "弁慶堀",
+        "source": "wikidata:Q60217962",
+        "confidence": "wikidata"
+      }
+    },
+    "conditions": {
+      "time_of_day": null
+    },
+    "notes": {
+      "geo": "題名「弁慶堀」＝弁慶濠（皇居外堀の一部）。桜田門在其東北 1.3km，與題名的「櫻田」相符。",
+      "commentary": null
+    },
+    "source": {
+      "institution": "国立国会図書館デジタルコレクション",
+      "item": "清親畫帖",
+      "call_number": "寄別1-9-2-3",
+      "pid": 2605148,
+      "page": 22,
+      "manifest": "https://www.dl.ndl.go.jp/api/iiif/2605148/manifest.json",
+      "image_url": "https://dl.ndl.go.jp/api/iiif/2605148/R0000022/full/full,/0/default.jpg",
+      "license": "Public domain",
+      "commons_file": null
+    }
+  },
+  {
+    "id": 41,
+    "title": {
+      "ja": "天王寺下衣川",
+      "romaji": null,
+      "en": null
+    },
+    "attribution": "kiyochika",
+    "include": true,
+    "exclude_reason": null,
+    "published": null,
+    "published_confidence": null,
+    "viewpoint": {
+      "lat": null,
+      "lng": null,
+      "confidence": "unknown"
+    },
+    "subject": {
+      "lat": 35.726616,
+      "lng": 139.771423
+    },
+    "bearing": null,
+    "place": {
+      "meiji_ku": null,
+      "modern_ward": null,
+      "modern_landmark": null,
+      "anchor": {
+        "how": "osm",
+        "name": "天王寺",
+        "osm": "way/1367250759",
+        "kind": "worship",
+        "confidence": "osm"
+      }
+    },
+    "conditions": {
+      "time_of_day": null
+    },
+    "notes": {
+      "geo": null,
+      "commentary": null
+    },
+    "source": {
+      "institution": "国立国会図書館デジタルコレクション",
+      "item": "清親畫帖",
+      "call_number": "寄別1-9-2-3",
+      "pid": 2605148,
+      "page": 24,
+      "manifest": "https://www.dl.ndl.go.jp/api/iiif/2605148/manifest.json",
+      "image_url": "https://dl.ndl.go.jp/api/iiif/2605148/R0000024/full/full,/0/default.jpg",
+      "license": "Public domain",
+      "commons_file": null
+    }
+  },
+  {
+    "id": 42,
+    "title": {
+      "ja": "兩國花火之圖",
+      "romaji": null,
+      "en": null
+    },
+    "attribution": "kiyochika",
+    "include": true,
+    "exclude_reason": null,
+    "published": null,
+    "published_confidence": null,
+    "viewpoint": {
+      "lat": null,
+      "lng": null,
+      "confidence": "unknown"
+    },
+    "subject": {
+      "lat": 35.696337,
+      "lng": 139.795198
+    },
+    "bearing": null,
+    "place": {
+      "meiji_ku": null,
+      "modern_ward": null,
+      "modern_landmark": null,
+      "anchor": {
+        "how": "osm-cluster×2",
+        "name": "両国",
+        "osm": "node/2558121937",
+        "kind": "station",
+        "confidence": "district"
+      }
+    },
+    "conditions": {
+      "time_of_day": null
+    },
+    "notes": {
+      "geo": null,
+      "commentary": null
+    },
+    "source": {
+      "institution": "国立国会図書館デジタルコレクション",
+      "item": "清親畫帖",
+      "call_number": "寄別1-9-2-3",
+      "pid": 2605148,
+      "page": 26,
+      "manifest": "https://www.dl.ndl.go.jp/api/iiif/2605148/manifest.json",
+      "image_url": "https://dl.ndl.go.jp/api/iiif/2605148/R0000026/full/full,/0/default.jpg",
+      "license": "Public domain",
+      "commons_file": null
+    }
+  },
+  {
+    "id": 43,
+    "title": {
+      "ja": "千ほんくい兩國橋",
+      "romaji": null,
+      "en": null
+    },
+    "attribution": "kiyochika",
+    "include": true,
+    "exclude_reason": null,
+    "published": null,
+    "published_confidence": null,
+    "viewpoint": {
+      "lat": null,
+      "lng": null,
+      "confidence": "unknown"
+    },
+    "subject": {
+      "lat": 35.694305,
+      "lng": 139.788863
+    },
+    "bearing": null,
+    "place": {
+      "meiji_ku": null,
+      "modern_ward": null,
+      "modern_landmark": null,
+      "anchor": {
+        "how": "osm",
+        "name": "両国橋",
+        "osm": "way/553536165",
+        "kind": "bridge",
+        "confidence": "osm"
+      }
+    },
+    "conditions": {
+      "time_of_day": null
+    },
+    "notes": {
+      "geo": null,
+      "commentary": null
+    },
+    "source": {
+      "institution": "国立国会図書館デジタルコレクション",
+      "item": "清親畫帖",
+      "call_number": "寄別1-9-2-3",
+      "pid": 2605148,
+      "page": 28,
+      "manifest": "https://www.dl.ndl.go.jp/api/iiif/2605148/manifest.json",
+      "image_url": "https://dl.ndl.go.jp/api/iiif/2605148/R0000028/full/full,/0/default.jpg",
+      "license": "Public domain",
+      "commons_file": null
+    }
+  },
+  {
+    "id": 44,
+    "title": {
+      "ja": "大川富士見渡",
+      "romaji": null,
+      "en": null
+    },
+    "attribution": "kiyochika",
+    "include": true,
+    "exclude_reason": null,
+    "published": null,
+    "published_confidence": null,
+    "viewpoint": {
+      "lat": null,
+      "lng": null,
+      "confidence": "unknown"
+    },
+    "subject": {
+      "lat": 35.69949,
+      "lng": 139.79249
+    },
+    "bearing": null,
+    "place": {
+      "meiji_ku": null,
+      "modern_ward": null,
+      "modern_landmark": null,
+      "anchor": {
+        "how": "manual",
+        "name": "富士見の渡し",
+        "source": "wikidata:Q101031420",
+        "confidence": "wikidata"
+      }
+    },
+    "conditions": {
+      "time_of_day": null
+    },
+    "notes": {
+      "geo": "題名「大川富士見渡」逐字對上 Wikidata「富士見の渡し」（隅田川にあった渡し船のひとつ）。⚠️ 自動比對把「富士見」比成了練馬的富士見台一帶，這筆是更正。",
+      "commentary": null
+    },
+    "source": {
+      "institution": "国立国会図書館デジタルコレクション",
+      "item": "清親畫帖",
+      "call_number": "寄別1-9-2-3",
+      "pid": 2605148,
+      "page": 30,
+      "manifest": "https://www.dl.ndl.go.jp/api/iiif/2605148/manifest.json",
+      "image_url": "https://dl.ndl.go.jp/api/iiif/2605148/R0000030/full/full,/0/default.jpg",
+      "license": "Public domain",
+      "commons_file": null
+    }
+  },
+  {
+    "id": 45,
+    "title": {
+      "ja": "大川岸一之橋遠景",
+      "romaji": null,
+      "en": null
+    },
+    "attribution": "kiyochika",
+    "include": true,
+    "exclude_reason": null,
+    "published": null,
+    "published_confidence": null,
+    "viewpoint": {
+      "lat": null,
+      "lng": null,
+      "confidence": "unknown"
+    },
+    "subject": null,
+    "bearing": null,
+    "place": {
+      "meiji_ku": null,
+      "modern_ward": null,
+      "modern_landmark": null
+    },
+    "conditions": {
+      "time_of_day": null
+    },
+    "notes": {
+      "geo": null,
+      "commentary": null
+    },
+    "source": {
+      "institution": "国立国会図書館デジタルコレクション",
+      "item": "清親畫帖",
+      "call_number": "寄別1-9-2-3",
+      "pid": 2605148,
+      "page": 32,
+      "manifest": "https://www.dl.ndl.go.jp/api/iiif/2605148/manifest.json",
+      "image_url": "https://dl.ndl.go.jp/api/iiif/2605148/R0000032/full/full,/0/default.jpg",
+      "license": "Public domain",
+      "commons_file": null
+    }
+  },
+  {
+    "id": 46,
+    "title": {
+      "ja": "本所御藏橋",
+      "romaji": null,
+      "en": null
+    },
+    "attribution": "kiyochika",
+    "include": true,
+    "exclude_reason": null,
+    "published": null,
+    "published_confidence": null,
+    "viewpoint": {
+      "lat": null,
+      "lng": null,
+      "confidence": "unknown"
+    },
+    "subject": {
+      "lat": 35.7038,
+      "lng": 139.8023
+    },
+    "bearing": null,
+    "place": {
+      "meiji_ku": null,
+      "modern_ward": null,
+      "modern_landmark": null,
+      "anchor": {
+        "how": "manual",
+        "name": "本所",
+        "source": "wikidata:Q3140127",
+        "confidence": "district"
+      }
+    },
+    "conditions": {
+      "time_of_day": null
+    },
+    "notes": {
+      "geo": "御蔵橋不在 OSM；題名另一個地名「本所」有座標。⚠️ 街區級，本所很大。",
+      "commentary": null
+    },
+    "source": {
+      "institution": "国立国会図書館デジタルコレクション",
+      "item": "清親畫帖",
+      "call_number": "寄別1-9-2-3",
+      "pid": 2605148,
+      "page": 34,
+      "manifest": "https://www.dl.ndl.go.jp/api/iiif/2605148/manifest.json",
+      "image_url": "https://dl.ndl.go.jp/api/iiif/2605148/R0000034/full/full,/0/default.jpg",
+      "license": "Public domain",
+      "commons_file": null
+    }
+  },
+  {
+    "id": 47,
+    "title": {
+      "ja": "常盤橋内紙幣寮之圖",
+      "romaji": null,
+      "en": null
+    },
+    "attribution": "kiyochika",
+    "include": true,
+    "exclude_reason": null,
+    "published": null,
+    "published_confidence": null,
+    "viewpoint": {
+      "lat": null,
+      "lng": null,
+      "confidence": "unknown"
+    },
+    "subject": {
+      "lat": 35.6853,
+      "lng": 139.7708
+    },
+    "bearing": null,
+    "place": {
+      "meiji_ku": null,
+      "modern_ward": null,
+      "modern_landmark": null,
+      "anchor": {
+        "how": "manual",
+        "name": "常盤橋",
+        "source": "osm:way/552407566",
+        "confidence": "osm"
+      }
+    },
+    "conditions": {
+      "time_of_day": null
+    },
+    "notes": {
+      "geo": "OSM 三座常盤橋。取這座的依據：同一畫帖的一石橋是 way/552407565（相鄰的 way id，同一批匯入），兩者相距 60m 同在日本橋川；另兩座在 8km 以上的西邊。紙幣寮（今・国立印刷局的前身）當時在常盤橋内。",
+      "commentary": null
+    },
+    "source": {
+      "institution": "国立国会図書館デジタルコレクション",
+      "item": "清親畫帖",
+      "call_number": "寄別1-9-2-3",
+      "pid": 2605148,
+      "page": 36,
+      "manifest": "https://www.dl.ndl.go.jp/api/iiif/2605148/manifest.json",
+      "image_url": "https://dl.ndl.go.jp/api/iiif/2605148/R0000036/full/full,/0/default.jpg",
+      "license": "Public domain",
+      "commons_file": null
+    }
+  },
+  {
+    "id": 48,
+    "title": {
+      "ja": "萬代橋朝日出",
+      "romaji": null,
+      "en": null
+    },
+    "attribution": "kiyochika",
+    "include": true,
+    "exclude_reason": null,
+    "published": null,
+    "published_confidence": null,
+    "viewpoint": {
+      "lat": null,
+      "lng": null,
+      "confidence": "unknown"
+    },
+    "subject": null,
+    "bearing": null,
+    "place": {
+      "meiji_ku": null,
+      "modern_ward": null,
+      "modern_landmark": null
+    },
+    "conditions": {
+      "time_of_day": null
+    },
+    "notes": {
+      "geo": null,
+      "commentary": null
+    },
+    "source": {
+      "institution": "国立国会図書館デジタルコレクション",
+      "item": "清親畫帖",
+      "call_number": "寄別1-9-2-3",
+      "pid": 2605148,
+      "page": 38,
+      "manifest": "https://www.dl.ndl.go.jp/api/iiif/2605148/manifest.json",
+      "image_url": "https://dl.ndl.go.jp/api/iiif/2605148/R0000038/full/full,/0/default.jpg",
+      "license": "Public domain",
+      "commons_file": null
+    }
+  },
+  {
+    "id": 49,
+    "title": {
+      "ja": "橋場の夕暮",
+      "romaji": null,
+      "en": null
+    },
+    "attribution": "kiyochika",
+    "include": true,
+    "exclude_reason": null,
+    "published": null,
+    "published_confidence": null,
+    "viewpoint": {
+      "lat": null,
+      "lng": null,
+      "confidence": "unknown"
+    },
+    "subject": {
+      "lat": 35.725733,
+      "lng": 139.80674
+    },
+    "bearing": null,
+    "place": {
+      "meiji_ku": null,
+      "modern_ward": null,
+      "modern_landmark": null,
+      "anchor": {
+        "how": "osm",
+        "name": "橋場",
+        "osm": "node/12582191631",
+        "kind": "place",
+        "confidence": "district"
+      }
+    },
+    "conditions": {
+      "time_of_day": null
+    },
+    "notes": {
+      "geo": null,
+      "commentary": null
+    },
+    "source": {
+      "institution": "国立国会図書館デジタルコレクション",
+      "item": "清親畫帖",
+      "call_number": "寄別1-9-2-3",
+      "pid": 2605148,
+      "page": 40,
+      "manifest": "https://www.dl.ndl.go.jp/api/iiif/2605148/manifest.json",
+      "image_url": "https://dl.ndl.go.jp/api/iiif/2605148/R0000040/full/full,/0/default.jpg",
+      "license": "Public domain",
+      "commons_file": null
+    }
+  },
+  {
+    "id": 50,
+    "title": {
+      "ja": "御厩橋雷雨",
+      "romaji": null,
+      "en": null
+    },
+    "attribution": "kiyochika",
+    "include": true,
+    "exclude_reason": null,
+    "published": null,
+    "published_confidence": null,
+    "viewpoint": {
+      "lat": null,
+      "lng": null,
+      "confidence": "unknown"
+    },
+    "subject": {
+      "lat": 35.704383,
+      "lng": 139.795159
+    },
+    "bearing": null,
+    "place": {
+      "meiji_ku": null,
+      "modern_ward": null,
+      "modern_landmark": null,
+      "anchor": {
+        "how": "osm",
+        "name": "厩橋",
+        "osm": "way/585439311",
+        "kind": "bridge",
+        "confidence": "osm"
+      }
+    },
+    "conditions": {
+      "time_of_day": null
+    },
+    "notes": {
+      "geo": null,
+      "commentary": null
+    },
+    "source": {
+      "institution": "国立国会図書館デジタルコレクション",
+      "item": "清親畫帖",
+      "call_number": "寄別1-9-2-3",
+      "pid": 2605148,
+      "page": 42,
+      "manifest": "https://www.dl.ndl.go.jp/api/iiif/2605148/manifest.json",
+      "image_url": "https://dl.ndl.go.jp/api/iiif/2605148/R0000042/full/full,/0/default.jpg",
+      "license": "Public domain",
+      "commons_file": null
+    }
+  },
+  {
+    "id": 51,
+    "title": {
+      "ja": "五本松雨月",
+      "romaji": null,
+      "en": null
+    },
+    "attribution": "kiyochika",
+    "include": true,
+    "exclude_reason": null,
+    "published": null,
+    "published_confidence": null,
+    "viewpoint": {
+      "lat": null,
+      "lng": null,
+      "confidence": "unknown"
+    },
+    "subject": null,
+    "bearing": null,
+    "place": {
+      "meiji_ku": null,
+      "modern_ward": null,
+      "modern_landmark": null
+    },
+    "conditions": {
+      "time_of_day": null
+    },
+    "notes": {
+      "geo": null,
+      "commentary": null
+    },
+    "source": {
+      "institution": "国立国会図書館デジタルコレクション",
+      "item": "清親畫帖",
+      "call_number": "寄別1-9-2-3",
+      "pid": 2605148,
+      "page": 44,
+      "manifest": "https://www.dl.ndl.go.jp/api/iiif/2605148/manifest.json",
+      "image_url": "https://dl.ndl.go.jp/api/iiif/2605148/R0000044/full/full,/0/default.jpg",
+      "license": "Public domain",
+      "commons_file": null
+    }
+  },
+  {
+    "id": 52,
+    "title": {
+      "ja": "上野六角茶屋",
+      "romaji": null,
+      "en": null
+    },
+    "attribution": "kiyochika",
+    "include": true,
+    "exclude_reason": null,
+    "published": null,
+    "published_confidence": null,
+    "viewpoint": {
+      "lat": null,
+      "lng": null,
+      "confidence": "unknown"
+    },
+    "subject": {
+      "lat": 35.711893,
+      "lng": 139.776407
+    },
+    "bearing": null,
+    "place": {
+      "meiji_ku": null,
+      "modern_ward": null,
+      "modern_landmark": null,
+      "anchor": {
+        "how": "osm-cluster×4",
+        "name": "上野",
+        "osm": "node/236578444",
+        "kind": "station",
+        "confidence": "district"
+      }
+    },
+    "conditions": {
+      "time_of_day": null
+    },
+    "notes": {
+      "geo": null,
+      "commentary": null
+    },
+    "source": {
+      "institution": "国立国会図書館デジタルコレクション",
+      "item": "清親畫帖",
+      "call_number": "寄別1-9-2-3",
+      "pid": 2605148,
+      "page": 46,
+      "manifest": "https://www.dl.ndl.go.jp/api/iiif/2605148/manifest.json",
+      "image_url": "https://dl.ndl.go.jp/api/iiif/2605148/R0000046/full/full,/0/default.jpg",
+      "license": "Public domain",
+      "commons_file": null
+    }
+  },
+  {
+    "id": 53,
+    "title": {
+      "ja": "第二回内国博覧會内五角堂",
+      "romaji": null,
+      "en": null
+    },
+    "attribution": "kiyochika",
+    "include": true,
+    "exclude_reason": null,
+    "published": null,
+    "published_confidence": null,
+    "viewpoint": {
+      "lat": null,
+      "lng": null,
+      "confidence": "unknown"
+    },
+    "subject": null,
+    "bearing": null,
+    "place": {
+      "meiji_ku": null,
+      "modern_ward": null,
+      "modern_landmark": null
+    },
+    "conditions": {
+      "time_of_day": null
+    },
+    "notes": {
+      "geo": null,
+      "commentary": null
+    },
+    "source": {
+      "institution": "国立国会図書館デジタルコレクション",
+      "item": "清親畫帖",
+      "call_number": "寄別1-9-2-3",
+      "pid": 2605149,
+      "page": 4,
+      "manifest": "https://www.dl.ndl.go.jp/api/iiif/2605149/manifest.json",
+      "image_url": "https://dl.ndl.go.jp/api/iiif/2605149/R0000004/full/full,/0/default.jpg",
+      "license": "Public domain",
+      "commons_file": null
+    }
+  },
+  {
+    "id": 54,
+    "title": {
+      "ja": "第二回内国勧業博覧會内美術館噴水",
+      "romaji": null,
+      "en": null
+    },
+    "attribution": "kiyochika",
+    "include": true,
+    "exclude_reason": null,
+    "published": null,
+    "published_confidence": null,
+    "viewpoint": {
+      "lat": null,
+      "lng": null,
+      "confidence": "unknown"
+    },
+    "subject": null,
+    "bearing": null,
+    "place": {
+      "meiji_ku": null,
+      "modern_ward": null,
+      "modern_landmark": null
+    },
+    "conditions": {
+      "time_of_day": null
+    },
+    "notes": {
+      "geo": null,
+      "commentary": null
+    },
+    "source": {
+      "institution": "国立国会図書館デジタルコレクション",
+      "item": "清親畫帖",
+      "call_number": "寄別1-9-2-3",
+      "pid": 2605149,
+      "page": 6,
+      "manifest": "https://www.dl.ndl.go.jp/api/iiif/2605149/manifest.json",
+      "image_url": "https://dl.ndl.go.jp/api/iiif/2605149/R0000006/full/full,/0/default.jpg",
+      "license": "Public domain",
+      "commons_file": null
+    }
+  },
+  {
+    "id": 55,
+    "title": {
+      "ja": "箱根底倉湯本萬年橋",
+      "romaji": null,
+      "en": null
+    },
+    "attribution": "kiyochika",
+    "include": false,
+    "exclude_reason": "箱根，畫框外",
+    "published": null,
+    "published_confidence": null,
+    "viewpoint": {
+      "lat": null,
+      "lng": null,
+      "confidence": "unknown"
+    },
+    "subject": null,
+    "bearing": null,
+    "place": {
+      "meiji_ku": null,
+      "modern_ward": null,
+      "modern_landmark": null
+    },
+    "conditions": {
+      "time_of_day": null
+    },
+    "notes": {
+      "geo": null,
+      "commentary": null
+    },
+    "source": {
+      "institution": "国立国会図書館デジタルコレクション",
+      "item": "清親畫帖",
+      "call_number": "寄別1-9-2-3",
+      "pid": 2605149,
+      "page": 8,
+      "manifest": "https://www.dl.ndl.go.jp/api/iiif/2605149/manifest.json",
+      "image_url": "https://dl.ndl.go.jp/api/iiif/2605149/R0000008/full/full,/0/default.jpg",
+      "license": "Public domain",
+      "commons_file": null
+    }
+  },
+  {
+    "id": 56,
+    "title": {
+      "ja": "從箱根山中富嶽眺望",
+      "romaji": null,
+      "en": null
+    },
+    "attribution": "kiyochika",
+    "include": false,
+    "exclude_reason": "箱根，畫框外",
+    "published": null,
+    "published_confidence": null,
+    "viewpoint": {
+      "lat": null,
+      "lng": null,
+      "confidence": "unknown"
+    },
+    "subject": null,
+    "bearing": null,
+    "place": {
+      "meiji_ku": null,
+      "modern_ward": null,
+      "modern_landmark": null
+    },
+    "conditions": {
+      "time_of_day": null
+    },
+    "notes": {
+      "geo": null,
+      "commentary": null
+    },
+    "source": {
+      "institution": "国立国会図書館デジタルコレクション",
+      "item": "清親畫帖",
+      "call_number": "寄別1-9-2-3",
+      "pid": 2605149,
+      "page": 10,
+      "manifest": "https://www.dl.ndl.go.jp/api/iiif/2605149/manifest.json",
+      "image_url": "https://dl.ndl.go.jp/api/iiif/2605149/R0000010/full/full,/0/default.jpg",
+      "license": "Public domain",
+      "commons_file": null
+    }
+  },
+  {
+    "id": 57,
+    "title": {
+      "ja": "ざくろにぶどう",
+      "romaji": null,
+      "en": null
+    },
+    "attribution": "kiyochika",
+    "include": false,
+    "exclude_reason": "靜物",
+    "published": null,
+    "published_confidence": null,
+    "viewpoint": {
+      "lat": null,
+      "lng": null,
+      "confidence": "unknown"
+    },
+    "subject": null,
+    "bearing": null,
+    "place": {
+      "meiji_ku": null,
+      "modern_ward": null,
+      "modern_landmark": null
+    },
+    "conditions": {
+      "time_of_day": null
+    },
+    "notes": {
+      "geo": null,
+      "commentary": null
+    },
+    "source": {
+      "institution": "国立国会図書館デジタルコレクション",
+      "item": "清親畫帖",
+      "call_number": "寄別1-9-2-3",
+      "pid": 2605149,
+      "page": 12,
+      "manifest": "https://www.dl.ndl.go.jp/api/iiif/2605149/manifest.json",
+      "image_url": "https://dl.ndl.go.jp/api/iiif/2605149/R0000012/full/full,/0/default.jpg",
+      "license": "Public domain",
+      "commons_file": null
+    }
+  },
+  {
+    "id": 58,
+    "title": {
+      "ja": "新橋ステンション",
+      "romaji": null,
+      "en": null
+    },
+    "attribution": "kiyochika",
+    "include": true,
+    "exclude_reason": null,
+    "published": null,
+    "published_confidence": null,
+    "viewpoint": {
+      "lat": null,
+      "lng": null,
+      "confidence": "unknown"
+    },
+    "subject": {
+      "lat": 35.66598,
+      "lng": 139.76147
+    },
+    "bearing": null,
+    "place": {
+      "meiji_ku": null,
+      "modern_ward": null,
+      "modern_landmark": null,
+      "anchor": {
+        "how": "manual",
+        "name": "新橋停車場",
+        "source": "wikidata:Q104698226",
+        "confidence": "wikidata"
+      }
+    },
+    "conditions": {
+      "time_of_day": null
+    },
+    "notes": {
+      "geo": "題名「新橋ステンション」＝新橋停車場。Wikidata「旧新橋停車場 鉄道歴史展示室」建在原址。⚠️ 自動比對會取到今天的新橋駅（東北 1km），不是同一個地方。",
+      "commentary": null
+    },
+    "source": {
+      "institution": "国立国会図書館デジタルコレクション",
+      "item": "清親畫帖",
+      "call_number": "寄別1-9-2-3",
+      "pid": 2605149,
+      "page": 14,
+      "manifest": "https://www.dl.ndl.go.jp/api/iiif/2605149/manifest.json",
+      "image_url": "https://dl.ndl.go.jp/api/iiif/2605149/R0000014/full/full,/0/default.jpg",
+      "license": "Public domain",
+      "commons_file": null
+    }
+  },
+  {
+    "id": 59,
+    "title": {
+      "ja": "日本橋夜",
+      "romaji": null,
+      "en": null
+    },
+    "attribution": "kiyochika",
+    "include": true,
+    "exclude_reason": null,
+    "published": null,
+    "published_confidence": null,
+    "viewpoint": {
+      "lat": null,
+      "lng": null,
+      "confidence": "unknown"
+    },
+    "subject": {
+      "lat": 35.684068,
+      "lng": 139.774503
+    },
+    "bearing": null,
+    "place": {
+      "meiji_ku": null,
+      "modern_ward": null,
+      "modern_landmark": null,
+      "anchor": {
+        "how": "osm-cluster×6",
+        "name": "日本橋",
+        "osm": "way/550689172",
+        "kind": "bridge",
+        "confidence": "osm"
+      }
+    },
+    "conditions": {
+      "time_of_day": null
+    },
+    "notes": {
+      "geo": null,
+      "commentary": null
+    },
+    "source": {
+      "institution": "国立国会図書館デジタルコレクション",
+      "item": "清親畫帖",
+      "call_number": "寄別1-9-2-3",
+      "pid": 2605149,
+      "page": 16,
+      "manifest": "https://www.dl.ndl.go.jp/api/iiif/2605149/manifest.json",
+      "image_url": "https://dl.ndl.go.jp/api/iiif/2605149/R0000016/full/full,/0/default.jpg",
+      "license": "Public domain",
+      "commons_file": null
+    }
+  },
+  {
+    "id": 60,
+    "title": {
+      "ja": "兩国大火浅草橋 明治十四年一月廿六日出火",
+      "romaji": null,
+      "en": null
+    },
+    "attribution": "kiyochika",
+    "include": true,
+    "exclude_reason": null,
+    "published": "1881",
+    "published_confidence": "year",
+    "viewpoint": {
+      "lat": null,
+      "lng": null,
+      "confidence": "unknown"
+    },
+    "subject": {
+      "lat": 35.696337,
+      "lng": 139.795198
+    },
+    "bearing": null,
+    "place": {
+      "meiji_ku": null,
+      "modern_ward": null,
+      "modern_landmark": null,
+      "anchor": {
+        "how": "osm-cluster×2",
+        "name": "両国",
+        "osm": "node/2558121937",
+        "kind": "station",
+        "confidence": "district"
+      }
+    },
+    "conditions": {
+      "time_of_day": null
+    },
+    "notes": {
+      "geo": null,
+      "commentary": null
+    },
+    "source": {
+      "institution": "国立国会図書館デジタルコレクション",
+      "item": "清親畫帖",
+      "call_number": "寄別1-9-2-3",
+      "pid": 2605149,
+      "page": 18,
+      "manifest": "https://www.dl.ndl.go.jp/api/iiif/2605149/manifest.json",
+      "image_url": "https://dl.ndl.go.jp/api/iiif/2605149/R0000018/full/full,/0/default.jpg",
+      "license": "Public domain",
+      "commons_file": null
+    }
+  },
+  {
+    "id": 61,
+    "title": {
+      "ja": "濱町より寫兩国大火",
+      "romaji": null,
+      "en": null
+    },
+    "attribution": "kiyochika",
+    "include": true,
+    "exclude_reason": null,
+    "published": null,
+    "published_confidence": null,
+    "viewpoint": {
+      "lat": null,
+      "lng": null,
+      "confidence": "unknown"
+    },
+    "subject": {
+      "lat": 35.688474,
+      "lng": 139.788142
+    },
+    "bearing": null,
+    "place": {
+      "meiji_ku": null,
+      "modern_ward": null,
+      "modern_landmark": null,
+      "anchor": {
+        "how": "osm",
+        "name": "浜町",
+        "osm": "node/6376099903",
+        "kind": "station",
+        "confidence": "district"
+      }
+    },
+    "conditions": {
+      "time_of_day": null
+    },
+    "notes": {
+      "geo": null,
+      "commentary": null
+    },
+    "source": {
+      "institution": "国立国会図書館デジタルコレクション",
+      "item": "清親畫帖",
+      "call_number": "寄別1-9-2-3",
+      "pid": 2605149,
+      "page": 20,
+      "manifest": "https://www.dl.ndl.go.jp/api/iiif/2605149/manifest.json",
+      "image_url": "https://dl.ndl.go.jp/api/iiif/2605149/R0000020/full/full,/0/default.jpg",
+      "license": "Public domain",
+      "commons_file": null
+    }
+  },
+  {
+    "id": 62,
+    "title": {
+      "ja": "久松町ニテ見る出火 明治十四年二月十一日",
+      "romaji": null,
+      "en": null
+    },
+    "attribution": "kiyochika",
+    "include": true,
+    "exclude_reason": null,
+    "published": null,
+    "published_confidence": null,
+    "viewpoint": {
+      "lat": null,
+      "lng": null,
+      "confidence": "unknown"
+    },
+    "subject": {
+      "lat": 35.68916,
+      "lng": 139.78446
+    },
+    "bearing": null,
+    "place": {
+      "meiji_ku": null,
+      "modern_ward": null,
+      "modern_landmark": null,
+      "anchor": {
+        "how": "manual",
+        "name": "久松町",
+        "source": "wikidata:Q11508321",
+        "confidence": "wikidata"
+      }
+    },
+    "conditions": {
+      "time_of_day": null
+    },
+    "notes": {
+      "geo": "Wikidata「日本橋久松町」。",
+      "commentary": null
+    },
+    "source": {
+      "institution": "国立国会図書館デジタルコレクション",
+      "item": "清親畫帖",
+      "call_number": "寄別1-9-2-3",
+      "pid": 2605149,
+      "page": 22,
+      "manifest": "https://www.dl.ndl.go.jp/api/iiif/2605149/manifest.json",
+      "image_url": "https://dl.ndl.go.jp/api/iiif/2605149/R0000022/full/full,/0/default.jpg",
+      "license": "Public domain",
+      "commons_file": null
+    }
+  },
+  {
+    "id": 63,
+    "title": {
+      "ja": "兩国焼跡",
+      "romaji": null,
+      "en": null
+    },
+    "attribution": "kiyochika",
+    "include": true,
+    "exclude_reason": null,
+    "published": null,
+    "published_confidence": null,
+    "viewpoint": {
+      "lat": null,
+      "lng": null,
+      "confidence": "unknown"
+    },
+    "subject": {
+      "lat": 35.696337,
+      "lng": 139.795198
+    },
+    "bearing": null,
+    "place": {
+      "meiji_ku": null,
+      "modern_ward": null,
+      "modern_landmark": null,
+      "anchor": {
+        "how": "osm-cluster×2",
+        "name": "両国",
+        "osm": "node/2558121937",
+        "kind": "station",
+        "confidence": "district"
+      }
+    },
+    "conditions": {
+      "time_of_day": null
+    },
+    "notes": {
+      "geo": null,
+      "commentary": null
+    },
+    "source": {
+      "institution": "国立国会図書館デジタルコレクション",
+      "item": "清親畫帖",
+      "call_number": "寄別1-9-2-3",
+      "pid": 2605149,
+      "page": 24,
+      "manifest": "https://www.dl.ndl.go.jp/api/iiif/2605149/manifest.json",
+      "image_url": "https://dl.ndl.go.jp/api/iiif/2605149/R0000024/full/full,/0/default.jpg",
+      "license": "Public domain",
+      "commons_file": null
+    }
+  },
+  {
+    "id": 64,
+    "title": {
+      "ja": "ためいけ（虎の門夕景）",
+      "romaji": null,
+      "en": null
+    },
+    "attribution": "kiyochika",
+    "include": true,
+    "exclude_reason": null,
+    "published": null,
+    "published_confidence": null,
+    "viewpoint": {
+      "lat": null,
+      "lng": null,
+      "confidence": "unknown"
+    },
+    "subject": {
+      "lat": 35.668608,
+      "lng": 139.748032
+    },
+    "bearing": null,
+    "place": {
+      "meiji_ku": null,
+      "modern_ward": null,
+      "modern_landmark": null,
+      "anchor": {
+        "how": "osm-cluster×2",
+        "name": "虎ノ門",
+        "osm": "node/7786715969",
+        "kind": "station",
+        "confidence": "district"
+      }
+    },
+    "conditions": {
+      "time_of_day": null
+    },
+    "notes": {
+      "geo": null,
+      "commentary": null
+    },
+    "source": {
+      "institution": "国立国会図書館デジタルコレクション",
+      "item": "清親畫帖",
+      "call_number": "寄別1-9-2-3",
+      "pid": 2605149,
+      "page": 26,
+      "manifest": "https://www.dl.ndl.go.jp/api/iiif/2605149/manifest.json",
+      "image_url": "https://dl.ndl.go.jp/api/iiif/2605149/R0000026/full/full,/0/default.jpg",
+      "license": "Public domain",
+      "commons_file": null
+    }
+  },
+  {
+    "id": 65,
+    "title": {
+      "ja": "神田川夕景",
+      "romaji": null,
+      "en": null
+    },
+    "attribution": "kiyochika",
+    "include": true,
+    "exclude_reason": null,
+    "published": null,
+    "published_confidence": null,
+    "viewpoint": {
+      "lat": null,
+      "lng": null,
+      "confidence": "unknown"
+    },
+    "subject": null,
+    "bearing": null,
+    "place": {
+      "meiji_ku": null,
+      "modern_ward": null,
+      "modern_landmark": null
+    },
+    "conditions": {
+      "time_of_day": null
+    },
+    "notes": {
+      "geo": null,
+      "commentary": null
+    },
+    "source": {
+      "institution": "国立国会図書館デジタルコレクション",
+      "item": "清親畫帖",
+      "call_number": "寄別1-9-2-3",
+      "pid": 2605149,
+      "page": 28,
+      "manifest": "https://www.dl.ndl.go.jp/api/iiif/2605149/manifest.json",
+      "image_url": "https://dl.ndl.go.jp/api/iiif/2605149/R0000028/full/full,/0/default.jpg",
+      "license": "Public domain",
+      "commons_file": null
+    }
+  },
+  {
+    "id": 66,
+    "title": {
+      "ja": "柳原夜雨",
+      "romaji": null,
+      "en": null
+    },
+    "attribution": "kiyochika",
+    "include": true,
+    "exclude_reason": null,
+    "published": null,
+    "published_confidence": null,
+    "viewpoint": {
+      "lat": null,
+      "lng": null,
+      "confidence": "unknown"
+    },
+    "subject": null,
+    "bearing": null,
+    "place": {
+      "meiji_ku": null,
+      "modern_ward": null,
+      "modern_landmark": null
+    },
+    "conditions": {
+      "time_of_day": null
+    },
+    "notes": {
+      "geo": null,
+      "commentary": null
+    },
+    "source": {
+      "institution": "国立国会図書館デジタルコレクション",
+      "item": "清親畫帖",
+      "call_number": "寄別1-9-2-3",
+      "pid": 2605149,
+      "page": 30,
+      "manifest": "https://www.dl.ndl.go.jp/api/iiif/2605149/manifest.json",
+      "image_url": "https://dl.ndl.go.jp/api/iiif/2605149/R0000030/full/full,/0/default.jpg",
+      "license": "Public domain",
+      "commons_file": null
+    }
+  },
+  {
+    "id": 67,
+    "title": {
+      "ja": "淺草藏前夏夜",
+      "romaji": null,
+      "en": null
+    },
+    "attribution": "kiyochika",
+    "include": true,
+    "exclude_reason": null,
+    "published": null,
+    "published_confidence": null,
+    "viewpoint": {
+      "lat": null,
+      "lng": null,
+      "confidence": "unknown"
+    },
+    "subject": {
+      "lat": 35.712593,
+      "lng": 139.796546
+    },
+    "bearing": null,
+    "place": {
+      "meiji_ku": null,
+      "modern_ward": null,
+      "modern_landmark": null,
+      "anchor": {
+        "how": "osm-cluster×5",
+        "name": "浅草",
+        "osm": "node/3666779220",
+        "kind": "station",
+        "confidence": "district"
+      }
+    },
+    "conditions": {
+      "time_of_day": null
+    },
+    "notes": {
+      "geo": null,
+      "commentary": null
+    },
+    "source": {
+      "institution": "国立国会図書館デジタルコレクション",
+      "item": "清親畫帖",
+      "call_number": "寄別1-9-2-3",
+      "pid": 2605149,
+      "page": 32,
+      "manifest": "https://www.dl.ndl.go.jp/api/iiif/2605149/manifest.json",
+      "image_url": "https://dl.ndl.go.jp/api/iiif/2605149/R0000032/full/full,/0/default.jpg",
+      "license": "Public domain",
+      "commons_file": null
+    }
+  },
+  {
+    "id": 68,
+    "title": {
+      "ja": "淺草夜見世",
+      "romaji": null,
+      "en": null
+    },
+    "attribution": "kiyochika",
+    "include": true,
+    "exclude_reason": null,
+    "published": null,
+    "published_confidence": null,
+    "viewpoint": {
+      "lat": null,
+      "lng": null,
+      "confidence": "unknown"
+    },
+    "subject": {
+      "lat": 35.712593,
+      "lng": 139.796546
+    },
+    "bearing": null,
+    "place": {
+      "meiji_ku": null,
+      "modern_ward": null,
+      "modern_landmark": null,
+      "anchor": {
+        "how": "osm-cluster×5",
+        "name": "浅草",
+        "osm": "node/3666779220",
+        "kind": "station",
+        "confidence": "district"
+      }
+    },
+    "conditions": {
+      "time_of_day": null
+    },
+    "notes": {
+      "geo": null,
+      "commentary": null
+    },
+    "source": {
+      "institution": "国立国会図書館デジタルコレクション",
+      "item": "清親畫帖",
+      "call_number": "寄別1-9-2-3",
+      "pid": 2605149,
+      "page": 34,
+      "manifest": "https://www.dl.ndl.go.jp/api/iiif/2605149/manifest.json",
+      "image_url": "https://dl.ndl.go.jp/api/iiif/2605149/R0000034/full/full,/0/default.jpg",
+      "license": "Public domain",
+      "commons_file": null
+    }
+  },
+  {
+    "id": 69,
+    "title": {
+      "ja": "淺草寺雪中",
+      "romaji": null,
+      "en": null
+    },
+    "attribution": "kiyochika",
+    "include": true,
+    "exclude_reason": null,
+    "published": null,
+    "published_confidence": null,
+    "viewpoint": {
+      "lat": null,
+      "lng": null,
+      "confidence": "unknown"
+    },
+    "subject": {
+      "lat": 35.713454,
+      "lng": 139.795952
+    },
+    "bearing": null,
+    "place": {
+      "meiji_ku": null,
+      "modern_ward": null,
+      "modern_landmark": null,
+      "anchor": {
+        "how": "osm",
+        "name": "浅草寺",
+        "osm": "way/173154847",
+        "kind": "worship",
+        "confidence": "osm"
+      }
+    },
+    "conditions": {
+      "time_of_day": null
+    },
+    "notes": {
+      "geo": null,
+      "commentary": null
+    },
+    "source": {
+      "institution": "国立国会図書館デジタルコレクション",
+      "item": "清親畫帖",
+      "call_number": "寄別1-9-2-3",
+      "pid": 2605149,
+      "page": 36,
+      "manifest": "https://www.dl.ndl.go.jp/api/iiif/2605149/manifest.json",
+      "image_url": "https://dl.ndl.go.jp/api/iiif/2605149/R0000036/full/full,/0/default.jpg",
+      "license": "Public domain",
+      "commons_file": null
+    }
+  },
+  {
+    "id": 70,
+    "title": {
+      "ja": "今戸夏月",
+      "romaji": null,
+      "en": null
+    },
+    "attribution": "kiyochika",
+    "include": true,
+    "exclude_reason": null,
+    "published": null,
+    "published_confidence": null,
+    "viewpoint": {
+      "lat": null,
+      "lng": null,
+      "confidence": "unknown"
+    },
+    "subject": {
+      "lat": 35.720195,
+      "lng": 139.804427
+    },
+    "bearing": null,
+    "place": {
+      "meiji_ku": null,
+      "modern_ward": null,
+      "modern_landmark": null,
+      "anchor": {
+        "how": "osm",
+        "name": "今戸",
+        "osm": "node/12582191606",
+        "kind": "place",
+        "confidence": "district"
+      }
+    },
+    "conditions": {
+      "time_of_day": null
+    },
+    "notes": {
+      "geo": null,
+      "commentary": null
+    },
+    "source": {
+      "institution": "国立国会図書館デジタルコレクション",
+      "item": "清親畫帖",
+      "call_number": "寄別1-9-2-3",
+      "pid": 2605149,
+      "page": 38,
+      "manifest": "https://www.dl.ndl.go.jp/api/iiif/2605149/manifest.json",
+      "image_url": "https://dl.ndl.go.jp/api/iiif/2605149/R0000038/full/full,/0/default.jpg",
+      "license": "Public domain",
+      "commons_file": null
+    }
+  },
+  {
+    "id": 71,
+    "title": {
+      "ja": "池の端花火",
+      "romaji": null,
+      "en": null
+    },
+    "attribution": "kiyochika",
+    "include": true,
+    "exclude_reason": null,
+    "published": null,
+    "published_confidence": null,
+    "viewpoint": {
+      "lat": null,
+      "lng": null,
+      "confidence": "unknown"
+    },
+    "subject": {
+      "lat": 35.716406,
+      "lng": 139.768767
+    },
+    "bearing": null,
+    "place": {
+      "meiji_ku": null,
+      "modern_ward": null,
+      "modern_landmark": null,
+      "anchor": {
+        "how": "osm",
+        "name": "池ノ端",
+        "osm": "node/12591766679",
+        "kind": "place",
+        "confidence": "district"
+      }
+    },
+    "conditions": {
+      "time_of_day": null
+    },
+    "notes": {
+      "geo": null,
+      "commentary": null
+    },
+    "source": {
+      "institution": "国立国会図書館デジタルコレクション",
+      "item": "清親畫帖",
+      "call_number": "寄別1-9-2-3",
+      "pid": 2605149,
+      "page": 40,
+      "manifest": "https://www.dl.ndl.go.jp/api/iiif/2605149/manifest.json",
+      "image_url": "https://dl.ndl.go.jp/api/iiif/2605149/R0000040/full/full,/0/default.jpg",
+      "license": "Public domain",
+      "commons_file": null
+    }
+  },
+  {
+    "id": 72,
+    "title": {
+      "ja": "大傳馬町大丸",
+      "romaji": null,
+      "en": null
+    },
+    "attribution": "kiyochika",
+    "include": true,
+    "exclude_reason": null,
+    "published": null,
+    "published_confidence": null,
+    "viewpoint": {
+      "lat": null,
+      "lng": null,
+      "confidence": "unknown"
+    },
+    "subject": {
+      "lat": 35.69012,
+      "lng": 139.77965
+    },
+    "bearing": null,
+    "place": {
+      "meiji_ku": null,
+      "modern_ward": null,
+      "modern_landmark": null,
+      "anchor": {
+        "how": "manual",
+        "name": "大伝馬町",
+        "source": "wikidata:Q11508324",
+        "confidence": "wikidata"
+      }
+    },
+    "conditions": {
+      "time_of_day": null
+    },
+    "notes": {
+      "geo": "Wikidata「日本橋大伝馬町」。大丸（呉服店）當時在此。",
+      "commentary": null
+    },
+    "source": {
+      "institution": "国立国会図書館デジタルコレクション",
+      "item": "清親畫帖",
+      "call_number": "寄別1-9-2-3",
+      "pid": 2605149,
+      "page": 42,
+      "manifest": "https://www.dl.ndl.go.jp/api/iiif/2605149/manifest.json",
+      "image_url": "https://dl.ndl.go.jp/api/iiif/2605149/R0000042/full/full,/0/default.jpg",
+      "license": "Public domain",
+      "commons_file": null
+    }
+  },
+  {
+    "id": 73,
+    "title": {
+      "ja": "新版三十二相 過古ことをおもふ 他",
+      "romaji": null,
+      "en": null
+    },
+    "attribution": "kiyochika",
+    "include": false,
+    "exclude_reason": "新版三十二相（滑稽畫，非風景）",
+    "published": null,
+    "published_confidence": null,
+    "viewpoint": {
+      "lat": null,
+      "lng": null,
+      "confidence": "unknown"
+    },
+    "subject": null,
+    "bearing": null,
+    "place": {
+      "meiji_ku": null,
+      "modern_ward": null,
+      "modern_landmark": null
+    },
+    "conditions": {
+      "time_of_day": null
+    },
+    "notes": {
+      "geo": null,
+      "commentary": null
+    },
+    "source": {
+      "institution": "国立国会図書館デジタルコレクション",
+      "item": "清親畫帖",
+      "call_number": "寄別1-9-2-3",
+      "pid": 2605149,
+      "page": 44,
+      "manifest": "https://www.dl.ndl.go.jp/api/iiif/2605149/manifest.json",
+      "image_url": "https://dl.ndl.go.jp/api/iiif/2605149/R0000044/full/full,/0/default.jpg",
+      "license": "Public domain",
+      "commons_file": null
+    }
+  },
+  {
+    "id": 74,
+    "title": {
+      "ja": "新版三十二相 まごあやし 他",
+      "romaji": null,
+      "en": null
+    },
+    "attribution": "kiyochika",
+    "include": false,
+    "exclude_reason": "新版三十二相（滑稽畫，非風景）",
+    "published": null,
+    "published_confidence": null,
+    "viewpoint": {
+      "lat": null,
+      "lng": null,
+      "confidence": "unknown"
+    },
+    "subject": null,
+    "bearing": null,
+    "place": {
+      "meiji_ku": null,
+      "modern_ward": null,
+      "modern_landmark": null
+    },
+    "conditions": {
+      "time_of_day": null
+    },
+    "notes": {
+      "geo": null,
+      "commentary": null
+    },
+    "source": {
+      "institution": "国立国会図書館デジタルコレクション",
+      "item": "清親畫帖",
+      "call_number": "寄別1-9-2-3",
+      "pid": 2605149,
+      "page": 46,
+      "manifest": "https://www.dl.ndl.go.jp/api/iiif/2605149/manifest.json",
+      "image_url": "https://dl.ndl.go.jp/api/iiif/2605149/R0000046/full/full,/0/default.jpg",
+      "license": "Public domain",
+      "commons_file": null
+    }
+  },
+  {
+    "id": 75,
+    "title": {
+      "ja": "新版三十二相 どもり 他",
+      "romaji": null,
+      "en": null
+    },
+    "attribution": "kiyochika",
+    "include": false,
+    "exclude_reason": "新版三十二相（滑稽畫，非風景）",
+    "published": null,
+    "published_confidence": null,
+    "viewpoint": {
+      "lat": null,
+      "lng": null,
+      "confidence": "unknown"
+    },
+    "subject": null,
+    "bearing": null,
+    "place": {
+      "meiji_ku": null,
+      "modern_ward": null,
+      "modern_landmark": null
+    },
+    "conditions": {
+      "time_of_day": null
+    },
+    "notes": {
+      "geo": null,
+      "commentary": null
+    },
+    "source": {
+      "institution": "国立国会図書館デジタルコレクション",
+      "item": "清親畫帖",
+      "call_number": "寄別1-9-2-3",
+      "pid": 2605149,
+      "page": 48,
+      "manifest": "https://www.dl.ndl.go.jp/api/iiif/2605149/manifest.json",
+      "image_url": "https://dl.ndl.go.jp/api/iiif/2605149/R0000048/full/full,/0/default.jpg",
+      "license": "Public domain",
+      "commons_file": null
+    }
+  },
+  {
+    "id": 76,
+    "title": {
+      "ja": "新版三十二相 ちわ喧嘩のあと 他",
+      "romaji": null,
+      "en": null
+    },
+    "attribution": "kiyochika",
+    "include": false,
+    "exclude_reason": "新版三十二相（滑稽畫，非風景）",
+    "published": null,
+    "published_confidence": null,
+    "viewpoint": {
+      "lat": null,
+      "lng": null,
+      "confidence": "unknown"
+    },
+    "subject": null,
+    "bearing": null,
+    "place": {
+      "meiji_ku": null,
+      "modern_ward": null,
+      "modern_landmark": null
+    },
+    "conditions": {
+      "time_of_day": null
+    },
+    "notes": {
+      "geo": null,
+      "commentary": null
+    },
+    "source": {
+      "institution": "国立国会図書館デジタルコレクション",
+      "item": "清親畫帖",
+      "call_number": "寄別1-9-2-3",
+      "pid": 2605149,
+      "page": 50,
+      "manifest": "https://www.dl.ndl.go.jp/api/iiif/2605149/manifest.json",
+      "image_url": "https://dl.ndl.go.jp/api/iiif/2605149/R0000050/full/full,/0/default.jpg",
+      "license": "Public domain",
+      "commons_file": null
+    }
+  },
+  {
+    "id": 77,
+    "title": {
+      "ja": "新版三十二相 亭主もどらぬかん 他",
+      "romaji": null,
+      "en": null
+    },
+    "attribution": "kiyochika",
+    "include": false,
+    "exclude_reason": "新版三十二相（滑稽畫，非風景）",
+    "published": null,
+    "published_confidence": null,
+    "viewpoint": {
+      "lat": null,
+      "lng": null,
+      "confidence": "unknown"
+    },
+    "subject": null,
+    "bearing": null,
+    "place": {
+      "meiji_ku": null,
+      "modern_ward": null,
+      "modern_landmark": null
+    },
+    "conditions": {
+      "time_of_day": null
+    },
+    "notes": {
+      "geo": null,
+      "commentary": null
+    },
+    "source": {
+      "institution": "国立国会図書館デジタルコレクション",
+      "item": "清親畫帖",
+      "call_number": "寄別1-9-2-3",
+      "pid": 2605149,
+      "page": 52,
+      "manifest": "https://www.dl.ndl.go.jp/api/iiif/2605149/manifest.json",
+      "image_url": "https://dl.ndl.go.jp/api/iiif/2605149/R0000052/full/full,/0/default.jpg",
+      "license": "Public domain",
+      "commons_file": null
+    }
+  },
+  {
+    "id": 78,
+    "title": {
+      "ja": "新版三十二相 あくび 他",
+      "romaji": null,
+      "en": null
+    },
+    "attribution": "kiyochika",
+    "include": false,
+    "exclude_reason": "新版三十二相（滑稽畫，非風景）",
+    "published": null,
+    "published_confidence": null,
+    "viewpoint": {
+      "lat": null,
+      "lng": null,
+      "confidence": "unknown"
+    },
+    "subject": null,
+    "bearing": null,
+    "place": {
+      "meiji_ku": null,
+      "modern_ward": null,
+      "modern_landmark": null
+    },
+    "conditions": {
+      "time_of_day": null
+    },
+    "notes": {
+      "geo": null,
+      "commentary": null
+    },
+    "source": {
+      "institution": "国立国会図書館デジタルコレクション",
+      "item": "清親畫帖",
+      "call_number": "寄別1-9-2-3",
+      "pid": 2605149,
+      "page": 54,
+      "manifest": "https://www.dl.ndl.go.jp/api/iiif/2605149/manifest.json",
+      "image_url": "https://dl.ndl.go.jp/api/iiif/2605149/R0000054/full/full,/0/default.jpg",
+      "license": "Public domain",
+      "commons_file": null
+    }
+  },
+  {
+    "id": 79,
+    "title": {
+      "ja": "新版三十二相 やれやれくたびれた 他",
+      "romaji": null,
+      "en": null
+    },
+    "attribution": "kiyochika",
+    "include": false,
+    "exclude_reason": "新版三十二相（滑稽畫，非風景）",
+    "published": null,
+    "published_confidence": null,
+    "viewpoint": {
+      "lat": null,
+      "lng": null,
+      "confidence": "unknown"
+    },
+    "subject": null,
+    "bearing": null,
+    "place": {
+      "meiji_ku": null,
+      "modern_ward": null,
+      "modern_landmark": null
+    },
+    "conditions": {
+      "time_of_day": null
+    },
+    "notes": {
+      "geo": null,
+      "commentary": null
+    },
+    "source": {
+      "institution": "国立国会図書館デジタルコレクション",
+      "item": "清親畫帖",
+      "call_number": "寄別1-9-2-3",
+      "pid": 2605149,
+      "page": 56,
+      "manifest": "https://www.dl.ndl.go.jp/api/iiif/2605149/manifest.json",
+      "image_url": "https://dl.ndl.go.jp/api/iiif/2605149/R0000056/full/full,/0/default.jpg",
+      "license": "Public domain",
+      "commons_file": null
+    }
+  },
+  {
+    "id": 80,
+    "title": {
+      "ja": "新版三十二相 みとれる 他",
+      "romaji": null,
+      "en": null
+    },
+    "attribution": "kiyochika",
+    "include": false,
+    "exclude_reason": "新版三十二相（滑稽畫，非風景）",
+    "published": null,
+    "published_confidence": null,
+    "viewpoint": {
+      "lat": null,
+      "lng": null,
+      "confidence": "unknown"
+    },
+    "subject": null,
+    "bearing": null,
+    "place": {
+      "meiji_ku": null,
+      "modern_ward": null,
+      "modern_landmark": null
+    },
+    "conditions": {
+      "time_of_day": null
+    },
+    "notes": {
+      "geo": null,
+      "commentary": null
+    },
+    "source": {
+      "institution": "国立国会図書館デジタルコレクション",
+      "item": "清親畫帖",
+      "call_number": "寄別1-9-2-3",
+      "pid": 2605149,
+      "page": 58,
+      "manifest": "https://www.dl.ndl.go.jp/api/iiif/2605149/manifest.json",
+      "image_url": "https://dl.ndl.go.jp/api/iiif/2605149/R0000058/full/full,/0/default.jpg",
+      "license": "Public domain",
+      "commons_file": null
+    }
+  },
+  {
+    "id": 81,
+    "title": {
+      "ja": "淺草橋夕景（井上安治 明13）",
+      "romaji": null,
+      "en": null
+    },
+    "attribution": "inoue-yasuji",
+    "include": false,
+    "exclude_reason": "井上安治（弟子）——Action Plan §5 待決定",
+    "published": null,
+    "published_confidence": null,
+    "viewpoint": {
+      "lat": null,
+      "lng": null,
+      "confidence": "unknown"
+    },
+    "subject": null,
+    "bearing": null,
+    "place": {
+      "meiji_ku": null,
+      "modern_ward": null,
+      "modern_landmark": null
+    },
+    "conditions": {
+      "time_of_day": null
+    },
+    "notes": {
+      "geo": null,
+      "commentary": null
+    },
+    "source": {
+      "institution": "国立国会図書館デジタルコレクション",
+      "item": "清親畫帖",
+      "call_number": "寄別1-9-2-3",
+      "pid": 2605149,
+      "page": 60,
+      "manifest": "https://www.dl.ndl.go.jp/api/iiif/2605149/manifest.json",
+      "image_url": "https://dl.ndl.go.jp/api/iiif/2605149/R0000060/full/full,/0/default.jpg",
+      "license": "Public domain",
+      "commons_file": null
+    }
+  },
+  {
+    "id": 82,
+    "title": {
+      "ja": "新吉原夜櫻景（井上安治）",
+      "romaji": null,
+      "en": null
+    },
+    "attribution": "inoue-yasuji",
+    "include": false,
+    "exclude_reason": "井上安治（弟子）——Action Plan §5 待決定",
+    "published": null,
+    "published_confidence": null,
+    "viewpoint": {
+      "lat": null,
+      "lng": null,
+      "confidence": "unknown"
+    },
+    "subject": null,
+    "bearing": null,
+    "place": {
+      "meiji_ku": null,
+      "modern_ward": null,
+      "modern_landmark": null
+    },
+    "conditions": {
+      "time_of_day": null
+    },
+    "notes": {
+      "geo": null,
+      "commentary": null
+    },
+    "source": {
+      "institution": "国立国会図書館デジタルコレクション",
+      "item": "清親畫帖",
+      "call_number": "寄別1-9-2-3",
+      "pid": 2605149,
+      "page": 62,
+      "manifest": "https://www.dl.ndl.go.jp/api/iiif/2605149/manifest.json",
+      "image_url": "https://dl.ndl.go.jp/api/iiif/2605149/R0000062/full/full,/0/default.jpg",
+      "license": "Public domain",
+      "commons_file": null
+    }
+  },
+  {
+    "id": 83,
+    "title": {
+      "ja": "京橋勧業場之景（井上安治 明15）",
+      "romaji": null,
+      "en": null
+    },
+    "attribution": "inoue-yasuji",
+    "include": false,
+    "exclude_reason": "井上安治（弟子）——Action Plan §5 待決定",
+    "published": null,
+    "published_confidence": null,
+    "viewpoint": {
+      "lat": null,
+      "lng": null,
+      "confidence": "unknown"
+    },
+    "subject": null,
+    "bearing": null,
+    "place": {
+      "meiji_ku": null,
+      "modern_ward": null,
+      "modern_landmark": null
+    },
+    "conditions": {
+      "time_of_day": null
+    },
+    "notes": {
+      "geo": null,
+      "commentary": null
+    },
+    "source": {
+      "institution": "国立国会図書館デジタルコレクション",
+      "item": "清親畫帖",
+      "call_number": "寄別1-9-2-3",
+      "pid": 2605149,
+      "page": 64,
+      "manifest": "https://www.dl.ndl.go.jp/api/iiif/2605149/manifest.json",
+      "image_url": "https://dl.ndl.go.jp/api/iiif/2605149/R0000064/full/full,/0/default.jpg",
+      "license": "Public domain",
+      "commons_file": null
+    }
+  },
+  {
+    "id": 84,
+    "title": {
+      "ja": "赤坂紀伊國坂（東京真画名所図解 井上安治）",
+      "romaji": null,
+      "en": null
+    },
+    "attribution": "inoue-yasuji",
+    "include": false,
+    "exclude_reason": "井上安治（弟子）——Action Plan §5 待決定",
+    "published": null,
+    "published_confidence": null,
+    "viewpoint": {
+      "lat": null,
+      "lng": null,
+      "confidence": "unknown"
+    },
+    "subject": null,
+    "bearing": null,
+    "place": {
+      "meiji_ku": null,
+      "modern_ward": null,
+      "modern_landmark": null
+    },
+    "conditions": {
+      "time_of_day": null
+    },
+    "notes": {
+      "geo": null,
+      "commentary": null
+    },
+    "source": {
+      "institution": "国立国会図書館デジタルコレクション",
+      "item": "清親畫帖",
+      "call_number": "寄別1-9-2-3",
+      "pid": 2605149,
+      "page": 66,
+      "manifest": "https://www.dl.ndl.go.jp/api/iiif/2605149/manifest.json",
+      "image_url": "https://dl.ndl.go.jp/api/iiif/2605149/R0000066/full/full,/0/default.jpg",
+      "license": "Public domain",
+      "commons_file": null
+    }
+  }
+]
