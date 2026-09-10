@@ -1,0 +1,119 @@
+<!doctype html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>清親《東京名所図》— 光線画の地図</title>
+<style>
+  :root { --sea:#1b3a56; --land:#e9e1cf; --ink:#2a2622; --river:#4d7fa3; --gold:#c9a227;
+          /* 圖框外。與 --sea 同色系但更暗——不然灣內的海會跟框外連成一片 */
+          --off:#101d29; }
+  * { box-sizing:border-box; margin:0 }
+  body { background:var(--off); color:var(--land); height:100vh; height:100dvh; overflow:hidden;
+         font-family:"Hiragino Mincho ProN","Yu Mincho",serif }
+  #map { display:block; width:100vw; height:100vh; height:100dvh; cursor:grab; touch-action:none }
+  #map:active { cursor:grabbing }
+
+  /* 標記整組由 map.js 套 scale() 縮回螢幕尺度，所以這裡的數字就是螢幕像素 */
+  .mark { cursor:pointer }
+  /* 🔴 pointer-events:all——空心圓（下面的 .approx）的中心是**洞**，
+     SVG 的 fill:none 不接 hit-test，點下去會穿過去打到底下的地形圖。
+     59 個標記裡有 32 個是空心的，也就是一半以上只有那圈 2px 的線點得到。 */
+  .mark circle { fill:var(--gold); opacity:.85; transition:opacity .3s; pointer-events:all }
+  /* 🔴 只定到「那一帶」的座標畫成空心。實心＝查到題名說的那個地物本身
+     （OSM id 或 Wikidata QID），空心＝只知道在這一區。
+     兩種畫成一樣，就是在地圖上把沒查證的事講得跟查證過的一樣確定。 */
+  .mark.approx circle { fill:none; stroke:var(--gold); stroke-width:2; opacity:.75 }
+  .mark text { font-size:13px; fill:var(--ink); opacity:0; paint-order:stroke;
+               stroke:var(--land); stroke-width:4; pointer-events:none; transition:opacity .3s }
+  #map.zoomed .mark text { opacity:.95 }
+  /* 被避讓擠掉的景名。用 class 而非 inline display，:hover 才叫得回來 */
+  #map.zoomed .mark text.crowded { opacity:0 }
+  .mark:hover circle { stroke:#fffdf5; stroke-width:2.5; opacity:1 }
+  .mark:hover text { opacity:1 !important }
+  .mark.sel circle { stroke:#fffdf5; stroke-width:3; opacity:1 }
+  .mark.sel text { opacity:1 !important }
+  /* 視線扇形：畫成扇不畫成箭頭，因為方位有不確定度。目前 69 幅都還沒有方位角 */
+  .mark .cone { fill:var(--gold); opacity:.22; pointer-events:none }
+
+  /* 地名。font-size 與 stroke-width 由 map.js 每次縮放時設在 #places 上，
+     用來抵銷 viewBox 縮放——寫死在這裡的話一拉近字就變巨大。 */
+  #places text { fill:#33506b; paint-order:stroke; stroke:var(--land);
+                 text-anchor:middle; pointer-events:none; opacity:.8 }
+  #places .river, #places .canal { font-style:italic }
+  /* 明治 15 区與現代 23 区：都是「這裡叫什麼」的註腳，不跟水系搶份量 */
+  #places .ku { fill:#7a5c3a; opacity:.72; letter-spacing:.18em }
+  #places .city { fill:#5b7188; opacity:.62; letter-spacing:.18em }
+
+  /* 🔴 HUD 蓋在**淺色**的地圖上，不是深色底。
+     原本沿用 edo-hyakkei 的漸層（#0e2233dd → transparent），那邊的地圖上緣是海，
+     這裡上緣是米色的陸地——同一段 CSS 在這張圖上等於白字印在白紙上。
+     改成自己帶底的一小條，不靠地圖的顏色。 */
+  #hud { position:fixed; top:0; left:0; padding:8px 14px; display:flex; gap:12px;
+         align-items:baseline; pointer-events:none; background:#0e2233e6;
+         border-radius:0 0 8px 0; max-width:min(720px,94vw) }
+  #hud b { font-weight:normal; color:var(--gold) }
+  #hud small { opacity:.72; font-size:11px }
+  @media (max-width:700px) { #hud small { display:none } }
+
+  #zoom { position:fixed; right:14px; top:50%; transform:translateY(-50%);
+          display:flex; flex-direction:column; gap:6px }
+  #zoom button { width:38px; height:38px; font-size:16px; cursor:pointer;
+                 background:#0e2233cc; color:var(--land); border:1px solid #ffffff33;
+                 border-radius:6px; font-family:inherit }
+  #zoom button:disabled { opacity:.35; cursor:default }
+
+  /* 🔴 pointer-events:none：這一條是整片的、上半透明，看起來什麼都沒有，
+     卻會把落在上面的點擊全吃掉（edo-hyakkei 踩過，一顆按鈕看得到按不到）。
+     滑桿自己收回 auto 就好。 */
+  #bar { position:fixed; left:0; right:0; bottom:0; padding:12px 20px 16px; text-align:center;
+         pointer-events:none; background:linear-gradient(transparent,#0e2233cc 40%) }
+  #bar input { pointer-events:auto; width:min(420px,60vw); accent-color:var(--gold);
+               vertical-align:middle }
+  #bar label { font-size:12px; opacity:.7; margin:0 10px }
+  /* 讀數常駐。這條滑桿左＝現代、右＝明治，跟多數人對滑桿的直覺相反，
+     淡出的話玩家就沒有線索知道自己現在疊的是哪一層。 */
+  #eranow { font-size:12px; height:17px; margin-top:5px; color:var(--gold);
+            opacity:.85; letter-spacing:.06em }
+  #attr { font-size:10px; opacity:.4; margin-top:4px }   /* ODbL 要求標示出處 */
+
+  #panel { position:fixed; right:0; top:0; bottom:0; width:min(460px,92vw); overflow:auto;
+           background:#0e2233f2; border-left:1px solid #ffffff22; padding:18px 20px 28px;
+           transform:translateX(102%); transition:transform .25s; }
+  #panel.on { transform:none }
+  #panel img { width:100%; display:block; margin:10px 0; background:#0006; min-height:120px }
+  #panel h2 { font-size:19px; font-weight:normal; letter-spacing:.04em }
+  #panel dl { display:grid; grid-template-columns:5em 1fr; gap:4px 10px; font-size:12.5px;
+              margin-top:10px; line-height:1.55 }
+  #panel dt { opacity:.55 } #panel dd { margin:0 }
+  #panel a { color:var(--gold) }
+  #panel .warn { color:#e0a86b }
+  #close { position:absolute; right:12px; top:10px; background:none; border:0; cursor:pointer;
+           color:var(--land); font-size:20px; opacity:.7 }
+  @media (max-width:700px) {
+    #panel { left:0; top:auto; width:auto; max-height:62vh; border-left:0;
+             border-top:1px solid #ffffff22; transform:translateY(102%) }
+    #bar input { width:78vw; display:block; margin:4px auto }
+    #zoom { top:auto; bottom:120px; transform:none }
+  }
+</style>
+
+<svg id="map"></svg>
+
+<div id="hud"><b id="count"></b><small id="sub"></small></div>
+
+<div id="zoom">
+  <button id="zin" title="放大（＋）">＋</button>
+  <button id="zout" title="縮小（−）">−</button>
+  <button id="zfit" title="全圖（0）">全</button>
+</div>
+
+<div id="bar">
+  <label>2026 現在</label>
+  <input type="range" id="era" min="0" max="1000" value="1000" title="兩張圖的疊合">
+  <label>明治十三年 1880</label>
+  <div id="eranow"></div>
+  <div id="attr">街圖 © OpenStreetMap contributors（ODbL）　·　地形 © 国土地理院 標高タイル　·　版畫 国立国会図書館デジタルコレクション（公有領域）</div>
+</div>
+
+<div id="panel"><button id="close" aria-label="關閉">✕</button><div id="body"></div></div>
+
+<script type="module" src="src/main.js"></script>

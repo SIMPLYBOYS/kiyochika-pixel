@@ -3,7 +3,7 @@
 抽出來的唯一理由：外部館藏站都會限速，429 一定要退讓重試（實測 Commons 併發
 會被關進冷卻期）。這段邏輯只要有一份沒照 Retry-After，那支腳本就會半路斷掉。
 """
-import json, struct, time, urllib.error, urllib.request
+import http.client, json, struct, time, urllib.error, urllib.request
 
 
 def fetch(url, ua, timeout=60, retry_on=(429,), headers=None):
@@ -24,8 +24,18 @@ def fetch(url, ua, timeout=60, retry_on=(429,), headers=None):
     raise RuntimeError("unreachable")
 
 
-def get_json(url, ua, timeout=60):
-    return json.load(fetch(url, ua, timeout))
+def get_json(url, ua, timeout=60, tries=4):
+    """🔴 NDL 與 Commons 都會回**截斷的 body**——HTTP 200，讀到一半斷掉。
+    fetch() 的重試只認 HTTP 狀態碼，攔不到這種；截斷只有在解析時才現形，
+    所以解析必須跟讀取包在同一個 try 裡（shin-hanga 的 common.py 也是這個結論）。"""
+    for attempt in range(tries):
+        try:
+            return json.loads(fetch(url, ua, timeout).read())
+        except (http.client.IncompleteRead, json.JSONDecodeError) as e:
+            if attempt == tries - 1:
+                raise
+            print(f"    body 截斷（{e}），重試…", flush=True)
+            time.sleep(2 * (attempt + 1))
 
 
 def jpeg_size(p):

@@ -1,0 +1,6 @@
+{
+  "name": "kiyochika-pixel",
+  "private": true,
+  "type": "module",
+  "description": "沒有相依套件——這個檔案只為了讓 node 跟瀏覽器一樣把 .js 當 ES module 讀。"
+}

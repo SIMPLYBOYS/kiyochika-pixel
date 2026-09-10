@@ -9,17 +9,24 @@
 這一作與江戶百景共用同一套地圖做法——**一套真實座標，兩層皮**。
 江戶百景的滑桿兩端是 1858 與 2026，這裡是 1880 與 2026。
 
-**目前做到 Phase 0（素材與資料建檔）。還沒有遊戲。**
+**目前做到 Phase 1（地圖）。可以看、可以點，還沒有玩法。**
 
 ```
 素材   NDL《清親畫帖》三冊 84 枚 → 收錄 69 幅東京光線画
 座標   59/69（OSM 19・Wikidata 8・街區級 31・低信心 1）；未定位 10，理由逐條寫在資料裡
 日期   4/69（版面的御届欄可讀，但奧付位置各幅不同，全量判讀移到 Phase 2）
+地圖   59 個點在 1880／2026 兩層皮上，點一下看畫。地名：明治 15 区 ＋ 水系 54
+```
+
+```bash
+python3 tools/serve.py        # 用了原生 ES modules，file:// 開不起來
+open http://localhost:8000
+node tools/check-map.mjs      # 驗收（要 playwright 的 chromium）
 ```
 
 完整的計畫與判斷記錄在 vault：`projects/2026-09-kiyochika-pixel/清親東京名所図-像素遊戲-Action-Plan.md`
 
-## 跑起來
+## 資料要怎麼重建
 
 零依賴（標準庫 ＋ Pillow）、零 build step。順序不能跳。
 
@@ -29,6 +36,7 @@ python3 tools/fetch-gazetteer.py           # OSM 具名地物 23,565 筆 → dat
 python3 tools/derive-subject.py --write    # 題名裡的地名 → subject 座標
 python3 tools/check-subjects.py            # 把座標畫在水系上目視 ← 這步不能省，見下
 python3 tools/fetch-colophon.py --sheet 4  # 裁出御届欄，拼成判讀用的表
+python3 tools/make-thumbs.py               # research/ndl 的整頁 → assets/thumb（面板用）
 python3 tools/fetch-commons.py --sheet     # Commons 側交叉比對（不是主素材）
 ```
 
@@ -38,13 +46,19 @@ python3 tools/fetch-commons.py --sheet     # Commons 側交叉比對（不是主
 ## 資料
 
 ```
+src/
+  map.js             地圖。從 edo-hyakkei 複製，砍掉玩法（視點狩獵、收集狀態、曆法）
+  main.js            Phase 1 的全部：載資料、開地圖、年代滑桿、點一下看畫
 data/
   views.json         84 筆。include=false 的 15 筆留著不刪——刪了下次盤點又會把它們找回來
   places.json        人工定位的座標（機器不覆寫）
   published.json     人工判讀的出版年月（機器不覆寫）
+  meiji-places.json  地名白名單：明治 15 区（Wikidata，記 QID）＋ 水系 54（名字沿用 edo-hyakkei）
   inventory.json     Commons 盤點結果，交叉比對用
   geo/gazetteer.json OSM 具名地物索引（4.8MB）
   geo/modern.json    街圖向量，從 edo-hyakkei 複製（1.8MB，ODbL）
+  geo/relief*.jpg    地形，從 edo-hyakkei 複製（同一個畫框、同一個投影，直接就對得上）
+assets/thumb/        面板用的 720px 整頁（4.4MB）。⚠️ 是整頁不是畫心——裁畫心是 Phase 2
 research/            不進 build：ndl/ 整頁 101MB、colophon/ 奧付裁切、_subjects.png 目視驗收圖
 ```
 
@@ -123,8 +137,8 @@ assert 過得了，因為它在畫框內。抓出來的方法是把 59 個點畫
 
 | Phase | 做什麼 |
 |---|---|
-| 1 | 複製 edo-hyakkei 的 `map.js`；滑桿兩端改 1880／2026 ＋ 新橋鐵道一條線；明治 15 区地名白名單；1882《東京方角一覧図》當文獻層（不對位） |
-| 2 | `trim_paper` 四層重寫（⛔ 沒修好之前不定任何細節座標）→ 480px・16 色・Bayer 8×8 量化 → 順手把 65 幅的御届欄判讀完 |
+| ~~1~~ ✅ | 地圖：`map.js` 複製過來砍掉玩法；滑桿 1880／2026 ＋ 新橋鐵道（1872）；明治 15 区地名。**1882《東京方角一覧図》文獻層沒做**——David Rumsey 的搜尋 API 對日文與羅馬字題名都回 0 筆，網址沒找回來，順延 |
+| 2 | `trim_paper` 四層重寫（⛔ 沒修好之前不定任何細節座標）→ 480px・16 色・Bayer 8×8 量化 → 順手把 65 幅的御届欄判讀完 → `make-thumbs` 改吃裁好的畫心 |
 | 3 | 出版才出現（1876-08 → 1881）、點景收錄、細節搜尋、1881/01/26 両国大火事件、結局＝1881 停筆 |
 | 4 | GitHub Pages |
 
@@ -140,6 +154,21 @@ assert 過得了，因為它在畫框內。抓出來的方法是把 59 個點畫
 
 清親 1915 年歿、作品 1876–1884 年出版 ⇒ 日本、台灣、美國三地都已進入公有領域，
 不需要按出版年做 build 區分。
+
+## Phase 1 踩到的三個
+
+**一、空心圓的中心是洞。** 座標只定到「那一帶」的 32 個點畫成空心，看起來對，
+但 SVG 的 `fill:none` 不接 hit-test——點下去會穿過去打到底下的地形圖。
+一半以上的標記只有那圈 2px 的線點得到。`pointer-events:all` 一行。
+
+**二、抄過來的 CSS 帶著它原本的假設。** HUD 沿用 edo-hyakkei 的漸層背景，
+那邊地圖上緣是海（深色），這邊是米色的陸地——同一段 CSS 在這張圖上等於白字印在白紙上。
+
+**三、面板的圖直接連 NDL 的 IIIF，被回 429。** 那次是我們自己當天抓太多，
+但道理不變：上線之後**每個玩家開一次面板就打 NDL 一次**。圖進 repo，執行期不依賴別人的伺服器。
+
+（測試也踩了一個，那不是產品的錯：Playwright 點 `.mark` 會打到 `<g>` 的 bbox 中心，
+而 bbox 含右邊那條景名，中心落在標籤那一半的空白上。改點圓本身。）
 
 ## 設計筆記
 

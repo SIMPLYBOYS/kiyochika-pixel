@@ -47,7 +47,7 @@
       "pid": 2605147,
       "page": 4,
       "manifest": "https://www.dl.ndl.go.jp/api/iiif/2605147/manifest.json",
-      "image_url": "https://dl.ndl.go.jp/api/iiif/2605147/R0000004/full/full,/0/default.jpg",
+      "image_url": "https://dl.ndl.go.jp/api/iiif/2605147/R0000004/full/full/0/default.jpg",
       "license": "Public domain",
       "commons_file": null
     }
@@ -99,7 +99,7 @@
       "pid": 2605147,
       "page": 6,
       "manifest": "https://www.dl.ndl.go.jp/api/iiif/2605147/manifest.json",
-      "image_url": "https://dl.ndl.go.jp/api/iiif/2605147/R0000006/full/full,/0/default.jpg",
+      "image_url": "https://dl.ndl.go.jp/api/iiif/2605147/R0000006/full/full/0/default.jpg",
       "license": "Public domain",
       "commons_file": null
     }
@@ -152,7 +152,7 @@
       "pid": 2605147,
       "page": 8,
       "manifest": "https://www.dl.ndl.go.jp/api/iiif/2605147/manifest.json",
-      "image_url": "https://dl.ndl.go.jp/api/iiif/2605147/R0000008/full/full,/0/default.jpg",
+      "image_url": "https://dl.ndl.go.jp/api/iiif/2605147/R0000008/full/full/0/default.jpg",
       "license": "Public domain",
       "commons_file": null
     }
@@ -205,7 +205,7 @@
       "pid": 2605147,
       "page": 10,
       "manifest": "https://www.dl.ndl.go.jp/api/iiif/2605147/manifest.json",
-      "image_url": "https://dl.ndl.go.jp/api/iiif/2605147/R0000010/full/full,/0/default.jpg",
+      "image_url": "https://dl.ndl.go.jp/api/iiif/2605147/R0000010/full/full/0/default.jpg",
       "license": "Public domain",
       "commons_file": null
     }
@@ -257,7 +257,7 @@
       "pid": 2605147,
       "page": 12,
       "manifest": "https://www.dl.ndl.go.jp/api/iiif/2605147/manifest.json",
-      "image_url": "https://dl.ndl.go.jp/api/iiif/2605147/R0000012/full/full,/0/default.jpg",
+      "image_url": "https://dl.ndl.go.jp/api/iiif/2605147/R0000012/full/full/0/default.jpg",
       "license": "Public domain",
       "commons_file": null
     }
@@ -310,7 +310,7 @@
       "pid": 2605147,
       "page": 14,
       "manifest": "https://www.dl.ndl.go.jp/api/iiif/2605147/manifest.json",
-      "image_url": "https://dl.ndl.go.jp/api/iiif/2605147/R0000014/full/full,/0/default.jpg",
+      "image_url": "https://dl.ndl.go.jp/api/iiif/2605147/R0000014/full/full/0/default.jpg",
       "license": "Public domain",
       "commons_file": null
     }
@@ -363,7 +363,7 @@
       "pid": 2605147,
       "page": 16,
       "manifest": "https://www.dl.ndl.go.jp/api/iiif/2605147/manifest.json",
-      "image_url": "https://dl.ndl.go.jp/api/iiif/2605147/R0000016/full/full,/0/default.jpg",
+      "image_url": "https://dl.ndl.go.jp/api/iiif/2605147/R0000016/full/full/0/default.jpg",
       "license": "Public domain",
       "commons_file": null
     }
@@ -416,7 +416,7 @@
       "pid": 2605147,
       "page": 18,
       "manifest": "https://www.dl.ndl.go.jp/api/iiif/2605147/manifest.json",
-      "image_url": "https://dl.ndl.go.jp/api/iiif/2605147/R0000018/full/full,/0/default.jpg",
+      "image_url": "https://dl.ndl.go.jp/api/iiif/2605147/R0000018/full/full/0/default.jpg",
       "license": "Public domain",
       "commons_file": null
     }
@@ -468,7 +468,7 @@
       "pid": 2605147,
       "page": 20,
       "manifest": "https://www.dl.ndl.go.jp/api/iiif/2605147/manifest.json",
-      "image_url": "https://dl.ndl.go.jp/api/iiif/2605147/R0000020/full/full,/0/default.jpg",
+      "image_url": "https://dl.ndl.go.jp/api/iiif/2605147/R0000020/full/full/0/default.jpg",
       "license": "Public domain",
       "commons_file": null
     }
@@ -520,7 +520,7 @@
       "pid": 2605147,
       "page": 22,
       "manifest": "https://www.dl.ndl.go.jp/api/iiif/2605147/manifest.json",
-      "image_url": "https://dl.ndl.go.jp/api/iiif/2605147/R0000022/full/full,/0/default.jpg",
+      "image_url": "https://dl.ndl.go.jp/api/iiif/2605147/R0000022/full/full/0/default.jpg",
       "license": "Public domain",
       "commons_file": null
     }
@@ -573,7 +573,7 @@
       "pid": 2605147,
       "page": 24,
       "manifest": "https://www.dl.ndl.go.jp/api/iiif/2605147/manifest.json",
-      "image_url": "https://dl.ndl.go.jp/api/iiif/2605147/R0000024/full/full,/0/default.jpg",
+      "image_url": "https://dl.ndl.go.jp/api/iiif/2605147/R0000024/full/full/0/default.jpg",
       "license": "Public domain",
       "commons_file": null
     }
@@ -616,7 +616,7 @@
       "pid": 2605147,
       "page": 26,
       "manifest": "https://www.dl.ndl.go.jp/api/iiif/2605147/manifest.json",
-      "image_url": "https://dl.ndl.go.jp/api/iiif/2605147/R0000026/full/full,/0/default.jpg",
+      "image_url": "https://dl.ndl.go.jp/api/iiif/2605147/R0000026/full/full/0/default.jpg",
       "license": "Public domain",
       "commons_file": null
     }
@@ -668,7 +668,7 @@
       "pid": 2605147,
       "page": 28,
       "manifest": "https://www.dl.ndl.go.jp/api/iiif/2605147/manifest.json",
-      "image_url": "https://dl.ndl.go.jp/api/iiif/2605147/R0000028/full/full,/0/default.jpg",
+      "image_url": "https://dl.ndl.go.jp/api/iiif/2605147/R0000028/full/full/0/default.jpg",
       "license": "Public domain",
       "commons_file": null
     }
@@ -721,7 +721,7 @@
       "pid": 2605147,
       "page": 30,
       "manifest": "https://www.dl.ndl.go.jp/api/iiif/2605147/manifest.json",
-      "image_url": "https://dl.ndl.go.jp/api/iiif/2605147/R0000030/full/full,/0/default.jpg",
+      "image_url": "https://dl.ndl.go.jp/api/iiif/2605147/R0000030/full/full/0/default.jpg",
       "license": "Public domain",
       "commons_file": null
     }
@@ -774,7 +774,7 @@
       "pid": 2605147,
       "page": 32,
       "manifest": "https://www.dl.ndl.go.jp/api/iiif/2605147/manifest.json",
-      "image_url": "https://dl.ndl.go.jp/api/iiif/2605147/R0000032/full/full,/0/default.jpg",
+      "image_url": "https://dl.ndl.go.jp/api/iiif/2605147/R0000032/full/full/0/default.jpg",
       "license": "Public domain",
       "commons_file": null
     }
@@ -827,7 +827,7 @@
       "pid": 2605147,
       "page": 34,
       "manifest": "https://www.dl.ndl.go.jp/api/iiif/2605147/manifest.json",
-      "image_url": "https://dl.ndl.go.jp/api/iiif/2605147/R0000034/full/full,/0/default.jpg",
+      "image_url": "https://dl.ndl.go.jp/api/iiif/2605147/R0000034/full/full/0/default.jpg",
       "license": "Public domain",
       "commons_file": null
     }
@@ -879,7 +879,7 @@
       "pid": 2605147,
       "page": 36,
       "manifest": "https://www.dl.ndl.go.jp/api/iiif/2605147/manifest.json",
-      "image_url": "https://dl.ndl.go.jp/api/iiif/2605147/R0000036/full/full,/0/default.jpg",
+      "image_url": "https://dl.ndl.go.jp/api/iiif/2605147/R0000036/full/full/0/default.jpg",
       "license": "Public domain",
       "commons_file": null
     }
@@ -932,7 +932,7 @@
       "pid": 2605147,
       "page": 38,
       "manifest": "https://www.dl.ndl.go.jp/api/iiif/2605147/manifest.json",
-      "image_url": "https://dl.ndl.go.jp/api/iiif/2605147/R0000038/full/full,/0/default.jpg",
+      "image_url": "https://dl.ndl.go.jp/api/iiif/2605147/R0000038/full/full/0/default.jpg",
       "license": "Public domain",
       "commons_file": null
     }
@@ -985,7 +985,7 @@
       "pid": 2605147,
       "page": 40,
       "manifest": "https://www.dl.ndl.go.jp/api/iiif/2605147/manifest.json",
-      "image_url": "https://dl.ndl.go.jp/api/iiif/2605147/R0000040/full/full,/0/default.jpg",
+      "image_url": "https://dl.ndl.go.jp/api/iiif/2605147/R0000040/full/full/0/default.jpg",
       "license": "Public domain",
       "commons_file": null
     }
@@ -1038,7 +1038,7 @@
       "pid": 2605147,
       "page": 42,
       "manifest": "https://www.dl.ndl.go.jp/api/iiif/2605147/manifest.json",
-      "image_url": "https://dl.ndl.go.jp/api/iiif/2605147/R0000042/full/full,/0/default.jpg",
+      "image_url": "https://dl.ndl.go.jp/api/iiif/2605147/R0000042/full/full/0/default.jpg",
       "license": "Public domain",
       "commons_file": null
     }
@@ -1091,7 +1091,7 @@
       "pid": 2605147,
       "page": 44,
       "manifest": "https://www.dl.ndl.go.jp/api/iiif/2605147/manifest.json",
-      "image_url": "https://dl.ndl.go.jp/api/iiif/2605147/R0000044/full/full,/0/default.jpg",
+      "image_url": "https://dl.ndl.go.jp/api/iiif/2605147/R0000044/full/full/0/default.jpg",
       "license": "Public domain",
       "commons_file": null
     }
@@ -1143,7 +1143,7 @@
       "pid": 2605147,
       "page": 46,
       "manifest": "https://www.dl.ndl.go.jp/api/iiif/2605147/manifest.json",
-      "image_url": "https://dl.ndl.go.jp/api/iiif/2605147/R0000046/full/full,/0/default.jpg",
+      "image_url": "https://dl.ndl.go.jp/api/iiif/2605147/R0000046/full/full/0/default.jpg",
       "license": "Public domain",
       "commons_file": null
     }
@@ -1195,7 +1195,7 @@
       "pid": 2605147,
       "page": 48,
       "manifest": "https://www.dl.ndl.go.jp/api/iiif/2605147/manifest.json",
-      "image_url": "https://dl.ndl.go.jp/api/iiif/2605147/R0000048/full/full,/0/default.jpg",
+      "image_url": "https://dl.ndl.go.jp/api/iiif/2605147/R0000048/full/full/0/default.jpg",
       "license": "Public domain",
       "commons_file": null
     }
@@ -1248,7 +1248,7 @@
       "pid": 2605147,
       "page": 50,
       "manifest": "https://www.dl.ndl.go.jp/api/iiif/2605147/manifest.json",
-      "image_url": "https://dl.ndl.go.jp/api/iiif/2605147/R0000050/full/full,/0/default.jpg",
+      "image_url": "https://dl.ndl.go.jp/api/iiif/2605147/R0000050/full/full/0/default.jpg",
       "license": "Public domain",
       "commons_file": null
     }
@@ -1301,7 +1301,7 @@
       "pid": 2605147,
       "page": 52,
       "manifest": "https://www.dl.ndl.go.jp/api/iiif/2605147/manifest.json",
-      "image_url": "https://dl.ndl.go.jp/api/iiif/2605147/R0000052/full/full,/0/default.jpg",
+      "image_url": "https://dl.ndl.go.jp/api/iiif/2605147/R0000052/full/full/0/default.jpg",
       "license": "Public domain",
       "commons_file": null
     }
@@ -1353,7 +1353,7 @@
       "pid": 2605147,
       "page": 54,
       "manifest": "https://www.dl.ndl.go.jp/api/iiif/2605147/manifest.json",
-      "image_url": "https://dl.ndl.go.jp/api/iiif/2605147/R0000054/full/full,/0/default.jpg",
+      "image_url": "https://dl.ndl.go.jp/api/iiif/2605147/R0000054/full/full/0/default.jpg",
       "license": "Public domain",
       "commons_file": null
     }
@@ -1406,7 +1406,7 @@
       "pid": 2605147,
       "page": 56,
       "manifest": "https://www.dl.ndl.go.jp/api/iiif/2605147/manifest.json",
-      "image_url": "https://dl.ndl.go.jp/api/iiif/2605147/R0000056/full/full,/0/default.jpg",
+      "image_url": "https://dl.ndl.go.jp/api/iiif/2605147/R0000056/full/full/0/default.jpg",
       "license": "Public domain",
       "commons_file": null
     }
@@ -1449,7 +1449,7 @@
       "pid": 2605147,
       "page": 58,
       "manifest": "https://www.dl.ndl.go.jp/api/iiif/2605147/manifest.json",
-      "image_url": "https://dl.ndl.go.jp/api/iiif/2605147/R0000058/full/full,/0/default.jpg",
+      "image_url": "https://dl.ndl.go.jp/api/iiif/2605147/R0000058/full/full/0/default.jpg",
       "license": "Public domain",
       "commons_file": null
     }
@@ -1501,7 +1501,7 @@
       "pid": 2605147,
       "page": 60,
       "manifest": "https://www.dl.ndl.go.jp/api/iiif/2605147/manifest.json",
-      "image_url": "https://dl.ndl.go.jp/api/iiif/2605147/R0000060/full/full,/0/default.jpg",
+      "image_url": "https://dl.ndl.go.jp/api/iiif/2605147/R0000060/full/full/0/default.jpg",
       "license": "Public domain",
       "commons_file": null
     }
@@ -1554,7 +1554,7 @@
       "pid": 2605147,
       "page": 62,
       "manifest": "https://www.dl.ndl.go.jp/api/iiif/2605147/manifest.json",
-      "image_url": "https://dl.ndl.go.jp/api/iiif/2605147/R0000062/full/full,/0/default.jpg",
+      "image_url": "https://dl.ndl.go.jp/api/iiif/2605147/R0000062/full/full/0/default.jpg",
       "license": "Public domain",
       "commons_file": null
     }
@@ -1597,7 +1597,7 @@
       "pid": 2605148,
       "page": 4,
       "manifest": "https://www.dl.ndl.go.jp/api/iiif/2605148/manifest.json",
-      "image_url": "https://dl.ndl.go.jp/api/iiif/2605148/R0000004/full/full,/0/default.jpg",
+      "image_url": "https://dl.ndl.go.jp/api/iiif/2605148/R0000004/full/full/0/default.jpg",
       "license": "Public domain",
       "commons_file": null
     }
@@ -1650,7 +1650,7 @@
       "pid": 2605148,
       "page": 6,
       "manifest": "https://www.dl.ndl.go.jp/api/iiif/2605148/manifest.json",
-      "image_url": "https://dl.ndl.go.jp/api/iiif/2605148/R0000006/full/full,/0/default.jpg",
+      "image_url": "https://dl.ndl.go.jp/api/iiif/2605148/R0000006/full/full/0/default.jpg",
       "license": "Public domain",
       "commons_file": null
     }
@@ -1702,7 +1702,7 @@
       "pid": 2605148,
       "page": 8,
       "manifest": "https://www.dl.ndl.go.jp/api/iiif/2605148/manifest.json",
-      "image_url": "https://dl.ndl.go.jp/api/iiif/2605148/R0000008/full/full,/0/default.jpg",
+      "image_url": "https://dl.ndl.go.jp/api/iiif/2605148/R0000008/full/full/0/default.jpg",
       "license": "Public domain",
       "commons_file": null
     }
@@ -1754,7 +1754,7 @@
       "pid": 2605148,
       "page": 10,
       "manifest": "https://www.dl.ndl.go.jp/api/iiif/2605148/manifest.json",
-      "image_url": "https://dl.ndl.go.jp/api/iiif/2605148/R0000010/full/full,/0/default.jpg",
+      "image_url": "https://dl.ndl.go.jp/api/iiif/2605148/R0000010/full/full/0/default.jpg",
       "license": "Public domain",
       "commons_file": null
     }
@@ -1807,7 +1807,7 @@
       "pid": 2605148,
       "page": 12,
       "manifest": "https://www.dl.ndl.go.jp/api/iiif/2605148/manifest.json",
-      "image_url": "https://dl.ndl.go.jp/api/iiif/2605148/R0000012/full/full,/0/default.jpg",
+      "image_url": "https://dl.ndl.go.jp/api/iiif/2605148/R0000012/full/full/0/default.jpg",
       "license": "Public domain",
       "commons_file": null
     }
@@ -1860,7 +1860,7 @@
       "pid": 2605148,
       "page": 14,
       "manifest": "https://www.dl.ndl.go.jp/api/iiif/2605148/manifest.json",
-      "image_url": "https://dl.ndl.go.jp/api/iiif/2605148/R0000014/full/full,/0/default.jpg",
+      "image_url": "https://dl.ndl.go.jp/api/iiif/2605148/R0000014/full/full/0/default.jpg",
       "license": "Public domain",
       "commons_file": null
     }
@@ -1913,7 +1913,7 @@
       "pid": 2605148,
       "page": 16,
       "manifest": "https://www.dl.ndl.go.jp/api/iiif/2605148/manifest.json",
-      "image_url": "https://dl.ndl.go.jp/api/iiif/2605148/R0000016/full/full,/0/default.jpg",
+      "image_url": "https://dl.ndl.go.jp/api/iiif/2605148/R0000016/full/full/0/default.jpg",
       "license": "Public domain",
       "commons_file": null
     }
@@ -1965,7 +1965,7 @@
       "pid": 2605148,
       "page": 18,
       "manifest": "https://www.dl.ndl.go.jp/api/iiif/2605148/manifest.json",
-      "image_url": "https://dl.ndl.go.jp/api/iiif/2605148/R0000018/full/full,/0/default.jpg",
+      "image_url": "https://dl.ndl.go.jp/api/iiif/2605148/R0000018/full/full/0/default.jpg",
       "license": "Public domain",
       "commons_file": null
     }
@@ -2018,7 +2018,7 @@
       "pid": 2605148,
       "page": 20,
       "manifest": "https://www.dl.ndl.go.jp/api/iiif/2605148/manifest.json",
-      "image_url": "https://dl.ndl.go.jp/api/iiif/2605148/R0000020/full/full,/0/default.jpg",
+      "image_url": "https://dl.ndl.go.jp/api/iiif/2605148/R0000020/full/full/0/default.jpg",
       "license": "Public domain",
       "commons_file": null
     }
@@ -2070,7 +2070,7 @@
       "pid": 2605148,
       "page": 22,
       "manifest": "https://www.dl.ndl.go.jp/api/iiif/2605148/manifest.json",
-      "image_url": "https://dl.ndl.go.jp/api/iiif/2605148/R0000022/full/full,/0/default.jpg",
+      "image_url": "https://dl.ndl.go.jp/api/iiif/2605148/R0000022/full/full/0/default.jpg",
       "license": "Public domain",
       "commons_file": null
     }
@@ -2123,7 +2123,7 @@
       "pid": 2605148,
       "page": 24,
       "manifest": "https://www.dl.ndl.go.jp/api/iiif/2605148/manifest.json",
-      "image_url": "https://dl.ndl.go.jp/api/iiif/2605148/R0000024/full/full,/0/default.jpg",
+      "image_url": "https://dl.ndl.go.jp/api/iiif/2605148/R0000024/full/full/0/default.jpg",
       "license": "Public domain",
       "commons_file": null
     }
@@ -2176,7 +2176,7 @@
       "pid": 2605148,
       "page": 26,
       "manifest": "https://www.dl.ndl.go.jp/api/iiif/2605148/manifest.json",
-      "image_url": "https://dl.ndl.go.jp/api/iiif/2605148/R0000026/full/full,/0/default.jpg",
+      "image_url": "https://dl.ndl.go.jp/api/iiif/2605148/R0000026/full/full/0/default.jpg",
       "license": "Public domain",
       "commons_file": null
     }
@@ -2229,7 +2229,7 @@
       "pid": 2605148,
       "page": 28,
       "manifest": "https://www.dl.ndl.go.jp/api/iiif/2605148/manifest.json",
-      "image_url": "https://dl.ndl.go.jp/api/iiif/2605148/R0000028/full/full,/0/default.jpg",
+      "image_url": "https://dl.ndl.go.jp/api/iiif/2605148/R0000028/full/full/0/default.jpg",
       "license": "Public domain",
       "commons_file": null
     }
@@ -2281,7 +2281,7 @@
       "pid": 2605148,
       "page": 30,
       "manifest": "https://www.dl.ndl.go.jp/api/iiif/2605148/manifest.json",
-      "image_url": "https://dl.ndl.go.jp/api/iiif/2605148/R0000030/full/full,/0/default.jpg",
+      "image_url": "https://dl.ndl.go.jp/api/iiif/2605148/R0000030/full/full/0/default.jpg",
       "license": "Public domain",
       "commons_file": null
     }
@@ -2324,7 +2324,7 @@
       "pid": 2605148,
       "page": 32,
       "manifest": "https://www.dl.ndl.go.jp/api/iiif/2605148/manifest.json",
-      "image_url": "https://dl.ndl.go.jp/api/iiif/2605148/R0000032/full/full,/0/default.jpg",
+      "image_url": "https://dl.ndl.go.jp/api/iiif/2605148/R0000032/full/full/0/default.jpg",
       "license": "Public domain",
       "commons_file": null
     }
@@ -2376,7 +2376,7 @@
       "pid": 2605148,
       "page": 34,
       "manifest": "https://www.dl.ndl.go.jp/api/iiif/2605148/manifest.json",
-      "image_url": "https://dl.ndl.go.jp/api/iiif/2605148/R0000034/full/full,/0/default.jpg",
+      "image_url": "https://dl.ndl.go.jp/api/iiif/2605148/R0000034/full/full/0/default.jpg",
       "license": "Public domain",
       "commons_file": null
     }
@@ -2428,7 +2428,7 @@
       "pid": 2605148,
       "page": 36,
       "manifest": "https://www.dl.ndl.go.jp/api/iiif/2605148/manifest.json",
-      "image_url": "https://dl.ndl.go.jp/api/iiif/2605148/R0000036/full/full,/0/default.jpg",
+      "image_url": "https://dl.ndl.go.jp/api/iiif/2605148/R0000036/full/full/0/default.jpg",
       "license": "Public domain",
       "commons_file": null
     }
@@ -2471,7 +2471,7 @@
       "pid": 2605148,
       "page": 38,
       "manifest": "https://www.dl.ndl.go.jp/api/iiif/2605148/manifest.json",
-      "image_url": "https://dl.ndl.go.jp/api/iiif/2605148/R0000038/full/full,/0/default.jpg",
+      "image_url": "https://dl.ndl.go.jp/api/iiif/2605148/R0000038/full/full/0/default.jpg",
       "license": "Public domain",
       "commons_file": null
     }
@@ -2524,7 +2524,7 @@
       "pid": 2605148,
       "page": 40,
       "manifest": "https://www.dl.ndl.go.jp/api/iiif/2605148/manifest.json",
-      "image_url": "https://dl.ndl.go.jp/api/iiif/2605148/R0000040/full/full,/0/default.jpg",
+      "image_url": "https://dl.ndl.go.jp/api/iiif/2605148/R0000040/full/full/0/default.jpg",
       "license": "Public domain",
       "commons_file": null
     }
@@ -2577,7 +2577,7 @@
       "pid": 2605148,
       "page": 42,
       "manifest": "https://www.dl.ndl.go.jp/api/iiif/2605148/manifest.json",
-      "image_url": "https://dl.ndl.go.jp/api/iiif/2605148/R0000042/full/full,/0/default.jpg",
+      "image_url": "https://dl.ndl.go.jp/api/iiif/2605148/R0000042/full/full/0/default.jpg",
       "license": "Public domain",
       "commons_file": null
     }
@@ -2620,7 +2620,7 @@
       "pid": 2605148,
       "page": 44,
       "manifest": "https://www.dl.ndl.go.jp/api/iiif/2605148/manifest.json",
-      "image_url": "https://dl.ndl.go.jp/api/iiif/2605148/R0000044/full/full,/0/default.jpg",
+      "image_url": "https://dl.ndl.go.jp/api/iiif/2605148/R0000044/full/full/0/default.jpg",
       "license": "Public domain",
       "commons_file": null
     }
@@ -2673,7 +2673,7 @@
       "pid": 2605148,
       "page": 46,
       "manifest": "https://www.dl.ndl.go.jp/api/iiif/2605148/manifest.json",
-      "image_url": "https://dl.ndl.go.jp/api/iiif/2605148/R0000046/full/full,/0/default.jpg",
+      "image_url": "https://dl.ndl.go.jp/api/iiif/2605148/R0000046/full/full/0/default.jpg",
       "license": "Public domain",
       "commons_file": null
     }
@@ -2716,7 +2716,7 @@
       "pid": 2605149,
       "page": 4,
       "manifest": "https://www.dl.ndl.go.jp/api/iiif/2605149/manifest.json",
-      "image_url": "https://dl.ndl.go.jp/api/iiif/2605149/R0000004/full/full,/0/default.jpg",
+      "image_url": "https://dl.ndl.go.jp/api/iiif/2605149/R0000004/full/full/0/default.jpg",
       "license": "Public domain",
       "commons_file": null
     }
@@ -2759,7 +2759,7 @@
       "pid": 2605149,
       "page": 6,
       "manifest": "https://www.dl.ndl.go.jp/api/iiif/2605149/manifest.json",
-      "image_url": "https://dl.ndl.go.jp/api/iiif/2605149/R0000006/full/full,/0/default.jpg",
+      "image_url": "https://dl.ndl.go.jp/api/iiif/2605149/R0000006/full/full/0/default.jpg",
       "license": "Public domain",
       "commons_file": null
     }
@@ -2802,7 +2802,7 @@
       "pid": 2605149,
       "page": 8,
       "manifest": "https://www.dl.ndl.go.jp/api/iiif/2605149/manifest.json",
-      "image_url": "https://dl.ndl.go.jp/api/iiif/2605149/R0000008/full/full,/0/default.jpg",
+      "image_url": "https://dl.ndl.go.jp/api/iiif/2605149/R0000008/full/full/0/default.jpg",
       "license": "Public domain",
       "commons_file": null
     }
@@ -2845,7 +2845,7 @@
       "pid": 2605149,
       "page": 10,
       "manifest": "https://www.dl.ndl.go.jp/api/iiif/2605149/manifest.json",
-      "image_url": "https://dl.ndl.go.jp/api/iiif/2605149/R0000010/full/full,/0/default.jpg",
+      "image_url": "https://dl.ndl.go.jp/api/iiif/2605149/R0000010/full/full/0/default.jpg",
       "license": "Public domain",
       "commons_file": null
     }
@@ -2888,7 +2888,7 @@
       "pid": 2605149,
       "page": 12,
       "manifest": "https://www.dl.ndl.go.jp/api/iiif/2605149/manifest.json",
-      "image_url": "https://dl.ndl.go.jp/api/iiif/2605149/R0000012/full/full,/0/default.jpg",
+      "image_url": "https://dl.ndl.go.jp/api/iiif/2605149/R0000012/full/full/0/default.jpg",
       "license": "Public domain",
       "commons_file": null
     }
@@ -2940,7 +2940,7 @@
       "pid": 2605149,
       "page": 14,
       "manifest": "https://www.dl.ndl.go.jp/api/iiif/2605149/manifest.json",
-      "image_url": "https://dl.ndl.go.jp/api/iiif/2605149/R0000014/full/full,/0/default.jpg",
+      "image_url": "https://dl.ndl.go.jp/api/iiif/2605149/R0000014/full/full/0/default.jpg",
       "license": "Public domain",
       "commons_file": null
     }
@@ -2993,7 +2993,7 @@
       "pid": 2605149,
       "page": 16,
       "manifest": "https://www.dl.ndl.go.jp/api/iiif/2605149/manifest.json",
-      "image_url": "https://dl.ndl.go.jp/api/iiif/2605149/R0000016/full/full,/0/default.jpg",
+      "image_url": "https://dl.ndl.go.jp/api/iiif/2605149/R0000016/full/full/0/default.jpg",
       "license": "Public domain",
       "commons_file": null
     }
@@ -3046,7 +3046,7 @@
       "pid": 2605149,
       "page": 18,
       "manifest": "https://www.dl.ndl.go.jp/api/iiif/2605149/manifest.json",
-      "image_url": "https://dl.ndl.go.jp/api/iiif/2605149/R0000018/full/full,/0/default.jpg",
+      "image_url": "https://dl.ndl.go.jp/api/iiif/2605149/R0000018/full/full/0/default.jpg",
       "license": "Public domain",
       "commons_file": null
     }
@@ -3099,7 +3099,7 @@
       "pid": 2605149,
       "page": 20,
       "manifest": "https://www.dl.ndl.go.jp/api/iiif/2605149/manifest.json",
-      "image_url": "https://dl.ndl.go.jp/api/iiif/2605149/R0000020/full/full,/0/default.jpg",
+      "image_url": "https://dl.ndl.go.jp/api/iiif/2605149/R0000020/full/full/0/default.jpg",
       "license": "Public domain",
       "commons_file": null
     }
@@ -3151,7 +3151,7 @@
       "pid": 2605149,
       "page": 22,
       "manifest": "https://www.dl.ndl.go.jp/api/iiif/2605149/manifest.json",
-      "image_url": "https://dl.ndl.go.jp/api/iiif/2605149/R0000022/full/full,/0/default.jpg",
+      "image_url": "https://dl.ndl.go.jp/api/iiif/2605149/R0000022/full/full/0/default.jpg",
       "license": "Public domain",
       "commons_file": null
     }
@@ -3204,7 +3204,7 @@
       "pid": 2605149,
       "page": 24,
       "manifest": "https://www.dl.ndl.go.jp/api/iiif/2605149/manifest.json",
-      "image_url": "https://dl.ndl.go.jp/api/iiif/2605149/R0000024/full/full,/0/default.jpg",
+      "image_url": "https://dl.ndl.go.jp/api/iiif/2605149/R0000024/full/full/0/default.jpg",
       "license": "Public domain",
       "commons_file": null
     }
@@ -3257,7 +3257,7 @@
       "pid": 2605149,
       "page": 26,
       "manifest": "https://www.dl.ndl.go.jp/api/iiif/2605149/manifest.json",
-      "image_url": "https://dl.ndl.go.jp/api/iiif/2605149/R0000026/full/full,/0/default.jpg",
+      "image_url": "https://dl.ndl.go.jp/api/iiif/2605149/R0000026/full/full/0/default.jpg",
       "license": "Public domain",
       "commons_file": null
     }
@@ -3300,7 +3300,7 @@
       "pid": 2605149,
       "page": 28,
       "manifest": "https://www.dl.ndl.go.jp/api/iiif/2605149/manifest.json",
-      "image_url": "https://dl.ndl.go.jp/api/iiif/2605149/R0000028/full/full,/0/default.jpg",
+      "image_url": "https://dl.ndl.go.jp/api/iiif/2605149/R0000028/full/full/0/default.jpg",
       "license": "Public domain",
       "commons_file": null
     }
@@ -3343,7 +3343,7 @@
       "pid": 2605149,
       "page": 30,
       "manifest": "https://www.dl.ndl.go.jp/api/iiif/2605149/manifest.json",
-      "image_url": "https://dl.ndl.go.jp/api/iiif/2605149/R0000030/full/full,/0/default.jpg",
+      "image_url": "https://dl.ndl.go.jp/api/iiif/2605149/R0000030/full/full/0/default.jpg",
       "license": "Public domain",
       "commons_file": null
     }
@@ -3396,7 +3396,7 @@
       "pid": 2605149,
       "page": 32,
       "manifest": "https://www.dl.ndl.go.jp/api/iiif/2605149/manifest.json",
-      "image_url": "https://dl.ndl.go.jp/api/iiif/2605149/R0000032/full/full,/0/default.jpg",
+      "image_url": "https://dl.ndl.go.jp/api/iiif/2605149/R0000032/full/full/0/default.jpg",
       "license": "Public domain",
       "commons_file": null
     }
@@ -3449,7 +3449,7 @@
       "pid": 2605149,
       "page": 34,
       "manifest": "https://www.dl.ndl.go.jp/api/iiif/2605149/manifest.json",
-      "image_url": "https://dl.ndl.go.jp/api/iiif/2605149/R0000034/full/full,/0/default.jpg",
+      "image_url": "https://dl.ndl.go.jp/api/iiif/2605149/R0000034/full/full/0/default.jpg",
       "license": "Public domain",
       "commons_file": null
     }
@@ -3502,7 +3502,7 @@
       "pid": 2605149,
       "page": 36,
       "manifest": "https://www.dl.ndl.go.jp/api/iiif/2605149/manifest.json",
-      "image_url": "https://dl.ndl.go.jp/api/iiif/2605149/R0000036/full/full,/0/default.jpg",
+      "image_url": "https://dl.ndl.go.jp/api/iiif/2605149/R0000036/full/full/0/default.jpg",
       "license": "Public domain",
       "commons_file": null
     }
@@ -3555,7 +3555,7 @@
       "pid": 2605149,
       "page": 38,
       "manifest": "https://www.dl.ndl.go.jp/api/iiif/2605149/manifest.json",
-      "image_url": "https://dl.ndl.go.jp/api/iiif/2605149/R0000038/full/full,/0/default.jpg",
+      "image_url": "https://dl.ndl.go.jp/api/iiif/2605149/R0000038/full/full/0/default.jpg",
       "license": "Public domain",
       "commons_file": null
     }
@@ -3608,7 +3608,7 @@
       "pid": 2605149,
       "page": 40,
       "manifest": "https://www.dl.ndl.go.jp/api/iiif/2605149/manifest.json",
-      "image_url": "https://dl.ndl.go.jp/api/iiif/2605149/R0000040/full/full,/0/default.jpg",
+      "image_url": "https://dl.ndl.go.jp/api/iiif/2605149/R0000040/full/full/0/default.jpg",
       "license": "Public domain",
       "commons_file": null
     }
@@ -3660,7 +3660,7 @@
       "pid": 2605149,
       "page": 42,
       "manifest": "https://www.dl.ndl.go.jp/api/iiif/2605149/manifest.json",
-      "image_url": "https://dl.ndl.go.jp/api/iiif/2605149/R0000042/full/full,/0/default.jpg",
+      "image_url": "https://dl.ndl.go.jp/api/iiif/2605149/R0000042/full/full/0/default.jpg",
       "license": "Public domain",
       "commons_file": null
     }
@@ -3703,7 +3703,7 @@
       "pid": 2605149,
       "page": 44,
       "manifest": "https://www.dl.ndl.go.jp/api/iiif/2605149/manifest.json",
-      "image_url": "https://dl.ndl.go.jp/api/iiif/2605149/R0000044/full/full,/0/default.jpg",
+      "image_url": "https://dl.ndl.go.jp/api/iiif/2605149/R0000044/full/full/0/default.jpg",
       "license": "Public domain",
       "commons_file": null
     }
@@ -3746,7 +3746,7 @@
       "pid": 2605149,
       "page": 46,
       "manifest": "https://www.dl.ndl.go.jp/api/iiif/2605149/manifest.json",
-      "image_url": "https://dl.ndl.go.jp/api/iiif/2605149/R0000046/full/full,/0/default.jpg",
+      "image_url": "https://dl.ndl.go.jp/api/iiif/2605149/R0000046/full/full/0/default.jpg",
       "license": "Public domain",
       "commons_file": null
     }
@@ -3789,7 +3789,7 @@
       "pid": 2605149,
       "page": 48,
       "manifest": "https://www.dl.ndl.go.jp/api/iiif/2605149/manifest.json",
-      "image_url": "https://dl.ndl.go.jp/api/iiif/2605149/R0000048/full/full,/0/default.jpg",
+      "image_url": "https://dl.ndl.go.jp/api/iiif/2605149/R0000048/full/full/0/default.jpg",
       "license": "Public domain",
       "commons_file": null
     }
@@ -3832,7 +3832,7 @@
       "pid": 2605149,
       "page": 50,
       "manifest": "https://www.dl.ndl.go.jp/api/iiif/2605149/manifest.json",
-      "image_url": "https://dl.ndl.go.jp/api/iiif/2605149/R0000050/full/full,/0/default.jpg",
+      "image_url": "https://dl.ndl.go.jp/api/iiif/2605149/R0000050/full/full/0/default.jpg",
       "license": "Public domain",
       "commons_file": null
     }
@@ -3875,7 +3875,7 @@
       "pid": 2605149,
       "page": 52,
       "manifest": "https://www.dl.ndl.go.jp/api/iiif/2605149/manifest.json",
-      "image_url": "https://dl.ndl.go.jp/api/iiif/2605149/R0000052/full/full,/0/default.jpg",
+      "image_url": "https://dl.ndl.go.jp/api/iiif/2605149/R0000052/full/full/0/default.jpg",
       "license": "Public domain",
       "commons_file": null
     }
@@ -3918,7 +3918,7 @@
       "pid": 2605149,
       "page": 54,
       "manifest": "https://www.dl.ndl.go.jp/api/iiif/2605149/manifest.json",
-      "image_url": "https://dl.ndl.go.jp/api/iiif/2605149/R0000054/full/full,/0/default.jpg",
+      "image_url": "https://dl.ndl.go.jp/api/iiif/2605149/R0000054/full/full/0/default.jpg",
       "license": "Public domain",
       "commons_file": null
     }
@@ -3961,7 +3961,7 @@
       "pid": 2605149,
       "page": 56,
       "manifest": "https://www.dl.ndl.go.jp/api/iiif/2605149/manifest.json",
-      "image_url": "https://dl.ndl.go.jp/api/iiif/2605149/R0000056/full/full,/0/default.jpg",
+      "image_url": "https://dl.ndl.go.jp/api/iiif/2605149/R0000056/full/full/0/default.jpg",
       "license": "Public domain",
       "commons_file": null
     }
@@ -4004,7 +4004,7 @@
       "pid": 2605149,
       "page": 58,
       "manifest": "https://www.dl.ndl.go.jp/api/iiif/2605149/manifest.json",
-      "image_url": "https://dl.ndl.go.jp/api/iiif/2605149/R0000058/full/full,/0/default.jpg",
+      "image_url": "https://dl.ndl.go.jp/api/iiif/2605149/R0000058/full/full/0/default.jpg",
       "license": "Public domain",
       "commons_file": null
     }
@@ -4047,7 +4047,7 @@
       "pid": 2605149,
       "page": 60,
       "manifest": "https://www.dl.ndl.go.jp/api/iiif/2605149/manifest.json",
-      "image_url": "https://dl.ndl.go.jp/api/iiif/2605149/R0000060/full/full,/0/default.jpg",
+      "image_url": "https://dl.ndl.go.jp/api/iiif/2605149/R0000060/full/full/0/default.jpg",
       "license": "Public domain",
       "commons_file": null
     }
@@ -4090,7 +4090,7 @@
       "pid": 2605149,
       "page": 62,
       "manifest": "https://www.dl.ndl.go.jp/api/iiif/2605149/manifest.json",
-      "image_url": "https://dl.ndl.go.jp/api/iiif/2605149/R0000062/full/full,/0/default.jpg",
+      "image_url": "https://dl.ndl.go.jp/api/iiif/2605149/R0000062/full/full/0/default.jpg",
       "license": "Public domain",
       "commons_file": null
     }
@@ -4133,7 +4133,7 @@
       "pid": 2605149,
       "page": 64,
       "manifest": "https://www.dl.ndl.go.jp/api/iiif/2605149/manifest.json",
-      "image_url": "https://dl.ndl.go.jp/api/iiif/2605149/R0000064/full/full,/0/default.jpg",
+      "image_url": "https://dl.ndl.go.jp/api/iiif/2605149/R0000064/full/full/0/default.jpg",
       "license": "Public domain",
       "commons_file": null
     }
@@ -4176,7 +4176,7 @@
       "pid": 2605149,
       "page": 66,
       "manifest": "https://www.dl.ndl.go.jp/api/iiif/2605149/manifest.json",
-      "image_url": "https://dl.ndl.go.jp/api/iiif/2605149/R0000066/full/full,/0/default.jpg",
+      "image_url": "https://dl.ndl.go.jp/api/iiif/2605149/R0000066/full/full/0/default.jpg",
       "license": "Public domain",
       "commons_file": null
     }

@@ -29,7 +29,10 @@ from fetchlib import fetch, get_json
 ROOT = Path(__file__).resolve().parent.parent
 UA = "kiyochika-pixel/0.1 (research; contact: ferrari828@gmail.com)"
 MANIFEST = "https://www.dl.ndl.go.jp/api/iiif/{pid}/manifest.json"
-IMAGE = "https://dl.ndl.go.jp/api/iiif/{pid}/R{page:07d}/full/{w},/0/default.jpg"
+# IIIF 的 size 語法：整幅是 "full"，指定寬度才是 "900,"。
+# 🔴 原本一律寫 "{w}," ⇒ 整幅那個變成 "full," ，是無效的 IIIF 網址
+# （views.json 裡 84 筆全帶著它，而沒有人點過所以沒人發現）。
+IMAGE = "https://dl.ndl.go.jp/api/iiif/{pid}/R{page:07d}/full/{size}/0/default.jpg"
 PAGE_WIDTH = 2400
 
 # (pid, 冊內枚數)；細目表寫的枚數，第三冊 32 枚含滑稽畫與安治
@@ -178,7 +181,7 @@ def build():
                 "item": "清親畫帖", "call_number": "寄別1-9-2-3",
                 "pid": pid, "page": page,
                 "manifest": MANIFEST.format(pid=pid),
-                "image_url": IMAGE.format(pid=pid, page=page, w="full"),
+                "image_url": IMAGE.format(pid=pid, page=page, size="full"),
                 "license": "Public domain",
                 # 同一幅若 Commons 有更好的掃描，fetch-commons.py 的 inventory 交叉比對後填
                 "commons_file": None,
@@ -206,7 +209,7 @@ def download(views):
         if out.exists():
             continue
         s = v["source"]
-        out.write_bytes(fetch(IMAGE.format(pid=s["pid"], page=s["page"], w=PAGE_WIDTH), UA, timeout=180).read())
+        out.write_bytes(fetch(IMAGE.format(pid=s["pid"], page=s["page"], size=f"{PAGE_WIDTH},"), UA, timeout=180).read())
         print(f"  {out.name}  {v['title']['ja']}  {out.stat().st_size // 1024}KB", flush=True)
         time.sleep(1.0)
 

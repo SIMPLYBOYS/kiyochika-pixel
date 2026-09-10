@@ -1,0 +1,420 @@
+{
+ "_": "地圖上的地名白名單。兩組：明治 15 区（只畫在 1880 那側）與水系（兩側都畫）。",
+ "_ku": "1878 年郡区町村編制法的東京 15 区。存在性與座標取自 Wikidata，每筆記 QID，而且驗過描述是「かつて…にあった区」——確定是那個舊區，不是同名的現代町名。⛔ 不直接拿 OSM 的同名 place 節點當主要來源：那是今天的町名，範圍與中心都不一樣。Wikidata 沒有座標的那幾筆退回用 OSM 町名點代打，該筆自己寫著這件事。",
+ "_water": "堀・川・運河・池。江戶城的堀到今天連名字都沒改，所以兩側都畫。名單沿用 edo-hyakkei 的 edo-places.json，座標一樣由 modern.json 的 labels 依名字 join——白名單只存名字，座標只有一個來源。",
+ "_dropped": [
+  "庭園 6 筆（上野公園・浜離宮恩賜庭園・小石川後楽園・旧芝離宮恩賜庭園・清澄庭園・井の頭恩賜公園）：1880 年那幾個地方多半不叫這個名字，而當時的正確名稱我沒有出處，⛔ 不猜。",
+  "三四郎池（漱石 1908 年才給的名字）與大泉水。",
+  "edo-hyakkei 那份的 edo 欄（弁慶濠→弁慶堀 之類）整欄丟掉：那是為 1858 查的，1880 未必同解。"
+ ],
+ "places": [
+  {
+   "osm": "麹町区",
+   "kind": "ku",
+   "edo": null,
+   "size": 0.045,
+   "lat": 35.68426,
+   "lng": 139.73739,
+   "source": "wikidata:Q11677414"
+  },
+  {
+   "osm": "神田区",
+   "kind": "ku",
+   "edo": null,
+   "size": 0.045,
+   "lat": 35.69278,
+   "lng": 139.76333,
+   "source": "wikidata:Q11590562"
+  },
+  {
+   "osm": "日本橋区",
+   "kind": "ku",
+   "edo": null,
+   "size": 0.045,
+   "lat": 35.68249,
+   "lng": 139.78432,
+   "source": "wikidata:Q927789"
+  },
+  {
+   "osm": "京橋区",
+   "kind": "ku",
+   "edo": null,
+   "size": 0.045,
+   "lat": 35.67061,
+   "lng": 139.77197,
+   "source": "wikidata:Q1795214"
+  },
+  {
+   "osm": "芝区",
+   "kind": "ku",
+   "edo": null,
+   "size": 0.045,
+   "lat": 35.65806,
+   "lng": 139.75111,
+   "source": "wikidata:Q10530734"
+  },
+  {
+   "osm": "麻布区",
+   "kind": "ku",
+   "edo": null,
+   "size": 0.045,
+   "lat": 35.66065,
+   "lng": 139.73501,
+   "source": "wikidata:Q11677479"
+  },
+  {
+   "osm": "赤坂区",
+   "kind": "ku",
+   "edo": null,
+   "size": 0.045,
+   "lat": 35.67475,
+   "lng": 139.73163,
+   "source": "wikidata:Q11635404"
+  },
+  {
+   "osm": "四谷区",
+   "kind": "ku",
+   "edo": null,
+   "size": 0.045,
+   "lat": 35.6875,
+   "lng": 139.71444,
+   "source": "wikidata:Q11420132"
+  },
+  {
+   "osm": "牛込区",
+   "kind": "ku",
+   "edo": null,
+   "size": 0.045,
+   "lat": 35.70056,
+   "lng": 139.73389,
+   "source": "wikidata:Q11570237"
+  },
+  {
+   "osm": "小石川区",
+   "kind": "ku",
+   "edo": null,
+   "size": 0.045,
+   "lat": 35.70806,
+   "lng": 139.74597,
+   "source": "wikidata:Q11463266"
+  },
+  {
+   "osm": "本郷区",
+   "kind": "ku",
+   "edo": null,
+   "size": 0.045,
+   "lat": 35.707738,
+   "lng": 139.760167,
+   "source": "wikidata:Q11520865 + osm:node/12638693920",
+   "note": "Wikidata 有詞條（かつて日本の東京府東京市にあった区）但無座標；錨用同名的現代町名點 OSM node/12638693920。⚠️ 那是今天的本郷，不是本郷区的中心。"
+  },
+  {
+   "osm": "下谷区",
+   "kind": "ku",
+   "edo": null,
+   "size": 0.045,
+   "lat": 35.71261,
+   "lng": 139.77998,
+   "source": "wikidata:Q11361334"
+  },
+  {
+   "osm": "浅草区",
+   "kind": "ku",
+   "edo": null,
+   "size": 0.045,
+   "lat": 35.717597,
+   "lng": 139.797563,
+   "source": "wikidata:Q11557222 + osm:node/6089948203",
+   "note": "Wikidata 有詞條（かつて日本の東京府東京市にあった区）但無座標；錨用同名的現代町名點 OSM node/6089948203。⚠️ 那是今天的浅草，不是浅草区的中心。"
+  },
+  {
+   "osm": "本所区",
+   "kind": "ku",
+   "edo": null,
+   "size": 0.045,
+   "lat": 35.71072,
+   "lng": 139.8015,
+   "source": "wikidata:Q11520362"
+  },
+  {
+   "osm": "深川区",
+   "kind": "ku",
+   "edo": null,
+   "size": 0.045,
+   "lat": 35.676825,
+   "lng": 139.797264,
+   "source": "wikidata:Q11559997 + osm:node/12149681167",
+   "note": "Wikidata 有詞條（かつて日本の東京府東京市にあった区）但無座標；錨用同名的現代町名點 OSM node/12149681167。⚠️ 那是今天的深川，不是深川区的中心。"
+  },
+  {
+   "osm": "桜田濠",
+   "kind": "moat",
+   "edo": null
+  },
+  {
+   "osm": "日比谷濠",
+   "kind": "moat",
+   "edo": null
+  },
+  {
+   "osm": "馬場先濠",
+   "kind": "moat",
+   "edo": null
+  },
+  {
+   "osm": "和田倉濠",
+   "kind": "moat",
+   "edo": null
+  },
+  {
+   "osm": "大手濠",
+   "kind": "moat",
+   "edo": null
+  },
+  {
+   "osm": "桔梗濠",
+   "kind": "moat",
+   "edo": null
+  },
+  {
+   "osm": "蛤濠",
+   "kind": "moat",
+   "edo": null
+  },
+  {
+   "osm": "二重橋濠",
+   "kind": "moat",
+   "edo": null
+  },
+  {
+   "osm": "平川濠",
+   "kind": "moat",
+   "edo": null
+  },
+  {
+   "osm": "清水濠",
+   "kind": "moat",
+   "edo": null
+  },
+  {
+   "osm": "牛ヶ淵",
+   "kind": "moat",
+   "edo": null
+  },
+  {
+   "osm": "千鳥ヶ淵",
+   "kind": "moat",
+   "edo": null
+  },
+  {
+   "osm": "半蔵濠",
+   "kind": "moat",
+   "edo": null
+  },
+  {
+   "osm": "乾濠",
+   "kind": "moat",
+   "edo": null
+  },
+  {
+   "osm": "蓮池濠",
+   "kind": "moat",
+   "edo": null
+  },
+  {
+   "osm": "白鳥濠",
+   "kind": "moat",
+   "edo": null
+  },
+  {
+   "osm": "天神濠",
+   "kind": "moat",
+   "edo": null
+  },
+  {
+   "osm": "上道灌濠",
+   "kind": "moat",
+   "edo": null
+  },
+  {
+   "osm": "中道灌濠",
+   "kind": "moat",
+   "edo": null
+  },
+  {
+   "osm": "下道灌濠",
+   "kind": "moat",
+   "edo": null
+  },
+  {
+   "osm": "弁慶濠",
+   "kind": "moat",
+   "edo": null
+  },
+  {
+   "osm": "隅田川",
+   "kind": "river",
+   "edo": null
+  },
+  {
+   "osm": "神田川",
+   "kind": "river",
+   "edo": null
+  },
+  {
+   "osm": "日本橋川",
+   "kind": "river",
+   "edo": null
+  },
+  {
+   "osm": "小名木川",
+   "kind": "canal",
+   "edo": null
+  },
+  {
+   "osm": "竪川",
+   "kind": "canal",
+   "edo": null
+  },
+  {
+   "osm": "大横川",
+   "kind": "canal",
+   "edo": null
+  },
+  {
+   "osm": "横十間川",
+   "kind": "canal",
+   "edo": null
+  },
+  {
+   "osm": "仙台堀川",
+   "kind": "canal",
+   "edo": null
+  },
+  {
+   "osm": "越中島川",
+   "kind": "canal",
+   "edo": null
+  },
+  {
+   "osm": "古川",
+   "kind": "river",
+   "edo": null
+  },
+  {
+   "osm": "汐留川",
+   "kind": "river",
+   "edo": null
+  },
+  {
+   "osm": "築地川",
+   "kind": "canal",
+   "edo": null
+  },
+  {
+   "osm": "渋谷川",
+   "kind": "river",
+   "edo": null
+  },
+  {
+   "osm": "目黒川",
+   "kind": "river",
+   "edo": null
+  },
+  {
+   "osm": "立会川",
+   "kind": "river",
+   "edo": null
+  },
+  {
+   "osm": "呑川",
+   "kind": "river",
+   "edo": null
+  },
+  {
+   "osm": "石神井川",
+   "kind": "river",
+   "edo": null
+  },
+  {
+   "osm": "音無川",
+   "kind": "river",
+   "edo": null
+  },
+  {
+   "osm": "綾瀬川",
+   "kind": "river",
+   "edo": null
+  },
+  {
+   "osm": "中川",
+   "kind": "river",
+   "edo": null
+  },
+  {
+   "osm": "新川",
+   "kind": "canal",
+   "edo": null
+  },
+  {
+   "osm": "真間川",
+   "kind": "river",
+   "edo": null
+  },
+  {
+   "osm": "妙正寺川",
+   "kind": "river",
+   "edo": null
+  },
+  {
+   "osm": "善福寺川",
+   "kind": "river",
+   "edo": null
+  },
+  {
+   "osm": "野川",
+   "kind": "river",
+   "edo": null
+  },
+  {
+   "osm": "仙川",
+   "kind": "river",
+   "edo": null
+  },
+  {
+   "osm": "白子川",
+   "kind": "river",
+   "edo": null
+  },
+  {
+   "osm": "黒目川",
+   "kind": "river",
+   "edo": null
+  },
+  {
+   "osm": "玉川上水",
+   "kind": "canal",
+   "edo": null
+  },
+  {
+   "osm": "笄川",
+   "kind": "river",
+   "edo": null
+  },
+  {
+   "osm": "江戸川",
+   "kind": "river",
+   "edo": null
+  },
+  {
+   "osm": "不忍池",
+   "kind": "pond",
+   "edo": null
+  },
+  {
+   "osm": "井の頭池",
+   "kind": "pond",
+   "edo": null
+  }
+ ]
+}
