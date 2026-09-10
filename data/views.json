@@ -393,7 +393,7 @@
     "include": true,
     "exclude_reason": null,
     "published": null,
-    "published_confidence": "blank",
+    "published_confidence": "decade",
     "viewpoint": {
       "lat": null,
       "lng": null,
@@ -555,8 +555,8 @@
     "attribution": "kiyochika",
     "include": true,
     "exclude_reason": null,
-    "published": "1880",
-    "published_confidence": "year",
+    "published": null,
+    "published_confidence": "blank",
     "viewpoint": {
       "lat": null,
       "lng": null,
@@ -2996,7 +2996,7 @@
     "include": true,
     "exclude_reason": null,
     "published": null,
-    "published_confidence": null,
+    "published_confidence": "blank",
     "viewpoint": {
       "lat": null,
       "lng": null,
@@ -3050,7 +3050,7 @@
     "include": true,
     "exclude_reason": null,
     "published": null,
-    "published_confidence": null,
+    "published_confidence": "blank",
     "viewpoint": {
       "lat": null,
       "lng": null,
@@ -3104,8 +3104,8 @@
     "attribution": "kiyochika",
     "include": true,
     "exclude_reason": null,
-    "published": "1881",
-    "published_confidence": "year",
+    "published": null,
+    "published_confidence": "decade",
     "viewpoint": {
       "lat": null,
       "lng": null,
@@ -3159,8 +3159,8 @@
     "attribution": "kiyochika",
     "include": true,
     "exclude_reason": null,
-    "published": null,
-    "published_confidence": null,
+    "published": "1881",
+    "published_confidence": "year",
     "viewpoint": {
       "lat": null,
       "lng": null,
@@ -3268,8 +3268,8 @@
     "attribution": "kiyochika",
     "include": true,
     "exclude_reason": null,
-    "published": null,
-    "published_confidence": null,
+    "published": "1881",
+    "published_confidence": "year",
     "viewpoint": {
       "lat": null,
       "lng": null,
