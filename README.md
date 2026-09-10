@@ -16,6 +16,7 @@
 座標   59/69（OSM 19・Wikidata 8・街區級 31・低信心 1）；未定位 10，理由逐條寫在資料裡
 日期   4/69（版面的御届欄可讀，但奧付位置各幅不同，全量判讀移到 Phase 2）
 地圖   59 個點在 1880／2026 兩層皮上，點一下看畫。地名：明治 15 区 ＋ 水系 54
+現在   59/59 有現代区名與町名，面板可直接跳街景
 ```
 
 ```bash
@@ -36,6 +37,7 @@ python3 tools/fetch-gazetteer.py           # OSM 具名地物 23,565 筆 → dat
 python3 tools/derive-subject.py --write    # 題名裡的地名 → subject 座標
 python3 tools/check-subjects.py            # 把座標畫在水系上目視 ← 這步不能省，見下
 python3 tools/fetch-colophon.py --sheet 4  # 裁出御届欄，拼成判讀用的表
+python3 tools/derive-place.py --write      # 座標 → 現代区名・町名（OSM 行政界，本機內外判定）
 python3 tools/make-thumbs.py               # research/ndl 的整頁 → assets/thumb（面板用）
 python3 tools/fetch-commons.py --sheet     # Commons 側交叉比對（不是主素材）
 ```
@@ -54,6 +56,7 @@ data/
   places.json        人工定位的座標（機器不覆寫）
   published.json     人工判讀的出版年月（機器不覆寫）
   meiji-places.json  地名白名單：明治 15 区（Wikidata，記 QID）＋ 水系 54（名字沿用 edo-hyakkei）
+  reference-maps.json 當時的市街圖：連得出去的那一張，＋三條查不到／不能用的紀錄
   inventory.json     Commons 盤點結果，交叉比對用
   geo/gazetteer.json OSM 具名地物索引（4.8MB）
   geo/modern.json    街圖向量，從 edo-hyakkei 複製（1.8MB，ODbL）
@@ -137,7 +140,7 @@ assert 過得了，因為它在畫框內。抓出來的方法是把 59 個點畫
 
 | Phase | 做什麼 |
 |---|---|
-| ~~1~~ ✅ | 地圖：`map.js` 複製過來砍掉玩法；滑桿 1880／2026 ＋ 新橋鐵道（1872）；明治 15 区地名。**1882《東京方角一覧図》文獻層沒做**——David Rumsey 的搜尋 API 對日文與羅馬字題名都回 0 筆，網址沒找回來，順延 |
+| ~~1~~ ✅ | 地圖：`map.js` 複製過來砍掉玩法；滑桿 1880／2026 ＋ 新橋鐵道（1872）；明治 15 区地名；現代地址＋街景連結；當時的市街圖（只連出去，見下） |
 | 2 | `trim_paper` 四層重寫（⛔ 沒修好之前不定任何細節座標）→ 480px・16 色・Bayer 8×8 量化 → 順手把 65 幅的御届欄判讀完 → `make-thumbs` 改吃裁好的畫心 |
 | 3 | 出版才出現（1876-08 → 1881）、點景收錄、細節搜尋、1881/01/26 両国大火事件、結局＝1881 停筆 |
 | 4 | GitHub Pages |
@@ -154,6 +157,25 @@ assert 過得了，因為它在畫框內。抓出來的方法是把 59 個點畫
 
 清親 1915 年歿、作品 1876–1884 年出版 ⇒ 日本、台灣、美國三地都已進入公有領域，
 不需要按出版年做 build 區分。
+
+## 當時的市街圖為什麼只有一個連結
+
+計畫本來指定 1880/1882 年的《東京方角一覽地圖》。查下來三條路：
+
+- **NDL 有藏也數位化了**（pid 14433865／14433926），但 IIIF 回 `checkResult: NG`
+  ＝ **非公開**（館內或圖書館送信限定）。拿不到。
+- **David Rumsey 有一張 1882《東京繪圖》**，17098×12188、IIIF 全開，原本藏於
+  UC Berkeley 東亞圖書館。但 Cartography Associates 對**掃描**主張著作權（CC BY-NC-SA）
+  ⇒ 收進這個 MIT ＋ 公有領域的 repo 會多一個 NC 的角落。**只連結，不下載**——
+  連結不是重製。要不要真的用它是 Aaron 的決定，同 Phase 0 對 MFA Boston 的處置。
+- **明治迅速測図（1880–86）沒查**：它是實測圖、有正確的地理參照，
+  適合的用法是**對位疊圖**而不是「當文獻用」，那是另一個決定。
+
+🔴 中間踩了一個假陽性，記在 `data/reference-maps.json` 裡避免重犯：
+我從 NDL 的**書目頁**刮 `dl.ndl.go.jp/pid/NNN` 當作該書目的數位版，但書目頁會連到
+**別的館藏**——pid 1301528 拉出來是芳年的《新撰東錦絵》，不是地圖。
+而掃描結果還一併報了尺寸與頁數，看起來完全合理。
+判準：**只認「搜尋結果的 link 本身就是數位館藏」，不要從頁面上刮 pid。**
 
 ## Phase 1 踩到的三個
 

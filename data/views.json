@@ -23,7 +23,7 @@
     "bearing": null,
     "place": {
       "meiji_ku": null,
-      "modern_ward": null,
+      "modern_ward": "中央区",
       "modern_landmark": null,
       "anchor": {
         "how": "osm-cluster×4",
@@ -31,7 +31,9 @@
         "osm": "node/6271990033",
         "kind": "station",
         "confidence": "district"
-      }
+      },
+      "modern_town": "銀座",
+      "modern_town_km": 0.04
     },
     "conditions": {
       "time_of_day": null
@@ -76,14 +78,16 @@
     "bearing": null,
     "place": {
       "meiji_ku": null,
-      "modern_ward": null,
+      "modern_ward": "千代田区",
       "modern_landmark": null,
       "anchor": {
         "how": "manual",
         "name": "二重橋",
         "source": "wikidata:Q17211768",
         "confidence": "wikidata"
-      }
+      },
+      "modern_town": "皇居外苑",
+      "modern_town_km": 0.46
     },
     "conditions": {
       "time_of_day": null
@@ -128,7 +132,7 @@
     "bearing": null,
     "place": {
       "meiji_ku": null,
-      "modern_ward": null,
+      "modern_ward": "台東区",
       "modern_landmark": null,
       "anchor": {
         "how": "osm",
@@ -136,7 +140,9 @@
         "osm": "node/12582191631",
         "kind": "place",
         "confidence": "district"
-      }
+      },
+      "modern_town": "橋場",
+      "modern_town_km": 0.0
     },
     "conditions": {
       "time_of_day": null
@@ -181,7 +187,7 @@
     "bearing": null,
     "place": {
       "meiji_ku": null,
-      "modern_ward": null,
+      "modern_ward": "中央区",
       "modern_landmark": null,
       "anchor": {
         "how": "osm",
@@ -189,7 +195,9 @@
         "osm": "node/6155692899",
         "kind": "historic",
         "confidence": "osm"
-      }
+      },
+      "modern_town": "日本橋兜町",
+      "modern_town_km": 0.13
     },
     "conditions": {
       "time_of_day": null
@@ -234,14 +242,16 @@
     "bearing": null,
     "place": {
       "meiji_ku": null,
-      "modern_ward": null,
+      "modern_ward": "江東区",
       "modern_landmark": null,
       "anchor": {
         "how": "manual",
         "name": "柳島",
         "source": "osm:way/956136641",
         "confidence": "district"
-      }
+      },
+      "modern_town": "業平五丁目",
+      "modern_town_km": 0.13
     },
     "conditions": {
       "time_of_day": null
@@ -286,7 +296,7 @@
     "bearing": null,
     "place": {
       "meiji_ku": null,
-      "modern_ward": null,
+      "modern_ward": "台東区",
       "modern_landmark": null,
       "anchor": {
         "how": "osm-cluster×2",
@@ -294,7 +304,9 @@
         "osm": "relation/5413419",
         "kind": "park",
         "confidence": "osm"
-      }
+      },
+      "modern_town": "上野公園",
+      "modern_town_km": 0.05
     },
     "conditions": {
       "time_of_day": null
@@ -339,7 +351,7 @@
     "bearing": null,
     "place": {
       "meiji_ku": null,
-      "modern_ward": null,
+      "modern_ward": "墨田区",
       "modern_landmark": null,
       "anchor": {
         "how": "osm-cluster×2",
@@ -347,7 +359,9 @@
         "osm": "node/2558121937",
         "kind": "station",
         "confidence": "district"
-      }
+      },
+      "modern_town": "横網一丁目",
+      "modern_town_km": 0.17
     },
     "conditions": {
       "time_of_day": null
@@ -392,7 +406,7 @@
     "bearing": null,
     "place": {
       "meiji_ku": null,
-      "modern_ward": null,
+      "modern_ward": "台東区",
       "modern_landmark": null,
       "anchor": {
         "how": "osm-cluster×5",
@@ -400,7 +414,9 @@
         "osm": "node/3666779220",
         "kind": "station",
         "confidence": "district"
-      }
+      },
+      "modern_town": "浅草一丁目",
+      "modern_town_km": 0.17
     },
     "conditions": {
       "time_of_day": null
@@ -445,14 +461,16 @@
     "bearing": null,
     "place": {
       "meiji_ku": null,
-      "modern_ward": null,
+      "modern_ward": "墨田区",
       "modern_landmark": null,
       "anchor": {
         "how": "manual",
         "name": "梅若",
         "source": "osm:way/173704085",
         "confidence": "district"
-      }
+      },
+      "modern_town": "堤通二丁目",
+      "modern_town_km": 0.15
     },
     "conditions": {
       "time_of_day": null
@@ -497,14 +515,16 @@
     "bearing": null,
     "place": {
       "meiji_ku": null,
-      "modern_ward": null,
+      "modern_ward": "北区",
       "modern_landmark": null,
       "anchor": {
         "how": "manual",
         "name": "滝野川",
         "source": "wikidata:Q11565312",
         "confidence": "district"
-      }
+      },
+      "modern_town": "滝野川三丁目",
+      "modern_town_km": 0.05
     },
     "conditions": {
       "time_of_day": null
@@ -549,7 +569,7 @@
     "bearing": null,
     "place": {
       "meiji_ku": null,
-      "modern_ward": null,
+      "modern_ward": "台東区",
       "modern_landmark": null,
       "anchor": {
         "how": "osm",
@@ -557,7 +577,9 @@
         "osm": "node/12591766679",
         "kind": "place",
         "confidence": "district"
-      }
+      },
+      "modern_town": "池之端",
+      "modern_town_km": 0.0
     },
     "conditions": {
       "time_of_day": null
@@ -645,14 +667,16 @@
     "bearing": null,
     "place": {
       "meiji_ku": null,
-      "modern_ward": null,
+      "modern_ward": "墨田区",
       "modern_landmark": null,
       "anchor": {
         "how": "manual",
         "name": "小梅",
         "source": "osm:way/813401245",
         "confidence": "district"
-      }
+      },
+      "modern_town": "向島一丁目",
+      "modern_town_km": 0.12
     },
     "conditions": {
       "time_of_day": null
@@ -697,7 +721,7 @@
     "bearing": null,
     "place": {
       "meiji_ku": null,
-      "modern_ward": null,
+      "modern_ward": "台東区",
       "modern_landmark": null,
       "anchor": {
         "how": "osm",
@@ -705,7 +729,9 @@
         "osm": "way/145344085",
         "kind": "worship",
         "confidence": "osm"
-      }
+      },
+      "modern_town": "池之端三丁目",
+      "modern_town_km": 0.12
     },
     "conditions": {
       "time_of_day": null
@@ -750,7 +776,7 @@
     "bearing": null,
     "place": {
       "meiji_ku": null,
-      "modern_ward": null,
+      "modern_ward": "台東区",
       "modern_landmark": null,
       "anchor": {
         "how": "osm-cluster×2",
@@ -758,7 +784,9 @@
         "osm": "relation/5413419",
         "kind": "park",
         "confidence": "osm"
-      }
+      },
+      "modern_town": "上野公園",
+      "modern_town_km": 0.05
     },
     "conditions": {
       "time_of_day": null
@@ -803,7 +831,7 @@
     "bearing": null,
     "place": {
       "meiji_ku": null,
-      "modern_ward": null,
+      "modern_ward": "川口市",
       "modern_landmark": null,
       "anchor": {
         "how": "osm",
@@ -811,7 +839,9 @@
         "osm": "node/2670191219",
         "kind": "station",
         "confidence": "district"
-      }
+      },
+      "modern_town": "川口三丁目",
+      "modern_town_km": 0.18
     },
     "conditions": {
       "time_of_day": null
@@ -856,14 +886,16 @@
     "bearing": null,
     "place": {
       "meiji_ku": null,
-      "modern_ward": null,
+      "modern_ward": "川口市",
       "modern_landmark": null,
       "anchor": {
         "how": "manual",
         "name": "善光寺",
         "source": "osm:way/156321317",
         "confidence": "osm"
-      }
+      },
+      "modern_town": "金山町",
+      "modern_town_km": 0.24
     },
     "conditions": {
       "time_of_day": null
@@ -908,7 +940,7 @@
     "bearing": null,
     "place": {
       "meiji_ku": null,
-      "modern_ward": null,
+      "modern_ward": "港区",
       "modern_landmark": null,
       "anchor": {
         "how": "osm",
@@ -916,7 +948,9 @@
         "osm": "node/12630144302",
         "kind": "place",
         "confidence": "district"
-      }
+      },
+      "modern_town": "高輪",
+      "modern_town_km": 0.0
     },
     "conditions": {
       "time_of_day": null
@@ -961,7 +995,7 @@
     "bearing": null,
     "place": {
       "meiji_ku": null,
-      "modern_ward": null,
+      "modern_ward": "港区",
       "modern_landmark": null,
       "anchor": {
         "how": "osm-cluster×3",
@@ -969,7 +1003,9 @@
         "osm": "node/2546879674",
         "kind": "station",
         "confidence": "district"
-      }
+      },
+      "modern_town": "港南二丁目",
+      "modern_town_km": 0.29
     },
     "conditions": {
       "time_of_day": null
@@ -1014,7 +1050,7 @@
     "bearing": null,
     "place": {
       "meiji_ku": null,
-      "modern_ward": null,
+      "modern_ward": "文京区",
       "modern_landmark": null,
       "anchor": {
         "how": "osm-cluster×2",
@@ -1022,7 +1058,9 @@
         "osm": "node/6190974817",
         "kind": "station",
         "confidence": "district"
-      }
+      },
+      "modern_town": "湯島",
+      "modern_town_km": 0.1
     },
     "conditions": {
       "time_of_day": null
@@ -1067,7 +1105,7 @@
     "bearing": null,
     "place": {
       "meiji_ku": null,
-      "modern_ward": null,
+      "modern_ward": "墨田区",
       "modern_landmark": null,
       "anchor": {
         "how": "osm-cluster×2",
@@ -1075,7 +1113,9 @@
         "osm": "node/2558121937",
         "kind": "station",
         "confidence": "district"
-      }
+      },
+      "modern_town": "横網一丁目",
+      "modern_town_km": 0.17
     },
     "conditions": {
       "time_of_day": null
@@ -1120,14 +1160,16 @@
     "bearing": null,
     "place": {
       "meiji_ku": null,
-      "modern_ward": null,
+      "modern_ward": "中央区",
       "modern_landmark": null,
       "anchor": {
         "how": "manual",
         "name": "元柳橋",
         "source": "wikidata:Q60210654 + wikidata:Q11622502",
         "confidence": "low"
-      }
+      },
+      "modern_town": "東日本橋二丁目",
+      "modern_town_km": 0.11
     },
     "conditions": {
       "time_of_day": null
@@ -1172,14 +1214,16 @@
     "bearing": null,
     "place": {
       "meiji_ku": null,
-      "modern_ward": null,
+      "modern_ward": "中央区",
       "modern_landmark": null,
       "anchor": {
         "how": "manual",
         "name": "江戸橋",
         "source": "osm:way/551941835",
         "confidence": "osm"
-      }
+      },
+      "modern_town": "日本橋本町一丁目",
+      "modern_town_km": 0.16
     },
     "conditions": {
       "time_of_day": null
@@ -1224,7 +1268,7 @@
     "bearing": null,
     "place": {
       "meiji_ku": null,
-      "modern_ward": null,
+      "modern_ward": "葛飾区",
       "modern_landmark": null,
       "anchor": {
         "how": "osm-cluster×2",
@@ -1232,7 +1276,9 @@
         "osm": "node/7482043457",
         "kind": "station",
         "confidence": "district"
-      }
+      },
+      "modern_town": "堀切四丁目",
+      "modern_town_km": 0.27
     },
     "conditions": {
       "time_of_day": null
@@ -1277,7 +1323,7 @@
     "bearing": null,
     "place": {
       "meiji_ku": null,
-      "modern_ward": null,
+      "modern_ward": "江東区",
       "modern_landmark": null,
       "anchor": {
         "how": "osm",
@@ -1285,7 +1331,9 @@
         "osm": "node/4879948722",
         "kind": "historic",
         "confidence": "osm"
-      }
+      },
+      "modern_town": "亀戸四丁目",
+      "modern_town_km": 0.35
     },
     "conditions": {
       "time_of_day": null
@@ -1330,14 +1378,16 @@
     "bearing": null,
     "place": {
       "meiji_ku": null,
-      "modern_ward": null,
+      "modern_ward": "荒川区",
       "modern_landmark": null,
       "anchor": {
         "how": "manual",
         "name": "道灌山",
         "source": "wikidata:Q17229269",
         "confidence": "wikidata"
-      }
+      },
+      "modern_town": "西日暮里四丁目",
+      "modern_town_km": 0.09
     },
     "conditions": {
       "time_of_day": null
@@ -1382,7 +1432,7 @@
     "bearing": null,
     "place": {
       "meiji_ku": null,
-      "modern_ward": null,
+      "modern_ward": "中央区",
       "modern_landmark": null,
       "anchor": {
         "how": "osm-cluster×3",
@@ -1390,7 +1440,9 @@
         "osm": "way/168663963",
         "kind": "bridge",
         "confidence": "osm"
-      }
+      },
+      "modern_town": "永代一丁目",
+      "modern_town_km": 0.23
     },
     "conditions": {
       "time_of_day": null
@@ -1478,14 +1530,16 @@
     "bearing": null,
     "place": {
       "meiji_ku": null,
-      "modern_ward": null,
+      "modern_ward": "千代田区",
       "modern_landmark": null,
       "anchor": {
         "how": "manual",
         "name": "皇居",
         "source": "osm:way/534754971",
         "confidence": "district"
-      }
+      },
+      "modern_town": "千代田",
+      "modern_town_km": 0.24
     },
     "conditions": {
       "time_of_day": null
@@ -1530,7 +1584,7 @@
     "bearing": null,
     "place": {
       "meiji_ku": null,
-      "modern_ward": null,
+      "modern_ward": "中央区",
       "modern_landmark": null,
       "anchor": {
         "how": "osm",
@@ -1538,7 +1592,9 @@
         "osm": "way/552407565",
         "kind": "bridge",
         "confidence": "osm"
-      }
+      },
+      "modern_town": "日本橋本石町一丁目",
+      "modern_town_km": 0.07
     },
     "conditions": {
       "time_of_day": null
@@ -1626,7 +1682,7 @@
     "bearing": null,
     "place": {
       "meiji_ku": null,
-      "modern_ward": null,
+      "modern_ward": "台東区",
       "modern_landmark": null,
       "anchor": {
         "how": "osm",
@@ -1634,7 +1690,9 @@
         "osm": "node/6515739586",
         "kind": "historic",
         "confidence": "osm"
-      }
+      },
+      "modern_town": "上野二丁目",
+      "modern_town_km": 0.36
     },
     "conditions": {
       "time_of_day": null
@@ -1679,14 +1737,16 @@
     "bearing": null,
     "place": {
       "meiji_ku": null,
-      "modern_ward": null,
+      "modern_ward": "墨田区",
       "modern_landmark": null,
       "anchor": {
         "how": "manual",
         "name": "石原",
         "source": "osm:place/8392822615",
         "confidence": "district"
-      }
+      },
+      "modern_town": "石原一丁目",
+      "modern_town_km": 0.0
     },
     "conditions": {
       "time_of_day": null
@@ -1731,14 +1791,16 @@
     "bearing": null,
     "place": {
       "meiji_ku": null,
-      "modern_ward": null,
+      "modern_ward": "千代田区",
       "modern_landmark": null,
       "anchor": {
         "how": "manual",
         "name": "九段坂",
         "source": "wikidata:Q42311495",
         "confidence": "wikidata"
-      }
+      },
+      "modern_town": "九段南",
+      "modern_town_km": 0.17
     },
     "conditions": {
       "time_of_day": null
@@ -1783,7 +1845,7 @@
     "bearing": null,
     "place": {
       "meiji_ku": null,
-      "modern_ward": null,
+      "modern_ward": "大田区",
       "modern_landmark": null,
       "anchor": {
         "how": "osm",
@@ -1791,7 +1853,9 @@
         "osm": "node/3547330608",
         "kind": "station",
         "confidence": "district"
-      }
+      },
+      "modern_town": "大森北一丁目",
+      "modern_town_km": 0.21
     },
     "conditions": {
       "time_of_day": null
@@ -1836,7 +1900,7 @@
     "bearing": null,
     "place": {
       "meiji_ku": null,
-      "modern_ward": null,
+      "modern_ward": "文京区",
       "modern_landmark": null,
       "anchor": {
         "how": "osm-cluster×3",
@@ -1844,7 +1908,9 @@
         "osm": "way/464629204",
         "kind": "worship",
         "confidence": "osm"
-      }
+      },
+      "modern_town": "弥生一丁目",
+      "modern_town_km": 0.23
     },
     "conditions": {
       "time_of_day": null
@@ -1889,7 +1955,7 @@
     "bearing": null,
     "place": {
       "meiji_ku": null,
-      "modern_ward": null,
+      "modern_ward": "港区",
       "modern_landmark": null,
       "anchor": {
         "how": "osm",
@@ -1897,7 +1963,9 @@
         "osm": "way/744348814",
         "kind": "worship",
         "confidence": "osm"
-      }
+      },
+      "modern_town": "芝公園四丁目",
+      "modern_town_km": 0.08
     },
     "conditions": {
       "time_of_day": null
@@ -1942,14 +2010,16 @@
     "bearing": null,
     "place": {
       "meiji_ku": null,
-      "modern_ward": null,
+      "modern_ward": "千代田区",
       "modern_landmark": null,
       "anchor": {
         "how": "manual",
         "name": "八雲神社",
         "source": "osm:way/91234942 + wikidata:Q137321831",
         "confidence": "osm"
-      }
+      },
+      "modern_town": "外神田二丁目",
+      "modern_town_km": 0.18
     },
     "conditions": {
       "time_of_day": null
@@ -1994,7 +2064,7 @@
     "bearing": null,
     "place": {
       "meiji_ku": null,
-      "modern_ward": null,
+      "modern_ward": "文京区",
       "modern_landmark": null,
       "anchor": {
         "how": "osm-cluster×2",
@@ -2002,7 +2072,9 @@
         "osm": "node/2559434143",
         "kind": "station",
         "confidence": "district"
-      }
+      },
+      "modern_town": "湯島一丁目",
+      "modern_town_km": 0.16
     },
     "conditions": {
       "time_of_day": null
@@ -2047,14 +2119,16 @@
     "bearing": null,
     "place": {
       "meiji_ku": null,
-      "modern_ward": null,
+      "modern_ward": "千代田区",
       "modern_landmark": null,
       "anchor": {
         "how": "manual",
         "name": "弁慶堀",
         "source": "wikidata:Q60217962",
         "confidence": "wikidata"
-      }
+      },
+      "modern_town": "紀尾井町",
+      "modern_town_km": 0.14
     },
     "conditions": {
       "time_of_day": null
@@ -2099,7 +2173,7 @@
     "bearing": null,
     "place": {
       "meiji_ku": null,
-      "modern_ward": null,
+      "modern_ward": "台東区",
       "modern_landmark": null,
       "anchor": {
         "how": "osm",
@@ -2107,7 +2181,9 @@
         "osm": "way/1367250759",
         "kind": "worship",
         "confidence": "osm"
-      }
+      },
+      "modern_town": "谷中七丁目",
+      "modern_town_km": 0.16
     },
     "conditions": {
       "time_of_day": null
@@ -2152,7 +2228,7 @@
     "bearing": null,
     "place": {
       "meiji_ku": null,
-      "modern_ward": null,
+      "modern_ward": "墨田区",
       "modern_landmark": null,
       "anchor": {
         "how": "osm-cluster×2",
@@ -2160,7 +2236,9 @@
         "osm": "node/2558121937",
         "kind": "station",
         "confidence": "district"
-      }
+      },
+      "modern_town": "横網一丁目",
+      "modern_town_km": 0.17
     },
     "conditions": {
       "time_of_day": null
@@ -2205,7 +2283,7 @@
     "bearing": null,
     "place": {
       "meiji_ku": null,
-      "modern_ward": null,
+      "modern_ward": "墨田区",
       "modern_landmark": null,
       "anchor": {
         "how": "osm",
@@ -2213,7 +2291,9 @@
         "osm": "way/553536165",
         "kind": "bridge",
         "confidence": "osm"
-      }
+      },
+      "modern_town": "両国一丁目",
+      "modern_town_km": 0.09
     },
     "conditions": {
       "time_of_day": null
@@ -2258,14 +2338,16 @@
     "bearing": null,
     "place": {
       "meiji_ku": null,
-      "modern_ward": null,
+      "modern_ward": "墨田区",
       "modern_landmark": null,
       "anchor": {
         "how": "manual",
         "name": "富士見の渡し",
         "source": "wikidata:Q101031420",
         "confidence": "wikidata"
-      }
+      },
+      "modern_town": "蔵前一丁目",
+      "modern_town_km": 0.16
     },
     "conditions": {
       "time_of_day": null
@@ -2353,14 +2435,16 @@
     "bearing": null,
     "place": {
       "meiji_ku": null,
-      "modern_ward": null,
+      "modern_ward": "墨田区",
       "modern_landmark": null,
       "anchor": {
         "how": "manual",
         "name": "本所",
         "source": "wikidata:Q3140127",
         "confidence": "district"
-      }
+      },
+      "modern_town": "本所二丁目",
+      "modern_town_km": 0.11
     },
     "conditions": {
       "time_of_day": null
@@ -2405,14 +2489,16 @@
     "bearing": null,
     "place": {
       "meiji_ku": null,
-      "modern_ward": null,
+      "modern_ward": "中央区",
       "modern_landmark": null,
       "anchor": {
         "how": "manual",
         "name": "常盤橋",
         "source": "osm:way/552407566",
         "confidence": "osm"
-      }
+      },
+      "modern_town": "日本橋本石町一丁目",
+      "modern_town_km": 0.09
     },
     "conditions": {
       "time_of_day": null
@@ -2500,7 +2586,7 @@
     "bearing": null,
     "place": {
       "meiji_ku": null,
-      "modern_ward": null,
+      "modern_ward": "台東区",
       "modern_landmark": null,
       "anchor": {
         "how": "osm",
@@ -2508,7 +2594,9 @@
         "osm": "node/12582191631",
         "kind": "place",
         "confidence": "district"
-      }
+      },
+      "modern_town": "橋場",
+      "modern_town_km": 0.0
     },
     "conditions": {
       "time_of_day": null
@@ -2553,7 +2641,7 @@
     "bearing": null,
     "place": {
       "meiji_ku": null,
-      "modern_ward": null,
+      "modern_ward": "台東区",
       "modern_landmark": null,
       "anchor": {
         "how": "osm",
@@ -2561,7 +2649,9 @@
         "osm": "way/585439311",
         "kind": "bridge",
         "confidence": "osm"
-      }
+      },
+      "modern_town": "駒形",
+      "modern_town_km": 0.19
     },
     "conditions": {
       "time_of_day": null
@@ -2649,7 +2739,7 @@
     "bearing": null,
     "place": {
       "meiji_ku": null,
-      "modern_ward": null,
+      "modern_ward": "台東区",
       "modern_landmark": null,
       "anchor": {
         "how": "osm-cluster×4",
@@ -2657,7 +2747,9 @@
         "osm": "node/236578444",
         "kind": "station",
         "confidence": "district"
-      }
+      },
+      "modern_town": "上野",
+      "modern_town_km": 0.17
     },
     "conditions": {
       "time_of_day": null
@@ -2917,14 +3009,16 @@
     "bearing": null,
     "place": {
       "meiji_ku": null,
-      "modern_ward": null,
+      "modern_ward": "港区",
       "modern_landmark": null,
       "anchor": {
         "how": "manual",
         "name": "新橋停車場",
         "source": "wikidata:Q104698226",
         "confidence": "wikidata"
-      }
+      },
+      "modern_town": "銀座八丁目",
+      "modern_town_km": 0.2
     },
     "conditions": {
       "time_of_day": null
@@ -2969,7 +3063,7 @@
     "bearing": null,
     "place": {
       "meiji_ku": null,
-      "modern_ward": null,
+      "modern_ward": "中央区",
       "modern_landmark": null,
       "anchor": {
         "how": "osm-cluster×6",
@@ -2977,7 +3071,9 @@
         "osm": "way/550689172",
         "kind": "bridge",
         "confidence": "osm"
-      }
+      },
+      "modern_town": "日本橋一丁目",
+      "modern_town_km": 0.15
     },
     "conditions": {
       "time_of_day": null
@@ -3022,7 +3118,7 @@
     "bearing": null,
     "place": {
       "meiji_ku": null,
-      "modern_ward": null,
+      "modern_ward": "墨田区",
       "modern_landmark": null,
       "anchor": {
         "how": "osm-cluster×2",
@@ -3030,7 +3126,9 @@
         "osm": "node/2558121937",
         "kind": "station",
         "confidence": "district"
-      }
+      },
+      "modern_town": "横網一丁目",
+      "modern_town_km": 0.17
     },
     "conditions": {
       "time_of_day": null
@@ -3075,7 +3173,7 @@
     "bearing": null,
     "place": {
       "meiji_ku": null,
-      "modern_ward": null,
+      "modern_ward": "中央区",
       "modern_landmark": null,
       "anchor": {
         "how": "osm",
@@ -3083,7 +3181,9 @@
         "osm": "node/6376099903",
         "kind": "station",
         "confidence": "district"
-      }
+      },
+      "modern_town": "日本橋浜町二丁目",
+      "modern_town_km": 0.05
     },
     "conditions": {
       "time_of_day": null
@@ -3128,14 +3228,16 @@
     "bearing": null,
     "place": {
       "meiji_ku": null,
-      "modern_ward": null,
+      "modern_ward": "中央区",
       "modern_landmark": null,
       "anchor": {
         "how": "manual",
         "name": "久松町",
         "source": "wikidata:Q11508321",
         "confidence": "wikidata"
-      }
+      },
+      "modern_town": "日本橋久松町",
+      "modern_town_km": 0.05
     },
     "conditions": {
       "time_of_day": null
@@ -3180,7 +3282,7 @@
     "bearing": null,
     "place": {
       "meiji_ku": null,
-      "modern_ward": null,
+      "modern_ward": "墨田区",
       "modern_landmark": null,
       "anchor": {
         "how": "osm-cluster×2",
@@ -3188,7 +3290,9 @@
         "osm": "node/2558121937",
         "kind": "station",
         "confidence": "district"
-      }
+      },
+      "modern_town": "横網一丁目",
+      "modern_town_km": 0.17
     },
     "conditions": {
       "time_of_day": null
@@ -3233,7 +3337,7 @@
     "bearing": null,
     "place": {
       "meiji_ku": null,
-      "modern_ward": null,
+      "modern_ward": "港区",
       "modern_landmark": null,
       "anchor": {
         "how": "osm-cluster×2",
@@ -3241,7 +3345,9 @@
         "osm": "node/7786715969",
         "kind": "station",
         "confidence": "district"
-      }
+      },
+      "modern_town": "虎ノ門二丁目",
+      "modern_town_km": 0.15
     },
     "conditions": {
       "time_of_day": null
@@ -3372,7 +3478,7 @@
     "bearing": null,
     "place": {
       "meiji_ku": null,
-      "modern_ward": null,
+      "modern_ward": "台東区",
       "modern_landmark": null,
       "anchor": {
         "how": "osm-cluster×5",
@@ -3380,7 +3486,9 @@
         "osm": "node/3666779220",
         "kind": "station",
         "confidence": "district"
-      }
+      },
+      "modern_town": "浅草一丁目",
+      "modern_town_km": 0.17
     },
     "conditions": {
       "time_of_day": null
@@ -3425,7 +3533,7 @@
     "bearing": null,
     "place": {
       "meiji_ku": null,
-      "modern_ward": null,
+      "modern_ward": "台東区",
       "modern_landmark": null,
       "anchor": {
         "how": "osm-cluster×5",
@@ -3433,7 +3541,9 @@
         "osm": "node/3666779220",
         "kind": "station",
         "confidence": "district"
-      }
+      },
+      "modern_town": "浅草一丁目",
+      "modern_town_km": 0.17
     },
     "conditions": {
       "time_of_day": null
@@ -3478,7 +3588,7 @@
     "bearing": null,
     "place": {
       "meiji_ku": null,
-      "modern_ward": null,
+      "modern_ward": "台東区",
       "modern_landmark": null,
       "anchor": {
         "how": "osm",
@@ -3486,7 +3596,9 @@
         "osm": "way/173154847",
         "kind": "worship",
         "confidence": "osm"
-      }
+      },
+      "modern_town": "浅草二丁目",
+      "modern_town_km": 0.17
     },
     "conditions": {
       "time_of_day": null
@@ -3531,7 +3643,7 @@
     "bearing": null,
     "place": {
       "meiji_ku": null,
-      "modern_ward": null,
+      "modern_ward": "台東区",
       "modern_landmark": null,
       "anchor": {
         "how": "osm",
@@ -3539,7 +3651,9 @@
         "osm": "node/12582191606",
         "kind": "place",
         "confidence": "district"
-      }
+      },
+      "modern_town": "今戸",
+      "modern_town_km": 0.0
     },
     "conditions": {
       "time_of_day": null
@@ -3584,7 +3698,7 @@
     "bearing": null,
     "place": {
       "meiji_ku": null,
-      "modern_ward": null,
+      "modern_ward": "台東区",
       "modern_landmark": null,
       "anchor": {
         "how": "osm",
@@ -3592,7 +3706,9 @@
         "osm": "node/12591766679",
         "kind": "place",
         "confidence": "district"
-      }
+      },
+      "modern_town": "池之端",
+      "modern_town_km": 0.0
     },
     "conditions": {
       "time_of_day": null
@@ -3637,14 +3753,16 @@
     "bearing": null,
     "place": {
       "meiji_ku": null,
-      "modern_ward": null,
+      "modern_ward": "中央区",
       "modern_landmark": null,
       "anchor": {
         "how": "manual",
         "name": "大伝馬町",
         "source": "wikidata:Q11508324",
         "confidence": "wikidata"
-      }
+      },
+      "modern_town": "日本橋大伝馬町",
+      "modern_town_km": 0.01
     },
     "conditions": {
       "time_of_day": null

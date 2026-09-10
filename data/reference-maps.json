@@ -1,0 +1,32 @@
+{
+  "_": "當時的市街圖，當文獻用。⛔ 不對位——這是 edo-hyakkei §3.6 的結論：切繪圖式的舊地圖方位是斜的、比例遷就字數，逐張非剛性變形就算做了，街區層級仍然系統性錯誤，卻會看起來很權威。",
+  "_use": "只連出去，不把圖收進 repo。理由見下面每一筆的 license 欄——目前唯一夠好的那張是 CC BY-NC-SA，收進來會讓這個 MIT ＋ 公有領域的 repo 多一個 NC 的角落。要不要碰由 Aaron 決定（同 Phase 0 對 MFA Boston 的處置）。",
+  "primary": {
+    "title": "東京繪圖 [Tokyo ezu]",
+    "year": 1882,
+    "author": "山村精助（Yamamura, Seisuke）",
+    "publisher": "大倉孫兵衛（Ōkura Shirobē）",
+    "holder": "David Rumsey Historical Map Collection（原本：University of California, Berkeley — East Asian Rare Eb 55）",
+    "list_no": "15098.002",
+    "viewer": "https://www.davidrumsey.com/luna/servlet/detail/RUMSEY~8~1~342459~90110598",
+    "iiif_manifest": "https://www.davidrumsey.com/luna/servlet/iiif/m/RUMSEY~8~1~342459~90110598/manifest",
+    "px": [17098, 12188],
+    "license": "⚠️ 地圖本身是公有領域，但 Cartography Associates 對掃描主張著作權（CC BY-NC-SA）。⇒ 只連結，不下載、不重製。",
+    "why": "清親畫這批的時候（1876–81）東京長這樣。1882 比停筆晚一年，是目前找得到、公開可看、解析度夠（208 MP）的最近一張。"
+  },
+  "_rejected": [
+    {
+      "title": "東京方角一覽地圖：名所繪入：一名名所獨案内",
+      "year": "1880／1882 兩版",
+      "note": "計畫原本指定的就是這張（Action Plan §2 改動三）。NDL 有藏、也數位化了（pid 14433865／14433926），但 **IIIF 回 checkResult: NG ＝ 非公開**（館內或圖書館送信限定）。⇒ 現在拿不到。7/15 那次「Rumsey IIIF 9184×4800 實拉過」的記錄對不上任何查得到的東西，網址已隨 scratchpad 清掉，⛔ 不再假設它存在。"
+    },
+    {
+      "title": "改正東亰全圖 等 NDL 候選三筆",
+      "note": "🔴 假陽性，記著避免重犯：我從 NDL 書目頁抓 `dl.ndl.go.jp/pid/NNN` 當作該書目的數位版，但**書目頁會連到別的館藏**——pid 1301528 拉出來是芳年的《新撰東錦絵・義士夜討之図》，不是地圖。掃描結果還一併報了尺寸與頁數，看起來完全合理。⇒ 判準：只認「搜尋結果的 link 本身就是數位館藏」，不要從頁面上刮 pid。"
+    },
+    {
+      "title": "明治迅速測図（1880–86）",
+      "note": "沒查。它是**實測圖**（政府製作、有正確的地理參照），所以它適合的用法是對位疊圖，不是這裡的「當文獻用」——那是另一個決定，留給要做的人。"
+    }
+  ]
+}

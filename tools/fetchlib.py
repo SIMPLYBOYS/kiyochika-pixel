@@ -24,13 +24,13 @@ def fetch(url, ua, timeout=60, retry_on=(429,), headers=None):
     raise RuntimeError("unreachable")
 
 
-def get_json(url, ua, timeout=60, tries=4):
+def get_json(url, ua, timeout=60, tries=4, retry_on=(429,)):
     """🔴 NDL 與 Commons 都會回**截斷的 body**——HTTP 200，讀到一半斷掉。
     fetch() 的重試只認 HTTP 狀態碼，攔不到這種；截斷只有在解析時才現形，
     所以解析必須跟讀取包在同一個 try 裡（shin-hanga 的 common.py 也是這個結論）。"""
     for attempt in range(tries):
         try:
-            return json.loads(fetch(url, ua, timeout).read())
+            return json.loads(fetch(url, ua, timeout, retry_on).read())
         except (http.client.IncompleteRead, json.JSONDecodeError) as e:
             if attempt == tries - 1:
                 raise

@@ -13,11 +13,12 @@ const grab = async url => {
   return r.json();
 };
 
-const [all, world, ml] = await Promise.all([
+const [all, world, ml, refmaps] = await Promise.all([
   grab('data/views.json'),
   grab('data/geo/modern.json'),
   // 地名只是裝飾，掛掉不該連地圖一起拖下水
   grab('data/meiji-places.json').catch(e => (console.warn('地名層略過:', e), { places: [] })),
+  grab('data/reference-maps.json').catch(e => (console.warn('文獻地圖略過:', e), null)),
 ]);
 
 const views = all.filter(v => v.include);
@@ -48,6 +49,19 @@ const CONF = {
 };
 let selected = null;
 
+// 現在那裡是哪裡。tools/derive-place.py 從 OSM 的行政界做內外判定得來的，
+// 街景連結不帶金鑰（api=1 的分享網址），沒有街景的地點 Google 會自己退到地圖。
+// ⚠️ 区與町可能不一致：44 大川富士見渡的點在河中央（那是渡船），
+// 落在墨田区，最近的町卻是對岸台東区的蔵前——兩個都對，所以兩個都寫。
+function here(v) {
+  const p = v.place ?? {};
+  if (!p.modern_ward) return '';
+  const town = p.modern_town ? `${p.modern_town}<small>（${p.modern_town_km}km）</small>` : '';
+  const pano = `https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=${v.subject.lat},${v.subject.lng}`;
+  return `<dt>現在</dt><dd>${p.modern_ward} ${town}<br>
+    <a href="${pano}" target="_blank" rel="noopener">站到那裡看 ↗</a></dd>`;
+}
+
 function pick(v) {
   if (selected) selected.classList.remove('sel');
   selected = map.node(v.id);
@@ -64,6 +78,7 @@ function pick(v) {
       <dt>座標</dt><dd>${v.subject.lat.toFixed(5)}, ${v.subject.lng.toFixed(5)}</dd>
       <dt>把握</dt><dd>${why}${from ? `　<small>${from}</small>` : ''}</dd>
       <dt>依據</dt><dd><small>${src || '—'}</small></dd>
+      ${here(v)}
       ${v.notes?.geo ? `<dt>備註</dt><dd><small>${v.notes.geo}</small></dd>` : ''}
       <dt>典藏</dt><dd><a href="https://dl.ndl.go.jp/pid/${v.source.pid}" target="_blank"
         rel="noopener">NDL ${v.source.item}・第 ${v.source.page} 圖</a><br>
@@ -96,6 +111,18 @@ map.onChange(() => {
   $('zin').disabled = map.atMin();          // 按下去沒反應的鈕比沒有更糟
   $('zout').disabled = map.atMax();
 });
+
+// ── 當時的市街圖 ──────────────────────────────────────────────
+// ⛔ 不對位，當文獻用（edo-hyakkei §3.6）。而且只連出去不收進 repo——
+// 目前唯一夠好的那張掃描是 CC BY-NC-SA，理由寫在 data/reference-maps.json。
+if (refmaps?.primary) {
+  const m = refmaps.primary;
+  const a = document.createElement('a');
+  a.href = m.viewer; a.target = '_blank'; a.rel = 'noopener'; a.id = 'refmap';
+  a.textContent = `${m.year} 年的東京 ↗`;
+  a.title = `${m.title}（${m.holder.split('（')[0]}）`;
+  $('hud').append(a);
+}
 
 const on = views.filter(v => v.subject).length;
 $('count').textContent = `${on} / ${views.length} 幅在圖上`;

@@ -90,6 +90,15 @@ for (const [name, size] of [['桌機 1440×900', { width: 1440, height: 900 }],
     () => { const i = document.querySelector('#panel img'); return i && i.complete && i.naturalWidth > 0; },
     null, { timeout: 20000 }).then(() => true, () => false);
   ok(loaded, '面板的圖載得起來（assets/thumb，不連 NDL）');
+  // 現代地址與街景連結（derive-place.py 的產物；59/59 都該有）
+  const hasHere = await page.locator('#panel dt', { hasText: '現在' }).count();
+  ok(hasHere === 1, '面板有「現在」那一列（現代区名＋町名）');
+  const pano = await page.locator('#panel a[href*="map_action=pano"]').getAttribute('href').catch(() => null);
+  ok(/viewpoint=35\.\d+,139\.\d+/.test(pano || ''), `街景連結帶得出座標 ${pano ? pano.slice(-24) : '（沒有）'}`);
+  // 當時的市街圖：只連出去（reference-maps.json 說明為什麼不收進 repo）
+  const ref = await page.locator('#hud #refmap').getAttribute('href').catch(() => null);
+  ok(/^https:\/\//.test(ref || ''), '當時的市街圖有連結');
+
   await page.keyboard.press('Escape');
   await sleep(150);
   ok(await page.locator('#panel.on').count() === 0, 'Esc 關得掉');
