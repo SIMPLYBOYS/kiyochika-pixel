@@ -139,6 +139,18 @@ for (const [name, size] of [['桌機 1440×900', { width: 1440, height: 900 }],
     ok(false, '拿不到細節座標（views 沒掛到 window，或這一幅沒有細節）');
   }
 
+  // 原寸檢視：看的是 assets/plate（1527–1690px），不是面板裡的 720px 縮圖
+  await page.locator('#panel #big').click();
+  await sleep(900);
+  const lb = await page.locator('.lightbox img').evaluate(
+    e => ({ nat: e.naturalWidth, ok: e.complete && e.naturalWidth > 0 })).catch(() => null);
+  ok(lb?.ok && lb.nat > 1200, `原寸檢視載得起來且夠大（${lb?.nat ?? '?'}px）`);
+  await page.keyboard.press('Escape');
+  await sleep(300);
+  // ⚠️ Esc 只該關掉最上面那層。主程式的監聽先註冊先執行，不擋就會一次關兩層
+  ok(await page.locator('.lightbox').count() === 0 && await page.locator('#panel.on').count() === 1,
+     'Esc 只關原寸檢視，面板還在');
+
   const t0 = await page.locator('#now').textContent();
   await page.locator('#wait').click();
   await sleep(200);

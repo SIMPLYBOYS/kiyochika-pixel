@@ -128,6 +128,19 @@
                  box-shadow:0 0 0 2px #0008 }
   #panel .hint { font-size:12px; opacity:.75; margin:6px 0 2px }
 
+  /* 原寸檢視。這一格看的是那張版畫本身，所以壓在最上層、背景全暗 */
+  .lightbox { position:fixed; inset:0; z-index:30; background:#060d14f2; overflow:hidden;
+              display:grid; place-items:center; cursor:grab; touch-action:none }
+  .lightbox:active { cursor:grabbing }
+  .lightbox img { transform-origin:center; will-change:transform; max-width:none; max-height:none }
+  .lightbox .lzoom { position:fixed; right:16px; top:50%; transform:translateY(-50%);
+                     display:flex; flex-direction:column; gap:6px }
+  .lightbox .lzoom button { width:38px; height:38px; font-size:15px; cursor:pointer;
+                            font-family:inherit; background:#0e2233cc; color:var(--land);
+                            border:1px solid #ffffff33; border-radius:6px }
+  .lightbox .ltip { position:fixed; left:0; right:0; bottom:14px; text-align:center;
+                    font-size:12px; opacity:.6 }
+
   /* 事件卡與結局。壓在正中央，看完才回地圖——它們一場只出現一次 */
   #card { position:fixed; inset:0; display:none; place-items:center; z-index:20;
           background:#0a1622d9; padding:20px }

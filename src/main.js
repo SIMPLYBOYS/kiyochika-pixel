@@ -3,6 +3,7 @@
 // ⛔ 細節搜尋（每景 2–3 個可點的細節）還沒做——那要逐幅挑座標，是另一塊工。
 import { createMap, setVisibility } from './map.js';
 import { clockOf, blocked, collectable, visible, yearOf, tick, newState } from './clock.js';
+import { zoom } from './zoom.js';
 
 const $ = id => document.getElementById(id);
 
@@ -57,7 +58,8 @@ const map = createMap($('map'), views, world.layers, places, pick);
 // 直接連試過：回 429。那次是我們自己當天抓太多，但道理不變——
 // 上線之後每個玩家開一次面板就打 NDL 一次，既脆弱又不禮貌。
 const pad = v => String(v.id).padStart(2, '0');
-const thumb = v => `assets/thumb/${pad(v)}.jpg`;      // 真跡（和紙，含奧付）
+const thumb = v => `assets/thumb/${pad(v)}.jpg`;      // 真跡（和紙，含奧付）720px，面板用
+const plate = v => `assets/plate/${pad(v)}.jpg`;      // 同一張的 1527–1690px，原寸檢視用
 const pixel = v => `assets/pixel/${pad(v)}.png`;      // 像素版（480px・16 色・Bayer）
 const TIME_JA = { dawn: '曉', day: '晝', dusk: '夕', night: '夜' };
 const WX_JA = { clear: '晴', snow: '雪', rain: '雨' };
@@ -110,6 +112,7 @@ function pick(v) {
     <h2>${v.title.ja}</h2>
     <div id="art"><img src="${got ? pixel(v) : thumb(v)}" alt="${v.title.ja}">${got ? hunt(v) : ''}</div>
     ${got ? `<p class="hint">${hint(v)}</p><button id="flip" class="wide">像素 ／ 真跡</button>` : ''}
+    <button id="big" class="wide">原寸で見る</button>
     ${!b ? '<button id="take" class="wide take">收入畫帖</button>'
         : b.why === 'got' ? ''          // 收過了不必再說一次，上面的提示已經在講這件事
         : `<p class="gate">${WHY[b.why](b)}</p>`}
@@ -129,6 +132,7 @@ function pick(v) {
   $('panel').classList.add('on');
   const img = $('art')?.firstElementChild;
   if (img) { img.onload = fitArt; fitArt(); }
+  $('big').onclick = () => zoom(plate(v), `${v.title.ja}　NDL 清親畫帖・第 ${v.source.page} 圖`);
   const take = $('take');
   if (take) take.onclick = () => collect(v);
   const flip = $('flip');
@@ -240,7 +244,11 @@ function paint() {
 }
 const shut = () => { $('panel').classList.remove('on'); selected?.classList.remove('sel'); selected = null; };
 $('close').onclick = shut;
-addEventListener('keydown', e => e.key === 'Escape' && shut());
+// ⚠️ 原寸檢視開著的時候，Esc 是它的——這個監聽先註冊所以先執行，
+// 不擋的話一次按鍵會把兩層一起關掉（實測過）。
+addEventListener('keydown', e => {
+  if (e.key === 'Escape' && !document.querySelector('.lightbox')) shut();
+});
 
 // ── 年代滑桿 ──────────────────────────────────────────────────
 // 讀數講的是「疊了多少」，不是哪一年——中間那些位置沒有任何一年長那樣。

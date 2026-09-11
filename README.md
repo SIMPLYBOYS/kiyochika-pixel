@@ -64,6 +64,7 @@ python3 tools/fetch-commons.py --sheet     # Commons 側交叉比對（不是主
 ```
 src/
   clock.js           兩層閘門與兩個鐘。**純函式**——check-pub.mjs 直接 import 它跑模擬
+  zoom.js            原寸檢視（連續縮放＋拖曳）。⛔ 不做旋轉：這批全是橫幅錦繪
   map.js             地圖。從 edo-hyakkei 複製，砍掉玩法後再接回收集狀態
   main.js            把閘門接到畫面上：時鐘、收景、進度、事件、結局
 data/
@@ -80,10 +81,10 @@ data/
   geo/gazetteer.json OSM 具名地物索引（4.8MB）
   geo/modern.json    街圖向量，從 edo-hyakkei 複製（1.8MB，ODbL）
   geo/relief*.jpg    地形，從 edo-hyakkei 複製（同一個畫框、同一個投影，直接就對得上）
-assets/plate/        和紙（含奧付與紙邊）。真跡與奧付判讀用
+assets/plate/        和紙（含奧付與紙邊）1527–1690px。**原寸檢視**與奧付判讀用
 assets/image/        畫心。量化的輸入
 assets/pixel/        480px・16 色・Bayer 的像素版（2.5MB）
-assets/thumb/        面板用的 720px 和紙（4.1MB）
+assets/thumb/        面板用的 720px 和紙（3.9MB）。面板開一次只載這個，plate 等玩家按了才載
 research/            不進 build：ndl/ 整頁 101MB、colophon/ 奧付裁切、_subjects.png 目視驗收圖
 ```
 
@@ -152,6 +153,8 @@ assert 過得了，因為它在畫框內。抓出來的方法是把 59 個點畫
 - **時を待つ**（或按 `W`）推進一刻：曉→晝→夕→夜，天候按日輪轉
 - 收滿八景翻一年，1876 → 1881。**地圖隨年份一張張長出來**
 - 收過的畫可以在**像素／真跡**之間切換，並在畫面上**找細節**（每幅 2–3 個）
+- **原寸で見る**：開全螢幕看 1527–1690px 的和紙掃描，滾輪縮放、拖曳移動。
+  瓦斯燈的玻璃、暖簾上的字、「東京日々新聞」的招牌，都要那個尺度才看得到
 - 明治十四年那場**兩国大火**是一次事件——清親畫了四枚。結局是他停筆
 
 🔴 **「時を待つ」不是裝飾，是防鎖死的。** 沒有它，光線閘門就是死結——
