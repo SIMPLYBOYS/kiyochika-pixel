@@ -28,7 +28,9 @@ for v in views:
         missing.append(v["id"])
         continue
     out = DEST / f"{v['id']:02d}.jpg"
-    if out.exists():
+    # 🔴 來源比產物新就要重做。跳過已存在的會在 trim 改動之後留下一批舊縮圖，
+    # 而畫面看起來「有圖」，不會有任何錯誤訊息（實際發生過一次）。
+    if out.exists() and out.stat().st_mtime >= src.stat().st_mtime:
         continue
     im = Image.open(src).convert("RGB")
     im.thumbnail((W, W * 4), Image.LANCZOS)
