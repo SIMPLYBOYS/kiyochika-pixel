@@ -27,7 +27,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from fetchlib import fetch, get_json
 
 ROOT = Path(__file__).resolve().parent.parent
-UA = "kiyochika-pixel/0.1 (research; contact: ferrari828@gmail.com)"
+UA = "kiyochika-pixel/0.1 (research; contact via https://github.com/SIMPLYBOYS/kiyochika-pixel)"
 MANIFEST = "https://www.dl.ndl.go.jp/api/iiif/{pid}/manifest.json"
 # IIIF 的 size 語法：整幅是 "full"，指定寬度才是 "900,"。
 # 🔴 原本一律寫 "{w}," ⇒ 整幅那個變成 "full," ，是無效的 IIIF 網址

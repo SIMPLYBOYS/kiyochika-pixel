@@ -27,7 +27,7 @@ import argparse, json, re, time, urllib.parse, urllib.request
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-UA = "kiyochika-pixel/0.1 (research; contact: ferrari828@gmail.com)"
+UA = "kiyochika-pixel/0.1 (research; contact via https://github.com/SIMPLYBOYS/kiyochika-pixel)"
 API = "https://jpsearch.go.jp/api/item/search/jps-cross"
 OLD2NEW = str.maketrans({
     "兩": "両", "淺": "浅", "圖": "図", "櫻": "桜", "萬": "万", "瀧": "滝", "廣": "広",

@@ -20,7 +20,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from fetchlib import fetch
 
 ROOT = Path(__file__).resolve().parent.parent
-UA = "kiyochika-pixel/0.1 (research; contact: ferrari828@gmail.com)"
+UA = "kiyochika-pixel/0.1 (research; contact via https://github.com/SIMPLYBOYS/kiyochika-pixel)"
 API = "https://overpass-api.de/api/interpreter"
 BBOX = "35.535,139.565,35.805,139.925"
 
