@@ -71,13 +71,6 @@ const WHY = {
   event: () => '兩国大火那一夜之後才畫得出來',
   got: () => '已經收過了',
 };
-const CONF = {
-  osm: ['查到地物本身', 'OSM'],
-  wikidata: ['查到地物本身', 'Wikidata'],
-  district: ['只到這一帶', '駅名或町名'],
-  low: ['依據有缺口', ''],
-  manual: ['人工定位', ''],
-};
 let selected = null, shownId = null;
 let onResize = () => {};
 addEventListener('resize', () => onResize());
@@ -112,9 +105,6 @@ function pick(v) {
   selected = map.node(v.id);
   if (selected) { selected.classList.add('sel'); selected.dataset.id = v.id; }
   shownId = v.id;
-  const a = v.place?.anchor ?? {};
-  const [why, from] = CONF[a.confidence] ?? ['—', ''];
-  const src = a.source ?? [a.osm && `OSM ${a.osm}`, a.how].filter(Boolean).join('　');
   const clock = clockOf(state);
   const b = blocked(v, clock, state);
   const got = state.collected.includes(v.id);
@@ -134,11 +124,7 @@ function pick(v) {
       <dt>年</dt><dd>${y ?? '<span class="warn">年代未詳</span>'}${
         v.published ? `　<small>奧付 ${v.published}</small>` : ''}</dd>
       ${cond ? `<dt>光</dt><dd>${cond}</dd>` : ''}
-      <dt>座標</dt><dd>${v.subject.lat.toFixed(5)}, ${v.subject.lng.toFixed(5)}</dd>
-      <dt>把握</dt><dd>${why}${from ? `　<small>${from}</small>` : ''}</dd>
-      <dt>依據</dt><dd><small>${src || '—'}</small></dd>
       ${here(v)}
-      ${v.notes?.geo ? `<dt>備註</dt><dd><small>${v.notes.geo}</small></dd>` : ''}
       <dt>典藏</dt><dd><a href="https://dl.ndl.go.jp/pid/${v.source.pid}" target="_blank"
         rel="noopener">NDL ${v.source.item}・第 ${v.source.page} 圖</a><br>
         <small>${v.source.call_number}　${v.source.license}</small></dd>
