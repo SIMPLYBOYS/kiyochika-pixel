@@ -4,3 +4,4 @@ __pycache__/
 *.pyc
 .DS_Store
 /*.png
+assets/image/   # 2026/09/12 廢掉的「畫心」那一層，重跑 trim 不會再產生

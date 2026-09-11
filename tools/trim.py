@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Phase 2 — 裁切：research/ndl/NN.jpg（整頁）→ assets/plate（和紙）＋ assets/image（畫心）
+"""Phase 2 — 裁切：research/ndl/NN.jpg（整頁）→ assets/plate（和紙，含紙邊與奧付）
 
 🔴 **Phase 2 的第一件事，沒修好之前不定任何細節座標**（Action Plan §3）。
 東京二十景就是因為裁切改動而把 57 個細節座標全部重定位過一次。
@@ -8,7 +8,14 @@ NDL 掃的是**畫帖的一整頁**，四層：
 
     ① 掃描台的灰底（下方另外躺著比例尺、色卡、館藏標籤）
     ② 畫帖台紙 ＋ 蓋在上面的襯紙（兩者都是米色，色差極小）
-    ③ 版畫的和紙（含奧付）      ④ 畫心
+    ③ 版畫的和紙（含紙邊與奧付）← 裁到這裡就停
+
+🔴 **本來還有第四層「畫心」，2026/09/12 廢掉了。** 理由不是它沒調好，是
+**它沒有可靠的界線可找**：淡色的天空與淡色的和紙，量起來一樣平、一樣暖
+（27 三ッ又永代橋・65 神田川夕景 的天空，每列色差 5、標準差 6，跟紙邊同一個數量級）。
+而判錯的兩個方向不對等——削過頭是切掉畫面（no.1 東京銀座街日報社 曾經整片天空不見，
+69 幅裡 9 幅被切掉兩到四成），留過頭只是多一圈紙。⇒ 那就留著。
+附帶好處：遊戲裡的像素版與真跡從此是**同一個框**，205 個標註的座標兩邊通用。
 
 **做法不是「調出一組萬用參數」，是「跑幾組、挑一個」。** 這是試了一輪之後的結論：
 
@@ -32,7 +39,7 @@ NDL 掃的是**畫帖的一整頁**，四層：
 🔴 **三、保險絲要擋崩潰，不要擋正常裁切。** 第一版設「裁掉超過一半就不採用」，
    但和紙本來就只佔台紙約 39% ⇒ 每一幅正常的裁切都被擋掉，全部退回整頁。
 
-**驗收只能用眼睛**：`research/_trim.png`（畫心）與 `_plate.png`（和紙）逐格看。
+**驗收只能用眼睛**：`research/_plate.png` 逐格看。
 
 用法：
   python3 tools/trim.py            # 裁切 ＋ 出兩張對照表
@@ -46,18 +53,16 @@ from PIL import Image, ImageDraw
 
 ROOT = Path(__file__).resolve().parent.parent
 SRC = ROOT / "research" / "ndl"
-PLATE, IMAGE = ROOT / "assets" / "plate", ROOT / "assets" / "image"
+PLATE = ROOT / "assets" / "plate"
 
 DETECT_W = 1200          # 偵測在半尺寸上做，框再放大回去：快四倍，誤差 ±2px
 PEEL_MOUNT = (20, 0.50)  # 灰底 → 台紙
 PEEL_WASHI = (26, 0.35)  # 台紙 → 和紙
-PEEL_IMAGE = (26, 0.30)  # 和紙 → 畫心
 # 候選：補縫大小 × 先切掉上緣多少（襯紙有時整個蓋住上半，切掉它才找得到台紙）
 VARIANTS = [(g, t) for g in (0.03, 0.012, 0.005) for t in (0.0, 0.28, 0.42)]
 # 這本畫帖的版型（69 幅實測，中位 1640×1103）。⚠️ 這是**這一批資料**的先驗，
 # 換一套素材要重新量，不要照抄。
 W_MIN, W_MAX, H_MIN, H_MAX = 1400, 1800, 550, 1500
-KEEP_IMAGE = 0.55        # 畫心那一層只該削掉紙邊；削掉更多就是判錯，退回和紙
 
 
 def longest(line, cover, gap):
@@ -119,13 +124,27 @@ def trim_blank(im, grey, limit=0.20, limit_bottom=0.45):
         med = np.median(px, axis=0)
         if np.abs(med - paper).max() < 12 or np.abs(med - grey).max() < 18:
             return True
+        # 掃描台的空白擋板：**中性色＋死平**。木版畫不會出現這種東西——
+        # 和紙是暖的、墨有色相，連夜空都帶藍（42 兩國花火 底下那條淺灰帶是這樣切掉的）。
+        if abs(med.max() - med.min()) < 8 and px.std(axis=0).max() < 10:
+            return True
         # 比例尺：**中性色＋高反差**（黑白刻度）。畫面再暗也有彩度，尺沒有。
         # 前一版只認「像紙或像掃描台」，而尺兩者都不像（黑白混在一起的中位是中灰），
         # 於是 6 幅底部留著一條尺。
         return abs(med.max() - med.min()) < 12 and px.std(axis=0).max() > 40
     t, b, l, r = 0, h, 0, w
-    while b - t > h * (1 - limit_bottom) and blank(a[b - 1]):
-        b -= 1
+    # 🔴 下緣要容忍**最底下一條非空白**。掃描邊常有一道暗線（42 兩國花火），
+    # 而逐列剝的迴圈碰到它就停——底下那整片掃描台就留在畫裡了。
+    # 這是第三次踩同型的坑（cut_furniture 那次也是「一列擋住整個迴圈」）。
+    skip = max(1, int(h * 0.04))    # 42 那條暗邊有 40 列（2.9%），1.5% 跨不過去
+    while b - t > h * (1 - limit_bottom):
+        if blank(a[b - 1]):
+            b -= 1
+            continue
+        back = next((k for k in range(b - 2, max(t, b - 2 - skip), -1) if blank(a[k])), None)
+        if back is None:
+            break
+        b = back + 1
     while b - t > h * (1 - limit) and blank(a[t]):
         t += 1
     while r - l > w * (1 - limit) and blank(a[:, r - 1]):
@@ -211,15 +230,14 @@ def main():
 
     views = [v for v in json.loads((ROOT / "data" / "views.json").read_text(encoding="utf-8")) if v["include"]]
     PLATE.mkdir(parents=True, exist_ok=True)
-    IMAGE.mkdir(parents=True, exist_ok=True)
     rows, odd = [], []
     for v in views:
         src = SRC / f"{v['id']:02d}.jpg"
         if not src.exists():
             print(f"  ⚠️ 缺 {src.name}　先跑 python3 tools/fetch-ndl.py --download")
             continue
-        pf, imf = PLATE / f"{v['id']:02d}.jpg", IMAGE / f"{v['id']:02d}.jpg"
-        if pf.exists() and imf.exists() and not args.force:
+        pf = PLATE / f"{v['id']:02d}.jpg"
+        if pf.exists() and not args.force:
             rows.append(v)
             continue
         page = Image.open(src).convert("RGB")
@@ -233,21 +251,14 @@ def main():
         washi = trim_blank(page.crop(tuple(int(round(c * k)) for c in box)), grey)
         cut = cut_furniture(washi, grey)
         if cut < washi.height:
-            washi = washi.crop((0, 0, washi.width, cut))
-        # 畫心：從和紙再削一次紙邊。削過頭就退回和紙——寧可留紙邊，不要切掉畫。
-        wa = np.asarray(washi, dtype=np.int16)
-        bi = box_of(wa, ring_bg(wa, 0.03), *PEEL_IMAGE, 0.012)
-        image = washi
-        if bi and (bi[2] - bi[0]) * (bi[3] - bi[1]) >= KEEP_IMAGE * washi.width * washi.height:
-            image = washi.crop(bi)
-        else:
-            odd.append((v["id"], v["title"]["ja"], "畫心層退回和紙（紙邊留著）"))
+            # 尺切掉之後，下面往往又露出一段空白台紙（42 兩國花火 底下空了四分之一），
+            # 所以再剝一次——第一次剝不掉是因為最底下那條尺不是空白。
+            washi = trim_blank(washi.crop((0, 0, washi.width, cut)), grey)
         washi.save(pf, quality=92, subsampling=0)
-        image.save(imf, quality=92, subsampling=0)
         rows.append(v)
-        print(f"  {v['id']:02d} {v['title']['ja'][:13]:<15}和紙{washi.size} 畫心{image.size} {how}", flush=True)
+        print(f"  {v['id']:02d} {v['title']['ja'][:13]:<15}和紙{washi.size} {how}", flush=True)
 
-    for name, folder in (("_plate", PLATE), ("_trim", IMAGE)):
+    for name, folder in (("_plate", PLATE),):
         COLS, TW, TH = 8, 300, 260
         sheet = Image.new("RGB", (COLS * TW, -(-len(rows) // COLS) * TH), "white")
         dr = ImageDraw.Draw(sheet)
@@ -261,7 +272,7 @@ def main():
             sheet.paste(im, (x + 6, y + 22))
             dr.text((x + 6, y + 6), f"{v['id']:02d} {v['title']['ja'][:12]}", fill="black")
         sheet.save(ROOT / "research" / f"{name}.png")
-    print(f"\n{len(rows)}/{len(views)} 幅 → assets/plate ＋ assets/image；對照表 research/_plate.png・_trim.png")
+    print(f"\n{len(rows)}/{len(views)} 幅 → assets/plate；對照表 research/_plate.png")
     for i, t, why in odd:
         print(f"  ⚠️ {i:02d} {t[:16]:<18}{why}")
     print("⛔ 驗收看對照表，不要只信尺寸")

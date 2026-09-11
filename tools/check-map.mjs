@@ -136,13 +136,17 @@ for (const [name, size] of [['桌機 1440×900', { width: 1440, height: 900 }],
   ok(await shown() === 0, '關得掉（標註）');
   await page.locator('#panel #mark').click();
   await sleep(200);
-  // ⛔ 真跡的裁切跟像素版不同（含紙邊與奧付），座標對不上 ⇒ 切過去標註要收起來
+  // 像素版與真跡是**同一張和紙**（2026/09/12 廢掉畫心那一層）⇒ 框一樣、標註兩邊通用。
+  // 這一項驗的就是那個不變量：長寬比對不上就表示又有人在中間多裁了一刀。
+  const ratio = () => page.locator('#panel #art img').evaluate(e => e.naturalWidth / e.naturalHeight);
+  const rPixel = await ratio();
   await page.locator('#panel #flip').click();
-  await sleep(400);
-  ok(await shown() === 0 && await page.locator('#panel #mark').isDisabled(),
-     '切到真跡時標註收起來、開關停用');
+  await sleep(500);
+  const rPlate = await ratio();
+  ok(Math.abs(rPixel - rPlate) / rPlate < 0.02 && await shown() === det.length,
+     `像素版與真跡同框，標註兩邊都在（${rPixel.toFixed(2)} vs ${rPlate.toFixed(2)}）`);
   await page.locator('#panel #flip').click();
-  await sleep(400);
+  await sleep(500);
 
   // 原寸檢視：看的是 assets/plate（1527–1690px），不是面板裡的 720px 縮圖
   await page.locator('#panel #big').click();
@@ -163,6 +167,20 @@ for (const [name, size] of [['桌機 1440×900', { width: 1440, height: 900 }],
       + ' #open, #now, #card h2, #card button')]
     .map(e => e.textContent.trim()).filter(t => /[ぁ-んァ-ヶ]/.test(t)));
   ok(kana.length === 0, `介面文字沒有殘留的日文${kana.length ? '：' + kana.join('／') : ''}`);
+
+  // 🔴 換一幅畫，欄寬不能跳。倍率該由視窗決定，不由那一幅的高度決定——
+  // 原本 58 新橋ステンション（480×312）顯示 480px、矮一點的畫顯示 960px。
+  const colOf = () => page.locator('#panel #art img').evaluate(e => e.getBoundingClientRect().width);
+  const w1 = await colOf();
+  const other = await page.evaluate(() => {
+    const cur = document.querySelector('#map .mark.sel');
+    const g = [...document.querySelectorAll('#map .mark')].find(e => e !== cur);
+    g.querySelector('circle').dispatchEvent(new MouseEvent('click', { bubbles: true }));
+    return g.querySelector('text')?.textContent;
+  });
+  await sleep(600);
+  const w2 = await colOf();
+  ok(w1 === w2, `換一幅畫欄寬不變（${w1} → ${w2}，「${other}」）`);
 
   const t0 = await page.locator('#now').textContent();
   await page.locator('#wait').click();

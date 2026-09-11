@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Phase 2 — 像素化：assets/image（畫心）→ assets/pixel（480px・16 色・Bayer）
+"""Phase 2 — 像素化：assets/plate（和紙）→ assets/pixel（480px・16 色・Bayer）
 
 參數是東京二十景可行性期實測定案的，⛔ 不要憑感覺改
 （依據見[可行性分析]第三節與 shin-hanga-pixel/scripts/quantize.py 的檔頭）：
@@ -28,7 +28,7 @@ import numpy as np
 from PIL import Image, ImageDraw, ImageFilter
 
 ROOT = Path(__file__).resolve().parent.parent
-SRC, OUT = ROOT / "assets" / "image", ROOT / "assets" / "pixel"
+SRC, OUT = ROOT / "assets" / "plate", ROOT / "assets" / "pixel"
 CANVAS, NCOLORS = 480, 16
 
 # 標準 8×8 Bayer 閾值矩陣，正規化到 [-0.5, 0.5]

@@ -55,29 +55,29 @@ def main():
         if not sel:
             bad.append(f"no.{v['id']} 沒有挑選")
             continue
-        cs = cand["candidates"].get(str(v["id"]), [])
+        cs = cand["candidates"].get(str(v["id"]), [])   # 只拿來驗編號還在，座標改用 details.json 存的
         im = Image.open(ROOT / "assets" / "pixel" / f"{v['id']:02d}.png").convert("L")
         a = np.asarray(im, dtype=np.float32)
         out = []
         for it in sel:
-            i = it["c"] - 1
-            if not (0 <= i < len(cs)):
-                bad.append(f"no.{v['id']} 候選 {it['c']} 不存在（只有 {len(cs)} 個）")
+            # 🔴 2026/09/12 起座標存在 details.json 裡，不再由候選編號現算。
+            # 廢掉畫心那一層之後畫框變了，候選要重跑、編號會對到別的東西——
+            # 而這 205 個點是人挑的，重跑一次編號就等於重挑一次。⇒ 把人挑的結果固定下來。
+            if not ("x" in it and "y" in it):
+                bad.append(f"no.{v['id']} 「{it.get('label')}」沒有座標")
                 continue
-            c = cs[i]
-            # 對比：切一塊判定圈大小的方形出來看它平不平
-            px, py = c["x"] * im.width, c["y"] * im.height
-            rr = r * im.width
-            out.append({"x": c["x"], "y": c["y"], "r": r, "label": it["label"],
+            i = it["c"] - 1
+            kind = cs[i]["kind"] if 0 <= i < len(cs) else None
+            out.append({"x": it["x"], "y": it["y"], "r": it.get("r", r), "label": it["label"],
                         "label_ja": it.get("label_ja"),   # 當初的日文判讀，留給多語系
-                        "kind": c["kind"], "candidate": it["c"]})
+                        "kind": kind, "candidate": it["c"]})
         # 判定圈不能重疊
         for m in range(len(out)):
             for n in range(m + 1, len(out)):
                 d = math.hypot((out[m]["x"] - out[n]["x"]),
                                (out[m]["y"] - out[n]["y"]) * im.height / im.width)
-                if d < 2 * r:
-                    bad.append(f"no.{v['id']} 「{out[m]['label']}」與「{out[n]['label']}」相距 {d:.3f} < {2*r}")
+                if d < out[m]["r"] + out[n]["r"]:
+                    bad.append(f"no.{v['id']} 「{out[m]['label']}」與「{out[n]['label']}」相距 {d:.3f} 太近")
         v["details"] = out
         # 版面要知道像素版多大才算得出欄寬，而且**不必等圖片載入**。
         # 這支本來就開了那張圖，順手記下來，⛔ 不要在前端用 naturalWidth 現算——

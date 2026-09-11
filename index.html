@@ -128,8 +128,8 @@
   #panel > #body { max-width:var(--col,640px); margin:0 auto }
   #panel #art { position:relative; margin:10px 0 }
   #panel #art img { image-rendering:pixelated; display:block }   /* 像素版要銳利，不要被瀏覽器抹平 */
-  /* 標註：清親在這裡畫了什麼。座標算在像素版上 ⇒ 切到真跡就藏起來（那邊對不上） */
-  #panel #art.plate .spot, #panel #art.nomarks .spot { display:none }
+  /* 標註：清親在這裡畫了什麼。像素版與真跡是同一個框（都是和紙），所以兩邊通用 */
+  #panel #art.nomarks .spot { display:none }
   #panel .spot { position:absolute; transform:translate(-50%,-50%); font-weight:normal;
                  font-size:11px; color:#2a2410; background:var(--gold); padding:1px 5px;
                  border-radius:9px; white-space:nowrap; pointer-events:none;

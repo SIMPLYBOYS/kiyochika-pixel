@@ -61,6 +61,7 @@ const pad = v => String(v.id).padStart(2, '0');
 const thumb = v => `assets/thumb/${pad(v)}.jpg`;      // 真跡（和紙，含奧付）720px，面板用
 const plate = v => `assets/plate/${pad(v)}.jpg`;      // 同一張的 1527–1690px，原寸檢視用
 const pixel = v => `assets/pixel/${pad(v)}.png`;      // 像素版（480px・16 色・Bayer）
+const REF_W = 480;                   // 像素畫布的寬度，69 幅都一樣
 const TIME_JA = { dawn: '曉', day: '晝', dusk: '夕', night: '夜' };
 const WX_JA = { clear: '晴', snow: '雪', rain: '雨' };
 // 擋住的理由要說得出來。說不出來的閘門，玩家只會覺得是壞的。
@@ -147,13 +148,12 @@ function pick(v) {
   const flip = $('flip');
   if (flip) {
     let px = true;
+    // 像素版與真跡都是**同一張和紙**（2026/09/12 廢掉畫心那一層之後），
+    // 框一樣、座標一樣 ⇒ 標註在兩邊都對得上，切過去不必收起來。
     flip.onclick = () => {
       px = !px;
       $('art').firstElementChild.src = px ? pixel(v) : thumb(v);
       fitArt(v);
-      // 真跡的構圖跟像素版不同（和紙含紙邊與奧付），座標對不上 ⇒ 切過去標註要收起來
-      $('art').classList.toggle('plate', !px);
-      mark.disabled = !px;              // 按了沒反應的鈕比沒有更糟
     };
   }
 }
@@ -185,8 +185,13 @@ function fitArt(v) {
   const [pw, ph] = v.pixel ?? [480, 300];
   if (!img) return;
   const availW = $('panel').clientWidth - 40;          // 扣掉左右內距
-  const availH = Math.min(innerHeight * 0.62, 940);
-  const k = Math.min(availW / pw, availH / ph);
+  // 🔴 倍率是**視窗的性質，不是這一幅的性質**。原本拿這一幅的尺寸去算，
+  // 於是矮一點的畫落在不同的整數倍上——58 新橋ステンション 顯示 480px、
+  // 隔壁一幅 960px，同一個面板換一幅畫欄寬就跳一次（Aaron 看到的就是這個）。
+  // 改成只看面板有多寬：像素畫布一律 480，所以每一幅都用同一個倍率。
+  // ⛔ 不再拿高度去夾——夾了就等於「高的畫顯示得比較小」，又回到同一個毛病；
+  // 高的畫多佔一點捲動就好（面板本來就 overflow:auto）。
+  const k = availW / REF_W;
   const w = Math.round(pw * (k >= 1 ? Math.floor(k) : k));
   $('panel').style.setProperty('--col', `${w}px`);
   img.style.width = art.style.width = `${w}px`;
