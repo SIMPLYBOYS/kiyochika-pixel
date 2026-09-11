@@ -96,25 +96,29 @@
             opacity:.85; letter-spacing:.06em }
   #attr { font-size:10px; opacity:.4; margin-top:4px }   /* ODbL 要求標示出處 */
 
-  #panel { position:fixed; right:0; top:0; bottom:0; width:min(460px,92vw); overflow:auto;
+  /* 🔴 面板要放得下畫。像素畫布一律 480px 寬，而第一版面板只有 460px（內容區 420px）
+     ⇒ 每一幅都是縮到 0.875 倍在顯示——比原尺寸還小，而且非整數倍會糊。
+     看畫的時候地圖用不到，所以讓它寬。 */
+  #panel { position:fixed; right:0; top:0; bottom:0; width:min(1040px,96vw); overflow:auto;
            background:#0e2233f2; border-left:1px solid #ffffff22; padding:18px 20px 28px;
            transform:translateX(102%); transition:transform .25s; }
   #panel.on { transform:none }
-  #panel img { width:100%; display:block; margin:10px 0; background:#0006; min-height:120px }
+  #panel img { display:block; background:#0006; min-height:120px }
   #panel h2 { font-size:19px; font-weight:normal; letter-spacing:.04em }
   #panel dl { display:grid; grid-template-columns:5em 1fr; gap:4px 10px; font-size:12.5px;
+              max-width:640px;
               margin-top:10px; line-height:1.55 }
   #panel dt { opacity:.55 } #panel dd { margin:0 }
   #panel a { color:var(--gold) }
-  #panel .wide { width:100%; margin:6px 0; padding:8px; cursor:pointer; font-family:inherit;
+  #panel .wide { width:100%; max-width:640px; margin:6px 0; padding:8px; cursor:pointer; font-family:inherit;
                  font-size:13px; background:#ffffff12; color:var(--land);
                  border:1px solid #ffffff30; border-radius:6px }
   #panel .wide:hover { background:#ffffff20 }
   #panel .take { background:var(--gold); color:#2a2410; border-color:var(--gold); font-size:14px }
-  #panel .gate { margin:8px 0; padding:8px 10px; font-size:13px; color:#e0c98b;
+  #panel .gate { max-width:640px; margin:8px 0; padding:8px 10px; font-size:13px; color:#e0c98b;
                  background:#ffffff0f; border-left:2px solid var(--gold); border-radius:0 4px 4px 0 }
   #panel #art { background:#0006; min-height:120px }
-  #panel #art { position:relative }
+  #panel #art { position:relative; margin:10px auto }
   #panel #art img { image-rendering:pixelated; display:block }   /* 像素版要銳利，不要被瀏覽器抹平 */
   #panel #art:not(.plate) { cursor:crosshair }   /* 像素版才找得了細節，真跡的座標對不上 */
   /* 找到的細節。標在原位，名字壓在畫面上——找到之後那個東西就有了名字 */

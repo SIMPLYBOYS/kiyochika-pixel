@@ -127,6 +127,8 @@ function pick(v) {
         <small>${v.source.call_number}　${v.source.license}</small></dd>
     </dl>`;
   $('panel').classList.add('on');
+  const img = $('art')?.firstElementChild;
+  if (img) { img.onload = fitArt; fitArt(); }
   const take = $('take');
   if (take) take.onclick = () => collect(v);
   const flip = $('flip');
@@ -135,6 +137,7 @@ function pick(v) {
     flip.onclick = () => {
       px = !px;
       $('art').firstElementChild.src = px ? pixel(v) : thumb(v);
+      fitArt();
       // 真跡的構圖跟像素版不同（和紙含紙邊與奧付），座標對不上 ⇒ 切過去就不能找
       $('art').classList.toggle('plate', !px);
     };
@@ -158,6 +161,22 @@ const hint = v => {
   const light = left.filter(d => d.kind === 'light').length;
   return `絵の中に ${n} つ。見つけた ${f}${light ? `　<small>のこりに 光 が ${light}</small>` : ''}`;
 };
+
+/** 把畫放到最大，而且**放大時取整數倍**。
+ *  像素畫布是 480px 寬：非整數倍縮放會讓一個畫素被攤成 1.7 個螢幕畫素，
+ *  就算開了 image-rendering:pixelated 也是糊的。縮小時沒得挑，照比例。
+ *  容器寬度跟著圖走，否則找到的細節（用 % 定位）會相對容器而不是相對圖。 */
+function fitArt() {
+  const art = $('art');
+  const img = art?.firstElementChild;
+  if (!img || !img.naturalWidth) return;
+  const availW = $('panel').clientWidth - 40;          // 扣掉左右內距
+  const availH = Math.min(innerHeight * 0.62, 940);
+  const k = Math.min(availW / img.naturalWidth, availH / img.naturalHeight);
+  const w = Math.round(img.naturalWidth * (k >= 1 ? Math.floor(k) : k));
+  img.style.width = art.style.width = `${w}px`;
+}
+addEventListener('resize', fitArt);
 
 /** 點畫面找細節。判定圈半徑是資料裡的 r（畫布寬的比例），⛔ 不要在這裡另訂一個。 */
 function poke(v, e) {
