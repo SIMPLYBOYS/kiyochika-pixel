@@ -123,6 +123,22 @@ for (const [name, size] of [['桌機 1440×900', { width: 1440, height: 900 }],
   } else {
     ok(false, '第一個點開的景收不了（開場該有可收的）');
   }
+  // 細節搜尋：收過的畫可以在畫面上找東西（座標算在像素版上，見 apply-details.py）
+  const hasHint = await page.locator('#panel .hint').count();
+  ok(hasHint === 1, '收過的畫有「絵の中に N つ」的提示');
+  const box = await page.locator('#panel #art img').boundingBox();
+  const det = await page.evaluate(() => {
+    const id = +document.querySelector('#map .mark.sel')?.dataset.id;
+    return (window.__views || []).find(v => v.id === id)?.details?.[0] ?? null;
+  });
+  if (det && box) {
+    await page.mouse.click(box.x + det.x * box.width, box.y + det.y * box.height);
+    await sleep(250);
+    ok(await page.locator('#panel .spot').count() >= 1, `點中細節會標出來（「${det.label}」）`);
+  } else {
+    ok(false, '拿不到細節座標（views 沒掛到 window，或這一幅沒有細節）');
+  }
+
   const t0 = await page.locator('#now').textContent();
   await page.locator('#wait').click();
   await sleep(200);

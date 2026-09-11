@@ -108,8 +108,8 @@ function pick(v) {
     .filter(Boolean).join('・');
   $('body').innerHTML = `
     <h2>${v.title.ja}</h2>
-    <div id="art"><img src="${got ? pixel(v) : thumb(v)}" alt="${v.title.ja}"></div>
-    ${got ? '<button id="flip" class="wide">像素 ／ 真跡</button>' : ''}
+    <div id="art"><img src="${got ? pixel(v) : thumb(v)}" alt="${v.title.ja}">${got ? hunt(v) : ''}</div>
+    ${got ? `<p class="hint">${hint(v)}</p><button id="flip" class="wide">像素 ／ 真跡</button>` : ''}
     ${b ? `<p class="gate">${WHY[b.why](b)}</p>`
         : '<button id="take" class="wide take">收入畫帖</button>'}
     <dl>
@@ -131,8 +131,46 @@ function pick(v) {
   const flip = $('flip');
   if (flip) {
     let px = true;
-    flip.onclick = () => { px = !px; $('art').firstElementChild.src = px ? pixel(v) : thumb(v); };
+    flip.onclick = () => {
+      px = !px;
+      $('art').firstElementChild.src = px ? pixel(v) : thumb(v);
+      // 真跡的構圖跟像素版不同（和紙含紙邊與奧付），座標對不上 ⇒ 切過去就不能找
+      $('art').classList.toggle('plate', !px);
+    };
+    $('art').onclick = e => { if (!$('art').classList.contains('plate')) poke(v, e); };
   }
+}
+
+// ── 細節搜尋 ──────────────────────────────────────────────────
+// 收過的畫可以在畫面上找東西。座標由 tools/derive-details.py 在**像素版**上算、
+// 人工挑過（data/details.json）⇒ 找得到的必然是量化之後還在的東西。
+// 🔴 所以只在像素版上開放搜尋：切到真跡時關掉，那邊的座標對不上。
+const foundOf = v => state.found?.[v.id] ?? [];
+const hunt = v => (v.details ?? []).map((d, i) => foundOf(v).includes(i)
+  ? `<b class="spot" style="left:${d.x * 100}%;top:${d.y * 100}%">${d.label}</b>` : '').join('');
+const hint = v => {
+  const n = (v.details ?? []).length;
+  if (!n) return '';
+  const f = foundOf(v).length;
+  if (f >= n) return `${n} つとも見つけた`;
+  const left = (v.details ?? []).filter((_, i) => !foundOf(v).includes(i));
+  const light = left.filter(d => d.kind === 'light').length;
+  return `絵の中に ${n} つ。見つけた ${f}${light ? `　<small>のこりに 光 が ${light}</small>` : ''}`;
+};
+
+/** 點畫面找細節。判定圈半徑是資料裡的 r（畫布寬的比例），⛔ 不要在這裡另訂一個。 */
+function poke(v, e) {
+  if (!state.collected.includes(v.id) || !(v.details ?? []).length) return;
+  const img = $('art').firstElementChild;
+  const b = img.getBoundingClientRect();
+  const x = (e.clientX - b.left) / b.width, y = (e.clientY - b.top) / b.height;
+  const ar = b.width / b.height;            // 判定圈是圓的，y 要照長寬比換算
+  const i = v.details.findIndex((d, k) => !foundOf(v).includes(k)
+    && Math.hypot(d.x - x, (d.y - y) / ar) < d.r);
+  if (i < 0) return;
+  (state.found ??= {})[v.id] = [...foundOf(v), i];
+  save();
+  pick(v);
 }
 
 // ── 收景 ──────────────────────────────────────────────────────
@@ -217,6 +255,10 @@ if (refmaps?.primary) {
   a.title = `${m.title}（${m.holder.split('（')[0]}）`;
   $('hud').append(a);
 }
+
+// 驗收腳本要拿得到細節座標才驗得了「點中會標出來」。
+// 只掛資料不掛函式——⛔ 不要讓測試從外面驅動遊戲邏輯，那樣測到的是測試自己。
+window.__views = views;
 
 $('wait').onclick = wait;
 $('card-close').onclick = () => $('card').classList.remove('on');

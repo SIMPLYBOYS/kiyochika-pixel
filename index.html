@@ -114,7 +114,15 @@
   #panel .gate { margin:8px 0; padding:8px 10px; font-size:13px; color:#e0c98b;
                  background:#ffffff0f; border-left:2px solid var(--gold); border-radius:0 4px 4px 0 }
   #panel #art { background:#0006; min-height:120px }
-  #panel #art img { image-rendering:pixelated }   /* 像素版要銳利，不要被瀏覽器抹平 */
+  #panel #art { position:relative }
+  #panel #art img { image-rendering:pixelated; display:block }   /* 像素版要銳利，不要被瀏覽器抹平 */
+  #panel #art:not(.plate) { cursor:crosshair }   /* 像素版才找得了細節，真跡的座標對不上 */
+  /* 找到的細節。標在原位，名字壓在畫面上——找到之後那個東西就有了名字 */
+  #panel .spot { position:absolute; transform:translate(-50%,-50%); font-weight:normal;
+                 font-size:11px; color:#2a2410; background:var(--gold); padding:1px 5px;
+                 border-radius:9px; white-space:nowrap; pointer-events:none;
+                 box-shadow:0 0 0 2px #0008 }
+  #panel .hint { font-size:12px; opacity:.75; margin:6px 0 2px }
 
   /* 事件卡與結局。壓在正中央，看完才回地圖——它們一場只出現一次 */
   #card { position:fixed; inset:0; display:none; place-items:center; z-index:20;

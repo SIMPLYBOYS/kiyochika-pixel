@@ -101,12 +101,16 @@ def ring_bg(a, f=0.02):
                                      a[:, :m].reshape(-1, 3), a[:, -m:].reshape(-1, 3)]), axis=0)
 
 
-def trim_blank(im, grey, limit=0.20):
+def trim_blank(im, grey, limit=0.20, limit_bottom=0.45):
     """削掉四邊「不是畫」的空白條：多留的台紙（亮而均勻）與掃描尺（灰）。
 
     版型選擇規則挑出的框有時會往下多含一段——實測 8 幅底部帶著比例尺、
     另外幾幅帶著一條台紙。兩者都有同一個特徵：**那一列的中位色不是畫，是紙或掃描台**。
-    每邊最多削 limit，免得把大片留白的天空當成紙削掉。"""
+    每邊最多削 limit——但**下緣放寬到 limit_bottom**。
+    🔴 掃描附件（比例尺・色卡・標籤）一律躺在台紙**下面**，而且可以佔到整幅的四成；
+    四邊用同一個上限時，43・44・46 那幾幅的尺削不掉（畫只佔上面六成），
+    候選點就落在尺的刻度上——判讀表一眼看得出來，數字上看不出來。
+    上／左／右維持 0.20：那幾邊的大片留白是真的畫（空、水、雪）。"""
     a = np.asarray(im, dtype=np.int16)
     h, w = a.shape[:2]
     paper = np.percentile(a.reshape(-1, 3), 97, axis=0)          # 這張圖裡最亮的紙色
@@ -120,7 +124,7 @@ def trim_blank(im, grey, limit=0.20):
         # 於是 6 幅底部留著一條尺。
         return abs(med.max() - med.min()) < 12 and px.std(axis=0).max() > 40
     t, b, l, r = 0, h, 0, w
-    while b - t > h * (1 - limit) and blank(a[b - 1]):
+    while b - t > h * (1 - limit_bottom) and blank(a[b - 1]):
         b -= 1
     while b - t > h * (1 - limit) and blank(a[t]):
         t += 1
@@ -129,6 +133,41 @@ def trim_blank(im, grey, limit=0.20):
     while r - l > w * (1 - limit) and blank(a[:, l]):
         l += 1
     return im.crop((l, t, r, b))
+
+
+def cut_furniture(im, grey, cap=0.45, tol=0.02):
+    """從底部往上找掃描附件那一塊（尺・色卡・館藏標籤），回傳該裁到第幾列。
+
+    🔴 **逐列從最底剝行不通**，這是第二次修同一個地方。附件是
+    「尺 → 白紙 → 灰帶 → 標籤」混成的**一塊**，中間夾著不像空白的列；
+    而 trim_blank 是逐列剝的，最底那一列（尺）的中性判定差一個單位就不算空白
+    ⇒ 迴圈從沒開始，43・44・48・49 的畫只佔上面六成，剩下全是尺。
+    判讀表一眼看得出來，數字上看不出來——所以這個坑是**用眼睛抓到的**。
+
+    改成往上掃、允許 tol 比例的雜訊列。實測：43/44/48/49 削 24–25%、
+    46/47 削 4–5%、沒有附件的（1・5・34・69）削 0%。"""
+    a = np.asarray(im, dtype=np.float32)
+    h, w = a.shape[:2]
+    paper = np.percentile(a.reshape(-1, 3), 97, axis=0)
+
+    def furn(y):
+        px = a[y]
+        med = np.median(px, axis=0)
+        if np.abs(med - paper).max() < 14:        # 空白紙
+            return True
+        if np.abs(med - grey).max() < 20:         # 掃描台
+            return True
+        return (med.max() - med.min()) < 16 and px.std(axis=0).max() > 28   # 尺：中性＋高反差
+
+    best, miss = h, 0
+    for y in range(h - 1, int(h * (1 - cap)), -1):
+        if furn(y):
+            miss, best = 0, y
+        else:
+            miss += 1
+            if miss > h * tol:
+                break
+    return best
 
 
 def sub(a, b):
@@ -192,6 +231,9 @@ def main():
             continue
         grey = np.median(np.asarray(page, dtype=np.int16)[int(page.height * 0.985):].reshape(-1, 3), axis=0)
         washi = trim_blank(page.crop(tuple(int(round(c * k)) for c in box)), grey)
+        cut = cut_furniture(washi, grey)
+        if cut < washi.height:
+            washi = washi.crop((0, 0, washi.width, cut))
         # 畫心：從和紙再削一次紙邊。削過頭就退回和紙——寧可留紙邊，不要切掉畫。
         wa = np.asarray(washi, dtype=np.int16)
         bi = box_of(wa, ring_bg(wa, 0.03), *PEEL_IMAGE, 0.012)
