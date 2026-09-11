@@ -125,7 +125,7 @@ for (const [name, size] of [['桌機 1440×900', { width: 1440, height: 900 }],
   }
   // 細節搜尋：收過的畫可以在畫面上找東西（座標算在像素版上，見 apply-details.py）
   const hasHint = await page.locator('#panel .hint').count();
-  ok(hasHint === 1, '收過的畫有「絵の中に N つ」的提示');
+  ok(hasHint === 1, '收過的畫有「畫裡有 N 個」的提示');
   const box = await page.locator('#panel #art img').boundingBox();
   const det = await page.evaluate(() => {
     const id = +document.querySelector('#map .mark.sel')?.dataset.id;
@@ -150,6 +150,14 @@ for (const [name, size] of [['桌機 1440×900', { width: 1440, height: 900 }],
   // ⚠️ Esc 只該關掉最上面那層。主程式的監聽先註冊先執行，不擋就會一次關兩層
   ok(await page.locator('.lightbox').count() === 0 && await page.locator('#panel.on').count() === 1,
      'Esc 只關原寸檢視，面板還在');
+
+  // 介面文字一律繁中（多語系補上之前的過渡狀態）。只掃**操作與欄名**——
+  // ⛔ 不掃 dd／h2／地圖標籤／出處：那些是題名、地名與館名，本來就該是日文。
+  const kana = await page.evaluate(() => [...document.querySelectorAll(
+      '#hud button, #zoom button, #panel button, #panel dt, #panel .hint, #panel .gate,'
+      + ' #open, #now, #card h2, #card button')]
+    .map(e => e.textContent.trim()).filter(t => /[ぁ-んァ-ヶ]/.test(t)));
+  ok(kana.length === 0, `介面文字沒有殘留的日文${kana.length ? '：' + kana.join('／') : ''}`);
 
   const t0 = await page.locator('#now').textContent();
   await page.locator('#wait').click();

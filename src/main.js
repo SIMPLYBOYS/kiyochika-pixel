@@ -87,7 +87,7 @@ addEventListener('resize', () => onResize());
 // 六十九段憑印象的今昔對比正是這個專案一路在拒絕的東西。
 // ⚠️ 区與町可能不一致：44 大川富士見渡的點在河中央（那是渡船），
 // 落在墨田区，最近的町卻是對岸台東区的蔵前——兩個都對，所以兩個都寫。
-const KIND_JA = { worship: '社寺', bridge: '橋', park: '公園', water: '水' };
+const KIND = { worship: '寺社', bridge: '橋', park: '公園', water: '水' };
 function here(v) {
   const p = v.place ?? {}, n = v.now ?? {};
   if (!p.modern_ward) return '';
@@ -95,15 +95,15 @@ function here(v) {
   const pano = `https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=${v.subject.lat},${v.subject.lng}`;
   // 標高的「高い／低い」是拿同一畫帖的 59 個點排出來的，不是外面的說法
   const rank = n.elevation_rank;
-  const tag = rank == null ? '' : rank >= 0.8 ? '<small>（この画帖で高いほう）</small>'
-    : rank <= 0.2 ? '<small>（低いほう）</small>' : '';
+  const tag = rank == null ? '' : rank >= 0.8 ? '<small>（這本畫帖裡偏高）</small>'
+    : rank <= 0.2 ? '<small>（偏低）</small>' : '';
   return `
     <dt>現在</dt><dd>${p.modern_ward} ${town}${
       n.elevation == null ? '' : `　標高 ${n.elevation}m ${tag}`}<br>
       <a href="${pano}" target="_blank" rel="noopener">站到那裡看 ↗</a></dd>
-    ${n.station ? `<dt>最寄</dt><dd>${n.station.name}　<small>${n.station.km} km</small></dd>` : ''}
-    ${n.nearby?.length ? `<dt>今この辺り</dt><dd>${n.nearby.map(
-        x => `${x.name}<small> ${KIND_JA[x.kind] ?? ''} ${x.m}m</small>`).join('　')}</dd>` : ''}
+    ${n.station ? `<dt>最近車站</dt><dd>${n.station.name}　<small>${n.station.km} km</small></dd>` : ''}
+    ${n.nearby?.length ? `<dt>今日周邊</dt><dd>${n.nearby.map(
+        x => `${x.name}<small> ${KIND[x.kind] ?? ''} ${x.m}m</small>`).join('　')}</dd>` : ''}
     ${n.marker ? `<dt class="mk">碑</dt><dd class="mk">${n.marker.name}<small> ${n.marker.m}m</small></dd>` : ''}`;
 }
 
@@ -126,7 +126,7 @@ function pick(v) {
     <h2>${v.title.ja}</h2>
     <div id="art"><img src="${got ? pixel(v) : thumb(v)}" alt="${v.title.ja}">${got ? hunt(v) : ''}</div>
     ${got ? `<p class="hint">${hint(v)}</p><button id="flip" class="wide">像素 ／ 真跡</button>` : ''}
-    <button id="big" class="wide">原寸で見る</button>
+    <button id="big" class="wide">看原寸</button>
     ${!b ? '<button id="take" class="wide take">收入畫帖</button>'
         : b.why === 'got' ? ''          // 收過了不必再說一次，上面的提示已經在講這件事
         : `<p class="gate">${WHY[b.why](b)}</p>`}
@@ -176,10 +176,10 @@ const hint = v => {
   const n = (v.details ?? []).length;
   if (!n) return '';
   const f = foundOf(v).length;
-  if (f >= n) return `${n} つとも見つけた`;
+  if (f >= n) return `${n} 個都找到了`;
   const left = (v.details ?? []).filter((_, i) => !foundOf(v).includes(i));
   const light = left.filter(d => d.kind === 'light').length;
-  return `絵の中に ${n} つ。見つけた ${f}${light ? `　<small>のこりに 光 が ${light}</small>` : ''}`;
+  return `畫裡有 ${n} 個，已找到 ${f}${light ? `　<small>剩下的有 ${light} 個是光</small>` : ''}`;
 };
 
 /** 決定**整個面板的欄寬**，而不只是圖的寬度。
@@ -233,13 +233,13 @@ function collect(v) {
   paint();
   pick(v);                            // 面板留在原地，換成收過的樣子
   if (first) {
-    card('兩国大火', `明治十四年一月廿六日、兩国から出た火が浅草橋まで焼けた。<br>
-      清親はそれを四枚描いている——燃える空、逃げる人、そして焼跡。<br>
+    card('兩国大火', `明治十四年一月廿六日，兩国起的火一路燒到淺草橋。<br>
+      清親畫了四幅——燒著的天、逃的人，還有燒完之後。<br>
       <small>60 兩国大火浅草橋・61 濱町より寫兩国大火・62 久松町ニテ見る出火・63 兩国焼跡</small>`);
   } else if (state.collected.length === views.length) {
-    card('光線画は、ここで終わる', `明治十四年、清親は光線画をやめた。<br>
-      石版と写真が入り、木版の景色は売れなくなる。五年、${views.length} 枚。<br>
-      <small>これがこの絵師が描いた東京のすべてです。</small>`);
+    card('光線畫到這裡為止', `明治十四年，清親不畫光線畫了。<br>
+      石版與照片進來，木版的風景賣不動了。五年，${views.length} 幅。<br>
+      <small>這是這位畫師畫下的整個東京。</small>`);
   }
 }
 
@@ -264,7 +264,7 @@ function paint() {
   const openN = views.filter(v => collectable(v, clock, state)).length;
   $('count').textContent = `${state.collected.length} / ${views.length}`;
   $('now').textContent = `明治${clock.year - 1867}年（${clock.year}）　${TIME_JA[clock.time]}　${WX_JA[clock.weather] ?? clock.weather}`;
-  $('open').textContent = openN ? `いま ${openN} 枚` : '時を待つ';
+  $('open').textContent = openN ? `現在可收 ${openN} 幅` : '等時候';
 }
 const shut = () => {
   $('panel').classList.remove('on');

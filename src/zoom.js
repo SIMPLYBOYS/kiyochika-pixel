@@ -12,7 +12,7 @@ export function zoom(src, caption) {
     <div class="lzoom">
       <button data-z="in" aria-label="放大">＋</button>
       <button data-z="out" aria-label="縮小">－</button>
-      <button data-z="fit">全幅</button>
+      <button data-z="fit">全圖</button>
     </div>
     <div class="ltip">拖曳移動・滾輪縮放　·　點背景或 Esc 關閉${caption ? `　·　${caption}` : ''}</div>`;
   document.body.append(lb);
