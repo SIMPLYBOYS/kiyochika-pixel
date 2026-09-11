@@ -168,6 +168,18 @@ for (const [name, size] of [['桌機 1440×900', { width: 1440, height: 900 }],
     .map(e => e.textContent.trim()).filter(t => /[ぁ-んァ-ヶ]/.test(t)));
   ok(kana.length === 0, `介面文字沒有殘留的日文${kana.length ? '：' + kana.join('／') : ''}`);
 
+  // 解說層：文字是維基百科導言逐字引用 ⇒ **出處與授權必須跟著出現**，
+  // 這一項驗的是那件事（引用而不標出處，是這一層唯一不能出的錯）。
+  const read = await page.evaluate(() => {
+    const sec = document.querySelector('#panel .read');
+    if (!sec) return null;
+    return { n: sec.querySelectorAll('details').length,
+             src: (sec.querySelector('.src')?.textContent || '').includes('CC BY-SA'),
+             links: [...sec.querySelectorAll('a')].every(a => a.href.startsWith('https://ja.wikipedia.org/')) };
+  });
+  ok(read && read.n >= 1 && read.src && read.links,
+     `解說有 ${read?.n ?? 0} 條，標了出處與授權、連得回維基百科`);
+
   // 🔴 換一幅畫，欄寬不能跳。倍率該由視窗決定，不由那一幅的高度決定——
   // 原本 58 新橋ステンション（480×312）顯示 480px、矮一點的畫顯示 960px。
   const colOf = () => page.locator('#panel #art img').evaluate(e => e.getBoundingClientRect().width);
@@ -191,6 +203,15 @@ for (const [name, size] of [['桌機 1440×900', { width: 1440, height: 900 }],
   await page.keyboard.press('Escape');
   await sleep(150);
   ok(await page.locator('#panel.on').count() === 0, 'Esc 關得掉');
+
+  // 清親是誰、光線畫是什麼——一場看一次，放 HUD
+  await page.locator('#who').click();
+  await sleep(300);
+  const card = await page.locator('#card.on #card-body').innerText().catch(() => '');
+  ok(card.includes('小林清親') && card.includes('光線画') && card.includes('CC BY-SA'),
+     '清親卡片有作者與畫風兩條，並標了出處');
+  await page.locator('#card-close').click();
+  await sleep(200);
 
   await page.close();
 }

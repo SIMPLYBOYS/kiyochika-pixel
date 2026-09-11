@@ -166,6 +166,19 @@
   #card small { opacity:.6; font-size:12px }
   #card button { margin-top:22px; padding:8px 24px; cursor:pointer; font-family:inherit;
                  background:none; color:var(--land); border:1px solid #ffffff44; border-radius:6px }
+  /* 解說。文字是維基百科導言逐字引用 ⇒ 出處與授權要在旁邊看得到 */
+  #panel .read { margin-top:18px; border-top:1px solid #ffffff1a; padding-top:12px }
+  #panel .read h3 { font-size:13px; font-weight:normal; letter-spacing:.14em;
+                    color:var(--gold); margin-bottom:8px }
+  #panel .read details { margin-bottom:6px; background:#ffffff08; border-radius:6px;
+                         padding:7px 10px }
+  #panel .read summary { cursor:pointer; font-size:13px; list-style:none }
+  #panel .read summary::-webkit-details-marker { display:none }
+  #panel .read summary::before { content:'▸ '; opacity:.6 }
+  #panel .read details[open] summary::before { content:'▾ ' }
+  #panel .read summary small { opacity:.5; font-size:11px }
+  #panel .read p { font-size:12.5px; line-height:1.85; opacity:.88; margin:6px 0 2px }
+  #panel .read .src { font-size:11px; opacity:.45; margin-top:10px }
   #panel .warn { color:#e0a86b }
   #close { position:absolute; right:12px; top:10px; background:none; border:0; cursor:pointer;
            color:var(--land); font-size:20px; opacity:.7 }
@@ -183,6 +196,7 @@
   <b id="count"></b>
   <span id="now"></span>
   <button id="wait" title="等一刻（W）">等一刻</button>
+  <button id="who" title="清親是誰、光線畫是什麼">清親</button>
   <small id="open"></small>
 </div>
 

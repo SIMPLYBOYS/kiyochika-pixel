@@ -16,12 +16,14 @@ const grab = async url => {
   return r.json();
 };
 
-const [all, world, ml, refmaps] = await Promise.all([
+const [all, world, ml, refmaps, topicMap, topicText] = await Promise.all([
   grab('data/views.json'),
   grab('data/geo/modern.json'),
   // 地名只是裝飾，掛掉不該連地圖一起拖下水
   grab('data/meiji-places.json').catch(e => (console.warn('地名層略過:', e), { places: [] })),
   grab('data/reference-maps.json').catch(e => (console.warn('文獻地圖略過:', e), null)),
+  grab('data/topics.json').catch(e => (console.warn('解說對應表略過:', e), {})),
+  grab('data/topics-text.json').catch(e => (console.warn('解說略過:', e), { items: {} })),
 ]);
 
 const views = all.filter(v => v.include);
@@ -101,6 +103,32 @@ function here(v) {
     ${n.marker ? `<dt class="mk">碑</dt><dd class="mk">${n.marker.name}<small> ${n.marker.m}m</small></dd>` : ''}`;
 }
 
+// ── 解說 ──────────────────────────────────────────────────────
+// 🔴 這些文字**不是我寫的**，是維基百科的導言逐字抓下來的（tools/fetch-topics.py），
+// 我只決定「哪一幅對哪一條目」——那份對應在 data/topics.json，人工逐條確認過。
+// ⛔ 指不準就不給：柳島・駿賀町・萬代橋那幾幅留空，理由寫在 topics.json 的 _skip。
+// 為什麼不自己寫賞析：六十九段憑印象的畫論，正是這個 repo 一路在拒絕的東西。
+// topics.json 的值可以是條目名，也可以是 {title, n}（少數條目要多抓幾句）
+const topicOf = v => (topicText.items ?? {})[typeof v === 'string' ? v : v?.title];
+const card1 = (t, tag, open) => t ? `
+  <details${open ? ' open' : ''}>
+    <summary>${t.title}${tag ? `<small>　${tag}</small>` : ''}</summary>
+    <p>${t.text}<br><a href="${t.url}" target="_blank" rel="noopener">ウィキペディア ↗</a></p>
+  </details>` : '';
+
+function reading(v) {
+  const place = topicOf((topicMap.places ?? {})[v.id]);
+  // 這一幅標註到的事物，去重之後照畫面上的順序
+  const seen = new Set();
+  const things = (v.details ?? []).map(d => (topicMap.things ?? {})[d.label_ja])
+    .filter(n => n && !seen.has(n) && seen.add(n)).map(topicOf).filter(Boolean);
+  if (!place && !things.length) return '';
+  return `<section class="read"><h3>解說</h3>
+    ${card1(place, '這是什麼地方', true)}
+    ${things.map(t => card1(t, '畫裡的東西')).join('')}
+    <p class="src">出典：ウィキペディア日本語版　CC BY-SA 4.0</p></section>`;
+}
+
 function pick(v) {
   if (selected) selected.classList.remove('sel');
   selected = map.node(v.id);
@@ -130,7 +158,8 @@ function pick(v) {
       <dt>典藏</dt><dd><a href="https://dl.ndl.go.jp/pid/${v.source.pid}" target="_blank"
         rel="noopener">NDL ${v.source.item}・第 ${v.source.page} 圖</a><br>
         <small>${v.source.call_number}　${v.source.license}</small></dd>
-    </dl>`;
+    </dl>
+    ${reading(v)}`;
   $('panel').classList.add('on');
   document.body.classList.add('panel-open');
   const img = $('art')?.firstElementChild;
@@ -292,6 +321,15 @@ if (refmaps?.primary) {
 // 驗收腳本要拿得到細節座標才驗得了「點中會標出來」。
 // 只掛資料不掛函式——⛔ 不要讓測試從外面驅動遊戲邏輯，那樣測到的是測試自己。
 window.__views = views;
+
+// 清親本人與「光線画」是什麼，一場看一次就夠——放在 HUD，不佔每一幅的面板
+const who = $('who');
+if (who) who.onclick = () => {
+  const a = topicOf((topicMap.notes ?? {})['作者']), b = topicOf((topicMap.notes ?? {})['様式']);
+  card('清親與光線畫', `${[a, b].filter(Boolean).map(t =>
+    `<b>${t.title}</b><br>${t.text}<br><a href="${t.url}" target="_blank" rel="noopener">ウィキペディア ↗</a>`
+  ).join('<br><br>')}<br><br><small>出典：ウィキペディア日本語版　CC BY-SA 4.0</small>`);
+};
 
 $('wait').onclick = wait;
 $('card-close').onclick = () => $('card').classList.remove('on');

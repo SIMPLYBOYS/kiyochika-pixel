@@ -50,6 +50,8 @@ python3 tools/quantize.py                  # 和紙 → assets/pixel（480px・1
 python3 tools/fetch-colophon.py --sheet 6  # 和紙的紙邊 → 判讀奧付用的表
 python3 tools/fetch-dates.py --write       # Japan Search → 館方斷代的出版年
 python3 tools/derive-light.py --write      # 題名 → 時刻與天候（conditions）
+python3 tools/fetch-topics.py --propose    # 解說條目提案 → research/_topics.md（⛔ 提案不是結果）
+python3 tools/fetch-topics.py --write      # 依 topics.json 抓維基導言 → topics-text.json
 python3 tools/derive-now.py --write        # 標高（GSI）＋最寄り駅・周邊・碑（OSM）→ views.json 的 now
 python3 tools/derive-details.py --sheet 4  # 細節候選（DoG，算在像素版上）＋ 判讀表
 python3 tools/apply-details.py --write     # 人工挑選 → views.json 的 details
@@ -77,6 +79,7 @@ data/
   dates-external.json Japan Search 查到的館方斷代年（⚠️ 與奧付判讀分開存，見下）
   palettes.json      每幅的 16 色色盤
   details.json       標註的挑選與命名（人工檔；label 繁中、label_ja 當初的判讀）
+topics.json        解說的條目對應（人工檔）／ topics-text.json 是抓下來的文字（機器）
   details-candidates.json 機器提案的候選（⛔ 不是最終座標）
   inventory.json     Commons 盤點結果，交叉比對用
   geo/gazetteer.json OSM 具名地物索引（4.8MB）
@@ -245,6 +248,33 @@ edo-hyakkei 真的卡在 89/118 過，原因正是時間只能靠收景推進。
 那道閘要保證的事已經由「候選算在像素版上」保證了，所以留下真正是不變量的兩條：
 編號對得上、判定圈不重疊（後者當場抓到 6 組重疊）。
 
+## 解說：文字不是我寫的，對應是我挑的
+
+知識層的第三層，回答**「這是什麼」**——畫裡那台人力車什麼時候出現在東京街上、
+海運橋旁那棟洋樓是誰開的、清親的「光線画」在浮世絵裡是什麼位置。
+面板下方的〈解說〉：一條「這是什麼地方」＋這一幅標註到的東西各一條。
+
+🔴 **六十九段畫論我一段都不寫。** 解說**逐字取自維基百科（日本語版）的導言**，
+標出處與授權（CC BY-SA 4.0）、連得回原文。我只做一件事：
+**決定哪一條目對應哪一幅畫／哪一個標註**，寫在 `data/topics.json`（人工檔）。
+
+🔑 **對應比文字重要，也比文字容易錯。** `--propose` 只出提案表給人看，
+⛔ 不自動採用搜尋第一名——那個第一名給過：
+
+| 詞 | 搜尋第一名 | 實際 |
+|---|---|---|
+| 柳島 | 新潟県道301号柳島信濃坂線 | 墨田区的町名 |
+| 小梅 | ロッテ的梅味糖果 | 向島的舊町名 |
+| 岸の人 | 岸惠子（女優） | 岸上的人 |
+| 溜池 | ため池（農業灌溉） | 虎ノ門的溜池 |
+
+⇒ 74 條全部人工確認；指不準的留空（柳島・駿賀町・萬代橋・神田八雲神社…），
+理由逐條寫在 `topics.json` 的 `_skip`。**空白是資訊。**
+
+⚠️ **有些條目最要緊的一句不在前三句**：汐留駅那條前三句在講貨物支線，
+「日本初の起点となる鉄道駅であった」是第四句 ⇒ 那幾條在 `topics.json` 指定句數。
+**HUD 的「清親」**按鈕放作者與「光線画」兩條，一場看一次就夠。
+
 ## 知識層：只放推導得出來的
 
 這一作沒有東海道那種在圖裡找線索的玩法，知識層就得自己站得住。而玩家最想知道的
@@ -364,6 +394,7 @@ no.1 東京銀座街日報社 的天空就是這樣整片不見的——和紙 1
 | 出版年（館方斷代） | Japan Search 聚合：東京都江戸東京博物館・ARC 立命館錦絵・名古屋市博物館 等 | 各館目錄資料，僅取年份並記出處 |
 | 街圖向量・地名索引 | **OpenStreetMap** | **ODbL 1.0 — 必須標示 © OpenStreetMap contributors** |
 | 部分地名座標 | Wikidata | CC0 |
+| 解說文字 | ウィキペディア日本語版 | CC BY-SA 4.0（逐字引用，面板標出處並連回原文） |
 | 交叉比對 | Wikimedia Commons（LACMA／Honolulu／Rijksmuseum 掃描） | 公有領域 |
 | 程式 | | MIT |
 
