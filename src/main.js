@@ -114,8 +114,9 @@ function pick(v) {
     .filter(Boolean).join('・');
   $('body').innerHTML = `
     <h2>${v.title.ja}</h2>
-    <div id="art"><img src="${got ? pixel(v) : thumb(v)}" alt="${v.title.ja}">${got ? hunt(v) : ''}</div>
-    ${got ? `<p class="hint">${hint(v)}</p><button id="flip" class="wide">像素 ／ 真跡</button>` : ''}
+    <div id="art" class="${marks ? '' : 'nomarks'}"><img src="${got ? pixel(v) : thumb(v)}" alt="${v.title.ja}">${got ? spots(v) : ''}</div>
+    ${got ? `<button id="mark" class="wide">${marks ? '隱藏標註' : '顯示標註'}</button>
+             <button id="flip" class="wide">像素 ／ 真跡</button>` : ''}
     <button id="big" class="wide">看原寸</button>
     ${!b ? '<button id="take" class="wide take">收入畫帖</button>'
         : b.why === 'got' ? ''          // 收過了不必再說一次，上面的提示已經在講這件事
@@ -137,6 +138,12 @@ function pick(v) {
   $('big').onclick = () => zoom(plate(v), `${v.title.ja}　NDL 清親畫帖・第 ${v.source.page} 圖`);
   const take = $('take');
   if (take) take.onclick = () => collect(v);
+  const mark = $('mark');
+  if (mark) mark.onclick = () => {
+    marks = !marks;
+    $('art').classList.toggle('nomarks', !marks);
+    mark.textContent = marks ? '隱藏標註' : '顯示標註';
+  };
   const flip = $('flip');
   if (flip) {
     let px = true;
@@ -144,29 +151,22 @@ function pick(v) {
       px = !px;
       $('art').firstElementChild.src = px ? pixel(v) : thumb(v);
       fitArt(v);
-      // 真跡的構圖跟像素版不同（和紙含紙邊與奧付），座標對不上 ⇒ 切過去就不能找
+      // 真跡的構圖跟像素版不同（和紙含紙邊與奧付），座標對不上 ⇒ 切過去標註要收起來
       $('art').classList.toggle('plate', !px);
+      mark.disabled = !px;              // 按了沒反應的鈕比沒有更糟
     };
-    $('art').onclick = e => { if (!$('art').classList.contains('plate')) poke(v, e); };
   }
 }
 
-// ── 細節搜尋 ──────────────────────────────────────────────────
-// 收過的畫可以在畫面上找東西。座標由 tools/derive-details.py 在**像素版**上算、
-// 人工挑過（data/details.json）⇒ 找得到的必然是量化之後還在的東西。
-// 🔴 所以只在像素版上開放搜尋：切到真跡時關掉，那邊的座標對不上。
-const foundOf = v => state.found?.[v.id] ?? [];
-const hunt = v => (v.details ?? []).map((d, i) => foundOf(v).includes(i)
-  ? `<b class="spot" style="left:${d.x * 100}%;top:${d.y * 100}%">${d.label}</b>` : '').join('');
-const hint = v => {
-  const n = (v.details ?? []).length;
-  if (!n) return '';
-  const f = foundOf(v).length;
-  if (f >= n) return `${n} 個都找到了`;
-  const left = (v.details ?? []).filter((_, i) => !foundOf(v).includes(i));
-  const light = left.filter(d => d.kind === 'light').length;
-  return `畫裡有 ${n} 個，已找到 ${f}${light ? `　<small>剩下的有 ${light} 個是光</small>` : ''}`;
-};
+// ── 標註：清親在這裡畫了什麼 ───────────────────────────────────
+// 205 個點的座標由 tools/derive-details.py 在**像素版**上算、人工逐幅挑過並命名
+// （data/details.json）⇒ 標出來的必然是 480px／16 色之後還看得見的東西。
+// 🔴 這裡**不做「找線索」**：東海道那套是把名字藏起來讓玩家點，這一作的重點是
+// 知道自己在看什麼——所以名字直接標在原位，開關由玩家決定。
+// ⛔ 切到真跡時 CSS 會把標註藏起來：真跡含紙邊與奧付，裁切不同，座標對不上。
+let marks = true;                       // 一場之內記得，⛔ 不必存檔
+const spots = v => (v.details ?? []).map(
+  d => `<b class="spot" style="left:${d.x * 100}%;top:${d.y * 100}%">${d.label}</b>`).join('');
 
 /** 決定**整個面板的欄寬**，而不只是圖的寬度。
  *
@@ -190,21 +190,6 @@ function fitArt(v) {
   const w = Math.round(pw * (k >= 1 ? Math.floor(k) : k));
   $('panel').style.setProperty('--col', `${w}px`);
   img.style.width = art.style.width = `${w}px`;
-}
-
-/** 點畫面找細節。判定圈半徑是資料裡的 r（畫布寬的比例），⛔ 不要在這裡另訂一個。 */
-function poke(v, e) {
-  if (!state.collected.includes(v.id) || !(v.details ?? []).length) return;
-  const img = $('art').firstElementChild;
-  const b = img.getBoundingClientRect();
-  const x = (e.clientX - b.left) / b.width, y = (e.clientY - b.top) / b.height;
-  const ar = b.width / b.height;            // 判定圈是圓的，y 要照長寬比換算
-  const i = v.details.findIndex((d, k) => !foundOf(v).includes(k)
-    && Math.hypot(d.x - x, (d.y - y) / ar) < d.r);
-  if (i < 0) return;
-  (state.found ??= {})[v.id] = [...foundOf(v), i];
-  save();
-  pick(v);
 }
 
 // ── 收景 ──────────────────────────────────────────────────────

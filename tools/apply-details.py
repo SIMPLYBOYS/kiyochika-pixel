@@ -69,6 +69,7 @@ def main():
             px, py = c["x"] * im.width, c["y"] * im.height
             rr = r * im.width
             out.append({"x": c["x"], "y": c["y"], "r": r, "label": it["label"],
+                        "label_ja": it.get("label_ja"),   # 當初的日文判讀，留給多語系
                         "kind": c["kind"], "candidate": it["c"]})
         # 判定圈不能重疊
         for m in range(len(out)):

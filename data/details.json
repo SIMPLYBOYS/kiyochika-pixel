@@ -1,966 +1,1171 @@
 {
  "_": "細節搜尋的最終座標。人工檔，機器不覆寫（同 places.json／published.json）。",
  "_how": "候選由 tools/derive-details.py 在**像素版**上算（所以必然是量化後還在的東西），我逐幅看 tools 出的判讀表挑 2–3 個。`c` 是候選編號，對回 details-candidates.json。",
- "_label": "認得出來的才給名字；認不準的只標「光」或「影」——⛔ 不從 480px 的縮圖編造它是什麼。",
+ "_label": "認得出來的才給名字；認不準的只標「光」或「影」——⛔ 不從 480px 的縮圖編造它是什麼。`label` 是顯示用的繁中，`label_ja` 是當初看畫時寫下的日文判讀（多語系要用）。",
  "_why_not_plate": "🔴 東京二十景那次座標挑在真跡上，約 1/4 在 480px／16 色下根本不存在（低對比、靠色相分辨的、細密紋理三類被量化吃掉）。這次從源頭避開：候選只在像素版上找。",
  "_stale_note": "🔴 2026/09/11：修 cut_furniture（43・44・48・49 的畫只佔上面六成、下面全是掃描尺）之後，41 幅的裁切變了，其中 19 幅我已挑過的候選跟著移位 ⇒ 那 19 幅的挑選作廢重挑。教訓：**細節座標要等裁切定案之後再挑**（東京二十景 Phase 1 就寫過這條，這次還是撞了一次）。",
  "details": {
   "1": [
    {
     "c": 1,
-    "label": "人力車"
+    "label": "人力車",
+    "label_ja": "人力車"
    },
    {
     "c": 2,
-    "label": "車輪"
+    "label": "車輪",
+    "label_ja": "車輪"
    },
    {
     "c": 6,
-    "label": "窓"
+    "label": "窗",
+    "label_ja": "窓"
    }
   ],
   "2": [
    {
     "c": 1,
-    "label": "騎馬の人"
+    "label": "騎馬的人",
+    "label_ja": "騎馬の人"
    },
    {
     "c": 2,
-    "label": "橋のたもとの人"
+    "label": "橋頭的人",
+    "label_ja": "橋のたもとの人"
    },
    {
     "c": 6,
-    "label": "橋げた"
+    "label": "橋墩",
+    "label_ja": "橋げた"
    }
   ],
   "3": [
    {
     "c": 1,
-    "label": "渡し舟の人"
+    "label": "渡船上的人",
+    "label_ja": "渡し舟の人"
    },
    {
     "c": 5,
-    "label": "対岸の木立"
+    "label": "對岸的樹叢",
+    "label_ja": "対岸の木立"
    },
    {
     "c": 6,
-    "label": "光"
+    "label": "光",
+    "label_ja": "光"
    }
   ],
   "4": [
    {
     "c": 2,
-    "label": "雪の中の人"
+    "label": "雪中的人",
+    "label_ja": "雪の中の人"
    },
    {
     "c": 1,
-    "label": "銀行の入口"
+    "label": "銀行入口",
+    "label_ja": "銀行の入口"
    },
    {
     "c": 5,
-    "label": "雪の枝"
+    "label": "積雪的枝",
+    "label_ja": "雪の枝"
    }
   ],
   "5": [
    {
     "c": 2,
-    "label": "荷を負う人"
+    "label": "背貨的人",
+    "label_ja": "荷を負う人"
    },
    {
     "c": 5,
-    "label": "道の人"
+    "label": "路上的人",
+    "label_ja": "道の人"
    },
    {
     "c": 1,
-    "label": "家の屋根"
+    "label": "民家的屋頂",
+    "label_ja": "家の屋根"
    }
   ],
   "6": [
    {
     "c": 1,
-    "label": "写生する画家"
+    "label": "寫生的畫家",
+    "label_ja": "写生する画家"
    },
    {
     "c": 2,
-    "label": "子ども"
+    "label": "小孩",
+    "label_ja": "子ども"
    },
    {
     "c": 4,
-    "label": "人"
+    "label": "人",
+    "label_ja": "人"
    }
   ],
   "7": [
    {
     "c": 3,
-    "label": "傘"
+    "label": "傘",
+    "label_ja": "傘"
    },
    {
     "c": 5,
-    "label": "店先"
+    "label": "店門口",
+    "label_ja": "店先"
    },
    {
     "c": 1,
-    "label": "雪の屋根"
+    "label": "積雪的屋頂",
+    "label_ja": "雪の屋根"
    }
   ],
   "8": [
    {
     "c": 3,
-    "label": "鳥居"
+    "label": "鳥居",
+    "label_ja": "鳥居"
    },
    {
     "c": 5,
-    "label": "枯木"
+    "label": "枯木",
+    "label_ja": "枯木"
    },
    {
     "c": 2,
-    "label": "屋根"
+    "label": "屋頂",
+    "label_ja": "屋根"
    }
   ],
   "9": [
    {
     "c": 1,
-    "label": "影"
+    "label": "影",
+    "label_ja": "影"
    },
    {
     "c": 5,
-    "label": "木立"
+    "label": "樹叢",
+    "label_ja": "木立"
    },
    {
     "c": 6,
-    "label": "松の枝"
+    "label": "松枝",
+    "label_ja": "松の枝"
    }
   ],
   "10": [
    {
     "c": 6,
-    "label": "人"
+    "label": "人",
+    "label_ja": "人"
    },
    {
     "c": 2,
-    "label": "杉の幹"
+    "label": "杉木幹",
+    "label_ja": "杉の幹"
    },
    {
     "c": 1,
-    "label": "紅葉"
+    "label": "紅葉",
+    "label_ja": "紅葉"
    }
   ],
   "11": [
    {
     "c": 4,
-    "label": "人"
+    "label": "人",
+    "label_ja": "人"
    },
    {
     "c": 3,
-    "label": "雪の木"
+    "label": "雪中的樹",
+    "label_ja": "雪の木"
    },
    {
     "c": 6,
-    "label": "葦"
+    "label": "蘆葦",
+    "label_ja": "葦"
    }
   ],
   "12": [
    {
     "c": 3,
-    "label": "傘の人"
+    "label": "撐傘的人",
+    "label_ja": "傘の人"
    },
    {
     "c": 6,
-    "label": "洋館の窓"
+    "label": "洋樓的窗",
+    "label_ja": "洋館の窓"
    },
    {
     "c": 4,
-    "label": "窓"
+    "label": "窗",
+    "label_ja": "窓"
    }
   ],
   "13": [
    {
     "c": 2,
-    "label": "雪の中の二人"
+    "label": "雪中的兩人",
+    "label_ja": "雪の中の二人"
    },
    {
     "c": 3,
-    "label": "橋"
+    "label": "橋",
+    "label_ja": "橋"
    },
    {
     "c": 5,
-    "label": "雪の枝"
+    "label": "積雪的枝",
+    "label_ja": "雪の枝"
    }
   ],
   "14": [
    {
     "c": 1,
-    "label": "石燈籠"
+    "label": "石燈籠",
+    "label_ja": "石燈籠"
    },
    {
     "c": 5,
-    "label": "傘の人"
+    "label": "撐傘的人",
+    "label_ja": "傘の人"
    },
    {
     "c": 4,
-    "label": "雪の枝"
+    "label": "積雪的枝",
+    "label_ja": "雪の枝"
    }
   ],
   "15": [
    {
     "c": 1,
-    "label": "杉"
+    "label": "杉木",
+    "label_ja": "杉"
    },
    {
     "c": 5,
-    "label": "空の明るみ"
+    "label": "天邊的亮",
+    "label_ja": "空の明るみ"
    },
    {
     "c": 2,
-    "label": "木立"
+    "label": "樹叢",
+    "label_ja": "木立"
    }
   ],
   "16": [
    {
     "c": 1,
-    "label": "鋳物師"
+    "label": "鑄工",
+    "label_ja": "鋳物師"
    },
    {
     "c": 4,
-    "label": "職人"
+    "label": "工匠",
+    "label_ja": "職人"
    },
    {
     "c": 6,
-    "label": "職人"
+    "label": "工匠",
+    "label_ja": "職人"
    }
   ],
   "17": [
    {
     "c": 3,
-    "label": "舟の人"
+    "label": "船上的人",
+    "label_ja": "舟の人"
    },
    {
     "c": 4,
-    "label": "帆柱"
+    "label": "桅杆",
+    "label_ja": "帆柱"
    },
    {
     "c": 6,
-    "label": "対岸の木"
+    "label": "對岸的樹",
+    "label_ja": "対岸の木"
    }
   ],
   "18": [
    {
     "c": 6,
-    "label": "機関車"
+    "label": "火車頭",
+    "label_ja": "機関車"
    },
    {
     "c": 1,
-    "label": "客車の窓"
+    "label": "車廂的窗",
+    "label_ja": "客車の窓"
    },
    {
     "c": 4,
-    "label": "プラットホーム"
+    "label": "月台",
+    "label_ja": "プラットホーム"
    }
   ],
   "19": [
    {
     "c": 3,
-    "label": "帆柱"
+    "label": "桅杆",
+    "label_ja": "帆柱"
    },
    {
     "c": 1,
-    "label": "帆桁"
+    "label": "帆桁",
+    "label_ja": "帆桁"
    },
    {
     "c": 6,
-    "label": "索具"
+    "label": "索具",
+    "label_ja": "索具"
    }
   ],
   "20": [
    {
     "c": 2,
-    "label": "電信柱"
+    "label": "電線桿",
+    "label_ja": "電信柱"
    },
    {
     "c": 4,
-    "label": "人"
+    "label": "人",
+    "label_ja": "人"
    },
    {
     "c": 3,
-    "label": "立て札"
+    "label": "告示牌",
+    "label_ja": "立て札"
    }
   ],
   "21": [
    {
     "c": 1,
-    "label": "荷車"
+    "label": "板車",
+    "label_ja": "荷車"
    },
    {
     "c": 4,
-    "label": "杭"
+    "label": "木樁",
+    "label_ja": "杭"
    },
    {
     "c": 3,
-    "label": "雲"
+    "label": "雲",
+    "label_ja": "雲"
    }
   ],
   "22": [
    {
     "c": 3,
-    "label": "柳の下の人"
+    "label": "柳下的人",
+    "label_ja": "柳の下の人"
    },
    {
     "c": 1,
-    "label": "岸の人"
+    "label": "岸上的人",
+    "label_ja": "岸の人"
    },
    {
     "c": 4,
-    "label": "舟"
+    "label": "船",
+    "label_ja": "舟"
    }
   ],
   "23": [
    {
     "c": 5,
-    "label": "松の幹"
+    "label": "松樹幹",
+    "label_ja": "松の幹"
    },
    {
     "c": 4,
-    "label": "遠くの舟"
+    "label": "遠處的船",
+    "label_ja": "遠くの舟"
    },
    {
     "c": 2,
-    "label": "松の枝"
+    "label": "松枝",
+    "label_ja": "松の枝"
    }
   ],
   "24": [
    {
     "c": 3,
-    "label": "花菖蒲"
+    "label": "花菖蒲",
+    "label_ja": "花菖蒲"
    },
    {
     "c": 6,
-    "label": "茶屋の屋根"
+    "label": "茶屋的屋頂",
+    "label_ja": "茶屋の屋根"
    },
    {
     "c": 1,
-    "label": "松"
+    "label": "松",
+    "label_ja": "松"
    }
   ],
   "25": [
    {
     "c": 1,
-    "label": "梅の枝"
+    "label": "梅枝",
+    "label_ja": "梅の枝"
    },
    {
     "c": 3,
-    "label": "白梅"
+    "label": "白梅",
+    "label_ja": "白梅"
    },
    {
     "c": 6,
-    "label": "梅"
+    "label": "梅",
+    "label_ja": "梅"
    }
   ],
   "26": [
    {
     "c": 1,
-    "label": "腰かける人"
+    "label": "坐著的人",
+    "label_ja": "腰かける人"
    },
    {
     "c": 4,
-    "label": "木の間の人"
+    "label": "樹間的人",
+    "label_ja": "木の間の人"
    },
    {
     "c": 2,
-    "label": "杉の枝"
+    "label": "杉枝",
+    "label_ja": "杉の枝"
    }
   ],
   "27": [
    {
     "c": 3,
-    "label": "車を引く人"
+    "label": "拉車的人",
+    "label_ja": "車を引く人"
    },
    {
     "c": 1,
-    "label": "対岸の家"
+    "label": "對岸的屋",
+    "label_ja": "対岸の家"
    },
    {
     "c": 5,
-    "label": "対岸の人"
+    "label": "對岸的人",
+    "label_ja": "対岸の人"
    }
   ],
   "28": [
    {
     "c": 5,
-    "label": "白い着物の人"
+    "label": "白和服的人",
+    "label_ja": "白い着物の人"
    },
    {
     "c": 2,
-    "label": "枝"
+    "label": "枝",
+    "label_ja": "枝"
    },
    {
     "c": 1,
-    "label": "柵"
+    "label": "柵欄",
+    "label_ja": "柵"
    }
   ],
   "29": [
    {
     "c": 1,
-    "label": "白い服の人"
+    "label": "白衣的人",
+    "label_ja": "白い服の人"
    },
    {
     "c": 3,
-    "label": "黒い服の人"
+    "label": "黑衣的人",
+    "label_ja": "黒い服の人"
    },
    {
     "c": 4,
-    "label": "吊り橋の綱"
+    "label": "吊橋的纜",
+    "label_ja": "吊り橋の綱"
    }
   ],
   "30": [
    {
     "c": 2,
-    "label": "傘の人"
+    "label": "撐傘的人",
+    "label_ja": "傘の人"
    },
    {
     "c": 6,
-    "label": "木"
+    "label": "樹",
+    "label_ja": "木"
    },
    {
     "c": 4,
-    "label": "建物"
+    "label": "建築",
+    "label_ja": "建物"
    }
   ],
   "31": [
    {
     "c": 3,
-    "label": "落日"
+    "label": "落日",
+    "label_ja": "落日"
    },
    {
     "c": 6,
-    "label": "枯木"
+    "label": "枯木",
+    "label_ja": "枯木"
    },
    {
     "c": 2,
-    "label": "岸"
+    "label": "岸",
+    "label_ja": "岸"
    }
   ],
   "32": [
    {
     "c": 1,
-    "label": "笠の人"
+    "label": "戴笠的人",
+    "label_ja": "笠の人"
    },
    {
     "c": 6,
-    "label": "傘の人"
+    "label": "撐傘的人",
+    "label_ja": "傘の人"
    },
    {
     "c": 3,
-    "label": "柳の幹"
+    "label": "柳樹幹",
+    "label_ja": "柳の幹"
    }
   ],
   "33": [
    {
     "c": 1,
-    "label": "岸の人"
+    "label": "岸上的人",
+    "label_ja": "岸の人"
    },
    {
     "c": 2,
-    "label": "人"
+    "label": "人",
+    "label_ja": "人"
    },
    {
     "c": 5,
-    "label": "対岸の森"
+    "label": "對岸的林",
+    "label_ja": "対岸の森"
    }
   ],
   "34": [
    {
     "c": 6,
-    "label": "白い傘"
+    "label": "白傘",
+    "label_ja": "白い傘"
    },
    {
     "c": 2,
-    "label": "提灯の人"
+    "label": "提燈籠的人",
+    "label_ja": "提灯の人"
    },
    {
     "c": 1,
-    "label": "夜の人影"
+    "label": "夜裡的人影",
+    "label_ja": "夜の人影"
    }
   ],
   "35": [
    {
     "c": 1,
-    "label": "舟の人"
+    "label": "船上的人",
+    "label_ja": "舟の人"
    },
    {
     "c": 2,
-    "label": "櫓を漕ぐ人"
+    "label": "搖櫓的人",
+    "label_ja": "櫓を漕ぐ人"
    },
    {
     "c": 4,
-    "label": "枯れ枝"
+    "label": "枯枝",
+    "label_ja": "枯れ枝"
    }
   ],
   "36": [
    {
     "c": 2,
-    "label": "楼門"
+    "label": "樓門",
+    "label_ja": "楼門"
    },
    {
     "c": 1,
-    "label": "屋根"
+    "label": "屋頂",
+    "label_ja": "屋根"
    },
    {
     "c": 4,
-    "label": "紅葉"
+    "label": "紅葉",
+    "label_ja": "紅葉"
    }
   ],
   "37": [
    {
     "c": 6,
-    "label": "門前の人"
+    "label": "門前的人",
+    "label_ja": "門前の人"
    },
    {
     "c": 2,
-    "label": "楼門"
+    "label": "樓門",
+    "label_ja": "楼門"
    },
    {
     "c": 3,
-    "label": "松の枝"
+    "label": "松枝",
+    "label_ja": "松の枝"
    }
   ],
   "38": [
    {
     "c": 4,
-    "label": "木の影"
+    "label": "樹影",
+    "label_ja": "木の影"
    },
    {
     "c": 1,
-    "label": "杉の幹"
+    "label": "杉木幹",
+    "label_ja": "杉の幹"
    },
    {
     "c": 3,
-    "label": "杉"
+    "label": "杉木",
+    "label_ja": "杉"
    }
   ],
   "39": [
    {
     "c": 1,
-    "label": "雪の家"
+    "label": "雪中的屋",
+    "label_ja": "雪の家"
    },
    {
     "c": 3,
-    "label": "舟"
+    "label": "船",
+    "label_ja": "舟"
    },
    {
     "c": 5,
-    "label": "雪の土手"
+    "label": "積雪的堤",
+    "label_ja": "雪の土手"
    }
   ],
   "40": [
    {
     "c": 1,
-    "label": "松の枝"
+    "label": "松枝",
+    "label_ja": "松の枝"
    },
    {
     "c": 3,
-    "label": "松"
+    "label": "松",
+    "label_ja": "松"
    },
    {
     "c": 2,
-    "label": "松"
+    "label": "松",
+    "label_ja": "松"
    }
   ],
   "41": [
    {
     "c": 4,
-    "label": "灯"
+    "label": "燈",
+    "label_ja": "灯"
    },
    {
     "c": 2,
-    "label": "明かり"
+    "label": "光亮",
+    "label_ja": "明かり"
    },
    {
     "c": 6,
-    "label": "水の明かり"
+    "label": "水上的光",
+    "label_ja": "水の明かり"
    }
   ],
   "42": [
    {
     "c": 5,
-    "label": "花火"
+    "label": "煙火",
+    "label_ja": "花火"
    },
    {
     "c": 4,
-    "label": "舟"
+    "label": "船",
+    "label_ja": "舟"
    },
    {
     "c": 6,
-    "label": "舟の人"
+    "label": "船上的人",
+    "label_ja": "舟の人"
    }
   ],
   "43": [
    {
     "c": 3,
-    "label": "杭"
+    "label": "木樁",
+    "label_ja": "杭"
    },
    {
     "c": 5,
-    "label": "橋のアーチ"
+    "label": "橋拱",
+    "label_ja": "橋のアーチ"
    },
    {
     "c": 2,
-    "label": "葦"
+    "label": "蘆葦",
+    "label_ja": "葦"
    }
   ],
   "44": [
    {
     "c": 5,
-    "label": "岸の木"
+    "label": "岸邊的樹",
+    "label_ja": "岸の木"
    },
    {
     "c": 4,
-    "label": "対岸の森"
+    "label": "對岸的林",
+    "label_ja": "対岸の森"
    },
    {
     "c": 2,
-    "label": "木"
+    "label": "樹",
+    "label_ja": "木"
    }
   ],
   "45": [
    {
     "c": 2,
-    "label": "馬"
+    "label": "馬",
+    "label_ja": "馬"
    },
    {
     "c": 3,
-    "label": "走る人"
+    "label": "奔跑的人",
+    "label_ja": "走る人"
    },
    {
     "c": 5,
-    "label": "月"
+    "label": "月",
+    "label_ja": "月"
    }
   ],
   "46": [
    {
     "c": 1,
-    "label": "橋の上の人"
+    "label": "橋上的人",
+    "label_ja": "橋の上の人"
    },
    {
     "c": 5,
-    "label": "岸の小屋"
+    "label": "岸邊的小屋",
+    "label_ja": "岸の小屋"
    },
    {
     "c": 6,
-    "label": "木"
+    "label": "樹",
+    "label_ja": "木"
    }
   ],
   "47": [
    {
     "c": 1,
-    "label": "人影"
+    "label": "人影",
+    "label_ja": "人影"
    },
    {
     "c": 4,
-    "label": "紙幣寮の建物"
+    "label": "紙幣寮的建築",
+    "label_ja": "紙幣寮の建物"
    },
    {
     "c": 3,
-    "label": "松"
+    "label": "松",
+    "label_ja": "松"
    }
   ],
   "48": [
    {
     "c": 1,
-    "label": "電信柱"
+    "label": "電線桿",
+    "label_ja": "電信柱"
    },
    {
     "c": 4,
-    "label": "窓"
+    "label": "窗",
+    "label_ja": "窓"
    },
    {
     "c": 5,
-    "label": "人"
+    "label": "人",
+    "label_ja": "人"
    }
   ],
   "49": [
    {
     "c": 3,
-    "label": "虹"
+    "label": "虹",
+    "label_ja": "虹"
    },
    {
     "c": 1,
-    "label": "舟の人"
+    "label": "船上的人",
+    "label_ja": "舟の人"
    },
    {
     "c": 2,
-    "label": "岸の家"
+    "label": "岸邊的屋",
+    "label_ja": "岸の家"
    }
   ],
   "50": [
    {
     "c": 6,
-    "label": "稲妻"
+    "label": "閃電",
+    "label_ja": "稲妻"
    },
    {
     "c": 1,
-    "label": "水の明かり"
+    "label": "水上的光",
+    "label_ja": "水の明かり"
    },
    {
     "c": 4,
-    "label": "川面の灯"
+    "label": "河面的燈火",
+    "label_ja": "川面の灯"
    }
   ],
   "51": [
    {
     "c": 1,
-    "label": "灯"
+    "label": "燈",
+    "label_ja": "灯"
    },
    {
     "c": 3,
-    "label": "月あかり"
+    "label": "月光",
+    "label_ja": "月あかり"
    },
    {
     "c": 6,
-    "label": "舟"
+    "label": "船",
+    "label_ja": "舟"
    }
   ],
   "52": [
    {
     "c": 1,
-    "label": "六角堂の露盤"
+    "label": "六角堂的露盤",
+    "label_ja": "六角堂の露盤"
    },
    {
     "c": 4,
-    "label": "木"
+    "label": "樹",
+    "label_ja": "木"
    },
    {
     "c": 2,
-    "label": "枝"
+    "label": "枝",
+    "label_ja": "枝"
    }
   ],
   "53": [
    {
     "c": 4,
-    "label": "五角堂の屋根"
+    "label": "五角堂的屋頂",
+    "label_ja": "五角堂の屋根"
    },
    {
     "c": 5,
-    "label": "棕櫚"
+    "label": "棕櫚",
+    "label_ja": "棕櫚"
    },
    {
     "c": 1,
-    "label": "植込み"
+    "label": "植栽",
+    "label_ja": "植込み"
    }
   ],
   "54": [
    {
     "c": 6,
-    "label": "噴水"
+    "label": "噴水池",
+    "label_ja": "噴水"
    },
    {
     "c": 1,
-    "label": "人だかり"
+    "label": "人群",
+    "label_ja": "人だかり"
    },
    {
     "c": 5,
-    "label": "建物の屋根"
+    "label": "建築的屋頂",
+    "label_ja": "建物の屋根"
    }
   ],
   "58": [
    {
     "c": 1,
-    "label": "塔"
+    "label": "塔",
+    "label_ja": "塔"
    },
    {
     "c": 2,
-    "label": "灯"
+    "label": "燈",
+    "label_ja": "灯"
    },
    {
     "c": 6,
-    "label": "人力車"
+    "label": "人力車",
+    "label_ja": "人力車"
    }
   ],
   "59": [
    {
     "c": 5,
-    "label": "灯の窓"
+    "label": "亮燈的窗",
+    "label_ja": "灯の窓"
    },
    {
     "c": 1,
-    "label": "人影"
+    "label": "人影",
+    "label_ja": "人影"
    },
    {
     "c": 4,
-    "label": "窓の灯"
+    "label": "窗裡的燈",
+    "label_ja": "窓の灯"
    }
   ],
   "60": [
    {
     "c": 2,
-    "label": "逃げる人"
+    "label": "逃跑的人",
+    "label_ja": "逃げる人"
    },
    {
     "c": 5,
-    "label": "荷を担ぐ人"
+    "label": "挑擔的人",
+    "label_ja": "荷を担ぐ人"
    },
    {
     "c": 6,
-    "label": "人影"
+    "label": "人影",
+    "label_ja": "人影"
    }
   ],
   "61": [
    {
     "c": 2,
-    "label": "走る人"
+    "label": "奔跑的人",
+    "label_ja": "走る人"
    },
    {
     "c": 1,
-    "label": "立つ人"
+    "label": "站著的人",
+    "label_ja": "立つ人"
    }
   ],
   "62": [
    {
     "c": 1,
-    "label": "火を見る人"
+    "label": "看火的人",
+    "label_ja": "火を見る人"
    },
    {
     "c": 3,
-    "label": "人影"
+    "label": "人影",
+    "label_ja": "人影"
    },
    {
     "c": 5,
-    "label": "群衆"
+    "label": "群眾",
+    "label_ja": "群衆"
    }
   ],
   "63": [
    {
     "c": 5,
-    "label": "瓦斯燈"
+    "label": "瓦斯燈",
+    "label_ja": "瓦斯燈"
    },
    {
     "c": 3,
-    "label": "焼跡の人"
+    "label": "焦土上的人",
+    "label_ja": "焼跡の人"
    },
    {
     "c": 4,
-    "label": "焼け残り"
+    "label": "燒剩的殘骸",
+    "label_ja": "焼け残り"
    }
   ],
   "64": [
    {
     "c": 1,
-    "label": "舟"
+    "label": "船",
+    "label_ja": "舟"
    },
    {
     "c": 5,
-    "label": "洋館"
+    "label": "洋樓",
+    "label_ja": "洋館"
    },
    {
     "c": 4,
-    "label": "木"
+    "label": "樹",
+    "label_ja": "木"
    }
   ],
   "65": [
    {
     "c": 2,
-    "label": "建物"
+    "label": "建築",
+    "label_ja": "建物"
    },
    {
     "c": 5,
-    "label": "川の人"
+    "label": "河上的人",
+    "label_ja": "川の人"
    },
    {
     "c": 6,
-    "label": "土手"
+    "label": "堤",
+    "label_ja": "土手"
    }
   ],
   "66": [
    {
     "c": 2,
-    "label": "傘"
+    "label": "傘",
+    "label_ja": "傘"
    },
    {
     "c": 6,
-    "label": "人力車"
+    "label": "人力車",
+    "label_ja": "人力車"
    },
    {
     "c": 4,
-    "label": "傘"
+    "label": "傘",
+    "label_ja": "傘"
    }
   ],
   "67": [
    {
     "c": 3,
-    "label": "瓦斯燈"
+    "label": "瓦斯燈",
+    "label_ja": "瓦斯燈"
    },
    {
     "c": 1,
-    "label": "夜の人影"
+    "label": "夜裡的人影",
+    "label_ja": "夜の人影"
    },
    {
     "c": 4,
-    "label": "人"
+    "label": "人",
+    "label_ja": "人"
    }
   ],
   "68": [
    {
     "c": 6,
-    "label": "夜店の灯"
+    "label": "夜市的燈",
+    "label_ja": "夜店の灯"
    },
    {
     "c": 2,
-    "label": "人だかり"
+    "label": "人群",
+    "label_ja": "人だかり"
    },
    {
     "c": 5,
-    "label": "人影"
+    "label": "人影",
+    "label_ja": "人影"
    }
   ],
   "69": [
    {
     "c": 6,
-    "label": "五重塔"
+    "label": "五重塔",
+    "label_ja": "五重塔"
    },
    {
     "c": 5,
-    "label": "本堂の宝珠"
+    "label": "本堂的寶珠",
+    "label_ja": "本堂の宝珠"
    },
    {
     "c": 1,
-    "label": "雪"
+    "label": "雪",
+    "label_ja": "雪"
    }
   ],
   "70": [
    {
     "c": 2,
-    "label": "月"
+    "label": "月",
+    "label_ja": "月"
    },
    {
     "c": 3,
-    "label": "女の顔"
+    "label": "女子的臉",
+    "label_ja": "女の顔"
    },
    {
     "c": 5,
-    "label": "子ども"
+    "label": "小孩",
+    "label_ja": "子ども"
    }
   ],
   "71": [
    {
     "c": 2,
-    "label": "花火"
+    "label": "煙火",
+    "label_ja": "花火"
    },
    {
     "c": 5,
-    "label": "花火の枝垂れ"
+    "label": "煙火的垂枝",
+    "label_ja": "花火の枝垂れ"
    }
   ],
   "72": [
    {
     "c": 3,
-    "label": "大の字"
+    "label": "大字",
+    "label_ja": "大の字"
    },
    {
     "c": 1,
-    "label": "暖簾"
+    "label": "門簾",
+    "label_ja": "暖簾"
    },
    {
     "c": 5,
-    "label": "屋根"
+    "label": "屋頂",
+    "label_ja": "屋根"
    }
   ]
  },

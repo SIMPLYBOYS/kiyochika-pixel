@@ -63,6 +63,7 @@
         "y": 0.4873,
         "r": 0.055,
         "label": "人力車",
+        "label_ja": "人力車",
         "kind": "light",
         "candidate": 1
       },
@@ -71,6 +72,7 @@
         "y": 0.8477,
         "r": 0.055,
         "label": "車輪",
+        "label_ja": "車輪",
         "kind": "dark",
         "candidate": 2
       },
@@ -78,7 +80,8 @@
         "x": 0.3646,
         "y": 0.467,
         "r": 0.055,
-        "label": "窓",
+        "label": "窗",
+        "label_ja": "窓",
         "kind": "dark",
         "candidate": 6
       }
@@ -177,7 +180,8 @@
         "x": 0.3146,
         "y": 0.6154,
         "r": 0.055,
-        "label": "騎馬の人",
+        "label": "騎馬的人",
+        "label_ja": "騎馬の人",
         "kind": "light",
         "candidate": 1
       },
@@ -185,7 +189,8 @@
         "x": 0.825,
         "y": 0.5913,
         "r": 0.055,
-        "label": "橋のたもとの人",
+        "label": "橋頭的人",
+        "label_ja": "橋のたもとの人",
         "kind": "light",
         "candidate": 2
       },
@@ -193,7 +198,8 @@
         "x": 0.4771,
         "y": 0.4038,
         "r": 0.055,
-        "label": "橋げた",
+        "label": "橋墩",
+        "label_ja": "橋げた",
         "kind": "dark",
         "candidate": 6
       }
@@ -293,7 +299,8 @@
         "x": 0.3708,
         "y": 0.5115,
         "r": 0.055,
-        "label": "渡し舟の人",
+        "label": "渡船上的人",
+        "label_ja": "渡し舟の人",
         "kind": "dark",
         "candidate": 1
       },
@@ -301,7 +308,8 @@
         "x": 0.1708,
         "y": 0.1843,
         "r": 0.055,
-        "label": "対岸の木立",
+        "label": "對岸的樹叢",
+        "label_ja": "対岸の木立",
         "kind": "dark",
         "candidate": 5
       },
@@ -310,6 +318,7 @@
         "y": 0.2811,
         "r": 0.055,
         "label": "光",
+        "label_ja": "光",
         "kind": "light",
         "candidate": 6
       }
@@ -409,7 +418,8 @@
         "x": 0.0792,
         "y": 0.8446,
         "r": 0.055,
-        "label": "雪の中の人",
+        "label": "雪中的人",
+        "label_ja": "雪の中の人",
         "kind": "dark",
         "candidate": 2
       },
@@ -417,7 +427,8 @@
         "x": 0.2417,
         "y": 0.8008,
         "r": 0.055,
-        "label": "銀行の入口",
+        "label": "銀行入口",
+        "label_ja": "銀行の入口",
         "kind": "dark",
         "candidate": 1
       },
@@ -425,7 +436,8 @@
         "x": 0.9292,
         "y": 0.255,
         "r": 0.055,
-        "label": "雪の枝",
+        "label": "積雪的枝",
+        "label_ja": "雪の枝",
         "kind": "light",
         "candidate": 5
       }
@@ -528,7 +540,8 @@
         "x": 0.8833,
         "y": 0.393,
         "r": 0.055,
-        "label": "荷を負う人",
+        "label": "背貨的人",
+        "label_ja": "荷を負う人",
         "kind": "light",
         "candidate": 2
       },
@@ -536,7 +549,8 @@
         "x": 0.8167,
         "y": 0.806,
         "r": 0.055,
-        "label": "道の人",
+        "label": "路上的人",
+        "label_ja": "道の人",
         "kind": "light",
         "candidate": 5
       },
@@ -544,7 +558,8 @@
         "x": 0.4417,
         "y": 0.1443,
         "r": 0.055,
-        "label": "家の屋根",
+        "label": "民家的屋頂",
+        "label_ja": "家の屋根",
         "kind": "light",
         "candidate": 1
       }
@@ -644,7 +659,8 @@
         "x": 0.1521,
         "y": 0.6804,
         "r": 0.055,
-        "label": "写生する画家",
+        "label": "寫生的畫家",
+        "label_ja": "写生する画家",
         "kind": "dark",
         "candidate": 1
       },
@@ -652,7 +668,8 @@
         "x": 0.2354,
         "y": 0.8165,
         "r": 0.055,
-        "label": "子ども",
+        "label": "小孩",
+        "label_ja": "子ども",
         "kind": "dark",
         "candidate": 2
       },
@@ -661,6 +678,7 @@
         "y": 0.6709,
         "r": 0.055,
         "label": "人",
+        "label_ja": "人",
         "kind": "dark",
         "candidate": 4
       }
@@ -761,6 +779,7 @@
         "y": 0.7276,
         "r": 0.055,
         "label": "傘",
+        "label_ja": "傘",
         "kind": "dark",
         "candidate": 3
       },
@@ -768,7 +787,8 @@
         "x": 0.9396,
         "y": 0.5992,
         "r": 0.055,
-        "label": "店先",
+        "label": "店門口",
+        "label_ja": "店先",
         "kind": "dark",
         "candidate": 5
       },
@@ -776,7 +796,8 @@
         "x": 0.9688,
         "y": 0.3152,
         "r": 0.055,
-        "label": "雪の屋根",
+        "label": "積雪的屋頂",
+        "label_ja": "雪の屋根",
         "kind": "light",
         "candidate": 1
       }
@@ -877,6 +898,7 @@
         "y": 0.5577,
         "r": 0.055,
         "label": "鳥居",
+        "label_ja": "鳥居",
         "kind": "dark",
         "candidate": 3
       },
@@ -885,6 +907,7 @@
         "y": 0.2821,
         "r": 0.055,
         "label": "枯木",
+        "label_ja": "枯木",
         "kind": "dark",
         "candidate": 5
       },
@@ -892,7 +915,8 @@
         "x": 0.9208,
         "y": 0.5737,
         "r": 0.055,
-        "label": "屋根",
+        "label": "屋頂",
+        "label_ja": "屋根",
         "kind": "dark",
         "candidate": 2
       }
@@ -996,6 +1020,7 @@
         "y": 0.3844,
         "r": 0.055,
         "label": "影",
+        "label_ja": "影",
         "kind": "dark",
         "candidate": 1
       },
@@ -1003,7 +1028,8 @@
         "x": 0.3354,
         "y": 0.1629,
         "r": 0.055,
-        "label": "木立",
+        "label": "樹叢",
+        "label_ja": "木立",
         "kind": "dark",
         "candidate": 5
       },
@@ -1011,7 +1037,8 @@
         "x": 0.4458,
         "y": 0.329,
         "r": 0.055,
-        "label": "松の枝",
+        "label": "松枝",
+        "label_ja": "松の枝",
         "kind": "light",
         "candidate": 6
       }
@@ -1111,6 +1138,7 @@
         "y": 0.8942,
         "r": 0.055,
         "label": "人",
+        "label_ja": "人",
         "kind": "light",
         "candidate": 6
       },
@@ -1118,7 +1146,8 @@
         "x": 0.1625,
         "y": 0.2179,
         "r": 0.055,
-        "label": "杉の幹",
+        "label": "杉木幹",
+        "label_ja": "杉の幹",
         "kind": "light",
         "candidate": 2
       },
@@ -1127,6 +1156,7 @@
         "y": 0.2981,
         "r": 0.055,
         "label": "紅葉",
+        "label_ja": "紅葉",
         "kind": "light",
         "candidate": 1
       }
@@ -1222,6 +1252,7 @@
         "y": 0.659,
         "r": 0.055,
         "label": "人",
+        "label_ja": "人",
         "kind": "dark",
         "candidate": 4
       },
@@ -1229,7 +1260,8 @@
         "x": 0.9375,
         "y": 0.5115,
         "r": 0.055,
-        "label": "雪の木",
+        "label": "雪中的樹",
+        "label_ja": "雪の木",
         "kind": "dark",
         "candidate": 3
       },
@@ -1237,7 +1269,8 @@
         "x": 0.6854,
         "y": 0.6787,
         "r": 0.055,
-        "label": "葦",
+        "label": "蘆葦",
+        "label_ja": "葦",
         "kind": "dark",
         "candidate": 6
       }
@@ -1329,7 +1362,8 @@
         "x": 0.6958,
         "y": 0.8878,
         "r": 0.055,
-        "label": "傘の人",
+        "label": "撐傘的人",
+        "label_ja": "傘の人",
         "kind": "dark",
         "candidate": 3
       },
@@ -1337,7 +1371,8 @@
         "x": 0.5208,
         "y": 0.4048,
         "r": 0.055,
-        "label": "洋館の窓",
+        "label": "洋樓的窗",
+        "label_ja": "洋館の窓",
         "kind": "dark",
         "candidate": 6
       },
@@ -1345,7 +1380,8 @@
         "x": 0.9042,
         "y": 0.4762,
         "r": 0.055,
-        "label": "窓",
+        "label": "窗",
+        "label_ja": "窓",
         "kind": "dark",
         "candidate": 4
       }
@@ -1417,7 +1453,8 @@
         "x": 0.3104,
         "y": 0.6019,
         "r": 0.055,
-        "label": "雪の中の二人",
+        "label": "雪中的兩人",
+        "label_ja": "雪の中の二人",
         "kind": "light",
         "candidate": 2
       },
@@ -1426,6 +1463,7 @@
         "y": 0.6926,
         "r": 0.055,
         "label": "橋",
+        "label_ja": "橋",
         "kind": "dark",
         "candidate": 3
       },
@@ -1433,7 +1471,8 @@
         "x": 0.3208,
         "y": 0.1133,
         "r": 0.055,
-        "label": "雪の枝",
+        "label": "積雪的枝",
+        "label_ja": "雪の枝",
         "kind": "light",
         "candidate": 5
       }
@@ -1538,6 +1577,7 @@
         "y": 0.5224,
         "r": 0.055,
         "label": "石燈籠",
+        "label_ja": "石燈籠",
         "kind": "light",
         "candidate": 1
       },
@@ -1545,7 +1585,8 @@
         "x": 0.4292,
         "y": 0.8,
         "r": 0.055,
-        "label": "傘の人",
+        "label": "撐傘的人",
+        "label_ja": "傘の人",
         "kind": "dark",
         "candidate": 5
       },
@@ -1553,7 +1594,8 @@
         "x": 0.1792,
         "y": 0.2408,
         "r": 0.055,
-        "label": "雪の枝",
+        "label": "積雪的枝",
+        "label_ja": "雪の枝",
         "kind": "light",
         "candidate": 4
       }
@@ -1653,7 +1695,8 @@
         "x": 0.6813,
         "y": 0.2026,
         "r": 0.055,
-        "label": "杉",
+        "label": "杉木",
+        "label_ja": "杉",
         "kind": "light",
         "candidate": 1
       },
@@ -1661,7 +1704,8 @@
         "x": 0.3833,
         "y": 0.1471,
         "r": 0.055,
-        "label": "空の明るみ",
+        "label": "天邊的亮",
+        "label_ja": "空の明るみ",
         "kind": "light",
         "candidate": 5
       },
@@ -1669,7 +1713,8 @@
         "x": 0.4104,
         "y": 0.3529,
         "r": 0.055,
-        "label": "木立",
+        "label": "樹叢",
+        "label_ja": "木立",
         "kind": "light",
         "candidate": 2
       }
@@ -1769,7 +1814,8 @@
         "x": 0.6646,
         "y": 0.5584,
         "r": 0.055,
-        "label": "鋳物師",
+        "label": "鑄工",
+        "label_ja": "鋳物師",
         "kind": "light",
         "candidate": 1
       },
@@ -1777,7 +1823,8 @@
         "x": 0.7708,
         "y": 0.6494,
         "r": 0.055,
-        "label": "職人",
+        "label": "工匠",
+        "label_ja": "職人",
         "kind": "light",
         "candidate": 4
       },
@@ -1785,7 +1832,8 @@
         "x": 0.8833,
         "y": 0.711,
         "r": 0.055,
-        "label": "職人",
+        "label": "工匠",
+        "label_ja": "職人",
         "kind": "light",
         "candidate": 6
       }
@@ -1874,7 +1922,8 @@
         "x": 0.5979,
         "y": 0.7273,
         "r": 0.055,
-        "label": "舟の人",
+        "label": "船上的人",
+        "label_ja": "舟の人",
         "kind": "dark",
         "candidate": 3
       },
@@ -1882,7 +1931,8 @@
         "x": 0.4875,
         "y": 0.2468,
         "r": 0.055,
-        "label": "帆柱",
+        "label": "桅杆",
+        "label_ja": "帆柱",
         "kind": "dark",
         "candidate": 4
       },
@@ -1890,7 +1940,8 @@
         "x": 0.8125,
         "y": 0.4968,
         "r": 0.055,
-        "label": "対岸の木",
+        "label": "對岸的樹",
+        "label_ja": "対岸の木",
         "kind": "dark",
         "candidate": 6
       }
@@ -1980,7 +2031,8 @@
         "x": 0.7208,
         "y": 0.6408,
         "r": 0.055,
-        "label": "機関車",
+        "label": "火車頭",
+        "label_ja": "機関車",
         "kind": "light",
         "candidate": 6
       },
@@ -1988,7 +2040,8 @@
         "x": 0.5292,
         "y": 0.4854,
         "r": 0.055,
-        "label": "客車の窓",
+        "label": "車廂的窗",
+        "label_ja": "客車の窓",
         "kind": "light",
         "candidate": 1
       },
@@ -1996,7 +2049,8 @@
         "x": 0.0667,
         "y": 0.5405,
         "r": 0.055,
-        "label": "プラットホーム",
+        "label": "月台",
+        "label_ja": "プラットホーム",
         "kind": "light",
         "candidate": 4
       }
@@ -2096,7 +2150,8 @@
         "x": 0.4417,
         "y": 0.2993,
         "r": 0.055,
-        "label": "帆柱",
+        "label": "桅杆",
+        "label_ja": "帆柱",
         "kind": "dark",
         "candidate": 3
       },
@@ -2105,6 +2160,7 @@
         "y": 0.4184,
         "r": 0.055,
         "label": "帆桁",
+        "label_ja": "帆桁",
         "kind": "dark",
         "candidate": 1
       },
@@ -2113,6 +2169,7 @@
         "y": 0.4286,
         "r": 0.055,
         "label": "索具",
+        "label_ja": "索具",
         "kind": "dark",
         "candidate": 6
       }
@@ -2212,7 +2269,8 @@
         "x": 0.6917,
         "y": 0.4776,
         "r": 0.055,
-        "label": "電信柱",
+        "label": "電線桿",
+        "label_ja": "電信柱",
         "kind": "dark",
         "candidate": 2
       },
@@ -2221,6 +2279,7 @@
         "y": 0.7179,
         "r": 0.055,
         "label": "人",
+        "label_ja": "人",
         "kind": "light",
         "candidate": 4
       },
@@ -2228,7 +2287,8 @@
         "x": 0.3292,
         "y": 0.6538,
         "r": 0.055,
-        "label": "立て札",
+        "label": "告示牌",
+        "label_ja": "立て札",
         "kind": "light",
         "candidate": 3
       }
@@ -2332,7 +2392,8 @@
         "x": 0.5979,
         "y": 0.7105,
         "r": 0.055,
-        "label": "荷車",
+        "label": "板車",
+        "label_ja": "荷車",
         "kind": "light",
         "candidate": 1
       },
@@ -2340,7 +2401,8 @@
         "x": 0.8354,
         "y": 0.7993,
         "r": 0.055,
-        "label": "杭",
+        "label": "木樁",
+        "label_ja": "杭",
         "kind": "dark",
         "candidate": 4
       },
@@ -2349,6 +2411,7 @@
         "y": 0.352,
         "r": 0.055,
         "label": "雲",
+        "label_ja": "雲",
         "kind": "dark",
         "candidate": 3
       }
@@ -2447,7 +2510,8 @@
         "x": 0.2333,
         "y": 0.6007,
         "r": 0.055,
-        "label": "柳の下の人",
+        "label": "柳下的人",
+        "label_ja": "柳の下の人",
         "kind": "dark",
         "candidate": 3
       },
@@ -2455,7 +2519,8 @@
         "x": 0.6188,
         "y": 0.6443,
         "r": 0.055,
-        "label": "岸の人",
+        "label": "岸上的人",
+        "label_ja": "岸の人",
         "kind": "dark",
         "candidate": 1
       },
@@ -2463,7 +2528,8 @@
         "x": 0.9333,
         "y": 0.8188,
         "r": 0.055,
-        "label": "舟",
+        "label": "船",
+        "label_ja": "舟",
         "kind": "dark",
         "candidate": 4
       }
@@ -2552,7 +2618,8 @@
         "x": 0.3312,
         "y": 0.8684,
         "r": 0.055,
-        "label": "松の幹",
+        "label": "松樹幹",
+        "label_ja": "松の幹",
         "kind": "light",
         "candidate": 5
       },
@@ -2560,7 +2627,8 @@
         "x": 0.7771,
         "y": 0.7204,
         "r": 0.055,
-        "label": "遠くの舟",
+        "label": "遠處的船",
+        "label_ja": "遠くの舟",
         "kind": "light",
         "candidate": 4
       },
@@ -2568,7 +2636,8 @@
         "x": 0.1708,
         "y": 0.3158,
         "r": 0.055,
-        "label": "松の枝",
+        "label": "松枝",
+        "label_ja": "松の枝",
         "kind": "light",
         "candidate": 2
       }
@@ -2673,6 +2742,7 @@
         "y": 0.9408,
         "r": 0.055,
         "label": "花菖蒲",
+        "label_ja": "花菖蒲",
         "kind": "light",
         "candidate": 3
       },
@@ -2680,7 +2750,8 @@
         "x": 0.0917,
         "y": 0.3289,
         "r": 0.055,
-        "label": "茶屋の屋根",
+        "label": "茶屋的屋頂",
+        "label_ja": "茶屋の屋根",
         "kind": "light",
         "candidate": 6
       },
@@ -2689,6 +2760,7 @@
         "y": 0.4836,
         "r": 0.055,
         "label": "松",
+        "label_ja": "松",
         "kind": "dark",
         "candidate": 1
       }
@@ -2788,7 +2860,8 @@
         "x": 0.4917,
         "y": 0.1378,
         "r": 0.055,
-        "label": "梅の枝",
+        "label": "梅枝",
+        "label_ja": "梅の枝",
         "kind": "dark",
         "candidate": 1
       },
@@ -2797,6 +2870,7 @@
         "y": 0.375,
         "r": 0.055,
         "label": "白梅",
+        "label_ja": "白梅",
         "kind": "dark",
         "candidate": 3
       },
@@ -2805,6 +2879,7 @@
         "y": 0.4487,
         "r": 0.055,
         "label": "梅",
+        "label_ja": "梅",
         "kind": "dark",
         "candidate": 6
       }
@@ -2903,7 +2978,8 @@
         "x": 0.3292,
         "y": 0.9061,
         "r": 0.055,
-        "label": "腰かける人",
+        "label": "坐著的人",
+        "label_ja": "腰かける人",
         "kind": "light",
         "candidate": 1
       },
@@ -2911,7 +2987,8 @@
         "x": 0.4771,
         "y": 0.5307,
         "r": 0.055,
-        "label": "木の間の人",
+        "label": "樹間的人",
+        "label_ja": "木の間の人",
         "kind": "light",
         "candidate": 4
       },
@@ -2919,7 +2996,8 @@
         "x": 0.6271,
         "y": 0.1294,
         "r": 0.055,
-        "label": "杉の枝",
+        "label": "杉枝",
+        "label_ja": "杉の枝",
         "kind": "light",
         "candidate": 2
       }
@@ -3019,7 +3097,8 @@
         "x": 0.3,
         "y": 0.1234,
         "r": 0.055,
-        "label": "車を引く人",
+        "label": "拉車的人",
+        "label_ja": "車を引く人",
         "kind": "dark",
         "candidate": 3
       },
@@ -3027,7 +3106,8 @@
         "x": 0.4375,
         "y": 0.1364,
         "r": 0.055,
-        "label": "対岸の家",
+        "label": "對岸的屋",
+        "label_ja": "対岸の家",
         "kind": "dark",
         "candidate": 1
       },
@@ -3035,7 +3115,8 @@
         "x": 0.5833,
         "y": 0.0909,
         "r": 0.055,
-        "label": "対岸の人",
+        "label": "對岸的人",
+        "label_ja": "対岸の人",
         "kind": "dark",
         "candidate": 5
       }
@@ -3123,7 +3204,8 @@
         "x": 0.4083,
         "y": 0.7891,
         "r": 0.055,
-        "label": "白い着物の人",
+        "label": "白和服的人",
+        "label_ja": "白い着物の人",
         "kind": "light",
         "candidate": 5
       },
@@ -3132,6 +3214,7 @@
         "y": 0.377,
         "r": 0.055,
         "label": "枝",
+        "label_ja": "枝",
         "kind": "dark",
         "candidate": 2
       },
@@ -3139,7 +3222,8 @@
         "x": 0.1229,
         "y": 0.8147,
         "r": 0.055,
-        "label": "柵",
+        "label": "柵欄",
+        "label_ja": "柵",
         "kind": "dark",
         "candidate": 1
       }
@@ -3211,7 +3295,8 @@
         "x": 0.5958,
         "y": 0.5764,
         "r": 0.055,
-        "label": "白い服の人",
+        "label": "白衣的人",
+        "label_ja": "白い服の人",
         "kind": "light",
         "candidate": 1
       },
@@ -3219,7 +3304,8 @@
         "x": 0.5979,
         "y": 0.8424,
         "r": 0.055,
-        "label": "黒い服の人",
+        "label": "黑衣的人",
+        "label_ja": "黒い服の人",
         "kind": "dark",
         "candidate": 3
       },
@@ -3227,7 +3313,8 @@
         "x": 0.4188,
         "y": 0.5369,
         "r": 0.055,
-        "label": "吊り橋の綱",
+        "label": "吊橋的纜",
+        "label_ja": "吊り橋の綱",
         "kind": "dark",
         "candidate": 4
       }
@@ -3327,7 +3414,8 @@
         "x": 0.35,
         "y": 0.6584,
         "r": 0.055,
-        "label": "傘の人",
+        "label": "撐傘的人",
+        "label_ja": "傘の人",
         "kind": "dark",
         "candidate": 2
       },
@@ -3335,7 +3423,8 @@
         "x": 0.5792,
         "y": 0.4441,
         "r": 0.055,
-        "label": "木",
+        "label": "樹",
+        "label_ja": "木",
         "kind": "light",
         "candidate": 6
       },
@@ -3343,7 +3432,8 @@
         "x": 0.9,
         "y": 0.618,
         "r": 0.055,
-        "label": "建物",
+        "label": "建築",
+        "label_ja": "建物",
         "kind": "light",
         "candidate": 4
       }
@@ -3432,6 +3522,7 @@
         "y": 0.4508,
         "r": 0.055,
         "label": "落日",
+        "label_ja": "落日",
         "kind": "light",
         "candidate": 3
       },
@@ -3440,6 +3531,7 @@
         "y": 0.5619,
         "r": 0.055,
         "label": "枯木",
+        "label_ja": "枯木",
         "kind": "dark",
         "candidate": 6
       },
@@ -3448,6 +3540,7 @@
         "y": 0.4349,
         "r": 0.055,
         "label": "岸",
+        "label_ja": "岸",
         "kind": "dark",
         "candidate": 2
       }
@@ -3520,7 +3613,8 @@
         "x": 0.4313,
         "y": 0.4281,
         "r": 0.055,
-        "label": "笠の人",
+        "label": "戴笠的人",
+        "label_ja": "笠の人",
         "kind": "dark",
         "candidate": 1
       },
@@ -3528,7 +3622,8 @@
         "x": 0.6521,
         "y": 0.5651,
         "r": 0.055,
-        "label": "傘の人",
+        "label": "撐傘的人",
+        "label_ja": "傘の人",
         "kind": "light",
         "candidate": 6
       },
@@ -3536,7 +3631,8 @@
         "x": 0.2396,
         "y": 0.3082,
         "r": 0.055,
-        "label": "柳の幹",
+        "label": "柳樹幹",
+        "label_ja": "柳の幹",
         "kind": "dark",
         "candidate": 3
       }
@@ -3635,7 +3731,8 @@
         "x": 0.2146,
         "y": 0.6799,
         "r": 0.055,
-        "label": "岸の人",
+        "label": "岸上的人",
+        "label_ja": "岸の人",
         "kind": "dark",
         "candidate": 1
       },
@@ -3644,6 +3741,7 @@
         "y": 0.7063,
         "r": 0.055,
         "label": "人",
+        "label_ja": "人",
         "kind": "dark",
         "candidate": 2
       },
@@ -3651,7 +3749,8 @@
         "x": 0.55,
         "y": 0.5974,
         "r": 0.055,
-        "label": "対岸の森",
+        "label": "對岸的林",
+        "label_ja": "対岸の森",
         "kind": "dark",
         "candidate": 5
       }
@@ -3740,7 +3839,8 @@
         "x": 0.2062,
         "y": 0.6881,
         "r": 0.055,
-        "label": "白い傘",
+        "label": "白傘",
+        "label_ja": "白い傘",
         "kind": "light",
         "candidate": 6
       },
@@ -3748,7 +3848,8 @@
         "x": 0.4521,
         "y": 0.7749,
         "r": 0.055,
-        "label": "提灯の人",
+        "label": "提燈籠的人",
+        "label_ja": "提灯の人",
         "kind": "light",
         "candidate": 2
       },
@@ -3756,7 +3857,8 @@
         "x": 0.8542,
         "y": 0.7299,
         "r": 0.055,
-        "label": "夜の人影",
+        "label": "夜裡的人影",
+        "label_ja": "夜の人影",
         "kind": "light",
         "candidate": 1
       }
@@ -3856,7 +3958,8 @@
         "x": 0.5771,
         "y": 0.4935,
         "r": 0.055,
-        "label": "舟の人",
+        "label": "船上的人",
+        "label_ja": "舟の人",
         "kind": "dark",
         "candidate": 1
       },
@@ -3864,7 +3967,8 @@
         "x": 0.5458,
         "y": 0.6699,
         "r": 0.055,
-        "label": "櫓を漕ぐ人",
+        "label": "搖櫓的人",
+        "label_ja": "櫓を漕ぐ人",
         "kind": "light",
         "candidate": 2
       },
@@ -3872,7 +3976,8 @@
         "x": 0.7375,
         "y": 0.5392,
         "r": 0.055,
-        "label": "枯れ枝",
+        "label": "枯枝",
+        "label_ja": "枯れ枝",
         "kind": "dark",
         "candidate": 4
       }
@@ -3972,7 +4077,8 @@
         "x": 0.5542,
         "y": 0.6986,
         "r": 0.055,
-        "label": "楼門",
+        "label": "樓門",
+        "label_ja": "楼門",
         "kind": "light",
         "candidate": 2
       },
@@ -3980,7 +4086,8 @@
         "x": 0.4292,
         "y": 0.5308,
         "r": 0.055,
-        "label": "屋根",
+        "label": "屋頂",
+        "label_ja": "屋根",
         "kind": "dark",
         "candidate": 1
       },
@@ -3989,6 +4096,7 @@
         "y": 0.5205,
         "r": 0.055,
         "label": "紅葉",
+        "label_ja": "紅葉",
         "kind": "dark",
         "candidate": 4
       }
@@ -4088,7 +4196,8 @@
         "x": 0.6083,
         "y": 0.7565,
         "r": 0.055,
-        "label": "門前の人",
+        "label": "門前的人",
+        "label_ja": "門前の人",
         "kind": "light",
         "candidate": 6
       },
@@ -4096,7 +4205,8 @@
         "x": 0.4542,
         "y": 0.3377,
         "r": 0.055,
-        "label": "楼門",
+        "label": "樓門",
+        "label_ja": "楼門",
         "kind": "dark",
         "candidate": 2
       },
@@ -4104,7 +4214,8 @@
         "x": 0.125,
         "y": 0.276,
         "r": 0.055,
-        "label": "松の枝",
+        "label": "松枝",
+        "label_ja": "松の枝",
         "kind": "light",
         "candidate": 3
       }
@@ -4203,7 +4314,8 @@
         "x": 0.1562,
         "y": 0.8039,
         "r": 0.055,
-        "label": "木の影",
+        "label": "樹影",
+        "label_ja": "木の影",
         "kind": "dark",
         "candidate": 4
       },
@@ -4211,7 +4323,8 @@
         "x": 0.3042,
         "y": 0.5627,
         "r": 0.055,
-        "label": "杉の幹",
+        "label": "杉木幹",
+        "label_ja": "杉の幹",
         "kind": "light",
         "candidate": 1
       },
@@ -4219,7 +4332,8 @@
         "x": 0.2938,
         "y": 0.3408,
         "r": 0.055,
-        "label": "杉",
+        "label": "杉木",
+        "label_ja": "杉",
         "kind": "light",
         "candidate": 3
       }
@@ -4323,7 +4437,8 @@
         "x": 0.8875,
         "y": 0.3795,
         "r": 0.055,
-        "label": "雪の家",
+        "label": "雪中的屋",
+        "label_ja": "雪の家",
         "kind": "light",
         "candidate": 1
       },
@@ -4331,7 +4446,8 @@
         "x": 0.4021,
         "y": 0.9472,
         "r": 0.055,
-        "label": "舟",
+        "label": "船",
+        "label_ja": "舟",
         "kind": "dark",
         "candidate": 3
       },
@@ -4339,7 +4455,8 @@
         "x": 0.7229,
         "y": 0.6238,
         "r": 0.055,
-        "label": "雪の土手",
+        "label": "積雪的堤",
+        "label_ja": "雪の土手",
         "kind": "light",
         "candidate": 5
       }
@@ -4442,7 +4559,8 @@
         "x": 0.5771,
         "y": 0.4286,
         "r": 0.055,
-        "label": "松の枝",
+        "label": "松枝",
+        "label_ja": "松の枝",
         "kind": "light",
         "candidate": 1
       },
@@ -4451,6 +4569,7 @@
         "y": 0.4286,
         "r": 0.055,
         "label": "松",
+        "label_ja": "松",
         "kind": "dark",
         "candidate": 3
       },
@@ -4459,6 +4578,7 @@
         "y": 0.5421,
         "r": 0.055,
         "label": "松",
+        "label_ja": "松",
         "kind": "dark",
         "candidate": 2
       }
@@ -4562,7 +4682,8 @@
         "x": 0.725,
         "y": 0.6143,
         "r": 0.055,
-        "label": "灯",
+        "label": "燈",
+        "label_ja": "灯",
         "kind": "light",
         "candidate": 4
       },
@@ -4570,7 +4691,8 @@
         "x": 0.1833,
         "y": 0.5393,
         "r": 0.055,
-        "label": "明かり",
+        "label": "光亮",
+        "label_ja": "明かり",
         "kind": "light",
         "candidate": 2
       },
@@ -4578,7 +4700,8 @@
         "x": 0.3146,
         "y": 0.9107,
         "r": 0.055,
-        "label": "水の明かり",
+        "label": "水上的光",
+        "label_ja": "水の明かり",
         "kind": "light",
         "candidate": 6
       }
@@ -4682,7 +4805,8 @@
         "x": 0.8146,
         "y": 0.2984,
         "r": 0.055,
-        "label": "花火",
+        "label": "煙火",
+        "label_ja": "花火",
         "kind": "light",
         "candidate": 5
       },
@@ -4690,7 +4814,8 @@
         "x": 0.5354,
         "y": 0.7213,
         "r": 0.055,
-        "label": "舟",
+        "label": "船",
+        "label_ja": "舟",
         "kind": "dark",
         "candidate": 4
       },
@@ -4698,7 +4823,8 @@
         "x": 0.8708,
         "y": 0.777,
         "r": 0.055,
-        "label": "舟の人",
+        "label": "船上的人",
+        "label_ja": "舟の人",
         "kind": "light",
         "candidate": 6
       }
@@ -4798,7 +4924,8 @@
         "x": 0.5312,
         "y": 0.3509,
         "r": 0.055,
-        "label": "杭",
+        "label": "木樁",
+        "label_ja": "杭",
         "kind": "dark",
         "candidate": 3
       },
@@ -4806,7 +4933,8 @@
         "x": 0.2458,
         "y": 0.5932,
         "r": 0.055,
-        "label": "橋のアーチ",
+        "label": "橋拱",
+        "label_ja": "橋のアーチ",
         "kind": "dark",
         "candidate": 5
       },
@@ -4814,7 +4942,8 @@
         "x": 0.2875,
         "y": 0.9161,
         "r": 0.055,
-        "label": "葦",
+        "label": "蘆葦",
+        "label_ja": "葦",
         "kind": "dark",
         "candidate": 2
       }
@@ -4913,7 +5042,8 @@
         "x": 0.7771,
         "y": 0.5854,
         "r": 0.055,
-        "label": "岸の木",
+        "label": "岸邊的樹",
+        "label_ja": "岸の木",
         "kind": "dark",
         "candidate": 5
       },
@@ -4921,7 +5051,8 @@
         "x": 0.0542,
         "y": 0.5854,
         "r": 0.055,
-        "label": "対岸の森",
+        "label": "對岸的林",
+        "label_ja": "対岸の森",
         "kind": "dark",
         "candidate": 4
       },
@@ -4929,7 +5060,8 @@
         "x": 0.8979,
         "y": 0.4842,
         "r": 0.055,
-        "label": "木",
+        "label": "樹",
+        "label_ja": "木",
         "kind": "dark",
         "candidate": 2
       }
@@ -5017,6 +5149,7 @@
         "y": 0.8208,
         "r": 0.055,
         "label": "馬",
+        "label_ja": "馬",
         "kind": "light",
         "candidate": 2
       },
@@ -5024,7 +5157,8 @@
         "x": 0.5854,
         "y": 0.8339,
         "r": 0.055,
-        "label": "走る人",
+        "label": "奔跑的人",
+        "label_ja": "走る人",
         "kind": "light",
         "candidate": 3
       },
@@ -5033,6 +5167,7 @@
         "y": 0.3876,
         "r": 0.055,
         "label": "月",
+        "label_ja": "月",
         "kind": "dark",
         "candidate": 5
       }
@@ -5104,7 +5239,8 @@
         "x": 0.4604,
         "y": 0.5951,
         "r": 0.055,
-        "label": "橋の上の人",
+        "label": "橋上的人",
+        "label_ja": "橋の上の人",
         "kind": "dark",
         "candidate": 1
       },
@@ -5112,7 +5248,8 @@
         "x": 0.2792,
         "y": 0.7669,
         "r": 0.055,
-        "label": "岸の小屋",
+        "label": "岸邊的小屋",
+        "label_ja": "岸の小屋",
         "kind": "light",
         "candidate": 5
       },
@@ -5120,7 +5257,8 @@
         "x": 0.6708,
         "y": 0.5245,
         "r": 0.055,
-        "label": "木",
+        "label": "樹",
+        "label_ja": "木",
         "kind": "dark",
         "candidate": 6
       }
@@ -5220,6 +5358,7 @@
         "y": 0.6136,
         "r": 0.055,
         "label": "人影",
+        "label_ja": "人影",
         "kind": "light",
         "candidate": 1
       },
@@ -5227,7 +5366,8 @@
         "x": 0.9104,
         "y": 0.3279,
         "r": 0.055,
-        "label": "紙幣寮の建物",
+        "label": "紙幣寮的建築",
+        "label_ja": "紙幣寮の建物",
         "kind": "dark",
         "candidate": 4
       },
@@ -5236,6 +5376,7 @@
         "y": 0.4188,
         "r": 0.055,
         "label": "松",
+        "label_ja": "松",
         "kind": "dark",
         "candidate": 3
       }
@@ -5323,7 +5464,8 @@
         "x": 0.4479,
         "y": 0.4381,
         "r": 0.055,
-        "label": "電信柱",
+        "label": "電線桿",
+        "label_ja": "電信柱",
         "kind": "dark",
         "candidate": 1
       },
@@ -5331,7 +5473,8 @@
         "x": 0.8625,
         "y": 0.5206,
         "r": 0.055,
-        "label": "窓",
+        "label": "窗",
+        "label_ja": "窓",
         "kind": "dark",
         "candidate": 4
       },
@@ -5340,6 +5483,7 @@
         "y": 0.5524,
         "r": 0.055,
         "label": "人",
+        "label_ja": "人",
         "kind": "dark",
         "candidate": 5
       }
@@ -5413,6 +5557,7 @@
         "y": 0.3498,
         "r": 0.055,
         "label": "虹",
+        "label_ja": "虹",
         "kind": "dark",
         "candidate": 3
       },
@@ -5420,7 +5565,8 @@
         "x": 0.6833,
         "y": 0.7921,
         "r": 0.055,
-        "label": "舟の人",
+        "label": "船上的人",
+        "label_ja": "舟の人",
         "kind": "dark",
         "candidate": 1
       },
@@ -5428,7 +5574,8 @@
         "x": 0.4437,
         "y": 0.7492,
         "r": 0.055,
-        "label": "岸の家",
+        "label": "岸邊的屋",
+        "label_ja": "岸の家",
         "kind": "light",
         "candidate": 2
       }
@@ -5528,7 +5675,8 @@
         "x": 0.4208,
         "y": 0.1365,
         "r": 0.055,
-        "label": "稲妻",
+        "label": "閃電",
+        "label_ja": "稲妻",
         "kind": "light",
         "candidate": 6
       },
@@ -5536,7 +5684,8 @@
         "x": 0.2917,
         "y": 0.7746,
         "r": 0.055,
-        "label": "水の明かり",
+        "label": "水上的光",
+        "label_ja": "水の明かり",
         "kind": "light",
         "candidate": 1
       },
@@ -5544,7 +5693,8 @@
         "x": 0.4646,
         "y": 0.7397,
         "r": 0.055,
-        "label": "川面の灯",
+        "label": "河面的燈火",
+        "label_ja": "川面の灯",
         "kind": "light",
         "candidate": 4
       }
@@ -5627,7 +5777,8 @@
         "x": 0.1688,
         "y": 0.8429,
         "r": 0.055,
-        "label": "灯",
+        "label": "燈",
+        "label_ja": "灯",
         "kind": "light",
         "candidate": 1
       },
@@ -5635,7 +5786,8 @@
         "x": 0.6438,
         "y": 0.3013,
         "r": 0.055,
-        "label": "月あかり",
+        "label": "月光",
+        "label_ja": "月あかり",
         "kind": "light",
         "candidate": 3
       },
@@ -5643,7 +5795,8 @@
         "x": 0.7979,
         "y": 0.7692,
         "r": 0.055,
-        "label": "舟",
+        "label": "船",
+        "label_ja": "舟",
         "kind": "light",
         "candidate": 6
       }
@@ -5716,7 +5869,8 @@
         "x": 0.4292,
         "y": 0.3894,
         "r": 0.055,
-        "label": "六角堂の露盤",
+        "label": "六角堂的露盤",
+        "label_ja": "六角堂の露盤",
         "kind": "light",
         "candidate": 1
       },
@@ -5724,7 +5878,8 @@
         "x": 0.0563,
         "y": 0.6172,
         "r": 0.055,
-        "label": "木",
+        "label": "樹",
+        "label_ja": "木",
         "kind": "dark",
         "candidate": 4
       },
@@ -5733,6 +5888,7 @@
         "y": 0.3795,
         "r": 0.055,
         "label": "枝",
+        "label_ja": "枝",
         "kind": "light",
         "candidate": 2
       }
@@ -5820,7 +5976,8 @@
         "x": 0.5833,
         "y": 0.1825,
         "r": 0.055,
-        "label": "五角堂の屋根",
+        "label": "五角堂的屋頂",
+        "label_ja": "五角堂の屋根",
         "kind": "dark",
         "candidate": 4
       },
@@ -5829,6 +5986,7 @@
         "y": 0.3651,
         "r": 0.055,
         "label": "棕櫚",
+        "label_ja": "棕櫚",
         "kind": "dark",
         "candidate": 5
       },
@@ -5836,7 +5994,8 @@
         "x": 0.0979,
         "y": 0.5754,
         "r": 0.055,
-        "label": "植込み",
+        "label": "植栽",
+        "label_ja": "植込み",
         "kind": "dark",
         "candidate": 1
       }
@@ -5897,7 +6056,8 @@
         "x": 0.5021,
         "y": 0.6965,
         "r": 0.055,
-        "label": "噴水",
+        "label": "噴水池",
+        "label_ja": "噴水",
         "kind": "dark",
         "candidate": 6
       },
@@ -5905,7 +6065,8 @@
         "x": 0.2333,
         "y": 0.7348,
         "r": 0.055,
-        "label": "人だかり",
+        "label": "人群",
+        "label_ja": "人だかり",
         "kind": "light",
         "candidate": 1
       },
@@ -5913,7 +6074,8 @@
         "x": 0.0563,
         "y": 0.4569,
         "r": 0.055,
-        "label": "建物の屋根",
+        "label": "建築的屋頂",
+        "label_ja": "建物の屋根",
         "kind": "dark",
         "candidate": 5
       }
@@ -6121,6 +6283,7 @@
         "y": 0.4679,
         "r": 0.055,
         "label": "塔",
+        "label_ja": "塔",
         "kind": "light",
         "candidate": 1
       },
@@ -6128,7 +6291,8 @@
         "x": 0.5875,
         "y": 0.6282,
         "r": 0.055,
-        "label": "灯",
+        "label": "燈",
+        "label_ja": "灯",
         "kind": "light",
         "candidate": 2
       },
@@ -6137,6 +6301,7 @@
         "y": 0.7756,
         "r": 0.055,
         "label": "人力車",
+        "label_ja": "人力車",
         "kind": "light",
         "candidate": 6
       }
@@ -6240,7 +6405,8 @@
         "x": 0.4458,
         "y": 0.5742,
         "r": 0.055,
-        "label": "灯の窓",
+        "label": "亮燈的窗",
+        "label_ja": "灯の窓",
         "kind": "light",
         "candidate": 5
       },
@@ -6249,6 +6415,7 @@
         "y": 0.7097,
         "r": 0.055,
         "label": "人影",
+        "label_ja": "人影",
         "kind": "light",
         "candidate": 1
       },
@@ -6256,7 +6423,8 @@
         "x": 0.8583,
         "y": 0.5452,
         "r": 0.055,
-        "label": "窓の灯",
+        "label": "窗裡的燈",
+        "label_ja": "窓の灯",
         "kind": "light",
         "candidate": 4
       }
@@ -6360,7 +6528,8 @@
         "x": 0.7354,
         "y": 0.8689,
         "r": 0.055,
-        "label": "逃げる人",
+        "label": "逃跑的人",
+        "label_ja": "逃げる人",
         "kind": "light",
         "candidate": 2
       },
@@ -6368,7 +6537,8 @@
         "x": 0.9083,
         "y": 0.7967,
         "r": 0.055,
-        "label": "荷を担ぐ人",
+        "label": "挑擔的人",
+        "label_ja": "荷を担ぐ人",
         "kind": "light",
         "candidate": 5
       },
@@ -6377,6 +6547,7 @@
         "y": 0.8361,
         "r": 0.055,
         "label": "人影",
+        "label_ja": "人影",
         "kind": "light",
         "candidate": 6
       }
@@ -6476,7 +6647,8 @@
         "x": 0.4542,
         "y": 0.682,
         "r": 0.055,
-        "label": "走る人",
+        "label": "奔跑的人",
+        "label_ja": "走る人",
         "kind": "light",
         "candidate": 2
       },
@@ -6484,7 +6656,8 @@
         "x": 0.6875,
         "y": 0.6537,
         "r": 0.055,
-        "label": "立つ人",
+        "label": "站著的人",
+        "label_ja": "立つ人",
         "kind": "dark",
         "candidate": 1
       }
@@ -6583,7 +6756,8 @@
         "x": 0.8292,
         "y": 0.8847,
         "r": 0.055,
-        "label": "火を見る人",
+        "label": "看火的人",
+        "label_ja": "火を見る人",
         "kind": "light",
         "candidate": 1
       },
@@ -6592,6 +6766,7 @@
         "y": 0.8508,
         "r": 0.055,
         "label": "人影",
+        "label_ja": "人影",
         "kind": "light",
         "candidate": 3
       },
@@ -6599,7 +6774,8 @@
         "x": 0.6292,
         "y": 0.8271,
         "r": 0.055,
-        "label": "群衆",
+        "label": "群眾",
+        "label_ja": "群衆",
         "kind": "light",
         "candidate": 5
       }
@@ -6695,6 +6871,7 @@
         "y": 0.398,
         "r": 0.055,
         "label": "瓦斯燈",
+        "label_ja": "瓦斯燈",
         "kind": "dark",
         "candidate": 5
       },
@@ -6702,7 +6879,8 @@
         "x": 0.6271,
         "y": 0.6803,
         "r": 0.055,
-        "label": "焼跡の人",
+        "label": "焦土上的人",
+        "label_ja": "焼跡の人",
         "kind": "dark",
         "candidate": 3
       },
@@ -6710,7 +6888,8 @@
         "x": 0.7625,
         "y": 0.7313,
         "r": 0.055,
-        "label": "焼け残り",
+        "label": "燒剩的殘骸",
+        "label_ja": "焼け残り",
         "kind": "dark",
         "candidate": 4
       }
@@ -6810,7 +6989,8 @@
         "x": 0.6438,
         "y": 0.6429,
         "r": 0.055,
-        "label": "舟",
+        "label": "船",
+        "label_ja": "舟",
         "kind": "light",
         "candidate": 1
       },
@@ -6818,7 +6998,8 @@
         "x": 0.0396,
         "y": 0.3799,
         "r": 0.055,
-        "label": "洋館",
+        "label": "洋樓",
+        "label_ja": "洋館",
         "kind": "dark",
         "candidate": 5
       },
@@ -6826,7 +7007,8 @@
         "x": 0.9229,
         "y": 0.5325,
         "r": 0.055,
-        "label": "木",
+        "label": "樹",
+        "label_ja": "木",
         "kind": "dark",
         "candidate": 4
       }
@@ -6913,7 +7095,8 @@
         "x": 0.8187,
         "y": 0.1907,
         "r": 0.055,
-        "label": "建物",
+        "label": "建築",
+        "label_ja": "建物",
         "kind": "dark",
         "candidate": 2
       },
@@ -6921,7 +7104,8 @@
         "x": 0.5146,
         "y": 0.7797,
         "r": 0.055,
-        "label": "川の人",
+        "label": "河上的人",
+        "label_ja": "川の人",
         "kind": "dark",
         "candidate": 5
       },
@@ -6929,7 +7113,8 @@
         "x": 0.45,
         "y": 0.4873,
         "r": 0.055,
-        "label": "土手",
+        "label": "堤",
+        "label_ja": "土手",
         "kind": "light",
         "candidate": 6
       }
@@ -6991,6 +7176,7 @@
         "y": 0.6338,
         "r": 0.055,
         "label": "傘",
+        "label_ja": "傘",
         "kind": "light",
         "candidate": 2
       },
@@ -6999,6 +7185,7 @@
         "y": 0.6433,
         "r": 0.055,
         "label": "人力車",
+        "label_ja": "人力車",
         "kind": "light",
         "candidate": 6
       },
@@ -7007,6 +7194,7 @@
         "y": 0.5223,
         "r": 0.055,
         "label": "傘",
+        "label_ja": "傘",
         "kind": "light",
         "candidate": 4
       }
@@ -7080,6 +7268,7 @@
         "y": 0.5531,
         "r": 0.055,
         "label": "瓦斯燈",
+        "label_ja": "瓦斯燈",
         "kind": "light",
         "candidate": 3
       },
@@ -7087,7 +7276,8 @@
         "x": 0.5521,
         "y": 0.7685,
         "r": 0.055,
-        "label": "夜の人影",
+        "label": "夜裡的人影",
+        "label_ja": "夜の人影",
         "kind": "light",
         "candidate": 1
       },
@@ -7096,6 +7286,7 @@
         "y": 0.8553,
         "r": 0.055,
         "label": "人",
+        "label_ja": "人",
         "kind": "dark",
         "candidate": 4
       }
@@ -7199,7 +7390,8 @@
         "x": 0.3104,
         "y": 0.7244,
         "r": 0.055,
-        "label": "夜店の灯",
+        "label": "夜市的燈",
+        "label_ja": "夜店の灯",
         "kind": "light",
         "candidate": 6
       },
@@ -7207,7 +7399,8 @@
         "x": 0.0667,
         "y": 0.8237,
         "r": 0.055,
-        "label": "人だかり",
+        "label": "人群",
+        "label_ja": "人だかり",
         "kind": "light",
         "candidate": 2
       },
@@ -7216,6 +7409,7 @@
         "y": 0.7179,
         "r": 0.055,
         "label": "人影",
+        "label_ja": "人影",
         "kind": "light",
         "candidate": 5
       }
@@ -7320,6 +7514,7 @@
         "y": 0.6226,
         "r": 0.055,
         "label": "五重塔",
+        "label_ja": "五重塔",
         "kind": "light",
         "candidate": 6
       },
@@ -7327,7 +7522,8 @@
         "x": 0.4271,
         "y": 0.4839,
         "r": 0.055,
-        "label": "本堂の宝珠",
+        "label": "本堂的寶珠",
+        "label_ja": "本堂の宝珠",
         "kind": "dark",
         "candidate": 5
       },
@@ -7336,6 +7532,7 @@
         "y": 0.9,
         "r": 0.055,
         "label": "雪",
+        "label_ja": "雪",
         "kind": "dark",
         "candidate": 1
       }
@@ -7440,6 +7637,7 @@
         "y": 0.4531,
         "r": 0.055,
         "label": "月",
+        "label_ja": "月",
         "kind": "light",
         "candidate": 2
       },
@@ -7447,7 +7645,8 @@
         "x": 0.6521,
         "y": 0.5243,
         "r": 0.055,
-        "label": "女の顔",
+        "label": "女子的臉",
+        "label_ja": "女の顔",
         "kind": "dark",
         "candidate": 3
       },
@@ -7455,7 +7654,8 @@
         "x": 0.7104,
         "y": 0.6926,
         "r": 0.055,
-        "label": "子ども",
+        "label": "小孩",
+        "label_ja": "子ども",
         "kind": "dark",
         "candidate": 5
       }
@@ -7555,7 +7755,8 @@
         "x": 0.5938,
         "y": 0.115,
         "r": 0.055,
-        "label": "花火",
+        "label": "煙火",
+        "label_ja": "花火",
         "kind": "light",
         "candidate": 2
       },
@@ -7563,7 +7764,8 @@
         "x": 0.75,
         "y": 0.2492,
         "r": 0.055,
-        "label": "花火の枝垂れ",
+        "label": "煙火的垂枝",
+        "label_ja": "花火の枝垂れ",
         "kind": "light",
         "candidate": 5
       }
@@ -7666,7 +7868,8 @@
         "x": 0.1667,
         "y": 0.694,
         "r": 0.055,
-        "label": "大の字",
+        "label": "大字",
+        "label_ja": "大の字",
         "kind": "light",
         "candidate": 3
       },
@@ -7674,7 +7877,8 @@
         "x": 0.4479,
         "y": 0.6025,
         "r": 0.055,
-        "label": "暖簾",
+        "label": "門簾",
+        "label_ja": "暖簾",
         "kind": "light",
         "candidate": 1
       },
@@ -7682,7 +7886,8 @@
         "x": 0.0625,
         "y": 0.2082,
         "r": 0.055,
-        "label": "屋根",
+        "label": "屋頂",
+        "label_ja": "屋根",
         "kind": "dark",
         "candidate": 5
       }

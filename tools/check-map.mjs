@@ -123,21 +123,26 @@ for (const [name, size] of [['桌機 1440×900', { width: 1440, height: 900 }],
   } else {
     ok(false, '第一個點開的景收不了（開場該有可收的）');
   }
-  // 細節搜尋：收過的畫可以在畫面上找東西（座標算在像素版上，見 apply-details.py）
-  const hasHint = await page.locator('#panel .hint').count();
-  ok(hasHint === 1, '收過的畫有「畫裡有 N 個」的提示');
-  const box = await page.locator('#panel #art img').boundingBox();
+  // 標註：收過的畫把清親畫的東西標在原位（座標算在像素版上，見 apply-details.py）
   const det = await page.evaluate(() => {
     const id = +document.querySelector('#map .mark.sel')?.dataset.id;
-    return (window.__views || []).find(v => v.id === id)?.details?.[0] ?? null;
+    return (window.__views || []).find(v => v.id === id)?.details ?? null;
   });
-  if (det && box) {
-    await page.mouse.click(box.x + det.x * box.width, box.y + det.y * box.height);
-    await sleep(250);
-    ok(await page.locator('#panel .spot').count() >= 1, `點中細節會標出來（「${det.label}」）`);
-  } else {
-    ok(false, '拿不到細節座標（views 沒掛到 window，或這一幅沒有細節）');
-  }
+  const shown = () => page.locator('#panel .spot:visible').count();
+  ok(det?.length > 0 && await shown() === det.length,
+     `標註全標出來（${det?.length ?? 0} 個：${(det ?? []).map(d => d.label).join('・')}）`);
+  await page.locator('#panel #mark').click();
+  await sleep(200);
+  ok(await shown() === 0, '關得掉（標註）');
+  await page.locator('#panel #mark').click();
+  await sleep(200);
+  // ⛔ 真跡的裁切跟像素版不同（含紙邊與奧付），座標對不上 ⇒ 切過去標註要收起來
+  await page.locator('#panel #flip').click();
+  await sleep(400);
+  ok(await shown() === 0 && await page.locator('#panel #mark').isDisabled(),
+     '切到真跡時標註收起來、開關停用');
+  await page.locator('#panel #flip').click();
+  await sleep(400);
 
   // 原寸檢視：看的是 assets/plate（1527–1690px），不是面板裡的 720px 縮圖
   await page.locator('#panel #big').click();
