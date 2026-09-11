@@ -110,8 +110,9 @@ function pick(v) {
     <h2>${v.title.ja}</h2>
     <div id="art"><img src="${got ? pixel(v) : thumb(v)}" alt="${v.title.ja}">${got ? hunt(v) : ''}</div>
     ${got ? `<p class="hint">${hint(v)}</p><button id="flip" class="wide">像素 ／ 真跡</button>` : ''}
-    ${b ? `<p class="gate">${WHY[b.why](b)}</p>`
-        : '<button id="take" class="wide take">收入畫帖</button>'}
+    ${!b ? '<button id="take" class="wide take">收入畫帖</button>'
+        : b.why === 'got' ? ''          // 收過了不必再說一次，上面的提示已經在講這件事
+        : `<p class="gate">${WHY[b.why](b)}</p>`}
     <dl>
       <dt>年</dt><dd>${y ?? '<span class="warn">年代未詳</span>'}${
         v.published ? `　<small>奧付 ${v.published}</small>` : ''}</dd>
