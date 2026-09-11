@@ -78,6 +78,10 @@ def main():
                 if d < 2 * r:
                     bad.append(f"no.{v['id']} 「{out[m]['label']}」與「{out[n]['label']}」相距 {d:.3f} < {2*r}")
         v["details"] = out
+        # 版面要知道像素版多大才算得出欄寬，而且**不必等圖片載入**。
+        # 這支本來就開了那張圖，順手記下來，⛔ 不要在前端用 naturalWidth 現算——
+        # 那會讓欄寬在圖載完前後跳一次。
+        v["pixel"] = [im.width, im.height]
         total += len(out)
 
     inc = [v for v in views if v["include"]]

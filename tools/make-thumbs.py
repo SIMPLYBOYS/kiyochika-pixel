@@ -17,7 +17,9 @@ from pathlib import Path
 from PIL import Image
 
 ROOT = Path(__file__).resolve().parent.parent
-SRC, DEST, W = ROOT / "assets" / "plate", ROOT / "assets" / "thumb", 720
+# 960 不是隨手取的：像素版是 480px 畫布，桌機上以 2 倍顯示 ＝ 960。
+# 縮圖同寬，切換「像素／真跡」時兩邊才是同一個尺寸、而且各自都是 1:1 或整數倍。
+SRC, DEST, W = ROOT / "assets" / "plate", ROOT / "assets" / "thumb", 960
 
 views = [v for v in json.loads((ROOT / "data" / "views.json").read_text(encoding="utf-8")) if v["include"]]
 DEST.mkdir(parents=True, exist_ok=True)

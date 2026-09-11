@@ -79,6 +79,8 @@ const CONF = {
   manual: ['人工定位', ''],
 };
 let selected = null, shownId = null;
+let onResize = () => {};
+addEventListener('resize', () => onResize());
 
 // 現在那裡是哪裡。tools/derive-place.py 從 OSM 的行政界做內外判定得來的，
 // 街景連結不帶金鑰（api=1 的分享網址），沒有街景的地點 Google 會自己退到地圖。
@@ -130,8 +132,10 @@ function pick(v) {
         <small>${v.source.call_number}　${v.source.license}</small></dd>
     </dl>`;
   $('panel').classList.add('on');
+  document.body.classList.add('panel-open');
   const img = $('art')?.firstElementChild;
-  if (img) { img.onload = fitArt; fitArt(); }
+  if (img) { img.onload = () => fitArt(v); fitArt(v); }
+  onResize = () => fitArt(v);
   $('big').onclick = () => zoom(plate(v), `${v.title.ja}　NDL 清親畫帖・第 ${v.source.page} 圖`);
   const take = $('take');
   if (take) take.onclick = () => collect(v);
@@ -141,7 +145,7 @@ function pick(v) {
     flip.onclick = () => {
       px = !px;
       $('art').firstElementChild.src = px ? pixel(v) : thumb(v);
-      fitArt();
+      fitArt(v);
       // 真跡的構圖跟像素版不同（和紙含紙邊與奧付），座標對不上 ⇒ 切過去就不能找
       $('art').classList.toggle('plate', !px);
     };
@@ -166,21 +170,29 @@ const hint = v => {
   return `絵の中に ${n} つ。見つけた ${f}${light ? `　<small>のこりに 光 が ${light}</small>` : ''}`;
 };
 
-/** 把畫放到最大，而且**放大時取整數倍**。
- *  像素畫布是 480px 寬：非整數倍縮放會讓一個畫素被攤成 1.7 個螢幕畫素，
- *  就算開了 image-rendering:pixelated 也是糊的。縮小時沒得挑，照比例。
- *  容器寬度跟著圖走，否則找到的細節（用 % 定位）會相對容器而不是相對圖。 */
-function fitArt() {
+/** 決定**整個面板的欄寬**，而不只是圖的寬度。
+ *
+ *  🔴 第一版只設圖的寬度，結果圖是置中的、標題與按鈕與資料全靠左
+ *  ——桌機上差了 140px，看起來就是跑版。⇒ 欄寬算一次，所有東西共用（CSS 的 --col）。
+ *
+ *  倍率**放大時取整數**：像素畫布是 480px，非整數倍會把一個畫素攤成 1.7 個螢幕畫素，
+ *  開了 image-rendering:pixelated 也是糊的。縮小時沒得挑，照比例。
+ *
+ *  ⚠️ 依據是**像素版的原生尺寸**（views.json 的 pixel，由 apply-details.py 寫入），
+ *  不是當下顯示那張圖——切到真跡時那張的裁切不同（和紙含紙邊與奧付），
+ *  拿它算欄寬會讓版面在切換時跳一次。 */
+function fitArt(v) {
   const art = $('art');
   const img = art?.firstElementChild;
-  if (!img || !img.naturalWidth) return;
+  const [pw, ph] = v.pixel ?? [480, 300];
+  if (!img) return;
   const availW = $('panel').clientWidth - 40;          // 扣掉左右內距
   const availH = Math.min(innerHeight * 0.62, 940);
-  const k = Math.min(availW / img.naturalWidth, availH / img.naturalHeight);
-  const w = Math.round(img.naturalWidth * (k >= 1 ? Math.floor(k) : k));
+  const k = Math.min(availW / pw, availH / ph);
+  const w = Math.round(pw * (k >= 1 ? Math.floor(k) : k));
+  $('panel').style.setProperty('--col', `${w}px`);
   img.style.width = art.style.width = `${w}px`;
 }
-addEventListener('resize', fitArt);
 
 /** 點畫面找細節。判定圈半徑是資料裡的 r（畫布寬的比例），⛔ 不要在這裡另訂一個。 */
 function poke(v, e) {
@@ -242,7 +254,12 @@ function paint() {
   $('now').textContent = `明治${clock.year - 1867}年（${clock.year}）　${TIME_JA[clock.time]}　${WX_JA[clock.weather] ?? clock.weather}`;
   $('open').textContent = openN ? `いま ${openN} 枚` : '時を待つ';
 }
-const shut = () => { $('panel').classList.remove('on'); selected?.classList.remove('sel'); selected = null; };
+const shut = () => {
+  $('panel').classList.remove('on');
+  document.body.classList.remove('panel-open');
+  selected?.classList.remove('sel');
+  selected = null;
+};
 $('close').onclick = shut;
 // ⚠️ 原寸檢視開著的時候，Esc 是它的——這個監聽先註冊所以先執行，
 // 不擋的話一次按鍵會把兩層一起關掉（實測過）。

@@ -21,15 +21,27 @@ export function zoom(src, caption) {
   let k = 1, x = 0, y = 0, fit = 1;
   const clamp = (v, a, b) => Math.min(b, Math.max(a, v));
   const apply = () => {
-    // 夾住位移，否則可以把圖整個拖出畫面然後找不回來
     const w = img.naturalWidth * k, h = img.naturalHeight * k;
+    // 夾住位移，否則可以把圖整個拖出畫面然後找不回來
     const mx = Math.max(0, (w - innerWidth) / 2), my = Math.max(0, (h - innerHeight) / 2);
     x = clamp(x, -mx, mx);
     y = clamp(y, -my, my);
-    img.style.transform = `translate(${x}px,${y}px) scale(${k})`;
+    // 🔴 縮放要改**排版尺寸**，不能只用 transform: scale()。
+    // 容器是 place-items:center，但**grid 對「比容器大的元素」不會置中**——
+    // 它會從左上角排起，然後 scale 繞著那個（已經偏掉的）中心縮，
+    // 於是圖的右緣鑽到縮放鈕底下、下緣掉出畫面（實測 r=1407 > 視窗 1440 的按鈕 1386）。
+    // 讓排版尺寸等於實際尺寸，置中就由 grid 正確處理，transform 只管平移。
+    img.style.width = `${Math.round(w)}px`;
+    img.style.transform = `translate(${x}px,${y}px)`;
   };
   const refit = () => {
-    fit = Math.min(innerWidth * 0.94 / img.naturalWidth, innerHeight * 0.86 / img.naturalHeight, 1);
+    // 🔴 要**讓開控制列**。第一版用 0.94/0.86 的比例，結果圖伸到縮放鈕底下——
+    // 鈕在上層還是按得到，但它們壓在畫面上，而這一格的重點正是那張畫。
+    // 窄螢幕（<640）控制列改排在下方，所以讓開的是高度不是寬度。
+    const narrow = innerWidth < 640;
+    const availW = innerWidth - (narrow ? 24 : 120);
+    const availH = innerHeight - (narrow ? 150 : 110);
+    fit = Math.min(availW / img.naturalWidth, availH / img.naturalHeight, 1);
     k = fit; x = y = 0; apply();
   };
   img.addEventListener('load', refit);

@@ -69,6 +69,9 @@
                 background:#ffffff14; color:var(--land); border:1px solid #ffffff33;
                 border-radius:5px; padding:3px 10px }
   #hud button:hover { background:#ffffff24 }
+  /* 面板開著時 HUD 會被它蓋掉右半邊。留下要緊的（進度・時刻・待つ），
+     把附註與外連收起來——被蓋住的鈕比沒有更糟。 */
+  body.panel-open #hud small, body.panel-open #hud #refmap { display:none }
   #hud #refmap { pointer-events:auto; color:var(--gold); font-size:12px; opacity:.85;
                  white-space:nowrap; text-decoration:none; border-bottom:1px dotted currentColor }
   #hud #refmap:hover { opacity:1 }
@@ -106,19 +109,22 @@
   #panel img { display:block; background:#0006; min-height:120px }
   #panel h2 { font-size:19px; font-weight:normal; letter-spacing:.04em }
   #panel dl { display:grid; grid-template-columns:5em 1fr; gap:4px 10px; font-size:12.5px;
-              max-width:640px;
               margin-top:10px; line-height:1.55 }
   #panel dt { opacity:.55 } #panel dd { margin:0 }
   #panel a { color:var(--gold) }
-  #panel .wide { width:100%; max-width:640px; margin:6px 0; padding:8px; cursor:pointer; font-family:inherit;
+  #panel .wide { width:100%; margin:6px 0; padding:8px; cursor:pointer; font-family:inherit;
                  font-size:13px; background:#ffffff12; color:var(--land);
                  border:1px solid #ffffff30; border-radius:6px }
   #panel .wide:hover { background:#ffffff20 }
   #panel .take { background:var(--gold); color:#2a2410; border-color:var(--gold); font-size:14px }
-  #panel .gate { max-width:640px; margin:8px 0; padding:8px 10px; font-size:13px; color:#e0c98b;
+  #panel .gate { margin:8px 0; padding:8px 10px; font-size:13px; color:#e0c98b;
                  background:#ffffff0f; border-left:2px solid var(--gold); border-radius:0 4px 4px 0 }
   #panel #art { background:#0006; min-height:120px }
-  #panel #art { position:relative; margin:10px auto }
+  /* 🔴 整個面板是一個欄。欄寬由 main.js 依像素版算出來（--col），
+     圖、標題、按鈕、資料全部對齊同一條左邊界——
+     第一版只把圖置中、其餘靠左，桌機上差 140px，看起來就是跑版。 */
+  #panel > #body { max-width:var(--col,640px); margin:0 auto }
+  #panel #art { position:relative; margin:10px 0 }
   #panel #art img { image-rendering:pixelated; display:block }   /* 像素版要銳利，不要被瀏覽器抹平 */
   #panel #art:not(.plate) { cursor:crosshair }   /* 像素版才找得了細節，真跡的座標對不上 */
   /* 找到的細節。標在原位，名字壓在畫面上——找到之後那個東西就有了名字 */
@@ -132,14 +138,20 @@
   .lightbox { position:fixed; inset:0; z-index:30; background:#060d14f2; overflow:hidden;
               display:grid; place-items:center; cursor:grab; touch-action:none }
   .lightbox:active { cursor:grabbing }
-  .lightbox img { transform-origin:center; will-change:transform; max-width:none; max-height:none }
+  .lightbox img { will-change:transform; max-width:none; max-height:none; height:auto }
   .lightbox .lzoom { position:fixed; right:16px; top:50%; transform:translateY(-50%);
                      display:flex; flex-direction:column; gap:6px }
   .lightbox .lzoom button { width:38px; height:38px; font-size:15px; cursor:pointer;
                             font-family:inherit; background:#0e2233cc; color:var(--land);
                             border:1px solid #ffffff33; border-radius:6px }
   .lightbox .ltip { position:fixed; left:0; right:0; bottom:14px; text-align:center;
-                    font-size:12px; opacity:.6 }
+                    font-size:12px; opacity:.6; pointer-events:none }
+  /* 窄螢幕：控制列改排在下方。豎排在右邊會直接壓在畫上（390px 的螢幕更明顯） */
+  @media (max-width:640px) {
+    .lightbox .lzoom { flex-direction:row; right:auto; left:50%; top:auto; bottom:46px;
+                       transform:translateX(-50%) }
+    .lightbox .ltip { bottom:8px; font-size:11px }
+  }
 
   /* 事件卡與結局。壓在正中央，看完才回地圖——它們一場只出現一次 */
   #card { position:fixed; inset:0; display:none; place-items:center; z-index:20;
