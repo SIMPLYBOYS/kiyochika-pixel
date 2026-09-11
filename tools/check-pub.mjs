@@ -1,0 +1,72 @@
+// 兩層閘門唯一的災難是**鎖死**，而鎖死不會噴錯——只會讓玩家卡住。
+// edo-hyakkei 真的發生過：時間除了收景沒有別的推進手段，所有模擬在無景可收時
+// 都寫 day++，補了一個遊戲裡不存在的動作，於是模擬說得完、實際卡在 89/118。
+//
+// 所以這支**只用遊戲裡真的存在的兩個動作**：收一景、等一刻。
+// 兩者都推進同一個 step，年份只由收景推進。改動任何一個數字（PER_YEAR、
+// 天候輪轉、閘門規則）之後跑這支——它會在幾秒內告訴你還走不走得完。
+//
+// 用法： node tools/check-pub.mjs
+import { readFileSync } from 'node:fs';
+import { fileURLToPath } from 'node:url';
+import { dirname, resolve } from 'node:path';
+import { clockOf, collectable, blocked, yearOf, tick, newState, TIMES, WEATHERS } from '../src/clock.js';
+
+const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
+const views = JSON.parse(readFileSync(resolve(ROOT, 'data/views.json'), 'utf8')).filter(v => v.include);
+
+let bad = 0;
+const ok = (c, m) => { console.log(`${c ? '  ok  ' : '  ✗   '}${m}`); if (!c) bad++; };
+
+// ── 資料面 ────────────────────────────────────────────────────
+const years = views.map(yearOf).filter(y => y != null);
+ok(years.every(y => y >= 1876 && y <= 1881), `年份都落在 1876–1881（${years.length} 幅有年份）`);
+const undated = views.filter(v => yearOf(v) == null);
+ok(undated.length > 0, `年代未詳 ${undated.length} 幅——一直可收，這是誠實的空白不是缺口`);
+const fire = views.filter(v => (v.conditions || {}).weather === 'fire');
+ok(fire.length === 4, `大火四幅（${fire.map(v => v.id).join('・')}）由事件開門，不由天候`);
+
+// ── 走一遍 ────────────────────────────────────────────────────
+// 貪心：能收就收，收不到就等。等是遊戲裡真的有的動作（見檔頭）。
+const state = newState();
+let waits = 0, maxWait = 0, run = 0;
+const log = [];
+for (let guard = 0; guard < 20000; guard++) {
+  if (state.collected.length >= views.length) break;
+  const clock = clockOf(state);
+  if (clock.year >= 1881) state.fire = true;      // 事件在年份翻到 1881 時觸發
+  const pick = views.find(v => collectable(v, clock, state));
+  if (pick) {
+    state.collected.push(pick.id);
+    log.push({ id: pick.id, ...clock });
+    maxWait = Math.max(maxWait, run);
+    run = 0;
+  } else {
+    waits++; run++;
+    // 等超過一整輪（4 刻 × 4 天）還是沒有任何一幅可收 ⇒ 就是鎖死了
+    if (run > TIMES.length * WEATHERS.length + 1) break;
+  }
+  state.step++;
+  tick(state, views);
+}
+const done = state.collected.length;
+ok(done === views.length, `走得完：${done} / ${views.length} 幅`);
+if (done < views.length) {
+  const clock = clockOf(state);
+  const stuck = views.filter(v => !state.collected.includes(v.id))
+    .map(v => `${v.id}(${JSON.stringify(blocked(v, clock, state))})`);
+  console.log('   卡住的:', stuck.slice(0, 8).join(' '), stuck.length > 8 ? `…共 ${stuck.length}` : '');
+}
+ok(maxWait <= TIMES.length * WEATHERS.length,
+   `最長要等 ${maxWait} 刻（上限一輪 ${TIMES.length * WEATHERS.length} 刻；再久玩家會以為壞了）`);
+
+// 年份真的有推進，而且順序合理
+const seen = [...new Set(log.map(l => l.year))];
+ok(seen.length === 6 && seen[0] === 1876 && seen[5] === 1881, `年份走過 ${seen.join('→')}`);
+// 事件要在 1881 之前沒觸發、之後觸發得到
+const firstFire = log.find(l => fire.some(f => f.id === l.id));
+ok(firstFire && firstFire.year >= 1881, `大火四幅都在 1881 之後才收得到（第一幅在 ${firstFire?.year}）`);
+
+console.log(`\n一場 ${state.step} 刻 ＝ ${Math.floor(state.step / 4)} 日（收 ${done} 景、等 ${waits} 刻）`);
+console.log(bad ? `${bad} 項不過` : '全過');
+process.exit(bad ? 1 : 0);

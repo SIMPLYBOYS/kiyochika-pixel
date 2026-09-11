@@ -14,6 +14,8 @@ import { createRequire } from 'node:module';
 import { spawn } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 import { dirname, resolve } from 'node:path';
+import { readFileSync } from 'node:fs';
+import { yearOf } from '../src/clock.js';
 
 const { chromium } = createRequire(process.env.HOME + '/')('playwright');
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
@@ -49,11 +51,13 @@ for (const [name, size] of [['桌機 1440×900', { width: 1440, height: 900 }],
   const r = await page.locator('#map .mark circle').first().boundingBox();
   ok(r && r.width > 9 && r.width < 26, `圓點直徑 ${r ? r.width.toFixed(1) : '?'} CSS px（該在 14 上下，窄螢幕 ×0.8）`);
 
-  // 開場要看得到景，而且不是只看得到一兩個
-  const vis = await page.locator('#map .mark').evaluateAll(
-    (gs, vp) => gs.filter(g => { const b = g.getBoundingClientRect();
-      return b.x > 0 && b.y > 0 && b.x < vp.width && b.y < vp.height; }).length, size);
-  ok(vis >= 20, `開場畫面內有 ${vis} 個景（太少代表取景又縮到只剩一小塊）`);
+  // 🔴 開場看得到幾個景，由**閘門**決定而不是取景——1876 年只有那一年的與年代未詳的
+  // 已經出版。所以這裡不能再寫死一個下限（Phase 1 寫的是 ≥20，改成年份閘門之後就紅了），
+  // 要拿 clock.js 的規則算出期待值來比。看得到的比期待多，代表閘門沒生效。
+  const views = JSON.parse(readFileSync(resolve(ROOT, 'data/views.json'), 'utf8')).filter(v => v.include);
+  const want = views.filter(v => v.subject && (yearOf(v) == null || yearOf(v) <= 1876)).length;
+  const vis = await page.locator('#map .mark:not(.unpub)').count();
+  ok(vis === want, `開場出現 ${vis} 個景（1876 年＋年代未詳，閘門算出來該有 ${want}）`);
 
   // 年代滑桿兩端。1880 那側：現代設施消失、1872 鐵道出現、明治区名出現
   const op = sel => page.locator(sel).evaluate(e => +getComputedStyle(e).opacity);
@@ -98,6 +102,32 @@ for (const [name, size] of [['桌機 1440×900', { width: 1440, height: 900 }],
   // 當時的市街圖：只連出去（reference-maps.json 說明為什麼不收進 repo）
   const ref = await page.locator('#hud #refmap').getAttribute('href').catch(() => null);
   ok(/^https:\/\//.test(ref || ''), '當時的市街圖有連結');
+
+  // ── 玩法：收一景、等一刻 ───────────────────────────────────
+  // ⚠️ 要點**可收的**那種（.open），不是隨便第一個——被光線閘門擋著收不了是正常行為，
+  // 第一版點第一個就紅了，而紅的是測試不是遊戲。
+  await page.keyboard.press('Escape');      // 先關掉上面那一輪開著的面板，它蓋住地圖
+  await sleep(200);
+  const openMark = page.locator('#map .mark.open circle').first();
+  ok(await openMark.count() === 1, '開場有可收的景（金點）');
+  await openMark.click();
+  await sleep(250);
+  const before = await page.locator('#count').textContent();
+  const take = page.locator('#panel #take');
+  if (await take.count()) {
+    await take.click();
+    await sleep(250);
+    const after = await page.locator('#count').textContent();
+    ok(after !== before, `收得下去：${before} → ${after}`);
+    ok(await page.locator('#panel #flip').count() === 1, '收過的可以切像素／真跡');
+  } else {
+    ok(false, '第一個點開的景收不了（開場該有可收的）');
+  }
+  const t0 = await page.locator('#now').textContent();
+  await page.locator('#wait').click();
+  await sleep(200);
+  const t1 = await page.locator('#now').textContent();
+  ok(t0 !== t1, `等一刻會走：${t0.trim()} → ${t1.trim()}`);
 
   await page.keyboard.press('Escape');
   await sleep(150);

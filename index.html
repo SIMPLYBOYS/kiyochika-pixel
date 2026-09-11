@@ -18,6 +18,18 @@
      SVG 的 fill:none 不接 hit-test，點下去會穿過去打到底下的地形圖。
      59 個標記裡有 32 個是空心的，也就是一半以上只有那圈 2px 的線點得到。 */
   .mark circle { fill:var(--gold); opacity:.85; transition:opacity .3s; pointer-events:all }
+  /* 兩層閘門畫在點上。還沒出版的整個不存在——地圖隨年份長出來是看得見的那一半 */
+  .mark.unpub { display:none }
+  .mark.closed circle { fill:var(--ink); opacity:.42 }
+  .mark.closed.approx circle { fill:none; stroke:var(--ink); opacity:.42 }
+  .mark.got circle { fill:#7a9a6d; opacity:.9 }
+  .mark.got.approx circle { fill:none; stroke:#7a9a6d }
+  #map.zoomed .mark.got text { fill:#4f6b45 }
+  /* 可收的擴一圈暈。慢、淡、錯開——這是水墨調的地圖，不是通知紅點 */
+  .mark .pulse { fill:var(--gold); opacity:0; pointer-events:none }
+  .mark.open .pulse { animation:ripple 2.8s ease-out infinite }
+  @keyframes ripple { 0% { transform:scale(1); opacity:.45 } 60%,100% { transform:scale(3.2); opacity:0 } }
+  @media (prefers-reduced-motion:reduce) { .mark.open .pulse { animation:none } }
   /* 🔴 只定到「那一帶」的座標畫成空心。實心＝查到題名說的那個地物本身
      （OSM id 或 Wikidata QID），空心＝只知道在這一區。
      兩種畫成一樣，就是在地圖上把沒查證的事講得跟查證過的一樣確定。 */
@@ -50,7 +62,13 @@
   #hud { position:fixed; top:0; left:0; padding:8px 14px; display:flex; gap:12px;
          align-items:baseline; pointer-events:none; background:#0e2233e6;
          border-radius:0 0 8px 0; max-width:min(720px,94vw) }
-  #hud b { font-weight:normal; color:var(--gold) }
+  #hud b { font-weight:normal; color:var(--gold); font-size:16px }
+  #hud #now { font-size:13px; opacity:.85; letter-spacing:.08em }
+  #hud #open { opacity:.55; font-size:11px }
+  #hud button { pointer-events:auto; font-family:inherit; font-size:12px; cursor:pointer;
+                background:#ffffff14; color:var(--land); border:1px solid #ffffff33;
+                border-radius:5px; padding:3px 10px }
+  #hud button:hover { background:#ffffff24 }
   #hud #refmap { pointer-events:auto; color:var(--gold); font-size:12px; opacity:.85;
                  white-space:nowrap; text-decoration:none; border-bottom:1px dotted currentColor }
   #hud #refmap:hover { opacity:1 }
@@ -88,6 +106,27 @@
               margin-top:10px; line-height:1.55 }
   #panel dt { opacity:.55 } #panel dd { margin:0 }
   #panel a { color:var(--gold) }
+  #panel .wide { width:100%; margin:6px 0; padding:8px; cursor:pointer; font-family:inherit;
+                 font-size:13px; background:#ffffff12; color:var(--land);
+                 border:1px solid #ffffff30; border-radius:6px }
+  #panel .wide:hover { background:#ffffff20 }
+  #panel .take { background:var(--gold); color:#2a2410; border-color:var(--gold); font-size:14px }
+  #panel .gate { margin:8px 0; padding:8px 10px; font-size:13px; color:#e0c98b;
+                 background:#ffffff0f; border-left:2px solid var(--gold); border-radius:0 4px 4px 0 }
+  #panel #art { background:#0006; min-height:120px }
+  #panel #art img { image-rendering:pixelated }   /* 像素版要銳利，不要被瀏覽器抹平 */
+
+  /* 事件卡與結局。壓在正中央，看完才回地圖——它們一場只出現一次 */
+  #card { position:fixed; inset:0; display:none; place-items:center; z-index:20;
+          background:#0a1622d9; padding:20px }
+  #card.on { display:grid }
+  #card #card-body { max-width:520px; text-align:center; line-height:1.9 }
+  #card h2 { font-size:22px; font-weight:normal; letter-spacing:.1em; margin-bottom:14px;
+             color:var(--gold) }
+  #card p { font-size:14px }
+  #card small { opacity:.6; font-size:12px }
+  #card button { margin-top:22px; padding:8px 24px; cursor:pointer; font-family:inherit;
+                 background:none; color:var(--land); border:1px solid #ffffff44; border-radius:6px }
   #panel .warn { color:#e0a86b }
   #close { position:absolute; right:12px; top:10px; background:none; border:0; cursor:pointer;
            color:var(--land); font-size:20px; opacity:.7 }
@@ -101,7 +140,12 @@
 
 <svg id="map"></svg>
 
-<div id="hud"><b id="count"></b><small id="sub"></small></div>
+<div id="hud">
+  <b id="count"></b>
+  <span id="now"></span>
+  <button id="wait" title="等一刻（W）">時を待つ</button>
+  <small id="open"></small>
+</div>
 
 <div id="zoom">
   <button id="zin" title="放大（＋）">＋</button>
@@ -118,5 +162,7 @@
 </div>
 
 <div id="panel"><button id="close" aria-label="關閉">✕</button><div id="body"></div></div>
+
+<div id="card"><div id="card-body"></div><button id="card-close">続ける</button></div>
 
 <script type="module" src="src/main.js"></script>

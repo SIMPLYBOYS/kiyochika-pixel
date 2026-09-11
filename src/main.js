@@ -1,6 +1,8 @@
-// Phase 1 的全部：把 59 個座標放上兩層皮的地圖，點一下看畫。
-// ⛔ 沒有玩法、沒有進度、沒有收集——那些是 Phase 3 的事。
-import { createMap } from './map.js';
+// 遊戲本體。兩層閘門（年份決定何時出現、光線決定何時可收）的邏輯在 src/clock.js，
+// 這裡只負責把它接到畫面上：時鐘、收景、進度、事件、結局。
+// ⛔ 細節搜尋（每景 2–3 個可點的細節）還沒做——那要逐幅挑座標，是另一塊工。
+import { createMap, setVisibility } from './map.js';
+import { clockOf, blocked, collectable, visible, yearOf, tick, newState } from './clock.js';
 
 const $ = id => document.getElementById(id);
 
@@ -33,13 +35,40 @@ const places = [
   ...(world.labels ?? []).filter(l => l.kind === 'city').map(l => ({ ...l, osm: l.name, edo: null })),
 ].filter(p => p.lng != null);
 
+// ── 進度 ──────────────────────────────────────────────────────
+// 版號 v1 ＝ 第一版，沒有舊存檔要處理。**改動閘門規則時記得升版號**——
+// 舊存檔配新規則，玩家一開遊戲就會看到不一致的地圖（東京二十景踩過這個）。
+const KEY = 'kiyochika.v1';
+const load = () => {
+  try {
+    const raw = JSON.parse(localStorage.getItem(KEY));
+    if (raw && Array.isArray(raw.collected)) return { ...newState(), ...raw };
+  } catch { /* 存檔壞了就當新局，⛔ 不要讓它擋住遊戲 */ }
+  return newState();
+};
+const save = () => { try { localStorage.setItem(KEY, JSON.stringify(state)); } catch { /* 無痕模式 */ } };
+const state = load();
+
+setVisibility(v => visible(v, clockOf(state)));
 const map = createMap($('map'), views, world.layers, places, pick);
 
 // ── 面板 ──────────────────────────────────────────────────────
 // 🔴 圖用 repo 裡的 assets/thumb（tools/make-thumbs.py 產），不連 NDL 的 IIIF。
 // 直接連試過：回 429。那次是我們自己當天抓太多，但道理不變——
 // 上線之後每個玩家開一次面板就打 NDL 一次，既脆弱又不禮貌。
-const thumb = v => `assets/thumb/${String(v.id).padStart(2, '0')}.jpg`;
+const pad = v => String(v.id).padStart(2, '0');
+const thumb = v => `assets/thumb/${pad(v)}.jpg`;      // 真跡（和紙，含奧付）
+const pixel = v => `assets/pixel/${pad(v)}.png`;      // 像素版（480px・16 色・Bayer）
+const TIME_JA = { dawn: '曉', day: '晝', dusk: '夕', night: '夜' };
+const WX_JA = { clear: '晴', snow: '雪', rain: '雨' };
+// 擋住的理由要說得出來。說不出來的閘門，玩家只會覺得是壞的。
+const WHY = {
+  year: b => `要等到 ${b.need} 年——那時清親才畫下它`,
+  time: b => `要在${TIME_JA[b.need]}來`,
+  weather: b => `要等到${b.need === 'snow' ? '下雪' : '下雨'}的日子`,
+  event: () => '兩国大火那一夜之後才畫得出來',
+  got: () => '已經收過了',
+};
 const CONF = {
   osm: ['查到地物本身', 'OSM'],
   wikidata: ['查到地物本身', 'Wikidata'],
@@ -47,7 +76,7 @@ const CONF = {
   low: ['依據有缺口', ''],
   manual: ['人工定位', ''],
 };
-let selected = null;
+let selected = null, shownId = null;
 
 // 現在那裡是哪裡。tools/derive-place.py 從 OSM 的行政界做內外判定得來的，
 // 街景連結不帶金鑰（api=1 的分享網址），沒有街景的地點 Google 會自己退到地圖。
@@ -65,16 +94,28 @@ function here(v) {
 function pick(v) {
   if (selected) selected.classList.remove('sel');
   selected = map.node(v.id);
-  if (selected) selected.classList.add('sel');
+  if (selected) { selected.classList.add('sel'); selected.dataset.id = v.id; }
+  shownId = v.id;
   const a = v.place?.anchor ?? {};
   const [why, from] = CONF[a.confidence] ?? ['—', ''];
   const src = a.source ?? [a.osm && `OSM ${a.osm}`, a.how].filter(Boolean).join('　');
+  const clock = clockOf(state);
+  const b = blocked(v, clock, state);
+  const got = state.collected.includes(v.id);
+  const y = yearOf(v);
+  const c = v.conditions || {};
+  const cond = [c.time_of_day && TIME_JA[c.time_of_day], c.weather && (WX_JA[c.weather] || c.weather)]
+    .filter(Boolean).join('・');
   $('body').innerHTML = `
     <h2>${v.title.ja}</h2>
-    <img src="${thumb(v)}" alt="${v.title.ja}">
+    <div id="art"><img src="${got ? pixel(v) : thumb(v)}" alt="${v.title.ja}"></div>
+    ${got ? '<button id="flip" class="wide">像素 ／ 真跡</button>' : ''}
+    ${b ? `<p class="gate">${WHY[b.why](b)}</p>`
+        : '<button id="take" class="wide take">收入畫帖</button>'}
     <dl>
-      <dt>出版</dt><dd>${v.published ?? '<span class="warn">未判讀</span>'}${
-        v.published_confidence === 'blank' ? '<span class="warn">（版上的御届欄空白）</span>' : ''}</dd>
+      <dt>年</dt><dd>${y ?? '<span class="warn">年代未詳</span>'}${
+        v.published ? `　<small>奧付 ${v.published}</small>` : ''}</dd>
+      ${cond ? `<dt>光</dt><dd>${cond}</dd>` : ''}
       <dt>座標</dt><dd>${v.subject.lat.toFixed(5)}, ${v.subject.lng.toFixed(5)}</dd>
       <dt>把握</dt><dd>${why}${from ? `　<small>${from}</small>` : ''}</dd>
       <dt>依據</dt><dd><small>${src || '—'}</small></dd>
@@ -85,6 +126,59 @@ function pick(v) {
         <small>${v.source.call_number}　${v.source.license}</small></dd>
     </dl>`;
   $('panel').classList.add('on');
+  const take = $('take');
+  if (take) take.onclick = () => collect(v);
+  const flip = $('flip');
+  if (flip) {
+    let px = true;
+    flip.onclick = () => { px = !px; $('art').firstElementChild.src = px ? pixel(v) : thumb(v); };
+  }
+}
+
+// ── 收景 ──────────────────────────────────────────────────────
+function collect(v) {
+  if (!collectable(v, clockOf(state), state)) return;
+  state.collected.push(v.id);
+  state.step++;                       // 收一景就過一刻
+  tick(state, views);                 // 年份只由這裡推進（含防鎖死那一條）
+  const first = clockOf(state).year >= 1881 && !state.fire;
+  if (first) state.fire = true;
+  save();
+  paint();
+  pick(v);                            // 面板留在原地，換成收過的樣子
+  if (first) {
+    card('兩国大火', `明治十四年一月廿六日、兩国から出た火が浅草橋まで焼けた。<br>
+      清親はそれを四枚描いている——燃える空、逃げる人、そして焼跡。<br>
+      <small>60 兩国大火浅草橋・61 濱町より寫兩国大火・62 久松町ニテ見る出火・63 兩国焼跡</small>`);
+  } else if (state.collected.length === views.length) {
+    card('光線画は、ここで終わる', `明治十四年、清親は光線画をやめた。<br>
+      石版と写真が入り、木版の景色は売れなくなる。五年、${views.length} 枚。<br>
+      <small>これがこの絵師が描いた東京のすべてです。</small>`);
+  }
+}
+
+/** 等一刻。⛔ 不能省——沒有這個動作，光線閘門就是鎖死
+ *  （edo-hyakkei 卡在 89/118 過，原因正是時間只能靠收景推進）。 */
+function wait() {
+  state.step++;
+  tick(state, views);
+  save();
+  paint();
+}
+
+function card(title, html) {
+  $('card-body').innerHTML = `<h2>${title}</h2><p>${html}</p>`;
+  $('card').classList.add('on');
+}
+
+function paint() {
+  const clock = clockOf(state);
+  setVisibility(v => visible(v, clock));
+  map.render(views, clock, state, v => collectable(v, clock, state));
+  const openN = views.filter(v => collectable(v, clock, state)).length;
+  $('count').textContent = `${state.collected.length} / ${views.length}`;
+  $('now').textContent = `明治${clock.year - 1867}年（${clock.year}）　${TIME_JA[clock.time]}　${WX_JA[clock.weather] ?? clock.weather}`;
+  $('open').textContent = openN ? `いま ${openN} 枚` : '時を待つ';
 }
 const shut = () => { $('panel').classList.remove('on'); selected?.classList.remove('sel'); selected = null; };
 $('close').onclick = shut;
@@ -124,6 +218,7 @@ if (refmaps?.primary) {
   $('hud').append(a);
 }
 
-const on = views.filter(v => v.subject).length;
-$('count').textContent = `${on} / ${views.length} 幅在圖上`;
-$('sub').textContent = `小林清親《東京名所図》光線画　1876–1881　·　實心＝查到地物本身，空心＝只到那一帶`;
+$('wait').onclick = wait;
+$('card-close').onclick = () => $('card').classList.remove('on');
+addEventListener('keydown', e => { if (e.key === 'w') wait(); });
+paint();

@@ -62,6 +62,10 @@ const d = pts => pts.map(p => project(p[0], p[1]))
 // 一條一個 <path> 會讓瀏覽器吃掉五千多個節點，pan/zoom 立刻卡。
 const multi = ways => ways.map(w => d(w)).join('');
 
+// 出現與否由外面的 clock.js 決定，這裡只收一個判定函式，免得地圖去 import 玩法。
+let shown = () => true;
+export const setVisibility = fn => { shown = fn; };
+
 export function createMap(svg, views, geo, places, onPick) {
   svg.setAttribute('viewBox', `0 0 ${W} ${H}`);
   // slice 不是 meet：讓內容填滿視窗，看不到的用拖的。
@@ -522,6 +526,26 @@ export function createMap(svg, views, geo, places, onPick) {
     onChange: cb => { onChange = cb; cb(); },
     /** 讓外面拿得到某一景的節點（面板要在點開時把它標出來）。 */
     node: id => nodes.get(id),
+    /** 兩層閘門畫到圖上。狀態由 src/clock.js 算，這裡只負責把它變成 class。
+     *
+     * 🔴 還沒出版的整個藏起來（display:none），不是畫成灰點——
+     * 地圖隨年份一張張長出來是這個機制看得見的部分；而看不見的東西
+     * 也不該被 hover 到（edo-hyakkei §2.6 的同一條）。 */
+    render(views2, clock, state, isOpen) {
+      for (const v of views2) {
+        const g = nodes.get(v.id);
+        if (!g) continue;
+        const unpub = !shown(v, clock);
+        const got = state.collected.includes(v.id);
+        const open = !unpub && !got && isOpen(v);
+        g.classList.toggle('unpub', unpub);
+        g.classList.toggle('got', got);
+        g.classList.toggle('open', open);
+        g.classList.toggle('closed', !unpub && !got && !open);
+        if (open) marks.append(g);   // 可收的提到最上層，市中心擠成一團時才點得到
+      }
+      relabel();
+    },
     setEra(t) {                                 // 0=現代 1=1880
       era = t; relabel();
       // #reclaimed 現在畫的是海不是陸：t=1（1880）時不透明，把新生地蓋成海；
