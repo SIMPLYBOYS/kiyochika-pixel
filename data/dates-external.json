@@ -1,0 +1,369 @@
+{
+ "_": "外部知識庫（Japan Search）查到的出版年。**不是奧付判讀**，見 tools/fetch-dates.py 檔頭。",
+ "_tier": "館方斷代。可能出自同一張奧付，也可能出自目錄學研究或推定 ⇒ 與 published.json 分開存。",
+ "_precision": "day/month/year＝館方記到哪一級；unknown＝有西元年但沒有和曆原文。",
+ "fetched": "2026-09-11",
+ "dates": {
+  "1": {
+   "year": 1876,
+   "raw": "明治9年8月31日",
+   "precision": "day",
+   "source": "jpsearch:tokyomuseumcolection",
+   "url": "https://museumcollection.tokyo/works/6235314/"
+  },
+  "8": {
+   "year": 1877,
+   "raw": "明治１０",
+   "precision": "year",
+   "source": "jpsearch:arc_nishikie",
+   "url": "https://www.dh-jac.net/db/nishikie/Adachiku-695./portal/"
+  },
+  "9": {
+   "year": 1879,
+   "raw": "明治12年",
+   "precision": "year",
+   "source": "jpsearch:tokyomuseumcolection",
+   "url": "https://museumcollection.tokyo/works/6235320/"
+  },
+  "10": {
+   "year": 1878,
+   "raw": "明治11年10月2日",
+   "precision": "day",
+   "source": "jpsearch:tokyomuseumcolection",
+   "url": "https://museumcollection.tokyo/works/6235365/"
+  },
+  "11": {
+   "year": 1880,
+   "raw": "",
+   "precision": "unknown",
+   "source": "jpsearch:tokyo",
+   "url": "https://archive.library.metro.tokyo.lg.jp/da/detail?tilcod=0000000003-00012243"
+  },
+  "13": {
+   "year": 1879,
+   "raw": "明治１２",
+   "precision": "year",
+   "source": "jpsearch:arc_nishikie",
+   "url": "https://www.dh-jac.net/db/nishikie/Adachiku-700./portal/"
+  },
+  "14": {
+   "year": 1879,
+   "raw": "明治12年7月",
+   "precision": "month",
+   "source": "jpsearch:tokyomuseumcolection",
+   "url": "https://museumcollection.tokyo/works/6235377/"
+  },
+  "15": {
+   "year": 1879,
+   "raw": "",
+   "precision": "unknown",
+   "source": "jpsearch:tokyo",
+   "url": "https://archive.library.metro.tokyo.lg.jp/da/detail?tilcod=0000000003-00007788"
+  },
+  "16": {
+   "year": 1879,
+   "raw": "明治１２",
+   "precision": "year",
+   "source": "jpsearch:arc_nishikie",
+   "url": "https://www.dh-jac.net/db/nishikie/BM-1939_0524_0071(29)/portal/"
+  },
+  "17": {
+   "year": 1879,
+   "raw": "明治１２",
+   "precision": "year",
+   "source": "jpsearch:arc_nishikie",
+   "url": "https://www.dh-jac.net/db/nishikie/Adachiku-699./portal/"
+  },
+  "18": {
+   "year": 1879,
+   "raw": "明治12年",
+   "precision": "year",
+   "source": "jpsearch:tokyomuseumcolection",
+   "url": "https://museumcollection.tokyo/works/6231923/"
+  },
+  "19": {
+   "year": 1879,
+   "raw": "明治12年",
+   "precision": "year",
+   "source": "jpsearch:NagoyaCity_Museum",
+   "url": "https://wwwb0.musetheque.jp/nagoya_city_museum/detail?cls=collect11&pkey=271-0110-00000-0000"
+  },
+  "20": {
+   "year": 1879,
+   "raw": "明治12年",
+   "precision": "year",
+   "source": "jpsearch:tokyomuseumcolection",
+   "url": "https://museumcollection.tokyo/works/6550764/"
+  },
+  "21": {
+   "year": 1879,
+   "raw": "明治１２",
+   "precision": "year",
+   "source": "jpsearch:arc_nishikie",
+   "url": "https://www.dh-jac.net/db/nishikie/Adachiku-701./portal/"
+  },
+  "24": {
+   "year": 1879,
+   "raw": "明治１２",
+   "precision": "year",
+   "source": "jpsearch:arc_nishikie",
+   "url": "https://www.dh-jac.net/db/nishikie/Adachiku-702./portal/"
+  },
+  "25": {
+   "year": 1879,
+   "raw": "明治１２",
+   "precision": "year",
+   "source": "jpsearch:arc_nishikie",
+   "url": "https://www.dh-jac.net/db/nishikie/0531-C006/portal/"
+  },
+  "26": {
+   "year": 1879,
+   "raw": "明治12年",
+   "precision": "year",
+   "source": "jpsearch:tokyomuseumcolection",
+   "url": "https://museumcollection.tokyo/works/6550713/"
+  },
+  "28": {
+   "year": 1880,
+   "raw": "明治13年",
+   "precision": "year",
+   "source": "jpsearch:tokyomuseumcolection",
+   "url": "https://museumcollection.tokyo/works/6235389/"
+  },
+  "29": {
+   "year": 1879,
+   "raw": "明治12年頃",
+   "precision": "year",
+   "source": "jpsearch:tokyomuseumcolection",
+   "url": "https://museumcollection.tokyo/works/6235380/"
+  },
+  "31": {
+   "year": 1880,
+   "raw": "明治13年1月",
+   "precision": "month",
+   "source": "jpsearch:tokyomuseumcolection",
+   "url": "https://museumcollection.tokyo/works/6235332/"
+  },
+  "33": {
+   "year": 1880,
+   "raw": "",
+   "precision": "unknown",
+   "source": "jpsearch:tokyo",
+   "url": "https://archive.library.metro.tokyo.lg.jp/da/detail?tilcod=0000000003-00007852"
+  },
+  "34": {
+   "year": 1880,
+   "raw": "",
+   "precision": "unknown",
+   "source": "jpsearch:tokyo",
+   "url": "https://archive.library.metro.tokyo.lg.jp/da/detail?tilcod=0000000003-00007623"
+  },
+  "35": {
+   "year": 1880,
+   "raw": "明治13年",
+   "precision": "year",
+   "source": "jpsearch:tokyomuseumcolection",
+   "url": "https://museumcollection.tokyo/works/6247025/"
+  },
+  "36": {
+   "year": 1880,
+   "raw": "明治１３",
+   "precision": "year",
+   "source": "jpsearch:arc_nishikie",
+   "url": "https://www.dh-jac.net/db/nishikie/Adachiku-712./portal/"
+  },
+  "37": {
+   "year": 1880,
+   "raw": "明治１３",
+   "precision": "year",
+   "source": "jpsearch:arc_nishikie",
+   "url": "https://www.dh-jac.net/db/nishikie/Adachiku-709./portal/"
+  },
+  "38": {
+   "year": 1880,
+   "raw": "明治13年",
+   "precision": "year",
+   "source": "jpsearch:tokyomuseumcolection",
+   "url": "https://museumcollection.tokyo/works/6235383/"
+  },
+  "39": {
+   "year": 1880,
+   "raw": "明治１３",
+   "precision": "year",
+   "source": "jpsearch:arc_nishikie",
+   "url": "https://www.dh-jac.net/db/nishikie/BN03828992-2-21-2/portal/"
+  },
+  "40": {
+   "year": 1880,
+   "raw": "明治13年",
+   "precision": "year",
+   "source": "jpsearch:tokyomuseumcolection",
+   "url": "https://museumcollection.tokyo/works/6232130/"
+  },
+  "41": {
+   "year": 1880,
+   "raw": "明治13年",
+   "precision": "year",
+   "source": "jpsearch:tokyomuseumcolection",
+   "url": "https://museumcollection.tokyo/works/6232142/"
+  },
+  "42": {
+   "year": 1880,
+   "raw": "明治１３",
+   "precision": "year",
+   "source": "jpsearch:arc_nishikie",
+   "url": "https://www.dh-jac.net/db/nishikie/BM-1941_0208_0014/portal/"
+  },
+  "43": {
+   "year": 1877,
+   "raw": "明治１０",
+   "precision": "year",
+   "source": "jpsearch:arc_nishikie",
+   "url": "https://www.dh-jac.net/db/nishikie/Adachiku-723./portal/"
+  },
+  "44": {
+   "year": 1880,
+   "raw": "明治１３",
+   "precision": "year",
+   "source": "jpsearch:arc_nishikie",
+   "url": "https://www.dh-jac.net/db/nishikie/Adachiku-706./portal/"
+  },
+  "45": {
+   "year": 1880,
+   "raw": "",
+   "precision": "unknown",
+   "source": "jpsearch:tokyo",
+   "url": "https://archive.library.metro.tokyo.lg.jp/da/detail?tilcod=0000000003-00007831"
+  },
+  "46": {
+   "year": 1877,
+   "raw": "明治１０",
+   "precision": "year",
+   "source": "jpsearch:arc_nishikie",
+   "url": "https://www.dh-jac.net/db/nishikie/BM-1954_0410_0018/portal/"
+  },
+  "47": {
+   "year": 1880,
+   "raw": "明治13",
+   "precision": "year",
+   "source": "jpsearch:bibnl",
+   "url": "https://ndlsearch.ndl.go.jp/books/R100000002-I000000583680"
+  },
+  "48": {
+   "year": 1880,
+   "raw": "明治13年",
+   "precision": "year",
+   "source": "jpsearch:tokyomuseumcolection",
+   "url": "https://museumcollection.tokyo/works/6235386/"
+  },
+  "49": {
+   "year": 1880,
+   "raw": "明治13年",
+   "precision": "year",
+   "source": "jpsearch:tokyomuseumcolection",
+   "url": "https://museumcollection.tokyo/works/6232133/"
+  },
+  "51": {
+   "year": 1880,
+   "raw": "明治13年",
+   "precision": "year",
+   "source": "jpsearch:tokyomuseumcolection",
+   "url": "https://museumcollection.tokyo/works/6235344/"
+  },
+  "52": {
+   "year": 1880,
+   "raw": "明治13年",
+   "precision": "year",
+   "source": "jpsearch:tokyomuseumcolection",
+   "url": "https://museumcollection.tokyo/works/6235362/"
+  },
+  "54": {
+   "year": 1881,
+   "raw": "",
+   "precision": "unknown",
+   "source": "jpsearch:tokyo",
+   "url": "https://archive.library.metro.tokyo.lg.jp/da/detail?tilcod=0000000003-00012251"
+  },
+  "59": {
+   "year": 1877,
+   "raw": "明治１０",
+   "precision": "year",
+   "source": "jpsearch:arc_nishikie",
+   "url": "https://www.dh-jac.net/db/nishikie/0421-C127/portal/"
+  },
+  "60": {
+   "year": 1881,
+   "raw": "明治14年1月26日",
+   "precision": "day",
+   "source": "jpsearch:tokyomuseumcolection",
+   "url": "https://museumcollection.tokyo/works/6235353/"
+  },
+  "61": {
+   "year": 1881,
+   "raw": "明治１４",
+   "precision": "year",
+   "source": "jpsearch:arc_nishikie",
+   "url": "https://www.dh-jac.net/db/nishikie/Adachiku-714./portal/"
+  },
+  "65": {
+   "year": 1881,
+   "raw": "明治14年",
+   "precision": "year",
+   "source": "jpsearch:tokyomuseumcolection",
+   "url": "https://museumcollection.tokyo/works/6235347/"
+  },
+  "66": {
+   "year": 1881,
+   "raw": "明治14年",
+   "precision": "year",
+   "source": "jpsearch:tokyomuseumcolection",
+   "url": "https://museumcollection.tokyo/works/6235356/"
+  },
+  "67": {
+   "year": 1881,
+   "raw": "明治１４",
+   "precision": "year",
+   "source": "jpsearch:arc_nishikie",
+   "url": "https://www.dh-jac.net/db/nishikie/H-22-1-25-2(1)/portal/"
+  },
+  "68": {
+   "year": 1881,
+   "raw": "明治１４",
+   "precision": "year",
+   "source": "jpsearch:arc_nishikie",
+   "url": "https://www.dh-jac.net/db/nishikie/BM-1983_05230002/portal/"
+  },
+  "69": {
+   "year": 1881,
+   "raw": "明治14年",
+   "precision": "year",
+   "source": "jpsearch:tokyomuseumcolection",
+   "url": "https://museumcollection.tokyo/works/6235392/"
+  },
+  "70": {
+   "year": 1881,
+   "raw": "明治１４",
+   "precision": "year",
+   "source": "jpsearch:arc_nishikie",
+   "url": "https://www.dh-jac.net/db/nishikie/BN03828992-2-23/portal/"
+  },
+  "71": {
+   "year": 1881,
+   "raw": "明治14年",
+   "precision": "year",
+   "source": "jpsearch:tokyomuseumcolection",
+   "url": "https://museumcollection.tokyo/works/6232157/"
+  },
+  "72": {
+   "year": 1881,
+   "raw": "明治14年",
+   "precision": "year",
+   "source": "jpsearch:tokyomuseumcolection",
+   "url": "https://museumcollection.tokyo/works/6245181/"
+  }
+ },
+ "_conflicts": [
+  "no.1 東京銀座街日報社：奧付我讀「明治九年八月**廿一**日」，江戸東京博物館記「明治9年8月**31**日」。年月一致、日不同——廿(21) 與 卅(31) 只差一筆。⛔ 兩個都留著，要定案得回去看全解析度的那一格。",
+  "no.60 兩国大火浅草橋：館方記「明治14年1月26日」，但那正是**畫面上印的火災日**（明治十四年一月廿六日出火），而它的奧付年份欄只刻到十位 ⇒ 館方很可能也是照畫面上的字著錄。當**年**用沒問題，當**出版日**用就是把火災日當成出版日。"
+ ]
+}
