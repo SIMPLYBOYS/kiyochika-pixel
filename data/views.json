@@ -86,7 +86,34 @@
     "pixel": [
       480,
       197
-    ]
+    ],
+    "now": {
+      "station": {
+        "name": "銀座",
+        "km": 0.03
+      },
+      "nearby": [
+        {
+          "name": "寳童稲荷",
+          "kind": "worship",
+          "m": 40
+        },
+        {
+          "name": "銀座教会",
+          "kind": "worship",
+          "m": 101
+        },
+        {
+          "name": "三囲神社",
+          "kind": "worship",
+          "m": 174
+        }
+      ],
+      "marker": null,
+      "elevation": 4.1,
+      "elevation_src": "1m（レーザ）",
+      "elevation_rank": 0.53
+    }
   },
   {
     "id": 2,
@@ -174,7 +201,34 @@
     "pixel": [
       480,
       208
-    ]
+    ],
+    "now": {
+      "station": {
+        "name": "桜田門",
+        "km": 0.33
+      },
+      "nearby": [
+        {
+          "name": "皇居正門鉄橋 「二重橋」",
+          "kind": "bridge",
+          "m": 35
+        },
+        {
+          "name": "皇居正門石橋",
+          "kind": "bridge",
+          "m": 123
+        },
+        {
+          "name": "上道灌濠",
+          "kind": "water",
+          "m": 193
+        }
+      ],
+      "marker": null,
+      "elevation": 15.4,
+      "elevation_src": "5m（レーザ）",
+      "elevation_rank": 0.81
+    }
   },
   {
     "id": 3,
@@ -263,7 +317,34 @@
     "pixel": [
       480,
       217
-    ]
+    ],
+    "now": {
+      "station": {
+        "name": "南千住",
+        "km": 1.03
+      },
+      "nearby": [
+        {
+          "name": "妙亀塚公園",
+          "kind": "park",
+          "m": 121
+        },
+        {
+          "name": "橋場不動院",
+          "kind": "worship",
+          "m": 179
+        },
+        {
+          "name": "福壽院",
+          "kind": "worship",
+          "m": 180
+        }
+      ],
+      "marker": null,
+      "elevation": 1.0,
+      "elevation_src": "1m（レーザ）",
+      "elevation_rank": 0.07
+    }
   },
   {
     "id": 4,
@@ -352,7 +433,38 @@
     "pixel": [
       480,
       251
-    ]
+    ],
+    "now": {
+      "station": {
+        "name": "日本橋",
+        "km": 0.17
+      },
+      "nearby": [
+        {
+          "name": "首都高速1号上野線",
+          "kind": "bridge",
+          "m": 39
+        },
+        {
+          "name": "首都高速都心環状線",
+          "kind": "bridge",
+          "m": 43
+        },
+        {
+          "name": "江戸橋南詰歩道橋",
+          "kind": "bridge",
+          "m": 137
+        }
+      ],
+      "marker": {
+        "name": "銀行発祥の地",
+        "m": 39,
+        "osm": "node/2787020191"
+      },
+      "elevation": 3.4,
+      "elevation_src": "1m（レーザ）",
+      "elevation_rank": 0.41
+    }
   },
   {
     "id": 5,
@@ -440,7 +552,34 @@
     "pixel": [
       480,
       201
-    ]
+    ],
+    "now": {
+      "station": {
+        "name": "押上〈スカイツリー前〉",
+        "km": 0.56
+      },
+      "nearby": [
+        {
+          "name": "柳島橋",
+          "kind": "bridge",
+          "m": 4
+        },
+        {
+          "name": "浅草通り",
+          "kind": "bridge",
+          "m": 5
+        },
+        {
+          "name": "法性寺",
+          "kind": "worship",
+          "m": 65
+        }
+      ],
+      "marker": null,
+      "elevation": 0.0,
+      "elevation_src": "10m",
+      "elevation_rank": 0.02
+    }
   },
   {
     "id": 6,
@@ -529,7 +668,34 @@
     "pixel": [
       480,
       316
-    ]
+    ],
+    "now": {
+      "station": {
+        "name": "上野",
+        "km": 0.36
+      },
+      "nearby": [
+        {
+          "name": "旧寛永寺五重塔",
+          "kind": "worship",
+          "m": 136
+        },
+        {
+          "name": "花園稲荷神社",
+          "kind": "worship",
+          "m": 181
+        },
+        {
+          "name": "五條天神社",
+          "kind": "worship",
+          "m": 204
+        }
+      ],
+      "marker": null,
+      "elevation": 19.1,
+      "elevation_src": "1m（レーザ）",
+      "elevation_rank": 0.9
+    }
   },
   {
     "id": 7,
@@ -618,7 +784,34 @@
     "pixel": [
       480,
       257
-    ]
+    ],
+    "now": {
+      "station": {
+        "name": "両国",
+        "km": 0.21
+      },
+      "nearby": [
+        {
+          "name": "総武緩行線",
+          "kind": "bridge",
+          "m": 149
+        },
+        {
+          "name": "両国二丁目緑地広場",
+          "kind": "park",
+          "m": 221
+        },
+        {
+          "name": "榛稲荷神社",
+          "kind": "worship",
+          "m": 227
+        }
+      ],
+      "marker": null,
+      "elevation": 1.8,
+      "elevation_src": "1m（レーザ）",
+      "elevation_rank": 0.17
+    }
   },
   {
     "id": 8,
@@ -707,7 +900,38 @@
     "pixel": [
       480,
       312
-    ]
+    ],
+    "now": {
+      "station": {
+        "name": "浅草",
+        "km": 0.18
+      },
+      "nearby": [
+        {
+          "name": "弁天山児童公園",
+          "kind": "park",
+          "m": 103
+        },
+        {
+          "name": "浅草寺",
+          "kind": "worship",
+          "m": 110
+        },
+        {
+          "name": "東武伊勢崎線",
+          "kind": "bridge",
+          "m": 167
+        }
+      ],
+      "marker": {
+        "name": "旧五重塔跡",
+        "m": 162,
+        "osm": "node/6597942807"
+      },
+      "elevation": 3.5,
+      "elevation_src": "1m（レーザ）",
+      "elevation_rank": 0.45
+    }
   },
   {
     "id": 9,
@@ -795,7 +1019,34 @@
     "pixel": [
       480,
       307
-    ]
+    ],
+    "now": {
+      "station": {
+        "name": "鐘ヶ淵",
+        "km": 0.38
+      },
+      "nearby": [
+        {
+          "name": "梅若公園",
+          "kind": "park",
+          "m": 3
+        },
+        {
+          "name": "正福寺",
+          "kind": "worship",
+          "m": 114
+        },
+        {
+          "name": "鐘ヶ淵陸橋",
+          "kind": "bridge",
+          "m": 169
+        }
+      ],
+      "marker": null,
+      "elevation": 1.5,
+      "elevation_src": "1m（レーザ）",
+      "elevation_rank": 0.12
+    }
   },
   {
     "id": 10,
@@ -883,7 +1134,29 @@
     "pixel": [
       480,
       312
-    ]
+    ],
+    "now": {
+      "station": {
+        "name": "西ヶ原四丁目",
+        "km": 0.53
+      },
+      "nearby": [
+        {
+          "name": "四本木稲荷神社",
+          "kind": "worship",
+          "m": 148
+        },
+        {
+          "name": "滝野川馬場児童遊園",
+          "kind": "park",
+          "m": 222
+        }
+      ],
+      "marker": null,
+      "elevation": 19.9,
+      "elevation_src": "1m（レーザ）",
+      "elevation_rank": 0.93
+    }
   },
   {
     "id": 11,
@@ -972,7 +1245,38 @@
     "pixel": [
       480,
       305
-    ]
+    ],
+    "now": {
+      "station": {
+        "name": "根津",
+        "km": 0.3
+      },
+      "nearby": [
+        {
+          "name": "花姫稲荷神社",
+          "kind": "worship",
+          "m": 40
+        },
+        {
+          "name": "日本猿",
+          "kind": "water",
+          "m": 175
+        },
+        {
+          "name": "上野東照宮",
+          "kind": "worship",
+          "m": 202
+        }
+      ],
+      "marker": {
+        "name": "都電変電所跡",
+        "m": 191,
+        "osm": "node/6897199651"
+      },
+      "elevation": 5.8,
+      "elevation_src": "1m（レーザ）",
+      "elevation_rank": 0.66
+    }
   },
   {
     "id": 12,
@@ -1137,7 +1441,38 @@
     "pixel": [
       480,
       309
-    ]
+    ],
+    "now": {
+      "station": {
+        "name": "本所吾妻橋",
+        "km": 0.47
+      },
+      "nearby": [
+        {
+          "name": "牛嶋神社",
+          "kind": "worship",
+          "m": 8
+        },
+        {
+          "name": "言問橋",
+          "kind": "bridge",
+          "m": 175
+        },
+        {
+          "name": "水戸街道",
+          "kind": "bridge",
+          "m": 176
+        }
+      ],
+      "marker": {
+        "name": "隅田公園水戸邸跡由来記",
+        "m": 150,
+        "osm": "node/7571927521"
+      },
+      "elevation": 1.6,
+      "elevation_src": "1m（レーザ）",
+      "elevation_rank": 0.14
+    }
   },
   {
     "id": 14,
@@ -1226,7 +1561,34 @@
     "pixel": [
       480,
       245
-    ]
+    ],
+    "now": {
+      "station": {
+        "name": "根津",
+        "km": 0.5
+      },
+      "nearby": [
+        {
+          "name": "旧寛永寺五重塔",
+          "kind": "worship",
+          "m": 108
+        },
+        {
+          "name": "いそっぷ橋",
+          "kind": "bridge",
+          "m": 108
+        },
+        {
+          "name": "日本猿",
+          "kind": "water",
+          "m": 118
+        }
+      ],
+      "marker": null,
+      "elevation": 19.0,
+      "elevation_src": "1m（レーザ）",
+      "elevation_rank": 0.88
+    }
   },
   {
     "id": 15,
@@ -1315,7 +1677,34 @@
     "pixel": [
       480,
       306
-    ]
+    ],
+    "now": {
+      "station": {
+        "name": "上野",
+        "km": 0.36
+      },
+      "nearby": [
+        {
+          "name": "旧寛永寺五重塔",
+          "kind": "worship",
+          "m": 136
+        },
+        {
+          "name": "花園稲荷神社",
+          "kind": "worship",
+          "m": 181
+        },
+        {
+          "name": "五條天神社",
+          "kind": "worship",
+          "m": 204
+        }
+      ],
+      "marker": null,
+      "elevation": 19.1,
+      "elevation_src": "1m（レーザ）",
+      "elevation_rank": 0.9
+    }
   },
   {
     "id": 16,
@@ -1404,7 +1793,24 @@
     "pixel": [
       480,
       308
-    ]
+    ],
+    "now": {
+      "station": {
+        "name": "川口",
+        "km": 0.0
+      },
+      "nearby": [
+        {
+          "name": "川口西公園",
+          "kind": "park",
+          "m": 166
+        }
+      ],
+      "marker": null,
+      "elevation": 2.8,
+      "elevation_src": "5m（レーザ）",
+      "elevation_rank": 0.34
+    }
   },
   {
     "id": 17,
@@ -1492,7 +1898,24 @@
     "pixel": [
       480,
       308
-    ]
+    ],
+    "now": {
+      "station": {
+        "name": "川口",
+        "km": 0.95
+      },
+      "nearby": [
+        {
+          "name": "善光寺",
+          "kind": "worship",
+          "m": 3
+        }
+      ],
+      "marker": null,
+      "elevation": 10.3,
+      "elevation_src": "5m（レーザ）",
+      "elevation_rank": 0.79
+    }
   },
   {
     "id": 18,
@@ -1581,7 +2004,34 @@
     "pixel": [
       480,
       309
-    ]
+    ],
+    "now": {
+      "station": {
+        "name": "高輪ゲートウェイ",
+        "km": 0.45
+      },
+      "nearby": [
+        {
+          "name": "東禅寺",
+          "kind": "worship",
+          "m": 107
+        },
+        {
+          "name": "正覚寺",
+          "kind": "worship",
+          "m": 161
+        },
+        {
+          "name": "高野山東京別院",
+          "kind": "worship",
+          "m": 183
+        }
+      ],
+      "marker": null,
+      "elevation": 25.2,
+      "elevation_src": "1m（レーザ）",
+      "elevation_rank": 1.0
+    }
   },
   {
     "id": 19,
@@ -1670,7 +2120,34 @@
     "pixel": [
       480,
       294
-    ]
+    ],
+    "now": {
+      "station": {
+        "name": "品川",
+        "km": 0.02
+      },
+      "nearby": [
+        {
+          "name": "レインボーロード",
+          "kind": "bridge",
+          "m": 62
+        },
+        {
+          "name": "京浜急行電鉄本線",
+          "kind": "bridge",
+          "m": 86
+        },
+        {
+          "name": "京浜急行線",
+          "kind": "bridge",
+          "m": 172
+        }
+      ],
+      "marker": null,
+      "elevation": 3.1,
+      "elevation_src": "1m（レーザ）",
+      "elevation_rank": 0.36
+    }
   },
   {
     "id": 20,
@@ -1759,7 +2236,38 @@
     "pixel": [
       480,
       312
-    ]
+    ],
+    "now": {
+      "station": {
+        "name": "湯島",
+        "km": 0.1
+      },
+      "nearby": [
+        {
+          "name": "弁財天放生池",
+          "kind": "water",
+          "m": 23
+        },
+        {
+          "name": "湯島聖天 天台宗心城院",
+          "kind": "worship",
+          "m": 29
+        },
+        {
+          "name": "本殿",
+          "kind": "worship",
+          "m": 78
+        }
+      ],
+      "marker": {
+        "name": "講談高座発祥の地",
+        "m": 52,
+        "osm": "node/4920360413"
+      },
+      "elevation": 7.0,
+      "elevation_src": "1m（レーザ）",
+      "elevation_rank": 0.74
+    }
   },
   {
     "id": 21,
@@ -1848,7 +2356,34 @@
     "pixel": [
       480,
       304
-    ]
+    ],
+    "now": {
+      "station": {
+        "name": "両国",
+        "km": 0.21
+      },
+      "nearby": [
+        {
+          "name": "総武緩行線",
+          "kind": "bridge",
+          "m": 149
+        },
+        {
+          "name": "両国二丁目緑地広場",
+          "kind": "park",
+          "m": 221
+        },
+        {
+          "name": "榛稲荷神社",
+          "kind": "worship",
+          "m": 227
+        }
+      ],
+      "marker": null,
+      "elevation": 1.8,
+      "elevation_src": "1m（レーザ）",
+      "elevation_rank": 0.17
+    }
   },
   {
     "id": 22,
@@ -1936,7 +2471,24 @@
     "pixel": [
       480,
       298
-    ]
+    ],
+    "now": {
+      "station": {
+        "name": "東日本橋",
+        "km": 0.11
+      },
+      "nearby": [
+        {
+          "name": "玉尾稲荷神社",
+          "kind": "worship",
+          "m": 241
+        }
+      ],
+      "marker": null,
+      "elevation": 3.1,
+      "elevation_src": "1m（レーザ）",
+      "elevation_rank": 0.36
+    }
   },
   {
     "id": 23,
@@ -2024,7 +2576,38 @@
     "pixel": [
       480,
       304
-    ]
+    ],
+    "now": {
+      "station": {
+        "name": "日本橋",
+        "km": 0.29
+      },
+      "nearby": [
+        {
+          "name": "江戸橋",
+          "kind": "bridge",
+          "m": 5
+        },
+        {
+          "name": "昭和通り",
+          "kind": "bridge",
+          "m": 5
+        },
+        {
+          "name": "首都高速都心環状線",
+          "kind": "bridge",
+          "m": 79
+        }
+      ],
+      "marker": {
+        "name": "郵便発祥の地",
+        "m": 94,
+        "osm": "node/2787014099"
+      },
+      "elevation": 4.0,
+      "elevation_src": "10m",
+      "elevation_rank": 0.5
+    }
   },
   {
     "id": 24,
@@ -2113,7 +2696,34 @@
     "pixel": [
       480,
       304
-    ]
+    ],
+    "now": {
+      "station": {
+        "name": "堀切",
+        "km": 0.46
+      },
+      "nearby": [
+        {
+          "name": "首都高速6号向島線",
+          "kind": "bridge",
+          "m": 44
+        },
+        {
+          "name": "首都高速中央環状線",
+          "kind": "bridge",
+          "m": 51
+        },
+        {
+          "name": "堀切橋",
+          "kind": "bridge",
+          "m": 214
+        }
+      ],
+      "marker": null,
+      "elevation": 6.3,
+      "elevation_src": "1m（レーザ）",
+      "elevation_rank": 0.72
+    }
   },
   {
     "id": 25,
@@ -2202,7 +2812,34 @@
     "pixel": [
       480,
       312
-    ]
+    ],
+    "now": {
+      "station": {
+        "name": "亀戸",
+        "km": 0.46
+      },
+      "nearby": [
+        {
+          "name": "寶蓮寺",
+          "kind": "worship",
+          "m": 172
+        },
+        {
+          "name": "東覚寺",
+          "kind": "worship",
+          "m": 183
+        },
+        {
+          "name": "亀戸二丁目公園",
+          "kind": "park",
+          "m": 249
+        }
+      ],
+      "marker": null,
+      "elevation": -1.0,
+      "elevation_src": "1m（レーザ）",
+      "elevation_rank": 0.0
+    }
   },
   {
     "id": 26,
@@ -2290,7 +2927,34 @@
     "pixel": [
       480,
       309
-    ]
+    ],
+    "now": {
+      "station": {
+        "name": "西日暮里",
+        "km": 0.19
+      },
+      "nearby": [
+        {
+          "name": "向陵稲荷神社",
+          "kind": "worship",
+          "m": 68
+        },
+        {
+          "name": "日暮里 第二児童遊園",
+          "kind": "park",
+          "m": 117
+        },
+        {
+          "name": "西日暮里駅前歩道橋",
+          "kind": "bridge",
+          "m": 133
+        }
+      ],
+      "marker": null,
+      "elevation": 15.5,
+      "elevation_src": "1m（レーザ）",
+      "elevation_rank": 0.83
+    }
   },
   {
     "id": 27,
@@ -2379,7 +3043,34 @@
     "pixel": [
       480,
       154
-    ]
+    ],
+    "now": {
+      "station": {
+        "name": "水天宮前",
+        "km": 0.71
+      },
+      "nearby": [
+        {
+          "name": "永代橋",
+          "kind": "bridge",
+          "m": 4
+        },
+        {
+          "name": "隅田川",
+          "kind": "water",
+          "m": 85
+        },
+        {
+          "name": "豊海橋",
+          "kind": "bridge",
+          "m": 153
+        }
+      ],
+      "marker": null,
+      "elevation": 2.0,
+      "elevation_src": "10m",
+      "elevation_rank": 0.26
+    }
   },
   {
     "id": 28,
@@ -2544,7 +3235,34 @@
     "pixel": [
       480,
       203
-    ]
+    ],
+    "now": {
+      "station": {
+        "name": "桜田門",
+        "km": 0.73
+      },
+      "nearby": [
+        {
+          "name": "中道灌濠",
+          "kind": "water",
+          "m": 89
+        },
+        {
+          "name": "下道灌濠",
+          "kind": "water",
+          "m": 213
+        },
+        {
+          "name": "宮中三殿",
+          "kind": "worship",
+          "m": 243
+        }
+      ],
+      "marker": null,
+      "elevation": 23.0,
+      "elevation_src": "5m（レーザ）",
+      "elevation_rank": 0.98
+    }
   },
   {
     "id": 30,
@@ -2633,7 +3351,34 @@
     "pixel": [
       480,
       322
-    ]
+    ],
+    "now": {
+      "station": {
+        "name": "三越前",
+        "km": 0.16
+      },
+      "nearby": [
+        {
+          "name": "外堀通り",
+          "kind": "bridge",
+          "m": 8
+        },
+        {
+          "name": "日本橋川",
+          "kind": "water",
+          "m": 61
+        },
+        {
+          "name": "常盤橋",
+          "kind": "bridge",
+          "m": 89
+        }
+      ],
+      "marker": null,
+      "elevation": 5.0,
+      "elevation_src": "10m",
+      "elevation_rank": 0.59
+    }
   },
   {
     "id": 31,
@@ -2799,7 +3544,34 @@
     "pixel": [
       480,
       292
-    ]
+    ],
+    "now": {
+      "station": {
+        "name": "京成上野",
+        "km": 0.21
+      },
+      "nearby": [
+        {
+          "name": "天龍橋",
+          "kind": "bridge",
+          "m": 16
+        },
+        {
+          "name": "絵馬掛",
+          "kind": "worship",
+          "m": 47
+        },
+        {
+          "name": "大黒天堂",
+          "kind": "worship",
+          "m": 48
+        }
+      ],
+      "marker": null,
+      "elevation": 5.3,
+      "elevation_src": "1m（レーザ）",
+      "elevation_rank": 0.62
+    }
   },
   {
     "id": 33,
@@ -2887,7 +3659,24 @@
     "pixel": [
       480,
       303
-    ]
+    ],
+    "now": {
+      "station": {
+        "name": "両国",
+        "km": 0.4
+      },
+      "nearby": [
+        {
+          "name": "都立横網町公園",
+          "kind": "park",
+          "m": 241
+        }
+      ],
+      "marker": null,
+      "elevation": 0.9,
+      "elevation_src": "1m（レーザ）",
+      "elevation_rank": 0.05
+    }
   },
   {
     "id": 34,
@@ -2975,7 +3764,34 @@
     "pixel": [
       480,
       311
-    ]
+    ],
+    "now": {
+      "station": {
+        "name": "九段下",
+        "km": 0.2
+      },
+      "nearby": [
+        {
+          "name": "区立九段坂公園",
+          "kind": "park",
+          "m": 17
+        },
+        {
+          "name": "彌生慰霊堂",
+          "kind": "worship",
+          "m": 132
+        },
+        {
+          "name": "実践倫理宏正会",
+          "kind": "worship",
+          "m": 164
+        }
+      ],
+      "marker": null,
+      "elevation": 22.5,
+      "elevation_src": "1m（レーザ）",
+      "elevation_rank": 0.97
+    }
   },
   {
     "id": 35,
@@ -3064,7 +3880,34 @@
     "pixel": [
       480,
       306
-    ]
+    ],
+    "now": {
+      "station": {
+        "name": "大森",
+        "km": 0.0
+      },
+      "nearby": [
+        {
+          "name": "八景天祖神社",
+          "kind": "worship",
+          "m": 89
+        },
+        {
+          "name": "東海道本線",
+          "kind": "bridge",
+          "m": 198
+        },
+        {
+          "name": "京浜東北線",
+          "kind": "bridge",
+          "m": 198
+        }
+      ],
+      "marker": null,
+      "elevation": 6.2,
+      "elevation_src": "1m（レーザ）",
+      "elevation_rank": 0.71
+    }
   },
   {
     "id": 36,
@@ -3153,7 +3996,34 @@
     "pixel": [
       480,
       292
-    ]
+    ],
+    "now": {
+      "station": {
+        "name": "東大前",
+        "km": 0.38
+      },
+      "nearby": [
+        {
+          "name": "神橋",
+          "kind": "bridge",
+          "m": 64
+        },
+        {
+          "name": "駒込稲荷神社",
+          "kind": "worship",
+          "m": 88
+        },
+        {
+          "name": "金光教本郷教会",
+          "kind": "worship",
+          "m": 115
+        }
+      ],
+      "marker": null,
+      "elevation": 8.9,
+      "elevation_src": "1m（レーザ）",
+      "elevation_rank": 0.78
+    }
   },
   {
     "id": 37,
@@ -3242,7 +4112,34 @@
     "pixel": [
       480,
       308
-    ]
+    ],
+    "now": {
+      "station": {
+        "name": "芝公園",
+        "km": 0.36
+      },
+      "nearby": [
+        {
+          "name": "プリンス芝公園",
+          "kind": "park",
+          "m": 143
+        },
+        {
+          "name": "熊野神社",
+          "kind": "worship",
+          "m": 169
+        },
+        {
+          "name": "宝珠院",
+          "kind": "worship",
+          "m": 185
+        }
+      ],
+      "marker": null,
+      "elevation": 6.1,
+      "elevation_src": "1m（レーザ）",
+      "elevation_rank": 0.69
+    }
   },
   {
     "id": 38,
@@ -3330,7 +4227,38 @@
     "pixel": [
       480,
       311
-    ]
+    ],
+    "now": {
+      "station": {
+        "name": "御茶ノ水",
+        "km": 0.36
+      },
+      "nearby": [
+        {
+          "name": "大伝馬町八雲神社",
+          "kind": "worship",
+          "m": 5
+        },
+        {
+          "name": "江戸神社",
+          "kind": "worship",
+          "m": 12
+        },
+        {
+          "name": "小舟町八雲神社",
+          "kind": "worship",
+          "m": 12
+        }
+      ],
+      "marker": {
+        "name": "国学発祥之地",
+        "m": 54,
+        "osm": "node/12612440602"
+      },
+      "elevation": 20.5,
+      "elevation_src": "1m（レーザ）",
+      "elevation_rank": 0.95
+    }
   },
   {
     "id": 39,
@@ -3419,7 +4347,38 @@
     "pixel": [
       480,
       303
-    ]
+    ],
+    "now": {
+      "station": {
+        "name": "御茶ノ水",
+        "km": 0.07
+      },
+      "nearby": [
+        {
+          "name": "御茶ノ水橋",
+          "kind": "bridge",
+          "m": 88
+        },
+        {
+          "name": "お茶の水橋",
+          "kind": "bridge",
+          "m": 88
+        },
+        {
+          "name": "聖橋",
+          "kind": "bridge",
+          "m": 92
+        }
+      ],
+      "marker": {
+        "name": "近代教育発祥の碑",
+        "m": 92,
+        "osm": "node/3160436370"
+      },
+      "elevation": 7.0,
+      "elevation_src": "10m",
+      "elevation_rank": 0.74
+    }
   },
   {
     "id": 40,
@@ -3507,7 +4466,38 @@
     "pixel": [
       480,
       273
-    ]
+    ],
+    "now": {
+      "station": {
+        "name": "永田町",
+        "km": 0.39
+      },
+      "nearby": [
+        {
+          "name": "弁慶濠",
+          "kind": "water",
+          "m": 0
+        },
+        {
+          "name": "首都高速4号新宿線",
+          "kind": "bridge",
+          "m": 49
+        },
+        {
+          "name": "紀尾井町通り",
+          "kind": "bridge",
+          "m": 159
+        }
+      ],
+      "marker": {
+        "name": "紀伊和歌山藩徳川家屋敷跡",
+        "m": 160,
+        "osm": "node/6481985824"
+      },
+      "elevation": 16.3,
+      "elevation_src": "1m（レーザ）",
+      "elevation_rank": 0.84
+    }
   },
   {
     "id": 41,
@@ -3596,7 +4586,38 @@
     "pixel": [
       480,
       280
-    ]
+    ],
+    "now": {
+      "station": {
+        "name": "日暮里",
+        "km": 0.18
+      },
+      "nearby": [
+        {
+          "name": "安立院",
+          "kind": "worship",
+          "m": 95
+        },
+        {
+          "name": "もみじばし",
+          "kind": "bridge",
+          "m": 96
+        },
+        {
+          "name": "天王寺公園",
+          "kind": "park",
+          "m": 96
+        }
+      ],
+      "marker": {
+        "name": "谷中五重塔跡地",
+        "m": 160,
+        "osm": "node/4218532821"
+      },
+      "elevation": 17.5,
+      "elevation_src": "1m（レーザ）",
+      "elevation_rank": 0.86
+    }
   },
   {
     "id": 42,
@@ -3685,7 +4706,34 @@
     "pixel": [
       480,
       305
-    ]
+    ],
+    "now": {
+      "station": {
+        "name": "両国",
+        "km": 0.21
+      },
+      "nearby": [
+        {
+          "name": "総武緩行線",
+          "kind": "bridge",
+          "m": 149
+        },
+        {
+          "name": "両国二丁目緑地広場",
+          "kind": "park",
+          "m": 221
+        },
+        {
+          "name": "榛稲荷神社",
+          "kind": "worship",
+          "m": 227
+        }
+      ],
+      "marker": null,
+      "elevation": 1.8,
+      "elevation_src": "1m（レーザ）",
+      "elevation_rank": 0.17
+    }
   },
   {
     "id": 43,
@@ -3774,7 +4822,34 @@
     "pixel": [
       480,
       322
-    ]
+    ],
+    "now": {
+      "station": {
+        "name": "両国",
+        "km": 0.41
+      },
+      "nearby": [
+        {
+          "name": "京葉道路",
+          "kind": "bridge",
+          "m": 3
+        },
+        {
+          "name": "柳橋",
+          "kind": "bridge",
+          "m": 161
+        },
+        {
+          "name": "首都高速6号向島線",
+          "kind": "bridge",
+          "m": 211
+        }
+      ],
+      "marker": null,
+      "elevation": 2.0,
+      "elevation_src": "10m",
+      "elevation_rank": 0.26
+    }
   },
   {
     "id": 44,
@@ -3862,7 +4937,33 @@
     "pixel": [
       480,
       316
-    ]
+    ],
+    "now": {
+      "station": {
+        "name": "両国",
+        "km": 0.41
+      },
+      "nearby": [
+        {
+          "name": "蔵前専用橋",
+          "kind": "bridge",
+          "m": 94
+        },
+        {
+          "name": "蔵前橋",
+          "kind": "bridge",
+          "m": 180
+        }
+      ],
+      "marker": {
+        "name": "水門跡",
+        "m": 148,
+        "osm": "node/5721701905"
+      },
+      "elevation": 2.0,
+      "elevation_src": "10m",
+      "elevation_rank": 0.26
+    }
   },
   {
     "id": 45,
@@ -4027,7 +5128,34 @@
     "pixel": [
       480,
       326
-    ]
+    ],
+    "now": {
+      "station": {
+        "name": "本所吾妻橋",
+        "km": 0.56
+      },
+      "nearby": [
+        {
+          "name": "華厳寺",
+          "kind": "worship",
+          "m": 82
+        },
+        {
+          "name": "源光寺",
+          "kind": "worship",
+          "m": 108
+        },
+        {
+          "name": "牛島神社",
+          "kind": "worship",
+          "m": 123
+        }
+      ],
+      "marker": null,
+      "elevation": 0.4,
+      "elevation_src": "1m（レーザ）",
+      "elevation_rank": 0.03
+    }
   },
   {
     "id": 47,
@@ -4115,7 +5243,34 @@
     "pixel": [
       480,
       308
-    ]
+    ],
+    "now": {
+      "station": {
+        "name": "三越前",
+        "km": 0.21
+      },
+      "nearby": [
+        {
+          "name": "常盤橋",
+          "kind": "bridge",
+          "m": 4
+        },
+        {
+          "name": "日本橋川",
+          "kind": "water",
+          "m": 25
+        },
+        {
+          "name": "外堀通り",
+          "kind": "bridge",
+          "m": 78
+        }
+      ],
+      "marker": null,
+      "elevation": 5.0,
+      "elevation_src": "10m",
+      "elevation_rank": 0.59
+    }
   },
   {
     "id": 48,
@@ -4281,7 +5436,34 @@
     "pixel": [
       480,
       303
-    ]
+    ],
+    "now": {
+      "station": {
+        "name": "南千住",
+        "km": 1.03
+      },
+      "nearby": [
+        {
+          "name": "妙亀塚公園",
+          "kind": "park",
+          "m": 121
+        },
+        {
+          "name": "橋場不動院",
+          "kind": "worship",
+          "m": 179
+        },
+        {
+          "name": "福壽院",
+          "kind": "worship",
+          "m": 180
+        }
+      ],
+      "marker": null,
+      "elevation": 1.0,
+      "elevation_src": "1m（レーザ）",
+      "elevation_rank": 0.07
+    }
   },
   {
     "id": 50,
@@ -4370,7 +5552,29 @@
     "pixel": [
       480,
       315
-    ]
+    ],
+    "now": {
+      "station": {
+        "name": "蔵前",
+        "km": 0.28
+      },
+      "nearby": [
+        {
+          "name": "春日通り",
+          "kind": "bridge",
+          "m": 1
+        },
+        {
+          "name": "首都高速道路6号向島線",
+          "kind": "bridge",
+          "m": 82
+        }
+      ],
+      "marker": null,
+      "elevation": 2.0,
+      "elevation_src": "10m",
+      "elevation_rank": 0.26
+    }
   },
   {
     "id": 51,
@@ -4536,7 +5740,34 @@
     "pixel": [
       480,
       303
-    ]
+    ],
+    "now": {
+      "station": {
+        "name": "上野",
+        "km": 0.03
+      },
+      "nearby": [
+        {
+          "name": "JR東北本線",
+          "kind": "bridge",
+          "m": 69
+        },
+        {
+          "name": "京浜東北線",
+          "kind": "bridge",
+          "m": 98
+        },
+        {
+          "name": "山手線",
+          "kind": "bridge",
+          "m": 111
+        }
+      ],
+      "marker": null,
+      "elevation": 3.2,
+      "elevation_src": "1m（レーザ）",
+      "elevation_rank": 0.4
+    }
   },
   {
     "id": 53,
@@ -4913,7 +6144,38 @@
     "pixel": [
       480,
       312
-    ]
+    ],
+    "now": {
+      "station": {
+        "name": "新橋",
+        "km": 0.16
+      },
+      "nearby": [
+        {
+          "name": "銀座東八丁目歩道橋",
+          "kind": "bridge",
+          "m": 77
+        },
+        {
+          "name": "蓮菜橋歩道橋",
+          "kind": "bridge",
+          "m": 83
+        },
+        {
+          "name": "東京高速道路KK線",
+          "kind": "bridge",
+          "m": 95
+        }
+      ],
+      "marker": {
+        "name": "新橋跡の親柱",
+        "m": 149,
+        "osm": "node/7814555267"
+      },
+      "elevation": 4.1,
+      "elevation_src": "1m（レーザ）",
+      "elevation_rank": 0.53
+    }
   },
   {
     "id": 59,
@@ -5002,7 +6264,38 @@
     "pixel": [
       480,
       310
-    ]
+    ],
+    "now": {
+      "station": {
+        "name": "三越前",
+        "km": 0.16
+      },
+      "nearby": [
+        {
+          "name": "中央通り",
+          "kind": "bridge",
+          "m": 12
+        },
+        {
+          "name": "首都高速都心環状線",
+          "kind": "bridge",
+          "m": 31
+        },
+        {
+          "name": "元標の広場",
+          "kind": "park",
+          "m": 45
+        }
+      ],
+      "marker": {
+        "name": "日本橋魚河岸発祥の地",
+        "m": 44,
+        "osm": "node/1367460936"
+      },
+      "elevation": 4.0,
+      "elevation_src": "10m",
+      "elevation_rank": 0.5
+    }
   },
   {
     "id": 60,
@@ -5091,7 +6384,34 @@
     "pixel": [
       480,
       305
-    ]
+    ],
+    "now": {
+      "station": {
+        "name": "両国",
+        "km": 0.21
+      },
+      "nearby": [
+        {
+          "name": "総武緩行線",
+          "kind": "bridge",
+          "m": 149
+        },
+        {
+          "name": "両国二丁目緑地広場",
+          "kind": "park",
+          "m": 221
+        },
+        {
+          "name": "榛稲荷神社",
+          "kind": "worship",
+          "m": 227
+        }
+      ],
+      "marker": null,
+      "elevation": 1.8,
+      "elevation_src": "1m（レーザ）",
+      "elevation_rank": 0.17
+    }
   },
   {
     "id": 61,
@@ -5172,7 +6492,34 @@
     "pixel": [
       480,
       283
-    ]
+    ],
+    "now": {
+      "station": {
+        "name": "浜町",
+        "km": 0.0
+      },
+      "nearby": [
+        {
+          "name": "浜町公園",
+          "kind": "park",
+          "m": 73
+        },
+        {
+          "name": "首都高速6号向島線",
+          "kind": "bridge",
+          "m": 127
+        },
+        {
+          "name": "首都高速7号小松川線",
+          "kind": "bridge",
+          "m": 151
+        }
+      ],
+      "marker": null,
+      "elevation": 1.7,
+      "elevation_src": "1m（レーザ）",
+      "elevation_rank": 0.16
+    }
   },
   {
     "id": 62,
@@ -5260,7 +6607,29 @@
     "pixel": [
       480,
       295
-    ]
+    ],
+    "now": {
+      "station": {
+        "name": "東日本橋",
+        "km": 0.33
+      },
+      "nearby": [
+        {
+          "name": "笠間稲荷神社",
+          "kind": "worship",
+          "m": 142
+        },
+        {
+          "name": "富澤稲荷神社",
+          "kind": "worship",
+          "m": 171
+        }
+      ],
+      "marker": null,
+      "elevation": 2.3,
+      "elevation_src": "1m（レーザ）",
+      "elevation_rank": 0.33
+    }
   },
   {
     "id": 63,
@@ -5349,7 +6718,34 @@
     "pixel": [
       480,
       294
-    ]
+    ],
+    "now": {
+      "station": {
+        "name": "両国",
+        "km": 0.21
+      },
+      "nearby": [
+        {
+          "name": "総武緩行線",
+          "kind": "bridge",
+          "m": 149
+        },
+        {
+          "name": "両国二丁目緑地広場",
+          "kind": "park",
+          "m": 221
+        },
+        {
+          "name": "榛稲荷神社",
+          "kind": "worship",
+          "m": 227
+        }
+      ],
+      "marker": null,
+      "elevation": 1.8,
+      "elevation_src": "1m（レーザ）",
+      "elevation_rank": 0.17
+    }
   },
   {
     "id": 64,
@@ -5438,7 +6834,33 @@
     "pixel": [
       480,
       308
-    ]
+    ],
+    "now": {
+      "station": {
+        "name": "虎ノ門ヒルズ",
+        "km": 0.13
+      },
+      "nearby": [
+        {
+          "name": "明舟公園",
+          "kind": "park",
+          "m": 77
+        },
+        {
+          "name": "金刀比羅宮",
+          "kind": "worship",
+          "m": 110
+        }
+      ],
+      "marker": {
+        "name": "国史跡 江戸城外堀跡 溜池櫓台",
+        "m": 170,
+        "osm": "node/6711536793"
+      },
+      "elevation": 5.6,
+      "elevation_src": "1m（レーザ）",
+      "elevation_rank": 0.64
+    }
   },
   {
     "id": 65,
@@ -5681,7 +7103,38 @@
     "pixel": [
       480,
       311
-    ]
+    ],
+    "now": {
+      "station": {
+        "name": "浅草",
+        "km": 0.18
+      },
+      "nearby": [
+        {
+          "name": "弁天山児童公園",
+          "kind": "park",
+          "m": 103
+        },
+        {
+          "name": "浅草寺",
+          "kind": "worship",
+          "m": 110
+        },
+        {
+          "name": "東武伊勢崎線",
+          "kind": "bridge",
+          "m": 167
+        }
+      ],
+      "marker": {
+        "name": "旧五重塔跡",
+        "m": 162,
+        "osm": "node/6597942807"
+      },
+      "elevation": 3.5,
+      "elevation_src": "1m（レーザ）",
+      "elevation_rank": 0.45
+    }
   },
   {
     "id": 68,
@@ -5770,7 +7223,38 @@
     "pixel": [
       480,
       312
-    ]
+    ],
+    "now": {
+      "station": {
+        "name": "浅草",
+        "km": 0.18
+      },
+      "nearby": [
+        {
+          "name": "弁天山児童公園",
+          "kind": "park",
+          "m": 103
+        },
+        {
+          "name": "浅草寺",
+          "kind": "worship",
+          "m": 110
+        },
+        {
+          "name": "東武伊勢崎線",
+          "kind": "bridge",
+          "m": 167
+        }
+      ],
+      "marker": {
+        "name": "旧五重塔跡",
+        "m": 162,
+        "osm": "node/6597942807"
+      },
+      "elevation": 3.5,
+      "elevation_src": "1m（レーザ）",
+      "elevation_rank": 0.45
+    }
   },
   {
     "id": 69,
@@ -5859,7 +7343,38 @@
     "pixel": [
       480,
       310
-    ]
+    ],
+    "now": {
+      "station": {
+        "name": "浅草",
+        "km": 0.27
+      },
+      "nearby": [
+        {
+          "name": "弁天山児童公園",
+          "kind": "park",
+          "m": 136
+        },
+        {
+          "name": "石橋",
+          "kind": "bridge",
+          "m": 155
+        },
+        {
+          "name": "三峰神社",
+          "kind": "worship",
+          "m": 162
+        }
+      ],
+      "marker": {
+        "name": "旧五重塔跡",
+        "m": 124,
+        "osm": "node/6597942807"
+      },
+      "elevation": 3.4,
+      "elevation_src": "1m（レーザ）",
+      "elevation_rank": 0.41
+    }
   },
   {
     "id": 70,
@@ -5948,7 +7463,34 @@
     "pixel": [
       480,
       309
-    ]
+    ],
+    "now": {
+      "station": {
+        "name": "浅草",
+        "km": 1.07
+      },
+      "nearby": [
+        {
+          "name": "称福寺",
+          "kind": "worship",
+          "m": 109
+        },
+        {
+          "name": "今戸神社",
+          "kind": "worship",
+          "m": 139
+        },
+        {
+          "name": "廣樂寺",
+          "kind": "worship",
+          "m": 152
+        }
+      ],
+      "marker": null,
+      "elevation": 1.2,
+      "elevation_src": "1m（レーザ）",
+      "elevation_rank": 0.1
+    }
   },
   {
     "id": 71,
@@ -6029,7 +7571,38 @@
     "pixel": [
       480,
       313
-    ]
+    ],
+    "now": {
+      "station": {
+        "name": "根津",
+        "km": 0.3
+      },
+      "nearby": [
+        {
+          "name": "花姫稲荷神社",
+          "kind": "worship",
+          "m": 40
+        },
+        {
+          "name": "日本猿",
+          "kind": "water",
+          "m": 175
+        },
+        {
+          "name": "上野東照宮",
+          "kind": "worship",
+          "m": 202
+        }
+      ],
+      "marker": {
+        "name": "都電変電所跡",
+        "m": 191,
+        "osm": "node/6897199651"
+      },
+      "elevation": 5.8,
+      "elevation_src": "1m（レーザ）",
+      "elevation_rank": 0.66
+    }
   },
   {
     "id": 72,
@@ -6117,7 +7690,38 @@
     "pixel": [
       480,
       317
-    ]
+    ],
+    "now": {
+      "station": {
+        "name": "小伝馬町",
+        "km": 0.13
+      },
+      "nearby": [
+        {
+          "name": "大安楽寺",
+          "kind": "worship",
+          "m": 167
+        },
+        {
+          "name": "見延別院",
+          "kind": "worship",
+          "m": 185
+        },
+        {
+          "name": "椙森神社",
+          "kind": "worship",
+          "m": 197
+        }
+      ],
+      "marker": {
+        "name": "江戸伝馬町処刑場跡の碑",
+        "m": 177,
+        "osm": "node/4624547162"
+      },
+      "elevation": 4.5,
+      "elevation_src": "1m（レーザ）",
+      "elevation_rank": 0.57
+    }
   },
   {
     "id": 73,

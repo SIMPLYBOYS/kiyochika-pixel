@@ -199,7 +199,7 @@ def build():
         p = prev.get(v["id"])
         if not p:
             continue
-        for k in ("subject", "bearing", "viewpoint", "conditions", "notes", "details", "pixel"):
+        for k in ("subject", "bearing", "viewpoint", "conditions", "notes", "details", "pixel", "now"):
             if p.get(k) not in (None, {}, []):
                 v[k] = p[k]
         if (p.get("place") or {}).get("anchor"):

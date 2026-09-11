@@ -82,17 +82,29 @@ let selected = null, shownId = null;
 let onResize = () => {};
 addEventListener('resize', () => onResize());
 
-// 現在那裡是哪裡。tools/derive-place.py 從 OSM 的行政界做內外判定得來的，
-// 街景連結不帶金鑰（api=1 的分享網址），沒有街景的地點 Google 會自己退到地圖。
+// 「今そこには何があるか」。全部是推導出來的、指得出出處的
+// （行政界與周邊地物＝OSM、標高＝国土地理院）——⛔ 這一層不由我寫，
+// 六十九段憑印象的今昔對比正是這個專案一路在拒絕的東西。
 // ⚠️ 区與町可能不一致：44 大川富士見渡的點在河中央（那是渡船），
 // 落在墨田区，最近的町卻是對岸台東区的蔵前——兩個都對，所以兩個都寫。
+const KIND_JA = { worship: '社寺', bridge: '橋', park: '公園', water: '水' };
 function here(v) {
-  const p = v.place ?? {};
+  const p = v.place ?? {}, n = v.now ?? {};
   if (!p.modern_ward) return '';
   const town = p.modern_town ? `${p.modern_town}<small>（${p.modern_town_km}km）</small>` : '';
   const pano = `https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=${v.subject.lat},${v.subject.lng}`;
-  return `<dt>現在</dt><dd>${p.modern_ward} ${town}<br>
-    <a href="${pano}" target="_blank" rel="noopener">站到那裡看 ↗</a></dd>`;
+  // 標高的「高い／低い」是拿同一畫帖的 59 個點排出來的，不是外面的說法
+  const rank = n.elevation_rank;
+  const tag = rank == null ? '' : rank >= 0.8 ? '<small>（この画帖で高いほう）</small>'
+    : rank <= 0.2 ? '<small>（低いほう）</small>' : '';
+  return `
+    <dt>現在</dt><dd>${p.modern_ward} ${town}${
+      n.elevation == null ? '' : `　標高 ${n.elevation}m ${tag}`}<br>
+      <a href="${pano}" target="_blank" rel="noopener">站到那裡看 ↗</a></dd>
+    ${n.station ? `<dt>最寄</dt><dd>${n.station.name}　<small>${n.station.km} km</small></dd>` : ''}
+    ${n.nearby?.length ? `<dt>今この辺り</dt><dd>${n.nearby.map(
+        x => `${x.name}<small> ${KIND_JA[x.kind] ?? ''} ${x.m}m</small>`).join('　')}</dd>` : ''}
+    ${n.marker ? `<dt class="mk">碑</dt><dd class="mk">${n.marker.name}<small> ${n.marker.m}m</small></dd>` : ''}`;
 }
 
 function pick(v) {
