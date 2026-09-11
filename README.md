@@ -19,7 +19,8 @@
 現在   59/59 有現代区名與町名，面板可直接跳街景
 裁切   69/69 從整頁裁到和紙與畫心（四層：灰底 → 台紙＋襯紙 → 和紙 → 畫心）
 像素   69/69 → 480px・16 色・Bayer 8×8
-日期   4/69 讀到年月（奧付的年份**只刻到十位**，見下）
+日期   奧付判讀 10 幅（可用 4）＋ 館方斷代 51 幅 ⇒ 聯集 52/69 有年份
+光線   39/69 從題名判得出時刻或天候（清親自己寫在標題上的）
 ```
 
 ```bash
@@ -44,6 +45,8 @@ python3 tools/derive-place.py --write      # 座標 → 現代区名・町名（
 python3 tools/trim.py                      # 整頁 → assets/plate（和紙）＋ assets/image（畫心）
 python3 tools/quantize.py                  # 畫心 → assets/pixel（480px・16 色・Bayer）
 python3 tools/fetch-colophon.py --sheet 6  # 和紙的紙邊 → 判讀奧付用的表
+python3 tools/fetch-dates.py --write       # Japan Search → 館方斷代的出版年
+python3 tools/derive-light.py --write      # 題名 → 時刻與天候（conditions）
 python3 tools/make-thumbs.py               # research/ndl 的整頁 → assets/thumb（面板用）
 python3 tools/fetch-commons.py --sheet     # Commons 側交叉比對（不是主素材）
 ```
@@ -63,6 +66,8 @@ data/
   published.json     人工判讀的出版年月（機器不覆寫）
   meiji-places.json  地名白名單：明治 15 区（Wikidata，記 QID）＋ 水系 54（名字沿用 edo-hyakkei）
   reference-maps.json 當時的市街圖：連得出去的那一張，＋三條查不到／不能用的紀錄
+  dates-external.json Japan Search 查到的館方斷代年（⚠️ 與奧付判讀分開存，見下）
+  palettes.json      每幅的 16 色色盤
   inventory.json     Commons 盤點結果，交叉比對用
   geo/gazetteer.json OSM 具名地物索引（4.8MB）
   geo/modern.json    街圖向量，從 edo-hyakkei 複製（1.8MB，ODbL）
@@ -129,6 +134,43 @@ assert 過得了，因為它在畫框內。抓出來的方法是把 59 個點畫
 
 所以 `check-subjects.py` 是必要驗收不是加分項。
 自動檢查抓得到「掉出畫框」，抓不到「落在錯的區」。
+
+## 兩層閘門：年份與光線
+
+Phase 3 的機制是兩層，各有各的資料：
+
+| 層 | 管什麼 | 資料 | 覆蓋 |
+|---|---|---|---|
+| **年份** | 這一幅**什麼時候出現**在地圖上 | `published_year`（館方）＋`published`（奧付） | 52/69 |
+| **光線** | 這一幅**什麼時候可收** | `conditions.time_of_day` / `.weather` | 39/69 |
+
+年份分佈 1876:1　1877:4　1878:1　1879:14　1880:20　1881:12　未詳:17，
+正好是光線画的五年；時刻 night 11・dusk 8・dawn 4・day 1，
+天候 snow 7・rain 5・fire 4・moon 2・fireworks 2・clear 1。
+
+🔴 **光線只採題名明說的，⛔ 不從畫面亮度推。**
+量過：夜景的畫面亮度中位 90、其餘 135–145——兩端分得開，中間整片重疊
+（雪景亮是因為雪不是因為白天；火場暗是因為夜不是因為陰天）。
+沒寫時刻的 30 幅標 null ＝**不限光線**。那不是資料缺口，是設計：
+清親特意標了時刻的那些才是有條件的。
+
+## 兩種「年份」不是同一種證據
+
+- **奧付**（`published.json`）＝版上印的御届登記。我自己判讀的，10 幅。
+- **館方**（`dates-external.json`）＝機構斷代，Japan Search 查的，51 幅
+  （東京都江戸東京博物館 24、ARC 立命館錦絵 19、其他 8）。
+  可能出自同一張奧付，也可能出自目錄學研究或推定。
+
+⇒ **分開存，衝突時兩個都留著**，⛔ 不讓新的蓋掉舊的。已記兩則：
+
+> `no.1` 奧付我讀「明治九年八月**廿一**日」，江戸東京博物館記「明治9年8月**31**日」。
+> 年月一致、日不同——廿(21) 與 卅(31) 只差一筆。
+
+> `no.60` 館方記「明治14年1月26日」，但那正是**畫面上印的火災日**，
+> 而它的奧付年份欄只刻到十位 ⇒ 館方很可能也是照畫面著錄。
+> 當**年**用沒問題，當**出版日**用就是把火災日當成出版日。
+
+比對規則：題名正規化後**完全相等**才採用。日本畫題共用字太多，模糊比對會安靜配錯。
 
 ## 裁切：三個坑
 

@@ -11,6 +11,8 @@
     "exclude_reason": null,
     "published": "1876-08-21",
     "published_confidence": "exact",
+    "published_year": 1876,
+    "published_year_source": "jpsearch:tokyomuseumcolection",
     "viewpoint": {
       "lat": null,
       "lng": null,
@@ -36,7 +38,9 @@
       "modern_town_km": 0.04
     },
     "conditions": {
-      "time_of_day": null
+      "time_of_day": null,
+      "weather": null,
+      "source": null
     },
     "notes": {
       "geo": null,
@@ -66,6 +70,8 @@
     "exclude_reason": null,
     "published": null,
     "published_confidence": null,
+    "published_year": null,
+    "published_year_source": null,
     "viewpoint": {
       "lat": null,
       "lng": null,
@@ -90,7 +96,9 @@
       "modern_town_km": 0.46
     },
     "conditions": {
-      "time_of_day": null
+      "time_of_day": null,
+      "weather": null,
+      "source": null
     },
     "notes": {
       "geo": "題名即地名。Wikidata「二重橋」（皇居内の橋）。OSM 另有 way/43933152『皇居正門鉄橋「二重橋」』在 139.7536，兩者相距 20m。",
@@ -120,6 +128,8 @@
     "exclude_reason": null,
     "published": null,
     "published_confidence": null,
+    "published_year": null,
+    "published_year_source": null,
     "viewpoint": {
       "lat": null,
       "lng": null,
@@ -145,7 +155,9 @@
       "modern_town_km": 0.0
     },
     "conditions": {
-      "time_of_day": null
+      "time_of_day": "dusk",
+      "weather": null,
+      "source": "title"
     },
     "notes": {
       "geo": null,
@@ -175,6 +187,8 @@
     "exclude_reason": null,
     "published": null,
     "published_confidence": null,
+    "published_year": null,
+    "published_year_source": null,
     "viewpoint": {
       "lat": null,
       "lng": null,
@@ -200,7 +214,9 @@
       "modern_town_km": 0.13
     },
     "conditions": {
-      "time_of_day": null
+      "time_of_day": null,
+      "weather": "snow",
+      "source": "title"
     },
     "notes": {
       "geo": null,
@@ -230,6 +246,8 @@
     "exclude_reason": null,
     "published": null,
     "published_confidence": null,
+    "published_year": null,
+    "published_year_source": null,
     "viewpoint": {
       "lat": null,
       "lng": null,
@@ -254,7 +272,9 @@
       "modern_town_km": 0.13
     },
     "conditions": {
-      "time_of_day": null
+      "time_of_day": "dusk",
+      "weather": null,
+      "source": "title"
     },
     "notes": {
       "geo": "OSM 無「柳島」町名，取同名的柳島橋（北十間川）當那一帶的錨。⚠️ 只到街區級。",
@@ -284,6 +304,8 @@
     "exclude_reason": null,
     "published": null,
     "published_confidence": null,
+    "published_year": null,
+    "published_year_source": null,
     "viewpoint": {
       "lat": null,
       "lng": null,
@@ -309,7 +331,9 @@
       "modern_town_km": 0.05
     },
     "conditions": {
-      "time_of_day": null
+      "time_of_day": null,
+      "weather": null,
+      "source": null
     },
     "notes": {
       "geo": null,
@@ -339,6 +363,8 @@
     "exclude_reason": null,
     "published": null,
     "published_confidence": null,
+    "published_year": null,
+    "published_year_source": null,
     "viewpoint": {
       "lat": null,
       "lng": null,
@@ -364,7 +390,9 @@
       "modern_town_km": 0.17
     },
     "conditions": {
-      "time_of_day": null
+      "time_of_day": null,
+      "weather": "snow",
+      "source": "title"
     },
     "notes": {
       "geo": null,
@@ -394,6 +422,8 @@
     "exclude_reason": null,
     "published": null,
     "published_confidence": "decade",
+    "published_year": 1877,
+    "published_year_source": "jpsearch:arc_nishikie",
     "viewpoint": {
       "lat": null,
       "lng": null,
@@ -419,7 +449,9 @@
       "modern_town_km": 0.17
     },
     "conditions": {
-      "time_of_day": null
+      "time_of_day": null,
+      "weather": null,
+      "source": null
     },
     "notes": {
       "geo": null,
@@ -449,6 +481,8 @@
     "exclude_reason": null,
     "published": null,
     "published_confidence": null,
+    "published_year": 1879,
+    "published_year_source": "jpsearch:tokyomuseumcolection",
     "viewpoint": {
       "lat": null,
       "lng": null,
@@ -473,7 +507,9 @@
       "modern_town_km": 0.15
     },
     "conditions": {
-      "time_of_day": null
+      "time_of_day": null,
+      "weather": null,
+      "source": null
     },
     "notes": {
       "geo": "梅若神社本體不在 OSM；取名字含「梅若」的梅若公園。旁證：Wikidata Q11519189 木母寺在其西 200m。⛔ 沒有把兩者等同起來，錨用的是名字對得上的那個。",
@@ -503,6 +539,8 @@
     "exclude_reason": null,
     "published": null,
     "published_confidence": null,
+    "published_year": 1878,
+    "published_year_source": "jpsearch:tokyomuseumcolection",
     "viewpoint": {
       "lat": null,
       "lng": null,
@@ -527,7 +565,9 @@
       "modern_town_km": 0.05
     },
     "conditions": {
-      "time_of_day": null
+      "time_of_day": null,
+      "weather": null,
+      "source": null
     },
     "notes": {
       "geo": "題名「瀧の川」＝滝野川。Wikidata 為北区町名的代表點。⚠️ 只到街區級。",
@@ -557,6 +597,8 @@
     "exclude_reason": null,
     "published": null,
     "published_confidence": "blank",
+    "published_year": 1880,
+    "published_year_source": "jpsearch:tokyo",
     "viewpoint": {
       "lat": null,
       "lng": null,
@@ -582,7 +624,9 @@
       "modern_town_km": 0.0
     },
     "conditions": {
-      "time_of_day": null
+      "time_of_day": null,
+      "weather": null,
+      "source": null
     },
     "notes": {
       "geo": null,
@@ -612,6 +656,8 @@
     "exclude_reason": null,
     "published": null,
     "published_confidence": null,
+    "published_year": null,
+    "published_year_source": null,
     "viewpoint": {
       "lat": null,
       "lng": null,
@@ -625,7 +671,9 @@
       "modern_landmark": null
     },
     "conditions": {
-      "time_of_day": null
+      "time_of_day": null,
+      "weather": "snow",
+      "source": "title"
     },
     "notes": {
       "geo": null,
@@ -655,6 +703,8 @@
     "exclude_reason": null,
     "published": null,
     "published_confidence": null,
+    "published_year": 1879,
+    "published_year_source": "jpsearch:arc_nishikie",
     "viewpoint": {
       "lat": null,
       "lng": null,
@@ -679,7 +729,9 @@
       "modern_town_km": 0.12
     },
     "conditions": {
-      "time_of_day": null
+      "time_of_day": null,
+      "weather": "snow",
+      "source": "title"
     },
     "notes": {
       "geo": "取名字含「小梅」的小梅稲荷神社。曳舟通自此往北。⚠️ 只到街區級。",
@@ -709,6 +761,8 @@
     "exclude_reason": null,
     "published": null,
     "published_confidence": null,
+    "published_year": 1879,
+    "published_year_source": "jpsearch:tokyomuseumcolection",
     "viewpoint": {
       "lat": null,
       "lng": null,
@@ -734,7 +788,9 @@
       "modern_town_km": 0.12
     },
     "conditions": {
-      "time_of_day": null
+      "time_of_day": null,
+      "weather": "snow",
+      "source": "title"
     },
     "notes": {
       "geo": null,
@@ -764,6 +820,8 @@
     "exclude_reason": null,
     "published": null,
     "published_confidence": null,
+    "published_year": 1879,
+    "published_year_source": "jpsearch:tokyo",
     "viewpoint": {
       "lat": null,
       "lng": null,
@@ -789,7 +847,9 @@
       "modern_town_km": 0.05
     },
     "conditions": {
-      "time_of_day": null
+      "time_of_day": null,
+      "weather": null,
+      "source": null
     },
     "notes": {
       "geo": null,
@@ -819,6 +879,8 @@
     "exclude_reason": null,
     "published": null,
     "published_confidence": null,
+    "published_year": 1879,
+    "published_year_source": "jpsearch:arc_nishikie",
     "viewpoint": {
       "lat": null,
       "lng": null,
@@ -844,7 +906,9 @@
       "modern_town_km": 0.18
     },
     "conditions": {
-      "time_of_day": null
+      "time_of_day": null,
+      "weather": null,
+      "source": null
     },
     "notes": {
       "geo": null,
@@ -874,6 +938,8 @@
     "exclude_reason": null,
     "published": null,
     "published_confidence": null,
+    "published_year": 1879,
+    "published_year_source": "jpsearch:arc_nishikie",
     "viewpoint": {
       "lat": null,
       "lng": null,
@@ -898,7 +964,9 @@
       "modern_town_km": 0.24
     },
     "conditions": {
-      "time_of_day": null
+      "time_of_day": null,
+      "weather": "rain",
+      "source": "title"
     },
     "notes": {
       "geo": "題名兩個地名都比中。OSM 五座同名善光寺裡，只有這一座在川口（距川口駅 0.95km），其餘四座在 4–15km 外。⚠️ 自動比對取到的是「川口」（駅），這筆是升級。",
@@ -928,6 +996,8 @@
     "exclude_reason": null,
     "published": null,
     "published_confidence": null,
+    "published_year": 1879,
+    "published_year_source": "jpsearch:tokyomuseumcolection",
     "viewpoint": {
       "lat": null,
       "lng": null,
@@ -953,7 +1023,9 @@
       "modern_town_km": 0.0
     },
     "conditions": {
-      "time_of_day": null
+      "time_of_day": "night",
+      "weather": "moon",
+      "source": "title"
     },
     "notes": {
       "geo": null,
@@ -983,6 +1055,8 @@
     "exclude_reason": null,
     "published": null,
     "published_confidence": null,
+    "published_year": 1879,
+    "published_year_source": "jpsearch:NagoyaCity_Museum",
     "viewpoint": {
       "lat": null,
       "lng": null,
@@ -1008,7 +1082,9 @@
       "modern_town_km": 0.29
     },
     "conditions": {
-      "time_of_day": null
+      "time_of_day": null,
+      "weather": null,
+      "source": null
     },
     "notes": {
       "geo": null,
@@ -1038,6 +1114,8 @@
     "exclude_reason": null,
     "published": null,
     "published_confidence": null,
+    "published_year": 1879,
+    "published_year_source": "jpsearch:tokyomuseumcolection",
     "viewpoint": {
       "lat": null,
       "lng": null,
@@ -1063,7 +1141,9 @@
       "modern_town_km": 0.1
     },
     "conditions": {
-      "time_of_day": null
+      "time_of_day": null,
+      "weather": null,
+      "source": null
     },
     "notes": {
       "geo": null,
@@ -1093,6 +1173,8 @@
     "exclude_reason": null,
     "published": "1879-07",
     "published_confidence": "month",
+    "published_year": 1879,
+    "published_year_source": "jpsearch:arc_nishikie",
     "viewpoint": {
       "lat": null,
       "lng": null,
@@ -1118,7 +1200,9 @@
       "modern_town_km": 0.17
     },
     "conditions": {
-      "time_of_day": null
+      "time_of_day": "dawn",
+      "weather": null,
+      "source": "title"
     },
     "notes": {
       "geo": null,
@@ -1148,6 +1232,8 @@
     "exclude_reason": null,
     "published": null,
     "published_confidence": null,
+    "published_year": null,
+    "published_year_source": null,
     "viewpoint": {
       "lat": null,
       "lng": null,
@@ -1172,7 +1258,9 @@
       "modern_town_km": 0.11
     },
     "conditions": {
-      "time_of_day": null
+      "time_of_day": null,
+      "weather": null,
+      "source": null
     },
     "notes": {
       "geo": "元柳橋已不存，Wikidata 有詞條但無座標，描述為「薬研堀の河口に架かっていた橋」⇒ 錨在薬研堀僅存的地標・薬研堀不動院。🔴 河口在其東南約 200m，這個點是「薬研堀那一帶」不是橋位，待 1882 地圖收斂。",
@@ -1202,6 +1290,8 @@
     "exclude_reason": null,
     "published": null,
     "published_confidence": null,
+    "published_year": null,
+    "published_year_source": null,
     "viewpoint": {
       "lat": null,
       "lng": null,
@@ -1226,7 +1316,9 @@
       "modern_town_km": 0.16
     },
     "conditions": {
-      "time_of_day": null
+      "time_of_day": "dusk",
+      "weather": null,
+      "source": "title"
     },
     "notes": {
       "geo": "OSM 有兩座江戸橋。取日本橋川上的這座，依據是同一畫帖的海運橋（node/6155692899）與一石橋（way/552407565）都在其 500m 內、同一條川；另一座在 5.5km 外的北区。",
@@ -1256,6 +1348,8 @@
     "exclude_reason": null,
     "published": null,
     "published_confidence": null,
+    "published_year": 1879,
+    "published_year_source": "jpsearch:arc_nishikie",
     "viewpoint": {
       "lat": null,
       "lng": null,
@@ -1281,7 +1375,9 @@
       "modern_town_km": 0.27
     },
     "conditions": {
-      "time_of_day": null
+      "time_of_day": null,
+      "weather": null,
+      "source": null
     },
     "notes": {
       "geo": null,
@@ -1311,6 +1407,8 @@
     "exclude_reason": null,
     "published": null,
     "published_confidence": null,
+    "published_year": 1879,
+    "published_year_source": "jpsearch:arc_nishikie",
     "viewpoint": {
       "lat": null,
       "lng": null,
@@ -1336,7 +1434,9 @@
       "modern_town_km": 0.35
     },
     "conditions": {
-      "time_of_day": null
+      "time_of_day": null,
+      "weather": null,
+      "source": null
     },
     "notes": {
       "geo": null,
@@ -1366,6 +1466,8 @@
     "exclude_reason": null,
     "published": null,
     "published_confidence": null,
+    "published_year": 1879,
+    "published_year_source": "jpsearch:tokyomuseumcolection",
     "viewpoint": {
       "lat": null,
       "lng": null,
@@ -1390,7 +1492,9 @@
       "modern_town_km": 0.09
     },
     "conditions": {
-      "time_of_day": null
+      "time_of_day": "dusk",
+      "weather": null,
+      "source": "title"
     },
     "notes": {
       "geo": "題名即地名。Wikidata「道灌山」（荒川区西日暮里四丁目の高台）。OSM 只有中野区的道灌橋與皇居的道灌濠，都不是這個。",
@@ -1420,6 +1524,8 @@
     "exclude_reason": null,
     "published": null,
     "published_confidence": null,
+    "published_year": null,
+    "published_year_source": null,
     "viewpoint": {
       "lat": null,
       "lng": null,
@@ -1445,7 +1551,9 @@
       "modern_town_km": 0.23
     },
     "conditions": {
-      "time_of_day": null
+      "time_of_day": null,
+      "weather": null,
+      "source": null
     },
     "notes": {
       "geo": null,
@@ -1475,6 +1583,8 @@
     "exclude_reason": null,
     "published": null,
     "published_confidence": null,
+    "published_year": 1880,
+    "published_year_source": "jpsearch:tokyomuseumcolection",
     "viewpoint": {
       "lat": null,
       "lng": null,
@@ -1488,7 +1598,9 @@
       "modern_landmark": null
     },
     "conditions": {
-      "time_of_day": null
+      "time_of_day": "night",
+      "weather": null,
+      "source": "title"
     },
     "notes": {
       "geo": null,
@@ -1518,6 +1630,8 @@
     "exclude_reason": null,
     "published": null,
     "published_confidence": null,
+    "published_year": 1879,
+    "published_year_source": "jpsearch:tokyomuseumcolection",
     "viewpoint": {
       "lat": null,
       "lng": null,
@@ -1542,7 +1656,9 @@
       "modern_town_km": 0.24
     },
     "conditions": {
-      "time_of_day": null
+      "time_of_day": null,
+      "weather": null,
+      "source": null
     },
     "notes": {
       "geo": "題名「御城内」＝皇居（旧江戸城）内。釣橋（吊り橋）本體不在 OSM ⇒ 只錨到城域。⚠️ 街區級。",
@@ -1572,6 +1688,8 @@
     "exclude_reason": null,
     "published": null,
     "published_confidence": null,
+    "published_year": null,
+    "published_year_source": null,
     "viewpoint": {
       "lat": null,
       "lng": null,
@@ -1597,7 +1715,9 @@
       "modern_town_km": 0.07
     },
     "conditions": {
-      "time_of_day": null
+      "time_of_day": "dusk",
+      "weather": null,
+      "source": "title"
     },
     "notes": {
       "geo": null,
@@ -1627,6 +1747,8 @@
     "exclude_reason": null,
     "published": null,
     "published_confidence": null,
+    "published_year": 1880,
+    "published_year_source": "jpsearch:tokyomuseumcolection",
     "viewpoint": {
       "lat": null,
       "lng": null,
@@ -1640,7 +1762,9 @@
       "modern_landmark": null
     },
     "conditions": {
-      "time_of_day": null
+      "time_of_day": null,
+      "weather": "clear",
+      "source": "title"
     },
     "notes": {
       "geo": null,
@@ -1670,6 +1794,8 @@
     "exclude_reason": null,
     "published": null,
     "published_confidence": null,
+    "published_year": null,
+    "published_year_source": null,
     "viewpoint": {
       "lat": null,
       "lng": null,
@@ -1695,7 +1821,9 @@
       "modern_town_km": 0.36
     },
     "conditions": {
-      "time_of_day": null
+      "time_of_day": null,
+      "weather": "rain",
+      "source": "title"
     },
     "notes": {
       "geo": null,
@@ -1725,6 +1853,8 @@
     "exclude_reason": null,
     "published": null,
     "published_confidence": null,
+    "published_year": 1880,
+    "published_year_source": "jpsearch:tokyo",
     "viewpoint": {
       "lat": null,
       "lng": null,
@@ -1749,7 +1879,9 @@
       "modern_town_km": 0.0
     },
     "conditions": {
-      "time_of_day": null
+      "time_of_day": null,
+      "weather": null,
+      "source": null
     },
     "notes": {
       "geo": "石原橋不在 OSM；題名另一個地名「石原」（本所石原町，今墨田区石原一丁目）有點位，且與題名的「大川端」（隅田川東岸）相符。⚠️ 街區級。",
@@ -1779,6 +1911,8 @@
     "exclude_reason": null,
     "published": null,
     "published_confidence": null,
+    "published_year": 1880,
+    "published_year_source": "jpsearch:tokyo",
     "viewpoint": {
       "lat": null,
       "lng": null,
@@ -1803,7 +1937,9 @@
       "modern_town_km": 0.17
     },
     "conditions": {
-      "time_of_day": null
+      "time_of_day": "night",
+      "weather": null,
+      "source": "title"
     },
     "notes": {
       "geo": "Wikidata「九段坂公園」——名字含題名的「九段坂」，公園就在坂上。",
@@ -1833,6 +1969,8 @@
     "exclude_reason": null,
     "published": null,
     "published_confidence": null,
+    "published_year": 1880,
+    "published_year_source": "jpsearch:tokyomuseumcolection",
     "viewpoint": {
       "lat": null,
       "lng": null,
@@ -1858,7 +1996,9 @@
       "modern_town_km": 0.21
     },
     "conditions": {
-      "time_of_day": null
+      "time_of_day": "dawn",
+      "weather": null,
+      "source": "title"
     },
     "notes": {
       "geo": null,
@@ -1888,6 +2028,8 @@
     "exclude_reason": null,
     "published": null,
     "published_confidence": null,
+    "published_year": 1880,
+    "published_year_source": "jpsearch:arc_nishikie",
     "viewpoint": {
       "lat": null,
       "lng": null,
@@ -1913,7 +2055,9 @@
       "modern_town_km": 0.23
     },
     "conditions": {
-      "time_of_day": null
+      "time_of_day": null,
+      "weather": null,
+      "source": null
     },
     "notes": {
       "geo": null,
@@ -1943,6 +2087,8 @@
     "exclude_reason": null,
     "published": null,
     "published_confidence": "blank",
+    "published_year": 1880,
+    "published_year_source": "jpsearch:arc_nishikie",
     "viewpoint": {
       "lat": null,
       "lng": null,
@@ -1968,7 +2114,9 @@
       "modern_town_km": 0.08
     },
     "conditions": {
-      "time_of_day": null
+      "time_of_day": "day",
+      "weather": null,
+      "source": "title"
     },
     "notes": {
       "geo": null,
@@ -1998,6 +2146,8 @@
     "exclude_reason": null,
     "published": null,
     "published_confidence": null,
+    "published_year": 1880,
+    "published_year_source": "jpsearch:tokyomuseumcolection",
     "viewpoint": {
       "lat": null,
       "lng": null,
@@ -2022,7 +2172,9 @@
       "modern_town_km": 0.18
     },
     "conditions": {
-      "time_of_day": null
+      "time_of_day": "dawn",
+      "weather": null,
+      "source": "title"
     },
     "notes": {
       "geo": "OSM「大伝馬町八雲神社」，Wikidata 同名詞條寫明是**神田明神の境内社** ⇒ 題名「神田八雲神社」指的就是它。座標與 OSM 神田明神（way/89431876）相距 20m。⚠️ 自動比對取到的是「神田」（駅），這筆是升級。",
@@ -2052,6 +2204,8 @@
     "exclude_reason": null,
     "published": null,
     "published_confidence": null,
+    "published_year": 1880,
+    "published_year_source": "jpsearch:arc_nishikie",
     "viewpoint": {
       "lat": null,
       "lng": null,
@@ -2077,7 +2231,9 @@
       "modern_town_km": 0.16
     },
     "conditions": {
-      "time_of_day": null
+      "time_of_day": null,
+      "weather": "snow",
+      "source": "title"
     },
     "notes": {
       "geo": null,
@@ -2107,6 +2263,8 @@
     "exclude_reason": null,
     "published": null,
     "published_confidence": null,
+    "published_year": 1880,
+    "published_year_source": "jpsearch:tokyomuseumcolection",
     "viewpoint": {
       "lat": null,
       "lng": null,
@@ -2131,7 +2289,9 @@
       "modern_town_km": 0.14
     },
     "conditions": {
-      "time_of_day": null
+      "time_of_day": null,
+      "weather": null,
+      "source": null
     },
     "notes": {
       "geo": "題名「弁慶堀」＝弁慶濠（皇居外堀の一部）。桜田門在其東北 1.3km，與題名的「櫻田」相符。",
@@ -2161,6 +2321,8 @@
     "exclude_reason": null,
     "published": null,
     "published_confidence": null,
+    "published_year": 1880,
+    "published_year_source": "jpsearch:tokyomuseumcolection",
     "viewpoint": {
       "lat": null,
       "lng": null,
@@ -2186,7 +2348,9 @@
       "modern_town_km": 0.16
     },
     "conditions": {
-      "time_of_day": null
+      "time_of_day": null,
+      "weather": null,
+      "source": null
     },
     "notes": {
       "geo": null,
@@ -2216,6 +2380,8 @@
     "exclude_reason": null,
     "published": null,
     "published_confidence": null,
+    "published_year": 1880,
+    "published_year_source": "jpsearch:arc_nishikie",
     "viewpoint": {
       "lat": null,
       "lng": null,
@@ -2241,7 +2407,9 @@
       "modern_town_km": 0.17
     },
     "conditions": {
-      "time_of_day": null
+      "time_of_day": "night",
+      "weather": "fireworks",
+      "source": "title"
     },
     "notes": {
       "geo": null,
@@ -2271,6 +2439,8 @@
     "exclude_reason": null,
     "published": null,
     "published_confidence": null,
+    "published_year": 1877,
+    "published_year_source": "jpsearch:arc_nishikie",
     "viewpoint": {
       "lat": null,
       "lng": null,
@@ -2296,7 +2466,9 @@
       "modern_town_km": 0.09
     },
     "conditions": {
-      "time_of_day": null
+      "time_of_day": null,
+      "weather": null,
+      "source": null
     },
     "notes": {
       "geo": null,
@@ -2326,6 +2498,8 @@
     "exclude_reason": null,
     "published": null,
     "published_confidence": null,
+    "published_year": 1880,
+    "published_year_source": "jpsearch:arc_nishikie",
     "viewpoint": {
       "lat": null,
       "lng": null,
@@ -2350,7 +2524,9 @@
       "modern_town_km": 0.16
     },
     "conditions": {
-      "time_of_day": null
+      "time_of_day": null,
+      "weather": null,
+      "source": null
     },
     "notes": {
       "geo": "題名「大川富士見渡」逐字對上 Wikidata「富士見の渡し」（隅田川にあった渡し船のひとつ）。⚠️ 自動比對把「富士見」比成了練馬的富士見台一帶，這筆是更正。",
@@ -2380,6 +2556,8 @@
     "exclude_reason": null,
     "published": null,
     "published_confidence": null,
+    "published_year": 1880,
+    "published_year_source": "jpsearch:tokyo",
     "viewpoint": {
       "lat": null,
       "lng": null,
@@ -2393,7 +2571,9 @@
       "modern_landmark": null
     },
     "conditions": {
-      "time_of_day": null
+      "time_of_day": null,
+      "weather": null,
+      "source": null
     },
     "notes": {
       "geo": null,
@@ -2423,6 +2603,8 @@
     "exclude_reason": null,
     "published": null,
     "published_confidence": null,
+    "published_year": 1877,
+    "published_year_source": "jpsearch:arc_nishikie",
     "viewpoint": {
       "lat": null,
       "lng": null,
@@ -2447,7 +2629,9 @@
       "modern_town_km": 0.11
     },
     "conditions": {
-      "time_of_day": null
+      "time_of_day": null,
+      "weather": null,
+      "source": null
     },
     "notes": {
       "geo": "御蔵橋不在 OSM；題名另一個地名「本所」有座標。⚠️ 街區級，本所很大。",
@@ -2477,6 +2661,8 @@
     "exclude_reason": null,
     "published": null,
     "published_confidence": null,
+    "published_year": 1880,
+    "published_year_source": "jpsearch:bibnl",
     "viewpoint": {
       "lat": null,
       "lng": null,
@@ -2501,7 +2687,9 @@
       "modern_town_km": 0.09
     },
     "conditions": {
-      "time_of_day": null
+      "time_of_day": null,
+      "weather": null,
+      "source": null
     },
     "notes": {
       "geo": "OSM 三座常盤橋。取這座的依據：同一畫帖的一石橋是 way/552407565（相鄰的 way id，同一批匯入），兩者相距 60m 同在日本橋川；另兩座在 8km 以上的西邊。紙幣寮（今・国立印刷局的前身）當時在常盤橋内。",
@@ -2531,6 +2719,8 @@
     "exclude_reason": null,
     "published": null,
     "published_confidence": null,
+    "published_year": 1880,
+    "published_year_source": "jpsearch:tokyomuseumcolection",
     "viewpoint": {
       "lat": null,
       "lng": null,
@@ -2544,7 +2734,9 @@
       "modern_landmark": null
     },
     "conditions": {
-      "time_of_day": null
+      "time_of_day": "dawn",
+      "weather": null,
+      "source": "title"
     },
     "notes": {
       "geo": null,
@@ -2574,6 +2766,8 @@
     "exclude_reason": null,
     "published": null,
     "published_confidence": null,
+    "published_year": 1880,
+    "published_year_source": "jpsearch:tokyomuseumcolection",
     "viewpoint": {
       "lat": null,
       "lng": null,
@@ -2599,7 +2793,9 @@
       "modern_town_km": 0.0
     },
     "conditions": {
-      "time_of_day": null
+      "time_of_day": "dusk",
+      "weather": null,
+      "source": "title"
     },
     "notes": {
       "geo": null,
@@ -2629,6 +2825,8 @@
     "exclude_reason": null,
     "published": null,
     "published_confidence": null,
+    "published_year": null,
+    "published_year_source": null,
     "viewpoint": {
       "lat": null,
       "lng": null,
@@ -2654,7 +2852,9 @@
       "modern_town_km": 0.19
     },
     "conditions": {
-      "time_of_day": null
+      "time_of_day": null,
+      "weather": "rain",
+      "source": "title"
     },
     "notes": {
       "geo": null,
@@ -2684,6 +2884,8 @@
     "exclude_reason": null,
     "published": null,
     "published_confidence": null,
+    "published_year": 1880,
+    "published_year_source": "jpsearch:tokyomuseumcolection",
     "viewpoint": {
       "lat": null,
       "lng": null,
@@ -2697,7 +2899,9 @@
       "modern_landmark": null
     },
     "conditions": {
-      "time_of_day": null
+      "time_of_day": "night",
+      "weather": "rain",
+      "source": "title"
     },
     "notes": {
       "geo": null,
@@ -2727,6 +2931,8 @@
     "exclude_reason": null,
     "published": null,
     "published_confidence": null,
+    "published_year": 1880,
+    "published_year_source": "jpsearch:tokyomuseumcolection",
     "viewpoint": {
       "lat": null,
       "lng": null,
@@ -2752,7 +2958,9 @@
       "modern_town_km": 0.17
     },
     "conditions": {
-      "time_of_day": null
+      "time_of_day": null,
+      "weather": null,
+      "source": null
     },
     "notes": {
       "geo": null,
@@ -2782,6 +2990,8 @@
     "exclude_reason": null,
     "published": null,
     "published_confidence": null,
+    "published_year": null,
+    "published_year_source": null,
     "viewpoint": {
       "lat": null,
       "lng": null,
@@ -2795,7 +3005,9 @@
       "modern_landmark": null
     },
     "conditions": {
-      "time_of_day": null
+      "time_of_day": null,
+      "weather": null,
+      "source": null
     },
     "notes": {
       "geo": null,
@@ -2825,6 +3037,8 @@
     "exclude_reason": null,
     "published": null,
     "published_confidence": null,
+    "published_year": 1881,
+    "published_year_source": "jpsearch:tokyo",
     "viewpoint": {
       "lat": null,
       "lng": null,
@@ -2838,7 +3052,9 @@
       "modern_landmark": null
     },
     "conditions": {
-      "time_of_day": null
+      "time_of_day": null,
+      "weather": null,
+      "source": null
     },
     "notes": {
       "geo": null,
@@ -2868,6 +3084,8 @@
     "exclude_reason": "箱根，畫框外",
     "published": null,
     "published_confidence": null,
+    "published_year": null,
+    "published_year_source": null,
     "viewpoint": {
       "lat": null,
       "lng": null,
@@ -2911,6 +3129,8 @@
     "exclude_reason": "箱根，畫框外",
     "published": null,
     "published_confidence": null,
+    "published_year": null,
+    "published_year_source": null,
     "viewpoint": {
       "lat": null,
       "lng": null,
@@ -2954,6 +3174,8 @@
     "exclude_reason": "靜物",
     "published": null,
     "published_confidence": null,
+    "published_year": null,
+    "published_year_source": null,
     "viewpoint": {
       "lat": null,
       "lng": null,
@@ -2997,6 +3219,8 @@
     "exclude_reason": null,
     "published": null,
     "published_confidence": "blank",
+    "published_year": null,
+    "published_year_source": null,
     "viewpoint": {
       "lat": null,
       "lng": null,
@@ -3021,7 +3245,9 @@
       "modern_town_km": 0.2
     },
     "conditions": {
-      "time_of_day": null
+      "time_of_day": null,
+      "weather": null,
+      "source": null
     },
     "notes": {
       "geo": "題名「新橋ステンション」＝新橋停車場。Wikidata「旧新橋停車場 鉄道歴史展示室」建在原址。⚠️ 自動比對會取到今天的新橋駅（東北 1km），不是同一個地方。",
@@ -3051,6 +3277,8 @@
     "exclude_reason": null,
     "published": null,
     "published_confidence": "blank",
+    "published_year": 1877,
+    "published_year_source": "jpsearch:arc_nishikie",
     "viewpoint": {
       "lat": null,
       "lng": null,
@@ -3076,7 +3304,9 @@
       "modern_town_km": 0.15
     },
     "conditions": {
-      "time_of_day": null
+      "time_of_day": "night",
+      "weather": null,
+      "source": "title"
     },
     "notes": {
       "geo": null,
@@ -3106,6 +3336,8 @@
     "exclude_reason": null,
     "published": null,
     "published_confidence": "decade",
+    "published_year": 1881,
+    "published_year_source": "jpsearch:tokyomuseumcolection",
     "viewpoint": {
       "lat": null,
       "lng": null,
@@ -3131,7 +3363,9 @@
       "modern_town_km": 0.17
     },
     "conditions": {
-      "time_of_day": null
+      "time_of_day": null,
+      "weather": "fire",
+      "source": "title"
     },
     "notes": {
       "geo": null,
@@ -3161,6 +3395,8 @@
     "exclude_reason": null,
     "published": "1881",
     "published_confidence": "year",
+    "published_year": 1881,
+    "published_year_source": "jpsearch:arc_nishikie",
     "viewpoint": {
       "lat": null,
       "lng": null,
@@ -3186,7 +3422,9 @@
       "modern_town_km": 0.05
     },
     "conditions": {
-      "time_of_day": null
+      "time_of_day": null,
+      "weather": "fire",
+      "source": "title"
     },
     "notes": {
       "geo": null,
@@ -3216,6 +3454,8 @@
     "exclude_reason": null,
     "published": null,
     "published_confidence": null,
+    "published_year": null,
+    "published_year_source": null,
     "viewpoint": {
       "lat": null,
       "lng": null,
@@ -3240,7 +3480,9 @@
       "modern_town_km": 0.05
     },
     "conditions": {
-      "time_of_day": null
+      "time_of_day": null,
+      "weather": "fire",
+      "source": "title"
     },
     "notes": {
       "geo": "Wikidata「日本橋久松町」。",
@@ -3270,6 +3512,8 @@
     "exclude_reason": null,
     "published": "1881",
     "published_confidence": "year",
+    "published_year": null,
+    "published_year_source": null,
     "viewpoint": {
       "lat": null,
       "lng": null,
@@ -3295,7 +3539,9 @@
       "modern_town_km": 0.17
     },
     "conditions": {
-      "time_of_day": null
+      "time_of_day": null,
+      "weather": "fire",
+      "source": "title"
     },
     "notes": {
       "geo": null,
@@ -3325,6 +3571,8 @@
     "exclude_reason": null,
     "published": null,
     "published_confidence": null,
+    "published_year": null,
+    "published_year_source": null,
     "viewpoint": {
       "lat": null,
       "lng": null,
@@ -3350,7 +3598,9 @@
       "modern_town_km": 0.15
     },
     "conditions": {
-      "time_of_day": null
+      "time_of_day": "dusk",
+      "weather": null,
+      "source": "title"
     },
     "notes": {
       "geo": null,
@@ -3380,6 +3630,8 @@
     "exclude_reason": null,
     "published": null,
     "published_confidence": null,
+    "published_year": 1881,
+    "published_year_source": "jpsearch:tokyomuseumcolection",
     "viewpoint": {
       "lat": null,
       "lng": null,
@@ -3393,7 +3645,9 @@
       "modern_landmark": null
     },
     "conditions": {
-      "time_of_day": null
+      "time_of_day": "dusk",
+      "weather": null,
+      "source": "title"
     },
     "notes": {
       "geo": null,
@@ -3423,6 +3677,8 @@
     "exclude_reason": null,
     "published": null,
     "published_confidence": null,
+    "published_year": 1881,
+    "published_year_source": "jpsearch:tokyomuseumcolection",
     "viewpoint": {
       "lat": null,
       "lng": null,
@@ -3436,7 +3692,9 @@
       "modern_landmark": null
     },
     "conditions": {
-      "time_of_day": null
+      "time_of_day": "night",
+      "weather": "rain",
+      "source": "title"
     },
     "notes": {
       "geo": null,
@@ -3466,6 +3724,8 @@
     "exclude_reason": null,
     "published": null,
     "published_confidence": null,
+    "published_year": 1881,
+    "published_year_source": "jpsearch:arc_nishikie",
     "viewpoint": {
       "lat": null,
       "lng": null,
@@ -3491,7 +3751,9 @@
       "modern_town_km": 0.17
     },
     "conditions": {
-      "time_of_day": null
+      "time_of_day": "night",
+      "weather": null,
+      "source": "title"
     },
     "notes": {
       "geo": null,
@@ -3521,6 +3783,8 @@
     "exclude_reason": null,
     "published": null,
     "published_confidence": null,
+    "published_year": 1881,
+    "published_year_source": "jpsearch:arc_nishikie",
     "viewpoint": {
       "lat": null,
       "lng": null,
@@ -3546,7 +3810,9 @@
       "modern_town_km": 0.17
     },
     "conditions": {
-      "time_of_day": null
+      "time_of_day": "night",
+      "weather": null,
+      "source": "title"
     },
     "notes": {
       "geo": null,
@@ -3576,6 +3842,8 @@
     "exclude_reason": null,
     "published": null,
     "published_confidence": null,
+    "published_year": 1881,
+    "published_year_source": "jpsearch:tokyomuseumcolection",
     "viewpoint": {
       "lat": null,
       "lng": null,
@@ -3601,7 +3869,9 @@
       "modern_town_km": 0.17
     },
     "conditions": {
-      "time_of_day": null
+      "time_of_day": null,
+      "weather": "snow",
+      "source": "title"
     },
     "notes": {
       "geo": null,
@@ -3631,6 +3901,8 @@
     "exclude_reason": null,
     "published": null,
     "published_confidence": null,
+    "published_year": 1881,
+    "published_year_source": "jpsearch:arc_nishikie",
     "viewpoint": {
       "lat": null,
       "lng": null,
@@ -3656,7 +3928,9 @@
       "modern_town_km": 0.0
     },
     "conditions": {
-      "time_of_day": null
+      "time_of_day": "night",
+      "weather": "moon",
+      "source": "title"
     },
     "notes": {
       "geo": null,
@@ -3686,6 +3960,8 @@
     "exclude_reason": null,
     "published": null,
     "published_confidence": null,
+    "published_year": 1881,
+    "published_year_source": "jpsearch:tokyomuseumcolection",
     "viewpoint": {
       "lat": null,
       "lng": null,
@@ -3711,7 +3987,9 @@
       "modern_town_km": 0.0
     },
     "conditions": {
-      "time_of_day": null
+      "time_of_day": "night",
+      "weather": "fireworks",
+      "source": "title"
     },
     "notes": {
       "geo": null,
@@ -3741,6 +4019,8 @@
     "exclude_reason": null,
     "published": null,
     "published_confidence": null,
+    "published_year": 1881,
+    "published_year_source": "jpsearch:tokyomuseumcolection",
     "viewpoint": {
       "lat": null,
       "lng": null,
@@ -3765,7 +4045,9 @@
       "modern_town_km": 0.01
     },
     "conditions": {
-      "time_of_day": null
+      "time_of_day": null,
+      "weather": null,
+      "source": null
     },
     "notes": {
       "geo": "Wikidata「日本橋大伝馬町」。大丸（呉服店）當時在此。",
@@ -3795,6 +4077,8 @@
     "exclude_reason": "新版三十二相（滑稽畫，非風景）",
     "published": null,
     "published_confidence": null,
+    "published_year": null,
+    "published_year_source": null,
     "viewpoint": {
       "lat": null,
       "lng": null,
@@ -3838,6 +4122,8 @@
     "exclude_reason": "新版三十二相（滑稽畫，非風景）",
     "published": null,
     "published_confidence": null,
+    "published_year": null,
+    "published_year_source": null,
     "viewpoint": {
       "lat": null,
       "lng": null,
@@ -3881,6 +4167,8 @@
     "exclude_reason": "新版三十二相（滑稽畫，非風景）",
     "published": null,
     "published_confidence": null,
+    "published_year": null,
+    "published_year_source": null,
     "viewpoint": {
       "lat": null,
       "lng": null,
@@ -3924,6 +4212,8 @@
     "exclude_reason": "新版三十二相（滑稽畫，非風景）",
     "published": null,
     "published_confidence": null,
+    "published_year": null,
+    "published_year_source": null,
     "viewpoint": {
       "lat": null,
       "lng": null,
@@ -3967,6 +4257,8 @@
     "exclude_reason": "新版三十二相（滑稽畫，非風景）",
     "published": null,
     "published_confidence": null,
+    "published_year": null,
+    "published_year_source": null,
     "viewpoint": {
       "lat": null,
       "lng": null,
@@ -4010,6 +4302,8 @@
     "exclude_reason": "新版三十二相（滑稽畫，非風景）",
     "published": null,
     "published_confidence": null,
+    "published_year": null,
+    "published_year_source": null,
     "viewpoint": {
       "lat": null,
       "lng": null,
@@ -4053,6 +4347,8 @@
     "exclude_reason": "新版三十二相（滑稽畫，非風景）",
     "published": null,
     "published_confidence": null,
+    "published_year": null,
+    "published_year_source": null,
     "viewpoint": {
       "lat": null,
       "lng": null,
@@ -4096,6 +4392,8 @@
     "exclude_reason": "新版三十二相（滑稽畫，非風景）",
     "published": null,
     "published_confidence": null,
+    "published_year": null,
+    "published_year_source": null,
     "viewpoint": {
       "lat": null,
       "lng": null,
@@ -4139,6 +4437,8 @@
     "exclude_reason": "井上安治（弟子）——Action Plan §5 待決定",
     "published": null,
     "published_confidence": null,
+    "published_year": null,
+    "published_year_source": null,
     "viewpoint": {
       "lat": null,
       "lng": null,
@@ -4182,6 +4482,8 @@
     "exclude_reason": "井上安治（弟子）——Action Plan §5 待決定",
     "published": null,
     "published_confidence": null,
+    "published_year": null,
+    "published_year_source": null,
     "viewpoint": {
       "lat": null,
       "lng": null,
@@ -4225,6 +4527,8 @@
     "exclude_reason": "井上安治（弟子）——Action Plan §5 待決定",
     "published": null,
     "published_confidence": null,
+    "published_year": null,
+    "published_year_source": null,
     "viewpoint": {
       "lat": null,
       "lng": null,
@@ -4268,6 +4572,8 @@
     "exclude_reason": "井上安治（弟子）——Action Plan §5 待決定",
     "published": null,
     "published_confidence": null,
+    "published_year": null,
+    "published_year_source": null,
     "viewpoint": {
       "lat": null,
       "lng": null,

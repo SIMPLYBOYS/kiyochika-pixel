@@ -155,6 +155,12 @@ def build():
         prev = {v["id"]: v for v in json.loads(old.read_text(encoding="utf-8"))}
     pubp = ROOT / "data" / "published.json"
     pub = json.loads(pubp.read_text(encoding="utf-8"))["published"] if pubp.exists() else {}
+    # 出版年有兩個來源，**分開存也分開讀**（見 fetch-dates.py 檔頭）：
+    #   published        ＝ 版上奧付的御届日期，我自己判讀的（10 幅）
+    #   published_year   ＝ 館方斷代，Japan Search 查的（51 幅）
+    # 這裡只把兩者並列進 views.json，⛔ 不合併成一欄——合併就分不出證據等級了。
+    extp = ROOT / "data" / "dates-external.json"
+    ext = json.loads(extp.read_text(encoding="utf-8"))["dates"] if extp.exists() else {}
     views = []
     for line in TITLES:
         n, title = line.split(" ", 1)
@@ -170,6 +176,8 @@ def build():
             # 御届年月要從畫面欄外讀（Phase 0 第二步），Commons metadata 只有年
             "published": (pub.get(str(n)) or {}).get("value"),
             "published_confidence": (pub.get(str(n)) or {}).get("confidence"),
+            "published_year": (ext.get(str(n)) or {}).get("year"),
+            "published_year_source": (ext.get(str(n)) or {}).get("source"),
             "viewpoint": {"lat": None, "lng": None, "confidence": "unknown"},
             "subject": None,
             "bearing": None,
@@ -236,7 +244,12 @@ def main():
     kept = sum(1 for v in inc if v["subject"])
     print(f"帶過既有座標 {kept} 筆（derive-subject.py 填的，這支不動它）")
     dated = [v for v in inc if v["published"]]
-    print(f"有出版日期 {len(dated)} 筆（data/published.json）：" + "，".join(f"{v['id']}={v['published']}" for v in dated))
+    print(f"奧付判讀 {len(dated)} 筆（published.json）：" + "，".join(f"{v['id']}={v['published']}" for v in dated))
+    ey = [v for v in inc if v["published_year"]]
+    lit = [v for v in inc if (v.get("conditions") or {}).get("time_of_day") or (v.get("conditions") or {}).get("weather")]
+    print(f"館方年份 {len(ey)} 筆（dates-external.json）／兩者聯集 "
+          f"{len({v['id'] for v in inc if v['published'] or v['published_year']})} 筆")
+    print(f"有光線條件 {len(lit)} 筆（derive-light.py）")
 
     out = ROOT / "data" / "views.json"
     out.parent.mkdir(exist_ok=True)
