@@ -277,17 +277,43 @@ for (const [name, size] of [['桌機 1440×900', { width: 1440, height: 900 }],
   ok(/thumb/.test(v0.src) && !v0.px && /16 色/.test(v0.label)
      && /pixel/.test(v1.src) && v1.px && /真跡/.test(v1.label),
      `預設真跡、按鈕說得出按下去會看到什麼（${v0.label} → ${v1.label}）`);
-  // 動態版（生成的那一層）：🔴 **沒有片子就不該有那顆鈕**；有片子的話，
-  // 畫面上必須一直掛著「AI 生成・非原作」——⛔ 說明文字裡提一句不算。
+  // 生成的那一層：🔴 **沒有片子就不該有那顆鈕**。
   const gen = await page.evaluate(async () => {
     const m = await fetch('data/motion.json').then(r => r.json()).catch(() => ({ clips: [] }));
     const id = +document.querySelector('#map .mark.sel')?.dataset.id;
-    return { clips: (m.clips || []).length, hasClip: (m.clips || []).some(c => c.id === id),
+    return { clips: (m.clips || []).map(c => ({ id: c.id, kind: c.kind ?? 'atmosphere',
+                                                n: (c.differs || []).length })),
+             hasClip: (m.clips || []).some(c => c.id === id),
              btn: !!document.querySelector('#panel #anim') };
   });
   ok(gen.btn === gen.hasClip,
-     gen.clips ? `動態版：有片子的景才有那顆鈕（clips ${gen.clips}）`
-               : '動態版：還沒有片子，所以那顆鈕不存在（⛔ 不留按了沒東西的鈕）');
+     gen.clips.length ? `AI 重繪版：有片子的景才有那顆鈕（clips ${gen.clips.length}）`
+                      : 'AI 重繪版：還沒有片子，所以那顆鈕不存在（⛔ 不留按了沒東西的鈕）');
+  // 🔴 承認重畫了，就得說得出重畫了什麼。⛔ kind=reinterpretation 而 differs 是空的＝
+  // 掛了牌卻不講內容，那跟沒掛一樣（規矩寫在 data/motion.json 的 _rule）。
+  if (gen.clips.length) {
+    ok(gen.clips.every(c => c.kind === 'atmosphere' ? c.n === 0 : c.n > 0),
+       `重繪版列得出差異（${gen.clips.map(c => `no.${c.id} ${c.kind} ${c.n} 條`).join('、')}）`);
+  }
+  // 有那顆鈕的話就按下去：畫面上必須掛著「非原作」，旁邊必須印出那份差異清單——
+  // ⛔ 說明文字裡提一句「AI 生成」不算，那講的是怎麼做的，不是哪幾樣不是清親畫的。
+  if (gen.btn) {
+    await page.locator('#panel #anim').click();
+    await sleep(200);
+    const shown = await page.evaluate(() => ({
+      video: !!document.querySelector('#panel #art video'),
+      badge: document.querySelector('#panel #art .gen')?.textContent ?? '',
+      items: document.querySelectorAll('#panel .differs li').length,
+      marks: document.querySelector('#panel #art').classList.contains('nomarks'),
+    }));
+    const selId = await page.evaluate(() => +document.querySelector('#map .mark.sel')?.dataset.id);
+    const want = gen.clips.find(c => c.id === selId);
+    ok(shown.video && /非原作/.test(shown.badge) && shown.marks
+       && shown.items === (want?.n ?? 0),
+       `按下去是影片、掛著「${shown.badge}」、印出 ${shown.items} 條差異、標註關掉`);
+    await page.locator('#panel #anim').click();   // ⚠️ 轉回真跡，⛔ 不要把狀態留給下一項
+    await sleep(200);
+  }
 
   // 十六色：quantize.py 算出來的那 16 色，⚠️ palettes.json 產出至今沒人讀過
   ok(v0.pal === 16 && /平均明度 \d+/.test(v0.cap),

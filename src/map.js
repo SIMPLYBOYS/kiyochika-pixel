@@ -270,6 +270,9 @@ export function createMap(svg, views, geo, places, onPick) {
     // 依據記在 views.json 的 place.anchor.confidence，這裡只是把它畫出來。
     const conf = (v.place && v.place.anchor && v.place.anchor.confidence) || 'district';
     g.setAttribute('class', `mark ${conf === 'osm' || conf === 'wikidata' ? 'exact' : 'approx'}`);
+    // ⚠️ 驗收腳本靠這個認出「現在選的是哪一景」。沒有它，`dataset.id` 是 undefined，
+    // 而 `+undefined` 是 NaN ⇒ 比對永遠不成立，測試會安靜地通過（動態版那一項就是這樣）。
+    g.dataset.id = v.id;
     // 有方位角的畫一道視線扇形——那是 §7-15 從畫中地標推出來的廣重視線方向，
     // 不確定度約 ±30°，所以畫成扇形不是箭頭：形狀本身就在說「大概往這邊」。
     // 形狀一律畫在原點、用「螢幕像素」當單位，實際位置與大小交給 transform。

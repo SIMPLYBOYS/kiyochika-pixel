@@ -116,10 +116,13 @@ function here(v) {
     ${n.marker ? `<dt class="mk">碑</dt><dd class="mk">${n.marker.name}<small> ${n.marker.m}m</small></dd>` : ''}`;
 }
 
-// ── 動態版：這個 repo 唯一一層生成出來的東西 ──────────────────
-// 🔴 規矩寫在 data/motion.json 的 _rule：只動氛圍不動內容、原畫當底只讓遮罩內動、
-// 畫面上固定標「AI 生成・非原作」、⛔ 不進畫卷不進收藏不算進度。
-// 🔑 這一層的「出處」＝**可重現**：模型、日期、prompt、遮罩都記在資料檔裡。
+// ── AI 重繪版：這個 repo 唯一一層生成出來的東西 ──────────────
+// 🔴 這一支**不是那幅畫動起來，是模型照那幅畫重畫的另一件作品**——量過的：構圖位移
+// 尖峰 21.5（只動光約 6），閃電換了形狀、還多出一個撐傘的人。⇒ 那就照這樣掛牌。
+// 🔑 重畫不是罪，冒充原作才是。所以它①永遠帶著「AI 重繪・非原作」②把**差在哪
+// 一條一條印給玩家看**（clip.differs，寫在 data/motion.json）③不進畫卷不進收藏不算進度。
+// ⛔ 也沒有剪掉重畫最明顯的那幾秒：那只會做出一支「看起來比較忠實」的片子。
+// （這個決定的來龍去脈記在 data/motion.json 的 _decision。）
 // ⚠️ 沒有片子就當這個功能不存在（⛔ 不要留一顆按了沒東西的鈕）。
 const clipOf = v => (motion.clips ?? []).find(c => c.id === v.id);
 
@@ -218,7 +221,7 @@ function pick(v) {
     <div id="art" class="${marks ? '' : 'nomarks'}"><img src="${thumb(v)}" alt="${v.title.ja}">${got ? spots(v) : ''}</div>
     ${got ? `<button id="mark" class="wide">${marks ? '隱藏標註' : '顯示標註'}</button>
              <button id="flip" class="wide">16 色：看光的骨架</button>
-             ${clipOf(v) ? '<button id="anim" class="wide">動態版 <small>AI 生成</small></button>' : ''}` : ''}
+             ${clipOf(v) ? '<button id="anim" class="wide">AI 重繪版 <small>非原作</small></button>' : ''}` : ''}
     <button id="big" class="wide">看原寸</button>
     ${!b ? '<button id="take" class="wide take">收入畫帖</button>'
         : b.why === 'got' ? ''          // 收過了不必再說一次，上面的提示已經在講這件事
@@ -252,20 +255,27 @@ function pick(v) {
     $('art').classList.toggle('nomarks', !marks);
     mark.textContent = marks ? '隱藏標註' : '顯示標註';
   };
-  // 動態版：把 <img> 換成 <video>，並且**永遠**帶著那條標示。
+  // AI 重繪版：把 <img> 換成 <video>，並且**永遠**帶著那條標示與那份差異清單。
   const clip = clipOf(v);
   const anim = $('anim');
   if (anim && clip) anim.onclick = () => {
     const art = $('art');
     const on = !art.querySelector('video');
     art.querySelector('video, img')?.remove();
+    art.parentNode.querySelector('.differs')?.remove();
     if (on) {
       art.insertAdjacentHTML('afterbegin', `
         <video autoplay loop muted playsinline>
           <source src="${clip.file}" type="video/webm">
           <source src="${clip.file.replace(/\.webm$/, '.mp4')}" type="video/mp4">
         </video>
-        <b class="gen">AI 生成・非原作</b>`);
+        <b class="gen">AI 重繪・非原作</b>`);
+      // 🔴 差在哪就寫在旁邊。⛔ 不是「說明文字裡提一句 AI 生成」就算——那句話講的是
+      // 怎麼做的，玩家真正需要知道的是**畫面上哪幾樣不是清親畫的**。
+      art.insertAdjacentHTML('afterend', `<div class="differs">
+        <b>這一段不是清親畫的，差在這幾處</b>
+        <ul>${(clip.differs ?? []).map(x => `<li>${x}</li>`).join('')}</ul>
+        <small>${clip.model}・${clip.date}　位移量測見 data/motion.json</small></div>`);
       // ⛔ 標註在這一層關掉：生成的每一格未必跟原畫對得上，標在上面就是在替它背書
       art.classList.add('nomarks');
     } else {
@@ -273,8 +283,8 @@ function pick(v) {
       art.insertAdjacentHTML('afterbegin', `<img src="${thumb(v)}" alt="${v.title.ja}">`);
       art.classList.toggle('nomarks', !marks);
     }
-    anim.textContent = on ? '回到真跡' : '動態版 ';
-    if (!on) anim.insertAdjacentHTML('beforeend', '<small>AI 生成</small>');
+    anim.textContent = on ? '回到真跡' : 'AI 重繪版 ';
+    if (!on) anim.insertAdjacentHTML('beforeend', '<small>非原作</small>');
     fitArt(v);
   };
   const flip = $('flip');
