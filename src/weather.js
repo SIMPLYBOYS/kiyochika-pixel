@@ -13,7 +13,13 @@
 
 const FLAKES = 90;                 // 雪。再多就從「下雪」變成「暴風雪」
 const DROPS = 70;
-const LIGHT = /燈|灯|火|光|明/;    // 標註名字帶這些字的才當成燈火
+// 標註的名字就是證據：人工挑過、也命名過，⛔ 不是我看圖猜那裡有燈或有水。
+const LIGHT = /燈|灯|火|光|明|煙火/;
+// 🔴 本來還想做「水光」，撤掉了：標註裡**沒有一個點是水本身**——
+// 「渡船上的人」「岸上的人」「對岸的屋」講的是船上的人、岸上的人、對岸的屋，
+// 用 /水|舟|岸/ 去比對，亮線就會畫在人臉與屋頂上。⇒ 那是「看起來合理」的錯，
+// 而這個 repo 抓過六次同型（見 README〈五個看起來合理的錯〉）。
+// 唯二真的是水的兩個標註（水上的光・河面的燈火）本來就被上面那條 LIGHT 收走了。
 
 const rnd = (a, b) => a + Math.random() * (b - a);
 
@@ -25,9 +31,12 @@ const rnd = (a, b) => a + Math.random() * (b - a);
 export function weather(art, v) {
   const c = v.conditions || {};
   const kind = c.weather === 'snow' ? 'snow' : c.weather === 'rain' ? 'rain' : null;
-  // 夜與夕才點燈；而且要真的有人挑過的燈火座標
-  const lamps = ['night', 'dusk'].includes(c.time_of_day)
-    ? (v.details ?? []).filter(d => LIGHT.test(d.label ?? '')) : [];
+  const det = v.details ?? [];
+  // 🔴 燈火**不再看題名有沒有寫時刻**：證據是那個標註本身（「這裡有一盞瓦斯燈」是
+  // 人挑過也命名過的），題名寫不寫「夜」是另一回事。第一版加了時刻這道閘，
+  // 結果 59 幅裡只有 17 幅動得起來（Aaron：「幾乎很少有畫作看得到效果」）。
+  const lamps = det.filter(d => LIGHT.test(d.label ?? ''));
+  // 水光：標註說那裡是水或船，就讓那一帶泛一點光。⛔ 不讓船動、不讓人動。
   if (!kind && !lamps.length) return () => {};
 
   const cv = document.createElement('canvas');
