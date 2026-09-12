@@ -323,8 +323,12 @@ for (const [name, size] of [['桌機 1440×900', { width: 1440, height: 900 }],
   await page.locator('#who').click();
   await sleep(300);
   const card = await page.locator('#card.on #card-body').innerText().catch(() => '');
-  ok(card.includes('小林清親') && card.includes('光線畫') && card.includes('CC BY-SA'),
-     '清親卡片有作者與畫風兩條，並標了出處');   // ⚠️ 繁中之後是「光線畫」不是「光線画」
+  // ⚠️ 繁中之後是「光線畫」不是「光線画」。生平要有三節（出身・成為繪師・弟子），
+  // ⛔ 不是導言那兩句——那兩句講不出他是誰。延伸閱讀是連結，⛔ 不抄文章的字。
+  ok(card.includes('小林清親') && card.includes('光線畫') && card.includes('CC BY-SA')
+     && card.includes('鳥羽・伏見') && card.includes('井上安治')
+     && card.includes('延伸閱讀') && card.includes('魏格曼'),
+     '清親卡片有小傳三節、師承的來源衝突、延伸閱讀與出處');
   // 🔴 卡片裡的連結本來沒設色，落回瀏覽器預設的藍——深藍底上幾乎看不見（實際發生過）
   const blue = await page.locator('#card a').first().evaluate(e => getComputedStyle(e).color);
   ok(blue !== 'rgb(0, 0, 238)', `卡片的連結看得見（${blue}）`);

@@ -53,15 +53,31 @@ def search(term, n=3):
     return [h["title"] for h in r.get("query", {}).get("search", [])]
 
 
-def intro(title, n=SENTENCES):
-    """回傳 (正式標題, 導言前幾句, QID, 網址)；找不到回 None。"""
-    r = wiki({"action": "query", "prop": "extracts|pageprops", "exintro": 1, "explaintext": 1,
-              "redirects": 1, "titles": title})
+def intro(title, n=SENTENCES, section=None):
+    """回傳 {title, text, wikidata, url}；找不到回 None。
+
+    section 給了就取那一節而不是導言——清親的生平在「浮世絵師となるまで」那幾節裡，
+    導言只有兩句（⛔ 而生平正是這一層最該講的東西）。"""
+    r = wiki({"action": "query", "prop": "extracts|pageprops", "explaintext": 1,
+              "redirects": 1, "titles": title, **({} if section else {"exintro": 1})})
     pages = r.get("query", {}).get("pages", [])
     if not pages or pages[0].get("missing"):
         return None
     p = pages[0]
-    text = " ".join((p.get("extract") or "").split())
+    raw = p.get("extract") or ""
+    if section:
+        # extracts 的純文字用「== 標題 ==」分節。⚠️ 標題要**完全相等**才取，
+        # ⛔ 不用包含比對——「作品」會撞到「作品一覧」。
+        blocks = re.split(r"\n=+ *(.+?) *=+\n", "\n" + raw)
+        found = None
+        for i in range(1, len(blocks) - 1, 2):
+            if blocks[i].strip() == section:
+                found = blocks[i + 1]
+                break
+        if found is None:
+            return None
+        raw = found
+    text = " ".join(raw.split())
     # 句號切句。⚠️ 括號裡的句號不算（「1873年（明治6年）。」那種），所以只切「。」後面接非括號的
     parts = re.split(r"(?<=。)", text)
     body = "".join(parts[:n]).strip()
@@ -107,19 +123,27 @@ def propose():
 
 def write():
     topics = json.loads((ROOT / "data" / "topics.json").read_text(encoding="utf-8"))
-    wanted = {}                       # 條目 → 要幾句
+    # ⚠️ 鍵要含章節：清親的生平是同一個條目的三節，只用標題當鍵它們會互相蓋掉
+    # （第一版就是這樣，三節寫出來變成同一段導言）。⇒ 鍵是「條目#章節」。
+    wanted = {}                       # 鍵 → (條目, 章節, 要幾句)
     for sec in ("places", "things", "notes"):
         for v in (topics.get(sec) or {}).values():
-            name, n = (v, SENTENCES) if isinstance(v, str) else (v["title"], v.get("n", SENTENCES))
-            wanted[name] = max(wanted.get(name, 0), n)
+            if isinstance(v, str):
+                name, part, n = v, None, SENTENCES
+            else:
+                name, part, n = v["title"], v.get("section"), v.get("n", SENTENCES)
+            key = f"{name}#{part}" if part else name
+            wanted[key] = (name, part, max(wanted.get(key, (None, None, 0))[2], n))
     out, missing = {}, []
-    for t, n in sorted(wanted.items()):
-        d = intro(t, n)
+    for key, (t, part, n) in sorted(wanted.items()):
+        d = intro(t, n, section=part)
         if not d:
-            missing.append(t)
+            missing.append(key)
             continue
-        out[t] = d
-        print(f"  {t:<16}→ {d['title']}（{d['wikidata']}）{len(d['text'])} 字")
+        if part:
+            d = {**d, "title": f"{d['title']}・{part}", "url": d["url"] + "#" + urllib.parse.quote(part)}
+        out[key] = d
+        print(f"  {key:<28}→ {len(d['text'])} 字")
         time.sleep(0.15)
     assert not missing, f"這些條目抓不到，⛔ 不寫出半套：{missing}"
     # 導言只有一句半的多半是**曖昧頁**（「浜町（はまちょう、はままち）」那種）——

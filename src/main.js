@@ -123,7 +123,8 @@ function here(v) {
 // topics-text.json 給多語系用。譯文缺一條就退回原文——⛔ 寧可看到日文，不要開天窗。
 // ⚠️ CC BY-SA 允許翻譯，但條件是：標出處、說明改動過、同樣授權釋出 ⇒ 面板寫「譯自」。
 const topicOf = v => {
-  const name = typeof v === 'string' ? v : v?.title;
+  // ⚠️ 帶 section 的（清親的生平分三節）鍵是「條目#章節」——只用標題會三節互相蓋掉
+  const name = typeof v === 'string' ? v : v?.section ? `${v.title}#${v.section}` : v?.title;
   const ja = (topicText.items ?? {})[name];
   if (!ja) return null;
   const zh = (topicZh.items ?? {})[name];
@@ -356,10 +357,19 @@ window.__views = views;
 // 清親本人與「光線画」是什麼，一場看一次就夠——放在 HUD，不佔每一幅的面板
 const who = $('who');
 if (who) who.onclick = () => {
-  const a = topicOf((topicMap.notes ?? {})['作者']), b = topicOf((topicMap.notes ?? {})['様式']);
-  card('清親與光線畫', `${[a, b].filter(Boolean).map(t =>
+  const n = topicMap.notes ?? {};
+  // 生平分三節（出身・成為繪師・弟子），⛔ 不是導言那兩句——那兩句講不出他是誰
+  const parts = ['作者', '生い立ち', '絵師になるまで', '様式', '弟子'].map(k => topicOf(n[k])).filter(Boolean);
+  const conflict = (topicMap._conflict ?? {})['ワーグマンに師事'];
+  const links = topicMap.links ?? [];
+  card('清親與光線畫', `${parts.map(t =>
     `<b>${t.title}</b><br>${t.text}<br><a href="${t.url}" target="_blank" rel="noopener">維基百科（日文原文）↗</a>`
-  ).join('<br><br>')}<br><br><small>${(audio.tracks ?? []).length ? `配樂　${
+  ).join('<br><br>')}
+    ${conflict ? `<br><br><small class="warn">⚠️ ${conflict}</small>` : ''}
+    ${links.length ? `<br><br><b>延伸閱讀</b><br>${links.map(l =>
+      `<a href="${l.url}" target="_blank" rel="noopener">${l.title}</a><br>
+       <small>${l.who}<br>${l.why}</small>`).join('<br><br>')}` : ''}
+    <br><br><small>⛔ 延伸閱讀是**連結不是引用**：那些文章有版權，一個字都不抄。<br>${(audio.tracks ?? []).length ? `配樂　${
     audio.tracks.map(t => `${t.title}（${t.issue}）`).join('・')}<br>
     🔴 1876–1881 沒有錄音存在（留聲機 1877 年才發明）——這五首是 1925–31 年錄的
     **當時仍在演奏的曲目**，全為公有領域。<br>` : ''}譯自維基百科日本語版　CC BY-SA 4.0<br>

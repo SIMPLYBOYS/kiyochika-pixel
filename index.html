@@ -294,7 +294,12 @@
   #card { position:fixed; inset:0; display:none; place-items:center; z-index:20;
           background:#0a1622d9; padding:20px }
   #card.on { display:grid }
-  #card #card-body { max-width:520px; text-align:center; line-height:1.9 }
+  /* ⚠️ 清親那張卡片現在裝得下一篇小傳（三節）＋延伸閱讀 ⇒ 要捲得動，
+     長文也不該置中（讀起來會跳行）——只有標題置中。 */
+  #card #card-body { max-width:560px; text-align:left; line-height:1.9;
+                     max-height:84vh; overflow:auto; padding-right:6px }
+  #card #card-body > h2 { text-align:center }
+  #card #card-body a { word-break:break-all }
   #card h2 { font-size:22px; font-weight:normal; letter-spacing:.1em; margin-bottom:14px;
              color:var(--gold) }
   #card p { font-size:14px }
