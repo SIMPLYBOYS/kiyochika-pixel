@@ -122,6 +122,21 @@ def write():
         print(f"  {t:<16}→ {d['title']}（{d['wikidata']}）{len(d['text'])} 字")
         time.sleep(0.15)
     assert not missing, f"這些條目抓不到，⛔ 不寫出半套：{missing}"
+    # 導言只有一句半的多半是**曖昧頁**（「浜町（はまちょう、はままち）」那種）——
+    # 第一版就這樣誤用了浜町與神田川。字數短是那種錯最早的徵兆，所以報出來。
+    for t, d in sorted(out.items(), key=lambda kv: len(kv[1]["text"]))[:3]:
+        if len(d["text"]) < 30:
+            print(f"  ⚠️ {t} 只有 {len(d['text'])} 字——確認它不是曖昧頁")
+    # 譯文與原文不能悄悄分家：原文改版了就要重譯
+    zh = ROOT / "data" / "topics-zh.json"
+    if zh.exists():
+        items = json.loads(zh.read_text(encoding="utf-8")).get("items", {})
+        gone = [t for t in out if t not in items]
+        moved = [t for t, d in out.items() if t in items and items[t].get("ja") != len(d["text"])]
+        if gone:
+            print(f"  ⚠️ 還沒翻的 {len(gone)} 條：{gone}")
+        if moved:
+            print(f"  ⚠️ 維基原文改了、譯文要跟著更新的 {len(moved)} 條：{moved}")
     dest = ROOT / "data" / "topics-text.json"
     dest.write_text(json.dumps({"_": "維基百科導言，機器抓的；對應關係在 topics.json（人工）。"
                                      "逐字引用，授權 CC BY-SA 4.0，面板上標出處並連回原文。",

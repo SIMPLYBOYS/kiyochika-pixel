@@ -16,7 +16,7 @@ const grab = async url => {
   return r.json();
 };
 
-const [all, world, ml, refmaps, topicMap, topicText] = await Promise.all([
+const [all, world, ml, refmaps, topicMap, topicText, topicZh] = await Promise.all([
   grab('data/views.json'),
   grab('data/geo/modern.json'),
   // 地名只是裝飾，掛掉不該連地圖一起拖下水
@@ -24,6 +24,7 @@ const [all, world, ml, refmaps, topicMap, topicText] = await Promise.all([
   grab('data/reference-maps.json').catch(e => (console.warn('文獻地圖略過:', e), null)),
   grab('data/topics.json').catch(e => (console.warn('解說對應表略過:', e), {})),
   grab('data/topics-text.json').catch(e => (console.warn('解說略過:', e), { items: {} })),
+  grab('data/topics-zh.json').catch(e => (console.warn('解說譯文略過:', e), { items: {} })),
 ]);
 
 const views = all.filter(v => v.include);
@@ -109,11 +110,20 @@ function here(v) {
 // ⛔ 指不準就不給：柳島・駿賀町・萬代橋那幾幅留空，理由寫在 topics.json 的 _skip。
 // 為什麼不自己寫賞析：六十九段憑印象的畫論，正是這個 repo 一路在拒絕的東西。
 // topics.json 的值可以是條目名，也可以是 {title, n}（少數條目要多抓幾句）
-const topicOf = v => (topicText.items ?? {})[typeof v === 'string' ? v : v?.title];
+// 🔴 顯示的是**繁中譯文**（data/topics-zh.json，人工翻的），日文原文原地留在
+// topics-text.json 給多語系用。譯文缺一條就退回原文——⛔ 寧可看到日文，不要開天窗。
+// ⚠️ CC BY-SA 允許翻譯，但條件是：標出處、說明改動過、同樣授權釋出 ⇒ 面板寫「譯自」。
+const topicOf = v => {
+  const name = typeof v === 'string' ? v : v?.title;
+  const ja = (topicText.items ?? {})[name];
+  if (!ja) return null;
+  const zh = (topicZh.items ?? {})[name];
+  return zh ? { ...ja, title: zh.title, text: zh.text } : ja;
+};
 const card1 = (t, tag, open) => t ? `
   <details${open ? ' open' : ''}>
     <summary>${t.title}${tag ? `<small>　${tag}</small>` : ''}</summary>
-    <p>${t.text}<br><a href="${t.url}" target="_blank" rel="noopener">ウィキペディア ↗</a></p>
+    <p>${t.text}<br><a href="${t.url}" target="_blank" rel="noopener">維基百科（日文原文）↗</a></p>
   </details>` : '';
 
 function reading(v) {
@@ -126,7 +136,7 @@ function reading(v) {
   return `<section class="read"><h3>解說</h3>
     ${card1(place, '這是什麼地方', true)}
     ${things.map(t => card1(t, '畫裡的東西')).join('')}
-    <p class="src">出典：ウィキペディア日本語版　CC BY-SA 4.0</p></section>`;
+    <p class="src">譯自維基百科日本語版　CC BY-SA 4.0</p></section>`;
 }
 
 function pick(v) {
@@ -327,8 +337,8 @@ const who = $('who');
 if (who) who.onclick = () => {
   const a = topicOf((topicMap.notes ?? {})['作者']), b = topicOf((topicMap.notes ?? {})['様式']);
   card('清親與光線畫', `${[a, b].filter(Boolean).map(t =>
-    `<b>${t.title}</b><br>${t.text}<br><a href="${t.url}" target="_blank" rel="noopener">ウィキペディア ↗</a>`
-  ).join('<br><br>')}<br><br><small>出典：ウィキペディア日本語版　CC BY-SA 4.0</small>`);
+    `<b>${t.title}</b><br>${t.text}<br><a href="${t.url}" target="_blank" rel="noopener">維基百科（日文原文）↗</a>`
+  ).join('<br><br>')}<br><br><small>譯自維基百科日本語版　CC BY-SA 4.0</small>`);
 };
 
 $('wait').onclick = wait;

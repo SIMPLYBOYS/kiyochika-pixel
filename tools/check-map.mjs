@@ -173,12 +173,18 @@ for (const [name, size] of [['桌機 1440×900', { width: 1440, height: 900 }],
   const read = await page.evaluate(() => {
     const sec = document.querySelector('#panel .read');
     if (!sec) return null;
-    return { n: sec.querySelectorAll('details').length,
+    // 解說本文要是繁中（日文原文留在 topics-text.json，多語系那次再上）。
+    // ⚠️ 只掃本文與標題，⛔ 不掃引號裡的日文詞（「ホーム」「釣り橋」那些是被解釋的對象）。
+    const body = [...sec.querySelectorAll('summary, p')]
+      .map(e => e.textContent).join('').replace(/[「『][^」』]*[」』]/g, '')
+      .replace(/譯自維基百科日本語版/g, '').replace(/維基百科（日文原文）/g, '');
+    return { kana: /[ぁ-んァ-ヶ]/.test(body),
+             n: sec.querySelectorAll('details').length,
              src: (sec.querySelector('.src')?.textContent || '').includes('CC BY-SA'),
              links: [...sec.querySelectorAll('a')].every(a => a.href.startsWith('https://ja.wikipedia.org/')) };
   });
-  ok(read && read.n >= 1 && read.src && read.links,
-     `解說有 ${read?.n ?? 0} 條，標了出處與授權、連得回維基百科`);
+  ok(read && read.n >= 1 && read.src && read.links && !read.kana,
+     `解說有 ${read?.n ?? 0} 條、是繁中、標了出處與授權、連得回維基百科`);
 
   // 🔴 換一幅畫，欄寬不能跳。倍率該由視窗決定，不由那一幅的高度決定——
   // 原本 58 新橋ステンション（480×312）顯示 480px、矮一點的畫顯示 960px。
@@ -208,8 +214,11 @@ for (const [name, size] of [['桌機 1440×900', { width: 1440, height: 900 }],
   await page.locator('#who').click();
   await sleep(300);
   const card = await page.locator('#card.on #card-body').innerText().catch(() => '');
-  ok(card.includes('小林清親') && card.includes('光線画') && card.includes('CC BY-SA'),
-     '清親卡片有作者與畫風兩條，並標了出處');
+  ok(card.includes('小林清親') && card.includes('光線畫') && card.includes('CC BY-SA'),
+     '清親卡片有作者與畫風兩條，並標了出處');   // ⚠️ 繁中之後是「光線畫」不是「光線画」
+  // 🔴 卡片裡的連結本來沒設色，落回瀏覽器預設的藍——深藍底上幾乎看不見（實際發生過）
+  const blue = await page.locator('#card a').first().evaluate(e => getComputedStyle(e).color);
+  ok(blue !== 'rgb(0, 0, 238)', `卡片的連結看得見（${blue}）`);
   await page.locator('#card-close').click();
   await sleep(200);
 

@@ -52,6 +52,7 @@ python3 tools/fetch-dates.py --write       # Japan Search → 館方斷代的出
 python3 tools/derive-light.py --write      # 題名 → 時刻與天候（conditions）
 python3 tools/fetch-topics.py --propose    # 解說條目提案 → research/_topics.md（⛔ 提案不是結果）
 python3 tools/fetch-topics.py --write      # 依 topics.json 抓維基導言 → topics-text.json
+                                           #（順便報：疑似曖昧頁、還沒翻的、原文改了要重譯的）
 python3 tools/derive-now.py --write        # 標高（GSI）＋最寄り駅・周邊・碑（OSM）→ views.json 的 now
 python3 tools/derive-details.py --sheet 4  # 細節候選（DoG，算在像素版上）＋ 判讀表
 python3 tools/apply-details.py --write     # 人工挑選 → views.json 的 details
@@ -79,7 +80,8 @@ data/
   dates-external.json Japan Search 查到的館方斷代年（⚠️ 與奧付判讀分開存，見下）
   palettes.json      每幅的 16 色色盤
   details.json       標註的挑選與命名（人工檔；label 繁中、label_ja 當初的判讀）
-topics.json        解說的條目對應（人工檔）／ topics-text.json 是抓下來的文字（機器）
+topics.json        解說的條目對應（人工檔）／ topics-zh.json 繁中譯文（人工檔）
+                   topics-text.json 是抓下來的日文原文（機器）
   details-candidates.json 機器提案的候選（⛔ 不是最終座標）
   inventory.json     Commons 盤點結果，交叉比對用
   geo/gazetteer.json OSM 具名地物索引（4.8MB）
@@ -255,8 +257,15 @@ edo-hyakkei 真的卡在 89/118 過，原因正是時間只能靠收景推進。
 面板下方的〈解說〉：一條「這是什麼地方」＋這一幅標註到的東西各一條。
 
 🔴 **六十九段畫論我一段都不寫。** 解說**逐字取自維基百科（日本語版）的導言**，
-標出處與授權（CC BY-SA 4.0）、連得回原文。我只做一件事：
-**決定哪一條目對應哪一幅畫／哪一個標註**，寫在 `data/topics.json`（人工檔）。
+標出處與授權（CC BY-SA 4.0）、連得回原文。我只做兩件事：
+**決定哪一條目對應哪一幅畫／哪一個標註**（`data/topics.json`），以及**把它譯成繁中**
+（`data/topics-zh.json`，74 條）。日文原文原地留在 `topics-text.json`——
+多語系那次直接拿來當 ja 版本，⛔ 不必重抓也不必重挑對應。
+
+⚠️ **翻譯在 CC BY-SA 底下是「改作」**，條件是標出處、說明改動過、同樣授權釋出
+⇒ 面板寫的是「**譯自**維基百科日本語版　CC BY-SA 4.0」，連結指日文原文。
+`topics-zh.json` 每一條記著翻譯當下**原文的字數**；維基改版而字數對不上時
+`fetch-topics.py --write` 會報出來 ⇒ **譯文與原文不會悄悄分家**。
 
 🔑 **對應比文字重要，也比文字容易錯。** `--propose` 只出提案表給人看，
 ⛔ 不自動採用搜尋第一名——那個第一名給過：
@@ -394,7 +403,7 @@ no.1 東京銀座街日報社 的天空就是這樣整片不見的——和紙 1
 | 出版年（館方斷代） | Japan Search 聚合：東京都江戸東京博物館・ARC 立命館錦絵・名古屋市博物館 等 | 各館目錄資料，僅取年份並記出處 |
 | 街圖向量・地名索引 | **OpenStreetMap** | **ODbL 1.0 — 必須標示 © OpenStreetMap contributors** |
 | 部分地名座標 | Wikidata | CC0 |
-| 解說文字 | ウィキペディア日本語版 | CC BY-SA 4.0（逐字引用，面板標出處並連回原文） |
+| 解說文字 | ウィキペディア日本語版 | CC BY-SA 4.0（繁中譯文為改作，面板標「譯自」並連回日文原文） |
 | 交叉比對 | Wikimedia Commons（LACMA／Honolulu／Rijksmuseum 掃描） | 公有領域 |
 | 程式 | | MIT |
 
