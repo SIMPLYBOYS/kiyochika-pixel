@@ -261,7 +261,27 @@ for (const [name, size] of [['桌機 1440×900', { width: 1440, height: 900 }],
     await sleep(250);
     const after = await page.locator('#count').textContent();
     ok(after !== before, `收得下去：${before} → ${after}`);
-    ok(await page.locator('#panel #flip').count() === 1, '收過的可以切像素／真跡');
+    // 🔴 預設看到的是**真跡**（像素版的資訊嚴格少於真跡，沒理由預設給降過質的），
+  // 像素版是明講的一個選擇；⛔ pixelated 也只能套在像素版上。
+  const view = async () => page.evaluate(() => ({
+    src: document.querySelector('#panel #art img').getAttribute('src'),
+    px: document.querySelector('#panel #art').classList.contains('px'),
+    label: document.querySelector('#panel #flip')?.textContent,
+    pal: document.querySelectorAll('#panel .pal .chips i').length,
+    cap: document.querySelector('#panel .pal p')?.textContent ?? '',
+  }));
+  const v0 = await view();
+  await page.locator('#panel #flip').click();
+  await sleep(400);
+  const v1 = await view();
+  ok(/thumb/.test(v0.src) && !v0.px && /16 色/.test(v0.label)
+     && /pixel/.test(v1.src) && v1.px && /真跡/.test(v1.label),
+     `預設真跡、按鈕說得出按下去會看到什麼（${v0.label} → ${v1.label}）`);
+  // 十六色：quantize.py 算出來的那 16 色，⚠️ palettes.json 產出至今沒人讀過
+  ok(v0.pal === 16 && /平均明度 \d+/.test(v0.cap),
+     `十六色色盤畫得出來（${v0.pal} 色・${(v0.cap.match(/平均明度 \d+/) || [''])[0]}）`);
+  await page.locator('#panel #flip').click();     // 轉回真跡，後面的檢查照原樣
+  await sleep(300);
   } else {
     ok(false, '第一個點開的景收不了（開場該有可收的）');
   }

@@ -152,7 +152,9 @@
      第一版只把圖置中、其餘靠左，桌機上差 140px，看起來就是跑版。 */
   #panel > #body { max-width:var(--col,640px); margin:0 auto }
   #panel #art { position:relative; margin:10px 0 }
-  #panel #art img { image-rendering:pixelated; display:block }   /* 像素版要銳利，不要被瀏覽器抹平 */
+  #panel #art img { display:block }
+  /* ⚠️ pixelated 只給像素版：真跡是照片，硬邊會讓它看起來像壓壞的 JPEG */
+  #panel #art.px img { image-rendering:pixelated }
   /* 標註：清親在這裡畫了什麼。像素版與真跡是同一個框（都是和紙），所以兩邊通用 */
   #panel #art.nomarks .spot { display:none }
   /* 天候層疊在畫上、標註下面。⛔ 不吃點擊：底下的畫還要能點 */
@@ -308,6 +310,16 @@
   #card small { opacity:.6; font-size:12px }
   #card button { margin-top:22px; padding:8px 24px; cursor:pointer; font-family:inherit;
                  background:none; color:var(--land); border:1px solid #ffffff44; border-radius:6px }
+  /* 十六色：把光的骨架攤開。⛔ 這不是裝飾色塊——它是 quantize.py 算出來的那 16 色 */
+  #panel .pal { margin-top:16px }
+  #panel .pal h3 { font-size:13px; font-weight:normal; letter-spacing:.14em;
+                   color:var(--gold); margin-bottom:8px }
+  #panel .pal .chips { display:flex; height:26px; border-radius:4px; overflow:hidden;
+                       border:1px solid #ffffff22 }
+  #panel .pal .chips i { flex:1 }
+  #panel .pal p { font-size:12px; line-height:1.85; opacity:.8; margin:8px 0 0 }
+  #panel .pal small { opacity:.62 }
+
   /* 解說。文字是維基百科導言逐字引用 ⇒ 出處與授權要在旁邊看得到 */
   #panel .read { margin-top:18px; border-top:1px solid #ffffff1a; padding-top:12px }
   #panel .read h3 { font-size:13px; font-weight:normal; letter-spacing:.14em;

@@ -20,7 +20,7 @@ const grab = async url => {
   return r.json();
 };
 
-const [all, world, ml, refmaps, topicMap, topicText, topicZh, audio] = await Promise.all([
+const [all, world, ml, refmaps, topicMap, topicText, topicZh, audio, palettes] = await Promise.all([
   grab('data/views.json'),
   grab('data/geo/modern.json'),
   // 地名只是裝飾，掛掉不該連地圖一起拖下水
@@ -30,6 +30,7 @@ const [all, world, ml, refmaps, topicMap, topicText, topicZh, audio] = await Pro
   grab('data/topics-text.json').catch(e => (console.warn('解說略過:', e), { items: {} })),
   grab('data/topics-zh.json').catch(e => (console.warn('解說譯文略過:', e), { items: {} })),
   grab('data/audio-tracks.json').catch(e => (console.warn('配樂略過:', e), { tracks: [] })),
+  grab('data/palettes.json').catch(e => (console.warn('色盤略過:', e), {})),
 ]);
 
 // 🔴 能玩的是**地圖上有的那些**。收錄 69 幅，其中 10 幅沒查到座標（空白是資訊，
@@ -114,6 +115,40 @@ function here(v) {
     ${n.marker ? `<dt class="mk">碑</dt><dd class="mk">${n.marker.name}<small> ${n.marker.m}m</small></dd>` : ''}`;
 }
 
+// ── 色盤：把光的骨架攤開 ──────────────────────────────────────
+// 🔴 像素化在這一作不是濾鏡，是**分析工具**：這一作叫光線畫，而 16 色量化留下來的
+// 那 16 個顏色，就是清親用來處理光的那套色階。data/palettes.json 是 quantize.py
+// 在 Phase 2 就產出的（每幅 16 色），⚠️ 但一直沒有任何一行程式讀它——
+// 「算出來卻沒人看」跟「沒算」是一樣的。
+const lumOf = hex => {
+  const n = parseInt(hex.slice(1), 16);
+  return 0.2126 * (n >> 16) + 0.7152 * ((n >> 8) & 255) + 0.0722 * (n & 255);
+};
+const palLum = {};                       // 每幅的平均明度
+for (const [id, cols] of Object.entries(palettes ?? {})) {
+  palLum[id] = cols.reduce((a, c) => a + lumOf(c), 0) / cols.length;
+}
+// 排名拿同一本畫帖的其餘各幅比——⛔ 不引用外面的說法，同「標高偏高／偏低」那一層
+const lumSorted = Object.values(palLum).sort((a, b) => a - b);
+const lumRank = id => {
+  const v = palLum[id];
+  return v == null ? null : lumSorted.filter(x => x < v).length / (lumSorted.length - 1);
+};
+function palette(v) {
+  const cols = (palettes ?? {})[v.id];
+  if (!cols) return '';
+  const r = lumRank(v.id), l = Math.round(palLum[v.id]);
+  const tag = r == null ? '' : r >= 0.8 ? '這幅是畫帖裡偏亮的'
+    : r <= 0.2 ? '這幅是畫帖裡偏暗的' : '明暗落在中間';
+  return `<section class="pal">
+    <h3>十六色</h3>
+    <div class="chips">${cols.map(c => `<i style="background:${c}" title="${c}"></i>`).join('')}</div>
+    <p>把這幅壓成 480px・16 色之後剩下的顏色。平均明度 ${l}／255——${tag}。<br>
+      <small>⛔ 不是濾鏡：光線畫講的就是光，這 16 個顏色是他處理光用的那套色階。
+      由 tools/quantize.py 算出（Bayer 8×8），排名拿同一本畫帖的 ${lumSorted.length} 幅比。</small></p>
+  </section>`;
+}
+
 // ── 解說 ──────────────────────────────────────────────────────
 // 🔴 這些文字**不是我寫的**，是維基百科的導言逐字抓下來的（tools/fetch-topics.py），
 // 我只決定「哪一幅對哪一條目」——那份對應在 data/topics.json，人工逐條確認過。
@@ -172,9 +207,9 @@ function pick(v) {
     .filter(Boolean).join('・');
   $('body').innerHTML = `
     <h2>${v.title.ja}</h2>
-    <div id="art" class="${marks ? '' : 'nomarks'}"><img src="${got ? pixel(v) : thumb(v)}" alt="${v.title.ja}">${got ? spots(v) : ''}</div>
+    <div id="art" class="${marks ? '' : 'nomarks'}"><img src="${thumb(v)}" alt="${v.title.ja}">${got ? spots(v) : ''}</div>
     ${got ? `<button id="mark" class="wide">${marks ? '隱藏標註' : '顯示標註'}</button>
-             <button id="flip" class="wide">像素 ／ 真跡</button>` : ''}
+             <button id="flip" class="wide">16 色：看光的骨架</button>` : ''}
     <button id="big" class="wide">看原寸</button>
     ${!b ? '<button id="take" class="wide take">收入畫帖</button>'
         : b.why === 'got' ? ''          // 收過了不必再說一次，上面的提示已經在講這件事
@@ -188,6 +223,7 @@ function pick(v) {
         rel="noopener">NDL ${v.source.item}・第 ${v.source.page} 圖</a><br>
         <small>${v.source.call_number}　${v.source.license}</small></dd>
     </dl>
+    ${got ? palette(v) : ''}
     ${reading(v)}`;
   $('panel').classList.add('on');
   document.body.classList.add('panel-open');
@@ -209,12 +245,16 @@ function pick(v) {
   };
   const flip = $('flip');
   if (flip) {
-    let px = true;
-    // 像素版與真跡都是**同一張和紙**（2026/09/12 廢掉畫心那一層之後），
-    // 框一樣、座標一樣 ⇒ 標註在兩邊都對得上，切過去不必收起來。
+    // 🔴 預設是**真跡**。像素版的資訊嚴格少於真跡（同一個框、少掉的只有色階），
+    // 一部價值在文獻性的作品，沒有理由預設先給人看降過質的版本。
+    // ⇒ 像素版改成明講的一個選擇，鈕上直接寫按下去會看到什麼。
+    // 像素版與真跡是同一張和紙 ⇒ 框一樣、座標一樣，標註在兩邊都對得上。
+    let px = false;
     flip.onclick = () => {
       px = !px;
       $('art').firstElementChild.src = px ? pixel(v) : thumb(v);
+      $('art').classList.toggle('px', px);
+      flip.textContent = px ? '回到真跡' : '16 色：看光的骨架';
       fitArt(v);
     };
   }
