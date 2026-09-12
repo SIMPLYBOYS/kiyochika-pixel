@@ -167,7 +167,7 @@
   .lightbox { position:fixed; inset:0; z-index:30; background:#060d14f2; overflow:hidden;
               display:grid; place-items:center; cursor:grab; touch-action:none }
   .lightbox:active { cursor:grabbing }
-  .lightbox img { will-change:transform; max-width:none; max-height:none; height:auto }
+  .lightbox img { -webkit-user-drag:none; user-select:none; will-change:transform; max-width:none; max-height:none; height:auto }
   .lightbox .lzoom { position:fixed; right:16px; top:50%; transform:translateY(-50%);
                      display:flex; flex-direction:column; gap:6px }
   .lightbox .lzoom button { width:38px; height:38px; font-size:15px; cursor:pointer;

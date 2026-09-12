@@ -17,6 +17,10 @@ export function zoom(src, caption) {
     <div class="ltip">拖曳移動・滾輪縮放　·　點背景或 Esc 關閉${caption ? `　·　${caption}` : ''}</div>`;
   document.body.append(lb);
   const img = lb.querySelector('img');
+  // 🔴 **關掉瀏覽器的原生圖片拖曳**。不關的話：按下去拖第一下有反應，接著瀏覽器
+  // 認定這是「把圖片拖出去」的手勢，接管指標、後面的 pointermove 全部不送——
+  // 症狀就是「放大之後拖不動」（實測拖 220px 只移動 22px＝只有第一個事件生效）。
+  img.draggable = false;
 
   let k = 1, x = 0, y = 0, fit = 1;
   const clamp = (v, a, b) => Math.min(b, Math.max(a, v));
@@ -64,7 +68,21 @@ export function zoom(src, caption) {
   addEventListener('pointerup', () => { drag = null; });
 
   const shut = () => { lb.remove(); removeEventListener('keydown', key); removeEventListener('resize', refit); };
-  const key = e => { if (e.key === 'Escape') shut(); };
+  // 方向鍵也要能移動：放大之後用鍵盤看畫的人不該被排除在外。
+  // ⚠️ 一定要 preventDefault ＋ stopPropagation——否則同一下按鍵會順便把**底下的地圖**
+  // 也推走（地圖的方向鍵是掛在 window 上的）。
+  const STEP = 90;
+  const key = e => {
+    if (e.key === 'Escape') return shut();
+    const d = { ArrowLeft: [1, 0], ArrowRight: [-1, 0], ArrowUp: [0, 1], ArrowDown: [0, -1] }[e.key];
+    if (!d) return;
+    e.preventDefault();
+    e.stopPropagation();
+    const step = STEP * (e.shiftKey ? 3 : 1);   // 按住 shift 走快一點
+    x += d[0] * step;
+    y += d[1] * step;
+    apply();
+  };
   addEventListener('keydown', key);
   lb.onclick = e => { if (e.target === lb || e.target.classList.contains('ltip')) shut(); };
   lb.querySelector('.lzoom').onclick = e => {

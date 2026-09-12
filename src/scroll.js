@@ -36,7 +36,7 @@ export function openScroll(views, got, onPick, src) {
       <div class="jiku"></div>
       ${views.map(v => got(v) ? `
         <div class="span" data-id="${v.id}">
-          <img loading="lazy" src="${src(v, 'plate')}" alt="${v.title.ja}">
+          <img loading="lazy" draggable="false" src="${src(v, 'plate')}" alt="${v.title.ja}">
           <b class="slabel">${KANSUJI(v.n)}　${v.title.ja}</b>
         </div>` : `
         <div class="span blank">

@@ -435,7 +435,11 @@ export function createMap(svg, views, geo, places, onPick) {
   const held = new Set();
   let raf = 0, last = 0;
 
-  const busy = () => document.querySelector('.overlay') || document.getElementById('hunt-ui');
+  // 🔴 上面蓋著東西時方向鍵不是地圖的。⚠️ 這一行原本問的是 `.overlay` 與 `#hunt-ui`
+  // ——**那是從 edo-hyakkei 抄過來的選擇器，這一作根本沒有那兩個東西**，
+  // 所以原寸檢視／畫卷／開場開著時，方向鍵會把底下的地圖一起推走。
+  // ⛔ 抄過來的判斷要跟著改名字，否則它會安靜地永遠回 false。
+  const busy = () => document.querySelector('.lightbox, .scroll-view, .intro, #panel.on');
   // 焦點在滑桿或按鈕上時方向鍵是它們的（年代滑桿本來就靠左右鍵微調）。
   // 🔴 問 activeElement 而不是 e.target：keydown 派到 window 時 target 是
   // window，沒有 closest，一問就 TypeError——而全域 handler 會把它變成

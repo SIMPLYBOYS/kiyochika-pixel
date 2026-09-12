@@ -296,6 +296,33 @@ for (const [name, size] of [['桌機 1440×900', { width: 1440, height: 900 }],
   const lb = await page.locator('.lightbox img').evaluate(
     e => ({ nat: e.naturalWidth, ok: e.complete && e.naturalWidth > 0 })).catch(() => null);
   ok(lb?.ok && lb.nat > 1200, `原寸檢視載得起來且夠大（${lb?.nat ?? '?'}px）`);
+  // 🔴 放大之後要拖得動、方向鍵也要能走。兩個都壞過：
+  //   · 瀏覽器的**原生圖片拖曳**會在第一個 pointermove 之後接管指標（拖 220px 只動 22px）
+  //   · 方向鍵在這一層根本沒接；而且沒 preventDefault 的話會把底下的地圖一起推走
+  const tf = () => page.locator('.lightbox img').evaluate(e => e.style.transform);
+  const vbNow = () => page.locator('#map').evaluate(e => e.getAttribute('viewBox'));
+  await page.locator('.lightbox [data-z="in"]').click();
+  await page.locator('.lightbox [data-z="in"]').click();
+  await sleep(350);
+  const vb0 = await vbNow();
+  const { width: lw, height: lh } = page.viewportSize();
+  await page.mouse.move(lw * 0.5, lh * 0.5);
+  await page.mouse.down();
+  await page.mouse.move(lw * 0.5 - 200, lh * 0.5 - 90, { steps: 10 });
+  await page.mouse.up();
+  await sleep(250);
+  const dragged = await tf();
+  await page.keyboard.press('ArrowLeft');
+  await sleep(250);
+  const keyed = await tf();
+  // ⚠️ 別比對死值：位移會被夾在邊界內，直式手機上圖的高度剛好塞得下 ⇒ y 恆為 0，
+  // 而 x 也可能夾在 -180 而不是 -200。要驗的是「**走了一大段**」，不是「走了多少」。
+  const px = t => (t.match(/-?\d+(\.\d+)?/g) || []).map(Number);
+  const [dx] = px(dragged), [kx] = px(keyed);
+  ok(Math.abs(dx) > 100 && kx !== dx && await vbNow() === vb0,
+     `原寸檢視拖得動也按得動（拖曳 ${dragged}／方向鍵 ${keyed}），而且沒推到底下的地圖`);
+  await page.locator('.lightbox [data-z="fit"]').click();
+  await sleep(200);
   await page.keyboard.press('Escape');
   await sleep(300);
   // ⚠️ Esc 只該關掉最上面那層。主程式的監聽先註冊先執行，不擋就會一次關兩層
