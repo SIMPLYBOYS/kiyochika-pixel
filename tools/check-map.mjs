@@ -173,6 +173,11 @@ for (const [name, size] of [['桌機 1440×900', { width: 1440, height: 900 }],
   const plain = await wxOf('東京銀座街日報社');
   ok(snow1 > 0 && snow2 > 0 && snow1 !== snow2 && plain === null,
      `天候層：雪景在下雪（${snow1} → ${snow2}），沒寫天候的景不動`);
+  // ⚠️ 這一段開過面板 ⇒ 收乾淨再走。面板開著時 HUD 會收起一部分，
+  // 下一項要點的 #music 就變成「點得到但到不了」（實測卡在這裡 30 秒逾時）。
+  // **會改變狀態的檢查，要自己把狀態還原。**
+  await page.keyboard.press('Escape');
+  await sleep(300);
 
   // 配樂。🔴 這一項驗的是**聽得到**，⛔ 不是「在播放」——兩者是兩回事：
   // AudioContext 還 suspended 的話媒體元素的 currentTime 照走，但增益卡在 0，一點聲音都沒有。
