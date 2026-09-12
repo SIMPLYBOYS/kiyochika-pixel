@@ -1,103 +1,118 @@
 #!/usr/bin/env python3
-"""生成的動態版：關鍵幀 → assets/motion/NN.webm（＋ .mp4 後備）
+"""生成的動態版：影片 → assets/motion/NN.webm（＋ .mp4 後備）
 
 🔴 **這是這個 repo 唯一一層生成出來的東西**，所以它的「出處」定義得比別層嚴：
-模型、日期、prompt、來源圖、每一張關鍵幀的檔名，全部記在 `data/motion.json`。
-**指不出這些就不該放進遊戲。**
+模型、日期、prompt、來源圖全部記在 `data/motion.json`。**指不出這些就不該放進遊戲。**
 
-做法刻意不是「丟給模型生一段影片」，而是：
-  ① 原畫（assets/plate/NN.jpg）當第一張關鍵幀——⛔ 底一定是真跡，不是模型畫的
-  ② 用影像模型只改**氛圍**（閃電亮度、雨、水光），產出 2–3 張同構圖的關鍵幀
-  ③ 這支工具把它們交叉淡入淡出、組成無縫循環
+🔑 而「只動氛圍、不動內容」這條規矩，**影片比靜幀難守得多——一秒 24 幀，
+沒有人會逐幀看**。所以這支工具替人看：每 0.3 秒抽一格，跟原畫比「邊還在不在同一個
+地方」（邊的位置＝構圖；光變了邊不該跑）。閾值拿**原畫自己**做過對照：
 
-🔑 這樣做的三個理由：
-  · 構圖來自原畫，模型只碰光——⛔ 它沒有機會生出不存在的招牌、人或建築
-  · 幀數少、可以逐張用眼睛看過再收——影片一秒 24 幀，沒有人會逐幀檢查
-  · 輸出是**確定的**：同樣的關鍵幀跑這支工具，結果一樣（同色盤、同裁切那幾支）
+    只調亮 40% → 6.3 ／ 只降對比 30% → 5.7 ／ 整幅平移 12px → 19.0 ／ 左右鏡像 → 21.5
+
+⇒「只動光」落在 6 上下，「構圖動了」跳到 19 以上。超過 12 的幀列出來，
+超過 16 直接擋掉——⛔ 那已經不是打光，是模型在替清親重畫。
+
+無縫循環：把開頭 fade 秒淡入疊到結尾（Veo 那類影片不會自己接得起來）。
 
 用法：
-  1. 關鍵幀放 research/motion/，命名 NN-1.png、NN-2.png…（NN＝景的編號，同尺寸）
-  2. 在 data/motion.json 的 clips 加一筆（見該檔的 _rule 與欄位範例）
-  3. python3 tools/make-motion.py 50
+  python3 tools/make-motion.py 50 --video research/motion/50-veo.mp4
+  python3 tools/make-motion.py 50 --video ... --check-only     # 只驗不輸出
 """
-import json, subprocess, sys
+import argparse, json, subprocess, tempfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-SRC = ROOT / "research" / "motion"
 OUT = ROOT / "assets" / "motion"
-FPS = 24
+FPS, WIDTH = 24, 960          # 面板最寬 960，⛔ 不必留更大的：那只是讓玩家多載幾 MB
+SAMPLE = 0.3                  # 每幾秒抽一格來驗
+WARN, STOP = 12, 16
+
+
+def probe(path):
+    r = subprocess.run(["ffprobe", "-v", "error", "-select_streams", "v:0",
+                        "-show_entries", "stream=width,height,duration",
+                        "-show_entries", "format=duration", "-of", "json", str(path)],
+                       capture_output=True, text=True, check=True)
+    d = json.loads(r.stdout)
+    st = d["streams"][0]
+    return int(st["width"]), int(st["height"]), float(st.get("duration") or d["format"]["duration"])
+
+
+def edges(img, size):
+    from PIL import Image, ImageFilter, ImageOps
+    im = Image.open(img).convert("L").resize(size)
+    return list(ImageOps.autocontrast(im.filter(ImageFilter.FIND_EDGES)).getdata())
+
+
+def drift_rows(plate, video):
+    """逐幀量構圖位移，回傳 [(秒, 位移)]。"""
+    from PIL import Image
+    w, h = Image.open(plate).size
+    small = (128, max(1, round(128 * h / w)))
+    ref = edges(plate, small)
+    rows = []
+    with tempfile.TemporaryDirectory() as tmp:
+        subprocess.run(["ffmpeg", "-v", "error", "-i", str(video),
+                        "-vf", f"fps=1/{SAMPLE}", f"{tmp}/%04d.png"], check=True)
+        for i, f in enumerate(sorted(Path(tmp).glob("*.png"))):
+            cur = edges(f, small)
+            rows.append((i * SAMPLE, sum(abs(a - b) for a, b in zip(ref, cur)) / len(ref)))
+    return rows
 
 
 def main():
-    if len(sys.argv) < 2:
-        print(__doc__)
-        return
-    vid = int(sys.argv[1])
-    data = json.loads((ROOT / "data" / "motion.json").read_text(encoding="utf-8"))
-    clip = next((c for c in data["clips"] if c["id"] == vid), None)
-    assert clip, f"data/motion.json 裡沒有 no.{vid} 這一筆——⛔ 先把模型、日期、prompt 記上去再跑"
+    ap = argparse.ArgumentParser()
+    ap.add_argument("id", type=int)
+    ap.add_argument("--video", required=True)
+    ap.add_argument("--fade", type=float, default=0.6)
+    ap.add_argument("--check-only", action="store_true")
+    a = ap.parse_args()
 
-    frames = [SRC / f for f in clip["frames"]]
-    missing = [f.name for f in frames if not f.exists()]
-    assert not missing, f"缺關鍵幀：{missing}"
-    assert len(frames) >= 2, "至少要兩張關鍵幀（一張就不叫動態）"
-
-    plate = ROOT / "assets" / "plate" / f"{vid:02d}.jpg"
     from PIL import Image
-    base = Image.open(plate).size
-    bad = [f.name for f in frames if Image.open(f).size != base]
-    # 🔴 尺寸必須跟原畫一樣：不一樣就表示模型重新裁過構圖，而**構圖不是它能動的東西**
-    assert not bad, f"這幾張跟原畫尺寸對不上（模型重新裁過構圖）：{bad}　原畫 {base}"
+    plate = ROOT / "assets" / "plate" / f"{a.id:02d}.jpg"
+    pw, ph = Image.open(plate).size
+    data = json.loads((ROOT / "data" / "motion.json").read_text(encoding="utf-8"))
+    clip = next((c for c in data["clips"] if c["id"] == a.id), None)
+    assert clip, f"data/motion.json 裡沒有 no.{a.id}——⛔ 先把模型、日期、prompt 記上去再跑"
+    for must in ("model", "date", "prompt"):
+        assert clip.get(must) and "（填）" not in str(clip[must]), f"clips 裡的 {must} 還沒填"
 
-    # 🔑 **機器先驗「有沒有動到內容」**，人再用眼睛看。
-    # 做法：把原畫與每張關鍵幀都轉灰階、抽邊、縮到 128 寬再比——
-    # 邊的位置代表**構圖**，光變了邊的位置不該變。⚠️ 亮度本身會影響邊的強度，
-    # 所以先各自正規化再比，看的是「邊在不在同一個地方」。
-    # 🔑 閾值 12 不是拍腦袋的：拿**原畫自己**做過對照（同「先驗來自資料本身」那條）——
-    #     只調亮 40% → 6.3 ／ 只降對比 30% → 5.7 ／ 整幅平移 12px → 19.0 ／ 左右鏡像 → 21.5
-    #     ⇒ 「只動光」落在 6 上下，「構圖動了」跳到 19 以上，12 在中間。
-    # ⛔ 只報數字不擋：這是給人看的指標，真正擋下來的是尺寸那一條。
-    from PIL import ImageFilter, ImageOps
-    def edges(p):
-        im = Image.open(p).convert("L").resize((128, int(128 * base[1] / base[0])))
-        e = ImageOps.autocontrast(im.filter(ImageFilter.FIND_EDGES))
-        return list(e.getdata())
-    ref = edges(plate)
-    print("構圖位移檢查（0 ＝ 完全沒動，越大表示邊跑掉越多）：")
-    for f in frames:
-        cur = edges(f)
-        drift = sum(abs(a - b) for a, b in zip(ref, cur)) / len(ref)
-        flag = "✅" if drift < 12 else "⚠️ 邊跑掉了，用眼睛看清楚是不是構圖被改"
-        print(f"  {f.name:<14}{drift:6.1f}　{flag}")
+    src = Path(a.video)
+    assert src.exists(), f"找不到影片：{src}"
+    vw, vh, dur = probe(src)
+    print(f"來源 {src}　{vw}×{vh}　{dur:.1f}s｜原畫 {pw}×{ph}")
+    # 🔴 長寬比對不上＝模型重新裁過構圖，而**構圖不是它能動的東西**
+    assert abs(vw / vh - pw / ph) / (pw / ph) < 0.02, \
+        f"⛔ 長寬比對不上（{vw}×{vh} vs {pw}×{ph}）——模型重新裁過構圖，不收"
 
-    hold = clip.get("hold", 0.6)        # 每張停留幾秒
-    fade = clip.get("fade", 0.5)        # 交叉淡入淡出幾秒
+    rows = drift_rows(plate, src)
+    worst = max(rows, key=lambda r: r[1])
+    print("\n構圖位移（0 ＝ 完全沒動；只動光約 6；構圖動了 19 以上）：")
+    for t, d in rows:
+        mark = "" if d < WARN else ("  ⚠️ 這一格有東西動了" if d < STOP else "  🔴 超過上限")
+        print(f"  {t:5.1f}s  {d:5.1f}{mark}")
+    print(f"\n最大 {worst[1]:.1f}（第 {worst[0]:.1f} 秒）・平均 {sum(d for _, d in rows) / len(rows):.1f}")
+    assert worst[1] < STOP, (
+        f"⛔ 最大位移 {worst[1]:.1f} ≥ {STOP}：模型動到的不只是光。"
+        "⇒ 重新生成（提示詞要寫明不得改變任何物件的位置與形狀），⛔ 不要放寬這個數字。")
+    if a.check_only:
+        print("\n（--check-only：沒有輸出檔案）")
+        return
+
     OUT.mkdir(parents=True, exist_ok=True)
-
-    # 用 ffmpeg 把關鍵幀串成交叉淡入的循環：… → 1 → 2 → … → 1（收尾接回第一張才無縫）
-    seq = frames + [frames[0]]
-    args = ["ffmpeg", "-y", "-loglevel", "error"]
-    for f in seq:
-        args += ["-loop", "1", "-t", str(hold + fade), "-i", str(f)]
-    chain, prev, t = [], "0:v", 0.0
-    for i in range(1, len(seq)):
-        out = f"x{i}"
-        chain.append(f"[{prev}][{i}:v]xfade=transition=fade:duration={fade}:offset={t + hold}[{out}]")
-        prev, t = out, t + hold
-    vf = ";".join(chain) + f";[{prev}]format=yuv420p,fps={FPS}[v]"
-    webm = OUT / f"{vid:02d}.webm"
-    subprocess.run(args + ["-filter_complex", vf, "-map", "[v]",
-                           "-c:v", "libvpx-vp9", "-b:v", "0", "-crf", "34", "-an", str(webm)], check=True)
-    # ⚠️ Safari 對 VP9/WebM 的支援看版本 ⇒ 再出一份 H.264（同配樂那次的理由：⛔ 不賭）
-    mp4 = OUT / f"{vid:02d}.mp4"
-    subprocess.run(args + ["-filter_complex", vf, "-map", "[v]",
-                           "-c:v", "libx264", "-crf", "26", "-pix_fmt", "yuv420p", "-an", str(mp4)], check=True)
-
-    for f in (webm, mp4):
-        print(f"  → {f.relative_to(ROOT)}　{round(f.stat().st_size / 1e6, 2)}MB")
-    print(f"\n{len(frames)} 張關鍵幀・每張停 {hold}s・交叉 {fade}s ＝ 一輪約 {len(frames) * hold + fade:.1f}s")
-    print("⛔ 驗收用眼睛看：構圖有沒有被改、有沒有多出東西、循環接得順不順")
+    f = a.fade
+    vf = (f"[0:v]scale={WIDTH}:-2,fps={FPS},split[body][pre];"
+          f"[pre]trim=duration={f},format=yuva420p,fade=d={f}:alpha=1,setpts=PTS+({dur}-{f})/TB[tail];"
+          f"[body]trim=start={f},setpts=PTS-STARTPTS[main];[main][tail]overlay,format=yuv420p[v]")
+    for enc, out in (
+        (["-c:v", "libvpx-vp9", "-b:v", "0", "-crf", "36"], OUT / f"{a.id:02d}.webm"),
+        (["-c:v", "libx264", "-crf", "27", "-pix_fmt", "yuv420p"], OUT / f"{a.id:02d}.mp4"),
+    ):
+        subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", str(src),
+                        "-filter_complex", vf, "-map", "[v]", "-an", *enc, str(out)], check=True)
+        print(f"  → {out.relative_to(ROOT)}　{out.stat().st_size / 1e6:.2f}MB")
+    print("\n⛔ 最後一關是眼睛：循環接得順不順、有沒有多出東西、木版的味道還在不在")
 
 
 if __name__ == "__main__":
