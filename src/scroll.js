@@ -25,9 +25,11 @@ export function openScroll(views, got, onPick, src) {
   el.className = 'scroll-view';
   el.innerHTML = `
     <div class="sbar">
-      <button data-act="play">▶ 自動展卷</button>
+      <button data-act="prev" title="前一幅（→）">◀</button>
+      <button data-act="next" title="後一幅（←）">▶</button>
+      <button data-act="play" title="自動展卷（空白鍵）">▶ 自動展卷</button>
       <button data-act="flip">像素 ／ 真跡</button>
-      <span class="stip">由右往左展讀・點畫開面板・Esc 收卷</span>
+      <span class="stip">由右往左展讀・← → 翻幅・Home/End 卷首卷尾・滾輪或拖曳・點畫開面板・Esc 收卷</span>
       <button data-act="close" aria-label="收卷">✕</button>
     </div>
     <div class="sroll">
@@ -73,19 +75,81 @@ export function openScroll(views, got, onPick, src) {
     };
     raf = requestAnimationFrame(step);
   };
-  // 玩家自己動了就別跟他搶
-  roll.addEventListener('wheel', () => play(false), { passive: true });
+  // ── 手動翻閱 ───────────────────────────────────────────────
+  // 🔑 一卷 59 幅、兩萬多像素長，**自動展卷只適合看，不適合找**。
+  // 所以三條路都要通：鍵盤（← → 翻幅、Home/End 卷首卷尾）、滾輪（快轉）、拖曳（拉卷軸）。
+  //
+  // ⚠️ 一律用 getBoundingClientRect 算距離再 scrollBy，⛔ 不直接設 scrollLeft：
+  // row-reverse 之下 scrollLeft 的正負各家瀏覽器不同（Chrome 給負值），
+  // 而「相對位移」在哪一家都一樣。
+  const spans = [...roll.querySelectorAll('.span')];
+  const step = dir => {                     // dir=+1 往左（後一幅）、-1 往右（前一幅）
+    play(false);
+    const r = roll.getBoundingClientRect();
+    // 正在讀的 ＝ 右緣最靠近容器右緣的那一幅
+    let i = 0, best = Infinity;
+    spans.forEach((el, k) => {
+      const d = Math.abs(el.getBoundingClientRect().right - r.right);
+      if (d < best) { best = d; i = k; }
+    });
+    const next = spans[Math.min(spans.length - 1, Math.max(0, i + dir))];
+    roll.scrollBy({ left: next.getBoundingClientRect().right - r.right, behavior: 'smooth' });
+  };
+  const ends = dir => {                      // 卷首（右端）／卷尾（左端）
+    play(false);
+    // ⛔ 這裡不能 smooth：卷長兩萬多像素，平滑捲要好幾秒，
+    // 按 Home 之後畫面還在半路（實測按完停在第 5 幅）——「跳到頭」就該是跳。
+    roll.scrollBy({ left: dir * roll.scrollWidth });
+  };
+
+  // 滾輪：直向滾輪也要能翻卷（這一格只有橫向可捲），並且快一點——
+  // 照瀏覽器預設一格一格捲，兩萬像素要滾到天荒地老。
+  roll.addEventListener('wheel', e => {
+    play(false);
+    const d = Math.abs(e.deltaY) > Math.abs(e.deltaX) ? e.deltaY : e.deltaX;
+    // 🔴 往下滾＝往下讀＝**往左**走。這一卷是右起的，照瀏覽器預設（往下＝往右）
+    // 會變成「越滾越退回卷首」。
+    roll.scrollLeft -= d * 2.5;
+    e.preventDefault();
+  }, { passive: false });
   roll.addEventListener('touchstart', () => play(false), { passive: true });
+
+  // 拖曳：手卷本來就是用拉的。⚠️ 拖過之後那一下 click 不能算成「點開這一幅」
+  //（同 map.js 的 dragged()）——移動超過 6px 就當拖曳。
+  let drag = null, moved = false;
+  roll.addEventListener('pointerdown', e => {
+    if (e.button) return;
+    drag = { x: e.clientX, at: roll.scrollLeft };
+    moved = false;
+    play(false);
+  });
+  addEventListener('pointermove', e => {
+    if (!drag) return;
+    const dx = e.clientX - drag.x;
+    if (Math.abs(dx) > 6) moved = true;
+    roll.scrollLeft = drag.at - dx;
+  });
+  addEventListener('pointerup', () => { drag = null; });
 
   let px = false;
   const shut = () => { play(false); el.remove(); removeEventListener('keydown', key); };
-  const key = e => { if (e.key === 'Escape') { e.stopPropagation(); shut(); } };
+  const key = e => {
+    if (e.key === 'Escape') { e.stopPropagation(); return shut(); }
+    // 讀的方向是由右往左 ⇒ ← 是「翻到下一幅」，→ 是「回上一幅」
+    if (e.key === 'ArrowLeft') { e.preventDefault(); return step(1); }
+    if (e.key === 'ArrowRight') { e.preventDefault(); return step(-1); }
+    if (e.key === 'Home') { e.preventDefault(); return ends(1); }    // 卷首在右
+    if (e.key === 'End') { e.preventDefault(); return ends(-1); }
+    if (e.key === ' ') { e.preventDefault(); return play(!playing); }
+  };
   addEventListener('keydown', key);
 
   el.onclick = e => {
     const act = e.target.closest('[data-act]')?.dataset.act;
     if (act === 'close' || e.target === el) return shut();
     if (act === 'play') return play(!playing);
+    if (act === 'next') return step(1);
+    if (act === 'prev') return step(-1);
     if (act === 'flip') {
       px = !px;
       for (const img of roll.querySelectorAll('img')) {
@@ -95,6 +159,9 @@ export function openScroll(views, got, onPick, src) {
       roll.classList.toggle('pixel', px);
       return;
     }
+    // ⚠️ 剛剛那一下是拖曳不是點畫（拖過卷之後手一放會補一個 click）——
+    // ⛔ 這個判斷只能擋「點畫」，⛔ 不能擋工具列的鈕，否則拖完卷之後第一次按鈕沒反應。
+    if (moved) { moved = false; return; }
     const span = e.target.closest('.span:not(.blank)');
     if (span) {
       shut();

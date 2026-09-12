@@ -257,6 +257,38 @@ for (const [name, size] of [['桌機 1440×900', { width: 1440, height: 900 }],
   });
   ok(roll && roll.spans === 59 && roll.got >= 1 && roll.jiku === 2 && roll.rtl,
      `畫卷 ${roll?.spans} 格（收到的 ${roll?.got} 格有圖）、兩端有軸木、由右往左`);
+  // 🔑 一卷 59 幅、兩萬多像素，**自動展卷只適合看不適合找** ⇒ 手動三條路都要通。
+  // ⚠️ 方向要對：這一卷右起，往下滾＝往左走（照瀏覽器預設會變成退回卷首）。
+  const sx = () => page.evaluate(() => Math.round(document.querySelector('.sroll').scrollLeft));
+  const seat = () => page.evaluate(() => {       // 右緣對齊的是第幾幅
+    const r = document.querySelector('.sroll').getBoundingClientRect();
+    return [...document.querySelectorAll('.sroll .span')]
+      .map((e, i) => [i + 1, Math.abs(e.getBoundingClientRect().right - r.right)])
+      .sort((a, b) => a[1] - b[1])[0][0];
+  });
+  const s0 = await seat();
+  await page.keyboard.press('ArrowLeft'); await sleep(600);
+  const s1 = await seat();
+  await page.keyboard.press('ArrowRight'); await sleep(600);
+  const s2 = await seat();
+  await page.mouse.move(page.viewportSize().width / 2, page.viewportSize().height / 2);
+  await page.mouse.wheel(0, 600); await sleep(400);
+  const wheeled = await sx();
+  await page.keyboard.press('Home'); await sleep(500);
+  const h1 = await sx();
+  ok(s1 === s0 + 1 && s2 === s0 && wheeled < 0 && h1 === 0,
+     `手動翻閱：← → 一次一幅（${s0}→${s1}→${s2}）、滾輪往左走（${wheeled}）、Home 回卷首`);
+  // 拖曳要能拉卷，而且放開那一下**不能**被當成點畫。
+  // ⚠️ 要往「卷還有東西」的那一邊拉：上一步 Home 已經回到卷首，
+  // 再往那個方向拉是拉到底了不會動——第一版就是這樣自己把自己判成紅燈。
+  // ⚠️ 座標要跟著視窗算：直式手機只有 390px 寬，寫死 900 根本點在畫面外
+  const { width: vw, height: vh } = page.viewportSize();
+  await page.mouse.move(vw * 0.25, vh * 0.55); await page.mouse.down();
+  await page.mouse.move(vw * 0.8, vh * 0.55, { steps: 8 }); await page.mouse.up();
+  await sleep(300);
+  ok(await sx() !== 0 && await page.locator('.scroll-view').count() === 1,
+     '拖曳拉得動卷，而且不會被當成點畫');
+
   await page.locator('.scroll-view [data-act="play"]').click();
   await sleep(1200);
   const moved = await page.evaluate(() => document.querySelector('.sroll').scrollLeft);
