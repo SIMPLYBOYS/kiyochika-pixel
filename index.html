@@ -50,6 +50,10 @@
   .mark:hover circle.dot { stroke:#fffdf5; stroke-width:2.5; opacity:1 }
   .mark:hover text { opacity:1 !important }
   .mark.sel circle.dot { stroke:#fffdf5; stroke-width:3; opacity:1 }
+  /* 剛被「帶我去」帶到的那一個：名字亮出來幾秒，免得玩家還要在一堆點裡認 */
+  .mark.lead circle.dot { stroke:#fffdf5; stroke-width:3; opacity:1 }
+  .mark.lead text { opacity:1 !important }
+  .mark.lead .halo { opacity:.42 }
   .mark.sel text { opacity:1 !important }
   /* 視線扇形：畫成扇不畫成箭頭，因為方位有不確定度。目前 69 幅都還沒有方位角 */
   .mark .cone { fill:var(--gold); opacity:.22; pointer-events:none }
@@ -72,14 +76,19 @@
          border-radius:0 0 8px 0; max-width:min(720px,94vw) }
   #hud b { font-weight:normal; color:var(--gold); font-size:16px }
   #hud #now { font-size:13px; opacity:.85; letter-spacing:.08em }
-  #hud #open { opacity:.55; font-size:11px }
+  /* 「帶我去」：HUD 那行本身是鈕。⛔ 不做成顯眼的按鈕——它是提示不是主操作 */
+  #hud #open { opacity:.75; font-size:11px; font-family:inherit; color:var(--gold);
+               background:none; border:0; cursor:pointer; padding:0; letter-spacing:.02em }
+  #hud #open:hover:not(:disabled) { opacity:1; text-decoration:underline }
+  #hud #open:disabled { opacity:.45; color:inherit; cursor:default }
   #hud button { pointer-events:auto; font-family:inherit; font-size:12px; cursor:pointer;
                 background:#ffffff14; color:var(--land); border:1px solid #ffffff33;
                 border-radius:5px; padding:3px 10px }
   #hud button:hover { background:#ffffff24 }
   /* 面板開著時 HUD 會被它蓋掉右半邊。留下要緊的（進度・時刻・待つ），
      把附註與外連收起來——被蓋住的鈕比沒有更糟。 */
-  body.panel-open #hud small, body.panel-open #hud #refmap { display:none }
+  body.panel-open #hud small, body.panel-open #hud #open,
+  body.panel-open #hud #refmap { display:none }
   #hud #refmap { pointer-events:auto; color:var(--gold); font-size:12px; opacity:.85;
                  white-space:nowrap; text-decoration:none; border-bottom:1px dotted currentColor }
   #hud #refmap:hover { opacity:1 }
@@ -205,7 +214,7 @@
   <span id="now"></span>
   <button id="wait" title="等一刻（W）">等一刻</button>
   <button id="who" title="清親是誰、光線畫是什麼">清親</button>
-  <small id="open"></small>
+  <button id="open" title="把地圖滑到下一個可收的景（G）"></button>
 </div>
 
 <div id="zoom">

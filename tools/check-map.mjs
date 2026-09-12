@@ -240,6 +240,23 @@ for (const [name, size] of [['桌機 1440×900', { width: 1440, height: 900 }],
   await page.locator('#card-close').click();
   await sleep(200);
 
+  // 帶我去：HUD 那行按下去，地圖要**滑到**下一個金點並把它標出來。
+  // ⛔ 連按不能在兩點之間乒乓——帶過去之後離中心最近的就是剛離開的那個（實測過）。
+  const centreOf = () => page.locator('#map').evaluate(e => {
+    const v = e.getAttribute('viewBox').split(' ').map(Number);
+    return [Math.round(v[0] + v[2] / 2), Math.round(v[1] + v[3] / 2)];
+  });
+  const c0 = await centreOf();
+  const led = [];
+  for (let i = 0; i < 4; i++) {
+    await page.locator('#open').click();
+    await sleep(800);
+    led.push(await page.locator('#map .mark.lead text').textContent().catch(() => null));
+  }
+  const c1 = await centreOf();
+  ok(led.every(Boolean) && new Set(led).size === led.length && String(c0) !== String(c1),
+     `帶我去：連按四次走了四個不同的景（${led.join('・')}）`);
+
   await page.close();
 }
 await browser.close();

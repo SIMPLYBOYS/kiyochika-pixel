@@ -292,7 +292,8 @@ function paint() {
   const openN = views.filter(v => collectable(v, clock, state)).length;
   $('count').textContent = `${state.collected.length} / ${views.length}`;
   $('now').textContent = `明治${clock.year - 1867}年（${clock.year}）　${TIME_JA[clock.time]}　${WX_JA[clock.weather] ?? clock.weather}`;
-  $('open').textContent = openN ? `現在可收 ${openN} 幅` : '等時候';
+  $('open').textContent = openN ? `現在可收 ${openN} 幅　帶我去 ↗` : '等時候';
+  $('open').disabled = !openN;          // 沒東西可收時按了不該有反應
 }
 const shut = () => {
   $('panel').classList.remove('on');
@@ -355,6 +356,46 @@ if (who) who.onclick = () => {
     這部畫帖收 ${unmapped.length + views.length} 幅，地圖上有 ${views.length} 幅；另外 ${unmapped.length} 幅查不到座標，
     畫不到地圖上就不放進來——空白是資訊。</small>`);
 };
+
+// ── 帶我去 ────────────────────────────────────────────────────
+// 金點只有幾個、地圖卻是整個東京，「在哪裡」本身就是一道無謂的關卡
+//（Aaron：「幾乎找不出來在地圖上的哪裡」）。這顆鈕把地圖滑到下一個金點。
+// 🔑 **每按一次換下一個**，而且是從畫面中央往外算距離 ⇒ 連按就是照遠近巡一圈，
+// ⛔ 不是每次都跳回同一個。剛帶到的那個要排除，否則按第二次原地不動看起來像壞了。
+// ⚠️ 「排除上一個」不夠：帶過去之後，離新中心最近的就是剛剛離開的那個 ⇒ 兩點乒乓。
+// 改成記住這一輪帶過的，全部走完才重來——連按就是把現在收得到的景巡一遍。
+let toured = new Set();
+let leadTimer = null, lastLed = null;
+function guide() {
+  const clock = clockOf(state);
+  const open = views.filter(v => collectable(v, clock, state) && map.at(v.id));
+  if (!open.length) return;
+  let rest = open.filter(v => !toured.has(v.id));
+  if (!rest.length) {                                          // 巡完一輪，從頭再來
+    toured = new Set();
+    // ⚠️ 但別把「現在正對著的這個」當成下一站——不然巡完一圈的那一按原地不動
+    rest = open.filter(v => v.id !== lastLed);
+    if (!rest.length) rest = open;
+  }
+  const [cx, cy] = map.centre();
+  const d = v => { const [x, y] = map.at(v.id); return Math.hypot(x - cx, y - cy); };
+  const next = rest.sort((a, b) => d(a) - d(b))[0];
+  toured.add(next.id);
+  lastLed = next.id;
+  map.goTo(next.id);
+  // 帶到了就把名字亮出來——不然玩家還是要在一堆點裡認哪一個是剛剛那個。
+  // ⚠️ 計時器只能有一個：每個點各自計時的話，舊的那一個會把新亮起來的清掉
+  //（實測連按第四次時 .lead 消失，就是前一次的計時器回來清的）。
+  document.querySelectorAll('#map .mark.lead').forEach(e => e.classList.remove('lead'));
+  clearTimeout(leadTimer);
+  const g = map.node(next.id);
+  if (g) {
+    g.classList.add('lead');
+    leadTimer = setTimeout(() => g.classList.remove('lead'), 2600);
+  }
+}
+$('open').onclick = guide;
+addEventListener('keydown', e => { if (e.key === 'g') guide(); });
 
 $('wait').onclick = wait;
 $('card-close').onclick = () => $('card').classList.remove('on');

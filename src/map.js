@@ -522,6 +522,28 @@ export function createMap(svg, views, geo, places, onPick) {
 
   const centre = () => [vb.x + vb.w / 2, vb.y + vb.h / 2];
 
+  // ── 帶我去 ────────────────────────────────────────────────
+  // 🔴 **滑過去，不要瞬移。** 瞬間換位置的地圖會讓人失去方向感——
+  // 玩家需要看到「從這裡移到那裡」，才知道那個點在自己原本位置的哪一邊。
+  // ⛔ 也不重設縮放：那是玩家自己調的視野。只有縮到最遠（點小得看不清）時才拉近一級。
+  let glideId = 0;
+  const glide = (tx, ty, tw) => {
+    const from = { ...vb }, t0 = performance.now(), MS = 520;
+    const id = ++glideId;                       // 連按兩次：後一次接手，⛔ 不要兩個動畫打架
+    const step = now => {
+      if (id !== glideId) return;
+      const k = Math.min(1, (now - t0) / MS);
+      const e = 1 - Math.pow(1 - k, 3);         // ease-out：起步快、收尾穩
+      vb = { x: from.x + (tx - from.x) * e, y: from.y + (ty - from.y) * e,
+             w: from.w + (tw - from.w) * e, h: (H / W) * (from.w + (tw - from.w) * e) };
+      rein();
+      svg.classList.toggle('zoomed', vb.w < W * 0.45);
+      apply();
+      if (k < 1) requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  };
+
   return {
     zoomIn: () => zoomTo(vb.w / 1.6, ...centre()),
     zoomOut: () => zoomTo(vb.w * 1.6, ...centre()),
@@ -534,6 +556,21 @@ export function createMap(svg, views, geo, places, onPick) {
     onChange: cb => { onChange = cb; cb(); },
     /** 讓外面拿得到某一景的節點（面板要在點開時把它標出來）。 */
     node: id => nodes.get(id),
+    /** 現在畫面中央對著哪裡（地圖單位）。挑「下一個」要從這裡量距離。 */
+    centre,
+    /** 某一景在地圖上的座標，⛔ 沒座標的景回 null（那 10 幅本來就不在圖上）。 */
+    at: id => {
+      const g = nodes.get(id), p = pins.find(q => q.g === g);
+      return p ? [p.x, p.y] : null;
+    },
+    /** 帶我去：把某一景滑到畫面中央。回傳有沒有成功（沒座標就沒得帶）。 */
+    goTo: id => {
+      const at = nodes.get(id) && pins.find(q => q.g === nodes.get(id));
+      if (!at) return false;
+      const nw = clamp(vb.w >= MAX - 1 ? vb.w / 2.2 : vb.w, MIN, MAX);
+      glide(at.x - nw / 2, at.y - (H / W) * nw / 2, nw);
+      return true;
+    },
     /** 兩層閘門畫到圖上。狀態由 src/clock.js 算，這裡只負責把它變成 class。
      *
      * 🔴 還沒出版的整個藏起來（display:none），不是畫成灰點——
