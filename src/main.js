@@ -447,6 +447,10 @@ addEventListener('keydown', e => { if (e.key === 'm') $('music').click(); });
 paintMusic(music.on);
 // 上次開著就等第一次點擊／按鍵接著放（開場的「入場」也算那一下）
 music.armResume();
+// 驗收要看得到 AudioContext 的狀態與增益（見 audio.js 的 debug()）。
+// ⚠️ 這一行只能放在 music 建好之後——放到上面 window.__views 那裡會是 TDZ，
+// 整支模組在那裡就丟 ReferenceError，後面的接線全部沒跑（自己剛剛踩過）。
+window.__music = music;
 
 // ── 沈浸模式 ──────────────────────────────────────────────────
 // 全螢幕 ＋ 把周邊收到很淡，只留地圖與畫。

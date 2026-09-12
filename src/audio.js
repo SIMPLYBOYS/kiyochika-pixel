@@ -12,8 +12,12 @@ const KEY = 'kiyochika.music.v1';
 const FADE = 1.6;                     // 秒。78 轉唱片本來就有雜訊底，硬切會很刺耳
 
 export function createMusic(tracks, { onTrack } = {}) {
-  let i = -1, on = false, el = null, ctx = null, gain = null, timer = 0;
-  try { on = localStorage.getItem(KEY) === '1'; } catch { /* 無痕 */ }
+  // 🔴 **沒設定過就是開著**。第一版預設關，而那顆 ♪ 在一排 HUD 按鈕裡很不起眼——
+  // 玩家入場之後什麼也沒聽到，只會以為壞了（Aaron 回報：「聲音並沒有出來」）。
+  // ⚠️ 預設開不等於自動播放：仍然要等使用者動作（開場的「入場」那一下），
+  // 而明確關過的人（存成 '0'）就維持關。
+  let i = -1, on = true, el = null, ctx = null, gain = null, timer = 0;
+  try { const v = localStorage.getItem(KEY); if (v !== null) on = v === '1'; } catch { /* 無痕 */ }
 
   // ⚠️ WebAudio 的 GainNode 才做得出平順的淡入淡出（HTMLMediaElement.volume 在
   // Safari 上是階梯狀的）。但 AudioContext 也要等使用者動作才能建，所以延到播放時建。
@@ -90,5 +94,9 @@ export function createMusic(tracks, { onTrack } = {}) {
       addEventListener('keydown', go);
     },
     get track() { return i < 0 ? null : tracks[i]; },
+    /** 驗收用：⚠️ 「在播放」跟「聽得到」是兩回事——AudioContext 還 suspended 的話，
+     *  媒體元素的 currentTime 照走，但增益卡在 0，一點聲音都沒有。⇒ 要驗的是這幾個。 */
+    debug: () => ({ ctx: ctx?.state ?? null, gain: gain?.gain.value ?? null,
+                    paused: el?.paused ?? null, t: el?.currentTime ?? null }),
   };
 }

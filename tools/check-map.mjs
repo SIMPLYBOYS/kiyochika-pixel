@@ -143,22 +143,24 @@ for (const [name, size] of [['桌機 1440×900', { width: 1440, height: 900 }],
   await sleep(500);
   ok(await page.evaluate(() => !document.body.classList.contains('immersive')), '按 F 離開沈浸模式');
 
-  // 配樂：五首公有領域的早期唱片。⚠️ 瀏覽器不准沒有使用者動作就出聲 ⇒ 驗的是
-  // 「按下去之後真的在放」，⛔ 不是「按鈕變色了」（第一版的測試只證明得了後者，
-  // 因為 new Audio() 不在 DOM 裡，腳本根本看不到那個元素）。
-  await page.locator('#music').click();
+  // 配樂。🔴 這一項驗的是**聽得到**，⛔ 不是「在播放」——兩者是兩回事：
+  // AudioContext 還 suspended 的話媒體元素的 currentTime 照走，但增益卡在 0，一點聲音都沒有。
+  // ⚠️ 而且預設是開的（第一版預設關，玩家入場之後什麼也沒聽到 ⇒ 回報「聲音沒出來」），
+  // 開場的「入場」那一下就是瀏覽器要的使用者動作。
   await sleep(2500);
   const snd = await page.evaluate(() => {
     const a = document.querySelector('audio');
-    return { on: document.querySelector('#music').classList.contains('on'),
-             src: a?.getAttribute('src'), playing: !!a && !a.paused,
-             t: a ? a.currentTime : 0, label: document.querySelector('#nowplaying').textContent };
+    return { ...window.__music.debug(), on: document.querySelector('#music').classList.contains('on'),
+             src: a?.getAttribute('src'), label: document.querySelector('#nowplaying').textContent };
   });
-  ok(snd.on && snd.playing && snd.t > 0.5 && /audio\/\d\d\.m4a$/.test(snd.src || '') && snd.label.startsWith('♪'),
-     `配樂放得出來（${snd.src}　${snd.label}　${snd.t.toFixed(1)}s）`);
+  ok(snd.on && snd.ctx === 'running' && snd.gain > 0.2 && snd.paused === false && snd.t > 0.5
+     && /audio\/\d\d\.m4a$/.test(snd.src || '') && snd.label.startsWith('♪'),
+     `配樂聽得到（${snd.src}　${snd.label}　增益 ${(snd.gain ?? 0).toFixed(2)}　${(snd.t ?? 0).toFixed(1)}s）`);
   await page.locator('#music').click();
   await sleep(300);
   ok(!await page.evaluate(() => document.querySelector('#music').classList.contains('on')), '配樂關得掉');
+  await page.locator('#music').click();   // 關掉會寫進 localStorage，下一輪還要用，轉回開著
+  await sleep(200);
 
   const vis = await page.locator('#map .mark:not(.unpub)').count();
   ok(vis === want, `開場出現 ${vis} 個景（1876 年＋年代未詳，閘門算出來該有 ${want}）`);

@@ -51,6 +51,9 @@ export function playIntro({ views, total, yearOf, src, topic, onDone }) {
       ${how ? `<p>${how.text}</p>` : ''}
       <p class="ifact">國立國會圖書館《清親畫帖》三冊・公有領域<br>
         收錄 ${total ?? views.length} 幅，地圖上 ${views.length} 幅——走過清親的五年</p>
+      <p class="ifact">配樂　端唄・雅樂・尺八本曲・新內・追分<br>
+        1925–31 年的唱片，公有領域——⛔ 不是當年的錄音（那五年還沒有錄音這回事）<br>
+        <small>入場後開始播放，按 ♪ 或 M 可關</small></p>
       <p class="isrc">人物與畫風兩段譯自維基百科日本語版（CC BY-SA 4.0）</p>
     </div>
     <div class="ibtn">
