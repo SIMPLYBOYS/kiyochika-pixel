@@ -5,6 +5,7 @@ import { createMap, setVisibility } from './map.js';
 import { clockOf, blocked, collectable, visible, yearOf, tick, newState } from './clock.js';
 import { zoom } from './zoom.js';
 import { openScroll } from './scroll.js';
+import { playIntro, startTicker, introSeen } from './intro.js';
 
 const $ = id => document.getElementById(id);
 
@@ -411,6 +412,35 @@ function guide() {
 }
 $('open').onclick = guide;
 addEventListener('keydown', e => { if (e.key === 'g') guide(); });
+
+// ── 開場與跑馬燈 ──────────────────────────────────────────────
+// 開場只有第一次自己跳出來（存在 localStorage），之後從 HUD 的「開場」重看。
+const intro = () => playIntro({
+  views, total: views.length + unmapped.length, yearOf, src: v => thumb(v),
+  topic: name => topicOf(name),
+  // ⛔ 開場關掉之後**什麼都不要動**。第一版順手叫了 map.fitAll()，那等於把開場視角
+  // 從「框住江戶本體」換成「整張紙」——市中心的點會擠成一團互相蓋住（驗收腳本
+  // 當場點不到標記）。開場是一層蓋在上面的東西，不該改遊戲的狀態。
+});
+$('replay').onclick = intro;
+if (!introSeen()) intro();
+
+// 手機上 HUD 會折行，跑馬燈得知道它多高才放得下去（⛔ 不要寫死）
+const hudH = () => document.documentElement.style.setProperty(
+  '--hud-h', `${Math.round($('hud').getBoundingClientRect().height)}px`);
+// ⚠️ 只在載入時量一次不夠：HUD 的內容之後才填（「現在可收 N 幅」），一填就變高，
+// 量到的還是舊值（實測跑馬燈因此壓在 HUD 底下）。⇒ 讓 ResizeObserver 盯著它。
+new ResizeObserver(hudH).observe($('hud'));
+hudH();
+
+startTicker($('ticker'), {
+  views, yearOf,
+  blurb: [
+    '小林清親《東京名所圖》　<i>光線畫・明治九年–十四年 1876–1881</i>',
+    `收錄 ${views.length + unmapped.length} 幅，地圖上 ${views.length} 幅　<i>另 ${unmapped.length} 幅查不到座標，空白是資訊</i>`,
+    '典藏　国立国会図書館デジタルコレクション《清親畫帖》　<i>寄別1-9-2-3・公有領域</i>',
+  ],
+});
 
 $('wait').onclick = wait;
 $('card-close').onclick = () => $('card').classList.remove('on');

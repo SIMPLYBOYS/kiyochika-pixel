@@ -71,9 +71,14 @@
      原本沿用 edo-hyakkei 的漸層（#0e2233dd → transparent），那邊的地圖上緣是海，
      這裡上緣是米色的陸地——同一段 CSS 在這張圖上等於白字印在白紙上。
      改成自己帶底的一小條，不靠地圖的顏色。 */
+  /* 🔴 一列裝不下就**橫著捲**，⛔ 不要折行：折行之後 HUD 從 44px 長到 123px
+     （實測直式手機），把地圖壓掉一大塊，連「等一刻」三個字都被擠成三行。 */
   #hud { position:fixed; top:0; left:0; padding:8px 14px; display:flex; gap:12px;
          align-items:baseline; pointer-events:none; background:#0e2233e6;
-         border-radius:0 0 8px 0; max-width:min(720px,94vw) }
+         border-radius:0 0 8px 0; max-width:min(720px,94vw);
+         flex-wrap:nowrap; overflow-x:auto; scrollbar-width:none }
+  #hud::-webkit-scrollbar { display:none }
+  #hud > * { flex:0 0 auto; white-space:nowrap; pointer-events:auto }
   #hud b { font-weight:normal; color:var(--gold); font-size:16px }
   #hud #now { font-size:13px; opacity:.85; letter-spacing:.08em }
   /* 「帶我去」：HUD 那行本身是鈕。⛔ 不做成顯眼的按鈕——它是提示不是主操作 */
@@ -172,6 +177,61 @@
     .lightbox .ltip { bottom:8px; font-size:11px }
   }
 
+  /* ── 開場 ─────────────────────────────────────────────────
+     這部作品的弧線：1876 的銀座是晴天白日，1881 只剩火與夜。開場依年份放六幅，
+     一幅一幅淡入淡出，文字同時緩緩上捲。⛔ 關掉動態效果的人直接看到擺好的版面。 */
+  .intro { position:fixed; inset:0; z-index:40; background:#080f16; overflow:hidden;
+           display:grid; place-items:center; transition:opacity .4s }
+  .intro.out { opacity:0 }
+  .intro .ireel { position:absolute; inset:0 }
+  .intro .ireel img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover;
+    opacity:0; animation:ifade 20.4s linear infinite; will-change:opacity,transform }
+  @keyframes ifade {                 /* 六幅 × 3.4s 一輪；各自延遲錯開 */
+    0% { opacity:0; transform:scale(1.04) }
+    4%,14% { opacity:.55 }
+    18%,100% { opacity:0; transform:scale(1.10) }
+  }
+  .intro .iveil { position:absolute; inset:0;
+    background:radial-gradient(ellipse at center,#080f1655,#080f16f0 72%) }
+  .intro .itext { position:relative; text-align:center; max-width:min(620px,88vw);
+    max-height:82vh; overflow:auto; padding:12px 4px 0;
+    animation:irise 1.2s cubic-bezier(.2,.7,.3,1) both }
+  @keyframes irise { from { opacity:0; transform:translateY(26px) } to { opacity:1; transform:none } }
+  .intro h1 { font-size:clamp(26px,5.4vw,42px); font-weight:normal; letter-spacing:.34em;
+              color:var(--gold); margin-bottom:.5em }
+  .intro .isub { font-size:12px; letter-spacing:.3em; opacity:.6; margin-bottom:2em }
+  .intro .iwho { font-size:16px; letter-spacing:.2em; color:var(--gold); margin:1.4em 0 .6em }
+  .intro p { font-size:13.5px; line-height:2.05; opacity:.9; margin:1em 0 }
+  .intro .ifact { font-size:12.5px; opacity:.6; margin-top:2em }
+  .intro .isrc { font-size:11px; opacity:.4 }
+  .intro .ibtn { position:absolute; bottom:26px; left:0; right:0; text-align:center }
+  .intro .ibtn button { font-family:inherit; font-size:14px; letter-spacing:.24em; cursor:pointer;
+    color:var(--ink); background:var(--gold); border:0; border-radius:6px; padding:9px 34px }
+  @media (prefers-reduced-motion:reduce) { .intro .ireel img, .intro .itext { animation:none } }
+  .intro.still .ireel img { animation:none; opacity:.28 }
+
+  /* ── 跑馬燈 ───────────────────────────────────────────────
+     作品介紹＋每一幅的題名與年份。⛔ 內容全部來自資料，不寫宣傳詞。 */
+  /* 🔴 自己帶一條底：字色是深墨，在米色的地圖上看得見，一壓到下方深色的年代列
+     或海面就整段消失（實測過）。⇒ 跑馬燈有自己的帶狀底與淺色字，位置也讓開年代列。 */
+  #ticker { position:fixed; left:0; right:0; bottom:108px; z-index:4; overflow:hidden;
+    white-space:nowrap; pointer-events:auto; font-size:11.5px; letter-spacing:.04em;
+    color:var(--land); background:#0e2233cc; padding:5px 0;
+    border-top:1px solid #ffffff12; border-bottom:1px solid #ffffff12; opacity:.92;
+    -webkit-mask-image:linear-gradient(90deg,#0000,#000 6%,#000 94%,#0000);
+            mask-image:linear-gradient(90deg,#0000,#000 6%,#000 94%,#0000) }
+  #ticker .tk { display:inline-block; padding-right:2em; animation:tkrun var(--tk-dur,300s) linear infinite }
+  #ticker:hover .tk { animation-play-state:paused }      /* 想看清楚就停在那裡 */
+  #ticker em { font-style:normal; opacity:.4; margin:0 1.1em }
+  #ticker i { font-style:normal; opacity:.55 }
+  @keyframes tkrun { from { transform:translateX(0) } to { transform:translateX(-50%) } }
+  @media (prefers-reduced-motion:reduce) { #ticker .tk { animation:none } }
+  body.panel-open #ticker { display:none }
+  /* 手機：HUD 會折成好幾列（實測 123px 高），寫死 top 就會被壓在底下 ⇒ 量出來再放。 */
+  @media (max-width:700px) {
+    #ticker { bottom:auto; top:calc(var(--hud-h,44px) + 6px); font-size:11px }
+  }
+
   /* 畫卷：收到的景連成一卷，由右往左展讀（row-reverse）。同東海道那一作的繪卷，
      也同這批版畫本來的樣子——《清親畫帖》是冊子，翻的方向就是右起。 */
   .scroll-view { position:fixed; inset:0; z-index:25; background:#0b1723;
@@ -251,6 +311,7 @@
   <button id="wait" title="等一刻（W）">等一刻</button>
   <button id="who" title="清親是誰、光線畫是什麼">清親</button>
   <button id="emaki" title="把收到的景連成一卷展讀（E）">畫卷</button>
+  <button id="replay" title="重看開場">開場</button>
   <button id="open" title="把地圖滑到下一個可收的景（G）"></button>
 </div>
 
@@ -267,6 +328,8 @@
   <div id="eranow"></div>
   <div id="attr">街圖 © OpenStreetMap contributors（ODbL）　·　地形 © 国土地理院 標高タイル　·　版畫 国立国会図書館デジタルコレクション（公有領域）</div>
 </div>
+
+<div id="ticker" aria-hidden="true"></div>
 
 <div id="panel"><button id="close" aria-label="關閉">✕</button><div id="body"></div></div>
 

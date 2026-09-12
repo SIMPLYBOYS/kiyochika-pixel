@@ -39,7 +39,21 @@ for (const [name, size] of [['桌機 1440×900', { width: 1440, height: 900 }],
   page.on('pageerror', e => errs.push(String(e)));
   page.on('response', r => r.status() >= 400 && errs.push(`HTTP ${r.status} ${r.url()}`));
   await page.goto(`http://localhost:${PORT}/`, { waitUntil: 'networkidle' });
-  await sleep(400);
+  await sleep(600);
+  // 開場：第一次進來會擋在前面，先驗它再進場（後面的檢查都要點得到地圖）
+  const intro = await page.evaluate(() => {
+    const el = document.querySelector('.intro');
+    if (!el) return null;
+    return { reel: el.querySelectorAll('.ireel img').length,
+             title: el.querySelector('h1')?.textContent,
+             src: /CC BY-SA/.test(el.textContent) };
+  });
+  ok(intro && intro.reel === 6 && intro.title === '東京名所圖' && intro.src,
+     `開場：六幅依年份淡入、標題與出處都在`);
+  await page.locator('.intro [data-act="enter"]').click();
+  await sleep(600);
+  ok(await page.locator('.intro').count() === 0, '按「入場」關得掉開場');
+  await sleep(300);
   console.log(`\n${name}`);
 
   const marks = await page.locator('#map .mark').count();
@@ -70,6 +84,29 @@ for (const [name, size] of [['桌機 1440×900', { width: 1440, height: 900 }],
   });
   ok(dots && dots.halo && dots.pulse && dots.stagger && dots.pop,
      `可收的點有靜態暈圈＋漣漪（錯開起始）、且明顯比收不了的亮 ${JSON.stringify(dots)}`);
+
+  // 跑馬燈：作品介紹＋每一幅的題名年份，橫著跑。
+  // 🔴 它是「浮在畫面上的一條」⇒ 不能壓到 HUD／年代列／縮放鈕（手機上 HUD 會折行，
+  // 寫死位置就會被壓住——實測過，所以位置是量出來的）。
+  const tick = await page.evaluate(() => {
+    const t = document.querySelector('#ticker');
+    if (!t) return null;
+    const r = t.getBoundingClientRect();
+    const hits = sel => {
+      const e = document.querySelector(sel); if (!e) return false;
+      const b = e.getBoundingClientRect();
+      return !(r.bottom <= b.top || r.top >= b.bottom || r.right <= b.left || r.left >= b.right);
+    };
+    return { runs: t.querySelectorAll('.tk').length, over: hits('#hud') || hits('#bar') || hits('#zoom'),
+             x: t.querySelector('.tk').getBoundingClientRect().x };
+  });
+  await sleep(1200);
+  const tickMoved = await page.evaluate(() => document.querySelector('#ticker .tk').getBoundingClientRect().x);
+  // 🔴 HUD 一列裝不下也不能折行：折了就從 44px 長到 123px，把地圖壓掉一大塊
+  const hudH = await page.locator('#hud').evaluate(e => Math.round(e.getBoundingClientRect().height));
+  ok(hudH < 60, `HUD 維持一列（${hudH}px）`);
+  ok(tick && tick.runs === 2 && !tick.over && tickMoved < tick.x,
+     `跑馬燈在跑（${Math.round(tick.x)} → ${Math.round(tickMoved)}）且沒壓到 HUD／年代列／縮放鈕`);
 
   const vis = await page.locator('#map .mark:not(.unpub)').count();
   ok(vis === want, `開場出現 ${vis} 個景（1876 年＋年代未詳，閘門算出來該有 ${want}）`);
