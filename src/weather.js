@@ -15,6 +15,11 @@ const FLAKES = 90;                 // 雪。再多就從「下雪」變成「暴
 const DROPS = 70;
 // 標註的名字就是證據：人工挑過、也命名過，⛔ 不是我看圖猜那裡有燈或有水。
 const LIGHT = /燈|灯|火|光|明|煙火/;
+// 🔴 閃電：**全幅一閃**，而且只在標註說「這裡有閃電」的景上。
+// ⛔ 不畫閃電的形狀——清親已經畫好了那道黃色團塊；生成模型兩次都想替他重畫一道
+// 分叉的白閃電，那正是這一層不做的事（過程記在 data/motion.json 的 _attempts）。
+// 一閃就是整個場景短暫變亮，⇒ 不加東西、不移動任何東西，而張力全在那零點幾秒。
+const BOLT = /閃電|稲妻|雷/;
 // 🔴 本來還想做「水光」，撤掉了：標註裡**沒有一個點是水本身**——
 // 「渡船上的人」「岸上的人」「對岸的屋」講的是船上的人、岸上的人、對岸的屋，
 // 用 /水|舟|岸/ 去比對，亮線就會畫在人臉與屋頂上。⇒ 那是「看起來合理」的錯，
@@ -36,8 +41,9 @@ export function weather(art, v) {
   // 人挑過也命名過的），題名寫不寫「夜」是另一回事。第一版加了時刻這道閘，
   // 結果 59 幅裡只有 17 幅動得起來（Aaron：「幾乎很少有畫作看得到效果」）。
   const lamps = det.filter(d => LIGHT.test(d.label ?? ''));
+  const bolt = det.some(d => BOLT.test(d.label ?? ''));
   // 水光：標註說那裡是水或船，就讓那一帶泛一點光。⛔ 不讓船動、不讓人動。
-  if (!kind && !lamps.length) return () => {};
+  if (!kind && !lamps.length && !bolt) return () => {};
 
   const cv = document.createElement('canvas');
   cv.className = 'wx';
@@ -121,6 +127,19 @@ export function weather(art, v) {
         ctx.beginPath();
         ctx.arc(x, y, r, 0, 6.284);
         ctx.fill();
+      }
+    }
+    // 閃電：每 ~5 秒一次，兩段（主閃＋餘閃），加起來不到 0.3 秒。
+    // ⚠️ 節奏刻意不規律（用兩個不同週期相乘），規律地閃會變成跑馬燈。
+    if (bolt) {
+      const s3 = (now - t0) / 1000;
+      const ph = s3 % 5.2;
+      const a = ph < 0.09 ? 1 - ph / 0.09
+        : ph > 0.22 && ph < 0.34 ? (0.34 - ph) / 0.12 * 0.55 : 0;
+      if (a > 0) {
+        ctx.globalAlpha = a * 0.42;
+        ctx.fillStyle = '#fff6d8';
+        ctx.fillRect(0, 0, w, h);
       }
     }
     if (!still) raf = requestAnimationFrame(draw);
