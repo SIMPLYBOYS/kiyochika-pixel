@@ -5,3 +5,7 @@ __pycache__/
 .DS_Store
 /*.png
 assets/image/   # 2026/09/12 廢掉的「畫心」那一層，重跑 trim 不會再產生
+# ⛔ 金鑰不進 repo。建議放在 repo 外（~/.gemini-key），這幾條只是最後一道保險
+*.key
+.env
+.gemini-key
