@@ -48,7 +48,7 @@ for (const [name, size] of [['桌機 1440×900', { width: 1440, height: 900 }],
 
   // 圓點與地名的畫面尺寸。寫死 7px/13px 在 CSS 裡，map.js 每次縮放用 scale 抵銷
   // viewBox——這兩個數字對不上，就是那個 slice 倍率又算錯了。
-  const r = await page.locator('#map .mark circle').first().boundingBox();
+  const r = await page.locator('#map .mark circle.dot').first().boundingBox();
   ok(r && r.width > 9 && r.width < 26, `圓點直徑 ${r ? r.width.toFixed(1) : '?'} CSS px（該在 14 上下，窄螢幕 ×0.8）`);
 
   // 🔴 開場看得到幾個景，由**閘門**決定而不是取景——1876 年只有那一年的與年代未詳的
@@ -56,6 +56,21 @@ for (const [name, size] of [['桌機 1440×900', { width: 1440, height: 900 }],
   // 要拿 clock.js 的規則算出期待值來比。看得到的比期待多，代表閘門沒生效。
   const views = JSON.parse(readFileSync(resolve(ROOT, 'data/views.json'), 'utf8')).filter(v => v.include);
   const want = views.filter(v => v.subject && (yearOf(v) == null || yearOf(v) <= 1876)).length;
+  // 🔴 可收的點要一眼找得到。`.pulse` 的 CSS 寫了一個月，**元素從來沒生出來**——
+  // 於是「可收」與「收不了」的差別只剩填色，59 個點裡找 6 個金點。這一項驗那三圈都在。
+  const dots = await page.evaluate(() => {
+    const o = document.querySelector('#map .mark.open'), c = document.querySelector('#map .mark.closed');
+    if (!o || !c) return null;
+    const op = e => +getComputedStyle(e).opacity;
+    return { halo: !!o.querySelector('.halo') && op(o.querySelector('.halo')) > 0,
+             pulse: !!o.querySelector('.pulse') && getComputedStyle(o.querySelector('.pulse')).animationName !== 'none',
+             stagger: new Set([...document.querySelectorAll('#map .mark.open .pulse')]
+                        .map(e => e.style.animationDelay)).size > 1,
+             pop: op(o.querySelector('circle.dot')) - op(c.querySelector('circle.dot')) >= 0.5 };
+  });
+  ok(dots && dots.halo && dots.pulse && dots.stagger && dots.pop,
+     `可收的點有靜態暈圈＋漣漪（錯開起始）、且明顯比收不了的亮 ${JSON.stringify(dots)}`);
+
   const vis = await page.locator('#map .mark:not(.unpub)').count();
   ok(vis === want, `開場出現 ${vis} 個景（1876 年＋年代未詳，閘門算出來該有 ${want}）`);
 
@@ -84,7 +99,7 @@ for (const [name, size] of [['桌機 1440×900', { width: 1440, height: 900 }],
   // 點得到，而且面板裡的圖真的載得起來（IIIF 網址壞掉不會有任何錯誤訊息）
   // 點圓本身不點 <g>：<g> 的 bbox 含右邊那條景名（pointer-events:none），
   // 中心會落在標籤那一半的空白上，測起來像「點不到」但人是點得到的。
-  await page.locator('#map .mark circle').first().click();
+  await page.locator('#map .mark circle.dot').first().click();
   await sleep(200);
   ok(await page.locator('#panel.on').count() === 1, '點標記會開面板');
   // 等它真的載完，不是等它「可見」——面板是滑進來的，可見不等於圖到了。
@@ -108,7 +123,7 @@ for (const [name, size] of [['桌機 1440×900', { width: 1440, height: 900 }],
   // 第一版點第一個就紅了，而紅的是測試不是遊戲。
   await page.keyboard.press('Escape');      // 先關掉上面那一輪開著的面板，它蓋住地圖
   await sleep(200);
-  const openMark = page.locator('#map .mark.open circle').first();
+  const openMark = page.locator('#map .mark.open circle.dot').first();
   ok(await openMark.count() === 1, '開場有可收的景（金點）');
   await openMark.click();
   await sleep(250);
@@ -196,7 +211,7 @@ for (const [name, size] of [['桌機 1440×900', { width: 1440, height: 900 }],
   const other = await page.evaluate(() => {
     const cur = document.querySelector('#map .mark.sel');
     const g = [...document.querySelectorAll('#map .mark')].find(e => e !== cur);
-    g.querySelector('circle').dispatchEvent(new MouseEvent('click', { bubbles: true }));
+    g.querySelector('circle.dot').dispatchEvent(new MouseEvent('click', { bubbles: true }));
     return g.querySelector('text')?.textContent;
   });
   await sleep(600);

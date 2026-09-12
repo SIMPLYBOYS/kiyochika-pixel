@@ -282,7 +282,15 @@ export function createMap(svg, views, geo, places, onPick) {
     })();
     // 可收的景會擴一圈暈（CSS 的 .pulse）。錯開起始時間，否則全圖同時呼吸
     // 像跑馬燈；錯開之後比較像水面上零星的漣漪。用 id 當種子，重整不會變。
-    g.innerHTML = `${cone}<circle r="7"/>
+    // 🔴 這三圈缺一不可（原本只有中間那一顆，`.pulse` 的 CSS 寫了但**元素從來沒生出來**，
+    // 於是「可收」與「不可收」的差別只剩填色，59 個點裡找 6 個金點——找不到是應該的）：
+    //   halo  靜態的暈，⛔ 不能只靠動畫：prefers-reduced-motion 的人要看得到同一件事
+    //   pulse 擴散的漣漪，錯開起始時間，否則全圖同時呼吸像跑馬燈。用 id 當種子，重整不會變
+    //   dot   點本身
+    const delay = ((v.id * 37) % 28) / 10;
+    g.innerHTML = `${cone}<circle class="halo" r="16"/>
+      <circle class="pulse" r="7" style="animation-delay:${delay}s"/>
+      <circle class="dot" r="7"/>
       <text x="11" y="5">${v.title.ja ?? v.id}</text>`;
     g.onclick = e => { e.stopPropagation(); if (!dragged()) onPick(v); };
     marks.append(g);

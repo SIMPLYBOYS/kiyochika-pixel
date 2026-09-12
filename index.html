@@ -17,31 +17,39 @@
   /* 🔴 pointer-events:all——空心圓（下面的 .approx）的中心是**洞**，
      SVG 的 fill:none 不接 hit-test，點下去會穿過去打到底下的地形圖。
      59 個標記裡有 32 個是空心的，也就是一半以上只有那圈 2px 的線點得到。 */
-  .mark circle { fill:var(--gold); opacity:.85; transition:opacity .3s; pointer-events:all }
+  .mark circle.dot { fill:var(--gold); opacity:.85; transition:opacity .3s; pointer-events:all }
   /* 兩層閘門畫在點上。還沒出版的整個不存在——地圖隨年份長出來是看得見的那一半 */
   .mark.unpub { display:none }
-  .mark.closed circle { fill:var(--ink); opacity:.42 }
-  .mark.closed.approx circle { fill:none; stroke:var(--ink); opacity:.42 }
-  .mark.got circle { fill:#7a9a6d; opacity:.9 }
-  .mark.got.approx circle { fill:none; stroke:#7a9a6d }
+  /* 收不了的退到背景去：可收的是金的、亮的、會動的，其餘越安靜越好 */
+  .mark.closed circle.dot { fill:var(--ink); opacity:.32 }
+  .mark.closed.approx circle.dot { fill:none; stroke:var(--ink); opacity:.32 }
+  .mark.got circle.dot { fill:#7a9a6d; opacity:.9 }
+  .mark.got.approx circle.dot { fill:none; stroke:#7a9a6d }
   #map.zoomed .mark.got text { fill:#4f6b45 }
-  /* 可收的擴一圈暈。慢、淡、錯開——這是水墨調的地圖，不是通知紅點 */
-  .mark .pulse { fill:var(--gold); opacity:0; pointer-events:none }
+  /* 可收的點：靜態暈 ＋ 擴散漣漪 ＋ 白邊。慢、淡、錯開——這是水墨調的地圖，不是通知紅點。
+     ⛔ 不能只靠動畫：關掉動態效果的人要看得到同一件事，所以 halo 是靜態的。 */
+  .mark .halo, .mark .pulse { fill:var(--gold); opacity:0; pointer-events:none }
+  .mark.open .halo { opacity:.2 }
+  .mark.open circle.dot { opacity:1; stroke:#fffdf5; stroke-width:1.5 }
+  .mark.open.approx circle.dot { fill:var(--land); opacity:1 }   /* 空心的也要看得出是金點 */
   .mark.open .pulse { animation:ripple 2.8s ease-out infinite }
-  @keyframes ripple { 0% { transform:scale(1); opacity:.45 } 60%,100% { transform:scale(3.2); opacity:0 } }
-  @media (prefers-reduced-motion:reduce) { .mark.open .pulse { animation:none } }
+  @keyframes ripple { 0% { transform:scale(1); opacity:.5 } 60%,100% { transform:scale(3.4); opacity:0 } }
+  @media (prefers-reduced-motion:reduce) {
+    .mark.open .pulse { animation:none }
+    .mark.open .halo { opacity:.3 }     /* 不會動就畫得明顯一點 */
+  }
   /* 🔴 只定到「那一帶」的座標畫成空心。實心＝查到題名說的那個地物本身
      （OSM id 或 Wikidata QID），空心＝只知道在這一區。
      兩種畫成一樣，就是在地圖上把沒查證的事講得跟查證過的一樣確定。 */
-  .mark.approx circle { fill:none; stroke:var(--gold); stroke-width:2; opacity:.75 }
+  .mark.approx circle.dot { fill:none; stroke:var(--gold); stroke-width:2; opacity:.75 }
   .mark text { font-size:13px; fill:var(--ink); opacity:0; paint-order:stroke;
                stroke:var(--land); stroke-width:4; pointer-events:none; transition:opacity .3s }
   #map.zoomed .mark text { opacity:.95 }
   /* 被避讓擠掉的景名。用 class 而非 inline display，:hover 才叫得回來 */
   #map.zoomed .mark text.crowded { opacity:0 }
-  .mark:hover circle { stroke:#fffdf5; stroke-width:2.5; opacity:1 }
+  .mark:hover circle.dot { stroke:#fffdf5; stroke-width:2.5; opacity:1 }
   .mark:hover text { opacity:1 !important }
-  .mark.sel circle { stroke:#fffdf5; stroke-width:3; opacity:1 }
+  .mark.sel circle.dot { stroke:#fffdf5; stroke-width:3; opacity:1 }
   .mark.sel text { opacity:1 !important }
   /* 視線扇形：畫成扇不畫成箭頭，因為方位有不確定度。目前 69 幅都還沒有方位角 */
   .mark .cone { fill:var(--gold); opacity:.22; pointer-events:none }

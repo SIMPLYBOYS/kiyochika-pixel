@@ -13,7 +13,12 @@ import { dirname, resolve } from 'node:path';
 import { clockOf, collectable, blocked, yearOf, tick, newState, TIMES, WEATHERS } from '../src/clock.js';
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
-const views = JSON.parse(readFileSync(resolve(ROOT, 'data/views.json'), 'utf8')).filter(v => v.include);
+// 🔴 模擬的世界要跟遊戲的世界**一模一樣**：能收的只有畫得到地圖上的（有 subject）。
+// 原本這裡只濾 include，於是模擬說 69/69 走得完，而遊戲最多只到 59/69——
+// 這是 edo-hyakkei 那個坑的新版本（那次是模擬多了一個遊戲沒有的動作，
+// 這次是模擬的景比遊戲多 10 幅）。⇒ 兩邊的取景規則只能有一份。
+const all = JSON.parse(readFileSync(resolve(ROOT, 'data/views.json'), 'utf8'));
+const views = all.filter(v => v.include && v.subject);
 
 let bad = 0;
 const ok = (c, m) => { console.log(`${c ? '  ok  ' : '  ✗   '}${m}`); if (!c) bad++; };
@@ -51,6 +56,9 @@ for (let guard = 0; guard < 20000; guard++) {
 }
 const done = state.collected.length;
 ok(done === views.length, `走得完：${done} / ${views.length} 幅`);
+ok(views.every(v => v.subject), '模擬的每一景都畫得到地圖上（沒座標的不算進度）');
+console.log(`  ——收錄 ${all.filter(v => v.include).length} 幅，其中 `
+  + `${all.filter(v => v.include && !v.subject).length} 幅沒座標、不進遊戲`);
 if (done < views.length) {
   const clock = clockOf(state);
   const stuck = views.filter(v => !state.collected.includes(v.id))

@@ -27,7 +27,12 @@ const [all, world, ml, refmaps, topicMap, topicText, topicZh] = await Promise.al
   grab('data/topics-zh.json').catch(e => (console.warn('解說譯文略過:', e), { items: {} })),
 ]);
 
-const views = all.filter(v => v.include);
+// 🔴 能玩的是**地圖上有的那些**。收錄 69 幅，其中 10 幅沒查到座標（空白是資訊，
+// 理由逐條寫在 places.json）——它們畫不到地圖上，就永遠點不到、收不了。
+// 原本進度分母寫 69：那個數字保證跑不完（最多 59/69），結局卡也因此永遠不會出現。
+// ⇒ 遊戲的世界＝有座標的那 59 幅，⛔ 不要用一個玩家達不到的分母。
+const unmapped = all.filter(v => v.include && !v.subject);
+const views = all.filter(v => v.include && v.subject);
 
 // 地名三組，畫在同一層、同一套避讓：
 //   ku    明治 15 区 —— 座標寫在白名單裡（Wikidata），只畫在 1880 那側
@@ -346,7 +351,9 @@ if (who) who.onclick = () => {
   const a = topicOf((topicMap.notes ?? {})['作者']), b = topicOf((topicMap.notes ?? {})['様式']);
   card('清親與光線畫', `${[a, b].filter(Boolean).map(t =>
     `<b>${t.title}</b><br>${t.text}<br><a href="${t.url}" target="_blank" rel="noopener">維基百科（日文原文）↗</a>`
-  ).join('<br><br>')}<br><br><small>譯自維基百科日本語版　CC BY-SA 4.0</small>`);
+  ).join('<br><br>')}<br><br><small>譯自維基百科日本語版　CC BY-SA 4.0<br>
+    這部畫帖收 ${unmapped.length + views.length} 幅，地圖上有 ${views.length} 幅；另外 ${unmapped.length} 幅查不到座標，
+    畫不到地圖上就不放進來——空白是資訊。</small>`);
 };
 
 $('wait').onclick = wait;
