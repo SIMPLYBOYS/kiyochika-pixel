@@ -137,6 +137,24 @@ def write():
             print(f"  ⚠️ 還沒翻的 {len(gone)} 條：{gone}")
         if moved:
             print(f"  ⚠️ 維基原文改了、譯文要跟著更新的 {len(moved)} 條：{moved}")
+    # 「這是什麼地方」與「畫裡的東西」指到同一條的，面板會自動去重（src/main.js），
+    # 但這裡報出來，因為那是**對應表的事實**：策展的人該知道哪幾幅是這種情形。
+    views = [v for v in json.loads((ROOT / "data" / "views.json").read_text(encoding="utf-8"))
+             if v.get("include")]
+    name = lambda v: v if isinstance(v, str) else v["title"]
+    both = []
+    for v in views:
+        pl = topics.get("places", {}).get(str(v["id"]))
+        if not pl:
+            continue
+        for d in v.get("details") or []:
+            th = topics.get("things", {}).get(d.get("label_ja"))
+            if th and name(th) == name(pl):
+                both.append(f"no.{v['id']}「{name(pl)}」")
+                break
+    if both:
+        print(f"  ℹ️ 地方與事物指同一條、面板會去重的 {len(both)} 幅：{'、'.join(both)}")
+
     dest = ROOT / "data" / "topics-text.json"
     dest.write_text(json.dumps({"_": "維基百科導言，機器抓的；對應關係在 topics.json（人工）。"
                                      "逐字引用，授權 CC BY-SA 4.0，面板上標出處並連回原文。",

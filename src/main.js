@@ -126,11 +126,19 @@ const card1 = (t, tag, open) => t ? `
     <p>${t.text}<br><a href="${t.url}" target="_blank" rel="noopener">維基百科（日文原文）↗</a></p>
   </details>` : '';
 
+const keyOf = v => (typeof v === 'string' ? v : v?.title);
+
 function reading(v) {
-  const place = topicOf((topicMap.places ?? {})[v.id]);
-  // 這一幅標註到的事物，去重之後照畫面上的順序
-  const seen = new Set();
-  const things = (v.details ?? []).map(d => (topicMap.things ?? {})[d.label_ja])
+  const placeKey = keyOf((topicMap.places ?? {})[v.id]);
+  const place = topicOf(placeKey);
+  // 去重要**跨兩欄**：有 5 幅的「這是什麼地方」跟「畫裡的東西」指同一條
+  //（4 海運橋＝第一銀行／42 兩國花火＝隅田川花火大会／47 紙幣寮＝国立印刷局／
+  //  53 五角堂＝内国勧業博覧会／72 大丸＝大の字）——同一段話印兩次。
+  // ⇒ 先把地方那條放進 seen，事物那欄就不會再出一次。
+  // ⚠️ 比的是**條目名**不是物件：topics.json 的值可能是字串也可能是 {title, n}，
+  // 直接比物件會永遠不相等（第一版的去重就是這樣沒生效）。
+  const seen = new Set(placeKey ? [placeKey] : []);
+  const things = (v.details ?? []).map(d => keyOf((topicMap.things ?? {})[d.label_ja]))
     .filter(n => n && !seen.has(n) && seen.add(n)).map(topicOf).filter(Boolean);
   if (!place && !things.length) return '';
   return `<section class="read"><h3>解說</h3>

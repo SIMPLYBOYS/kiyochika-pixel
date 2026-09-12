@@ -178,13 +178,16 @@ for (const [name, size] of [['桌機 1440×900', { width: 1440, height: 900 }],
     const body = [...sec.querySelectorAll('summary, p')]
       .map(e => e.textContent).join('').replace(/[「『][^」』]*[」』]/g, '')
       .replace(/譯自維基百科日本語版/g, '').replace(/維基百科（日文原文）/g, '');
+    // 🔴 同一條目不能在一幅裡出現兩次：有 5 幅的「地方」與「畫裡的東西」指同一條
+    const names = [...sec.querySelectorAll('summary')].map(e => e.firstChild.textContent.trim());
     return { kana: /[ぁ-んァ-ヶ]/.test(body),
+             dup: names.length !== new Set(names).size,
              n: sec.querySelectorAll('details').length,
              src: (sec.querySelector('.src')?.textContent || '').includes('CC BY-SA'),
              links: [...sec.querySelectorAll('a')].every(a => a.href.startsWith('https://ja.wikipedia.org/')) };
   });
-  ok(read && read.n >= 1 && read.src && read.links && !read.kana,
-     `解說有 ${read?.n ?? 0} 條、是繁中、標了出處與授權、連得回維基百科`);
+  ok(read && read.n >= 1 && read.src && read.links && !read.kana && !read.dup,
+     `解說有 ${read?.n ?? 0} 條、不重複、是繁中、標了出處與授權、連得回維基百科`);
 
   // 🔴 換一幅畫，欄寬不能跳。倍率該由視窗決定，不由那一幅的高度決定——
   // 原本 58 新橋ステンション（480×312）顯示 480px、矮一點的畫顯示 960px。
