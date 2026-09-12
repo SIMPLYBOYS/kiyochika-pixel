@@ -277,6 +277,18 @@ for (const [name, size] of [['桌機 1440×900', { width: 1440, height: 900 }],
   ok(/thumb/.test(v0.src) && !v0.px && /16 色/.test(v0.label)
      && /pixel/.test(v1.src) && v1.px && /真跡/.test(v1.label),
      `預設真跡、按鈕說得出按下去會看到什麼（${v0.label} → ${v1.label}）`);
+  // 動態版（生成的那一層）：🔴 **沒有片子就不該有那顆鈕**；有片子的話，
+  // 畫面上必須一直掛著「AI 生成・非原作」——⛔ 說明文字裡提一句不算。
+  const gen = await page.evaluate(async () => {
+    const m = await fetch('data/motion.json').then(r => r.json()).catch(() => ({ clips: [] }));
+    const id = +document.querySelector('#map .mark.sel')?.dataset.id;
+    return { clips: (m.clips || []).length, hasClip: (m.clips || []).some(c => c.id === id),
+             btn: !!document.querySelector('#panel #anim') };
+  });
+  ok(gen.btn === gen.hasClip,
+     gen.clips ? `動態版：有片子的景才有那顆鈕（clips ${gen.clips}）`
+               : '動態版：還沒有片子，所以那顆鈕不存在（⛔ 不留按了沒東西的鈕）');
+
   // 十六色：quantize.py 算出來的那 16 色，⚠️ palettes.json 產出至今沒人讀過
   ok(v0.pal === 16 && /平均明度 \d+/.test(v0.cap),
      `十六色色盤畫得出來（${v0.pal} 色・${(v0.cap.match(/平均明度 \d+/) || [''])[0]}）`);

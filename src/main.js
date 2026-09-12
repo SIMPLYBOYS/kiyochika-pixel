@@ -20,7 +20,7 @@ const grab = async url => {
   return r.json();
 };
 
-const [all, world, ml, refmaps, topicMap, topicText, topicZh, audio, palettes] = await Promise.all([
+const [all, world, ml, refmaps, topicMap, topicText, topicZh, audio, palettes, motion] = await Promise.all([
   grab('data/views.json'),
   grab('data/geo/modern.json'),
   // 地名只是裝飾，掛掉不該連地圖一起拖下水
@@ -31,6 +31,7 @@ const [all, world, ml, refmaps, topicMap, topicText, topicZh, audio, palettes] =
   grab('data/topics-zh.json').catch(e => (console.warn('解說譯文略過:', e), { items: {} })),
   grab('data/audio-tracks.json').catch(e => (console.warn('配樂略過:', e), { tracks: [] })),
   grab('data/palettes.json').catch(e => (console.warn('色盤略過:', e), {})),
+  grab('data/motion.json').catch(e => (console.warn('動態版略過:', e), { clips: [] })),
 ]);
 
 // 🔴 能玩的是**地圖上有的那些**。收錄 69 幅，其中 10 幅沒查到座標（空白是資訊，
@@ -114,6 +115,13 @@ function here(v) {
         x => `${x.name}<small> ${KIND[x.kind] ?? ''} ${x.m}m</small>`).join('　')}</dd>` : ''}
     ${n.marker ? `<dt class="mk">碑</dt><dd class="mk">${n.marker.name}<small> ${n.marker.m}m</small></dd>` : ''}`;
 }
+
+// ── 動態版：這個 repo 唯一一層生成出來的東西 ──────────────────
+// 🔴 規矩寫在 data/motion.json 的 _rule：只動氛圍不動內容、原畫當底只讓遮罩內動、
+// 畫面上固定標「AI 生成・非原作」、⛔ 不進畫卷不進收藏不算進度。
+// 🔑 這一層的「出處」＝**可重現**：模型、日期、prompt、遮罩都記在資料檔裡。
+// ⚠️ 沒有片子就當這個功能不存在（⛔ 不要留一顆按了沒東西的鈕）。
+const clipOf = v => (motion.clips ?? []).find(c => c.id === v.id);
 
 // ── 色盤：把光的骨架攤開 ──────────────────────────────────────
 // 🔴 像素化在這一作不是濾鏡，是**分析工具**：這一作叫光線畫，而 16 色量化留下來的
@@ -209,7 +217,8 @@ function pick(v) {
     <h2>${v.title.ja}</h2>
     <div id="art" class="${marks ? '' : 'nomarks'}"><img src="${thumb(v)}" alt="${v.title.ja}">${got ? spots(v) : ''}</div>
     ${got ? `<button id="mark" class="wide">${marks ? '隱藏標註' : '顯示標註'}</button>
-             <button id="flip" class="wide">16 色：看光的骨架</button>` : ''}
+             <button id="flip" class="wide">16 色：看光的骨架</button>
+             ${clipOf(v) ? '<button id="anim" class="wide">動態版 <small>AI 生成</small></button>' : ''}` : ''}
     <button id="big" class="wide">看原寸</button>
     ${!b ? '<button id="take" class="wide take">收入畫帖</button>'
         : b.why === 'got' ? ''          // 收過了不必再說一次，上面的提示已經在講這件事
@@ -242,6 +251,31 @@ function pick(v) {
     marks = !marks;
     $('art').classList.toggle('nomarks', !marks);
     mark.textContent = marks ? '隱藏標註' : '顯示標註';
+  };
+  // 動態版：把 <img> 換成 <video>，並且**永遠**帶著那條標示。
+  const clip = clipOf(v);
+  const anim = $('anim');
+  if (anim && clip) anim.onclick = () => {
+    const art = $('art');
+    const on = !art.querySelector('video');
+    art.querySelector('video, img')?.remove();
+    if (on) {
+      art.insertAdjacentHTML('afterbegin', `
+        <video autoplay loop muted playsinline>
+          <source src="${clip.file}" type="video/webm">
+          <source src="${clip.file.replace(/\.webm$/, '.mp4')}" type="video/mp4">
+        </video>
+        <b class="gen">AI 生成・非原作</b>`);
+      // ⛔ 標註在這一層關掉：生成的每一格未必跟原畫對得上，標在上面就是在替它背書
+      art.classList.add('nomarks');
+    } else {
+      art.querySelector('.gen')?.remove();
+      art.insertAdjacentHTML('afterbegin', `<img src="${thumb(v)}" alt="${v.title.ja}">`);
+      art.classList.toggle('nomarks', !marks);
+    }
+    anim.textContent = on ? '回到真跡' : '動態版 ';
+    if (!on) anim.insertAdjacentHTML('beforeend', '<small>AI 生成</small>');
+    fitArt(v);
   };
   const flip = $('flip');
   if (flip) {

@@ -159,6 +159,12 @@
   #panel #art.nomarks .spot { display:none }
   /* 天候層疊在畫上、標註下面。⛔ 不吃點擊：底下的畫還要能點 */
   #panel #art .wx { position:absolute; left:0; top:0; pointer-events:none }
+  #panel #art video { display:block; width:100% }
+  /* 🔴 生成的東西必須一直掛著這條，⛔ 不是說明文字裡提一句就算 */
+  #panel #art .gen { position:absolute; left:8px; top:8px; font-size:11px; font-weight:normal;
+    letter-spacing:.08em; color:#2a2410; background:#e0a86b; padding:2px 8px;
+    border-radius:9px; box-shadow:0 0 0 2px #0008 }
+  #panel #anim small { opacity:.6; font-size:11px }
   #panel .spot { position:absolute; transform:translate(-50%,-50%); font-weight:normal;
                  font-size:11px; color:#2a2410; background:var(--gold); padding:1px 5px;
                  border-radius:9px; white-space:nowrap; pointer-events:none;
