@@ -240,6 +240,35 @@ for (const [name, size] of [['桌機 1440×900', { width: 1440, height: 900 }],
   await page.locator('#card-close').click();
   await sleep(200);
 
+  // 畫卷：收到的景連成一卷、由右往左展讀；沒收的留空格（卷長不隨進度變）
+  // 🔴 先把面板打開再開畫卷：Esc 只該收卷、面板要留著（第一版的守衛漏了畫卷，
+  // 而當時的測試沒開面板 ⇒ 兩層一起關也照樣綠燈。測試要有兩層才測得到分層）。
+  await page.locator('#map .mark circle.dot').first().click();
+  await sleep(500);
+  await page.locator('#emaki').click();
+  await sleep(700);
+  const roll = await page.evaluate(() => {
+    const r = document.querySelector('.sroll');
+    if (!r) return null;
+    const x0 = r.scrollLeft;
+    return { spans: r.querySelectorAll('.span').length, got: r.querySelectorAll('.span:not(.blank)').length,
+             jiku: r.querySelectorAll('.jiku').length, rtl: getComputedStyle(r).flexDirection === 'row-reverse',
+             x0 };
+  });
+  ok(roll && roll.spans === 59 && roll.got >= 1 && roll.jiku === 2 && roll.rtl,
+     `畫卷 ${roll?.spans} 格（收到的 ${roll?.got} 格有圖）、兩端有軸木、由右往左`);
+  await page.locator('.scroll-view [data-act="play"]').click();
+  await sleep(1200);
+  const moved = await page.evaluate(() => document.querySelector('.sroll').scrollLeft);
+  ok(moved < roll.x0, `自動展卷往左走（${Math.round(roll.x0)} → ${Math.round(moved)}）`);
+  await page.keyboard.press('Escape');
+  await sleep(300);
+  // ⚠️ Esc 只該收卷。主程式的監聽先註冊、先執行，所以它自己要問「上面有沒有蓋著東西」
+  ok(await page.locator('.scroll-view').count() === 0 && await page.locator('#panel.on').count() === 1,
+     'Esc 只收卷，面板還在');
+  await page.keyboard.press('Escape');
+  await sleep(200);
+
   // 帶我去：HUD 那行按下去，地圖要**滑到**下一個金點並把它標出來。
   // ⛔ 連按不能在兩點之間乒乓——帶過去之後離中心最近的就是剛離開的那個（實測過）。
   const centreOf = () => page.locator('#map').evaluate(e => {

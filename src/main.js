@@ -4,6 +4,7 @@
 import { createMap, setVisibility } from './map.js';
 import { clockOf, blocked, collectable, visible, yearOf, tick, newState } from './clock.js';
 import { zoom } from './zoom.js';
+import { openScroll } from './scroll.js';
 
 const $ = id => document.getElementById(id);
 
@@ -305,7 +306,10 @@ $('close').onclick = shut;
 // ⚠️ 原寸檢視開著的時候，Esc 是它的——這個監聽先註冊所以先執行，
 // 不擋的話一次按鍵會把兩層一起關掉（實測過）。
 addEventListener('keydown', e => {
-  if (e.key === 'Escape' && !document.querySelector('.lightbox')) shut();
+  // ⚠️ 上面蓋著東西時 Esc 是它的。這個監聽**先註冊所以先執行**，
+  // 後註冊者的 stopPropagation 攔不住它 ⇒ 只能在這裡問「上面有沒有東西」。
+  // 原寸檢視與畫卷同理，⛔ 新增一層就要記得加進這個選擇器。
+  if (e.key === 'Escape' && !document.querySelector('.lightbox, .scroll-view')) shut();
 });
 
 // ── 年代滑桿 ──────────────────────────────────────────────────
@@ -356,6 +360,17 @@ if (who) who.onclick = () => {
     這部畫帖收 ${unmapped.length + views.length} 幅，地圖上有 ${views.length} 幅；另外 ${unmapped.length} 幅查不到座標，
     畫不到地圖上就不放進來——空白是資訊。</small>`);
 };
+
+// ── 畫卷 ──────────────────────────────────────────────────────
+// 收進畫帖的景連成一卷、由右往左展讀。⛔ 還沒收的留空格不跳過——
+// 卷長不隨進度變，才看得出「還差哪幾幅」。
+$('emaki').onclick = () => openScroll(
+  views.map((v, i) => ({ ...v, n: i + 1 })),      // n＝卷裡的順序，標籤用漢數字寫它
+  v => state.collected.includes(v.id),
+  v => { pick(v); map.goTo(v.id); },              // 從卷裡點進去，地圖也跟著移過去
+  (v, mode) => (mode === 'pixel' ? pixel(v) : thumb(v)),
+);
+addEventListener('keydown', e => { if (e.key === 'e') $('emaki').click(); });
 
 // ── 帶我去 ────────────────────────────────────────────────────
 // 金點只有幾個、地圖卻是整個東京，「在哪裡」本身就是一道無謂的關卡
