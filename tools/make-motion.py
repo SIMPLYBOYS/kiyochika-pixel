@@ -50,6 +50,27 @@ def main():
     # 🔴 尺寸必須跟原畫一樣：不一樣就表示模型重新裁過構圖，而**構圖不是它能動的東西**
     assert not bad, f"這幾張跟原畫尺寸對不上（模型重新裁過構圖）：{bad}　原畫 {base}"
 
+    # 🔑 **機器先驗「有沒有動到內容」**，人再用眼睛看。
+    # 做法：把原畫與每張關鍵幀都轉灰階、抽邊、縮到 128 寬再比——
+    # 邊的位置代表**構圖**，光變了邊的位置不該變。⚠️ 亮度本身會影響邊的強度，
+    # 所以先各自正規化再比，看的是「邊在不在同一個地方」。
+    # 🔑 閾值 12 不是拍腦袋的：拿**原畫自己**做過對照（同「先驗來自資料本身」那條）——
+    #     只調亮 40% → 6.3 ／ 只降對比 30% → 5.7 ／ 整幅平移 12px → 19.0 ／ 左右鏡像 → 21.5
+    #     ⇒ 「只動光」落在 6 上下，「構圖動了」跳到 19 以上，12 在中間。
+    # ⛔ 只報數字不擋：這是給人看的指標，真正擋下來的是尺寸那一條。
+    from PIL import ImageFilter, ImageOps
+    def edges(p):
+        im = Image.open(p).convert("L").resize((128, int(128 * base[1] / base[0])))
+        e = ImageOps.autocontrast(im.filter(ImageFilter.FIND_EDGES))
+        return list(e.getdata())
+    ref = edges(plate)
+    print("構圖位移檢查（0 ＝ 完全沒動，越大表示邊跑掉越多）：")
+    for f in frames:
+        cur = edges(f)
+        drift = sum(abs(a - b) for a, b in zip(ref, cur)) / len(ref)
+        flag = "✅" if drift < 12 else "⚠️ 邊跑掉了，用眼睛看清楚是不是構圖被改"
+        print(f"  {f.name:<14}{drift:6.1f}　{flag}")
+
     hold = clip.get("hold", 0.6)        # 每張停留幾秒
     fade = clip.get("fade", 0.5)        # 交叉淡入淡出幾秒
     OUT.mkdir(parents=True, exist_ok=True)
