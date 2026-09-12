@@ -7,6 +7,7 @@ import { zoom } from './zoom.js';
 import { openScroll } from './scroll.js';
 import { playIntro, startTicker, introSeen } from './intro.js';
 import { createMusic } from './audio.js';
+import { weather } from './weather.js';
 
 const $ = id => document.getElementById(id);
 
@@ -84,7 +85,7 @@ const WHY = {
   event: () => '兩国大火那一夜之後才畫得出來',
   got: () => '已經收過了',
 };
-let selected = null, shownId = null;
+let selected = null, shownId = null, stopWx = () => {};
 let onResize = () => {};
 addEventListener('resize', () => onResize());
 
@@ -192,6 +193,10 @@ function pick(v) {
   document.body.classList.add('panel-open');
   const img = $('art')?.firstElementChild;
   if (img) { img.onload = () => fitArt(v); fitArt(v); }
+  // 天候層：只動氛圍（雪・雨・燈火明滅），而且只在資料說得出來的景上動。
+  // ⚠️ 每次重畫面板都要先收掉上一層，否則 rAF 會越疊越多（切像素／真跡也會重畫）。
+  stopWx();
+  stopWx = $('art') ? weather($('art'), v) : () => {};
   onResize = () => fitArt(v);
   $('big').onclick = () => zoom(plate(v), `${v.title.ja}　NDL 清親畫帖・第 ${v.source.page} 圖`);
   const take = $('take');
@@ -301,6 +306,8 @@ function paint() {
   $('open').disabled = !openN;          // 沒東西可收時按了不該有反應
 }
 const shut = () => {
+  stopWx();                       // 面板關了就別再跑動畫
+  stopWx = () => {};
   $('panel').classList.remove('on');
   document.body.classList.remove('panel-open');
   selected?.classList.remove('sel');

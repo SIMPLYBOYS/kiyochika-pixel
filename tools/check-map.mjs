@@ -143,6 +143,37 @@ for (const [name, size] of [['桌機 1440×900', { width: 1440, height: 900 }],
   await sleep(500);
   ok(await page.evaluate(() => !document.body.classList.contains('immersive')), '按 F 離開沈浸模式');
 
+  // 天候層：只動氛圍（雪・雨・夜的燈火明滅），而且**只在資料說得出來的景上動**。
+  // 🔴 驗的是「真的在動」——截圖看不出動態，所以取兩次畫面的總亮度比對。
+  // ⚠️ 也要驗「沒有條件的景不動」：那是這一層的分寸，動了就是替清親決定畫面。
+  const wxOf = async title => {
+    await page.evaluate(t => {
+      const g = [...document.querySelectorAll('#map .mark')].find(e => e.querySelector('text')?.textContent === t);
+      g?.querySelector('circle.dot').dispatchEvent(new MouseEvent('click', { bubbles: true }));
+    }, title);
+    await sleep(900);
+    return page.evaluate(() => {
+      const c = document.querySelector('#art .wx');
+      if (!c) return null;
+      const d = c.getContext('2d').getImageData(0, 0, c.width, c.height).data;
+      let sum = 0;
+      for (let i = 3; i < d.length; i += 4) sum += d[i];
+      return sum;
+    });
+  };
+  const snow1 = await wxOf('海運橋（第一銀行雪）');
+  await sleep(600);
+  const snow2 = await page.evaluate(() => {
+    const c = document.querySelector('#art .wx');
+    const d = c.getContext('2d').getImageData(0, 0, c.width, c.height).data;
+    let sum = 0;
+    for (let i = 3; i < d.length; i += 4) sum += d[i];
+    return sum;
+  });
+  const plain = await wxOf('東京銀座街日報社');
+  ok(snow1 > 0 && snow2 > 0 && snow1 !== snow2 && plain === null,
+     `天候層：雪景在下雪（${snow1} → ${snow2}），沒寫天候的景不動`);
+
   // 配樂。🔴 這一項驗的是**聽得到**，⛔ 不是「在播放」——兩者是兩回事：
   // AudioContext 還 suspended 的話媒體元素的 currentTime 照走，但增益卡在 0，一點聲音都沒有。
   // ⚠️ 而且預設是開的（第一版預設關，玩家入場之後什麼也沒聽到 ⇒ 回報「聲音沒出來」），
