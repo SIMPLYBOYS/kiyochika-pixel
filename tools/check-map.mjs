@@ -126,6 +126,19 @@ for (const [name, size] of [['桌機 1440×900', { width: 1440, height: 900 }],
   });
   ok(imm.on && imm.hud <= 0.25 && imm.zoom <= 0.25 && imm.attrShown && imm.label === '離開',
      `沈浸模式收起周邊（HUD ${imm.hud}）但出處還在`);
+  // 🔴 年代滑桿不是周邊，是這一作的主題（1880 ⇄ 2026）。第一版把它一起壓到 0.18，
+  // 技術上還拉得動，但在花花的地圖上看不見、又只有 16px 高 ⇒ 實際上不能用。
+  const era = await page.locator('#era');
+  const eraLook = await era.evaluate(e => ({ op: +getComputedStyle(e).opacity,
+                                             h: Math.round(e.getBoundingClientRect().height) }));
+  const box = await era.boundingBox();
+  await page.mouse.move(box.x + box.width * 0.75, box.y + box.height / 2);
+  await page.mouse.down(); await page.mouse.up();
+  await sleep(300);
+  const pulled = +await era.inputValue();
+  ok(eraLook.op >= 0.4 && eraLook.h >= 22 && pulled > 600 && pulled < 900,
+     `沈浸時年代滑桿看得見（${eraLook.op}／${eraLook.h}px）也拉得動（→ ${pulled}）`);
+  await era.evaluate(e => { e.value = 1000; e.dispatchEvent(new Event('input', { bubbles: true })); });
   await page.keyboard.press('f');
   await sleep(500);
   ok(await page.evaluate(() => !document.body.classList.contains('immersive')), '按 F 離開沈浸模式');

@@ -182,11 +182,16 @@
      所以是「淡」不是「消失」——按得到才不會變成陷阱）。
      🔴 出處不能收：ODbL 要求標示出處，沈浸模式也一樣 ⇒ 只縮小不隱藏。 */
   body.immersive #hud, body.immersive #zoom, body.immersive #ticker,
-  body.immersive #bar label, body.immersive #bar input, body.immersive #eranow {
+  body.immersive #bar label, body.immersive #eranow {
     opacity:.18; transition:opacity .35s }
   body.immersive #hud:hover, body.immersive #zoom:hover, body.immersive #ticker:hover,
-  body.immersive #bar:hover label, body.immersive #bar:hover input,
-  body.immersive #bar:hover #eranow { opacity:1 }
+  body.immersive #bar:hover label, body.immersive #bar:hover #eranow { opacity:1 }
+  /* 🔴 年代滑桿**不跟著收**。它不是周邊，它就是這一作的主題（1880 ⇄ 2026 兩層皮）——
+     第一版把它一起壓到 0.18，技術上還拉得動，但在花花的地圖上幾乎看不見、
+     又只有 16px 高，實際上就是「不能用」（Aaron 回報）。
+     ⇒ 留在看得見的濃度，並且在沈浸模式把可點範圍加高一倍，碰到就全亮。 */
+  body.immersive #bar input { opacity:.55; height:26px; transition:opacity .35s }
+  body.immersive #bar:hover input { opacity:1 }
   body.immersive #bar { background:none }
   body.immersive #attr { opacity:.3; font-size:9px }      /* ⛔ 出處不隱藏，只縮小 */
   body.immersive #hud { background:#0e223399 }
