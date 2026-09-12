@@ -6,6 +6,7 @@ import { clockOf, blocked, collectable, visible, yearOf, tick, newState } from '
 import { zoom } from './zoom.js';
 import { openScroll } from './scroll.js';
 import { playIntro, startTicker, introSeen } from './intro.js';
+import { createMusic } from './audio.js';
 
 const $ = id => document.getElementById(id);
 
@@ -18,7 +19,7 @@ const grab = async url => {
   return r.json();
 };
 
-const [all, world, ml, refmaps, topicMap, topicText, topicZh] = await Promise.all([
+const [all, world, ml, refmaps, topicMap, topicText, topicZh, audio] = await Promise.all([
   grab('data/views.json'),
   grab('data/geo/modern.json'),
   // 地名只是裝飾，掛掉不該連地圖一起拖下水
@@ -27,6 +28,7 @@ const [all, world, ml, refmaps, topicMap, topicText, topicZh] = await Promise.al
   grab('data/topics.json').catch(e => (console.warn('解說對應表略過:', e), {})),
   grab('data/topics-text.json').catch(e => (console.warn('解說略過:', e), { items: {} })),
   grab('data/topics-zh.json').catch(e => (console.warn('解說譯文略過:', e), { items: {} })),
+  grab('data/audio-tracks.json').catch(e => (console.warn('配樂略過:', e), { tracks: [] })),
 ]);
 
 // 🔴 能玩的是**地圖上有的那些**。收錄 69 幅，其中 10 幅沒查到座標（空白是資訊，
@@ -357,7 +359,10 @@ if (who) who.onclick = () => {
   const a = topicOf((topicMap.notes ?? {})['作者']), b = topicOf((topicMap.notes ?? {})['様式']);
   card('清親與光線畫', `${[a, b].filter(Boolean).map(t =>
     `<b>${t.title}</b><br>${t.text}<br><a href="${t.url}" target="_blank" rel="noopener">維基百科（日文原文）↗</a>`
-  ).join('<br><br>')}<br><br><small>譯自維基百科日本語版　CC BY-SA 4.0<br>
+  ).join('<br><br>')}<br><br><small>${(audio.tracks ?? []).length ? `配樂　${
+    audio.tracks.map(t => `${t.title}（${t.issue}）`).join('・')}<br>
+    🔴 1876–1881 沒有錄音存在（留聲機 1877 年才發明）——這五首是 1925–31 年錄的
+    **當時仍在演奏的曲目**，全為公有領域。<br>` : ''}譯自維基百科日本語版　CC BY-SA 4.0<br>
     這部畫帖收 ${unmapped.length + views.length} 幅，地圖上有 ${views.length} 幅；另外 ${unmapped.length} 幅查不到座標，
     畫不到地圖上就不放進來——空白是資訊。</small>`);
 };
@@ -423,6 +428,25 @@ const intro = () => playIntro({
   // 當場點不到標記）。開場是一層蓋在上面的東西，不該改遊戲的狀態。
 });
 $('replay').onclick = intro;
+
+// ── 配樂 ──────────────────────────────────────────────────────
+// 🔴 不是「明治九年的聲音」：1876–1881 沒有錄音存在。這五首是 1925–31 年錄的
+// **當時仍在演奏的曲目**（端唄・雅樂・尺八本曲・新內・追分），全是公有領域，
+// 出處與盤號記在 data/audio.json。⚠️ 瀏覽器要等使用者動作才准出聲 ⇒ 只在按鈕與
+// 開場的「入場」之後才 play()。
+const music = createMusic(audio.tracks ?? [], {
+  onTrack: t => { $('nowplaying').textContent = t ? `♪ ${t.title}` : ''; },
+});
+const paintMusic = on => {
+  $('music').classList.toggle('on', on);
+  $('music').title = on ? '關掉配樂（M）' : '配樂：五首公有領域的早期唱片（M）';
+  if (!on) $('nowplaying').textContent = '';
+};
+$('music').onclick = () => paintMusic(music.toggle());
+addEventListener('keydown', e => { if (e.key === 'm') $('music').click(); });
+paintMusic(music.on);
+// 上次開著就等第一次點擊／按鍵接著放（開場的「入場」也算那一下）
+music.armResume();
 
 // ── 沈浸模式 ──────────────────────────────────────────────────
 // 全螢幕 ＋ 把周邊收到很淡，只留地圖與畫。

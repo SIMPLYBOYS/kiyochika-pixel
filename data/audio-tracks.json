@@ -1,0 +1,60 @@
+{
+ "_": "配樂清單，機器產生（選曲與理由在 audio.json）。🔴 1876–1881 沒有錄音存在，這些是 1925–31 年錄的**當時仍在演奏的曲目**。",
+ "tracks": [
+  {
+   "file": "assets/audio/01.m4a",
+   "title": "端唄　梅にも春",
+   "note": "江戶以來的端唄，三味線與唄。清親畫的銀座、日本橋一帶，店先與座敷裡就是這種聲音。",
+   "performer": "不詳",
+   "issue": "Musik des Orients（E. M. von Hornbostel 編，Lindström A.G. 發行，柏林 1931）Disc 2",
+   "year": "1931",
+   "seconds": 186.9,
+   "license": "Public domain",
+   "source": "https://commons.wikimedia.org/wiki/File%3AHa-uta_Umenimo_haru_%281931%29.ogg"
+  },
+  {
+   "file": "assets/audio/02.m4a",
+   "title": "雅樂　衣香",
+   "note": "宮內省樂部演奏。皇居、二重橋那幾幅畫的是宮城，這是那道牆內側的音樂。",
+   "performer": "宮內省樂部",
+   "issue": "Victor 13024（約 1930）",
+   "year": "約1930",
+   "seconds": 159.3,
+   "license": "Public domain",
+   "source": "https://commons.wikimedia.org/wiki/File%3AKoromogo-e_%28c._1930%29.ogg"
+  },
+  {
+   "file": "assets/audio/03.m4a",
+   "title": "尺八本曲　鹿の遠音",
+   "note": "兩管尺八一遠一近地互答。夜景那十一幅——日本橋夜、淺草夜見世、九段坂五月夜——配的是這個。",
+   "performer": "荒木古童（三世，1879–1935）",
+   "issue": "Victor 13029（1925–1937）",
+   "year": "1925–37",
+   "seconds": 375.1,
+   "license": "Public domain",
+   "source": "https://commons.wikimedia.org/wiki/File%3AShikanotoone.ogg"
+  },
+  {
+   "file": "assets/audio/04.m4a",
+   "title": "新內　關取千兩幟",
+   "note": "新內節，淨瑠璃的一支，江戶以來在花街與座敷傳唱。",
+   "performer": "不詳",
+   "issue": "Musik des Orients（同上）Disc 3",
+   "year": "1931",
+   "seconds": 187.6,
+   "license": "Public domain",
+   "source": "https://commons.wikimedia.org/wiki/File%3AShinnai_Sekitori_Senryonobori_%281931%29.ogg"
+  },
+  {
+   "file": "assets/audio/05.m4a",
+   "title": "民謠　松前追分",
+   "note": "北前船帶著走的追分節。清親畫了很多船與河——品川海上、大川、隅田川的渡。",
+   "performer": "不詳",
+   "issue": "Musik des Orients（同上）Disc 4",
+   "year": "1931",
+   "seconds": 180.9,
+   "license": "Public domain",
+   "source": "https://commons.wikimedia.org/wiki/File%3AMatsumae--Oiwake_%281931%29.ogg"
+  }
+ ]
+}

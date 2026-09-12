@@ -82,6 +82,9 @@
   #hud b { font-weight:normal; color:var(--gold); font-size:16px }
   #hud #now { font-size:13px; opacity:.85; letter-spacing:.08em }
   /* 「帶我去」：HUD 那行本身是鈕。⛔ 不做成顯眼的按鈕——它是提示不是主操作 */
+  #hud #music.on { color:var(--gold) }
+  #hud #nowplaying { font-size:10.5px; opacity:.5; max-width:16em; overflow:hidden;
+                     text-overflow:ellipsis }
   #hud #open { opacity:.75; font-size:11px; font-family:inherit; color:var(--gold);
                background:none; border:0; cursor:pointer; padding:0; letter-spacing:.02em }
   #hud #open:hover:not(:disabled) { opacity:1; text-decoration:underline }
@@ -332,6 +335,8 @@
   <button id="emaki" title="把收到的景連成一卷展讀（E）">畫卷</button>
   <button id="replay" title="重看開場">開場</button>
   <button id="full" title="沈浸模式：全螢幕、收起周邊（F）">沈浸</button>
+  <button id="music" title="配樂：五首公有領域的早期唱片（M）">♪</button>
+  <small id="nowplaying"></small>
   <button id="open" title="把地圖滑到下一個可收的景（G）"></button>
 </div>
 

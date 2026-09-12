@@ -38,6 +38,40 @@ def get_json(url, ua, timeout=60, tries=4, retry_on=(429,)):
             time.sleep(2 * (attempt + 1))
 
 
+def download(url, ua, dest, expect=None, tries=6, timeout=180):
+    """把一個檔抓下來存成 dest，**斷了就續傳**。
+
+    🔴 跟 get_json 同一個病：HTTP 200 但 body 讀一半斷掉（實測 Commons 的音檔，
+    2.36／2.67MB 處斷）。⚠️ 但這裡光重試沒用——同一支 urllib 連線每次都斷在同一個地方，
+    而同一個 URL 用 curl 抓得完整 ⇒ 問題在連線不在來源。
+    ⇒ 把讀到的那段留著（IncompleteRead.partial），下一輪用 Range 從斷點接著要。
+    二進位檔的截斷不會在解析時現形，所以最後還要**對大小**，⛔ 不能把半個檔當成抓好了。"""
+    import http.client, time
+    from pathlib import Path
+    dest = Path(dest)
+    buf = b""
+    for attempt in range(tries):
+        try:
+            head = {"Range": f"bytes={len(buf)}-"} if buf else None
+            buf += fetch(url, ua, timeout, headers=head).read()
+        except http.client.IncompleteRead as e:
+            buf += e.partial
+            if attempt == tries - 1:
+                raise
+            print(f"    斷在 {len(buf)} bytes，續傳…", flush=True)
+            time.sleep(1 + attempt)
+            continue
+        if expect and len(buf) != expect:
+            if attempt == tries - 1:
+                raise RuntimeError(f"{dest.name} 大小對不上：{len(buf)} vs {expect}")
+            print(f"    少了 {expect - len(buf)} bytes，續傳…", flush=True)
+            time.sleep(1 + attempt)
+            continue
+        dest.write_bytes(buf)
+        return len(buf)
+    raise RuntimeError("unreachable")
+
+
 def jpeg_size(p):
     """讀 JPEG 的 SOF 標記取尺寸。不是 HTTP 的事，但三支腳本都要比大小，
     複製到第三份就該收起來了；只為了比尺寸不值得裝 Pillow。"""

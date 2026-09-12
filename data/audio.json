@@ -1,0 +1,51 @@
+{
+ "_": "配樂的選曲。人工檔，機器不覆寫（同 places.json／details.json／topics.json）。",
+ "_rule": "🔴 **1876–1881 沒有錄音存在**——留聲機 1877 年才發明，日本最早的商業錄音是 1903 年 Gaisberg 來錄的。所以這裡放的**不是當年的錄音，是當年就在演奏的曲目**，由 1925–1931 年的唱片留下來。⛔ 不寫成「明治九年的聲音」，那是假的。",
+ "_why_not_compose": "考慮過用 WebAudio 自己編五首。⛔ 不做：這個 repo 從座標、標註到解說都拒絕沒有出處的東西，配樂沒有理由例外。真正的唱片存在、是公有領域、而且指得出盤號與演奏者。",
+ "_skip": {
+  "君が代（1909 帝國海軍軍楽隊）": "現行旋律 1880 年制定，正好在這五年裡，公有領域也沒問題。⛔ 但國歌當背景音樂是另一種語氣，這一作講的是市井的光與影 ⇒ 不用。記在這裡是因為它「可用而不用」是個決定，不是遺漏。",
+  "Koto performance (2006)": "現代錄音、CC BY，音質乾淨——但它是示範演奏不是曲目，且與其餘五首的年代質地差太多。"
+ },
+ "tracks": [
+  {
+   "file": "Ha-uta Umenimo haru (1931).ogg",
+   "title": "端唄　梅にも春",
+   "note": "江戶以來的端唄，三味線與唄。清親畫的銀座、日本橋一帶，店先與座敷裡就是這種聲音。",
+   "performer": "不詳",
+   "issue": "Musik des Orients（E. M. von Hornbostel 編，Lindström A.G. 發行，柏林 1931）Disc 2",
+   "year": "1931"
+  },
+  {
+   "file": "Koromogo-e (c. 1930).ogg",
+   "title": "雅樂　衣香",
+   "note": "宮內省樂部演奏。皇居、二重橋那幾幅畫的是宮城，這是那道牆內側的音樂。",
+   "performer": "宮內省樂部",
+   "issue": "Victor 13024（約 1930）",
+   "year": "約1930"
+  },
+  {
+   "file": "Shikanotoone.ogg",
+   "title": "尺八本曲　鹿の遠音",
+   "note": "兩管尺八一遠一近地互答。夜景那十一幅——日本橋夜、淺草夜見世、九段坂五月夜——配的是這個。",
+   "performer": "荒木古童（三世，1879–1935）",
+   "issue": "Victor 13029（1925–1937）",
+   "year": "1925–37"
+  },
+  {
+   "file": "Shinnai Sekitori Senryonobori (1931).ogg",
+   "title": "新內　關取千兩幟",
+   "note": "新內節，淨瑠璃的一支，江戶以來在花街與座敷傳唱。",
+   "performer": "不詳",
+   "issue": "Musik des Orients（同上）Disc 3",
+   "year": "1931"
+  },
+  {
+   "file": "Matsumae--Oiwake (1931).ogg",
+   "title": "民謠　松前追分",
+   "note": "北前船帶著走的追分節。清親畫了很多船與河——品川海上、大川、隅田川的渡。",
+   "performer": "不詳",
+   "issue": "Musik des Orients（同上）Disc 4",
+   "year": "1931"
+  }
+ ]
+}

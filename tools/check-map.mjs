@@ -143,6 +143,23 @@ for (const [name, size] of [['桌機 1440×900', { width: 1440, height: 900 }],
   await sleep(500);
   ok(await page.evaluate(() => !document.body.classList.contains('immersive')), '按 F 離開沈浸模式');
 
+  // 配樂：五首公有領域的早期唱片。⚠️ 瀏覽器不准沒有使用者動作就出聲 ⇒ 驗的是
+  // 「按下去之後真的在放」，⛔ 不是「按鈕變色了」（第一版的測試只證明得了後者，
+  // 因為 new Audio() 不在 DOM 裡，腳本根本看不到那個元素）。
+  await page.locator('#music').click();
+  await sleep(2500);
+  const snd = await page.evaluate(() => {
+    const a = document.querySelector('audio');
+    return { on: document.querySelector('#music').classList.contains('on'),
+             src: a?.getAttribute('src'), playing: !!a && !a.paused,
+             t: a ? a.currentTime : 0, label: document.querySelector('#nowplaying').textContent };
+  });
+  ok(snd.on && snd.playing && snd.t > 0.5 && /audio\/\d\d\.m4a$/.test(snd.src || '') && snd.label.startsWith('♪'),
+     `配樂放得出來（${snd.src}　${snd.label}　${snd.t.toFixed(1)}s）`);
+  await page.locator('#music').click();
+  await sleep(300);
+  ok(!await page.evaluate(() => document.querySelector('#music').classList.contains('on')), '配樂關得掉');
+
   const vis = await page.locator('#map .mark:not(.unpub)').count();
   ok(vis === want, `開場出現 ${vis} 個景（1876 年＋年代未詳，閘門算出來該有 ${want}）`);
 
