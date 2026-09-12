@@ -56,6 +56,8 @@ for (const [name, size] of [['桌機 1440×900', { width: 1440, height: 900 }],
   await sleep(300);
   console.log(`\n${name}`);
 
+  const { width: vwHalf0, height: vhHalf0 } = page.viewportSize();
+  const vwHalf = vwHalf0 / 2, vhHalf = vhHalf0 / 2;
   const marks = await page.locator('#map .mark').count();
   ok(marks === 59, `標記 ${marks} 個（views.json 裡有座標的就是 59）`);
   ok(errs.length === 0, `主控台乾淨${errs.length ? '：' + errs.slice(0, 3).join(' / ') : ''}`);
@@ -107,6 +109,26 @@ for (const [name, size] of [['桌機 1440×900', { width: 1440, height: 900 }],
   ok(hudH < 60, `HUD 維持一列（${hudH}px）`);
   ok(tick && tick.runs === 2 && !tick.over && tickMoved < tick.x,
      `跑馬燈在跑（${Math.round(tick.x)} → ${Math.round(tickMoved)}）且沒壓到 HUD／年代列／縮放鈕`);
+
+  // 沈浸模式：全螢幕＋周邊收到很淡，只留地圖。
+  // 🔴 但**出處不能收**——ODbL 要求標示出處，沈浸模式也一樣 ⇒ 只縮小不隱藏。
+  // ⚠️ 驗的是 class 與透明度，⛔ 不驗 fullscreenElement：iOS Safari 不給非 video 全螢幕，
+  // 那種環境下周邊照樣要收得起來（不然那顆鈕按了完全沒反應）。
+  await page.locator('#full').click();
+  await page.mouse.move(vwHalf, vhHalf);        // 游標要離開 HUD，否則量到的是 hover 後的值
+  await sleep(600);
+  const imm = await page.evaluate(() => {
+    const op = s => +getComputedStyle(document.querySelector(s)).opacity;
+    const attr = getComputedStyle(document.querySelector('#attr'));
+    return { on: document.body.classList.contains('immersive'), hud: op('#hud'), zoom: op('#zoom'),
+             attrShown: attr.display !== 'none' && +attr.opacity > 0.1,
+             label: document.querySelector('#full').textContent };
+  });
+  ok(imm.on && imm.hud <= 0.25 && imm.zoom <= 0.25 && imm.attrShown && imm.label === '離開',
+     `沈浸模式收起周邊（HUD ${imm.hud}）但出處還在`);
+  await page.keyboard.press('f');
+  await sleep(500);
+  ok(await page.evaluate(() => !document.body.classList.contains('immersive')), '按 F 離開沈浸模式');
 
   const vis = await page.locator('#map .mark:not(.unpub)').count();
   ok(vis === want, `開場出現 ${vis} 個景（1876 年＋年代未詳，閘門算出來該有 ${want}）`);

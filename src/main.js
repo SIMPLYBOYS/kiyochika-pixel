@@ -423,6 +423,28 @@ const intro = () => playIntro({
   // 當場點不到標記）。開場是一層蓋在上面的東西，不該改遊戲的狀態。
 });
 $('replay').onclick = intro;
+
+// ── 沈浸模式 ──────────────────────────────────────────────────
+// 全螢幕 ＋ 把周邊收到很淡，只留地圖與畫。
+// ⚠️ iOS Safari 不讓非 video 元素進全螢幕 ⇒ **就算進不了全螢幕，也要照樣收起周邊**，
+// 否則那顆鈕在手機上按了完全沒反應。所以兩件事分開做：class 自己管，全螢幕盡力而為。
+const setImmersive = on => {
+  document.body.classList.toggle('immersive', on);
+  $('full').textContent = on ? '離開' : '沈浸';
+};
+$('full').onclick = async () => {
+  const on = !document.body.classList.contains('immersive');
+  setImmersive(on);
+  try {
+    if (on) await document.documentElement.requestFullscreen?.();
+    else if (document.fullscreenElement) await document.exitFullscreen();
+  } catch { /* 不給全螢幕就算了，周邊照樣收起來 */ }
+};
+// 用 F11 或 Esc 自己離開全螢幕時，class 要跟著回來
+addEventListener('fullscreenchange', () => {
+  if (!document.fullscreenElement) setImmersive(false);
+});
+addEventListener('keydown', e => { if (e.key === 'f') $('full').click(); });
 if (!introSeen()) intro();
 
 // 手機上 HUD 會折行，跑馬燈得知道它多高才放得下去（⛔ 不要寫死）

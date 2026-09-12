@@ -177,6 +177,20 @@
     .lightbox .ltip { bottom:8px; font-size:11px }
   }
 
+  /* ── 沈浸模式 ─────────────────────────────────────────────
+     全螢幕 ＋ 把周邊收到很淡，只留地圖。碰到才亮回來（觸控裝置沒有 hover，
+     所以是「淡」不是「消失」——按得到才不會變成陷阱）。
+     🔴 出處不能收：ODbL 要求標示出處，沈浸模式也一樣 ⇒ 只縮小不隱藏。 */
+  body.immersive #hud, body.immersive #zoom, body.immersive #ticker,
+  body.immersive #bar label, body.immersive #bar input, body.immersive #eranow {
+    opacity:.18; transition:opacity .35s }
+  body.immersive #hud:hover, body.immersive #zoom:hover, body.immersive #ticker:hover,
+  body.immersive #bar:hover label, body.immersive #bar:hover input,
+  body.immersive #bar:hover #eranow { opacity:1 }
+  body.immersive #bar { background:none }
+  body.immersive #attr { opacity:.3; font-size:9px }      /* ⛔ 出處不隱藏，只縮小 */
+  body.immersive #hud { background:#0e223399 }
+
   /* ── 開場 ─────────────────────────────────────────────────
      這部作品的弧線：1876 的銀座是晴天白日，1881 只剩火與夜。開場依年份放六幅，
      一幅一幅淡入淡出，文字同時緩緩上捲。⛔ 關掉動態效果的人直接看到擺好的版面。 */
@@ -312,6 +326,7 @@
   <button id="who" title="清親是誰、光線畫是什麼">清親</button>
   <button id="emaki" title="把收到的景連成一卷展讀（E）">畫卷</button>
   <button id="replay" title="重看開場">開場</button>
+  <button id="full" title="沈浸模式：全螢幕、收起周邊（F）">沈浸</button>
   <button id="open" title="把地圖滑到下一個可收的景（G）"></button>
 </div>
 
