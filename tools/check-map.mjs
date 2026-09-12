@@ -321,6 +321,28 @@ for (const [name, size] of [['桌機 1440×900', { width: 1440, height: 900 }],
   const [dx] = px(dragged), [kx] = px(keyed);
   ok(Math.abs(dx) > 100 && kx !== dx && await vbNow() === vb0,
      `原寸檢視拖得動也按得動（拖曳 ${dragged}／方向鍵 ${keyed}），而且沒推到底下的地圖`);
+  // 🔴 **四個角都要到得了。** 第一版的夾限假設圖是置中的（±(w-視窗)/2），
+  // 但 grid 對「比容器大的元素」是靠左上排的 ⇒ 只走得到一半，右下角永遠到不了
+  // （Aaron：「會卡在一些地方過不去」）。這一項就是驗那件事。
+  const corner = async (fromX, fromY, toX, toY) => {
+    for (let i = 0; i < 8; i++) {
+      await page.mouse.move(fromX, fromY);
+      await page.mouse.down();
+      await page.mouse.move(toX, toY, { steps: 5 });
+      await page.mouse.up();
+    }
+    await sleep(200);
+    return page.locator('.lightbox img').evaluate(e => {
+      const r = e.getBoundingClientRect();
+      return { l: Math.round(r.left), t: Math.round(r.top),
+               r: Math.round(r.right), b: Math.round(r.bottom), W: innerWidth, H: innerHeight };
+    });
+  };
+  const br = await corner(lw * 0.8, lh * 0.8, lw * 0.2, lh * 0.2);   // 往左上拖＝看右下角
+  const tl = await corner(lw * 0.2, lh * 0.2, lw * 0.8, lh * 0.8);   // 反過來＝看左上角
+  ok(br.r <= br.W + 1 && br.b <= br.H + 1 && tl.l >= -1 && tl.t >= -1,
+     `原寸檢視四個角都到得了（右下 ${br.r}/${br.b}、左上 ${tl.l}/${tl.t}）`);
+
   await page.locator('.lightbox [data-z="fit"]').click();
   await sleep(200);
   await page.keyboard.press('Escape');

@@ -24,18 +24,27 @@ export function zoom(src, caption) {
 
   let k = 1, x = 0, y = 0, fit = 1;
   const clamp = (v, a, b) => Math.min(b, Math.max(a, v));
+  /** 位移的合法範圍。🔴 **不能假設圖是置中的**：
+   *  容器是 place-items:center，但 grid 對「比容器大的元素」是**靠左上排**的
+   *  （實測放大三倍時 left=0、top=0）。第一版照「置中」去夾（±(w-視窗)/2），
+   *  於是只走得到一半——**看得到左上角，永遠到不了右下角**（Aaron 回報「卡在一些地方」）。
+   *  ⇒ 改成從**實際的排版位置**算：offsetLeft/offsetTop 不受 transform 影響，正好拿來當基準。 */
+  const span = (base, size, view) => {
+    if (size <= view) {                       // 比視窗小：就待在原地（grid 已經置中了）
+      const c = (view - size) / 2 - base;
+      return [c, c];
+    }
+    return [view - base - size, -base];       // 比視窗大：左緣最多到 0、右緣最少到視窗邊
+  };
   const apply = () => {
     const w = img.naturalWidth * k, h = img.naturalHeight * k;
-    // 夾住位移，否則可以把圖整個拖出畫面然後找不回來
-    const mx = Math.max(0, (w - innerWidth) / 2), my = Math.max(0, (h - innerHeight) / 2);
-    x = clamp(x, -mx, mx);
-    y = clamp(y, -my, my);
-    // 🔴 縮放要改**排版尺寸**，不能只用 transform: scale()。
-    // 容器是 place-items:center，但**grid 對「比容器大的元素」不會置中**——
-    // 它會從左上角排起，然後 scale 繞著那個（已經偏掉的）中心縮，
-    // 於是圖的右緣鑽到縮放鈕底下、下緣掉出畫面（實測 r=1407 > 視窗 1440 的按鈕 1386）。
-    // 讓排版尺寸等於實際尺寸，置中就由 grid 正確處理，transform 只管平移。
+    // 🔴 縮放要改**排版尺寸**，不能只用 transform: scale()（見下面那段註解）。
+    // ⚠️ 而且要先設寬度再量 offset——量到的才是這個尺寸下的排版位置。
     img.style.width = `${Math.round(w)}px`;
+    const [xlo, xhi] = span(img.offsetLeft, w, innerWidth);
+    const [ylo, yhi] = span(img.offsetTop, img.getBoundingClientRect().height || h, innerHeight);
+    x = clamp(x, xlo, xhi);
+    y = clamp(y, ylo, yhi);
     img.style.transform = `translate(${x}px,${y}px)`;
   };
   const refit = () => {
@@ -52,15 +61,21 @@ export function zoom(src, caption) {
   if (img.complete && img.naturalWidth) refit();
   addEventListener('resize', refit);
 
+  /** 繞著某一點縮放：把那一點底下的畫面內容留在原處。
+   *  ⚠️ 錨點要用「相對於圖的排版原點」算，⛔ 不是相對於視窗中心——
+   *  圖不是置中的（見 span 那段），拿視窗中心當原點會愈縮愈偏。 */
+  const zoomAt = (nk, px, py) => {
+    const bx = img.offsetLeft, by = img.offsetTop;
+    const f = nk / k;
+    x = px - bx - (px - bx - x) * f;
+    y = py - by - (py - by - y) * f;
+    k = nk;
+    apply();
+  };
+
   lb.onwheel = e => {
     e.preventDefault();
-    const before = k;
-    k = clamp(k * Math.exp(-e.deltaY * 0.0015), fit * 0.9, 4);
-    // 繞游標縮放：把游標底下那一點留在原處
-    const cx = e.clientX - innerWidth / 2, cy = e.clientY - innerHeight / 2;
-    x = cx - (cx - x) * (k / before);
-    y = cy - (cy - y) * (k / before);
-    apply();
+    zoomAt(clamp(k * Math.exp(-e.deltaY * 0.0015), fit * 0.9, 4), e.clientX, e.clientY);
   };
   let drag = null;
   lb.onpointerdown = e => { if (e.target === img) drag = { x: e.clientX - x, y: e.clientY - y }; };
@@ -88,8 +103,8 @@ export function zoom(src, caption) {
   lb.querySelector('.lzoom').onclick = e => {
     const z = e.target.dataset.z;
     if (!z) return;
-    if (z === 'fit') { k = fit; x = y = 0; } else k = clamp(k * (z === 'in' ? 1.6 : 1 / 1.6), fit * 0.9, 4);
-    apply();
+    if (z === 'fit') { k = fit; x = y = 0; apply(); }
+    else zoomAt(clamp(k * (z === 'in' ? 1.6 : 1 / 1.6), fit * 0.9, 4), innerWidth / 2, innerHeight / 2);
   };
   return shut;
 }
