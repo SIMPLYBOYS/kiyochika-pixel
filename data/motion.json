@@ -64,7 +64,7 @@
   "fade": "無縫循環的交叉淡入秒數（預設 0.6）"
  },
  "_how": "Veo／Flow 這類生出來的是**影片** ⇒ 丟進 research/motion/，先把 clips 那一筆（含 kind 與 differs）寫好，再跑 `python3 tools/make-motion.py <id> --video <檔>`。那支會①照 _pad 切回原畫的框②驗長寬比③**逐幀量構圖有沒有被動到**④照 kind 決定擋不擋⑤做成無縫循環並輸出 webm＋mp4。",
- "_prompt_for_video": "以這張明治木版畫（小林清親〈御厩橋雷雨〉）為第一幀做成影片。**只讓光與天氣動：閃電明滅、雨絲落下、水面反光晃動、岸邊提燈輕微搖曳。**⛔ 不可以：讓任何人物、船隻移動或出現消失；移動鏡頭（不平移、不推近、不旋轉）；改變構圖或裁切；加入原畫沒有的東西；把它變成照片或 3D；修掉紙紋與刀痕。整段維持同一個固定鏡頭，4–6 秒。",
+ "_prompt_for_video": "（舊版，no.50 兩次 Veo 用的就是這一段，已逐字記進 clips 裡。新的一律用 _prompt_template。）以這張明治木版畫（小林清親〈御厩橋雷雨〉）為第一幀做成影片。**只讓光與天氣動：閃電明滅、雨絲落下、水面反光晃動、岸邊提燈輕微搖曳。**⛔ 不可以：讓任何人物、船隻移動或出現消失；移動鏡頭（不平移、不推近、不旋轉）；改變構圖或裁切；加入原畫沒有的東西；把它變成照片或 3D；修掉紙紋與刀痕。整段維持同一個固定鏡頭，4–6 秒。",
  "_pad": {
   "50": {
    "file": "research/motion/50-pad16x9.png",
@@ -128,6 +128,48 @@
    "   去看那幾格才發現——6.5s 那一格的閃電**就是那道分叉白閃**，7.4s 與 8.3s 則是閃電整個不見。",
    "   位移量不出來，是因為閃電只佔畫面一小塊，邊的位置平均下來沒跳。⇒ 剪片只會做出一支「看起來比較沒重畫」的片子，",
    "   位移量不出來，是因為閃電只佔畫面一小塊，邊的位置平均下來沒跳。⇒ 剪片只會做出一支「看起來比較沒重畫」的片子，那正是把 ② 化妝成 ①。**指標低不等於忠實**——同一型的錯這個 repo 犯過好幾次（見 README〈五個「看起來合理」的錯〉），共同點都是：指標看起來過關，就不再去看它到底在量什麼。"
+  ]
+ },
+ "_prompt_template": {
+  "_": "通用提示詞：一段固定的 base ＋ 依這一景的資料挑出的 motion 句子。⛔ 每次生成都逐字用這裡的版本，逐字記進 clips[].prompt（那是出處）。改了模板要在這裡留紀錄，不要即興改。",
+  "base": "Animate this exact image. It is a Japanese woodblock print from the Meiji era (Kobayashi Kiyochika, 1876-1881), placed on a plain beige background.\n\nCAMERA: Locked-off static shot for the whole clip. No pan, tilt, zoom, push-in, parallax, rotation or reframing. The entire print stays in frame, including its paper margins, printed title and red seal. The plain background around the print stays plain and empty.\n\nKEEP IDENTICAL: Every person, boat, vehicle, animal, building, bridge, tree, pole and sign keeps its exact position, pose, shape and number from the first frame to the last. Nothing enters, leaves or appears. The carved outlines, flat areas of printed colour, colour palette and paper texture stay exactly as printed.\n\nWHAT MOVES: {MOTION}\n\nSTYLE: The motion stays inside the woodblock look: flat printed colour, no photographic lighting, no 3D depth, no motion blur, no added grain, no colour grading. Movement is slow, subtle and continuous. The clip loops seamlessly: the last frame matches the first frame.",
+  "motion": {
+   "rain": "The rain already drawn in the print keeps falling at the same angle and the same density; it does not get heavier. Wet ground and water catch a faint flicker of reflected light.",
+   "snow": "The snow already drawn in the print keeps drifting down slowly at the same density. Snow lying on roofs and on the ground does not change.",
+   "night": "The scene stays as dark as printed.",
+   "lamp": "Lamps, lanterns and lit windows that are already in the print flicker very gently, in brightness only.",
+   "dusk": "The existing evening sky glows and fades very slightly; its colours stay as printed.",
+   "dawn": "The existing morning sky brightens very slightly; its colours stay as printed.",
+   "moon": "Moonlight on the existing water shimmers gently; the moon itself stays fixed.",
+   "fireworks": "The fireworks already in the sky pulse gently in brightness; their shapes stay as printed.",
+   "fire": "The flames and smoke already drawn in the print flicker and billow slowly in place; they do not spread or grow.",
+   "bolt": "The lightning keeps exactly its printed shape, size, position and colour; only its brightness pulses, and the whole scene brightens briefly in sync once or twice.",
+   "default": "Almost nothing moves. Existing clouds drift a tiny amount and existing water shimmers faintly. If the print has no sky or water, the whole image stays still apart from a barely perceptible breathing of light."
+  },
+  "pick": [
+   "🔴 motion 句子**從資料挑，不看圖猜**（跟 src/weather.js 同一套證據）：",
+   "conditions.weather ∈ rain／snow／fire／moon／fireworks → 同名句子；conditions.time_of_day ∈ night／dusk／dawn → 同名句子（day 不加）。",
+   "details 的標註名含 燈・灯・火・光・明 → lamp；含 閃電・稲妻・雷 → bolt。",
+   "符合的全部接起來，順序照上面 motion 的鍵；一個都沒有 → 只用 default。",
+   "例：no.50 御厩橋雷雨＝rain＋lamp＋bolt。59 景的分佈：25 景只有 default、34 景至少有一句。"
+  ],
+  "settings": {
+   "input": "原畫墊成 16:9 的圖當第一幀（墊邊色 #C6B993 米色，數字記在 _pad）。⚠️ 背景那句就是在防模型把畫面往墊邊外面畫出去。",
+   "duration": "8 秒（Flow 的 Veo 預設；make-motion.py 會做無縫循環）",
+   "language": "英文。模型對英文指令的遵從最穩；中文說明留在這個檔案裡給人看。"
+  },
+  "why": [
+   "每一句都對著前兩次 Veo 的失敗寫：",
+   "  Nothing enters, leaves or appears ← 倉庫旁多出撐傘的人",
+   "  lightning keeps exactly its printed shape…colour ← 黃色團塊被換成分叉白閃",
+   "  does not get heavier ← 雨線變密",
+   "  colour palette…stay exactly as printed ← 天空被打亮成偏藍",
+   "  carved outlines…stay exactly ← 輪廓被重描、刀痕變淡",
+   "  plain background stays plain ← 墊邊被當成畫面延伸",
+   "⛔ **不點名不想要的東西**（不寫 no umbrella、no branching lightning、no extra people）：影片模型對被提到的名詞很敏感，點名常常反而把它畫出來。一律用「維持原樣／不出現新東西」這種不帶名詞的說法。",
+   "⛔ 不寫 no watermark：浮水印是平台加的，提示詞擋不掉，寫了只是多一個名詞。",
+   "🔑 **提示詞只能減少重畫，擋不住重畫**（見 _attempts 的 lesson）。所以生成之後照舊跑 make-motion.py 量位移、看幀、寫 differs——模板不是替代那一關的東西。",
+   "⚠️ fire 那 4 景風險最高：標註全是人（逃的人、挑擔的人），模型最容易讓人動起來。default 那 25 景則是動得最少、最可能不值得做。先做那 34 景裡非 fire 的。"
   ]
  }
 }
