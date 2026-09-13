@@ -559,8 +559,17 @@ window.__music = music;
 // 否則那顆鈕在手機上按了完全沒反應。所以兩件事分開做：class 自己管，全螢幕盡力而為。
 const setImmersive = on => {
   document.body.classList.toggle('immersive', on);
+  document.body.classList.remove('chrome');       // 每次進來都從「收起來」開始
   $('full').textContent = on ? '離開' : '沈浸';
 };
+// 觸控：點地圖空白處叫出／收起周邊（CSS 只在 hover:none 時認 .chrome，桌機照舊靠 hover）。
+// ⚠️ 景點的 onclick 有 stopPropagation，所以這裡收到的只會是空白處；拖曳與兩指縮放要擋掉，
+// 否則每拖一次地圖選單就跳出來一次。
+$('map').addEventListener('click', () => {
+  if (document.body.classList.contains('immersive') && !map.dragged()) {
+    document.body.classList.toggle('chrome');
+  }
+});
 $('full').onclick = async () => {
   const on = !document.body.classList.contains('immersive');
   setImmersive(on);

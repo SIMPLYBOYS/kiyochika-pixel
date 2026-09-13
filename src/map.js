@@ -555,6 +555,8 @@ export function createMap(svg, views, geo, places, onPick) {
     zoomIn: () => zoomTo(vb.w / 1.6, ...centre()),
     zoomOut: () => zoomTo(vb.w * 1.6, ...centre()),
     fitAll,
+    /** 剛剛那一下是拖曳／兩指縮放而不是點（外面接地圖的 click 時要擋掉拖曳）。 */
+    dragged: () => dragged(),
     // 縮放按鈕要能反映「還能不能再縮」，否則按下去沒反應會像壞掉
     atMax: () => vb.w >= MAX - 1,
     atMin: () => vb.w <= MIN + 1,

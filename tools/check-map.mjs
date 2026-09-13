@@ -558,6 +558,52 @@ for (const [name, size] of [['桌機 1440×900', { width: 1440, height: 900 }],
 
   await page.close();
 }
+
+// ── 觸控裝置的沈浸模式 ─────────────────────────────────────────
+// 🔴 上面兩輪用的是滑鼠（viewport 縮成手機大小 ≠ 手機）。桌機靠 :hover 把周邊叫亮，
+// **觸控沒有 hover** ⇒ 點一下地圖，HUD 與跑馬燈就卡在 0.18：看不清、卻還按得到
+// （Aaron 在手機上回報「透明反白狀態」）。⇒ 觸控只准兩種狀態：**全亮或整個收起來**，
+// 點地圖空白處切換（相簿、影片播放器都是這樣）。
+{
+  const ctx = await browser.newContext({ viewport: { width: 390, height: 844 },
+                                         deviceScaleFactor: 2, hasTouch: true, isMobile: true });
+  const page = await ctx.newPage();
+  await page.goto(`http://localhost:${PORT}/`);
+  await page.evaluate(() => localStorage.setItem('kiyochika.intro.v1', '1'));
+  await page.goto(`http://localhost:${PORT}/`);
+  await sleep(1500);
+  const look = () => page.evaluate(() => {
+    const els = ['#hud', '#ticker', '#zoom', '#bar label', '#eranow'].map(s => document.querySelector(s)).filter(Boolean);
+    const st = e => getComputedStyle(e);
+    const attr = st(document.querySelector('#attr'));
+    return {
+      shown: els.filter(e => st(e).visibility !== 'hidden' && +st(e).opacity >= 0.9).length,
+      hidden: els.filter(e => st(e).visibility === 'hidden').length,
+      ghost: els.filter(e => st(e).visibility !== 'hidden' && +st(e).opacity < 0.9).map(e => e.id || e.tagName),
+      n: els.length,
+      attr: attr.display !== 'none' && +attr.opacity > 0.1,
+      on: document.body.classList.contains('immersive'),
+    };
+  });
+  const map = () => page.touchscreen.tap(200, 450);   // 地圖空白處（這一點底下沒有景點）
+  await page.tap('#full');
+  await sleep(700);
+  const s0 = await look();
+  await map(); await sleep(700);
+  const s1 = await look();
+  await map(); await sleep(700);
+  const s2 = await look();
+  ok(s0.on && s0.hidden === s0.n && !s0.ghost.length && s0.attr,
+     `觸控：進沈浸就整個收起來，不留半透明（收 ${s0.hidden}/${s0.n}${s0.ghost.length ? `・半透明 ${s0.ghost}` : ''}）、出處還在`);
+  ok(s1.shown === s1.n && s2.hidden === s2.n && !s1.ghost.length && !s2.ghost.length,
+     `觸控：點地圖空白處叫出來（全亮 ${s1.shown}/${s1.n}）、再點收回去（收 ${s2.hidden}/${s2.n}）`);
+  await map(); await sleep(700);
+  await page.tap('#full');
+  await sleep(500);
+  ok(await page.evaluate(() => !document.body.classList.contains('immersive')),
+     '觸控：叫出來之後按「離開」出得去');
+  await ctx.close();
+}
 await browser.close();
 console.log(bad ? `\n${bad} 項不過` : '\n全過');
 bye(bad ? 1 : 0);
