@@ -295,26 +295,6 @@ for (const [name, size] of [['桌機 1440×900', { width: 1440, height: 900 }],
     ok(gen.clips.every(c => c.kind === 'atmosphere' ? c.n === 0 : c.n > 0),
        `重繪版列得出差異（${gen.clips.map(c => `no.${c.id} ${c.kind} ${c.n} 條`).join('、')}）`);
   }
-  // 有那顆鈕的話就按下去：畫面上必須掛著「非原作」，旁邊必須印出那份差異清單——
-  // ⛔ 說明文字裡提一句「AI 生成」不算，那講的是怎麼做的，不是哪幾樣不是清親畫的。
-  if (gen.btn) {
-    await page.locator('#panel #anim').click();
-    await sleep(200);
-    const shown = await page.evaluate(() => ({
-      video: !!document.querySelector('#panel #art video'),
-      badge: document.querySelector('#panel #art .gen')?.textContent ?? '',
-      items: document.querySelectorAll('#panel .differs li').length,
-      marks: document.querySelector('#panel #art').classList.contains('nomarks'),
-    }));
-    const selId = await page.evaluate(() => +document.querySelector('#map .mark.sel')?.dataset.id);
-    const want = gen.clips.find(c => c.id === selId);
-    ok(shown.video && /非原作/.test(shown.badge) && shown.marks
-       && shown.items === (want?.n ?? 0),
-       `按下去是影片、掛著「${shown.badge}」、印出 ${shown.items} 條差異、標註關掉`);
-    await page.locator('#panel #anim').click();   // ⚠️ 轉回真跡，⛔ 不要把狀態留給下一項
-    await sleep(200);
-  }
-
   // 十六色：quantize.py 算出來的那 16 色，⚠️ palettes.json 產出至今沒人讀過
   ok(v0.pal === 16 && /平均明度 \d+/.test(v0.cap),
      `十六色色盤畫得出來（${v0.pal} 色・${(v0.cap.match(/平均明度 \d+/) || [''])[0]}）`);
@@ -603,6 +583,37 @@ for (const [name, size] of [['桌機 1440×900', { width: 1440, height: 900 }],
   ok(await page.evaluate(() => !document.body.classList.contains('immersive')),
      '觸控：叫出來之後按「離開」出得去');
   await ctx.close();
+}
+// ── AI 重繪版：沒收過也看得到 ─────────────────────────────────
+// 🔴 它不進收藏不算進度 ⇒ **不是收藏的獎勵**。第一版誤放進「收了才有」那組按鈕，
+// 新玩家要等到下雨天收了御厩橋雷雨才看得到（Aaron：「所以 ai 圖是被當作 reward？」）。
+// ⇒ 用全新的存檔開 no.50：鈕要在，按下去必須掛著「非原作」、印出那份差異清單——
+// ⛔ 說明文字裡提一句「AI 生成」不算，那講的是怎麼做的，不是哪幾樣不是清親畫的。
+{
+  const page = await browser.newPage({ viewport: { width: 1440, height: 900 } });
+  await page.goto(`http://localhost:${PORT}/`);
+  await page.evaluate(() => { localStorage.clear(); localStorage.setItem('kiyochika.intro.v1', '1'); });
+  await page.goto(`http://localhost:${PORT}/`);
+  await sleep(1500);
+  const m = await page.evaluate(() => fetch('data/motion.json').then(r => r.json()));
+  for (const c of m.clips) {
+    await page.evaluate(id => document.querySelector(`#map .mark[data-id="${id}"]`)
+      ?.dispatchEvent(new MouseEvent('click', { bubbles: true })), c.id);
+    await sleep(600);
+    const before = await page.evaluate(() => ({
+      got: !!document.querySelector('#panel #mark'), anim: !!document.querySelector('#panel #anim') }));
+    if (before.anim) await page.locator('#panel #anim').click();
+    await sleep(300);
+    const shown = await page.evaluate(() => ({
+      art: document.querySelector('#panel #art img, #panel #art video')?.tagName,
+      badge: document.querySelector('#panel #art .gen')?.textContent ?? '',
+      items: document.querySelectorAll('#panel .differs li').length,
+    }));
+    ok(!before.got && before.anim && shown.art === 'VIDEO' && /非原作/.test(shown.badge)
+       && shown.items === (c.differs || []).length,
+       `AI 重繪版 no.${c.id}：沒收過也有那顆鈕，按下去是影片、掛著「${shown.badge}」、印出 ${shown.items} 條差異`);
+  }
+  await page.close();
 }
 await browser.close();
 console.log(bad ? `\n${bad} 項不過` : '\n全過');

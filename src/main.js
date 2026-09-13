@@ -216,12 +216,16 @@ function pick(v) {
   const c = v.conditions || {};
   const cond = [c.time_of_day && TIME_JA[c.time_of_day], c.weather && (WX_JA[c.weather] || c.weather)]
     .filter(Boolean).join('・');
+  // 🔴 標註與 16 色是「收了才有」；AI 重繪版**不看收沒收**：它不進收藏不算進度，
+  // 就不該是收藏的獎勵——把生成的版本當成收到清親真跡的獎賞，等於說真跡不是寶、重繪才是。
+  // （第一版誤放進「收了才有」那組，被 Aaron 問「所以 ai 圖是被當作 reward？」才發現。）
+  // ⚠️ 面板仍然先開真跡，重繪版只是一個切換。
   $('body').innerHTML = `
     <h2>${v.title.ja}</h2>
     <div id="art" class="${marks ? '' : 'nomarks'}"><img src="${thumb(v)}" alt="${v.title.ja}">${got ? spots(v) : ''}</div>
     ${got ? `<button id="mark" class="wide">${marks ? '隱藏標註' : '顯示標註'}</button>
-             <button id="flip" class="wide">16 色：看光的骨架</button>
-             ${clipOf(v) ? '<button id="anim" class="wide">AI 重繪版 <small>非原作</small></button>' : ''}` : ''}
+             <button id="flip" class="wide">16 色：看光的骨架</button>` : ''}
+    ${clipOf(v) ? '<button id="anim" class="wide">AI 重繪版 <small>非原作</small></button>' : ''}
     <button id="big" class="wide">看原寸</button>
     ${!b ? '<button id="take" class="wide take">收入畫帖</button>'
         : b.why === 'got' ? ''          // 收過了不必再說一次，上面的提示已經在講這件事
