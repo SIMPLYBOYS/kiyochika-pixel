@@ -2,12 +2,14 @@
 // 這裡只負責把它接到畫面上：時鐘、收景、進度、事件、結局。
 // ⛔ 細節搜尋（每景 2–3 個可點的細節）還沒做——那要逐幅挑座標，是另一塊工。
 import { createMap, setVisibility } from './map.js';
-import { clockOf, blocked, collectable, visible, yearOf, tick, newState } from './clock.js';
+import { clockOf, blocked, collectable, visible, yearOf, tick, newState,
+         YEARS, TIMES, WEATHERS, PER_YEAR } from './clock.js';
 import { zoom } from './zoom.js';
 import { openScroll } from './scroll.js';
 import { playIntro, startTicker, introSeen } from './intro.js';
 import { createMusic } from './audio.js';
 import { weather } from './weather.js';
+import { guideHtml } from './guide.js';
 
 const $ = id => document.getElementById(id);
 
@@ -408,7 +410,10 @@ addEventListener('keydown', e => {
   // ⚠️ 上面蓋著東西時 Esc 是它的。這個監聽**先註冊所以先執行**，
   // 後註冊者的 stopPropagation 攔不住它 ⇒ 只能在這裡問「上面有沒有東西」。
   // 原寸檢視與畫卷同理，⛔ 新增一層就要記得加進這個選擇器。
-  if (e.key === 'Escape' && !document.querySelector('.lightbox, .scroll-view')) shut();
+  if (e.key !== 'Escape' || document.querySelector('.lightbox, .scroll-view')) return;
+  // 卡片（玩法・清親・事件）蓋在面板上面 ⇒ 先關它，⛔ 不要一次連面板一起關
+  if ($('card').classList.contains('on')) return $('card').classList.remove('on');
+  shut();
 });
 
 // ── 年代滑桿 ──────────────────────────────────────────────────
@@ -605,6 +610,21 @@ startTicker($('ticker'), {
     '典藏　国立国会図書館デジタルコレクション《清親畫帖》　<i>寄別1-9-2-3・公有領域</i>',
   ],
 });
+
+// ── 玩法 ──────────────────────────────────────────────────────
+// 🔴 會跟著規則變的數字都從規則本身讀（見 guide.js 檔頭），⛔ 不在這一頁寫死。
+$('how').onclick = () => {
+  $('card-body').innerHTML = guideHtml({
+    mapped: views.length, unmapped: unmapped.length,
+    times: TIMES.map(t => TIME_JA[t]), weathers: WEATHERS.map(w => WX_JA[w]),
+    perYear: PER_YEAR, years: [YEARS[0], YEARS.at(-1)],
+    clips: (motion.clips ?? []).map(c => all.find(v => v.id === c.id)?.title.ja).filter(Boolean),
+    refmap: refmaps?.primary?.year ?? null,
+  });
+  $('card-body').scrollTop = 0;
+  $('card').classList.add('on');
+};
+addEventListener('keydown', e => { if (e.key === '?') $('how').click(); });
 
 $('wait').onclick = wait;
 $('card-close').onclick = () => $('card').classList.remove('on');

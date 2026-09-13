@@ -15,7 +15,7 @@ export const TIMES = ['dawn', 'day', 'dusk', 'night'];
 // 固定＝可預測（玩家等得到）也可模擬（check-pub 能證明不會鎖死）；
 // 要做季節的話這裡換成「日 → 季 → 天候分佈」，閘門那側不用動。
 export const WEATHERS = ['clear', 'snow', 'clear', 'rain'];
-const PER_YEAR = 8;        // 收幾景翻一年
+export const PER_YEAR = 8; // 收幾景翻一年（玩法頁也讀這個數字）
 
 export const newState = () => ({ step: 0, collected: [], yearIdx: 0, yearMark: 0, fire: false });
 

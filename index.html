@@ -93,8 +93,8 @@
                 background:#ffffff14; color:var(--land); border:1px solid #ffffff33;
                 border-radius:5px; padding:3px 10px }
   #hud button:hover { background:#ffffff24 }
-  /* 面板開著時 HUD 會被它蓋掉右半邊。留下要緊的（進度・時刻・待つ），
-     把附註與外連收起來——被蓋住的鈕比沒有更糟。 */
+  /* 面板開著時把 HUD 收短：留下要緊的（進度・時刻・等一刻），附註與外連收起來。
+     「帶我去」也收：地圖大半被面板蓋著，滑過去了也看不到滑到哪。 */
   body.panel-open #hud small, body.panel-open #hud #open,
   body.panel-open #hud #refmap { display:none }
   #hud #refmap { pointer-events:auto; color:var(--gold); font-size:12px; opacity:.85;
@@ -126,8 +126,12 @@
 
   /* 🔴 面板要放得下畫。像素畫布一律 480px 寬，而第一版面板只有 460px（內容區 420px）
      ⇒ 每一幅都是縮到 0.875 倍在顯示——比原尺寸還小，而且非整數倍會糊。
-     看畫的時候地圖用不到，所以讓它寬。 */
-  #panel { position:fixed; right:0; top:0; bottom:0; width:min(1040px,96vw); overflow:auto;
+     看畫的時候地圖用不到，所以讓它寬。
+     🔴 **上緣從 HUD 底下開始**，⛔ 不要 top:0。加寬之後面板左緣在 1440 寬時落在 400px，
+     1280 寬時 240px——從 top:0 蓋下來，HUD 那一列的鈕（清親・畫卷・開場・沈浸・♪，
+     窄一點連等一刻）全被壓在底下，看得到卻按不到。加「玩法」把畫卷往右推了一格，
+     驗收當場點不到畫卷才抓出來。手機是底部抽屜（見下面 max-width:700px），不受影響。 */
+  #panel { position:fixed; right:0; top:var(--hud-h,44px); bottom:0; width:min(1040px,96vw); overflow:auto;
            background:#0e2233f2; border-left:1px solid #ffffff22; padding:18px 20px 28px;
            transform:translateX(102%); transition:transform .25s; }
   #panel.on { transform:none }
@@ -338,6 +342,34 @@
              color:var(--gold) }
   #card p { font-size:14px }
   #card small { opacity:.6; font-size:12px }
+  /* 玩法頁：給人查的，不是給人讀完的 ⇒ 小標要一眼掃得到，段落短 */
+  #card .guide h3 { font-size:14px; font-weight:normal; letter-spacing:.14em; color:var(--gold);
+                    margin:22px 0 6px; padding-top:14px; border-top:1px solid #ffffff1f }
+  #card .guide p, #card .guide li, #card .guide dd, #card .guide td { font-size:13.5px }
+  #card .guide ul { margin:0; padding-left:1.2em }
+  #card .guide li { margin:3px 0 }
+  #card .guide .note { font-size:12.5px; opacity:.72; margin-top:6px }
+  #card .guide b { font-weight:normal; color:var(--gold) }
+  /* 圖例：真的 .mark 元素，底色要是地圖的米色，否則淡灰點在深色卡片上看不見 */
+  #card .guide .legend { list-style:none; padding:0 }
+  #card .guide .legend li { display:flex; align-items:center; gap:6px; margin:6px 0 }
+  #card .guide .swatch { width:34px; height:34px; flex:0 0 auto; background:var(--land);
+                         border-radius:6px; overflow:visible }
+  #card .guide .swatch .mark { cursor:default }
+  #card .guide .legend span { margin-left:6px }
+  #card .guide dl { display:grid; grid-template-columns:auto 1fr; gap:4px 14px; margin:0 }
+  #card .guide dt { color:var(--gold); white-space:nowrap; font-size:13px }
+  #card .guide dd { margin:0 }
+  #card .guide .keys { border-collapse:collapse; width:100% }
+  #card .guide .keys th { font-weight:normal; text-align:left; vertical-align:top; white-space:nowrap;
+                          opacity:.6; font-size:12.5px; padding:4px 12px 4px 0 }
+  #card .guide .keys td { padding:4px 0; line-height:2 }
+  #card .guide kbd { font-family:inherit; font-size:12px; padding:1px 6px; margin:0 2px;
+                     border:1px solid #ffffff44; border-bottom-width:2px; border-radius:4px }
+  @media (max-width:520px) {
+    #card .guide dl { grid-template-columns:1fr }
+    #card .guide dt { margin-top:6px }
+  }
   #card button { margin-top:22px; padding:8px 24px; cursor:pointer; font-family:inherit;
                  background:none; color:var(--land); border:1px solid #ffffff44; border-radius:6px }
   /* 十六色：把光的骨架攤開。⛔ 這不是裝飾色塊——它是 quantize.py 算出來的那 16 色 */
@@ -380,6 +412,7 @@
   <b id="count"></b>
   <span id="now"></span>
   <button id="wait" title="等一刻（W）">等一刻</button>
+  <button id="how" title="怎麼玩（?）">玩法</button>
   <button id="who" title="清親是誰、光線畫是什麼">清親</button>
   <button id="emaki" title="把收到的景連成一卷展讀（E）">畫卷</button>
   <button id="replay" title="重看開場">開場</button>

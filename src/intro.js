@@ -53,6 +53,7 @@ export function playIntro({ views, total, yearOf, src, topic, onDone }) {
         收錄 ${total ?? views.length} 幅，地圖上 ${views.length} 幅——走過清親的五年</p>
       <p class="ifact">配樂　端唄・雅樂・尺八本曲・新內・追分
         <small>入場後開始播放，按 ♪ 或 M 可關</small></p>
+      <p class="ifact">第一次玩？入場後按上方的「玩法」</p>
       <p class="isrc">人物與畫風兩段譯自維基百科日本語版（CC BY-SA 4.0）</p>
     </div>
     <div class="ibtn">

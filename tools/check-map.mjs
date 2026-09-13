@@ -15,7 +15,7 @@ import { spawn } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 import { dirname, resolve } from 'node:path';
 import { readFileSync } from 'node:fs';
-import { yearOf } from '../src/clock.js';
+import { yearOf, PER_YEAR } from '../src/clock.js';
 
 const { chromium } = createRequire(process.env.HOME + '/')('playwright');
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
@@ -458,11 +458,48 @@ for (const [name, size] of [['桌機 1440×900', { width: 1440, height: 900 }],
   await page.locator('#card-close').click();
   await sleep(200);
 
+  // 玩法頁：給玩家查的。🔴 驗的是**它講的跟遊戲做的一樣**——
+  // 數字從規則本身來（地圖上幾幅、幾景翻一年），圖例是真的 .mark、吃的是地圖那套 CSS
+  // ⇒ 金點的顏色要跟地圖上金點的顏色一模一樣，⛔ 不是另外畫一份示意圖。
+  await page.keyboard.press('?');
+  await sleep(300);
+  const guide = await page.evaluate(() => {
+    const body = document.querySelector('#card.on #card-body');
+    if (!body) return null;
+    const fill = s => { const e = document.querySelector(s); return e && getComputedStyle(e).fill; };
+    return {
+      title: body.querySelector('h2')?.textContent,
+      text: body.innerText,
+      states: ['open', 'closed', 'got'].map(k => body.querySelectorAll(`.legend .mark.${k}`).length),
+      legendGold: fill('#card .legend .mark.open.exact circle.dot'),
+      mapGold: fill('#map .mark.open.exact circle.dot'),
+      mapped: window.__views.length,
+    };
+  });
+  ok(guide && guide.title === '玩法'
+     && guide.text.includes(`地圖上的 ${guide.mapped} 幅`) && guide.text.includes(`每收 ${PER_YEAR} 幅進入下一年`)
+     && guide.states.every(n => n === 2) && guide.mapGold && guide.legendGold === guide.mapGold
+     && !/[ぁ-んァ-ヶ]/.test(guide.text),
+     `玩法頁（? 叫得出來）：數字跟規則一致（${guide?.mapped} 幅・每 ${PER_YEAR} 幅一年）、`
+     + `圖例三種點各實心空心、金點跟地圖同色（${guide?.legendGold}）、沒有日文`);
+  await page.keyboard.press('Escape');
+  await sleep(200);
+  ok(await page.locator('#card.on').count() === 0, 'Esc 關得掉玩法頁');
+
   // 畫卷：收到的景連成一卷、由右往左展讀；沒收的留空格（卷長不隨進度變）
   // 🔴 先把面板打開再開畫卷：Esc 只該收卷、面板要留著（第一版的守衛漏了畫卷，
   // 而當時的測試沒開面板 ⇒ 兩層一起關也照樣綠燈。測試要有兩層才測得到分層）。
   await page.locator('#map .mark circle.dot').first().click();
   await sleep(500);
+  // 🔴 面板開著時 HUD 的每一顆鈕都要**按得到**，⛔ 不是「看得到」：面板加寬後從 top:0
+  // 蓋下來，清親・畫卷・開場・沈浸・♪ 全壓在底下（1280 寬連等一刻也是），直到加了
+  // 「玩法」把畫卷推進去才被下面那一下點擊抓到。⇒ 逐顆問瀏覽器：點中心會點到誰。
+  const buried = await page.evaluate(() => [...document.querySelectorAll('#hud button')]
+    .filter(e => getComputedStyle(e).display !== 'none')
+    .filter(e => { const r = e.getBoundingClientRect();
+                   return r.right <= innerWidth && !e.contains(document.elementFromPoint((r.left + r.right) / 2, (r.top + r.bottom) / 2)); })
+    .map(e => e.textContent.trim()));
+  ok(buried.length === 0, `面板開著時 HUD 的鈕都按得到${buried.length ? `（被蓋住：${buried.join('・')}）` : ''}`);
   await page.locator('#emaki').click();
   await sleep(700);
   const roll = await page.evaluate(() => {
