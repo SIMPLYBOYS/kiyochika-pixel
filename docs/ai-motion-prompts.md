@@ -83,6 +83,9 @@ STYLE: The motion stays inside the woodblock look: flat printed colour, no photo
 
 59 幅的分佈：**33 幅至少有一句，26 幅只有最後那句**（唯一一幅「晝」不加句子，算在後者）。
 
+**例外：資料沒寫、畫面上卻明明白白看得到的。** 天候只從題名判，所以題名沒寫雨、畫裡卻在下大雨的（例：no.9 梅若神社），
+記在 `_prompt_template.overrides`，**連同理由**。只影響提示詞，不改遊戲的收景規則。看不準的不加（例：no.8 天上那顆黃色圓盤，分不出是月亮還是夕陽）。
+
 ---
 
 ## 四、十個寫法技巧
@@ -152,7 +155,7 @@ STYLE: The motion stays inside the woodblock look: flat printed colour, no photo
 ## 六、操作步驟
 
 1. 選一幅，依第三節挑出 motion 句子，組成完整提示詞。
-2. 準備原畫墊成 16:9 的圖（米色墊邊），當第一幀。
+2. 跑 `python3 tools/motion-prep.py <編號或範圍>`（例：`1-10`；加 `--street` 另出街景版），產出墊成 16:9 的第一幀與組好的提示詞，放在 `research/motion/`。
 3. 在 Flow 生成 8 秒影片，下載 mp4，放進 `research/motion/`。
 4. 在 `data/motion.json` 的 `clips` 記上：模型、日期、**逐字的提示詞**、`kind`。
 5. 跑 `python3 tools/make-motion.py <編號> --video <檔案>`：切回原框、量位移、做循環、輸出。

@@ -132,6 +132,166 @@
    ],
    "fill": "#BFB086",
    "why": "同 no.50：Veo 只出 16:9 ⇒ 先墊成 16:9 當第一幀，事後照這組數字切回來。墊邊色取這一幅自己紙邊的中位數。"
+  },
+  "1": {
+   "file": "research/motion/01-pad16x9.png",
+   "canvas": [
+    1928,
+    1084
+   ],
+   "plate_at": [
+    150,
+    0
+   ],
+   "plate_size": [
+    1628,
+    1084
+   ],
+   "fill": "#C2B48E"
+  },
+  "2": {
+   "file": "research/motion/02-pad16x9.png",
+   "canvas": [
+    1628,
+    916
+   ],
+   "plate_at": [
+    0,
+    84
+   ],
+   "plate_size": [
+    1628,
+    747
+   ],
+   "fill": "#B7B087"
+  },
+  "3": {
+   "file": "research/motion/03-pad16x9.png",
+   "canvas": [
+    1952,
+    1098
+   ],
+   "plate_at": [
+    160,
+    0
+   ],
+   "plate_size": [
+    1631,
+    1098
+   ],
+   "fill": "#C4B790"
+  },
+  "4": {
+   "file": "research/motion/04-pad16x9.png",
+   "canvas": [
+    1928,
+    1084
+   ],
+   "plate_at": [
+    147,
+    0
+   ],
+   "plate_size": [
+    1634,
+    1084
+   ],
+   "fill": "#C1B58E"
+  },
+  "5": {
+   "file": "research/motion/05-pad16x9.png",
+   "canvas": [
+    1950,
+    1097
+   ],
+   "plate_at": [
+    161,
+    0
+   ],
+   "plate_size": [
+    1628,
+    1097
+   ],
+   "fill": "#BBAD83"
+  },
+  "6": {
+   "file": "research/motion/06-pad16x9.png",
+   "canvas": [
+    1912,
+    1076
+   ],
+   "plate_at": [
+    139,
+    0
+   ],
+   "plate_size": [
+    1634,
+    1076
+   ],
+   "fill": "#BEB492"
+  },
+  "7": {
+   "file": "research/motion/07-pad16x9.png",
+   "canvas": [
+    1928,
+    1084
+   ],
+   "plate_at": [
+    149,
+    0
+   ],
+   "plate_size": [
+    1629,
+    1084
+   ],
+   "fill": "#BDB490"
+  },
+  "8": {
+   "file": "research/motion/08-pad16x9.png",
+   "canvas": [
+    1722,
+    969
+   ],
+   "plate_at": [
+    47,
+    0
+   ],
+   "plate_size": [
+    1628,
+    969
+   ],
+   "fill": "#B8AD84"
+  },
+  "9": {
+   "file": "research/motion/09-pad16x9.png",
+   "canvas": [
+    1892,
+    1064
+   ],
+   "plate_at": [
+    132,
+    0
+   ],
+   "plate_size": [
+    1628,
+    1064
+   ],
+   "fill": "#C2B48B"
+  },
+  "10": {
+   "file": "research/motion/10-pad16x9.png",
+   "canvas": [
+    1908,
+    1073
+   ],
+   "plate_at": [
+    139,
+    0
+   ],
+   "plate_size": [
+    1630,
+    1073
+   ],
+   "fill": "#C0B38C"
   }
  },
  "_attempts": [
@@ -248,6 +408,15 @@
     "in the directions their poses already suggest ← 讓動作從原畫的姿勢延伸，不是模型另外編排",
     "Each figure keeps its clothing, colours and flat printed look ← 人一動，模型最容易把人畫成動畫風或照片感"
    ]
+  },
+  "overrides": {
+   "_": "資料（題名判出的天候與時刻）沒寫、但畫面上明明白白看得到的，才加在這裡，**一定寫理由**。只影響提示詞，⛔ 不改 views.json 的 conditions（遊戲的收景閘門照舊只看題名）。看不準的不加。",
+   "9": {
+    "add": [
+     "rain"
+    ],
+    "why": "題名「梅若神社」沒寫雨，但整幅是斜落的雨線、撐傘披簑的人與地上的水花——畫的就是雨天。"
+   }
   }
  }
 }
