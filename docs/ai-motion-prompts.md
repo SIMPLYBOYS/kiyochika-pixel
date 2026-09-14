@@ -164,6 +164,57 @@ STYLE: The motion stays inside the woodblock look: flat printed colour, no photo
 
 ---
 
+## 七、變體 B：街景版（讓畫裡的人動起來）
+
+主模板要求「人、車都不准動」，所以街景畫（主體是街上的人）套主模板幾乎不會動。
+想要熱鬧的街景時，改用這個變體。正本在 `data/motion.json` 的 `_prompt_template.street`。
+
+**用這個變體生出來的，一律是「AI 重繪」**，差異清單至少要寫「人物在走動」。
+⛔ 不用在兩国大火那 4 幅：畫的是逃難的人，讓他們動起來就是替清親演一場災難。
+
+### 跟主模板差在哪
+
+| 段落 | 主模板 | 街景版 |
+|---|---|---|
+| CAMERA | 鎖死、整張紙在畫面裡、墊邊維持素色 | **一字不改**。人可以動，框不能動 |
+| KEEP IDENTICAL | 人、船、車、建築…全部不動 | 改成**建築、屋頂、門簾、招牌、文字、電線桿、路燈、街道、題字落款**不動 |
+| WHAT MOVES | 依資料挑的氛圍句子 | 下面那句街景句 ＋ 依資料挑的氛圍句子（⛔ 不接「幾乎不動」那句，會互相矛盾） |
+| STYLE | 木版風格、慢、循環 | 一樣 |
+
+### 街景句
+
+```
+The people and vehicles already in the print come gently to life. They walk, pull and carry at an unhurried pace, in the directions their poses already suggest. Each figure keeps its clothing, colours and flat printed look. The street stays exactly as busy as printed, with the same number of people throughout.
+```
+
+### 每一句在防什麼（來自 no.72 第一次生成 `p.72.mp4` 的失敗）
+
+| 句子 | 防的是 |
+|---|---|
+| CAMERA 整段不改，並且一定要用墊成 16:9 的第一幀 | 那一次沒墊，Veo 把畫放大裁切，題字「大傳馬町大丸」、落款、左側紙邊、天空上緣全被裁掉，而且救不回來 |
+| with the same number of people throughout | 人越走越多：多出牽紅衣小孩的女子、撐傘的人、左邊兩個女子 |
+| in the directions their poses already suggest | 讓動作從原畫的姿勢延伸，不讓模型另外編排走位 |
+| Each figure keeps its clothing, colours and flat printed look | 人一動，模型最容易把人物畫成動畫風或照片感 |
+| The printed title, signature and seal stay exactly as printed | 文字與印章最容易被模型改寫成亂碼 |
+
+### 例：no.72 大傳馬町大丸
+
+資料裡沒有天候、時刻、燈火標註 ⇒ WHAT MOVES 只放街景句。第一幀用 `research/motion/72-pad16x9.png`。
+
+```
+Animate this exact image. It is a Japanese woodblock print from the Meiji era (Kobayashi Kiyochika, 1876-1881), placed on a plain beige background.
+
+CAMERA: Locked-off static shot for the whole clip. No pan, tilt, zoom, push-in, parallax, rotation or reframing. The entire print stays in frame, including its paper margins, printed title and red seal. The plain background around the print stays plain and empty.
+
+KEEP IDENTICAL: Every building, roof, shop curtain, sign, lettering, pole, wire, lamp post and the street itself keeps its exact position, shape and colour. The printed title, signature and seal stay exactly as printed. The carved outlines, flat areas of printed colour, colour palette and paper texture stay exactly as printed.
+
+WHAT MOVES: The people and vehicles already in the print come gently to life. They walk, pull and carry at an unhurried pace, in the directions their poses already suggest. Each figure keeps its clothing, colours and flat printed look. The street stays exactly as busy as printed, with the same number of people throughout.
+
+STYLE: The motion stays inside the woodblock look: flat printed colour, no photographic lighting, no 3D depth, no motion blur, no added grain, no colour grading. Movement is slow, subtle and continuous. The clip loops seamlessly: the last frame matches the first frame.
+```
+
+---
+
 ## 附：no.50 御厩橋雷雨組好的提示詞
 
 資料：天候雨、標註有「河面的燈火」「水上的光」（→ 燈火）、「閃電」（→ 閃電）⇒ rain ＋ lamp ＋ bolt。

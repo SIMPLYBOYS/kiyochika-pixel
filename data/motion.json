@@ -81,6 +81,23 @@
     1036
    ],
    "why": "Veo 只出 16:9／9:16 ⇒ 先把原畫墊成 16:9 再餵給它，事後照這組數字切回來，構圖就不會被裁掉。"
+  },
+  "72": {
+   "file": "research/motion/72-pad16x9.png",
+   "canvas": [
+    1956,
+    1100
+   ],
+   "plate_at": [
+    146,
+    0
+   ],
+   "plate_size": [
+    1663,
+    1100
+   ],
+   "fill": "#BFB086",
+   "why": "同 no.50：Veo 只出 16:9 ⇒ 先墊成 16:9 當第一幀，事後照這組數字切回來。墊邊色取這一幅自己紙邊的中位數。"
   }
  },
  "_attempts": [
@@ -114,6 +131,19 @@
    ],
    "lesson": "🔑 **兩次、同一種失敗 ⇒ 這條路的結論是「做不到」。** img2video 的工作方式就是重新生成每一幀；把第一幀餵給它只是給了個起點，不是給了個約束。提示詞再嚴也擋不住——它沒有「只改這一層」的概念。⇒ 若要動，**動的必須是程式疊上去的東西**（雨、雪、光），因為那一層加什麼、加在哪裡，都是我們自己決定且說得出出處的。",
    "keep": "兩支片子留在 research/motion/（不進 build），當作這個結論的證據。"
+  },
+  {
+   "date": "2026-09-15",
+   "id": 72,
+   "model": "（待補：Aaron 在 Flow 看到的模型與版本）",
+   "prompt": "（待補：生成時實際用的提示詞。沒有用 _prompt_template——那一段的 WHAT MOVES 是 Almost nothing moves）",
+   "source": "research/motion/p.72.mp4（10s・1280×720）",
+   "verdict": "⛔ 不收（重生）",
+   "why": [
+    "① **第一幀就裁過**：沒墊 16:9，Veo 把原畫放大裁成 16:9——下緣題字「大傳馬町大丸」與落款、左側紙邊與建築左端、天空上緣都不在畫面裡。被裁掉的部分影片裡根本沒有，切不回來；make-motion.py 第一關（長寬比）就擋。",
+    "② 人全部動起來而且**越來越多**：2.5s 多出牽紅衣小孩的女子與幾個撐傘的人，7.5s 左邊再多兩個女子，人力車換了位置。"
+   ],
+   "next": "Aaron 選 B（熱鬧的街景版，當 reinterpretation）⇒ 用 research/motion/72-pad16x9.png 當第一幀、_prompt_template.street 組出來的提示詞（research/motion/72-prompt.txt）重生。"
   }
  ],
  "_decision": {
@@ -170,6 +200,20 @@
    "⛔ 不寫 no watermark：浮水印是平台加的，提示詞擋不掉，寫了只是多一個名詞。",
    "🔑 **提示詞只能減少重畫，擋不住重畫**（見 _attempts 的 lesson）。所以生成之後照舊跑 make-motion.py 量位移、看幀、寫 differs——模板不是替代那一關的東西。",
    "⚠️ fire 那 4 景風險最高：標註全是人（逃的人、挑擔的人），模型最容易讓人動起來。default 那 26 景則是動得最少、最可能不值得做。先做那 33 景裡非 fire 的 29 景。"
-  ]
+  ],
+  "street": {
+   "_": "變體 B：街景版——讓畫裡的人動起來。🔴 用這個變體生出來的一律 kind=reinterpretation，differs 至少要寫「人物在走動」。",
+   "use_when": "畫面主體是街上的人與車（例：no.72 大傳馬町大丸），而且作者要的是熱鬧、不是忠實。⛔ 不用在火災那 4 幅：那是逃難的人，動起來就是替清親演一場災難。",
+   "base": "Animate this exact image. It is a Japanese woodblock print from the Meiji era (Kobayashi Kiyochika, 1876-1881), placed on a plain beige background.\n\nCAMERA: Locked-off static shot for the whole clip. No pan, tilt, zoom, push-in, parallax, rotation or reframing. The entire print stays in frame, including its paper margins, printed title and red seal. The plain background around the print stays plain and empty.\n\nKEEP IDENTICAL: Every building, roof, shop curtain, sign, lettering, pole, wire, lamp post and the street itself keeps its exact position, shape and colour. The printed title, signature and seal stay exactly as printed. The carved outlines, flat areas of printed colour, colour palette and paper texture stay exactly as printed.\n\nWHAT MOVES: {MOTION}\n\nSTYLE: The motion stays inside the woodblock look: flat printed colour, no photographic lighting, no 3D depth, no motion blur, no added grain, no colour grading. Movement is slow, subtle and continuous. The clip loops seamlessly: the last frame matches the first frame.",
+   "motion": "The people and vehicles already in the print come gently to life. They walk, pull and carry at an unhurried pace, in the directions their poses already suggest. Each figure keeps its clothing, colours and flat printed look. The street stays exactly as busy as printed, with the same number of people throughout.",
+   "pick": "{MOTION} ＝ 上面這句 motion ＋ 主表裡依資料挑出的句子（rain／snow／night／lamp…）。⛔ 不接 default（它說 Almost nothing moves，跟這個變體互相矛盾）。",
+   "why": [
+    "跟主模板差在兩處：KEEP IDENTICAL 把「人、車不准動」換成「建築、招牌、文字、題字落款不准動」；WHAT MOVES 放人。",
+    "CAMERA 一字不改——p.72.mp4 被裁掉題字與紙邊，就是因為沒墊 16:9；人可以動，框不能動。",
+    "the same number of people throughout ← p.72.mp4 裡人越走越多（紅衣小孩、撐傘的人、左邊兩個女子）",
+    "in the directions their poses already suggest ← 讓動作從原畫的姿勢延伸，不是模型另外編排",
+    "Each figure keeps its clothing, colours and flat printed look ← 人一動，模型最容易把人畫成動畫風或照片感"
+   ]
+  }
  }
 }
