@@ -131,7 +131,7 @@
   ]
  },
  "_prompt_template": {
-  "_": "通用提示詞：一段固定的 base ＋ 依這一景的資料挑出的 motion 句子。⛔ 每次生成都逐字用這裡的版本，逐字記進 clips[].prompt（那是出處）。改了模板要在這裡留紀錄，不要即興改。",
+  "_": "通用提示詞：一段固定的 base ＋ 依這一景的資料挑出的 motion 句子。⛔ 每次生成都逐字用這裡的版本，逐字記進 clips[].prompt（那是出處）。改了模板要在這裡留紀錄，不要即興改。　寫法與理由的筆記：docs/ai-motion-prompts.md",
   "base": "Animate this exact image. It is a Japanese woodblock print from the Meiji era (Kobayashi Kiyochika, 1876-1881), placed on a plain beige background.\n\nCAMERA: Locked-off static shot for the whole clip. No pan, tilt, zoom, push-in, parallax, rotation or reframing. The entire print stays in frame, including its paper margins, printed title and red seal. The plain background around the print stays plain and empty.\n\nKEEP IDENTICAL: Every person, boat, vehicle, animal, building, bridge, tree, pole and sign keeps its exact position, pose, shape and number from the first frame to the last. Nothing enters, leaves or appears. The carved outlines, flat areas of printed colour, colour palette and paper texture stay exactly as printed.\n\nWHAT MOVES: {MOTION}\n\nSTYLE: The motion stays inside the woodblock look: flat printed colour, no photographic lighting, no 3D depth, no motion blur, no added grain, no colour grading. Movement is slow, subtle and continuous. The clip loops seamlessly: the last frame matches the first frame.",
   "motion": {
    "rain": "The rain already drawn in the print keeps falling at the same angle and the same density; it does not get heavier. Wet ground and water catch a faint flicker of reflected light.",
@@ -151,7 +151,7 @@
    "conditions.weather ∈ rain／snow／fire／moon／fireworks → 同名句子；conditions.time_of_day ∈ night／dusk／dawn → 同名句子（day 不加）。",
    "details 的標註名含 燈・灯・火・光・明 → lamp；含 閃電・稲妻・雷 → bolt。",
    "符合的全部接起來，順序照上面 motion 的鍵；一個都沒有 → 只用 default。",
-   "例：no.50 御厩橋雷雨＝rain＋lamp＋bolt。59 景的分佈：25 景只有 default、34 景至少有一句。"
+   "例：no.50 御厩橋雷雨＝rain＋lamp＋bolt。59 景的分佈：33 景至少有一句、26 景只有 default（唯一一景 day 不加句子，算在後者）。"
   ],
   "settings": {
    "input": "原畫墊成 16:9 的圖當第一幀（墊邊色 #C6B993 米色，數字記在 _pad）。⚠️ 背景那句就是在防模型把畫面往墊邊外面畫出去。",
@@ -169,7 +169,7 @@
    "⛔ **不點名不想要的東西**（不寫 no umbrella、no branching lightning、no extra people）：影片模型對被提到的名詞很敏感，點名常常反而把它畫出來。一律用「維持原樣／不出現新東西」這種不帶名詞的說法。",
    "⛔ 不寫 no watermark：浮水印是平台加的，提示詞擋不掉，寫了只是多一個名詞。",
    "🔑 **提示詞只能減少重畫，擋不住重畫**（見 _attempts 的 lesson）。所以生成之後照舊跑 make-motion.py 量位移、看幀、寫 differs——模板不是替代那一關的東西。",
-   "⚠️ fire 那 4 景風險最高：標註全是人（逃的人、挑擔的人），模型最容易讓人動起來。default 那 25 景則是動得最少、最可能不值得做。先做那 34 景裡非 fire 的。"
+   "⚠️ fire 那 4 景風險最高：標註全是人（逃的人、挑擔的人），模型最容易讓人動起來。default 那 26 景則是動得最少、最可能不值得做。先做那 33 景裡非 fire 的 29 景。"
   ]
  }
 }
