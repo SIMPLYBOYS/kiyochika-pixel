@@ -247,12 +247,23 @@ STYLE: The motion stays inside the woodblock look: flat printed colour, no photo
 - **循環接點更明顯**：不要求頭尾一致，接回開頭時的半透明重疊會比 no.72 更大。
 - **構圖位移會很高**：`make-motion.py` 對 reinterpretation 不擋，但數字會照實記下。
 
-### base 全文
+### 第二版：加上「連續、同一個地方」
+
+第一版只鎖了鏡頭與外框，沒說不准換場景。no.3 東京橋場渡黄昏景（`p3.mp4`）第 1 秒之後，
+**整個畫面被換成一幅新畫**：題字與題箋消失、出現假字的新題箋，渡船與對岸全部重畫（構圖位移 30 以上，其他兩支約 13–18）。
+⇒ 加一段 CONTINUITY：**一個連續鏡頭、同一個地方，不剪接、不轉場**，建築、岸線、樹、天空與題字印章留在原位。
+這段只講「連續」，**不講「不准動」**，免得又把動作壓回去。
+
+no.1、no.2 的片子是第一版生的，資料檔保留第一版（`vivid.base_v1`），上架時提示詞照那一版逐字記。
+
+### base 全文（第二版）
 
 ```
 Bring this Japanese woodblock print to life as a vivid animated scene. It is a print of Meiji-era Tokyo by Kobayashi Kiyochika (1876-1881), placed on a plain beige background.
 
 CAMERA: The camera stays locked on the print for the whole clip, so the print's outer edges never move. Everything inside the picture is free to move.
+
+CONTINUITY: This is one continuous shot of this one place, with no cut, dissolve or transition to another scene. The layout of the picture stays recognisable from start to finish: the same buildings, shoreline, trees and sky, and the printed title, cartouche, signature and seals stay where they are. Within that same place, everything is free to move as described below.
 
 ACTION: {SCENE}
 
