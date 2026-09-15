@@ -56,6 +56,20 @@ def pad(plate):
     return canvas, at, (w, h), fill
 
 
+def credit(prompt, v):
+    """提示詞裡的畫師要照這一幅的 attribution 寫。
+
+    🔴 模板寫的是 “by Kobayashi Kiyochika (1876-1881)” 與 “Kiyochika's palette”——
+    81–84 是弟子井上安治畫的，照抄就是在提示詞裡把畫師寫錯。⇒ 換掉；換不到就擋下來，⛔ 不默默放行。"""
+    if v.get("attribution") != "inoue-yasuji":
+        return prompt
+    out = (prompt.replace("by Kobayashi Kiyochika (1876-1881)", "by Inoue Yasuji, a student of Kobayashi Kiyochika")
+                 .replace("Kiyochika's palette", "the print's own palette")
+                 .replace("as Kiyochika drew it", "as Yasuji drew it"))
+    assert "Kiyochika" not in out.replace("a student of Kobayashi Kiyochika", ""), f"no.{v['id']} 的提示詞還有清親的名字"
+    return out
+
+
 def ids(tokens):
     out = []
     for t in tokens:
@@ -106,6 +120,7 @@ def main():
             prompt = tpl["vivid"]["base"].replace("{SCENE}", scene)
         else:
             prompt = tpl["base"].replace("{MOTION}", " ".join(tpl["motion"][k] for k in keys) or tpl["motion"]["default"])
+        prompt = credit(prompt, v)
         (OUT / f"{i:02d}-prompt.txt").write_text(prompt + "\n", encoding="utf-8")
         note = (f"no.{i:<2} {v['title']['ja']}　墊 {canvas.size[0]}×{canvas.size[1]}（原畫在 {at}）　"
                 + ("生動版" if a.vivid else f"句子：{'＋'.join(keys) or 'default'}"))
@@ -116,7 +131,7 @@ def main():
                 note += "　⛔ 火災不做街景版"
             else:
                 sm = " ".join([street["motion"]] + [tpl["motion"][k] for k in keys])
-                (OUT / f"{i:02d}-prompt-street.txt").write_text(street["base"].replace("{MOTION}", sm) + "\n", encoding="utf-8")
+                (OUT / f"{i:02d}-prompt-street.txt").write_text(credit(street["base"].replace("{MOTION}", sm), v) + "\n", encoding="utf-8")
                 note += "　＋街景版"
         print(note)
     mp.write_text(json.dumps(data, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")

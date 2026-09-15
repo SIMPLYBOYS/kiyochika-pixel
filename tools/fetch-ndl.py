@@ -13,8 +13,12 @@ Commons 去重後光線画只有約 38 幅、其中 4 幅低於 1000px；NDL 寄
 ⇒ 冊內第 k 幅在第 2k+2 頁。self-check 對三冊 manifest 的 canvas 數驗這條規則。
 
 排除的（留在資料裡，`include: false`，不刪——刪了下次盤點又會找到它們）：
-  73–80 《新版三十二相》滑稽畫 · 81–84 井上安治（弟子，Action Plan §5 待 Aaron 決定）
-  55／56 箱根（畫框外）· 57 ざくろにぶどう（靜物）
+  73–80 《新版三十二相》滑稽畫 · 55／56 箱根（畫框外）· 57 ざくろにぶどう（靜物）
+
+**81–84 井上安治收錄**（2026-09-16 Aaron 決定；原本是 Action Plan §5 待決定）。
+安治是清親的弟子、繼承光線畫（見 data/topics.json 的 notes「弟子」），而這四幅本來就裝在同一套
+《清親畫帖》裡。⇒ 收進遊戲，但 `attribution` 維持 `inoue-yasuji`——**畫師是誰，每一處都要照實標**，
+⛔ 不要讓它們在任何畫面上被說成清親的作品。
 
 用法：
   python3 tools/fetch-ndl.py               # 只建骨架
@@ -24,7 +28,7 @@ import argparse, json, sys, time
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from fetchlib import fetch, get_json
+from fetchlib import download as fetch_file, get_json
 
 ROOT = Path(__file__).resolve().parent.parent
 UA = "kiyochika-pixel/0.1 (research; contact via https://github.com/SIMPLYBOYS/kiyochika-pixel)"
@@ -128,7 +132,6 @@ TITLES = """
 
 EXCLUDE = {
     **{n: "新版三十二相（滑稽畫，非風景）" for n in range(73, 81)},
-    **{n: "井上安治（弟子）——Action Plan §5 待決定" for n in range(81, 85)},
     55: "箱根，畫框外", 56: "箱根，畫框外", 57: "靜物",
 }
 # 清親 1881/01/26 両国大火三幅，§2.9 事件機制的素材；點名驗
@@ -154,7 +157,10 @@ def build():
     if old.exists():
         prev = {v["id"]: v for v in json.loads(old.read_text(encoding="utf-8"))}
     pubp = ROOT / "data" / "published.json"
-    pub = json.loads(pubp.read_text(encoding="utf-8"))["published"] if pubp.exists() else {}
+    pubdoc = json.loads(pubp.read_text(encoding="utf-8")) if pubp.exists() else {}
+    pub = pubdoc.get("published", {})
+    # 欄外印的畫工署名。跟 attribution（收錄時的歸屬）分開存——81・84 兩者不一致，兩個都要看得到
+    signed = pubdoc.get("_colophon_artist", {})
     # 出版年有兩個來源，**分開存也分開讀**（見 fetch-dates.py 檔頭）：
     #   published        ＝ 版上奧付的御届日期，我自己判讀的（10 幅）
     #   published_year   ＝ 館方斷代，Japan Search 查的（51 幅）
@@ -178,6 +184,7 @@ def build():
             "published_confidence": (pub.get(str(n)) or {}).get("confidence"),
             "published_year": (ext.get(str(n)) or {}).get("year"),
             "published_year_source": (ext.get(str(n)) or {}).get("source"),
+            **({"colophon_artist": signed[str(n)]} if str(n) in signed else {}),
             "viewpoint": {"lat": None, "lng": None, "confidence": "unknown"},
             "subject": None,
             "bearing": None,
@@ -217,7 +224,10 @@ def download(views):
         if out.exists():
             continue
         s = v["source"]
-        out.write_bytes(fetch(IMAGE.format(pid=s["pid"], page=s["page"], size=f"{PAGE_WIDTH},"), UA, timeout=180).read())
+        # ⚠️ 用 fetchlib.download（斷了就用 Range 續傳）：2026-09-16 補抓 81–84 時 NDL 連斷好幾次，
+        # 舊的 fetch().read() 直接丟例外、檔案也沒寫。⚠️ 84 連續傳都斷，最後是用 curl 抓完的
+        #（fetchlib.download 檔頭記過同一件事：同一個 URL，urllib 斷、curl 抓得完整）
+        fetch_file(IMAGE.format(pid=s["pid"], page=s["page"], size=f"{PAGE_WIDTH},"), UA, out, timeout=180)
         print(f"  {out.name}  {v['title']['ja']}  {out.stat().st_size // 1024}KB", flush=True)
         time.sleep(1.0)
 
@@ -240,7 +250,8 @@ def main():
         time.sleep(0.5)
     inc = [v for v in views if v["include"]]
     assert MUST_HAVE <= {v["id"] for v in inc}
-    assert all(v["attribution"] == "kiyochika" for v in inc)
+    # 收錄的只能是清親本人或弟子井上安治（81–84）。⛔ 其他人混進來就是題名抄錯了。
+    assert all(v["attribution"] == "kiyochika" or (v["attribution"] == "inoue-yasuji" and 81 <= v["id"] <= 84) for v in inc)
     kept = sum(1 for v in inc if v["subject"])
     print(f"帶過既有座標 {kept} 筆（derive-subject.py 填的，這支不動它）")
     dated = [v for v in inc if v["published"]]
@@ -254,7 +265,8 @@ def main():
     out = ROOT / "data" / "views.json"
     out.parent.mkdir(exist_ok=True)
     out.write_text(json.dumps(views, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    print(f"寫出 {out.relative_to(ROOT)}：84 筆，收錄 {len(inc)} 幅清親東京光線画，排除 {84 - len(inc)}")
+    yas = sum(1 for v in inc if v["attribution"] == "inoue-yasuji")
+    print(f"寫出 {out.relative_to(ROOT)}：84 筆，收錄 {len(inc)} 幅東京光線画（清親 {len(inc) - yas}・井上安治 {yas}），排除 {84 - len(inc)}")
     for n, why in sorted(EXCLUDE.items()):
         print(f"  ✗ {n:2d} {why}")
     print(f"門檻 ≥40：{'✅' if len(inc) >= 40 else '❌'}（{len(inc)}）")

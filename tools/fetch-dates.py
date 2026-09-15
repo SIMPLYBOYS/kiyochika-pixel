@@ -56,11 +56,23 @@ def get(url, tries=3, timeout=30):
     raise last
 
 
-def lookup(title_ja):
+ARTIST = {"kiyochika": "小林清親", "inoue-yasuji": "井上安治"}
+
+
+def lookup(title_ja, attribution="kiyochika"):
     """回傳 (西元年, 原始和曆字串, 精度, 資料庫, 連結) 或 None。"""
-    head = title_ja.split(" ")[0]          # 細目表有些條目後面接說明，只用前半
-    d = get(API + "?" + urllib.parse.urlencode({"keyword": "小林清親 " + head, "size": 10}))
-    for h in d.get("list", []):
+    # 細目表替安治那四幅加了館員註「（井上安治 明13）」——那是註記不是題名，比對前拿掉。
+    # ⚠️ 只拿掉帶「井上安治」的括號：「海運橋（第一銀行雪）」的括號是題名本身。
+    # ⚠️ 而且要**先拿掉再切空白**：註記裡本身有空格，先切的話右括號就被切掉、這條 regex 永遠比不中（實際踩到）
+    head = re.sub(r"（[^）]*井上安治[^）]*）", "", title_ja)
+    head = head.split(" ")[0]              # 細目表有些條目後面接說明，只用前半
+    # 🔴 關鍵字要用**這一幅的畫師**：安治的畫用「小林清親」查，一筆也不會回來（2026-09-16 實測）
+    # ⚠️ 細目表是旧字（淺草橋），館方多半著錄新字（浅草橋），而**搜尋本身不做字形正規化**
+    # ⇒ 旧字查不到就用新字再查一次（比對仍然走 norm，照樣要完全相等）
+    hits = []
+    for kw in dict.fromkeys([head, head.translate(OLD2NEW)]):
+        hits += get(API + "?" + urllib.parse.urlencode({"keyword": ARTIST[attribution] + " " + kw, "size": 10})).get("list", [])
+    for h in hits:
         c = h["common"]
         if norm(c.get("title")) != norm(head):
             continue                        # 題名要完全相等，⛔ 不做模糊比對
@@ -77,14 +89,18 @@ def lookup(title_ja):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--write", action="store_true")
+    ap.add_argument("--ids", help="只查這幾幅（逗號分隔）；配 --write 時**只合併這幾筆**，其餘原樣保留")
     args = ap.parse_args()
 
     views = [v for v in json.loads((ROOT / "data" / "views.json").read_text(encoding="utf-8")) if v["include"]]
+    if args.ids:
+        want = {int(x) for x in args.ids.split(",")}
+        views = [v for v in views if v["id"] in want]
     own = json.loads((ROOT / "data" / "published.json").read_text(encoding="utf-8"))["published"]
     out, miss, clash = {}, [], []
     for v in views:
         try:
-            r = lookup(v["title"]["ja"])
+            r = lookup(v["title"]["ja"], v.get("attribution", "kiyochika"))
         except Exception as e:
             print(f"  {v['id']:2d} {v['title']['ja'][:14]:<16}查詢失敗 {str(e)[:40]}")
             continue
@@ -114,12 +130,21 @@ def main():
 
     if args.write:
         f = ROOT / "data" / "dates-external.json"
-        f.write_text(json.dumps({
+        # 🔴 **讀進舊檔再改**：`_conflicts` 等欄是人寫的註記，這支不產生它們。
+        # 第一版整檔覆寫 ⇒ 重跑一次就把人工註記洗掉，而且沒有任何訊息（2026-09-16 補 81–84 時發現）。
+        # 另外：查詢偶爾會漏（同一天重跑，51 筆只回 50）⇒ --ids 時只合併這幾筆，⛔ 不讓一次漏查刪掉舊資料。
+        doc = json.loads(f.read_text(encoding="utf-8")) if f.exists() else {}
+        doc.update({
             "_": "外部知識庫（Japan Search）查到的出版年。**不是奧付判讀**，見 tools/fetch-dates.py 檔頭。",
             "_tier": "館方斷代。可能出自同一張奧付，也可能出自目錄學研究或推定 ⇒ 與 published.json 分開存。",
             "_precision": "day/month/year＝館方記到哪一級；unknown＝有西元年但沒有和曆原文。",
-            "fetched": time.strftime("%Y-%m-%d"), "dates": out,
-        }, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
+        })
+        if args.ids:
+            doc.setdefault("dates", {}).update(out)
+        else:
+            doc["dates"] = out
+            doc["fetched"] = time.strftime("%Y-%m-%d")
+        f.write_text(json.dumps(doc, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
         print(f"寫出 {f.relative_to(ROOT)}")
     else:
         print("（--write 才會寫檔）")

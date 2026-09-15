@@ -19,6 +19,9 @@ import { yearOf, PER_YEAR } from '../src/clock.js';
 
 const { chromium } = createRequire(process.env.HOME + '/')('playwright');
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
+// ⚠️ 地圖上該有幾個點**從資料算**，⛔ 不寫死：收錄井上安治四幅之後從 59 變 63，寫死的數字只會讓測試跟著資料一起錯
+const VIEWS = JSON.parse(readFileSync(resolve(ROOT, 'data/views.json'), 'utf8'));
+const MAPPED = VIEWS.filter(v => v.include && v.subject).length;
 const PORT = 8000;
 const sleep = ms => new Promise(r => setTimeout(r, ms));
 
@@ -59,7 +62,7 @@ for (const [name, size] of [['桌機 1440×900', { width: 1440, height: 900 }],
   const { width: vwHalf0, height: vhHalf0 } = page.viewportSize();
   const vwHalf = vwHalf0 / 2, vhHalf = vhHalf0 / 2;
   const marks = await page.locator('#map .mark').count();
-  ok(marks === 59, `標記 ${marks} 個（views.json 裡有座標的就是 59）`);
+  ok(marks === MAPPED, `標記 ${marks} 個（views.json 裡有座標的就是 ${MAPPED}）`);
   ok(errs.length === 0, `主控台乾淨${errs.length ? '：' + errs.slice(0, 3).join(' / ') : ''}`);
 
   // 圓點與地名的畫面尺寸。寫死 7px/13px 在 CSS 裡，map.js 每次縮放用 scale 抵銷
@@ -510,7 +513,7 @@ for (const [name, size] of [['桌機 1440×900', { width: 1440, height: 900 }],
              jiku: r.querySelectorAll('.jiku').length, rtl: getComputedStyle(r).flexDirection === 'row-reverse',
              x0 };
   });
-  ok(roll && roll.spans === 59 && roll.got >= 1 && roll.jiku === 2 && roll.rtl,
+  ok(roll && roll.spans === MAPPED && roll.got >= 1 && roll.jiku === 2 && roll.rtl,
      `畫卷 ${roll?.spans} 格（收到的 ${roll?.got} 格有圖）、兩端有軸木、由右往左`);
   // 🔑 一卷 59 幅、兩萬多像素，**自動展卷只適合看不適合找** ⇒ 手動三條路都要通。
   // ⚠️ 方向要對：這一卷右起，往下滾＝往左走（照瀏覽器預設會變成退回卷首）。
@@ -621,6 +624,37 @@ for (const [name, size] of [['桌機 1440×900', { width: 1440, height: 900 }],
      '觸控：叫出來之後按「離開」出得去');
   await ctx.close();
 }
+// ── 畫師要照實標：井上安治四幅 ─────────────────────────────────
+// 🔴 收錄弟子的畫之後，最容易出的錯是**把它們說成清親的**——面板、解說、差異清單的主詞都一樣。
+// 81 還多一層：版面欄外印的畫工是小林清親，館方著錄卻是井上安治 ⇒ 兩個都要看得到。
+{
+  const page = await browser.newPage({ viewport: { width: 1440, height: 900 } });
+  await page.goto(`http://localhost:${PORT}/`);
+  await page.evaluate(() => { localStorage.clear(); localStorage.setItem('kiyochika.intro.v1', '1'); });
+  await page.goto(`http://localhost:${PORT}/`);
+  await sleep(1500);
+  const panelOf = async id => {
+    await page.evaluate(id => document.querySelector(`#map .mark[data-id="${id}"]`)
+      ?.dispatchEvent(new MouseEvent('click', { bubbles: true })), id);
+    await sleep(700);
+    return page.evaluate(() => {
+      const dt = [...document.querySelectorAll('#panel dt')].find(e => e.textContent === '畫師');
+      return { artist: dt?.nextElementSibling?.textContent ?? null,
+               cards: [...document.querySelectorAll('#panel .read summary')].map(e => e.textContent),
+               img: document.querySelector('#panel #art img')?.naturalWidth ?? 0 };
+    });
+  };
+  const k1 = await panelOf(1), y81 = await panelOf(81), y82 = await panelOf(82);
+  const yas = VIEWS.filter(v => v.include && v.attribution === 'inoue-yasuji');
+  ok(yas.length === 4 && yas.every(v => v.subject) && k1.artist === '小林清親'
+     && /井上安治（清親的弟子）/.test(y81.artist) && /欄外印的畫工署名是「小林清親」/.test(y81.artist)
+     && /井上安治/.test(y82.artist) && !/欄外/.test(y82.artist)
+     && y81.cards.some(c => /畫這幅的人/.test(c)) && !k1.cards.some(c => /畫這幅的人/.test(c))
+     && y81.img > 0 && y82.img > 0,
+     `畫師照實標：no.1「${k1.artist}」／no.81「${y81.artist}」／no.82「${y82.artist}」；安治的畫先講畫的人`);
+  await page.close();
+}
+
 // ── AI 重繪版：沒收過也看得到 ─────────────────────────────────
 // 🔴 它不進收藏不算進度 ⇒ **不是收藏的獎勵**。第一版誤放進「收了才有」那組按鈕，
 // 新玩家要等到下雨天收了御厩橋雷雨才看得到（Aaron：「所以 ai 圖是被當作 reward？」）。

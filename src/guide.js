@@ -15,16 +15,19 @@ const dot = cls => `<svg class="swatch" viewBox="-18 -18 36 36" aria-hidden="tru
  * @param o.times     一天的刻，已轉成中文（曉・晝・夕・夜）
  * @param o.weathers  天候輪替，已轉成中文
  * @param o.perYear   收幾景翻一年
- * @param o.years     [第一年, 最後一年]
+ * @param o.years     時鐘的 [第一年, 最後一年]
+ * @param o.kiyoYears 清親自己的 [第一年, 最後一年]（⚠️ 不等於時鐘：時鐘多了安治的 1882）
+ * @param o.yasuji    弟子井上安治收了幾幅
  * @param o.clips     有 AI 重繪版的景名
  * @param o.refmap    當時的市街圖（HUD 上那個連結的年份），沒有就 null
  */
 export function guideHtml(o) {
   const [y0, y1] = o.years;
+  const [k0, k1] = o.kiyoYears;
   return `<h2>玩法</h2>
 <div class="guide">
-  <p>小林清親在 ${y0}–${y1} 年畫下的東京。收錄 ${o.mapped + o.unmapped} 幅，
-  其中 ${o.mapped} 幅查得到畫的是哪裡，就在這張地圖上。<br>
+  <p>小林清親在 ${k0}–${k1} 年畫下的東京${o.yasuji ? `，加上弟子井上安治接下去畫的 ${o.yasuji} 幅` : ''}。
+  收錄 ${o.mapped + o.unmapped} 幅，其中 ${o.mapped} 幅查得到畫的是哪裡，就在這張地圖上。<br>
   <b>目標：把地圖上的 ${o.mapped} 幅全部收進畫帖。</b></p>
 
   <h3>地圖上的點</h3>
@@ -40,7 +43,7 @@ export function guideHtml(o) {
   <ul>
     <li>一天分四刻：${o.times.join(' → ')}。按「等一刻」過一刻；<b>收一幅也會過一刻</b>。</li>
     <li>天候一天一換，照 ${o.weathers.join(' → ')} 輪流，再從頭。</li>
-    <li>年份從 ${y0} 年開始。<b>每收 ${o.perYear} 幅進入下一年</b>；
+    <li>年份從 ${y0} 年走到 ${y1} 年${o.yasuji && y1 > k1 ? `（${y1} 年是安治的畫）` : ''}。<b>每收 ${o.perYear} 幅進入下一年</b>；
       如果地圖上已經沒有「等一等就收得到」的畫，時間走下去也會進入下一年——所以不會卡關。</li>
     <li>上方那一列隨時寫著現在是哪一年、哪一刻、什麼天候。</li>
   </ul>
@@ -56,13 +59,15 @@ export function guideHtml(o) {
 
   <h3>收進畫帖之後</h3>
   <ul>
-    <li><b>顯示標註</b>：清親在畫裡畫了什麼，標在原來的位置。</li>
+    <li><b>顯示標註</b>：畫師在畫裡畫了什麼，標在原來的位置。</li>
     <li><b>16 色：看光的骨架</b>：把畫壓成 16 色，看他怎麼處理光；底下是那 16 色的色盤。</li>
   </ul>
   <p class="note">不用收也看得到的：真跡、<b>看原寸</b>、畫的年份與光線、那個地方現在是哪一區、
   最近的車站、「站到那裡看 ↗」街景、典藏來源與解說。下雪、下雨、點著燈的畫，面板上會輕輕動起來。</p>
+  ${o.yasuji ? `<p class="note"><b>井上安治的 ${o.yasuji} 幅</b>：面板上寫明畫師，解說會先講他是誰。
+  有的畫在版面欄外印的是清親的名字，面板照實並列，不替任何一邊下定論。</p>` : ''}
   ${o.clips.length ? `<p class="note"><b>AI 重繪版</b>（目前有 ${o.clips.length} 幅：${o.clips.join('、')}）：
-  生成模型照原畫重畫的影片，<b>不是清親畫的</b>，面板會一條一條列出它跟原畫差在哪。
+  生成模型照原畫重畫的影片，<b>不是原本的畫師畫的</b>，面板會一條一條列出它跟原畫差在哪。
   不算進度，也不會收進畫帖。</p>` : ''}
 
   <h3>上方那一列</h3>

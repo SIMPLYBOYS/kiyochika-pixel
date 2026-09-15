@@ -223,12 +223,30 @@ def find_washi(small, k):
     return box, how
 
 
+# 🔴 **人工框（整頁座標 x0, y0, x1, y1）：自動找和紙會把下緣切掉的幾幅。**
+# 2026-09-16 收錄井上安治 81–84 時，四幅全部被切在畫面下緣：底下那一條紙邊裡印的
+# **題名**（淺草橋夕景・京橋勸業場之景・赤坂紀伊國坂）、落款印、以及 82 的
+# **御届日期「明治十三年六月十二日」** 全在框外；82 甚至連畫面最下面一段（地面與人力車）都被切掉。
+# 第三冊最後這幾頁，版畫下緣兩角貼著半透明的襯紙膠條，自動判定在那裡就停了。
+# 四邊都重新量到和紙與台紙的交界（取中段一半寬／一半高的平均，連續 4 列或 4 欄「偏白、不黃」就當台紙）。
+# ⚠️ 第一次只修下緣，結果 83 京橋勧業場之景 的**上緣少 83px、右緣少 101px**（右邊那棟洋樓切掉四分之一）——
+# 切錯的從來不只一邊，四邊都要量。⚠️ 驗收看 research/_plate.png，不是只看數字。
+MANUAL = {
+    81: (332, 806, 2020, 1934),
+    82: (385, 807, 2019, 1920),
+    83: (400, 798, 2037, 1912),
+    84: (367, 788, 2052, 1919),
+}
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--force", action="store_true")
+    ap.add_argument("--ids", help="只重做這幾幅（逗號分隔），⛔ 不動其他幅——座標與標註綁在既有的框上")
     args = ap.parse_args()
 
     views = [v for v in json.loads((ROOT / "data" / "views.json").read_text(encoding="utf-8")) if v["include"]]
+    redo = {int(x) for x in args.ids.split(",")} if args.ids else set()
     PLATE.mkdir(parents=True, exist_ok=True)
     rows, odd = [], []
     for v in views:
@@ -237,10 +255,16 @@ def main():
             print(f"  ⚠️ 缺 {src.name}　先跑 python3 tools/fetch-ndl.py --download")
             continue
         pf = PLATE / f"{v['id']:02d}.jpg"
-        if pf.exists() and not args.force:
+        if pf.exists() and not args.force and v["id"] not in redo:
             rows.append(v)
             continue
         page = Image.open(src).convert("RGB")
+        if v["id"] in MANUAL:
+            washi = page.crop(MANUAL[v["id"]])
+            washi.save(pf, quality=92, subsampling=0)
+            rows.append(v)
+            print(f"  {v['id']:02d} {v['title']['ja'][:13]:<15}和紙{washi.size} 人工框（見 MANUAL）", flush=True)
+            continue
         k = page.width / DETECT_W
         small = page.resize((DETECT_W, round(page.height / k)), Image.BILINEAR)
         box, how = find_washi(small, k)

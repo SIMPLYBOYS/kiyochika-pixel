@@ -233,7 +233,7 @@
       "marker": null,
       "elevation": 15.4,
       "elevation_src": "5m（レーザ）",
-      "elevation_rank": 0.81
+      "elevation_rank": 0.82
     }
   },
   {
@@ -352,7 +352,7 @@
       "marker": null,
       "elevation": 1.0,
       "elevation_src": "1m（レーザ）",
-      "elevation_rank": 0.07
+      "elevation_rank": 0.06
     }
   },
   {
@@ -475,7 +475,7 @@
       },
       "elevation": 3.4,
       "elevation_src": "1m（レーザ）",
-      "elevation_rank": 0.41
+      "elevation_rank": 0.42
     }
   },
   {
@@ -831,7 +831,7 @@
       "marker": null,
       "elevation": 1.8,
       "elevation_src": "1m（レーザ）",
-      "elevation_rank": 0.17
+      "elevation_rank": 0.16
     }
   },
   {
@@ -1072,7 +1072,7 @@
       "marker": null,
       "elevation": 1.5,
       "elevation_src": "1m（レーザ）",
-      "elevation_rank": 0.12
+      "elevation_rank": 0.11
     }
   },
   {
@@ -1185,7 +1185,7 @@
       "marker": null,
       "elevation": 19.9,
       "elevation_src": "1m（レーザ）",
-      "elevation_rank": 0.93
+      "elevation_rank": 0.94
     }
   },
   {
@@ -1510,7 +1510,7 @@
       },
       "elevation": 1.6,
       "elevation_src": "1m（レーザ）",
-      "elevation_rank": 0.14
+      "elevation_rank": 0.13
     }
   },
   {
@@ -1629,7 +1629,7 @@
       "marker": null,
       "elevation": 19.0,
       "elevation_src": "1m（レーザ）",
-      "elevation_rank": 0.88
+      "elevation_rank": 0.89
     }
   },
   {
@@ -2203,7 +2203,7 @@
       "marker": null,
       "elevation": 3.1,
       "elevation_src": "1m（レーザ）",
-      "elevation_rank": 0.36
+      "elevation_rank": 0.35
     }
   },
   {
@@ -2445,7 +2445,7 @@
       "marker": null,
       "elevation": 1.8,
       "elevation_src": "1m（レーザ）",
-      "elevation_rank": 0.17
+      "elevation_rank": 0.16
     }
   },
   {
@@ -2553,7 +2553,7 @@
       "marker": null,
       "elevation": 3.1,
       "elevation_src": "1m（レーザ）",
-      "elevation_rank": 0.36
+      "elevation_rank": 0.35
     }
   },
   {
@@ -2794,7 +2794,7 @@
       "marker": null,
       "elevation": 6.3,
       "elevation_src": "1m（レーザ）",
-      "elevation_rank": 0.72
+      "elevation_rank": 0.73
     }
   },
   {
@@ -3031,7 +3031,7 @@
       "marker": null,
       "elevation": 15.5,
       "elevation_src": "1m（レーザ）",
-      "elevation_rank": 0.83
+      "elevation_rank": 0.84
     }
   },
   {
@@ -3150,7 +3150,7 @@
       "marker": null,
       "elevation": 2.0,
       "elevation_src": "10m",
-      "elevation_rank": 0.26
+      "elevation_rank": 0.24
     }
   },
   {
@@ -3467,7 +3467,7 @@
       "marker": null,
       "elevation": 5.0,
       "elevation_src": "10m",
-      "elevation_rank": 0.59
+      "elevation_rank": 0.6
     }
   },
   {
@@ -3666,7 +3666,7 @@
       "marker": null,
       "elevation": 5.3,
       "elevation_src": "1m（レーザ）",
-      "elevation_rank": 0.62
+      "elevation_rank": 0.63
     }
   },
   {
@@ -4130,7 +4130,7 @@
       "marker": null,
       "elevation": 8.9,
       "elevation_src": "1m（レーザ）",
-      "elevation_rank": 0.78
+      "elevation_rank": 0.77
     }
   },
   {
@@ -4616,7 +4616,7 @@
       },
       "elevation": 16.3,
       "elevation_src": "1m（レーザ）",
-      "elevation_rank": 0.84
+      "elevation_rank": 0.85
     }
   },
   {
@@ -4739,7 +4739,7 @@
       },
       "elevation": 17.5,
       "elevation_src": "1m（レーザ）",
-      "elevation_rank": 0.86
+      "elevation_rank": 0.87
     }
   },
   {
@@ -4858,7 +4858,7 @@
       "marker": null,
       "elevation": 1.8,
       "elevation_src": "1m（レーザ）",
-      "elevation_rank": 0.17
+      "elevation_rank": 0.16
     }
   },
   {
@@ -4977,7 +4977,7 @@
       "marker": null,
       "elevation": 2.0,
       "elevation_src": "10m",
-      "elevation_rank": 0.26
+      "elevation_rank": 0.24
     }
   },
   {
@@ -5094,7 +5094,7 @@
       },
       "elevation": 2.0,
       "elevation_src": "10m",
-      "elevation_rank": 0.26
+      "elevation_rank": 0.24
     }
   },
   {
@@ -5410,7 +5410,7 @@
       "marker": null,
       "elevation": 5.0,
       "elevation_src": "10m",
-      "elevation_rank": 0.59
+      "elevation_rank": 0.6
     }
   },
   {
@@ -5609,7 +5609,7 @@
       "marker": null,
       "elevation": 1.0,
       "elevation_src": "1m（レーザ）",
-      "elevation_rank": 0.07
+      "elevation_rank": 0.06
     }
   },
   {
@@ -5723,7 +5723,7 @@
       "marker": null,
       "elevation": 2.0,
       "elevation_src": "10m",
-      "elevation_rank": 0.26
+      "elevation_rank": 0.24
     }
   },
   {
@@ -6581,7 +6581,7 @@
       "marker": null,
       "elevation": 1.8,
       "elevation_src": "1m（レーザ）",
-      "elevation_rank": 0.17
+      "elevation_rank": 0.16
     }
   },
   {
@@ -6691,7 +6691,7 @@
       "marker": null,
       "elevation": 1.7,
       "elevation_src": "1m（レーザ）",
-      "elevation_rank": 0.16
+      "elevation_rank": 0.15
     }
   },
   {
@@ -6804,7 +6804,7 @@
       "marker": null,
       "elevation": 2.3,
       "elevation_src": "1m（レーザ）",
-      "elevation_rank": 0.33
+      "elevation_rank": 0.32
     }
   },
   {
@@ -6923,7 +6923,7 @@
       "marker": null,
       "elevation": 1.8,
       "elevation_src": "1m（レーザ）",
-      "elevation_rank": 0.17
+      "elevation_rank": 0.16
     }
   },
   {
@@ -7041,7 +7041,7 @@
       },
       "elevation": 5.6,
       "elevation_src": "1m（レーザ）",
-      "elevation_rank": 0.64
+      "elevation_rank": 0.65
     }
   },
   {
@@ -7570,7 +7570,7 @@
       },
       "elevation": 3.4,
       "elevation_src": "1m（レーザ）",
-      "elevation_rank": 0.41
+      "elevation_rank": 0.42
     }
   },
   {
@@ -7925,7 +7925,7 @@
       },
       "elevation": 4.5,
       "elevation_src": "1m（レーザ）",
-      "elevation_rank": 0.57
+      "elevation_rank": 0.58
     }
   },
   {
@@ -8296,26 +8296,41 @@
       "en": null
     },
     "attribution": "inoue-yasuji",
-    "include": false,
-    "exclude_reason": "井上安治（弟子）——Action Plan §5 待決定",
+    "include": true,
+    "exclude_reason": null,
     "published": null,
-    "published_confidence": null,
-    "published_year": null,
-    "published_year_source": null,
+    "published_confidence": "blank",
+    "published_year": 1879,
+    "published_year_source": "jpsearch:tokyomuseumcolection",
+    "colophon_artist": "小林清親（米沢丁一丁目二バンチ　画工　小林清親）",
     "viewpoint": {
       "lat": null,
       "lng": null,
       "confidence": "unknown"
     },
-    "subject": null,
+    "subject": {
+      "lat": 35.695869,
+      "lng": 139.785423
+    },
     "bearing": null,
     "place": {
       "meiji_ku": null,
-      "modern_ward": null,
-      "modern_landmark": null
+      "modern_ward": "台東区",
+      "modern_landmark": null,
+      "anchor": {
+        "how": "osm-cluster×4",
+        "name": "浅草橋",
+        "osm": "way/554210520",
+        "kind": "bridge",
+        "confidence": "osm"
+      },
+      "modern_town": "日本橋馬喰町二丁目",
+      "modern_town_km": 0.15
     },
     "conditions": {
-      "time_of_day": null
+      "time_of_day": "dusk",
+      "weather": null,
+      "source": "title"
     },
     "notes": {
       "geo": null,
@@ -8331,6 +8346,66 @@
       "image_url": "https://dl.ndl.go.jp/api/iiif/2605149/R0000060/full/full/0/default.jpg",
       "license": "Public domain",
       "commons_file": null
+    },
+    "details": [
+      {
+        "x": 0.1958,
+        "y": 0.676,
+        "r": 0.055,
+        "label": "窗裡的燈",
+        "label_ja": "窓の灯",
+        "kind": "light",
+        "candidate": 2
+      },
+      {
+        "x": 0.8979,
+        "y": 0.6947,
+        "r": 0.055,
+        "label": "門口的燈",
+        "label_ja": "戸口の灯",
+        "kind": "light",
+        "candidate": 3
+      },
+      {
+        "x": 0.05,
+        "y": 0.5794,
+        "r": 0.055,
+        "label": "格子窗的燈",
+        "label_ja": "格子窓の灯",
+        "kind": "light",
+        "candidate": 5
+      }
+    ],
+    "pixel": [
+      480,
+      321
+    ],
+    "now": {
+      "station": {
+        "name": "浅草橋",
+        "km": 0.18
+      },
+      "nearby": [
+        {
+          "name": "江戸通り",
+          "kind": "bridge",
+          "m": 5
+        },
+        {
+          "name": "神田川",
+          "kind": "water",
+          "m": 39
+        },
+        {
+          "name": "総武緩行線",
+          "kind": "bridge",
+          "m": 125
+        }
+      ],
+      "marker": null,
+      "elevation": 2.0,
+      "elevation_src": "10m",
+      "elevation_rank": 0.24
     }
   },
   {
@@ -8341,29 +8416,43 @@
       "en": null
     },
     "attribution": "inoue-yasuji",
-    "include": false,
-    "exclude_reason": "井上安治（弟子）——Action Plan §5 待決定",
-    "published": null,
-    "published_confidence": null,
+    "include": true,
+    "exclude_reason": null,
+    "published": "1880-06-12",
+    "published_confidence": "exact",
     "published_year": null,
     "published_year_source": null,
+    "colophon_artist": "井上安治（並木町六番地　井上安治画）",
     "viewpoint": {
       "lat": null,
       "lng": null,
       "confidence": "unknown"
     },
-    "subject": null,
+    "subject": {
+      "lat": 35.724175,
+      "lng": 139.795994
+    },
     "bearing": null,
     "place": {
       "meiji_ku": null,
-      "modern_ward": null,
-      "modern_landmark": null
+      "modern_ward": "台東区",
+      "modern_landmark": null,
+      "anchor": {
+        "how": "manual",
+        "name": "新吉原",
+        "source": "osm:node/7760847811",
+        "confidence": "district"
+      },
+      "modern_town": "千束四丁目",
+      "modern_town_km": 0.02
     },
     "conditions": {
-      "time_of_day": null
+      "time_of_day": "night",
+      "weather": null,
+      "source": "title"
     },
     "notes": {
-      "geo": null,
+      "geo": "題名「新吉原夜櫻景」的地名是新吉原（吉原遊廓）。OSM 沒有「新吉原」這個地物，取「吉原大門跡」（遊廓正門的遺址，台東区千束）當那一帶的錨。⚠️ 只到街區級。",
       "commentary": null
     },
     "source": {
@@ -8376,6 +8465,70 @@
       "image_url": "https://dl.ndl.go.jp/api/iiif/2605149/R0000062/full/full/0/default.jpg",
       "license": "Public domain",
       "commons_file": null
+    },
+    "details": [
+      {
+        "x": 0.1812,
+        "y": 0.4618,
+        "r": 0.055,
+        "label": "提燈",
+        "label_ja": "提灯",
+        "kind": "light",
+        "candidate": 6
+      },
+      {
+        "x": 0.9042,
+        "y": 0.5474,
+        "r": 0.055,
+        "label": "路燈",
+        "label_ja": "街灯",
+        "kind": "light",
+        "candidate": 1
+      },
+      {
+        "x": 0.8229,
+        "y": 0.6667,
+        "r": 0.055,
+        "label": "人影",
+        "label_ja": "人影",
+        "kind": "light",
+        "candidate": 5
+      }
+    ],
+    "pixel": [
+      480,
+      327
+    ],
+    "now": {
+      "station": {
+        "name": "三ノ輪",
+        "km": 0.73
+      },
+      "nearby": [
+        {
+          "name": "吉原公園",
+          "kind": "park",
+          "m": 101
+        },
+        {
+          "name": "日本堤公園",
+          "kind": "park",
+          "m": 218
+        },
+        {
+          "name": "千草公園",
+          "kind": "park",
+          "m": 244
+        }
+      ],
+      "marker": {
+        "name": "吉原大門跡",
+        "m": 0,
+        "osm": "node/7760847811"
+      },
+      "elevation": 3.1,
+      "elevation_src": "1m（レーザ）",
+      "elevation_rank": 0.35
     }
   },
   {
@@ -8386,26 +8539,41 @@
       "en": null
     },
     "attribution": "inoue-yasuji",
-    "include": false,
-    "exclude_reason": "井上安治（弟子）——Action Plan §5 待決定",
-    "published": null,
-    "published_confidence": null,
-    "published_year": null,
-    "published_year_source": null,
+    "include": true,
+    "exclude_reason": null,
+    "published": "1882",
+    "published_confidence": "year",
+    "published_year": 1882,
+    "published_year_source": "jpsearch:tokyomuseumcolection",
+    "colophon_artist": "井上安次（淺草並木町九番地　画工　井上安次）",
     "viewpoint": {
       "lat": null,
       "lng": null,
       "confidence": "unknown"
     },
-    "subject": null,
+    "subject": {
+      "lat": 35.676289,
+      "lng": 139.770871
+    },
     "bearing": null,
     "place": {
       "meiji_ku": null,
-      "modern_ward": null,
-      "modern_landmark": null
+      "modern_ward": "中央区",
+      "modern_landmark": null,
+      "anchor": {
+        "how": "osm-cluster×2",
+        "name": "京橋",
+        "osm": "node/7786715954",
+        "kind": "station",
+        "confidence": "district"
+      },
+      "modern_town": "京橋二丁目",
+      "modern_town_km": 0.05
     },
     "conditions": {
-      "time_of_day": null
+      "time_of_day": null,
+      "weather": null,
+      "source": null
     },
     "notes": {
       "geo": null,
@@ -8421,6 +8589,66 @@
       "image_url": "https://dl.ndl.go.jp/api/iiif/2605149/R0000064/full/full/0/default.jpg",
       "license": "Public domain",
       "commons_file": null
+    },
+    "details": [
+      {
+        "x": 0.6333,
+        "y": 0.4587,
+        "r": 0.055,
+        "label": "招牌",
+        "label_ja": "看板",
+        "kind": "light",
+        "candidate": 2
+      },
+      {
+        "x": 0.375,
+        "y": 0.1896,
+        "r": 0.055,
+        "label": "柳樹",
+        "label_ja": "柳",
+        "kind": "light",
+        "candidate": 4
+      },
+      {
+        "x": 0.3458,
+        "y": 0.6789,
+        "r": 0.055,
+        "label": "行人",
+        "label_ja": "人々",
+        "kind": "light",
+        "candidate": 3
+      }
+    ],
+    "pixel": [
+      480,
+      327
+    ],
+    "now": {
+      "station": {
+        "name": "京橋",
+        "km": 0.09
+      },
+      "nearby": [
+        {
+          "name": "宝町歩道橋",
+          "kind": "bridge",
+          "m": 175
+        },
+        {
+          "name": "東京高速道路KK線",
+          "kind": "bridge",
+          "m": 195
+        },
+        {
+          "name": "松幡橋",
+          "kind": "bridge",
+          "m": 237
+        }
+      ],
+      "marker": null,
+      "elevation": 4.3,
+      "elevation_src": "1m（レーザ）",
+      "elevation_rank": 0.56
     }
   },
   {
@@ -8431,26 +8659,41 @@
       "en": null
     },
     "attribution": "inoue-yasuji",
-    "include": false,
-    "exclude_reason": "井上安治（弟子）——Action Plan §5 待決定",
+    "include": true,
+    "exclude_reason": null,
     "published": null,
-    "published_confidence": null,
+    "published_confidence": "blank",
     "published_year": null,
     "published_year_source": null,
+    "colophon_artist": "小林清親（米沢丁一丁目二バンチ　画工　小林清親）",
     "viewpoint": {
       "lat": null,
       "lng": null,
       "confidence": "unknown"
     },
-    "subject": null,
+    "subject": {
+      "lat": 35.671951,
+      "lng": 139.736005
+    },
     "bearing": null,
     "place": {
       "meiji_ku": null,
-      "modern_ward": null,
-      "modern_landmark": null
+      "modern_ward": "港区",
+      "modern_landmark": null,
+      "anchor": {
+        "how": "osm-cluster×2",
+        "name": "赤坂",
+        "osm": "node/6210190874",
+        "kind": "station",
+        "confidence": "district"
+      },
+      "modern_town": "赤坂",
+      "modern_town_km": 0.05
     },
     "conditions": {
-      "time_of_day": null
+      "time_of_day": null,
+      "weather": null,
+      "source": null
     },
     "notes": {
       "geo": null,
@@ -8466,6 +8709,57 @@
       "image_url": "https://dl.ndl.go.jp/api/iiif/2605149/R0000066/full/full/0/default.jpg",
       "license": "Public domain",
       "commons_file": null
+    },
+    "details": [
+      {
+        "x": 0.1833,
+        "y": 0.4348,
+        "r": 0.055,
+        "label": "樹叢",
+        "label_ja": "木立",
+        "kind": "dark",
+        "candidate": 2
+      },
+      {
+        "x": 0.7396,
+        "y": 0.413,
+        "r": 0.055,
+        "label": "樹枝",
+        "label_ja": "木の枝",
+        "kind": "dark",
+        "candidate": 4
+      }
+    ],
+    "pixel": [
+      480,
+      322
+    ],
+    "now": {
+      "station": {
+        "name": "赤坂",
+        "km": 0.05
+      },
+      "nearby": [
+        {
+          "name": "氷川公園",
+          "kind": "park",
+          "m": 155
+        },
+        {
+          "name": "港区立一ツ木児童遊園",
+          "kind": "park",
+          "m": 180
+        },
+        {
+          "name": "港区立円通寺坂公園",
+          "kind": "park",
+          "m": 222
+        }
+      ],
+      "marker": null,
+      "elevation": 10.8,
+      "elevation_src": "1m（レーザ）",
+      "elevation_rank": 0.81
     }
   }
 ]

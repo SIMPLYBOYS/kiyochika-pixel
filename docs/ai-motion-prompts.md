@@ -33,7 +33,7 @@
 這樣設計的理由：
 
 - **base 固定** ⇒ 每一幅受到同樣的約束，結果可以互相比較，出處也好記。
-- **只有 motion 會變，而且從資料挑** ⇒ 59 幅不必各寫一份，也不會憑印象替某一幅加戲。
+- **只有 motion 會變，而且從資料挑** ⇒ 63 幅不必各寫一份，也不會憑印象替某一幅加戲。
 
 ### base 全文
 
@@ -81,7 +81,7 @@ STYLE: The motion stays inside the woodblock look: flat printed colour, no photo
 
 **挑法**：符合的全部接起來，順序照上表；一個都沒有就只用最後一句。時刻是「晝」的不加句子。
 
-59 幅的分佈：**33 幅至少有一句，26 幅只有最後那句**（唯一一幅「晝」不加句子，算在後者）。
+63 幅的分佈：**35 幅至少有一句，28 幅只有最後那句**（唯一一幅「晝」不加句子，算在後者；不含 overrides）。
 
 **例外：資料沒寫、畫面上卻明明白白看得到的。** 天候只從題名判，所以題名沒寫雨、畫裡卻在下大雨的（例：no.9 梅若神社），
 記在 `_prompt_template.overrides`，**連同理由**。只影響提示詞，不改遊戲的收景規則。看不準的不加（例：no.8 天上那顆黃色圓盤，分不出是月亮還是夕陽）。
@@ -146,9 +146,9 @@ STYLE: The motion stays inside the woodblock look: flat printed colour, no photo
 
 | 類別 | 幅數 | 建議 |
 |---|---|---|
-| 有天候、時刻或燈火閃電標註，且不是火災 | 29 | **優先**。有東西可以誠實地動 |
+| 有天候、時刻或燈火閃電標註，且不是火災 | 31 | **優先**。有東西可以誠實地動 |
 | 火災（兩国大火） | 4 | **風險最高**。標註全是人（逃的人、挑擔的人），模型最容易讓人動起來 |
-| 只有最後那句 | 26 | 動得最少，最可能不值得做 |
+| 只有最後那句 | 28 | 動得最少，最可能不值得做 |
 
 ---
 
@@ -281,6 +281,15 @@ LIFE: Motion is clearly visible from the very first second and keeps going for t
 
 STYLE: It still looks like a moving woodblock print: flat printed colour, carved outlines, paper texture and Kiyochika's palette. Everything belongs to 1870s-1880s Tokyo: period clothing, vehicles and buildings. No photorealism and no 3D rendering.
 ```
+
+---
+
+## 九、畫師不是清親的畫
+
+81–84 是弟子**井上安治**畫的。模板寫的是 “by Kobayashi Kiyochika (1876-1881)”、“Kiyochika's palette”，
+照抄就是在提示詞裡把畫師寫錯。`tools/motion-prep.py` 會照 `attribution` 換成
+“by Inoue Yasuji, a student of Kobayashi Kiyochika” 與 “the print's own palette”；換完還留著清親名字的就擋下來。
+面板上的差異清單標題也跟著寫「不是井上安治畫的」。
 
 ---
 

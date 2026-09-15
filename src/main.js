@@ -78,12 +78,27 @@ const pad = v => String(v.id).padStart(2, '0');
 const thumb = v => `assets/thumb/${pad(v)}.jpg`;      // 真跡（和紙，含奧付）720px，面板用
 const plate = v => `assets/plate/${pad(v)}.jpg`;      // 同一張的 1527–1690px，原寸檢視用
 const pixel = v => `assets/pixel/${pad(v)}.png`;      // 像素版（480px・16 色・Bayer）
-const REF_W = 480;                   // 像素畫布的寬度，69 幅都一樣
+const REF_W = 480;                   // 像素畫布的寬度，73 幅都一樣
 const TIME_JA = { dawn: '曉', day: '晝', dusk: '夕', night: '夜' };
 const WX_JA = { clear: '晴', snow: '雪', rain: '雨' };
+// 畫師。🔴 收錄了弟子井上安治的 4 幅（81–84）之後，「清親畫的」不能再當預設的主詞——
+// 每一句講到畫師的地方都照這一幅的 attribution 寫（data/views.json，來源是 NDL 細目表）。
+const ARTIST = { kiyochika: '小林清親', 'inoue-yasuji': '井上安治' };
+const SHORT = { kiyochika: '清親', 'inoue-yasuji': '井上安治' };
+const whoOf = v => SHORT[v.attribution] ?? '清親';
+// 版面欄外印的畫工署名（data/published.json 的 _colophon_artist）。81・84 印的是小林清親，
+// 館方卻著錄為井上安治 ⇒ **兩個都照實列出**，⛔ 不替任何一邊下定論。
+// 比對只看前三個字：83 的奧付寫「井上安次」，那是同一個人的另一種寫法，不算不一致。
+function artistRow(v) {
+  const signed = (v.colophon_artist ?? '').split('（')[0];
+  const mismatch = signed && !signed.startsWith((ARTIST[v.attribution] ?? '').slice(0, 3));
+  return `<dt>畫師</dt><dd>${ARTIST[v.attribution] ?? '小林清親'}${
+    v.attribution === 'inoue-yasuji' ? '<small>（清親的弟子）</small>' : ''}${
+    mismatch ? `<br><small class="warn">版面欄外印的畫工署名是「${signed}」</small>` : ''}</dd>`;
+}
 // 擋住的理由要說得出來。說不出來的閘門，玩家只會覺得是壞的。
 const WHY = {
-  year: b => `要等到 ${b.need} 年——那時清親才畫下它`,
+  year: (b, v) => `要等到 ${b.need} 年——那時${whoOf(v)}才畫下它`,
   time: b => `要在${TIME_JA[b.need]}來`,
   weather: b => `要等到${b.need === 'snow' ? '下雪' : '下雨'}的日子`,
   event: () => '兩国大火那一夜之後才畫得出來',
@@ -185,7 +200,10 @@ const card1 = (t, tag, open) => t ? `
     <p>${t.text}<br><a href="${t.url}" target="_blank" rel="noopener">維基百科（日文原文）↗</a></p>
   </details>` : '';
 
-const keyOf = v => (typeof v === 'string' ? v : v?.title);
+// ⚠️ 鍵的算法要跟 topicOf 一模一樣：帶 section 的是「條目#章節」。
+// 第一版只取 title ⇒ 地方對應到某一節時（83 京橋勧業場＝日本の百貨店#勧工場）永遠查不到，
+// 而且不會有任何錯誤——那一欄只是安靜地空著。
+const keyOf = v => (typeof v === 'string' ? v : v?.section ? `${v.title}#${v.section}` : v?.title);
 
 function reading(v) {
   const placeKey = keyOf((topicMap.places ?? {})[v.id]);
@@ -199,9 +217,15 @@ function reading(v) {
   const seen = new Set(placeKey ? [placeKey] : []);
   const things = (v.details ?? []).map(d => keyOf((topicMap.things ?? {})[d.label_ja]))
     .filter(n => n && !seen.has(n) && seen.add(n)).map(topicOf).filter(Boolean);
-  if (!place && !things.length) return '';
+  // 安治的畫：先講畫的人。🔴 這是面板上唯一講得清「為什麼欄外印著清親的名字」的地方，
+  // 而那句話來自維基百科（井上安治〈17歳でデビュー〉），⛔ 不是我寫的推測。
+  const artist = v.attribution === 'inoue-yasuji'
+    ? [(topicMap.notes ?? {})['井上安治'], (topicMap.notes ?? {})['井上安治出道']].map(keyOf).map(topicOf).filter(Boolean)
+    : [];
+  if (!place && !things.length && !artist.length) return '';
   return `<section class="read"><h3>解說</h3>
-    ${card1(place, '這是什麼地方', true)}
+    ${artist.map((t, i) => card1(t, '畫這幅的人', i === 0)).join('')}
+    ${card1(place, '這是什麼地方', !artist.length)}
     ${things.map(t => card1(t, '畫裡的東西')).join('')}
     <p class="src">譯自維基百科日本語版　CC BY-SA 4.0</p></section>`;
 }
@@ -231,10 +255,11 @@ function pick(v) {
     <button id="big" class="wide">看原寸</button>
     ${!b ? '<button id="take" class="wide take">收入畫帖</button>'
         : b.why === 'got' ? ''          // 收過了不必再說一次，上面的提示已經在講這件事
-        : `<p class="gate">${WHY[b.why](b)}</p>`}
+        : `<p class="gate">${WHY[b.why](b, v)}</p>`}
     <dl>
       <dt>年</dt><dd>${y ?? '<span class="warn">年代未詳</span>'}${
         v.published ? `　<small>奧付 ${v.published}</small>` : ''}</dd>
+      ${artistRow(v)}
       ${cond ? `<dt>光</dt><dd>${cond}</dd>` : ''}
       ${here(v)}
       <dt>典藏</dt><dd><a href="https://dl.ndl.go.jp/pid/${v.source.pid}" target="_blank"
@@ -279,7 +304,7 @@ function pick(v) {
       // 🔴 差在哪就寫在旁邊。⛔ 不是「說明文字裡提一句 AI 生成」就算——那句話講的是
       // 怎麼做的，玩家真正需要知道的是**畫面上哪幾樣不是清親畫的**。
       art.insertAdjacentHTML('afterend', `<div class="differs">
-        <b>這一段不是清親畫的，差在這幾處</b>
+        <b>這一段不是${whoOf(v)}畫的，差在這幾處</b>
         <ul>${(clip.differs ?? []).map(x => `<li>${x}</li>`).join('')}</ul>
         <small>${clip.model}・${clip.date}　位移量測見 data/motion.json</small></div>`);
       // ⛔ 標註在這一層關掉：生成的每一格未必跟原畫對得上，標在上面就是在替它背書
@@ -365,9 +390,13 @@ function collect(v) {
       清親畫了四幅——燒著的天、逃的人，還有燒完之後。<br>
       <small>60 兩国大火浅草橋・61 濱町より寫兩国大火・62 久松町ニテ見る出火・63 兩国焼跡</small>`);
   } else if (state.collected.length === views.length) {
+    // 🔴 收錄了安治之後，「這是這位畫師畫下的整個東京」就不再是真的——照數字分開講。
+    // 「接了下來」出自維基百科〈井上安治〉：清親明治十四年以後不畫光線畫，事実上これを引き継いでいる。
+    const yas = views.filter(x => x.attribution === 'inoue-yasuji').length;
     card('光線畫到這裡為止', `明治十四年，清親不畫光線畫了。<br>
-      石版與照片進來，木版的風景賣不動了。五年，${views.length} 幅。<br>
-      <small>這是這位畫師畫下的整個東京。</small>`);
+      石版與照片進來，木版的風景賣不動了。清親 ${views.length - yas} 幅${
+        yas ? `；弟子井上安治接了下來，這裡收了他 ${yas} 幅` : ''}。<br>
+      <small>${yas ? '這是這對師徒畫下的東京。' : '這是這位畫師畫下的整個東京。'}</small>`);
   }
 }
 
@@ -607,6 +636,7 @@ startTicker($('ticker'), {
   blurb: [
     '小林清親《東京名所圖》　<i>光線畫・明治九年–十四年 1876–1881</i>',
     `收錄 ${views.length + unmapped.length} 幅，地圖上 ${views.length} 幅　<i>另 ${unmapped.length} 幅查不到座標，空白是資訊</i>`,
+    `其中 ${views.filter(v => v.attribution === 'inoue-yasuji').length} 幅是弟子井上安治畫的　<i>清親停筆之後，由他接下光線畫</i>`,
     '典藏　国立国会図書館デジタルコレクション《清親畫帖》　<i>寄別1-9-2-3・公有領域</i>',
   ],
 });
@@ -618,6 +648,10 @@ $('how').onclick = () => {
     mapped: views.length, unmapped: unmapped.length,
     times: TIMES.map(t => TIME_JA[t]), weathers: WEATHERS.map(w => WX_JA[w]),
     perYear: PER_YEAR, years: [YEARS[0], YEARS.at(-1)],
+    // ⚠️ 清親自己的年份另外算：時鐘多了安治的 1882，拿時鐘的範圍講清親會變成「清親畫到 1882」
+    kiyoYears: (ys => [Math.min(...ys), Math.max(...ys)])(
+      views.filter(v => v.attribution === 'kiyochika').map(yearOf).filter(y => y != null)),
+    yasuji: views.filter(v => v.attribution === 'inoue-yasuji').length,
     clips: (motion.clips ?? []).map(c => all.find(v => v.id === c.id)?.title.ja).filter(Boolean),
     refmap: refmaps?.primary?.year ?? null,
   });

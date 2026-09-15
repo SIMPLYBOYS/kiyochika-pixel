@@ -16,7 +16,7 @@
   .mark { cursor:pointer }
   /* 🔴 pointer-events:all——空心圓（下面的 .approx）的中心是**洞**，
      SVG 的 fill:none 不接 hit-test，點下去會穿過去打到底下的地形圖。
-     59 個標記裡有 32 個是空心的，也就是一半以上只有那圈 2px 的線點得到。 */
+     63 個標記裡有 35 個是空心的，也就是一半以上只有那圈 2px 的線點得到。 */
   .mark circle.dot { fill:var(--gold); opacity:.85; transition:opacity .3s; pointer-events:all }
   /* 兩層閘門畫在點上。還沒出版的整個不存在——地圖隨年份長出來是看得見的那一半 */
   .mark.unpub { display:none }
@@ -55,7 +55,7 @@
   .mark.lead text { opacity:1 !important }
   .mark.lead .halo { opacity:.42 }
   .mark.sel text { opacity:1 !important }
-  /* 視線扇形：畫成扇不畫成箭頭，因為方位有不確定度。目前 69 幅都還沒有方位角 */
+  /* 視線扇形：畫成扇不畫成箭頭，因為方位有不確定度。目前 73 幅都還沒有方位角 */
   .mark .cone { fill:var(--gold); opacity:.22; pointer-events:none }
 
   /* 地名。font-size 與 stroke-width 由 map.js 每次縮放時設在 #places 上，

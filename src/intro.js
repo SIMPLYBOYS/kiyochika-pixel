@@ -19,7 +19,9 @@ const markSeen = () => { try { localStorage.setItem(KEY, '1'); } catch { /* 無�
 
 /** 依年份挑開場要放的幾幅：最早的一路到最後那場火。⛔ 不挑「好看的」，挑「講得出順序的」。 */
 function pickReel(views, yearOf) {
-  const dated = views.filter(v => yearOf(v) != null).sort((a, b) => yearOf(a) - yearOf(b));
+  // ⚠️ 只挑清親本人的：開場講的是**清親**那條從晴天到大火的弧線，安治的 1882 不在那條線上
+  const dated = views.filter(v => v.attribution !== 'inoue-yasuji' && yearOf(v) != null)
+    .sort((a, b) => yearOf(a) - yearOf(b));
   if (dated.length < 4) return views.slice(0, 5);
   const want = 6;
   const step = (dated.length - 1) / (want - 1);
@@ -36,6 +38,7 @@ function pickReel(views, yearOf) {
  */
 export function playIntro({ views, total, yearOf, src, topic, onDone }) {
   const reel = pickReel(views, yearOf);
+  const yas = views.filter(v => v.attribution === 'inoue-yasuji').length;
   const who = topic('小林清親'), how = topic('光線画');
   const el = document.createElement('div');
   el.className = 'intro';
@@ -50,7 +53,8 @@ export function playIntro({ views, total, yearOf, src, topic, onDone }) {
       ${who ? `<p>${who.text}</p>` : ''}
       ${how ? `<p>${how.text}</p>` : ''}
       <p class="ifact">國立國會圖書館《清親畫帖》三冊・公有領域<br>
-        收錄 ${total ?? views.length} 幅，地圖上 ${views.length} 幅——走過清親的五年</p>
+        收錄 ${total ?? views.length} 幅，地圖上 ${views.length} 幅——走過清親的五年${
+          yas ? `<br>其中 ${yas} 幅是弟子井上安治的，清親停筆之後由他接下光線畫` : ''}</p>
       <p class="ifact">配樂　端唄・雅樂・尺八本曲・新內・追分
         <small>入場後開始播放，按 ♪ 或 M 可關</small></p>
       <p class="ifact">第一次玩？入場後按上方的「玩法」</p>

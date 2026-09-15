@@ -643,7 +643,7 @@
    "conditions.weather ∈ rain／snow／fire／moon／fireworks → 同名句子；conditions.time_of_day ∈ night／dusk／dawn → 同名句子（day 不加）。",
    "details 的標註名含 燈・灯・火・光・明 → lamp；含 閃電・稲妻・雷 → bolt。",
    "符合的全部接起來，順序照上面 motion 的鍵；一個都沒有 → 只用 default。",
-   "例：no.50 御厩橋雷雨＝rain＋lamp＋bolt。59 景的分佈：33 景至少有一句、26 景只有 default（唯一一景 day 不加句子，算在後者）。"
+   "例：no.50 御厩橋雷雨＝rain＋lamp＋bolt。63 景的分佈：35 景至少有一句、28 景只有 default（唯一一景 day 不加句子，算在後者）。"
   ],
   "settings": {
    "input": "原畫墊成 16:9 的圖當第一幀（墊邊色 #C6B993 米色，數字記在 _pad）。⚠️ 背景那句就是在防模型把畫面往墊邊外面畫出去。",
@@ -661,7 +661,7 @@
    "⛔ **不點名不想要的東西**（不寫 no umbrella、no branching lightning、no extra people）：影片模型對被提到的名詞很敏感，點名常常反而把它畫出來。一律用「維持原樣／不出現新東西」這種不帶名詞的說法。",
    "⛔ 不寫 no watermark：浮水印是平台加的，提示詞擋不掉，寫了只是多一個名詞。",
    "🔑 **提示詞只能減少重畫，擋不住重畫**（見 _attempts 的 lesson）。所以生成之後照舊跑 make-motion.py 量位移、看幀、寫 differs——模板不是替代那一關的東西。",
-   "⚠️ fire 那 4 景風險最高：標註全是人（逃的人、挑擔的人），模型最容易讓人動起來。default 那 26 景則是動得最少、最可能不值得做。先做那 33 景裡非 fire 的 29 景。"
+   "⚠️ fire 那 4 景風險最高：標註全是人（逃的人、挑擔的人），模型最容易讓人動起來。default 那 28 景則是動得最少、最可能不值得做。先做那 35 景裡非 fire 的 31 景。"
   ],
   "street": {
    "_": "變體 B：街景版——讓畫裡的人動起來。🔴 用這個變體生出來的一律 kind=reinterpretation，differs 至少要寫「人物在走動」。",

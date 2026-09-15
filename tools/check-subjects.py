@@ -55,7 +55,7 @@ def main():
         c = COLOR.get((v["place"].get("anchor") or {}).get("confidence"), (0, 0, 0))
         dr.ellipse([x - 5, y - 5, x + 5, y + 5], fill=c, outline=(255, 255, 255))
         dr.text((x + 7, y - 6), f"{v['id']}", fill=(20, 20, 20))
-    dr.text((10, 10), f"kiyochika subjects {n}/69  red=osm blue=wikidata orange=district grey=low", fill=(0, 0, 0))
+    dr.text((10, 10), f"kiyochika subjects {n}/{sum(1 for v in views if v['include'])}  red=osm blue=wikidata orange=district grey=low", fill=(0, 0, 0))
     out = ROOT / "research" / "_subjects.png"
     im.save(out)
     print(f"{out.relative_to(ROOT)}  {im.size}  {n} 點")

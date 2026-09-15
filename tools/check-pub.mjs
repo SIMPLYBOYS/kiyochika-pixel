@@ -10,7 +10,7 @@
 import { readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, resolve } from 'node:path';
-import { clockOf, collectable, blocked, yearOf, tick, newState, TIMES, WEATHERS } from '../src/clock.js';
+import { clockOf, collectable, blocked, yearOf, tick, newState, TIMES, WEATHERS, YEARS } from '../src/clock.js';
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 // 🔴 模擬的世界要跟遊戲的世界**一模一樣**：能收的只有畫得到地圖上的（有 subject）。
@@ -25,7 +25,8 @@ const ok = (c, m) => { console.log(`${c ? '  ok  ' : '  ✗   '}${m}`); if (!c) 
 
 // ── 資料面 ────────────────────────────────────────────────────
 const years = views.map(yearOf).filter(y => y != null);
-ok(years.every(y => y >= 1876 && y <= 1881), `年份都落在 1876–1881（${years.length} 幅有年份）`);
+// ⚠️ 範圍取自 clock.js 的 YEARS，⛔ 不寫死：收錄安治之後多了 1882，寫死的 1881 就會把合法的資料判成錯
+ok(years.every(y => y >= YEARS[0] && y <= YEARS.at(-1)), `年份都落在 ${YEARS[0]}–${YEARS.at(-1)}（${years.length} 幅有年份）`);
 const undated = views.filter(v => yearOf(v) == null);
 ok(undated.length > 0, `年代未詳 ${undated.length} 幅——一直可收，這是誠實的空白不是缺口`);
 const fire = views.filter(v => (v.conditions || {}).weather === 'fire');
@@ -70,7 +71,7 @@ ok(maxWait <= TIMES.length * WEATHERS.length,
 
 // 年份真的有推進，而且順序合理
 const seen = [...new Set(log.map(l => l.year))];
-ok(seen.length === 6 && seen[0] === 1876 && seen[5] === 1881, `年份走過 ${seen.join('→')}`);
+ok(seen.length === YEARS.length && seen[0] === YEARS[0] && seen.at(-1) === YEARS.at(-1), `年份走過 ${seen.join('→')}`);
 // 事件要在 1881 之前沒觸發、之後觸發得到
 const firstFire = log.find(l => fire.some(f => f.id === l.id));
 ok(firstFire && firstFire.year >= 1881, `大火四幅都在 1881 之後才收得到（第一幅在 ${firstFire?.year}）`);
