@@ -88,12 +88,17 @@ def main():
         if not v or not v.get("include") or not plate.exists():
             print(f"no.{i}  ⛔ 略過（不在收錄內或沒有原畫）"); continue
         keys = pick(v, tpl)
-        if any(c["id"] == i for c in data["clips"]):
-            print(f"no.{i}  已經有片子，⛔ 不重墊（事後切框要用當時那組數字）"); continue
-        canvas, at, size, fill = pad(plate)
-        png = OUT / f"{i:02d}-pad16x9.png"; canvas.save(png)
-        data["_pad"][str(i)] = {"file": str(png.relative_to(ROOT)), "canvas": list(canvas.size),
-                                "plate_at": list(at), "plate_size": list(size), "fill": "#%02X%02X%02X" % fill}
+        old_pad = data["_pad"].get(str(i))
+        if any(c["id"] == i for c in data["clips"]) and old_pad:
+            # 已經有片子 ⇒ ⛔ 不重墊（線上那支切框用的是當時那組數字），只重寫提示詞——重生用
+            cw, ch = old_pad["canvas"]; at = tuple(old_pad["plate_at"])
+            canvas = type("C", (), {"size": (cw, ch)})
+            print(f"no.{i}  已經有片子：沿用原本的墊邊 {old_pad['file']}，只重寫提示詞")
+        else:
+            canvas, at, size, fill = pad(plate)
+            png = OUT / f"{i:02d}-pad16x9.png"; canvas.save(png)
+            data["_pad"][str(i)] = {"file": str(png.relative_to(ROOT)), "canvas": list(canvas.size),
+                                    "plate_at": list(at), "plate_size": list(size), "fill": "#%02X%02X%02X" % fill}
         if a.vivid:
             scene = tpl["vivid"]["scenes"].get(str(i))
             if not scene:
