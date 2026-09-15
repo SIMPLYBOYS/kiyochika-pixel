@@ -218,6 +218,51 @@ STYLE: The motion stays inside the woodblock look: flat printed colour, no photo
 
 ---
 
+## 八、變體 C：生動版（讓畫面真的動起來）
+
+**為什麼有這一版**：用主模板與街景版生成，模型幾乎沒產生動畫效果，失去 AI 動畫的意義。
+原因在提示詞本身——「幾乎不動」「維持原樣」「沒有東西進出」「慢、輕」「頭尾一致」，每一句都在壓動作。
+而這一層上架的一律是「AI 重繪・非原作」＋逐條差異清單，忠實本來就不是它的承諾，不必再用提示詞綁住。
+
+正本在 `data/motion.json` 的 `_prompt_template.vivid`；產出用 `python3 tools/motion-prep.py --vivid <編號>`。
+
+### 跟前兩版差在哪
+
+| | 主模板／街景版 | 生動版 |
+|---|---|---|
+| 鏡頭 | 鎖死 | **仍鎖在原畫外框上**（要切回原框、面板照原畫比例放影片） |
+| 內容 | 維持原樣、不准有東西進出 | **畫框裡什麼都可以動**，路人可以走進走出 |
+| 動作 | 從資料挑的氛圍句子 | **每一幅寫具體演出**：主角做什麼、背景誰在動、天候或光怎麼變 |
+| 節奏 | 慢、輕、頭尾一致 | **第一秒就看得出在動**，不要求循環 |
+| 畫風 | 木版 | 木版＋明治時代感（衣著、車、建築） |
+
+### 寫動作的方法
+- **主詞＋動詞＋方向**：「車夫朝觀眾跑來」，不堆形容詞。
+- **每幅 4–6 個動作**：前景一個主角、背景一兩樣、天候或光一樣。
+- **天候仍以資料為準**；資料沒寫但畫面明白看得到的走 `overrides`（例：no.9 的雨）。
+- 場景句是**作者寫的演出指示**，不是對原畫的陳述，所以可以看圖寫。
+
+### 代價（先講清楚）
+- **差異清單會變長**：幾乎每個人、每樣東西都會變，建議第一條先總結「整段是依原畫重新演出的動畫」。
+- **循環接點更明顯**：不要求頭尾一致，接回開頭時的半透明重疊會比 no.72 更大。
+- **構圖位移會很高**：`make-motion.py` 對 reinterpretation 不擋，但數字會照實記下。
+
+### base 全文
+
+```
+Bring this Japanese woodblock print to life as a vivid animated scene. It is a print of Meiji-era Tokyo by Kobayashi Kiyochika (1876-1881), placed on a plain beige background.
+
+CAMERA: The camera stays locked on the print for the whole clip, so the print's outer edges never move. Everything inside the picture is free to move.
+
+ACTION: {SCENE}
+
+LIFE: Motion is clearly visible from the very first second and keeps going for the whole clip. People and animals move with readable, natural actions; clothing, hair, banners, branches, water and weather react to movement and wind. Figures may walk further, turn and interact, and other passers-by may move through the scene.
+
+STYLE: It still looks like a moving woodblock print: flat printed colour, carved outlines, paper texture and Kiyochika's palette. Everything belongs to 1870s-1880s Tokyo: period clothing, vehicles and buildings. No photorealism and no 3D rendering.
+```
+
+---
+
 ## 附：no.50 御厩橋雷雨組好的提示詞
 
 資料：天候雨、標註有「河面的燈火」「水上的光」（→ 燈火）、「閃電」（→ 閃電）⇒ rain ＋ lamp ＋ bolt。
