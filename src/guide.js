@@ -61,7 +61,7 @@ export function guideHtml(o) {
   </ul>
   <p class="note">不用收也看得到的：真跡、<b>看原寸</b>、畫的年份與光線、那個地方現在是哪一區、
   最近的車站、「站到那裡看 ↗」街景、典藏來源與解說。下雪、下雨、點著燈的畫，面板上會輕輕動起來。</p>
-  ${o.clips.length ? `<p class="note"><b>AI 重繪版</b>（目前只有 ${o.clips.join('、')}）：
+  ${o.clips.length ? `<p class="note"><b>AI 重繪版</b>（目前有 ${o.clips.length} 幅：${o.clips.join('、')}）：
   生成模型照原畫重畫的影片，<b>不是清親畫的</b>，面板會一條一條列出它跟原畫差在哪。
   不算進度，也不會收進畫帖。</p>` : ''}
 
