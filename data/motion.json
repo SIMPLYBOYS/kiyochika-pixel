@@ -74,29 +74,66 @@
   {
    "id": 2,
    "kind": "reinterpretation",
-   "model": "Nano Banana（Google Flow；沿用 no.72 的標示——這三支 Aaron 要求直接上架，未另外確認模型）",
-   "model_note": "⚠️ 同 no.72：Nano Banana 是 Google 的圖像模型，本身不出影片；檔案格式（1280×720・24fps・10.005s）與 C2PA 憑證（Created by Google Generative AI／visible watermark／SynthID）跟 Veo 片子相同，憑證沒寫模型名。待 Flow 介面確認。",
-   "date": "2026-09-15",
-   "fade": 0.6,
    "file": "assets/motion/02.webm",
    "base": "assets/plate/02.jpg",
-   "source": "research/motion/p2.mp4　⚠️ 原始檔已被 2026-09-15 23:38 的重生版同名覆蓋；線上這支的畫面只剩 assets/motion/02.webm／02.mp4",
-   "prompt": "Bring this Japanese woodblock print to life as a vivid animated scene. It is a print of Meiji-era Tokyo by Kobayashi Kiyochika (1876-1881), placed on a plain beige background.\n\nCAMERA: The camera stays locked on the print for the whole clip, so the print's outer edges never move. Everything inside the picture is free to move.\n\nACTION: The chestnut horse gallops from left to right in front of the bridge, mane and tail streaming, hooves kicking up spray from the wet ground. The uniformed rider rises and falls in the saddle, the red plume on the hat bouncing. The young attendant on the right sprints ahead, sleeves flapping, glancing back at the horse. The moat water ripples and its reflections break apart; the pines on the castle bank sway in the wind.\n\nLIFE: Motion is clearly visible from the very first second and keeps going for the whole clip. People and animals move with readable, natural actions; clothing, hair, banners, branches, water and weather react to movement and wind. Figures may walk further, turn and interact, and other passers-by may move through the scene.\n\nSTYLE: It still looks like a moving woodblock print: flat printed colour, carved outlines, paper texture and Kiyochika's palette. Everything belongs to 1870s-1880s Tokyo: period clothing, vehicles and buildings. No photorealism and no 3D rendering.",
+   "source": "research/motion/p2-v4.mp4",
+   "model": "Nano Banana（Google Flow；沿用 no.72 的標示，這一支 Aaron 未另外確認模型）",
+   "model_note": "⚠️ 同 no.72：Nano Banana 是 Google 的圖像模型，本身不出影片；檔案格式（1280×720・24fps・10.005s）與 C2PA 憑證（Created by Google Generative AI／visible watermark／SynthID）跟 Veo 片子相同，憑證沒寫模型名。待 Flow 介面確認。",
+   "date": "2026-09-16",
+   "prompt": "Bring this Japanese woodblock print to life as a vivid animated scene. It is a print of Meiji-era Tokyo by Kobayashi Kiyochika (1876-1881), placed on a plain beige background.\n\nCAMERA: The camera stays locked on the print for the whole clip, so the print's outer edges never move. Everything inside the picture is free to move.\n\nCONTINUITY: This is one continuous shot of this one place, with no cut, dissolve or transition to another scene. The picture keeps the same layout from the first frame to the last. Within that same place, everything is free to move as described below.\n\nACTION: The chestnut horse gallops at full speed in front of the bridge in a flying gallop for the entire clip, as Kiyochika drew it mid-stride: its front and hind legs reach far out and snap back together in a fast, powerful rhythm, its body stretched long and low, mane and tail streaming straight back. The rider leans forward low over the horse's neck, the red plume on the hat whipping in the wind. The runner on the right sprints flat out, arms pumping, both feet leaving the ground with each stride. Spray flies up from the wet ground under the hooves, the moat water ripples, and the pines on the bank sway in the wind.\n\nLIFE: Motion is clearly visible from the very first second and keeps going for the whole clip. People and animals move with readable, natural actions; clothing, hair, banners, branches, water and weather react to movement and wind. Figures may walk further, turn and interact, and other passers-by may move through the scene.\n\nSTYLE: It still looks like a moving woodblock print: flat printed colour, carved outlines, paper texture and Kiyochika's palette. Everything belongs to 1870s-1880s Tokyo: period clothing, vehicles and buildings. No photorealism and no 3D rendering.",
+   "template": "_prompt_template.vivid.base（生動版第三版：CONTINUITY 不點名）＋ scenes.2（第四版）",
    "first_frame": "research/motion/02-pad16x9.png（事後照 _pad.2 切回來）",
-   "template": "_prompt_template.vivid.base_v1（生動版第一版）＋ scenes.2",
-   "moved": "騎馬的人與馬、右邊奔跑的人",
+   "moved": "馬與騎馬的人、右邊奔跑的人、背景（整片往左滑）",
    "differs": [
-    "馬原本是四腳騰空的飛奔姿勢；影片裡改成在原地小跑，騎馬的人跟著上下起伏。",
-    "右邊奔跑的人在原地擺動、轉身，沒有真的往前跑。",
-    "右下角那顆四角星是生成模型的浮水印。這一幅比 16:9 還寬、上下墊邊，所以它落在畫面裡、奔跑的人腳邊，而不是紙邊。不修掉，它正好提醒這不是清親的作品。"
+    "馬全程四腳騰空飛奔、騎馬的人前傾；清親畫的是停住的一瞬間。",
+    "背景一路往左滑，像鏡頭跟著馬在拍：橋和石牆漸漸移出畫面左邊。",
+    "約 3 秒起，右半邊長出原畫沒有的松樹、白牆的房子、河岸和一群路人，最後還多了一株柳樹。",
+    "騎馬的人換了一身打扮：戴紅羽軍帽、穿黑色金飾制服、留鬍子。右邊奔跑的人換成穿藍色花紋短衣、剃了頭頂的男子。",
+    "馬蹄下濺起水花，河面出現一圈圈漣漪。",
+    "約 7 秒起，右下角浮現一個原畫沒有的落款和小紅印，那不是清親的簽名。",
+    "右下角那顆四角星是生成模型的浮水印。這一幅比 16:9 還寬、上下墊邊，所以它落在畫面裡，而不是紙邊。不修掉，它正好提醒這不是清親的作品。"
    ],
-   "differs_checked": "Claude 對照 research/motion/p123-review/ 起草；Aaron 要求直接上架，未逐條確認",
-   "known_flaw": "動作偏少：馬與人大致停在原地。",
+   "differs_checked": "Claude 對照 research/motion/p123-review/p2v4-no02-二重橋-第四版.png 起草，待 Aaron 確認",
+   "fade": 0.6,
+   "known_flaw": "背景一路滑到另一個地方 ⇒ 每次接回開頭，整片背景會在不到一秒內從町家河岸跳回二重橋。",
    "drift": {
-    "max": 13.2,
-    "at": 7.8,
-    "mean": 12.4,
-    "over_16": [],
+    "max": 38.4,
+    "at": 9.6,
+    "mean": 35.1,
+    "over_16": [
+     0.3,
+     0.6,
+     0.9,
+     1.2,
+     1.5,
+     1.8,
+     2.1,
+     2.4,
+     2.7,
+     3.0,
+     3.3,
+     3.6,
+     3.9,
+     4.2,
+     4.5,
+     4.8,
+     5.1,
+     5.4,
+     5.7,
+     6.0,
+     6.3,
+     6.6,
+     6.9,
+     7.2,
+     7.5,
+     7.8,
+     8.1,
+     8.4,
+     8.7,
+     9.0,
+     9.3,
+     9.6
+    ],
     "_": "每 0.3s 一格，跟原畫比邊的位置。只動光約 6，構圖動了 19 以上。"
    }
   },
@@ -532,6 +569,43 @@
     "騎馬的人換成戴三角帽的洋裝人物，奔跑的人換成梳髷的男子。"
    ],
    "cause": "演出句點名 castle（原畫右上是城門的櫓，不是天守）→ 模型畫出一座典型的天守閣；“like a stage set” 疑似促成換布景；CONTINUITY 點名 cartouche／signature／seals → 冒出假題箋與假落款。"
+  },
+  {
+   "date": "2026-09-16",
+   "id": 2,
+   "verdict": "↩︎ 被取代（曾上線 2026-09-15～16）",
+   "why": [
+    "馬從飛奔變成原地小跑、動作偏少；Aaron 想要馬真的飛奔 ⇒ 試了三次，第四次（p2-v4.mp4）滿意，取代這一支。"
+   ],
+   "replaced_clip": {
+    "id": 2,
+    "kind": "reinterpretation",
+    "model": "Nano Banana（Google Flow；沿用 no.72 的標示——這三支 Aaron 要求直接上架，未另外確認模型）",
+    "model_note": "⚠️ 同 no.72：Nano Banana 是 Google 的圖像模型，本身不出影片；檔案格式（1280×720・24fps・10.005s）與 C2PA 憑證（Created by Google Generative AI／visible watermark／SynthID）跟 Veo 片子相同，憑證沒寫模型名。待 Flow 介面確認。",
+    "date": "2026-09-15",
+    "fade": 0.6,
+    "file": "assets/motion/02.webm",
+    "base": "assets/plate/02.jpg",
+    "source": "research/motion/p2.mp4　⚠️ 原始檔已被 2026-09-15 23:38 的重生版同名覆蓋；線上這支的畫面只剩 assets/motion/02.webm／02.mp4",
+    "prompt": "Bring this Japanese woodblock print to life as a vivid animated scene. It is a print of Meiji-era Tokyo by Kobayashi Kiyochika (1876-1881), placed on a plain beige background.\n\nCAMERA: The camera stays locked on the print for the whole clip, so the print's outer edges never move. Everything inside the picture is free to move.\n\nACTION: The chestnut horse gallops from left to right in front of the bridge, mane and tail streaming, hooves kicking up spray from the wet ground. The uniformed rider rises and falls in the saddle, the red plume on the hat bouncing. The young attendant on the right sprints ahead, sleeves flapping, glancing back at the horse. The moat water ripples and its reflections break apart; the pines on the castle bank sway in the wind.\n\nLIFE: Motion is clearly visible from the very first second and keeps going for the whole clip. People and animals move with readable, natural actions; clothing, hair, banners, branches, water and weather react to movement and wind. Figures may walk further, turn and interact, and other passers-by may move through the scene.\n\nSTYLE: It still looks like a moving woodblock print: flat printed colour, carved outlines, paper texture and Kiyochika's palette. Everything belongs to 1870s-1880s Tokyo: period clothing, vehicles and buildings. No photorealism and no 3D rendering.",
+    "first_frame": "research/motion/02-pad16x9.png（事後照 _pad.2 切回來）",
+    "template": "_prompt_template.vivid.base_v1（生動版第一版）＋ scenes.2",
+    "moved": "騎馬的人與馬、右邊奔跑的人",
+    "differs": [
+     "馬原本是四腳騰空的飛奔姿勢；影片裡改成在原地小跑，騎馬的人跟著上下起伏。",
+     "右邊奔跑的人在原地擺動、轉身，沒有真的往前跑。",
+     "右下角那顆四角星是生成模型的浮水印。這一幅比 16:9 還寬、上下墊邊，所以它落在畫面裡、奔跑的人腳邊，而不是紙邊。不修掉，它正好提醒這不是清親的作品。"
+    ],
+    "differs_checked": "Claude 對照 research/motion/p123-review/ 起草；Aaron 要求直接上架，未逐條確認",
+    "known_flaw": "動作偏少：馬與人大致停在原地。",
+    "drift": {
+     "max": 13.2,
+     "at": 7.8,
+     "mean": 12.4,
+     "over_16": [],
+     "_": "每 0.3s 一格，跟原畫比邊的位置。只動光約 6，構圖動了 19 以上。"
+    }
+   }
   }
  ],
  "_decision": {
