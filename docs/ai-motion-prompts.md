@@ -256,7 +256,17 @@ STYLE: The motion stays inside the woodblock look: flat printed colour, no photo
 
 no.1、no.2 的片子是第一版生的，資料檔保留第一版（`vivid.base_v1`），上架時提示詞照那一版逐字記。
 
-### base 全文（第二版）
+### 第三版：CONTINUITY 不點名任何東西
+
+第二版的 CONTINUITY 寫了「題字、題箋、落款與印章留在原位」，結果**用了那一句的三支，全部多出假字題箋或假落款印章**
+（p3 重生版、p2 第二次、p2 第三次）；沒用那一句的 p1 與第一支 p2 沒有。這正是第四節的技巧 2——點名什麼，模型就畫什麼。
+no.2 第三次的演出句又點名了「城」，結果冒出一座原畫沒有的天守閣。
+⇒ 第三版的 CONTINUITY 只剩「一個連續鏡頭、同一個地方、同樣的構圖」，不點名任何東西。
+
+另一個教訓（no.2 第二次）：**鏡頭鎖死時，不要要求主角跑出很長的距離**。模型不會讓主角跑出畫面，它會讓背景往後滑，
+等於自己加了跟拍鏡頭，畫框外的東西就只能現編。
+
+### base 全文（第二版，已被第三版取代）
 
 ```
 Bring this Japanese woodblock print to life as a vivid animated scene. It is a print of Meiji-era Tokyo by Kobayashi Kiyochika (1876-1881), placed on a plain beige background.
