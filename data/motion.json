@@ -697,6 +697,21 @@
     "店門口多出寫著假字的紫色暖簾；左邊多出一輛黑色馬車。"
    ],
    "evidence": "research/motion/p123-review/p7-no07-兩國雪中-前景人物被換.png"
+  },
+  {
+   "date": "2026-09-17",
+   "id": 9,
+   "source": "research/motion/p9.mp4（2026-09-16 23:58，4.99MB）",
+   "prompt": "base（第三版）＋ scenes_history.9 的第一筆",
+   "model": "（待補）",
+   "verdict": "⛔ 不收（整幅換掉）",
+   "why": [
+    "第一格對得上墊邊圖（3.0），0.9 秒位移已到 43：1.5 秒起換成另一幅畫。",
+    "木造神社門與寫著「梅若神社」的柱子→變成石造鳥居；茅草茶屋、白招牌、石碑不見。",
+    "人力車移到左前景、變大；路變成石板路；滿畫面的斜雨線變成細雨。",
+    "右上冒出假字題箋、右下冒出假落款與紅印、左邊紙邊冒出假字；7.5 秒後走進兩個撐傘的女子。"
+   ],
+   "evidence": "research/motion/p123-review/p9-no09-梅若神社-整幅換掉.png"
   }
  ],
  "_decision": {
@@ -792,7 +807,8 @@
     "⚠️ no.2 第三版演出句（2026-09-15）：第二版的 “covering real ground” 讓模型改成背景滑動的跟拍（見 _attempts）。⇒ 飛奔的描寫保留（那部分有效）；拿掉「跑出距離」，改成「只慢慢往前、全程留在畫面裡」，並明說橋、石牆、城、護城河「像舞台布景一樣固定在原位」；加一句騎馬的人與奔跑的人維持原畫的衣著。🔑 教訓：**鏡頭鎖死時，不要要求主角移動很長的距離**——模型不會讓主角跑出畫面，它會改動背景。",
     "🔴 生動版第三版（2026-09-15）：CONTINUITY 拿掉點名的 “title, cartouche, signature and seals”。證據：用了那一句的三支——p3.mp4（21:01）、p2.mp4（23:38）、Bring_this_Japanese_woodblock.mp4——**全部多出假字題箋或假落款印章**；沒用那一句的 p1、第一支 p2 沒有。這正是筆記技巧 2（不點名不想要的東西）——寫的人是我自己，違反了自己的規則。同理，no.2 第三版演出句點名了 castle，結果冒出一座原畫沒有的天守閣；“like a stage set” 疑似讓模型換上一片布景。⇒ no.2 第四版演出句：回到第一版的結構（在橋前奔跑、不要求跑出距離），只換掉步態描寫，不點名背景裡的任何東西。",
     "⚠️ no.6 演出句第二版（2026-09-16）：p6.mp4 在 1.5 秒內整幅換成另一幅畫（晴空、滿開的櫻、垂柳、石燈籠、掛日之丸旗與招牌的攤子、嬰兒車、假字題箋與假落款），**路中央的畫架整個不見**，位移 33。三個原因，兩個是提示詞寫的：①第一版演出句**沒提到畫架**——這幅叫「画家写生図」，畫的就是路中央那幅立在畫架上的畫，我卻把黃衣女子寫成「彎腰看小孩」，等於提示詞自己沒抓住主題，模型拿掉它也不違反任何一句；②寫了 “haze shifts and thins”——這幅整片都是春霞，要霞「變薄」就是要模型替霧後面現編一個晴朗的公園；③點名 “stalls, where small flags flutter”——原畫遠處只有淡淡的攤子與一面小旗，點名之後冒出成排的攤子、日之丸與招牌（又是技巧 2）。⇒ 第二版：先寫畫架與圍觀的人（要留下的主體用正面寫出來）、霞「留著、慢慢飄」、不點名攤子與旗。",
-    "⚠️ no.7 演出句第二版（2026-09-16）：p7.mp4 場景沒換，但**前景人物整批被換**——最靠近觀眾那把大白傘不見、左邊背貨的紫衣男子與撐灰傘的小身影變成三個穿和服的女子、右邊載著粉紅圓包袱的紅輪車變成載麻袋蓋綠網的大車、撐橘色傘的人不見，另外多出寫假字的紫色暖簾與一輛黑色馬車。位移 25。原因在演出句：人物只寫了泛稱（“People under large paper umbrellas”、“the heavily loaded cart”），沒有把原畫裡**那幾個人、那一輛車**點出來，模型就自己配角色；又點名了 “shop banners”，冒出寫字的暖簾（技巧 2）。⇒ 第二版：把前景的大白傘、紫衣背貨男子、灰傘小身影、紅輪車與粉紅圓包袱、橘傘逐一寫出來（正面點名**原畫裡有的**），拿掉 shop banners。🔑 教訓：**點名原畫裡有的東西是錨，點名原畫裡沒有的東西是邀請**——前者要多寫，後者一個都不要寫。"
+    "⚠️ no.7 演出句第二版（2026-09-16）：p7.mp4 場景沒換，但**前景人物整批被換**——最靠近觀眾那把大白傘不見、左邊背貨的紫衣男子與撐灰傘的小身影變成三個穿和服的女子、右邊載著粉紅圓包袱的紅輪車變成載麻袋蓋綠網的大車、撐橘色傘的人不見，另外多出寫假字的紫色暖簾與一輛黑色馬車。位移 25。原因在演出句：人物只寫了泛稱（“People under large paper umbrellas”、“the heavily loaded cart”），沒有把原畫裡**那幾個人、那一輛車**點出來，模型就自己配角色；又點名了 “shop banners”，冒出寫字的暖簾（技巧 2）。⇒ 第二版：把前景的大白傘、紫衣背貨男子、灰傘小身影、紅輪車與粉紅圓包袱、橘傘逐一寫出來（正面點名**原畫裡有的**），拿掉 shop banners。🔑 教訓：**點名原畫裡有的東西是錨，點名原畫裡沒有的東西是邀請**——前者要多寫，後者一個都不要寫。",
+    "⚠️ no.9 演出句第二版（2026-09-17）：p9.mp4 在 1.5 秒內整幅換成另一幅「標準浮世繪」——石造鳥居、一棵大松、鋪石板的路、藍篷人力車移到左前景、細雨、假字題箋與假落款印，後來還走進兩個撐傘的女子；茅草茶屋、白招牌、木造神社門與「梅若神社」柱、石碑、滿畫面的斜雨線全不見。位移 43–45（歷來最高）。原因：①演出句**沒錨住**茶屋、神社門與名柱、石碑、雨線質感——只寫了會動的東西；②寫了 “the stone path”，原畫是泥地（技巧 2，冒出石板路）；③這幅整面是粗的斜線刻痕，模型傾向把它『清理』成乾淨的標準畫面 ⇒ 要把那種質感也當成要留住的東西寫出來。⇒ 第二版：先錨住左茶屋與招牌、人力車的灰藍雨篷與紅輪、木造神社門與名柱、右邊石碑、兩隻鳥，並寫明「整幅保留密集的斜雨線與粗刻痕」；stone path 改成 muddy ground；不寫 torii（避免邀來石鳥居），寫 wooden shrine gate。"
    ],
    "base": "Bring this Japanese woodblock print to life as a vivid animated scene. It is a print of Meiji-era Tokyo by Kobayashi Kiyochika (1876-1881), placed on a plain beige background.\n\nCAMERA: The camera stays locked on the print for the whole clip, so the print's outer edges never move. Everything inside the picture is free to move.\n\nCONTINUITY: This is one continuous shot of this one place, with no cut, dissolve or transition to another scene. The picture keeps the same layout from the first frame to the last. Within that same place, everything is free to move as described below.\n\nACTION: {SCENE}\n\nLIFE: Motion is clearly visible from the very first second and keeps going for the whole clip. People and animals move with readable, natural actions; clothing, hair, banners, branches, water and weather react to movement and wind. Figures may walk further, turn and interact, and other passers-by may move through the scene.\n\nSTYLE: It still looks like a moving woodblock print: flat printed colour, carved outlines, paper texture and Kiyochika's palette. Everything belongs to 1870s-1880s Tokyo: period clothing, vehicles and buildings. No photorealism and no 3D rendering.",
    "scenes": {
@@ -804,7 +820,7 @@
     "6": "The painting on its easel stays standing in the middle of the path, and the people gathered around it lean in to look at it and talk about it: the woman in the yellow coat bends toward the picture, and the small child in yellow points at it and hops on the spot. Further along the path, a few people stroll slowly toward the great torii. Cherry and yellow blossoms drift down from the trees and the branches sway gently. The soft spring haze stays over the whole park, drifting slowly.",
     "7": "Thick snow falls through the dark sky. In the foreground, closest to us, the person under the very large white umbrella walks slowly away up the street, the umbrella tilting in the wind. On the left, the man in the purple coat with the white bundle on his back and the small figure under the grey umbrella trudge on through the snow. On the right, a man leans hard into the red-wheeled cart piled with its round pink load and pushes it forward, and the person under the orange umbrella walks beside it. Distant figures hurry along the wide street, and the telegraph wires sway in the wind.",
     "8": "The crows perched on the bare branches suddenly take off and fly across the twilight sky. The tall bare tree and the grasses sway in a cold evening wind. Mist drifts slowly across the flat rice fields behind the torii. The glowing disc low in the sky grows brighter as the light fades, and the shadows of the huts deepen.",
-    "9": "Wind-driven rain sweeps across the scene in strong gusts. The pine tree and the bushes thrash and bend. The small figure in the straw rain cape struggles forward, holding the straw umbrella against the wind, which nearly tears it away. The hood of the parked rickshaw flaps and its red wheels glisten; rain splashes up from the puddles on the stone path, and a pair of birds is blown across the sky.",
+    "9": "Strong gusts drive the slanting rain across the whole picture, and the whole print keeps its dense slanting rain lines and rough hatched texture. On the left, the thatched teahouse with its white signboards stands in the downpour, and the rickshaw parked in front of it, with its blue-grey rain cover and red wheels, rocks slightly in the wind. In the middle, the small figure in the red kimono hurries toward the wooden shrine gate with the tall name post, the straw rain cape blown up and flapping behind them. The big pine above the gate and the trees on the right thrash in the wind, the tall standing stone stays upright among the bushes, and two dark birds are tossed about in the sky. Rain splashes up from the puddles on the muddy ground.",
     "10": "Red and purple maple leaves fall and drift through the air under the tall cedar trees. The visitors seated at the outdoor tea bench chat and gesture; one pours tea and another turns to point at the leaves. At the bottom right, a man climbs up the path into the scene. Branches sway and dappled sunlight flickers across the ground and the old stump."
    },
    "base_v1": "Bring this Japanese woodblock print to life as a vivid animated scene. It is a print of Meiji-era Tokyo by Kobayashi Kiyochika (1876-1881), placed on a plain beige background.\n\nCAMERA: The camera stays locked on the print for the whole clip, so the print's outer edges never move. Everything inside the picture is free to move.\n\nACTION: {SCENE}\n\nLIFE: Motion is clearly visible from the very first second and keeps going for the whole clip. People and animals move with readable, natural actions; clothing, hair, banners, branches, water and weather react to movement and wind. Figures may walk further, turn and interact, and other passers-by may move through the scene.\n\nSTYLE: It still looks like a moving woodblock print: flat printed colour, carved outlines, paper texture and Kiyochika's palette. Everything belongs to 1870s-1880s Tokyo: period clothing, vehicles and buildings. No photorealism and no 3D rendering.",
@@ -839,6 +855,13 @@
       "used_by": "p7.mp4（2026-09-16 23:17）",
       "base": "base（第三版）",
       "scene": "Thick snow falls through the dark sky. People under large paper umbrellas push through the snowy street, leaning into the wind as their umbrellas wobble. On the right, men strain to haul the heavily loaded cart forward, its wheels cutting through the slush. Distant figures hurry along the wide street, the shop banners swing, and the telegraph wires sway in the wind."
+     }
+    ],
+    "9": [
+     {
+      "used_by": "p9.mp4（2026-09-16 23:58）",
+      "base": "base（第三版）",
+      "scene": "Wind-driven rain sweeps across the scene in strong gusts. The pine tree and the bushes thrash and bend. The small figure in the straw rain cape struggles forward, holding the straw umbrella against the wind, which nearly tears it away. The hood of the parked rickshaw flaps and its red wheels glisten; rain splashes up from the puddles on the stone path, and a pair of birds is blown across the sky."
      }
     ]
    },
