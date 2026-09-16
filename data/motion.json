@@ -681,6 +681,22 @@
    ],
    "cause": "見 _prompt_template.vivid.why 最後一條：演出句漏了畫架、要霞變薄、點名攤子與旗。",
    "evidence": "research/motion/p123-review/p6-no06-上野-換成櫻花祭.png"
+  },
+  {
+   "date": "2026-09-16",
+   "id": 7,
+   "source": "research/motion/p7.mp4（23:17，4.65MB）",
+   "prompt": "base（第三版）＋ scenes_history.7 的第一筆",
+   "model": "（待補）",
+   "verdict": "建議重生（待 Aaron 決定）",
+   "why": [
+    "場景保住：街道、電線桿、右邊掛招牌的店、左邊路燈都在，沒有假題箋。第一格對得上墊邊圖（2.2）。",
+    "位移 0.3 秒就到 25、之後平穩：1.5 秒前前景人物已經全部換掉。",
+    "最靠近觀眾的大白傘不見；左邊背貨的紫衣男子與撐灰傘的小身影，變成穿藍、紫、花紋和服的三個女子。",
+    "右邊載粉紅圓包袱的紅輪車，變成載麻袋、蓋綠網的大木車，推車的人變多；撐橘色傘的人不見。",
+    "店門口多出寫著假字的紫色暖簾；左邊多出一輛黑色馬車。"
+   ],
+   "evidence": "research/motion/p123-review/p7-no07-兩國雪中-前景人物被換.png"
   }
  ],
  "_decision": {
@@ -775,7 +791,8 @@
     "⚠️ no.2 重寫演出句（2026-09-15）：p2.mp4 的馬從四腳騰空的飛奔變成原地小跑。第一版寫了 “The uniformed rider rises and falls in the saddle”——在馬背上一起一落正是**小跑時騎手的動作**，等於在提示詞裡暗示了小跑。⇒ 拿掉那句；改寫飛奔的樣子（四肢伸展收合、身體拉長放低、鬃毛尾巴往後直飄）、全程維持全速、真的往右跑出距離，騎手改成前傾貼近馬頸，奔跑的人雙腳離地。⛔ 刻意不出現 trot 這個字（筆記技巧 2：不點名不想要的東西）。舊的演出句留在 scenes_history.2。",
     "⚠️ no.2 第三版演出句（2026-09-15）：第二版的 “covering real ground” 讓模型改成背景滑動的跟拍（見 _attempts）。⇒ 飛奔的描寫保留（那部分有效）；拿掉「跑出距離」，改成「只慢慢往前、全程留在畫面裡」，並明說橋、石牆、城、護城河「像舞台布景一樣固定在原位」；加一句騎馬的人與奔跑的人維持原畫的衣著。🔑 教訓：**鏡頭鎖死時，不要要求主角移動很長的距離**——模型不會讓主角跑出畫面，它會改動背景。",
     "🔴 生動版第三版（2026-09-15）：CONTINUITY 拿掉點名的 “title, cartouche, signature and seals”。證據：用了那一句的三支——p3.mp4（21:01）、p2.mp4（23:38）、Bring_this_Japanese_woodblock.mp4——**全部多出假字題箋或假落款印章**；沒用那一句的 p1、第一支 p2 沒有。這正是筆記技巧 2（不點名不想要的東西）——寫的人是我自己，違反了自己的規則。同理，no.2 第三版演出句點名了 castle，結果冒出一座原畫沒有的天守閣；“like a stage set” 疑似讓模型換上一片布景。⇒ no.2 第四版演出句：回到第一版的結構（在橋前奔跑、不要求跑出距離），只換掉步態描寫，不點名背景裡的任何東西。",
-    "⚠️ no.6 演出句第二版（2026-09-16）：p6.mp4 在 1.5 秒內整幅換成另一幅畫（晴空、滿開的櫻、垂柳、石燈籠、掛日之丸旗與招牌的攤子、嬰兒車、假字題箋與假落款），**路中央的畫架整個不見**，位移 33。三個原因，兩個是提示詞寫的：①第一版演出句**沒提到畫架**——這幅叫「画家写生図」，畫的就是路中央那幅立在畫架上的畫，我卻把黃衣女子寫成「彎腰看小孩」，等於提示詞自己沒抓住主題，模型拿掉它也不違反任何一句；②寫了 “haze shifts and thins”——這幅整片都是春霞，要霞「變薄」就是要模型替霧後面現編一個晴朗的公園；③點名 “stalls, where small flags flutter”——原畫遠處只有淡淡的攤子與一面小旗，點名之後冒出成排的攤子、日之丸與招牌（又是技巧 2）。⇒ 第二版：先寫畫架與圍觀的人（要留下的主體用正面寫出來）、霞「留著、慢慢飄」、不點名攤子與旗。"
+    "⚠️ no.6 演出句第二版（2026-09-16）：p6.mp4 在 1.5 秒內整幅換成另一幅畫（晴空、滿開的櫻、垂柳、石燈籠、掛日之丸旗與招牌的攤子、嬰兒車、假字題箋與假落款），**路中央的畫架整個不見**，位移 33。三個原因，兩個是提示詞寫的：①第一版演出句**沒提到畫架**——這幅叫「画家写生図」，畫的就是路中央那幅立在畫架上的畫，我卻把黃衣女子寫成「彎腰看小孩」，等於提示詞自己沒抓住主題，模型拿掉它也不違反任何一句；②寫了 “haze shifts and thins”——這幅整片都是春霞，要霞「變薄」就是要模型替霧後面現編一個晴朗的公園；③點名 “stalls, where small flags flutter”——原畫遠處只有淡淡的攤子與一面小旗，點名之後冒出成排的攤子、日之丸與招牌（又是技巧 2）。⇒ 第二版：先寫畫架與圍觀的人（要留下的主體用正面寫出來）、霞「留著、慢慢飄」、不點名攤子與旗。",
+    "⚠️ no.7 演出句第二版（2026-09-16）：p7.mp4 場景沒換，但**前景人物整批被換**——最靠近觀眾那把大白傘不見、左邊背貨的紫衣男子與撐灰傘的小身影變成三個穿和服的女子、右邊載著粉紅圓包袱的紅輪車變成載麻袋蓋綠網的大車、撐橘色傘的人不見，另外多出寫假字的紫色暖簾與一輛黑色馬車。位移 25。原因在演出句：人物只寫了泛稱（“People under large paper umbrellas”、“the heavily loaded cart”），沒有把原畫裡**那幾個人、那一輛車**點出來，模型就自己配角色；又點名了 “shop banners”，冒出寫字的暖簾（技巧 2）。⇒ 第二版：把前景的大白傘、紫衣背貨男子、灰傘小身影、紅輪車與粉紅圓包袱、橘傘逐一寫出來（正面點名**原畫裡有的**），拿掉 shop banners。🔑 教訓：**點名原畫裡有的東西是錨，點名原畫裡沒有的東西是邀請**——前者要多寫，後者一個都不要寫。"
    ],
    "base": "Bring this Japanese woodblock print to life as a vivid animated scene. It is a print of Meiji-era Tokyo by Kobayashi Kiyochika (1876-1881), placed on a plain beige background.\n\nCAMERA: The camera stays locked on the print for the whole clip, so the print's outer edges never move. Everything inside the picture is free to move.\n\nCONTINUITY: This is one continuous shot of this one place, with no cut, dissolve or transition to another scene. The picture keeps the same layout from the first frame to the last. Within that same place, everything is free to move as described below.\n\nACTION: {SCENE}\n\nLIFE: Motion is clearly visible from the very first second and keeps going for the whole clip. People and animals move with readable, natural actions; clothing, hair, banners, branches, water and weather react to movement and wind. Figures may walk further, turn and interact, and other passers-by may move through the scene.\n\nSTYLE: It still looks like a moving woodblock print: flat printed colour, carved outlines, paper texture and Kiyochika's palette. Everything belongs to 1870s-1880s Tokyo: period clothing, vehicles and buildings. No photorealism and no 3D rendering.",
    "scenes": {
@@ -785,7 +802,7 @@
     "4": "Heavy snow falls and swirls across the whole scene. The traveller under the large straw umbrella trudges toward the viewer through deep snow, leaning into the wind, snow sliding off the umbrella. Behind, small figures and rickshaws make their way past the snow-covered bank building. Crows flap across the grey sky, and clumps of snow drop from the bare willow branches beside the stone bridge.",
     "5": "The sunset sky shifts from pink to deep orange and violet as the long bands of cloud drift slowly across it. The woman carrying a bundle on her back walks steadily along the path beside the canal. The tall grasses and reeds sway in the evening breeze, and the canal water ripples, stretching and breaking the reflection of the house. A lamp is lit inside the house and its windows begin to glow.",
     "6": "The painting on its easel stays standing in the middle of the path, and the people gathered around it lean in to look at it and talk about it: the woman in the yellow coat bends toward the picture, and the small child in yellow points at it and hops on the spot. Further along the path, a few people stroll slowly toward the great torii. Cherry and yellow blossoms drift down from the trees and the branches sway gently. The soft spring haze stays over the whole park, drifting slowly.",
-    "7": "Thick snow falls through the dark sky. People under large paper umbrellas push through the snowy street, leaning into the wind as their umbrellas wobble. On the right, men strain to haul the heavily loaded cart forward, its wheels cutting through the slush. Distant figures hurry along the wide street, the shop banners swing, and the telegraph wires sway in the wind.",
+    "7": "Thick snow falls through the dark sky. In the foreground, closest to us, the person under the very large white umbrella walks slowly away up the street, the umbrella tilting in the wind. On the left, the man in the purple coat with the white bundle on his back and the small figure under the grey umbrella trudge on through the snow. On the right, a man leans hard into the red-wheeled cart piled with its round pink load and pushes it forward, and the person under the orange umbrella walks beside it. Distant figures hurry along the wide street, and the telegraph wires sway in the wind.",
     "8": "The crows perched on the bare branches suddenly take off and fly across the twilight sky. The tall bare tree and the grasses sway in a cold evening wind. Mist drifts slowly across the flat rice fields behind the torii. The glowing disc low in the sky grows brighter as the light fades, and the shadows of the huts deepen.",
     "9": "Wind-driven rain sweeps across the scene in strong gusts. The pine tree and the bushes thrash and bend. The small figure in the straw rain cape struggles forward, holding the straw umbrella against the wind, which nearly tears it away. The hood of the parked rickshaw flaps and its red wheels glisten; rain splashes up from the puddles on the stone path, and a pair of birds is blown across the sky.",
     "10": "Red and purple maple leaves fall and drift through the air under the tall cedar trees. The visitors seated at the outdoor tea bench chat and gesture; one pours tea and another turns to point at the leaves. At the bottom right, a man climbs up the path into the scene. Branches sway and dappled sunlight flickers across the ground and the old stump."
@@ -815,6 +832,13 @@
       "used_by": "p6.mp4（2026-09-16 19:36）",
       "base": "base（第三版）",
       "scene": "The group in the foreground walks slowly along the path, chatting: the woman in the yellow coat turns and bends toward the small child, who skips beside her. Beyond them, strollers move toward the great torii and gather around the stalls, where small flags flutter. Cherry and yellow blossoms drift down from the trees and the branches sway. Soft spring haze shifts and thins over the park."
+     }
+    ],
+    "7": [
+     {
+      "used_by": "p7.mp4（2026-09-16 23:17）",
+      "base": "base（第三版）",
+      "scene": "Thick snow falls through the dark sky. People under large paper umbrellas push through the snowy street, leaning into the wind as their umbrellas wobble. On the right, men strain to haul the heavily loaded cart forward, its wheels cutting through the slush. Distant figures hurry along the wide street, the shop banners swing, and the telegraph wires sway in the wind."
      }
     ]
    },
