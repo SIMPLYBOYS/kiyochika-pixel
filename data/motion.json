@@ -606,6 +606,23 @@
      "_": "每 0.3s 一格，跟原畫比邊的位置。只動光約 6，構圖動了 19 以上。"
     }
    }
+  },
+  {
+   "date": "2026-09-16",
+   "id": 6,
+   "source": "research/motion/p6.mp4（19:36，3.95MB）",
+   "prompt": "base（第三版）＋ scenes_history.6 的第一筆",
+   "model": "（待補）",
+   "verdict": "⛔ 不收（整幅換掉）",
+   "why": [
+    "第一格對得上墊邊圖（2.5），0.9 秒位移已到 33、之後一直 33–34：1.5 秒起換成另一幅畫。",
+    "路中央的畫架與畫整個消失——這一幅的主題（画家写生）不見了。",
+    "春霞被清掉，換成晴空、滿開的櫻與垂柳；多出石燈籠、成排的攤子、日之丸旗、嬰兒車。",
+    "右上角冒出假字題箋，右下角冒出假落款與紅印，左下另有一枚紅印。",
+    "黃衣女子與小孩被畫成牽手的母女。"
+   ],
+   "cause": "見 _prompt_template.vivid.why 最後一條：演出句漏了畫架、要霞變薄、點名攤子與旗。",
+   "evidence": "research/motion/p123-review/p6-no06-上野-換成櫻花祭.png"
   }
  ],
  "_decision": {
@@ -699,7 +716,8 @@
     "⚠️ 第二版（加 CONTINUITY）：p3.mp4（no.3 東京橋場渡黄昏景）第 1 秒之後整個畫面被換成一幅新畫——題字「東京橋場渡黄昏景」與左下紅色題箋消失、換成假字的新題箋與新落款，渡船、對岸（柳樹、點燈的房子、遠方小船）全部重畫，構圖位移從 10 跳到 30 以上。第一版只鎖了鏡頭與外框，沒說「同一個地方、不准換場景」，模型就做了一次轉場。⇒ 加一段只講『連續、同一個地方』的句子；⛔ 不講『不准動』，免得又把動作壓回去。",
     "⚠️ no.2 重寫演出句（2026-09-15）：p2.mp4 的馬從四腳騰空的飛奔變成原地小跑。第一版寫了 “The uniformed rider rises and falls in the saddle”——在馬背上一起一落正是**小跑時騎手的動作**，等於在提示詞裡暗示了小跑。⇒ 拿掉那句；改寫飛奔的樣子（四肢伸展收合、身體拉長放低、鬃毛尾巴往後直飄）、全程維持全速、真的往右跑出距離，騎手改成前傾貼近馬頸，奔跑的人雙腳離地。⛔ 刻意不出現 trot 這個字（筆記技巧 2：不點名不想要的東西）。舊的演出句留在 scenes_history.2。",
     "⚠️ no.2 第三版演出句（2026-09-15）：第二版的 “covering real ground” 讓模型改成背景滑動的跟拍（見 _attempts）。⇒ 飛奔的描寫保留（那部分有效）；拿掉「跑出距離」，改成「只慢慢往前、全程留在畫面裡」，並明說橋、石牆、城、護城河「像舞台布景一樣固定在原位」；加一句騎馬的人與奔跑的人維持原畫的衣著。🔑 教訓：**鏡頭鎖死時，不要要求主角移動很長的距離**——模型不會讓主角跑出畫面，它會改動背景。",
-    "🔴 生動版第三版（2026-09-15）：CONTINUITY 拿掉點名的 “title, cartouche, signature and seals”。證據：用了那一句的三支——p3.mp4（21:01）、p2.mp4（23:38）、Bring_this_Japanese_woodblock.mp4——**全部多出假字題箋或假落款印章**；沒用那一句的 p1、第一支 p2 沒有。這正是筆記技巧 2（不點名不想要的東西）——寫的人是我自己，違反了自己的規則。同理，no.2 第三版演出句點名了 castle，結果冒出一座原畫沒有的天守閣；“like a stage set” 疑似讓模型換上一片布景。⇒ no.2 第四版演出句：回到第一版的結構（在橋前奔跑、不要求跑出距離），只換掉步態描寫，不點名背景裡的任何東西。"
+    "🔴 生動版第三版（2026-09-15）：CONTINUITY 拿掉點名的 “title, cartouche, signature and seals”。證據：用了那一句的三支——p3.mp4（21:01）、p2.mp4（23:38）、Bring_this_Japanese_woodblock.mp4——**全部多出假字題箋或假落款印章**；沒用那一句的 p1、第一支 p2 沒有。這正是筆記技巧 2（不點名不想要的東西）——寫的人是我自己，違反了自己的規則。同理，no.2 第三版演出句點名了 castle，結果冒出一座原畫沒有的天守閣；“like a stage set” 疑似讓模型換上一片布景。⇒ no.2 第四版演出句：回到第一版的結構（在橋前奔跑、不要求跑出距離），只換掉步態描寫，不點名背景裡的任何東西。",
+    "⚠️ no.6 演出句第二版（2026-09-16）：p6.mp4 在 1.5 秒內整幅換成另一幅畫（晴空、滿開的櫻、垂柳、石燈籠、掛日之丸旗與招牌的攤子、嬰兒車、假字題箋與假落款），**路中央的畫架整個不見**，位移 33。三個原因，兩個是提示詞寫的：①第一版演出句**沒提到畫架**——這幅叫「画家写生図」，畫的就是路中央那幅立在畫架上的畫，我卻把黃衣女子寫成「彎腰看小孩」，等於提示詞自己沒抓住主題，模型拿掉它也不違反任何一句；②寫了 “haze shifts and thins”——這幅整片都是春霞，要霞「變薄」就是要模型替霧後面現編一個晴朗的公園；③點名 “stalls, where small flags flutter”——原畫遠處只有淡淡的攤子與一面小旗，點名之後冒出成排的攤子、日之丸與招牌（又是技巧 2）。⇒ 第二版：先寫畫架與圍觀的人（要留下的主體用正面寫出來）、霞「留著、慢慢飄」、不點名攤子與旗。"
    ],
    "base": "Bring this Japanese woodblock print to life as a vivid animated scene. It is a print of Meiji-era Tokyo by Kobayashi Kiyochika (1876-1881), placed on a plain beige background.\n\nCAMERA: The camera stays locked on the print for the whole clip, so the print's outer edges never move. Everything inside the picture is free to move.\n\nCONTINUITY: This is one continuous shot of this one place, with no cut, dissolve or transition to another scene. The picture keeps the same layout from the first frame to the last. Within that same place, everything is free to move as described below.\n\nACTION: {SCENE}\n\nLIFE: Motion is clearly visible from the very first second and keeps going for the whole clip. People and animals move with readable, natural actions; clothing, hair, banners, branches, water and weather react to movement and wind. Figures may walk further, turn and interact, and other passers-by may move through the scene.\n\nSTYLE: It still looks like a moving woodblock print: flat printed colour, carved outlines, paper texture and Kiyochika's palette. Everything belongs to 1870s-1880s Tokyo: period clothing, vehicles and buildings. No photorealism and no 3D rendering.",
    "scenes": {
@@ -708,7 +726,7 @@
     "3": "The ferryman leans on his long pole and pushes, and the ferry glides across the wide river from left to right, leaving a widening wake. The three passengers sway with the boat and turn their heads to talk. A white gull skims low over the water on the right, dips and rises again, and a bird circles high above. The far shore keeps its dark groves and the small red-walled house; as the evening deepens, a warm lamp light begins to glow in that house and the sky above the trees slowly darkens.",
     "4": "Heavy snow falls and swirls across the whole scene. The traveller under the large straw umbrella trudges toward the viewer through deep snow, leaning into the wind, snow sliding off the umbrella. Behind, small figures and rickshaws make their way past the snow-covered bank building. Crows flap across the grey sky, and clumps of snow drop from the bare willow branches beside the stone bridge.",
     "5": "The sunset sky shifts from pink to deep orange and violet as the long bands of cloud drift slowly across it. The woman carrying a bundle on her back walks steadily along the path beside the canal. The tall grasses and reeds sway in the evening breeze, and the canal water ripples, stretching and breaking the reflection of the house. A lamp is lit inside the house and its windows begin to glow.",
-    "6": "The group in the foreground walks slowly along the path, chatting: the woman in the yellow coat turns and bends toward the small child, who skips beside her. Beyond them, strollers move toward the great torii and gather around the stalls, where small flags flutter. Cherry and yellow blossoms drift down from the trees and the branches sway. Soft spring haze shifts and thins over the park.",
+    "6": "The painting on its easel stays standing in the middle of the path, and the people gathered around it lean in to look at it and talk about it: the woman in the yellow coat bends toward the picture, and the small child in yellow points at it and hops on the spot. Further along the path, a few people stroll slowly toward the great torii. Cherry and yellow blossoms drift down from the trees and the branches sway gently. The soft spring haze stays over the whole park, drifting slowly.",
     "7": "Thick snow falls through the dark sky. People under large paper umbrellas push through the snowy street, leaning into the wind as their umbrellas wobble. On the right, men strain to haul the heavily loaded cart forward, its wheels cutting through the slush. Distant figures hurry along the wide street, the shop banners swing, and the telegraph wires sway in the wind.",
     "8": "The crows perched on the bare branches suddenly take off and fly across the twilight sky. The tall bare tree and the grasses sway in a cold evening wind. Mist drifts slowly across the flat rice fields behind the torii. The glowing disc low in the sky grows brighter as the light fades, and the shadows of the huts deepen.",
     "9": "Wind-driven rain sweeps across the scene in strong gusts. The pine tree and the bushes thrash and bend. The small figure in the straw rain cape struggles forward, holding the straw umbrella against the wind, which nearly tears it away. The hood of the parked rickshaw flaps and its red wheels glisten; rain splashes up from the puddles on the stone path, and a pair of birds is blown across the sky.",
@@ -732,6 +750,13 @@
       "used_by": "Bring_this_Japanese_woodblock.mp4（23:57）",
       "base": "base_v2",
       "scene": "The chestnut horse gallops at full speed in a flying gallop for the entire clip, just as Kiyochika drew it mid-stride: its front and hind legs reach far out and snap back together in a fast, powerful rhythm, its body stretched long and low, mane and tail streaming straight back. It moves forward across the picture only gradually and stays in view for the whole clip, while the bridge, the stone walls, the castle and the moat stay fixed in their places behind it, like a stage set. The rider and the runner keep the clothing and look they have in the print. The rider leans forward low over the horse's neck, the red plume on the hat whipping in the wind. The runner on the right sprints flat out, arms pumping, both feet leaving the ground with each stride. Spray flies up from the wet ground under the hooves, and the moat water ripples and the pines on the bank sway in the wind of their passing."
+     }
+    ],
+    "6": [
+     {
+      "used_by": "p6.mp4（2026-09-16 19:36）",
+      "base": "base（第三版）",
+      "scene": "The group in the foreground walks slowly along the path, chatting: the woman in the yellow coat turns and bends toward the small child, who skips beside her. Beyond them, strollers move toward the great torii and gather around the stalls, where small flags flutter. Cherry and yellow blossoms drift down from the trees and the branches sway. Soft spring haze shifts and thins over the park."
      }
     ]
    },
