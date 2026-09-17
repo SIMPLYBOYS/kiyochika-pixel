@@ -466,19 +466,22 @@ for (const [name, size] of [['桌機 1440×900', { width: 1440, height: 900 }],
   // ⇒ 金點的顏色要跟地圖上金點的顏色一模一樣，⛔ 不是另外畫一份示意圖。
   await page.keyboard.press('?');
   await sleep(300);
-  const guide = await page.evaluate(() => {
+  // ⚠️ 掃日文之前先拿掉畫的題名：題名本來就是日文（面板的 h2 也不掃）。
+  // 玩法頁列出 AI 重繪版的題名，no.10「瀧の川の圖」的「の」曾讓這一項誤判（2026-09-17）。
+  const titles = VIEWS.map(v => v.title.ja);
+  const guide = await page.evaluate(titles => {
     const body = document.querySelector('#card.on #card-body');
     if (!body) return null;
     const fill = s => { const e = document.querySelector(s); return e && getComputedStyle(e).fill; };
     return {
       title: body.querySelector('h2')?.textContent,
-      text: body.innerText,
+      text: titles.reduce((t, n) => t.split(n).join(''), body.innerText),
       states: ['open', 'closed', 'got'].map(k => body.querySelectorAll(`.legend .mark.${k}`).length),
       legendGold: fill('#card .legend .mark.open.exact circle.dot'),
       mapGold: fill('#map .mark.open.exact circle.dot'),
       mapped: window.__views.length,
     };
-  });
+  }, titles);
   ok(guide && guide.title === '玩法'
      && guide.text.includes(`地圖上的 ${guide.mapped} 幅`) && guide.text.includes(`每收 ${PER_YEAR} 幅進入下一年`)
      && guide.states.every(n => n === 2) && guide.mapGold && guide.legendGold === guide.mapGold
