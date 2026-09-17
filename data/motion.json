@@ -281,7 +281,7 @@
     "店門口多出寫著看不懂的字的紫色暖簾；左邊遠處多出一輛黑色馬車。",
     "右邊那顆四角星是生成模型的浮水印。不修掉，它正好提醒這不是清親的作品。"
    ],
-   "differs_checked": "Claude 對照 research/motion/p123-review/p7-no07-兩國雪中-前景人物被換.png 起草；Aaron 要求部署 no.4–10，未逐條確認",
+   "differs_checked": "Aaron 2026-09-17 確認（「no4 no.7, no.9 都可以被部署上去」）",
    "fade": 0.6,
    "known_flaw": "開頭是原畫的人物、之後整批換掉 ⇒ 每次接回開頭，前景的人與車會瞬間跳回原畫的樣子。",
    "drift": {
@@ -345,7 +345,7 @@
     "水窪裡濺起水花、泛起漣漪。",
     "右邊紙邊那顆四角星是生成模型的浮水印。不修掉，它正好提醒這不是清親的作品。"
    ],
-   "differs_checked": "Claude 對照 research/motion/p123-review/p9v3-no09-梅若神社-第三次.png 起草；Aaron 要求部署 no.4–10，未逐條確認",
+   "differs_checked": "Aaron 2026-09-17 確認（「no4 no.7, no.9 都可以被部署上去」）",
    "fade": 0.6,
    "known_flaw": "結尾的人已走到神社門口 ⇒ 每次接回開頭，人會跳回原位。",
    "drift": {
