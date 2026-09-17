@@ -178,6 +178,12 @@ def main():
         subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", str(src),
                         "-filter_complex", vf, "-map", "[v]", "-an", *enc, str(out)], check=True)
         print(f"  → {out.relative_to(ROOT)}　{out.stat().st_size / 1e6:.2f}MB")
+    # 🔴 版本碼：影片重生時檔名不變（02.webm 換過一次），而 _headers 讓瀏覽器把影片快取 7 天
+    # ⇒ 網址要帶內容雜湊，內容一變網址就變，玩家才不會看到舊影片配新的差異清單。
+    import hashlib
+    clip["v"] = hashlib.sha1((OUT / f"{a.id:02d}.webm").read_bytes() + (OUT / f"{a.id:02d}.mp4").read_bytes()).hexdigest()[:8]
+    mp.write_text(json.dumps(data, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
+    print(f"  版本碼 v={clip['v']}（寫回 data/motion.json）")
     print("\n⛔ 最後一關是眼睛：循環接得順不順、有沒有多出東西、木版的味道還在不在")
 
 

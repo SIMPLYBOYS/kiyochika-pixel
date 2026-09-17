@@ -9,7 +9,8 @@
 這一作與江戶百景共用同一套地圖做法——**一套真實座標，兩層皮**。
 江戶百景的滑桿兩端是 1858 與 2026，這裡是 1880 與 2026。
 
-**玩：** https://simplyboys.github.io/kiyochika-pixel/
+**玩：** https://kiyochika-pixel.ferrari828.workers.dev/
+（備援：https://simplyboys.github.io/kiyochika-pixel/ ——兩邊都在推送到 main 時自動更新；從台灣實測 Cloudflare 下載 AI 影片快約 30 倍，見〈部署〉一節）
 
 收 63 景、走過清親的五年，再加上弟子井上安治接下去畫的 4 幅（見〈井上安治〉一節）。
 每一景看得到畫師畫了什麼、那地方今天長什麼樣。
@@ -586,6 +587,25 @@ AI 動畫提示詞（`motion-prep.py` 會把 by Kobayashi Kiyochika 換掉）—
 
 另一個沒定案的：81 的年份。江戸東京博物館記明治 12 年（1879）；NDL 細目表註「明13」、維基百科也說 1880 年出道。
 奧付年份欄整組空白，沒有第一手證據 ⇒ 照同一條規則取館方斷代 1879，三個說法都記在 `dates-external.json` 的 `_conflicts`。
+
+## 部署：Cloudflare 為主、GitHub Pages 備援
+
+兩邊都接同一個 repo，推送到 `main` 就各自更新。**從台灣實測（2026-09-18）**：
+
+| | GitHub Pages（Fastly 新加坡） | Cloudflare |
+|---|---|---|
+| 一支 AI 影片 1.3 MB 完整下載 | 29–35 秒（約 40 KB/s） | **1.1–1.5 秒** |
+| 地圖出現 | 3.1 秒 | **1.7 秒** |
+| 按「AI 重繪版」到開始播 | 1.7–2.7 秒，之後常卡 | **0.5–0.9 秒** |
+
+慢的不是回應時間（TTFB 都在 1 秒內），是**下載速度**：就算新加坡節點快取命中，也只有幾十 KB/s。
+同一台電腦連 jsDelivr、raw.githubusercontent（都走 Fastly）一樣慢，連 Cloudflare 則是 MB/s 等級。
+
+⚠️ 兩個部署上的坑：
+- **repo 裡一定要有 `wrangler.jsonc`**：沒有它，`npx wrangler deploy` 會跑自動設定、把 wrangler 裝進專案 `node_modules/`，
+  上傳目錄又是根目錄 ⇒ 126 MB 的 `workerd` 被當成網頁檔案上傳而失敗。哪些不上傳寫在 `.assetsignore`。
+- **快取要配版本碼**：`_headers` 讓瀏覽器把影片存 7 天，但重生的影片**檔名不變** ⇒ 面板的影片網址帶 `?v=內容雜湊`
+  （`make-motion.py` 自動寫進 `data/motion.json`），內容一變網址就變。程式與資料不設長快取，改了馬上生效。
 
 ## 玩法頁：寫的要跟做的一樣
 

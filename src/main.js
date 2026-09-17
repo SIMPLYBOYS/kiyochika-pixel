@@ -287,6 +287,7 @@ function pick(v) {
     mark.textContent = marks ? '隱藏標註' : '顯示標註';
   };
   // AI 重繪版：把 <img> 換成 <video>，並且**永遠**帶著那條標示與那份差異清單。
+  // ⚠️ 網址帶 ?v=（影片內容雜湊）：_headers 讓瀏覽器快取影片 7 天，而重生的影片檔名不變。
   const clip = clipOf(v);
   const anim = $('anim');
   if (anim && clip) anim.onclick = () => {
@@ -297,8 +298,8 @@ function pick(v) {
     if (on) {
       art.insertAdjacentHTML('afterbegin', `
         <video autoplay loop muted playsinline>
-          <source src="${clip.file}" type="video/webm">
-          <source src="${clip.file.replace(/\.webm$/, '.mp4')}" type="video/mp4">
+          <source src="${clip.file}?v=${clip.v ?? ''}" type="video/webm">
+          <source src="${clip.file.replace(/\.webm$/, '.mp4')}?v=${clip.v ?? ''}" type="video/mp4">
         </video>
         <b class="gen">AI 重繪・非原作</b>`);
       // 🔴 差在哪就寫在旁邊。⛔ 不是「說明文字裡提一句 AI 生成」就算——那句話講的是

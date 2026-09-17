@@ -1,0 +1,24 @@
+# Cloudflare 的快取規則（GitHub Pages 不讀這個檔，那邊固定快取 10 分鐘）。
+#
+# 🔴 分兩類，理由是「改了之後玩家多久看得到」：
+#   程式與資料（index.html、src/、data/）→ 不設，沿用預設「每次向伺服器確認」。
+#     改一行就要馬上生效，而且面板的文字、標註座標跟圖必須是同一版。確認只回 304，很便宜。
+#   媒體檔（assets/）→ 讓瀏覽器直接存著，再訪不必重新下載。
+#     · motion：7 天。檔名不變但網址帶 ?v=內容雜湊（data/motion.json 的 v），內容一變網址就變，不會吃到舊影片。
+#     · audio：7 天。五首唱片不會改。
+#     · thumb／pixel／plate：1 天。只有重跑 trim 才會變；變了最多晚一天，⚠️ 那時標註可能會短暫對不齊。
+
+/assets/motion/*
+  Cache-Control: public, max-age=604800
+
+/assets/audio/*
+  Cache-Control: public, max-age=604800
+
+/assets/thumb/*
+  Cache-Control: public, max-age=86400
+
+/assets/pixel/*
+  Cache-Control: public, max-age=86400
+
+/assets/plate/*
+  Cache-Control: public, max-age=86400
