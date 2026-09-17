@@ -746,6 +746,22 @@
     "多出幾隻烏鴉在畫面裡飛、水窪濺起水花；右邊紙邊有浮水印。"
    ],
    "evidence": "research/motion/p123-review/p9v3-no09-梅若神社-第三次.png"
+  },
+  {
+   "date": "2026-09-17",
+   "id": 10,
+   "source": "research/motion/p10.mp4（16:26，3.97MB）",
+   "prompt": "base（第三版）＋ scenes_history.10 的第一筆",
+   "model": "（待補）",
+   "verdict": "建議重生（待 Aaron 決定；也可以直接收成 reinterpretation）",
+   "why": [
+    "✅ 第一幀 vs 墊邊圖 2.1；場景保住，沒有假題箋、假落款。",
+    "位移 2 秒前約 10，之後 21：茶席的人整批換掉——背對觀眾坐在矮木台上的一群人，變成面向觀眾、坐長椅的黑羽織男子與藍衣女子等人，矮木台不見。",
+    "右下正往上爬、只露頭肩的藍衣小個子 → 全身站在新畫出來的木造階梯與欄杆上、梳髷、腰間佩刀的男子。",
+    "右邊的紫葉楓樹換成細緻的紅楓枝；地上多出一塊塊光斑；紅楓葉大片飄落。",
+    "右緣奧付「小林清親画」字形被改，左緣奧付也有幾個字走樣；右緣浮水印。"
+   ],
+   "evidence": "research/motion/p123-review/p10-no10-瀧の川-茶席人物被換.png"
   }
  ],
  "_decision": {
@@ -842,7 +858,8 @@
     "🔴 生動版第三版（2026-09-15）：CONTINUITY 拿掉點名的 “title, cartouche, signature and seals”。證據：用了那一句的三支——p3.mp4（21:01）、p2.mp4（23:38）、Bring_this_Japanese_woodblock.mp4——**全部多出假字題箋或假落款印章**；沒用那一句的 p1、第一支 p2 沒有。這正是筆記技巧 2（不點名不想要的東西）——寫的人是我自己，違反了自己的規則。同理，no.2 第三版演出句點名了 castle，結果冒出一座原畫沒有的天守閣；“like a stage set” 疑似讓模型換上一片布景。⇒ no.2 第四版演出句：回到第一版的結構（在橋前奔跑、不要求跑出距離），只換掉步態描寫，不點名背景裡的任何東西。",
     "⚠️ no.6 演出句第二版（2026-09-16）：p6.mp4 在 1.5 秒內整幅換成另一幅畫（晴空、滿開的櫻、垂柳、石燈籠、掛日之丸旗與招牌的攤子、嬰兒車、假字題箋與假落款），**路中央的畫架整個不見**，位移 33。三個原因，兩個是提示詞寫的：①第一版演出句**沒提到畫架**——這幅叫「画家写生図」，畫的就是路中央那幅立在畫架上的畫，我卻把黃衣女子寫成「彎腰看小孩」，等於提示詞自己沒抓住主題，模型拿掉它也不違反任何一句；②寫了 “haze shifts and thins”——這幅整片都是春霞，要霞「變薄」就是要模型替霧後面現編一個晴朗的公園；③點名 “stalls, where small flags flutter”——原畫遠處只有淡淡的攤子與一面小旗，點名之後冒出成排的攤子、日之丸與招牌（又是技巧 2）。⇒ 第二版：先寫畫架與圍觀的人（要留下的主體用正面寫出來）、霞「留著、慢慢飄」、不點名攤子與旗。",
     "⚠️ no.7 演出句第二版（2026-09-16）：p7.mp4 場景沒換，但**前景人物整批被換**——最靠近觀眾那把大白傘不見、左邊背貨的紫衣男子與撐灰傘的小身影變成三個穿和服的女子、右邊載著粉紅圓包袱的紅輪車變成載麻袋蓋綠網的大車、撐橘色傘的人不見，另外多出寫假字的紫色暖簾與一輛黑色馬車。位移 25。原因在演出句：人物只寫了泛稱（“People under large paper umbrellas”、“the heavily loaded cart”），沒有把原畫裡**那幾個人、那一輛車**點出來，模型就自己配角色；又點名了 “shop banners”，冒出寫字的暖簾（技巧 2）。⇒ 第二版：把前景的大白傘、紫衣背貨男子、灰傘小身影、紅輪車與粉紅圓包袱、橘傘逐一寫出來（正面點名**原畫裡有的**），拿掉 shop banners。🔑 教訓：**點名原畫裡有的東西是錨，點名原畫裡沒有的東西是邀請**——前者要多寫，後者一個都不要寫。",
-    "⚠️ no.9 演出句第二版（2026-09-17）：p9.mp4 在 1.5 秒內整幅換成另一幅「標準浮世繪」——石造鳥居、一棵大松、鋪石板的路、藍篷人力車移到左前景、細雨、假字題箋與假落款印，後來還走進兩個撐傘的女子；茅草茶屋、白招牌、木造神社門與「梅若神社」柱、石碑、滿畫面的斜雨線全不見。位移 43–45（歷來最高）。原因：①演出句**沒錨住**茶屋、神社門與名柱、石碑、雨線質感——只寫了會動的東西；②寫了 “the stone path”，原畫是泥地（技巧 2，冒出石板路）；③這幅整面是粗的斜線刻痕，模型傾向把它『清理』成乾淨的標準畫面 ⇒ 要把那種質感也當成要留住的東西寫出來。⇒ 第二版：先錨住左茶屋與招牌、人力車的灰藍雨篷與紅輪、木造神社門與名柱、右邊石碑、兩隻鳥，並寫明「整幅保留密集的斜雨線與粗刻痕」；stone path 改成 muddy ground；不寫 torii（避免邀來石鳥居），寫 wooden shrine gate。"
+    "⚠️ no.9 演出句第二版（2026-09-17）：p9.mp4 在 1.5 秒內整幅換成另一幅「標準浮世繪」——石造鳥居、一棵大松、鋪石板的路、藍篷人力車移到左前景、細雨、假字題箋與假落款印，後來還走進兩個撐傘的女子；茅草茶屋、白招牌、木造神社門與「梅若神社」柱、石碑、滿畫面的斜雨線全不見。位移 43–45（歷來最高）。原因：①演出句**沒錨住**茶屋、神社門與名柱、石碑、雨線質感——只寫了會動的東西；②寫了 “the stone path”，原畫是泥地（技巧 2，冒出石板路）；③這幅整面是粗的斜線刻痕，模型傾向把它『清理』成乾淨的標準畫面 ⇒ 要把那種質感也當成要留住的東西寫出來。⇒ 第二版：先錨住左茶屋與招牌、人力車的灰藍雨篷與紅輪、木造神社門與名柱、右邊石碑、兩隻鳥，並寫明「整幅保留密集的斜雨線與粗刻痕」；stone path 改成 muddy ground；不寫 torii（避免邀來石鳥居），寫 wooden shrine gate。",
+    "⚠️ no.10 演出句第二版（2026-09-17）：p10.mp4 場景保住（杉樹、樹樁、綠色灌木、紅楓背景、兩側奧付），但約 2 秒起**茶席的人整批被換**：背對觀眾坐在長而矮的木台上的一群人，變成面向觀眾坐在長椅上的黑羽織男子與藍衣女子；右下只露出頭肩、正往上爬的藍衣小個子，變成全身站在木造階梯與欄杆上、梳髷佩刀的男子；右邊紫葉楓樹換成細緻的紅楓枝；地上出現一塊塊光斑；右緣奧付「小林清親画」的字形被改。位移 21。原因同 no.7：人物只寫泛稱（visitors at the outdoor tea bench、a man climbs up the path）沒錨住原畫的樣子；又寫了 dappled sunlight flickers across the ground（原畫沒有光斑，要光「變成什麼」＝邀請）。⇒ 第二版：寫明長矮木台、背對觀眾、茶盒、右邊穿深藍外套的兩人、樹樁、只露頭肩的藍衣小個子、紫葉楓樹；拿掉光斑。"
    ],
    "base": "Bring this Japanese woodblock print to life as a vivid animated scene. It is a print of Meiji-era Tokyo by Kobayashi Kiyochika (1876-1881), placed on a plain beige background.\n\nCAMERA: The camera stays locked on the print for the whole clip, so the print's outer edges never move. Everything inside the picture is free to move.\n\nCONTINUITY: This is one continuous shot of this one place, with no cut, dissolve or transition to another scene. The picture keeps the same layout from the first frame to the last. Within that same place, everything is free to move as described below.\n\nACTION: {SCENE}\n\nLIFE: Motion is clearly visible from the very first second and keeps going for the whole clip. People and animals move with readable, natural actions; clothing, hair, banners, branches, water and weather react to movement and wind. Figures may walk further, turn and interact, and other passers-by may move through the scene.\n\nSTYLE: It still looks like a moving woodblock print: flat printed colour, carved outlines, paper texture and Kiyochika's palette. Everything belongs to 1870s-1880s Tokyo: period clothing, vehicles and buildings. No photorealism and no 3D rendering.",
    "scenes": {
@@ -855,7 +872,7 @@
     "7": "Thick snow falls through the dark sky. In the foreground, closest to us, the person under the very large white umbrella walks slowly away up the street, the umbrella tilting in the wind. On the left, the man in the purple coat with the white bundle on his back and the small figure under the grey umbrella trudge on through the snow. On the right, a man leans hard into the red-wheeled cart piled with its round pink load and pushes it forward, and the person under the orange umbrella walks beside it. Distant figures hurry along the wide street, and the telegraph wires sway in the wind.",
     "8": "The crows perched on the bare branches suddenly take off and fly across the twilight sky. The tall bare tree and the grasses sway in a cold evening wind. Mist drifts slowly across the flat rice fields behind the torii. The glowing disc low in the sky grows brighter as the light fades, and the shadows of the huts deepen.",
     "9": "Strong gusts drive the slanting rain across the whole picture, and the whole print keeps its dense slanting rain lines and rough hatched texture. On the left, the thatched teahouse with its white signboards stands in the downpour, and the rickshaw parked in front of it, with its blue-grey rain cover and red wheels, rocks slightly in the wind. In the middle, the small figure in the red kimono hurries toward the wooden shrine gate with the tall name post, the straw rain cape blown up and flapping behind them. The big pine above the gate and the trees on the right thrash in the wind, the tall standing stone stays upright among the bushes, and two dark birds are tossed about in the sky. Rain splashes up from the puddles on the muddy ground.",
-    "10": "Red and purple maple leaves fall and drift through the air under the tall cedar trees. The visitors seated at the outdoor tea bench chat and gesture; one pours tea and another turns to point at the leaves. At the bottom right, a man climbs up the path into the scene. Branches sway and dappled sunlight flickers across the ground and the old stump."
+    "10": "Red and purple maple leaves fall and drift through the air under the tall cedar trunks. In the middle, the visitors sit on the long low wooden platform bench with their backs to us, looking out at the red maples; they turn their heads to chat, one lifts a small teacup, and the tea box on the bench stays beside them. The two people further right on the same bench, one in a dark blue coat, lean toward each other and talk. The old cut stump stays in front of the bench and the round green shrubs sway gently. At the bottom right, the small man in blue whose head and shoulders show above the slope climbs slowly up into view. The purple-leaved maple on the right shakes its branches in the wind."
    },
    "base_v1": "Bring this Japanese woodblock print to life as a vivid animated scene. It is a print of Meiji-era Tokyo by Kobayashi Kiyochika (1876-1881), placed on a plain beige background.\n\nCAMERA: The camera stays locked on the print for the whole clip, so the print's outer edges never move. Everything inside the picture is free to move.\n\nACTION: {SCENE}\n\nLIFE: Motion is clearly visible from the very first second and keeps going for the whole clip. People and animals move with readable, natural actions; clothing, hair, banners, branches, water and weather react to movement and wind. Figures may walk further, turn and interact, and other passers-by may move through the scene.\n\nSTYLE: It still looks like a moving woodblock print: flat printed colour, carved outlines, paper texture and Kiyochika's palette. Everything belongs to 1870s-1880s Tokyo: period clothing, vehicles and buildings. No photorealism and no 3D rendering.",
    "base_v1_note": "生動版第一版（2026-09-15 10:40）。p1.mp4（no.1）、p2.mp4（no.2）、p3.mp4（no.3）用的是這一版——上架時 clips[].prompt 要逐字記這一版，⛔ 不是現在的 base。",
@@ -896,6 +913,13 @@
       "used_by": "p9.mp4（2026-09-16 23:58）",
       "base": "base（第三版）",
       "scene": "Wind-driven rain sweeps across the scene in strong gusts. The pine tree and the bushes thrash and bend. The small figure in the straw rain cape struggles forward, holding the straw umbrella against the wind, which nearly tears it away. The hood of the parked rickshaw flaps and its red wheels glisten; rain splashes up from the puddles on the stone path, and a pair of birds is blown across the sky."
+     }
+    ],
+    "10": [
+     {
+      "used_by": "p10.mp4（2026-09-17 16:26）",
+      "base": "base（第三版）",
+      "scene": "Red and purple maple leaves fall and drift through the air under the tall cedar trees. The visitors seated at the outdoor tea bench chat and gesture; one pours tea and another turns to point at the leaves. At the bottom right, a man climbs up the path into the scene. Branches sway and dappled sunlight flickers across the ground and the old stump."
      }
     ]
    },
