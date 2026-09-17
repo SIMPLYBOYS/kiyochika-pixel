@@ -101,6 +101,10 @@ def main():
         plate = ROOT / "assets" / "plate" / f"{i:02d}.jpg"
         if not v or not v.get("include") or not plate.exists():
             print(f"no.{i}  ⛔ 略過（不在收錄內或沒有原畫）"); continue
+        # 沒座標的那 10 幅畫不到地圖上（src/main.js 只收 include && subject），玩家永遠點不到
+        # ⇒ 做了動畫也沒有入口。⛔ 不要為它生提示詞。理由逐條寫在 places.json 的 _unresolved。
+        if not v.get("subject"):
+            print(f"no.{i}  ⛔ 略過：沒查到座標 ⇒ 不在地圖上 ⇒ 點不到（見 places.json 的 _unresolved）"); continue
         keys = pick(v, tpl)
         old_pad = data["_pad"].get(str(i))
         if any(c["id"] == i for c in data["clips"]) and old_pad:
