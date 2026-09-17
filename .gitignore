@@ -9,3 +9,7 @@ assets/image/   # 2026/09/12 廢掉的「畫心」那一層，重跑 trim 不會
 *.key
 .env
 .gemini-key
+
+# Cloudflare wrangler 本機暫存（不進 git）
+.wrangler/
+node_modules/
