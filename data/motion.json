@@ -285,7 +285,7 @@
     "左邊紅色欄杆旁多出一個走路的人。",
     "右邊那顆四角星是生成模型的浮水印。不修掉，它正好提醒這不是清親的作品。"
    ],
-   "differs_checked": "Claude 對照 research/motion/p123-review/ 的幀起草；Aaron 要求 p1–p10 全部部署，未逐條確認",
+   "differs_checked": "Aaron 2026-09-18 暫時通過（「no.5、6、8、10 我覺得暫時先通過」）",
    "fade": 0.6,
    "known_flaw": "天色從晚霞走到暮色、燈也亮起 ⇒ 每次接回開頭，天色與燈會瞬間跳回原畫。",
    "evidence": "research/motion/p123-review/p5-no05-柳島日没.png",
@@ -338,7 +338,7 @@
     "右下紙邊的出版資訊，字形與排列被改動。",
     "右邊那顆四角星是生成模型的浮水印。不修掉，它正好提醒這不是清親的作品。"
    ],
-   "differs_checked": "Claude 對照 research/motion/p123-review/p6v3-no06-上野-第三次.png 起草；Aaron 要求 p1–p10 全部部署，未逐條確認",
+   "differs_checked": "Aaron 2026-09-18 暫時通過（「no.5、6、8、10 我覺得暫時先通過」）",
    "fade": 0.6,
    "known_flaw": "右半邊整片換成石鳥居與櫻樹 ⇒ 每次接回開頭，右半邊會瞬間跳回原畫的淡櫻與黃花樹。",
    "evidence": "research/motion/p123-review/p6v3-no06-上野-第三次.png",
@@ -470,7 +470,7 @@
     "左下角浮現一個原畫沒有的淡紅色印章，那不是清親的印。",
     "右邊那顆四角星是生成模型的浮水印。不修掉，它正好提醒這不是清親的作品。"
    ],
-   "differs_checked": "Claude 對照 research/motion/p123-review/ 的幀起草；Aaron 要求 p1–p10 全部部署，未逐條確認",
+   "differs_checked": "Aaron 2026-09-18 暫時通過（「no.5、6、8、10 我覺得暫時先通過」）",
    "fade": 0.6,
    "known_flaw": "天色從暮色走到夜、鳥群飛走 ⇒ 每次接回開頭，天色與停在枝上的鳥會瞬間跳回原畫。",
    "evidence": "research/motion/p123-review/p8-no08-淺草田甫太郎稲荷.png",
@@ -535,7 +535,7 @@
     "左右兩側紙邊的出版資訊與落款，有幾個字的字形被改動。",
     "右邊那顆四角星是生成模型的浮水印。不修掉，它正好提醒這不是清親的作品。"
    ],
-   "differs_checked": "Claude 對照 research/motion/p123-review/ 的幀起草；Aaron 要求 p1–p10 全部部署，未逐條確認",
+   "differs_checked": "Aaron 2026-09-18 暫時通過（「no.5、6、8、10 我覺得暫時先通過」）",
    "fade": 0.6,
    "known_flaw": "結尾爬坡的人露出上半身 ⇒ 每次接回開頭，他會瞬間縮回只露頭肩。",
    "evidence": "research/motion/p123-review/p10v3-no10-瀧の川-第三次.png",
