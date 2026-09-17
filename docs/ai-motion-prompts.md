@@ -300,6 +300,31 @@ STYLE: It still looks like a moving woodblock print: flat printed colour, carved
 
 ---
 
+## 十一、第四版與成功率檢查表（no.11 起）
+
+**第四版改 LIFE 一段**：拿掉「人物可以走遠、別的路人可以走進來」。no.1、4、5、6、7、8 都多出了原畫沒有的人
+（路人、嬰兒車、狗、一整批換人）——那句話是模板自己發出的邀請。改成：
+
+```
+LIFE: Motion is clearly visible from the very first second and keeps going for the whole clip. The people and animals already in the picture move with readable, natural actions and stay in view; clothing, hair, branches, water and weather react to movement and wind. The number of people stays the same from start to finish.
+```
+
+**寫一幅的演出句之前，逐項檢查：**
+
+| # | 檢查 | 來源 |
+|---|---|---|
+| 1 | 這幅**為什麼叫這個名字**？那個主體有沒有正面寫出來 | no.6 畫架 |
+| 2 | 前景**每一個人、每一輛車、每一條船**有沒有照原畫的樣子寫出來（衣色、拿著什麼、朝哪邊） | no.7、no.10 |
+| 3 | 建築、橋、招牌、石碑等**不動的東西**有沒有寫「留在原位」 | no.9 |
+| 4 | 有沒有點名**原畫沒有**的東西（攤子、旗、石板路、光斑、城、鳥居 vs 木門） | no.6、no.9、no.10 |
+| 5 | 天氣與光是不是只寫**怎麼動**，沒有寫**變成什麼**（霞變薄、放晴、入夜） | no.6、no.8 |
+| 6 | 有沒有要求主角**移動長距離** | no.2 |
+| 7 | 淡色、低對比、滿是霞的畫：動作要更輕 | no.6 |
+
+**生成時：** 墊邊圖設成**起始幀**、每次存**新檔名**（`pNN-v2.mp4`…）。`make-motion.py` 會先量第一幀，對不上直接擋下。
+
+---
+
 ## 九、畫師不是清親的畫
 
 81–84 是弟子**井上安治**畫的。模板寫的是 “by Kobayashi Kiyochika (1876-1881)”、“Kiyochika's palette”，

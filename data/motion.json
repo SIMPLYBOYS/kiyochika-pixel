@@ -818,6 +818,150 @@
     1073
    ],
    "fill": "#C0B38C"
+  },
+  "11": {
+   "file": "research/motion/11-pad16x9.png",
+   "canvas": [
+    1698,
+    955
+   ],
+   "plate_at": [
+    34,
+    0
+   ],
+   "plate_size": [
+    1630,
+    955
+   ],
+   "fill": "#B7AB83"
+  },
+  "13": {
+   "file": "research/motion/13-pad16x9.png",
+   "canvas": [
+    1790,
+    1007
+   ],
+   "plate_at": [
+    57,
+    0
+   ],
+   "plate_size": [
+    1676,
+    1007
+   ],
+   "fill": "#CABA91"
+  },
+  "14": {
+   "file": "research/motion/14-pad16x9.png",
+   "canvas": [
+    1836,
+    1033
+   ],
+   "plate_at": [
+    78,
+    0
+   ],
+   "plate_size": [
+    1680,
+    1033
+   ],
+   "fill": "#C4B287"
+  },
+  "15": {
+   "file": "research/motion/15-pad16x9.png",
+   "canvas": [
+    1848,
+    1039
+   ],
+   "plate_at": [
+    85,
+    0
+   ],
+   "plate_size": [
+    1678,
+    1039
+   ],
+   "fill": "#C0B086"
+  },
+  "16": {
+   "file": "research/motion/16-pad16x9.png",
+   "canvas": [
+    1846,
+    1038
+   ],
+   "plate_at": [
+    82,
+    0
+   ],
+   "plate_size": [
+    1682,
+    1038
+   ],
+   "fill": "#CABC97"
+  },
+  "17": {
+   "file": "research/motion/17-pad16x9.png",
+   "canvas": [
+    1860,
+    1046
+   ],
+   "plate_at": [
+    141,
+    0
+   ],
+   "plate_size": [
+    1578,
+    1046
+   ],
+   "fill": "#CDC19A"
+  },
+  "18": {
+   "file": "research/motion/18-pad16x9.png",
+   "canvas": [
+    1880,
+    1057
+   ],
+   "plate_at": [
+    125,
+    0
+   ],
+   "plate_size": [
+    1630,
+    1057
+   ],
+   "fill": "#C9B990"
+  },
+  "19": {
+   "file": "research/motion/19-pad16x9.png",
+   "canvas": [
+    1826,
+    1027
+   ],
+   "plate_at": [
+    74,
+    0
+   ],
+   "plate_size": [
+    1678,
+    1027
+   ],
+   "fill": "#C9B88D"
+  },
+  "20": {
+   "file": "research/motion/20-pad16x9.png",
+   "canvas": [
+    1748,
+    983
+   ],
+   "plate_at": [
+    60,
+    0
+   ],
+   "plate_size": [
+    1627,
+    983
+   ],
+   "fill": "#C2B389"
   }
  },
  "_attempts": [
@@ -1167,9 +1311,10 @@
     "⚠️ no.6 演出句第二版（2026-09-16）：p6.mp4 在 1.5 秒內整幅換成另一幅畫（晴空、滿開的櫻、垂柳、石燈籠、掛日之丸旗與招牌的攤子、嬰兒車、假字題箋與假落款），**路中央的畫架整個不見**，位移 33。三個原因，兩個是提示詞寫的：①第一版演出句**沒提到畫架**——這幅叫「画家写生図」，畫的就是路中央那幅立在畫架上的畫，我卻把黃衣女子寫成「彎腰看小孩」，等於提示詞自己沒抓住主題，模型拿掉它也不違反任何一句；②寫了 “haze shifts and thins”——這幅整片都是春霞，要霞「變薄」就是要模型替霧後面現編一個晴朗的公園；③點名 “stalls, where small flags flutter”——原畫遠處只有淡淡的攤子與一面小旗，點名之後冒出成排的攤子、日之丸與招牌（又是技巧 2）。⇒ 第二版：先寫畫架與圍觀的人（要留下的主體用正面寫出來）、霞「留著、慢慢飄」、不點名攤子與旗。",
     "⚠️ no.7 演出句第二版（2026-09-16）：p7.mp4 場景沒換，但**前景人物整批被換**——最靠近觀眾那把大白傘不見、左邊背貨的紫衣男子與撐灰傘的小身影變成三個穿和服的女子、右邊載著粉紅圓包袱的紅輪車變成載麻袋蓋綠網的大車、撐橘色傘的人不見，另外多出寫假字的紫色暖簾與一輛黑色馬車。位移 25。原因在演出句：人物只寫了泛稱（“People under large paper umbrellas”、“the heavily loaded cart”），沒有把原畫裡**那幾個人、那一輛車**點出來，模型就自己配角色；又點名了 “shop banners”，冒出寫字的暖簾（技巧 2）。⇒ 第二版：把前景的大白傘、紫衣背貨男子、灰傘小身影、紅輪車與粉紅圓包袱、橘傘逐一寫出來（正面點名**原畫裡有的**），拿掉 shop banners。🔑 教訓：**點名原畫裡有的東西是錨，點名原畫裡沒有的東西是邀請**——前者要多寫，後者一個都不要寫。",
     "⚠️ no.9 演出句第二版（2026-09-17）：p9.mp4 在 1.5 秒內整幅換成另一幅「標準浮世繪」——石造鳥居、一棵大松、鋪石板的路、藍篷人力車移到左前景、細雨、假字題箋與假落款印，後來還走進兩個撐傘的女子；茅草茶屋、白招牌、木造神社門與「梅若神社」柱、石碑、滿畫面的斜雨線全不見。位移 43–45（歷來最高）。原因：①演出句**沒錨住**茶屋、神社門與名柱、石碑、雨線質感——只寫了會動的東西；②寫了 “the stone path”，原畫是泥地（技巧 2，冒出石板路）；③這幅整面是粗的斜線刻痕，模型傾向把它『清理』成乾淨的標準畫面 ⇒ 要把那種質感也當成要留住的東西寫出來。⇒ 第二版：先錨住左茶屋與招牌、人力車的灰藍雨篷與紅輪、木造神社門與名柱、右邊石碑、兩隻鳥，並寫明「整幅保留密集的斜雨線與粗刻痕」；stone path 改成 muddy ground；不寫 torii（避免邀來石鳥居），寫 wooden shrine gate。",
-    "⚠️ no.10 演出句第二版（2026-09-17）：p10.mp4 場景保住（杉樹、樹樁、綠色灌木、紅楓背景、兩側奧付），但約 2 秒起**茶席的人整批被換**：背對觀眾坐在長而矮的木台上的一群人，變成面向觀眾坐在長椅上的黑羽織男子與藍衣女子；右下只露出頭肩、正往上爬的藍衣小個子，變成全身站在木造階梯與欄杆上、梳髷佩刀的男子；右邊紫葉楓樹換成細緻的紅楓枝；地上出現一塊塊光斑；右緣奧付「小林清親画」的字形被改。位移 21。原因同 no.7：人物只寫泛稱（visitors at the outdoor tea bench、a man climbs up the path）沒錨住原畫的樣子；又寫了 dappled sunlight flickers across the ground（原畫沒有光斑，要光「變成什麼」＝邀請）。⇒ 第二版：寫明長矮木台、背對觀眾、茶盒、右邊穿深藍外套的兩人、樹樁、只露頭肩的藍衣小個子、紫葉楓樹；拿掉光斑。"
+    "⚠️ no.10 演出句第二版（2026-09-17）：p10.mp4 場景保住（杉樹、樹樁、綠色灌木、紅楓背景、兩側奧付），但約 2 秒起**茶席的人整批被換**：背對觀眾坐在長而矮的木台上的一群人，變成面向觀眾坐在長椅上的黑羽織男子與藍衣女子；右下只露出頭肩、正往上爬的藍衣小個子，變成全身站在木造階梯與欄杆上、梳髷佩刀的男子；右邊紫葉楓樹換成細緻的紅楓枝；地上出現一塊塊光斑；右緣奧付「小林清親画」的字形被改。位移 21。原因同 no.7：人物只寫泛稱（visitors at the outdoor tea bench、a man climbs up the path）沒錨住原畫的樣子；又寫了 dappled sunlight flickers across the ground（原畫沒有光斑，要光「變成什麼」＝邀請）。⇒ 第二版：寫明長矮木台、背對觀眾、茶盒、右邊穿深藍外套的兩人、樹樁、只露頭肩的藍衣小個子、紫葉楓樹；拿掉光斑。",
+    "🔴 生動版第四版（2026-09-17）：LIFE 拿掉 “Figures may walk further, turn and interact, and other passers-by may move through the scene”。證據：no.1（多出路人）、no.4（背景行人走動）、no.5（左邊多一個人）、no.6（嬰兒車、狗、遊客）、no.7（前景整批換人、黑馬車）、no.8（田埂上多出幾個人與一位女子）——「別的路人可以走進來」是模板自己發出的邀請（技巧 2），「走遠一點」則是 no.2 背景滑動那一型。⇒ 改成「畫裡已經有的人與動物做清楚自然的動作、留在畫面裡；人數從頭到尾不變」（不點名任何不在畫裡的東西）。no.11–20 的演出句同時全面改用〈錨與邀請〉寫法：主體與前景每個人、每輛車正面寫出來；天氣與光只寫怎麼動、不寫變成什麼；不要求移動長距離；不點名原畫沒有的東西。"
    ],
-   "base": "Bring this Japanese woodblock print to life as a vivid animated scene. It is a print of Meiji-era Tokyo by Kobayashi Kiyochika (1876-1881), placed on a plain beige background.\n\nCAMERA: The camera stays locked on the print for the whole clip, so the print's outer edges never move. Everything inside the picture is free to move.\n\nCONTINUITY: This is one continuous shot of this one place, with no cut, dissolve or transition to another scene. The picture keeps the same layout from the first frame to the last. Within that same place, everything is free to move as described below.\n\nACTION: {SCENE}\n\nLIFE: Motion is clearly visible from the very first second and keeps going for the whole clip. People and animals move with readable, natural actions; clothing, hair, banners, branches, water and weather react to movement and wind. Figures may walk further, turn and interact, and other passers-by may move through the scene.\n\nSTYLE: It still looks like a moving woodblock print: flat printed colour, carved outlines, paper texture and Kiyochika's palette. Everything belongs to 1870s-1880s Tokyo: period clothing, vehicles and buildings. No photorealism and no 3D rendering.",
+   "base": "Bring this Japanese woodblock print to life as a vivid animated scene. It is a print of Meiji-era Tokyo by Kobayashi Kiyochika (1876-1881), placed on a plain beige background.\n\nCAMERA: The camera stays locked on the print for the whole clip, so the print's outer edges never move. Everything inside the picture is free to move.\n\nCONTINUITY: This is one continuous shot of this one place, with no cut, dissolve or transition to another scene. The picture keeps the same layout from the first frame to the last. Within that same place, everything is free to move as described below.\n\nACTION: {SCENE}\n\nLIFE: Motion is clearly visible from the very first second and keeps going for the whole clip. The people and animals already in the picture move with readable, natural actions and stay in view; clothing, hair, branches, water and weather react to movement and wind. The number of people stays the same from start to finish.\n\nSTYLE: It still looks like a moving woodblock print: flat printed colour, carved outlines, paper texture and Kiyochika's palette. Everything belongs to 1870s-1880s Tokyo: period clothing, vehicles and buildings. No photorealism and no 3D rendering.",
    "scenes": {
     "1": "The rickshaw puller sprints toward the viewer, legs pumping, and the red-wheeled rickshaw rolls forward with its wheels spinning. The woman riding in it grips her parasol as her sleeves and the parasol flutter in the rush of air. Cherry blossom petals shake loose from the trees and drift across the brick avenue. In the background, the horse-drawn carriage trots away down the street, and pedestrians stroll under the colonnade of the Western-style buildings.",
     "2": "The chestnut horse gallops at full speed in front of the bridge in a flying gallop for the entire clip, as Kiyochika drew it mid-stride: its front and hind legs reach far out and snap back together in a fast, powerful rhythm, its body stretched long and low, mane and tail streaming straight back. The rider leans forward low over the horse's neck, the red plume on the hat whipping in the wind. The runner on the right sprints flat out, arms pumping, both feet leaving the ground with each stride. Spray flies up from the wet ground under the hooves, the moat water ripples, and the pines on the bank sway in the wind.",
@@ -1180,7 +1325,16 @@
     "7": "Thick snow falls through the dark sky. In the foreground, closest to us, the person under the very large white umbrella walks slowly away up the street, the umbrella tilting in the wind. On the left, the man in the purple coat with the white bundle on his back and the small figure under the grey umbrella trudge on through the snow. On the right, a man leans hard into the red-wheeled cart piled with its round pink load and pushes it forward, and the person under the orange umbrella walks beside it. Distant figures hurry along the wide street, and the telegraph wires sway in the wind.",
     "8": "The crows perched on the bare branches suddenly take off and fly across the twilight sky. The tall bare tree and the grasses sway in a cold evening wind. Mist drifts slowly across the flat rice fields behind the torii. The glowing disc low in the sky grows brighter as the light fades, and the shadows of the huts deepen.",
     "9": "Strong gusts drive the slanting rain across the whole picture, and the whole print keeps its dense slanting rain lines and rough hatched texture. On the left, the thatched teahouse with its white signboards stands in the downpour, and the rickshaw parked in front of it, with its blue-grey rain cover and red wheels, rocks slightly in the wind. In the middle, the small figure in the red kimono hurries toward the wooden shrine gate with the tall name post, the straw rain cape blown up and flapping behind them. The big pine above the gate and the trees on the right thrash in the wind, the tall standing stone stays upright among the bushes, and two dark birds are tossed about in the sky. Rain splashes up from the puddles on the muddy ground.",
-    "10": "Red and purple maple leaves fall and drift through the air under the tall cedar trunks. In the middle, the visitors sit on the long low wooden platform bench with their backs to us, looking out at the red maples; they turn their heads to chat, one lifts a small teacup, and the tea box on the bench stays beside them. The two people further right on the same bench, one in a dark blue coat, lean toward each other and talk. The old cut stump stays in front of the bench and the round green shrubs sway gently. At the bottom right, the small man in blue whose head and shoulders show above the slope climbs slowly up into view. The purple-leaved maple on the right shakes its branches in the wind."
+    "10": "Red and purple maple leaves fall and drift through the air under the tall cedar trunks. In the middle, the visitors sit on the long low wooden platform bench with their backs to us, looking out at the red maples; they turn their heads to chat, one lifts a small teacup, and the tea box on the bench stays beside them. The two people further right on the same bench, one in a dark blue coat, lean toward each other and talk. The old cut stump stays in front of the bench and the round green shrubs sway gently. At the bottom right, the small man in blue whose head and shoulders show above the slope climbs slowly up into view. The purple-leaved maple on the right shakes its branches in the wind.",
+    "11": "A few fine snowflakes drift down through the dark grey sky. In the middle, the two people under the black umbrella and the yellow umbrella walk slowly along the snowy causeway toward the small stone arched bridge, leaning into the cold wind and tilting their umbrellas. The bare willow on the left sways, and a little powdery snow slips from its drooping branches. The tall brown standing stone with its small fence, the wooden signpost, the stone embankments and the red-walled hall under its snowy roof in the distance stay where they are. The water under the arched bridge ripples gently and its dark reflection wavers.",
+    "13": "Fine snow drifts down through the grey-blue sky. In the foreground the two women walk slowly along the snowy path and talk: the one in the purple coat with the red scarf carries her closed dark umbrella, and the one wearing the purple hood carries her closed yellow umbrella, their sleeves and hems stirring in the cold wind. Behind them on the left, the small figures beside the red box move slowly along the snowy road past the thatched house and its fence. The long wooden bridge curves over the canal on the right, and the dark water beneath it ripples slightly. A little powdery snow slips from the branches of the tree at the top left.",
+    "14": "Fine snow falls steadily. Under the great snow-covered stone torii, the woman in the green kimono walks slowly toward us along the snowy approach, holding her open yellow umbrella tilted against the snow, and the small white dog trots beside her feet. The rows of tall stone lanterns capped with snow line both sides and stay in place. A fine powder of snow slips off the heavy dark cedar branches above. Far down the approach, the red shrine gate with the round white lantern stands in the snow, and the tiny figures near it move slowly.",
+    "15": "A soft breeze moves through the tall cedars and pines on both sides, and their branches and the long grass on the banks sway gently. On the dirt path at the left, the woman in the grey kimono holding the yellow parasol and the little girl in the red patterned kimono walk slowly side by side, and the parasol tilts as she looks down at the child. Far down the wide road, the small figure near the white gateway and the red-roofed hall walks slowly. The pale sky and the green trees keep their soft, calm colours.",
+    "16": "Inside the dark foundry, seen through the two openings between the heavy wooden beams. On the left, white and red flames roar out of the top of the tall clay furnace and sparks shoot up and scatter; at its base the glowing red molten iron flows out and bursts into a shower of sparks. The man at the far left grips his long pole and watches the fire. On the right, the workers bend and move carefully, carrying the glowing iron to the round moulds on the floor and pouring it in, while the men at the back lean over their moulds. The shadows of the figures behind the screen on the left flicker in the firelight. The beams, the stone wall and the long shed stay where they are.",
+    "17": "After the rain, the clouds drift slowly and the band of yellow and pink light in the sky shimmers. The ferryboat in the foreground, carrying the rickshaw and its passengers, moves slowly forward on the calm river as the boatman at the stern leans on his long pole; the passengers sway gently and turn to talk. The small white-sailed boat in the distance drifts along the far shore. The bird on top of the tall pole in the water ruffles its wings, and the other bird flies slowly across the sky. The small hall on the green bank at the left and the wooden posts in the water stay in place, and the river ripples, breaking up the reflections of the boat.",
+    "18": "Night by the sea. The steam locomotive rolls slowly along the stone embankment pulling its carriages; its wheels and rods turn, red sparks and smoke pour from the tall flared smokestack and stream back over the train, and the red headlamp beam flickers. The driver in the lit cab window leans out a little, and the carriage windows glow. The hazy moon shines through the thin clouds, which drift slowly across the dark sky, and the sky stays dark. The telegraph poles and their wires stay in place, the calm sea glints softly, and the distant ships rest on the horizon.",
+    "19": "Calm sea off Shinagawa. The large three-masted ship on the left and the paddle steamer on the right ride at anchor and rock very gently on the swell; the flag on the left mast and the loose sails flutter in the breeze, and a thin trail of smoke rises from the steamer's funnel. The small rowboat between them, with its red-clad crew, rows slowly, its oars dipping. The small dark float in the foreground water bobs up and down. The dark clouds on the right roll slowly across the pale sky, the hill on the left stays in place, and the water ripples, breaking up the reflections of the ships.",
+    "20": "A breezy afternoon on the road beside the tall cedars. In the foreground, the woman in the brown coat walks slowly toward us leaning on her stick, and the woman seen from behind with the yellow parasol and the red patterned sash walks slowly away, her parasol tilting in the wind. On the left, the tall figure in the long blue robe with the staff steps slowly forward, and the small figures by the little stand with its white signboard shift and turn. The clouds drift across the blue sky, the cedars on the steep bank sway, and the telegraph wires on the tall poles swing slightly. The stone bridge in the distance and the green bushes on the right stay in place."
    },
    "base_v1": "Bring this Japanese woodblock print to life as a vivid animated scene. It is a print of Meiji-era Tokyo by Kobayashi Kiyochika (1876-1881), placed on a plain beige background.\n\nCAMERA: The camera stays locked on the print for the whole clip, so the print's outer edges never move. Everything inside the picture is free to move.\n\nACTION: {SCENE}\n\nLIFE: Motion is clearly visible from the very first second and keeps going for the whole clip. People and animals move with readable, natural actions; clothing, hair, banners, branches, water and weather react to movement and wind. Figures may walk further, turn and interact, and other passers-by may move through the scene.\n\nSTYLE: It still looks like a moving woodblock print: flat printed colour, carved outlines, paper texture and Kiyochika's palette. Everything belongs to 1870s-1880s Tokyo: period clothing, vehicles and buildings. No photorealism and no 3D rendering.",
    "base_v1_note": "生動版第一版（2026-09-15 10:40）。p1.mp4（no.1）、p2.mp4（no.2）、p3.mp4（no.3）用的是這一版——上架時 clips[].prompt 要逐字記這一版，⛔ 不是現在的 base。",
@@ -1232,7 +1386,9 @@
     ]
    },
    "base_v2": "Bring this Japanese woodblock print to life as a vivid animated scene. It is a print of Meiji-era Tokyo by Kobayashi Kiyochika (1876-1881), placed on a plain beige background.\n\nCAMERA: The camera stays locked on the print for the whole clip, so the print's outer edges never move. Everything inside the picture is free to move.\n\nCONTINUITY: This is one continuous shot of this one place, with no cut, dissolve or transition to another scene. The layout of the picture stays recognisable from start to finish: the same buildings, shoreline, trees and sky, and the printed title, cartouche, signature and seals stay where they are. Within that same place, everything is free to move as described below.\n\nACTION: {SCENE}\n\nLIFE: Motion is clearly visible from the very first second and keeps going for the whole clip. People and animals move with readable, natural actions; clothing, hair, banners, branches, water and weather react to movement and wind. Figures may walk further, turn and interact, and other passers-by may move through the scene.\n\nSTYLE: It still looks like a moving woodblock print: flat printed colour, carved outlines, paper texture and Kiyochika's palette. Everything belongs to 1870s-1880s Tokyo: period clothing, vehicles and buildings. No photorealism and no 3D rendering.",
-   "base_v2_note": "生動版第二版（CONTINUITY 點名 title, cartouche, signature and seals）。線上 no.3（p3.mp4 21:01）用這一版；p2.mp4（23:38）與 Bring_this_Japanese_woodblock.mp4 也是。"
+   "base_v2_note": "生動版第二版（CONTINUITY 點名 title, cartouche, signature and seals）。線上 no.3（p3.mp4 21:01）用這一版；p2.mp4（23:38）與 Bring_this_Japanese_woodblock.mp4 也是。",
+   "base_v3": "Bring this Japanese woodblock print to life as a vivid animated scene. It is a print of Meiji-era Tokyo by Kobayashi Kiyochika (1876-1881), placed on a plain beige background.\n\nCAMERA: The camera stays locked on the print for the whole clip, so the print's outer edges never move. Everything inside the picture is free to move.\n\nCONTINUITY: This is one continuous shot of this one place, with no cut, dissolve or transition to another scene. The picture keeps the same layout from the first frame to the last. Within that same place, everything is free to move as described below.\n\nACTION: {SCENE}\n\nLIFE: Motion is clearly visible from the very first second and keeps going for the whole clip. People and animals move with readable, natural actions; clothing, hair, banners, branches, water and weather react to movement and wind. Figures may walk further, turn and interact, and other passers-by may move through the scene.\n\nSTYLE: It still looks like a moving woodblock print: flat printed colour, carved outlines, paper texture and Kiyochika's palette. Everything belongs to 1870s-1880s Tokyo: period clothing, vehicles and buildings. No photorealism and no 3D rendering.",
+   "base_v3_note": "生動版第三版（CONTINUITY 不點名）。no.1–10 裡 2026-09-16 起生成的（p2-v4、p4、p5、p6、p7、p8、p9、p10）用這一版。"
   }
  }
 }
