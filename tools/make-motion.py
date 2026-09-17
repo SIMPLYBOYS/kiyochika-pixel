@@ -32,6 +32,7 @@ OUT = ROOT / "assets" / "motion"
 FPS, WIDTH = 24, 960          # 面板最寬 960，⛔ 不必留更大的：那只是讓玩家多載幾 MB
 SAMPLE = 0.3                  # 每幾秒抽一格來驗
 WARN, STOP = 12, 16
+FIRST = 10                    # 第一幀 vs 墊邊圖的上限。實測合格的 1.9–3.0，不合格的 39.5
 
 
 def probe(path):
@@ -112,6 +113,23 @@ def main():
     # 🔴 長寬比對不上＝構圖被裁過，而**構圖不是它能動的東西**（切回來之後仍要對得上）
     assert abs(vw / vh - pw / ph) / (pw / ph) < 0.02, \
         f"⛔ 長寬比對不上（{vw}×{vh} vs {pw}×{ph}）——構圖被裁過，不收"
+
+    # 🔴 **第一幀必須就是原畫（墊邊圖）**。這一層的前提是「照這幅畫重畫」，第一幀不是它，
+    # 影片就不是這幅畫的重繪，是模型另畫的一幅。實測：用墊邊圖當第一幀的 7 支，差異 1.9–3.0；
+    # 2026-09-17 的 no.9 重生版 39.5——Flow 裡那張圖沒被當成起始幀，模型先重畫了一張才開始動。
+    # ⚠️ 這一關 kind 不管是哪一種都擋：reinterpretation 放寬的是「之後改了多少」，不是「從哪裡開始」。
+    padinfo = (data.get("_pad") or {}).get(str(a.id))
+    if padinfo:
+        from PIL import Image as _I
+        with tempfile.TemporaryDirectory() as tmp:
+            subprocess.run(["ffmpeg", "-v", "error", "-i", str(src), "-frames:v", "1", f"{tmp}/0.png"], check=True)
+            f0 = _I.open(f"{tmp}/0.png").convert("L").resize((128, 72))
+        pd = _I.open(ROOT / padinfo["file"]).convert("L").resize((128, 72))
+        first = sum(abs(x - y) for x, y in zip(pd.getdata(), f0.getdata())) / (128 * 72)
+        print(f"第一幀 vs 墊邊圖：{first:.1f}（用墊邊圖當起始幀的片子約 2–3）")
+        assert first < FIRST, (
+            f"⛔ 第一幀跟 {padinfo['file']} 差 {first:.1f}（上限 {FIRST}）：影片不是從原畫開始的。"
+            "⇒ 在 Flow 確認墊邊圖是被設成『起始幀』，而不是當參考圖讓模型先重畫一張。")
 
     rows = drift_rows(plate, src, pre)
     worst = max(rows, key=lambda r: r[1])

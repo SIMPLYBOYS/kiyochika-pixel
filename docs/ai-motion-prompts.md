@@ -157,6 +157,8 @@ STYLE: The motion stays inside the woodblock look: flat printed colour, no photo
 1. 選一幅，依第三節挑出 motion 句子，組成完整提示詞。
 2. 跑 `python3 tools/motion-prep.py <編號或範圍>`（例：`1-10`；加 `--street` 另出街景版），產出墊成 16:9 的第一幀與組好的提示詞，放在 `research/motion/`。
 3. 在 Flow 生成 8 秒影片，下載 mp4，放進 `research/motion/`。
+   🔴 墊邊圖要設成**起始幀**（影片的第一格就是它），⛔ 不是當參考素材——當參考素材時模型會先照提示詞重畫一張再動（no.9 第二次就是這樣，第一格已經是另一幅畫）。`make-motion.py` 會量第一幀，對不上直接擋下。
+   ⚠️ 每一次都存成新檔名（例：`p9-v3.mp4`），⛔ 不要覆蓋舊的——舊檔是對照新舊差異的唯一證據。
 4. 在 `data/motion.json` 的 `clips` 記上：模型、日期、**逐字的提示詞**、`kind`。
 5. 跑 `python3 tools/make-motion.py <編號> --video <檔案>`：切回原框、量位移、做循環、輸出。
 6. 看幀，逐條寫 `differs`（模型改了什麼）。這份清單會原樣印在玩家面板上。
