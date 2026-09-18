@@ -740,6 +740,46 @@
    "v": "48feef51"
   },
   {
+   "id": 17,
+   "kind": "reinterpretation",
+   "file": "assets/motion/17.webm",
+   "base": "assets/plate/17.jpg",
+   "source": "research/motion/p17.mp4（2026-09-18 12:28，Aaron 回補；同名覆蓋了誤存的 no.16 那支，那支已另存 p16.mp4）",
+   "model": "Nano Banana（Google Flow；沿用 no.72 的標示，這一批 Aaron 未另外確認模型）",
+   "model_note": "⚠️ 同 no.72：Nano Banana 是 Google 的圖像模型，本身不出影片；檔案格式（1280×720・24fps・10.005s）與 C2PA 憑證（Created by Google Generative AI／SynthID）跟 Veo 片子相同，憑證沒寫模型名。待 Flow 介面確認。",
+   "date": "2026-09-18",
+   "prompt": "Bring this Japanese woodblock print to life as a vivid animated scene. It is a print of Meiji-era Tokyo by Kobayashi Kiyochika (1876-1881), placed on a plain beige background.\n\nCAMERA: The camera stays locked on the print for the whole clip, so the print's outer edges never move. Everything inside the picture is free to move.\n\nCONTINUITY: This is one continuous shot of this one place, with no cut, dissolve or transition to another scene. The picture keeps the same layout from the first frame to the last. Within that same place, everything is free to move as described below.\n\nACTION: After the rain, the clouds drift slowly and the band of yellow and pink light in the sky shimmers. The ferryboat in the foreground, carrying the rickshaw and its passengers, moves slowly forward on the calm river as the boatman at the stern leans on his long pole; the passengers sway gently and turn to talk. The small white-sailed boat in the distance drifts along the far shore. The bird on top of the tall pole in the water ruffles its wings, and the other bird flies slowly across the sky. The small hall on the green bank at the left and the wooden posts in the water stay in place, and the river ripples, breaking up the reflections of the boat.\n\nLIFE: Motion is clearly visible from the very first second and keeps going for the whole clip. The people and animals already in the picture move with readable, natural actions and stay in view; clothing, hair, branches, water and weather react to movement and wind. The number of people stays the same from start to finish.\n\nSTYLE: It still looks like a moving woodblock print: flat printed colour, carved outlines, paper texture and Kiyochika's palette. Everything belongs to 1870s-1880s Tokyo: period clothing, vehicles and buildings. No photorealism and no 3D rendering.",
+   "template": "_prompt_template.vivid.base（第四版）＋ scenes.17（〈錨與邀請〉寫法）",
+   "first_frame": "research/motion/17-pad16x9.png（事後照 _pad.17 切回來）",
+   "moved": "渡船、船夫、飛鳥",
+   "differs": [
+    "載著人力車與乘客的渡船，慢慢往左岸靠過去；船夫站直身子，在船尾用長櫓划水。",
+    "天上原本只有一隻鳥，後半段多出第二隻，兩隻一起往左上飛。",
+    "右邊那顆四角星是生成模型的浮水印。不修掉，它正好提醒這不是清親的作品。"
+   ],
+   "differs_checked": "Claude 對照 research/motion/p123-review/p17-no17-川口善光寺雨晴.jpg 起草（第 0／3／6／9.9 秒與原畫逐格比對；題字起訖兩格未見改字），待 Aaron 確認",
+   "fade": 0.6,
+   "known_flaw": "片尾渡船已靠近左岸 ⇒ 每次接回開頭，它會瞬間跳回河中央。",
+   "evidence": "research/motion/p123-review/p17-no17-川口善光寺雨晴.jpg",
+   "drift": {
+    "max": 19.2,
+    "at": 3.6,
+    "mean": 13.7,
+    "over_16": [
+     3.6,
+     3.9,
+     4.2,
+     4.5,
+     4.8,
+     5.1,
+     5.4,
+     5.7
+    ],
+    "_": "每 0.3s 一格，跟原畫比邊的位置。只動光約 6，構圖動了 19 以上。"
+   },
+   "v": "eac21d27"
+  },
+  {
    "id": 19,
    "kind": "reinterpretation",
    "file": "assets/motion/19.webm",
