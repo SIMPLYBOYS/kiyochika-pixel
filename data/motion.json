@@ -780,6 +780,69 @@
    "v": "eac21d27"
   },
   {
+   "id": 18,
+   "kind": "reinterpretation",
+   "file": "assets/motion/18.webm",
+   "base": "assets/plate/18.jpg",
+   "source": "research/motion/p18.mp4（2026-09-18 10:16，第一次生成；第二版 p18-v2.mp4 不收，見 _attempts）",
+   "model": "Nano Banana（Google Flow；沿用 no.72 的標示，這一批 Aaron 未另外確認模型）",
+   "model_note": "⚠️ 同 no.72：Nano Banana 是 Google 的圖像模型，本身不出影片；檔案格式（1280×720・24fps・10.005s）與 C2PA 憑證（Created by Google Generative AI／SynthID）跟 Veo 片子相同，憑證沒寫模型名。待 Flow 介面確認。",
+   "date": "2026-09-18",
+   "prompt": "Bring this Japanese woodblock print to life as a vivid animated scene. It is a print of Meiji-era Tokyo by Kobayashi Kiyochika (1876-1881), placed on a plain beige background.\n\nCAMERA: The camera stays locked on the print for the whole clip, so the print's outer edges never move. Everything inside the picture is free to move.\n\nCONTINUITY: This is one continuous shot of this one place, with no cut, dissolve or transition to another scene. The picture keeps the same layout from the first frame to the last. Within that same place, everything is free to move as described below.\n\nACTION: Night by the sea. The steam locomotive rolls slowly along the stone embankment pulling its carriages; its wheels and rods turn, red sparks and smoke pour from the tall flared smokestack and stream back over the train, and the red headlamp beam flickers. The driver in the lit cab window leans out a little, and the carriage windows glow. The hazy moon shines through the thin clouds, which drift slowly across the dark sky, and the sky stays dark. The telegraph poles and their wires stay in place, the calm sea glints softly, and the distant ships rest on the horizon.\n\nLIFE: Motion is clearly visible from the very first second and keeps going for the whole clip. The people and animals already in the picture move with readable, natural actions and stay in view; clothing, hair, branches, water and weather react to movement and wind. The number of people stays the same from start to finish.\n\nSTYLE: It still looks like a moving woodblock print: flat printed colour, carved outlines, paper texture and Kiyochika's palette. Everything belongs to 1870s-1880s Tokyo: period clothing, vehicles and buildings. No photorealism and no 3D rendering.",
+   "template": "_prompt_template.vivid.base（第四版）＋ scenes.18 第一版",
+   "first_frame": "research/motion/18-pad16x9.png（事後照 _pad.18 切回來）",
+   "moved": "煙與火星、背景（跟拍式滑動）",
+   "differs": [
+    "煙囪冒出大團的灰白濃煙與紅色火星，一路往後飄過車廂；原畫的煙只是一縷紅色火星。駕駛室上方也冒出白色蒸汽。",
+    "火車幾乎停在原地，四周的景物從它底下往後滑，像鏡頭跟著火車走：右邊那根高電線桿約 5 秒時滑到畫面中間，最後不見。",
+    "下方憑空多出石階與石牆，右下多出一段枕木鐵軌。",
+    "遠方海上的兩片小帆變成兩艘大帆船。",
+    "右邊那顆四角星是生成模型的浮水印。不修掉，它正好提醒這不是清親的作品。"
+   ],
+   "differs_checked": "Aaron 2026-09-18 看過第二版後選回這一支（「第一版 p18.mp4」）；差異清單由 Claude 對照 research/motion/p123-review/p18-no18-高輪-背景滑動.jpg 起草，待 Aaron 確認",
+   "fade": 0.6,
+   "known_flaw": "片尾電線桿已經滑走、石階已經出現 ⇒ 每次接回開頭，整個景會瞬間跳回原畫的位置。",
+   "evidence": "research/motion/p123-review/p18-no18-高輪-背景滑動.jpg",
+   "drift": {
+    "max": 21.6,
+    "at": 9.3,
+    "mean": 19.4,
+    "over_16": [
+     1.2,
+     1.5,
+     1.8,
+     2.1,
+     2.4,
+     2.7,
+     3.0,
+     3.3,
+     3.6,
+     3.9,
+     4.2,
+     4.5,
+     4.8,
+     5.1,
+     5.4,
+     5.7,
+     6.0,
+     6.3,
+     6.6,
+     6.9,
+     7.2,
+     7.5,
+     7.8,
+     8.1,
+     8.4,
+     8.7,
+     9.0,
+     9.3,
+     9.6
+    ],
+    "_": "每 0.3s 一格，跟原畫比邊的位置。只動光約 6，構圖動了 19 以上。"
+   },
+   "v": "e63b13b6"
+  },
+  {
    "id": 19,
    "kind": "reinterpretation",
    "file": "assets/motion/19.webm",
@@ -1529,13 +1592,30 @@
    "source": "research/motion/p18.mp4（2026-09-18 10:16）",
    "prompt": "base（第四版）＋ scenes.18 第一版",
    "model": "Nano Banana（Google Flow；沿用 no.72 的標示，這一批 Aaron 未另外確認模型）",
-   "verdict": "⛔ 不收（待用第二版演出句重生）",
+   "verdict": "↩︎ 改收（Aaron 2026-09-18 看過第二版後選回這一支，見 clips.18）",
    "why": [
     "✅ 第一幀 vs 墊邊圖 2.0（起始幀設對了）；題字、月亮、海、堤防都在。",
-    "位移 0.5 秒就到 16、之後一直 14：火車幾乎停在原地，背景從它底下滑過——右邊那根高電線桿 5 秒時滑到畫面中間、9.9 秒不見；下方冒出石階與石牆，右下多出一段枕木鐵軌；海上的兩片小帆變成兩艘大帆船。",
-    "病因在演出句的 “rolls slowly along”（見 _prompt_template.vivid.why 的 no.18 第二版）。"
+    "灰階差（分流腳本的量法，不是 make-motion 的邊緣位移） 0.5 秒就到 16、之後一直 14：火車幾乎停在原地，背景從它底下滑過——右邊那根高電線桿 5 秒時滑到畫面中間、9.9 秒不見；下方冒出石階與石牆，右下多出一段枕木鐵軌；海上的兩片小帆變成兩艘大帆船。",
+    "病因在演出句的 “rolls slowly along”（見 _prompt_template.vivid.why 的 no.18 第二版）。",
+    "邊緣位移（make-motion 的量法）平均 19.4、最高 21.6，遠低於 no.2 第二版同一把尺的 35–40，也沒有假字題箋或多出的人；背景滑動的部分逐條寫進 clips.18 的 differs。"
    ],
    "evidence": "research/motion/p123-review/p18-no18-高輪-背景滑動.jpg"
+  },
+  {
+   "date": "2026-09-18",
+   "id": 18,
+   "source": "research/motion/p18-v2.mp4（2026-09-18）",
+   "prompt": "base（第四版）＋ scenes.18 第二版（research/motion/18-prompt-v2.txt）",
+   "model": "Nano Banana（Google Flow；沿用 no.72 的標示，這一批 Aaron 未另外確認模型）",
+   "verdict": "⛔ 不收（Aaron：比第一版不自然）",
+   "why": [
+    "✅ 第一幀 vs 墊邊圖 1.6；構圖保住：火車留在原地、兩根電線桿在原位、遠方小帆維持很小、沒有石階。",
+    "邊緣位移平均 15.2、最高 17.9（第一版 19.4／21.6）。",
+    "0.5 秒整幅畫突然變暗、對比變重（灰階差 2 → 13），像套了一層濾鏡。",
+    "火車停著不動，濃黑的煙卻一路往後飄，看起來像停在原地冒煙；火花像紅色紙屑。",
+    "題名的「朧月」被畫成一輪清楚的滿月；右邊海平線上多出一個岬角。"
+   ],
+   "evidence": "research/motion/p123-review/p18v2-no18-高輪-火車停住冒煙-朧月變滿月.jpg"
   }
  ],
  "_decision": {
@@ -1635,7 +1715,8 @@
     "⚠️ no.9 演出句第二版（2026-09-17）：p9.mp4 在 1.5 秒內整幅換成另一幅「標準浮世繪」——石造鳥居、一棵大松、鋪石板的路、藍篷人力車移到左前景、細雨、假字題箋與假落款印，後來還走進兩個撐傘的女子；茅草茶屋、白招牌、木造神社門與「梅若神社」柱、石碑、滿畫面的斜雨線全不見。位移 43–45（歷來最高）。原因：①演出句**沒錨住**茶屋、神社門與名柱、石碑、雨線質感——只寫了會動的東西；②寫了 “the stone path”，原畫是泥地（技巧 2，冒出石板路）；③這幅整面是粗的斜線刻痕，模型傾向把它『清理』成乾淨的標準畫面 ⇒ 要把那種質感也當成要留住的東西寫出來。⇒ 第二版：先錨住左茶屋與招牌、人力車的灰藍雨篷與紅輪、木造神社門與名柱、右邊石碑、兩隻鳥，並寫明「整幅保留密集的斜雨線與粗刻痕」；stone path 改成 muddy ground；不寫 torii（避免邀來石鳥居），寫 wooden shrine gate。",
     "⚠️ no.10 演出句第二版（2026-09-17）：p10.mp4 場景保住（杉樹、樹樁、綠色灌木、紅楓背景、兩側奧付），但約 2 秒起**茶席的人整批被換**：背對觀眾坐在長而矮的木台上的一群人，變成面向觀眾坐在長椅上的黑羽織男子與藍衣女子；右下只露出頭肩、正往上爬的藍衣小個子，變成全身站在木造階梯與欄杆上、梳髷佩刀的男子；右邊紫葉楓樹換成細緻的紅楓枝；地上出現一塊塊光斑；右緣奧付「小林清親画」的字形被改。位移 21。原因同 no.7：人物只寫泛稱（visitors at the outdoor tea bench、a man climbs up the path）沒錨住原畫的樣子；又寫了 dappled sunlight flickers across the ground（原畫沒有光斑，要光「變成什麼」＝邀請）。⇒ 第二版：寫明長矮木台、背對觀眾、茶盒、右邊穿深藍外套的兩人、樹樁、只露頭肩的藍衣小個子、紫葉楓樹；拿掉光斑。",
     "🔴 生動版第四版（2026-09-17）：LIFE 拿掉 “Figures may walk further, turn and interact, and other passers-by may move through the scene”。證據：no.1（多出路人）、no.4（背景行人走動）、no.5（左邊多一個人）、no.6（嬰兒車、狗、遊客）、no.7（前景整批換人、黑馬車）、no.8（田埂上多出幾個人與一位女子）——「別的路人可以走進來」是模板自己發出的邀請（技巧 2），「走遠一點」則是 no.2 背景滑動那一型。⇒ 改成「畫裡已經有的人與動物做清楚自然的動作、留在畫面裡；人數從頭到尾不變」（不點名任何不在畫裡的東西）。no.11–20 的演出句同時全面改用〈錨與邀請〉寫法：主體與前景每個人、每輛車正面寫出來；天氣與光只寫怎麼動、不寫變成什麼；不要求移動長距離；不點名原畫沒有的東西。",
-    "⚠️ no.18 演出句第二版（2026-09-18）：第一版寫 “The steam locomotive rolls slowly along the stone embankment”——要主角沿路移動、鏡頭又鎖死，模型就讓背景從火車底下滑過（右邊高電線桿滑走、冒出石階與鐵軌，見 _attempts）。這是 no.2 第三版記過的同一個教訓，這次是 Claude 寫 18 時自己又犯。第一版明寫 “telegraph poles stay in place” 也沒用：移動和固定互相矛盾時，模型選了移動。⇒ 火車「停在這一段堤防上、引擎全力運轉」，動感交給煙、火花、車燈、司機；電線桿逐根寫出位置；遠方的船寫成「兩片很小的帆、維持很小」（第一版寫 ships 變成了大帆船）。"
+    "⚠️ no.18 演出句第二版（2026-09-18）：第一版寫 “The steam locomotive rolls slowly along the stone embankment”——要主角沿路移動、鏡頭又鎖死，模型就讓背景從火車底下滑過（右邊高電線桿滑走、冒出石階與鐵軌，見 _attempts）。這是 no.2 第三版記過的同一個教訓，這次是 Claude 寫 18 時自己又犯。第一版明寫 “telegraph poles stay in place” 也沒用：移動和固定互相矛盾時，模型選了移動。⇒ 火車「停在這一段堤防上、引擎全力運轉」，動感交給煙、火花、車燈、司機；電線桿逐根寫出位置；遠方的船寫成「兩片很小的帆、維持很小」（第一版寫 ships 變成了大帆船）。",
+    "⚠️ no.18 回到第一版演出句（2026-09-18）：第二版（火車停在堤防上、引擎全力運轉）生成後 Aaron 覺得比第一版不自然，選回第一版。原因在第二版的句子本身：①煙往後飄只有車在跑才合理，車停著煙還往後吹，看起來像停在原地冒煙——這個矛盾是為了擋背景滑動寫進去的；②“working hard／thick” 讓煙變成厚重黑團、火花像紅紙屑。🔑 教訓：**鏡頭鎖死＋主角的本性是移動（火車、飛奔的馬）＝兩難**：要它動，模型滑背景；叫它停，動作自相矛盾。這一類不要再用提示詞硬拗，直接在兩個版本之間選，差異照實寫出來。"
    ],
    "base": "Bring this Japanese woodblock print to life as a vivid animated scene. It is a print of Meiji-era Tokyo by Kobayashi Kiyochika (1876-1881), placed on a plain beige background.\n\nCAMERA: The camera stays locked on the print for the whole clip, so the print's outer edges never move. Everything inside the picture is free to move.\n\nCONTINUITY: This is one continuous shot of this one place, with no cut, dissolve or transition to another scene. The picture keeps the same layout from the first frame to the last. Within that same place, everything is free to move as described below.\n\nACTION: {SCENE}\n\nLIFE: Motion is clearly visible from the very first second and keeps going for the whole clip. The people and animals already in the picture move with readable, natural actions and stay in view; clothing, hair, branches, water and weather react to movement and wind. The number of people stays the same from start to finish.\n\nSTYLE: It still looks like a moving woodblock print: flat printed colour, carved outlines, paper texture and Kiyochika's palette. Everything belongs to 1870s-1880s Tokyo: period clothing, vehicles and buildings. No photorealism and no 3D rendering.",
    "scenes": {
@@ -1655,7 +1736,7 @@
     "15": "A soft breeze moves through the tall cedars and pines on both sides, and their branches and the long grass on the banks sway gently. On the dirt path at the left, the woman in the grey kimono holding the yellow parasol and the little girl in the red patterned kimono walk slowly side by side, and the parasol tilts as she looks down at the child. Far down the wide road, the small figure near the white gateway and the red-roofed hall walks slowly. The pale sky and the green trees keep their soft, calm colours.",
     "16": "Inside the dark foundry, seen through the two openings between the heavy wooden beams. On the left, white and red flames roar out of the top of the tall clay furnace and sparks shoot up and scatter; at its base the glowing red molten iron flows out and bursts into a shower of sparks. The man at the far left grips his long pole and watches the fire. On the right, the workers bend and move carefully, carrying the glowing iron to the round moulds on the floor and pouring it in, while the men at the back lean over their moulds. The shadows of the figures behind the screen on the left flicker in the firelight. The beams, the stone wall and the long shed stay where they are.",
     "17": "After the rain, the clouds drift slowly and the band of yellow and pink light in the sky shimmers. The ferryboat in the foreground, carrying the rickshaw and its passengers, moves slowly forward on the calm river as the boatman at the stern leans on his long pole; the passengers sway gently and turn to talk. The small white-sailed boat in the distance drifts along the far shore. The bird on top of the tall pole in the water ruffles its wings, and the other bird flies slowly across the sky. The small hall on the green bank at the left and the wooden posts in the water stay in place, and the river ripples, breaking up the reflections of the boat.",
-    "18": "Night by the sea. The steam locomotive and its carriages stand at this spot on the stone embankment with the engine working hard: thick red sparks and smoke pour from the tall flared smokestack and stream back over the carriages, and the red headlamp beam flickers. The driver in the lit cab window leans out a little, and the carriage windows glow. The hazy moon shines through the thin clouds, which drift slowly across the dark sky. The tall telegraph pole near the right edge and the shorter one on the left keep their places with their wires, the calm sea glints softly, and the two tiny sails far out on the horizon stay tiny.",
+    "18": "Night by the sea. The steam locomotive rolls slowly along the stone embankment pulling its carriages; its wheels and rods turn, red sparks and smoke pour from the tall flared smokestack and stream back over the train, and the red headlamp beam flickers. The driver in the lit cab window leans out a little, and the carriage windows glow. The hazy moon shines through the thin clouds, which drift slowly across the dark sky, and the sky stays dark. The telegraph poles and their wires stay in place, the calm sea glints softly, and the distant ships rest on the horizon.",
     "19": "Calm sea off Shinagawa. The large three-masted ship on the left and the paddle steamer on the right ride at anchor and rock very gently on the swell; the flag on the left mast and the loose sails flutter in the breeze, and a thin trail of smoke rises from the steamer's funnel. The small rowboat between them, with its red-clad crew, rows slowly, its oars dipping. The small dark float in the foreground water bobs up and down. The dark clouds on the right roll slowly across the pale sky, the hill on the left stays in place, and the water ripples, breaking up the reflections of the ships.",
     "20": "A breezy afternoon on the road beside the tall cedars. In the foreground, the woman in the brown coat walks slowly toward us leaning on her stick, and the woman seen from behind with the yellow parasol and the red patterned sash walks slowly away, her parasol tilting in the wind. On the left, the tall figure in the long blue robe with the staff steps slowly forward, and the small figures by the little stand with its white signboard shift and turn. The clouds drift across the blue sky, the cedars on the steep bank sway, and the telegraph wires on the tall poles swing slightly. The stone bridge in the distance and the green bushes on the right stay in place."
    },
@@ -1708,7 +1789,8 @@
      }
     ],
     "18": [
-     "Night by the sea. The steam locomotive rolls slowly along the stone embankment pulling its carriages; its wheels and rods turn, red sparks and smoke pour from the tall flared smokestack and stream back over the train, and the red headlamp beam flickers. The driver in the lit cab window leans out a little, and the carriage windows glow. The hazy moon shines through the thin clouds, which drift slowly across the dark sky, and the sky stays dark. The telegraph poles and their wires stay in place, the calm sea glints softly, and the distant ships rest on the horizon."
+     "Night by the sea. The steam locomotive rolls slowly along the stone embankment pulling its carriages; its wheels and rods turn, red sparks and smoke pour from the tall flared smokestack and stream back over the train, and the red headlamp beam flickers. The driver in the lit cab window leans out a little, and the carriage windows glow. The hazy moon shines through the thin clouds, which drift slowly across the dark sky, and the sky stays dark. The telegraph poles and their wires stay in place, the calm sea glints softly, and the distant ships rest on the horizon.",
+     "Night by the sea. The steam locomotive and its carriages stand at this spot on the stone embankment with the engine working hard: thick red sparks and smoke pour from the tall flared smokestack and stream back over the carriages, and the red headlamp beam flickers. The driver in the lit cab window leans out a little, and the carriage windows glow. The hazy moon shines through the thin clouds, which drift slowly across the dark sky. The tall telegraph pole near the right edge and the shorter one on the left keep their places with their wires, the calm sea glints softly, and the two tiny sails far out on the horizon stay tiny."
     ]
    },
    "base_v2": "Bring this Japanese woodblock print to life as a vivid animated scene. It is a print of Meiji-era Tokyo by Kobayashi Kiyochika (1876-1881), placed on a plain beige background.\n\nCAMERA: The camera stays locked on the print for the whole clip, so the print's outer edges never move. Everything inside the picture is free to move.\n\nCONTINUITY: This is one continuous shot of this one place, with no cut, dissolve or transition to another scene. The layout of the picture stays recognisable from start to finish: the same buildings, shoreline, trees and sky, and the printed title, cartouche, signature and seals stay where they are. Within that same place, everything is free to move as described below.\n\nACTION: {SCENE}\n\nLIFE: Motion is clearly visible from the very first second and keeps going for the whole clip. People and animals move with readable, natural actions; clothing, hair, banners, branches, water and weather react to movement and wind. Figures may walk further, turn and interact, and other passers-by may move through the scene.\n\nSTYLE: It still looks like a moving woodblock print: flat printed colour, carved outlines, paper texture and Kiyochika's palette. Everything belongs to 1870s-1880s Tokyo: period clothing, vehicles and buildings. No photorealism and no 3D rendering.",
