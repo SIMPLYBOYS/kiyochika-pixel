@@ -907,6 +907,38 @@
    "v": "e252240b"
   },
   {
+   "id": 26,
+   "kind": "reinterpretation",
+   "file": "assets/motion/26.webm",
+   "base": "assets/plate/26.jpg",
+   "source": "research/motion/p26-v2-0to5s.mp4（p26-v2.mp4 的前 5.0 秒；原片 2026-09-19 12:28 第二次生成，同名覆蓋第一次）。⚠️ 只取前 5 秒：5.25–5.5 秒起左側整塊換掉——最左邊的細斜樹幹消失、紫花小樹拉到前景、左側紙邊的出版資訊不見、左下冒出假署名與紅印（左側灰階差 6 → 23）。前 5 秒左側穩定、紙邊與右下清親落款都在。",
+   "model": "Nano Banana（Google Flow；沿用 no.72 的標示，這一批 Aaron 未另外確認模型）",
+   "model_note": "⚠️ 同 no.72：Nano Banana 是 Google 的圖像模型，本身不出影片；檔案格式（1280×720・24fps・10.005s）與 C2PA 憑證（Created by Google Generative AI／SynthID）跟 Veo 片子相同，憑證沒寫模型名。待 Flow 介面確認。",
+   "date": "2026-09-19",
+   "prompt": "Bring this Japanese woodblock print to life as a vivid animated scene. It is a print of Meiji-era Tokyo by Kobayashi Kiyochika (1876-1881), placed on a plain beige background.\n\nCAMERA: The camera stays locked on the print for the whole clip, so the print's outer edges never move. Everything inside the picture is free to move.\n\nCONTINUITY: This is one continuous shot of this one place, with no cut, dissolve or transition to another scene. The picture keeps the same layout from the first frame to the last. Within that same place, everything is free to move as described below.\n\nACTION: Sunset at Dōkanyama, seen through a grove of great cedars. Four cedar trunks stand across the picture and fill most of it: the thin leaning trunk at the far left, the two huge trunks left of the middle and in the middle, and the tall dark trunk right of the middle. They stay exactly where they are, just as big, for the whole clip. The small pale sun stays low in the pink sky, half hidden beside the big trunk, and the wide water beyond shimmers between the trunks. The dark green cedar branches across the top of the picture swing in the evening wind. In front of the huge middle trunk, the woman in the purple kimono with the red underskirt, carrying a green bundle on her back and holding her stick, turns her head to look along the path and shifts the bundle on her back. Just right of the tall dark trunk, the traveller in the purple cape leans on his walking staff and turns his head toward the sunset over the water. The purple flowers on the thin tree at the left sway, and the grass stirs. The small blue shrine, the bare wooden frame of the shelter on the left, the tea stall with its red cloth on the right and the cut stump in the foreground stay where they are.\n\nLIFE: Motion is clearly visible from the very first second and keeps going for the whole clip. The people and animals already in the picture move with readable, natural actions and stay in view; clothing, hair, branches, water and weather react to movement and wind. The number of people stays the same from start to finish.\n\nSTYLE: It still looks like a moving woodblock print: flat printed colour, carved outlines, paper texture and Kiyochika's palette. Everything belongs to 1870s-1880s Tokyo: period clothing, vehicles and buildings. No photorealism and no 3D rendering.",
+   "template": "_prompt_template.vivid.base（第四版）＋ scenes.26 第二版",
+   "first_frame": "research/motion/26-pad16x9.png（事後照 _pad.26 切回來）",
+   "moved": "兩位旅人、太陽",
+   "differs": [
+    "太陽比原畫清楚：一輪淡色的圓日浮在大樹幹旁；原畫它很小、半躲在樹幹邊。",
+    "背綠色包袱的女子轉身朝左走，包袱變大。",
+    "右邊披紫色斗篷的男子從樹幹後面走出來，走到空地上；原畫他半躲在樹後、朝著女子。",
+    "右邊那顆四角星是生成模型的浮水印。不修掉，它正好提醒這不是清親的作品。"
+   ],
+   "differs_checked": "Aaron 2026-09-19「大致上是 ok 的」；只取前 5 秒是 Claude 的決定（後半段有假署名與紅印）。差異清單由 Claude 對照 research/motion/p123-review/p26v2-no26-道灌山-5.25秒起左側換掉-假署名印.jpg 與第 0／2.5／5 秒起草，待 Aaron 確認",
+   "fade": 0.6,
+   "known_flaw": "片長只有 5 秒；片尾男子已走出樹後、女子已轉身 ⇒ 每次接回開頭會瞬間跳回。",
+   "evidence": "research/motion/p123-review/p26v2-no26-道灌山-5.25秒起左側換掉-假署名印.jpg",
+   "drift": {
+    "max": 13.9,
+    "at": 1.5,
+    "mean": 12.0,
+    "over_16": [],
+    "_": "每 0.3s 一格，跟原畫比邊的位置。只動光約 6，構圖動了 19 以上。"
+   },
+   "v": "4f3103fb"
+  },
+  {
    "id": 50,
    "kind": "reinterpretation",
    "file": "assets/motion/50.webm",
