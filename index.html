@@ -215,9 +215,12 @@
      ⇒ 留在看得見的濃度，並且在沈浸模式把可點範圍加高一倍，碰到就全亮。 */
   body.immersive #bar input { opacity:.55; height:26px; transition:opacity .35s }
   body.immersive #bar:hover input { opacity:1 }
-  body.immersive #bar { background:none }
+  body.immersive:not(.chrome) #bar:not(:hover) { background:none }
   body.immersive #attr { opacity:.3; font-size:9px }      /* ⛔ 出處不隱藏，只縮小 */
-  body.immersive #hud { background:#0e223399 }
+  /* 🔴 **叫出來就跟一開始長得一模一樣**：第一版在沈浸時把 HUD 底色換成 60% 的 #0e223399、
+     滑桿那列拿掉漸層，滑鼠移上去亮起來時看起來比平常透明（Aaron 在桌機回報）。
+     ⇒ 收起來靠 opacity，底色一律不動。點地圖空白處（.chrome）桌機也認——滑鼠移上去照樣會亮。 */
+  body.immersive.chrome :is(#hud, #zoom, #ticker, #bar label, #eranow, #bar input) { opacity:1 }
   /* 🔴 **觸控裝置只准兩種狀態：全亮，或整個收起來。** 上面那套靠 :hover 叫亮，
      而手機沒有 hover ⇒ 點一下地圖，HUD 與跑馬燈就卡在 0.18——在米色地圖上是一條
      看不清的淡白帶，鈕卻還按得到（Aaron 在手機上回報「透明反白」）。
@@ -226,8 +229,6 @@
   @media (hover:none), (pointer:coarse) {
     body.immersive:not(.chrome) :is(#hud, #zoom, #ticker, #bar label, #eranow) {
       opacity:0; visibility:hidden; transition:opacity .35s, visibility .35s }
-    body.immersive.chrome :is(#hud, #zoom, #ticker, #bar label, #eranow, #bar input) { opacity:1 }
-    body.immersive.chrome #hud { background:#0e2233e6 }
     /* 第一次進來要知道怎麼叫回來。⚠️ 掛在 body.immersive 上而不是 :not(.chrome)：
        切換 .chrome 不會讓動畫重播，否則每收一次就閃一次提示 */
     body.immersive::after { content:'點地圖空白處叫出選單'; position:fixed; top:14px; left:50%;

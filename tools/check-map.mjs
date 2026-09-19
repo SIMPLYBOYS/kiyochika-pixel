@@ -117,6 +117,7 @@ for (const [name, size] of [['桌機 1440×900', { width: 1440, height: 900 }],
   // 🔴 但**出處不能收**——ODbL 要求標示出處，沈浸模式也一樣 ⇒ 只縮小不隱藏。
   // ⚠️ 驗的是 class 與透明度，⛔ 不驗 fullscreenElement：iOS Safari 不給非 video 全螢幕，
   // 那種環境下周邊照樣要收得起來（不然那顆鈕按了完全沒反應）。
+  const bg0 = await page.evaluate(() => ['#hud', '#bar'].map(s => getComputedStyle(document.querySelector(s)).background).join(' | '));
   await page.locator('#full').click();
   await page.mouse.move(vwHalf, vhHalf);        // 游標要離開 HUD，否則量到的是 hover 後的值
   await sleep(600);
@@ -129,6 +130,24 @@ for (const [name, size] of [['桌機 1440×900', { width: 1440, height: 900 }],
   });
   ok(imm.on && imm.hud <= 0.25 && imm.zoom <= 0.25 && imm.attrShown && imm.label === '離開',
      `沈浸模式收起周邊（HUD ${imm.hud}）但出處還在`);
+  // 🔴 桌機也能點地圖空白處叫出選單，**叫出來的底色要跟一開始一模一樣**。第一版沈浸把 HUD 底色
+  // 換成 60% 的 #0e223399、滑桿那列拿掉漸層，亮起來時比平常透明（Aaron 在桌機回報）；
+  // 舊測試只量收起來的 opacity，沒量叫出來長什麼樣，所以沒抓到。
+  const blank = await page.evaluate(() => {
+    for (const [fx, fy] of [[.5, .5], [.3, .6], [.7, .4], [.2, .35], [.8, .65], [.45, .75]]) {
+      const x = innerWidth * fx, y = innerHeight * fy, el = document.elementFromPoint(x, y);
+      if (el?.closest('#map') && !el.closest('.mark')) return [x, y];
+    }
+  });
+  const chromeLook = () => page.evaluate(() => ({
+    op: ['#hud', '#zoom', '#bar label', '#eranow'].map(s => +getComputedStyle(document.querySelector(s)).opacity),
+    bg: ['#hud', '#bar'].map(s => getComputedStyle(document.querySelector(s)).background).join(' | ') }));
+  await page.mouse.click(...blank); await sleep(600);
+  const immShown = await chromeLook();
+  await page.mouse.click(...blank); await sleep(600);
+  const immBack = await chromeLook();
+  ok(blank && immShown.op.every(o => o === 1) && immShown.bg === bg0 && immBack.op[0] <= 0.25,
+     `桌機：點地圖空白處叫出選單（${immShown.op.join('/')}）、底色跟一開始一樣${immShown.bg === bg0 ? '' : `（✗ ${immShown.bg} ≠ ${bg0}）`}、再點收回去（${immBack.op[0]}）`);
   // 🔴 年代滑桿不是周邊，是這一作的主題（1880 ⇄ 2026）。第一版把它一起壓到 0.18，
   // 技術上還拉得動，但在花花的地圖上看不見、又只有 16px 高 ⇒ 實際上不能用。
   const era = await page.locator('#era');
