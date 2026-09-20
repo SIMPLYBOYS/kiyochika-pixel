@@ -2311,6 +2311,118 @@
     946
    ],
    "fill": "#B7AA83"
+  },
+  "41": {
+   "file": "research/motion/41-pad16x9.png",
+   "canvas": [
+    1656,
+    932
+   ],
+   "plate_at": [
+    18,
+    0
+   ],
+   "plate_size": [
+    1620,
+    932
+   ],
+   "fill": "#B4AC86"
+  },
+  "42": {
+   "file": "research/motion/42-pad16x9.png",
+   "canvas": [
+    1860,
+    1046
+   ],
+   "plate_at": [
+    125,
+    0
+   ],
+   "plate_size": [
+    1610,
+    1046
+   ],
+   "fill": "#CDBF97"
+  },
+  "43": {
+   "file": "research/motion/43-pad16x9.png",
+   "canvas": [
+    1838,
+    1034
+   ],
+   "plate_at": [
+    92,
+    0
+   ],
+   "plate_size": [
+    1654,
+    1034
+   ],
+   "fill": "#CCBB92"
+  },
+  "44": {
+   "file": "research/motion/44-pad16x9.png",
+   "canvas": [
+    1830,
+    1029
+   ],
+   "plate_at": [
+    88,
+    0
+   ],
+   "plate_size": [
+    1653,
+    1029
+   ],
+   "fill": "#C4B082"
+  },
+  "46": {
+   "file": "research/motion/46-pad16x9.png",
+   "canvas": [
+    1698,
+    955
+   ],
+   "plate_at": [
+    40,
+    0
+   ],
+   "plate_size": [
+    1618,
+    955
+   ],
+   "fill": "#C6B58D"
+  },
+  "47": {
+   "file": "research/motion/47-pad16x9.png",
+   "canvas": [
+    1768,
+    995
+   ],
+   "plate_at": [
+    54,
+    0
+   ],
+   "plate_size": [
+    1659,
+    995
+   ],
+   "fill": "#C9B790"
+  },
+  "49": {
+   "file": "research/motion/49-pad16x9.png",
+   "canvas": [
+    1816,
+    1021
+   ],
+   "plate_at": [
+    83,
+    0
+   ],
+   "plate_size": [
+    1649,
+    1021
+   ],
+   "fill": "#C6B78D"
   }
  },
  "_attempts": [
@@ -2832,9 +2944,11 @@
     "🔴 no.32–40 的演出句（2026-09-19）把 21–30 學到的全部用上：①畫面最大的東西先錨住（36、38 的大樹幹、40 的雙松、34 的燈塔）；②暗色調的畫開頭錨住原畫色調（32 雨、34 夜、35 晨霧、38 黎明、33 剪影）；③人物照原尺寸放大圖寫朝向與衣著（research/motion/p123-review/no32-40-人物放大.jpg）；④朝障礙物移動的改成停下來的動作（33 人力車、40 行軍隊伍「再走兩步、停下」、35 撐篙改成「撐住船不動」、騎馬的人勒馬）；⑤每樣要動的東西都有動作動詞、不用 still；⑥小人物大空間（37、38）錨住「人維持小、位置不變」。🧪 **實驗**：這一批開頭一律加忠實版的鏡頭禁令（Locked-off static shot: no zoom, push-in or pan…）——22 推近三次、27 推近一次。若這批沒有推近、動態也沒變少，就把它併進生動版共用模板（第五版）；若動態明顯變少，拿掉並記錄。",
     "🔴 no.39 演出句第二版＋34、36、40 未生成前先補（2026-09-20）：**鏡頭禁令的實驗有結果了**——p39.mp4 沒有推近（首尾最像放大 102%，跟不縮放一樣），構圖、雪、題字都好；但右下角那三個縮著取暖的人**從第 1 秒起被放大到兩倍半以上**，從遠景小人影變成近景人物（灰階差 2 → 25）。🔑 **這是 no.22 那股壓力換了出口**：模型想讓小人物的動作看得清楚，鏡頭鎖死之後它改成放大人物本身。⇒ 鎖鏡頭的同時要**錨住人物的大小**（stay as small as they are now, in the same places），動作寫小一點，動感交給大面積的東西（雪、水流、樹叢、船）。34、36、40 同樣是小人物配明顯動作，趁未生成先補上。",
     "🔴 no.39 演出句第三版、no.38 第二版，34、40 同步補（2026-09-20）：**鏡頭禁令的實驗結果出來了**——加了那句的 32、33、35、36、37、38、39 **七支全部沒有推近**（首尾 100%），構圖也都保住 ⇒ 禁令有效。但代價是動得少：38 首尾灰階差只有 1.4（幾乎靜止），35、36、37 在 1.7–2.7（實際看畫面有細微動作：漣漪、落葉、人力車緩行）。⚠️ p39.mp4 第二版另一種失敗：2.5 秒起**整幅被重畫**成明亮乾淨的新雪景（河水變鮮藍加水流線、岸邊長石塊、右側假署名與紅印、雪變成畫上去的白點）。這是 22（霧）、23（黃昏）、26（夕陽）那一類**淡彩低對比的畫被『修』成新版畫**的極端案例。⇒ 把忠實版 base 的 KEEP IDENTICAL 那句加回來：「雕線、平塗的色塊、淡色盤與紙張質感維持印刷時的樣子」——用忠實版的 no.50、72 從來沒被重畫過，生動版為了讓畫面動起來把整段拿掉，連這道防線也拿掉了。39 的水改寫成「原畫既有的水紋細線慢慢移動」（把動作綁在畫上既有的筆畫，而不是要它畫一條河）；38 的動感加在整片樹冠與地面倒影（大面積），人物維持小。",
-    "🔴 2026-09-20：no.23 上架，**這一層第一次收下帶假署名與假印的片子**（Aaron 指定）。在此之前假字一律退件——no.3、6、9、21 第一版、22 第二版都因此不收，no.26 還為了避開左下的假署名只取前 5 秒。⇒ 規矩維持不變（差異照實逐條寫、假署名列在第一條），但『假字＝自動退件』從此是**建議**而不是鐵律，由作者決定。"
+    "🔴 2026-09-20：no.23 上架，**這一層第一次收下帶假署名與假印的片子**（Aaron 指定）。在此之前假字一律退件——no.3、6、9、21 第一版、22 第二版都因此不收，no.26 還為了避開左下的假署名只取前 5 秒。⇒ 規矩維持不變（差異照實逐條寫、假署名列在第一條），但『假字＝自動退件』從此是**建議**而不是鐵律，由作者決定。",
+    "🔴 生動版第五版（2026-09-20）：把 no.32–40 那批驗證過的三句併進模板，演出句以後只寫動作。①**鏡頭禁令**（Locked-off static shot: no zoom, push-in, pan or reframing…）——加了之後 32、33、35、36、37、38、39 **七支全部沒有推近**；在此之前 22 推近三次、27 推近一次。②**雕線與平塗色塊維持印刷原樣**（借自忠實版 base 的 KEEP IDENTICAL）——39 第二版整幅被重畫成明亮的新雪景並冒出假署名，加了這句的第三版不再被重畫。淡彩低對比的畫（22 霧、23 黃昏、26 夕陽、39 雪）最需要它。③**人與物維持原本大小與位置**——39 第一版鏡頭鎖住之後，模型改用把小人物放大兩倍半來讓動作看得清楚。⚠️ 代價：動態會變小（38 首尾灰階差 1.4 幾乎靜止，35–37 在 1.7–2.7）⇒ 演出句要把動感放在**大面積、數量多**的東西上（雨絲與漣漪、落葉、螢火、煙火的火星、水紋），人物只做小動作。",
+    "no.41–49 的演出句（2026-09-20，第五版模板）：41 螢火、42 煙火的火星與紅燈籠、43 水紋與蘆葦、44 雲與船、46 樹與河面、47 電線與行人、49 雨後的水紋與蘆葦——動感一律放在大面積或數量多的東西上，人物只做小動作（第五版模板已經鎖住鏡頭、色塊與人物大小）。47 的人力車朝行人走 ⇒ 照 21／27 的寫法改成「拉幾步、放慢、停下」。⛔ no.45、48 沒座標略過；no.50 御厩橋雷雨已經有忠實版的片子，不再做生動版。"
    ],
-   "base": "Bring this Japanese woodblock print to life as a vivid animated scene. It is a print of Meiji-era Tokyo by Kobayashi Kiyochika (1876-1881), placed on a plain beige background.\n\nCAMERA: The camera stays locked on the print for the whole clip, so the print's outer edges never move. Everything inside the picture is free to move.\n\nCONTINUITY: This is one continuous shot of this one place, with no cut, dissolve or transition to another scene. The picture keeps the same layout from the first frame to the last. Within that same place, everything is free to move as described below.\n\nACTION: {SCENE}\n\nLIFE: Motion is clearly visible from the very first second and keeps going for the whole clip. The people and animals already in the picture move with readable, natural actions and stay in view; clothing, hair, branches, water and weather react to movement and wind. The number of people stays the same from start to finish.\n\nSTYLE: It still looks like a moving woodblock print: flat printed colour, carved outlines, paper texture and Kiyochika's palette. Everything belongs to 1870s-1880s Tokyo: period clothing, vehicles and buildings. No photorealism and no 3D rendering.",
+   "base": "Bring this Japanese woodblock print to life as a vivid animated scene. It is a print of Meiji-era Tokyo by Kobayashi Kiyochika (1876-1881), placed on a plain beige background.\n\nCAMERA: Locked-off static shot for the whole clip: no zoom, push-in, pan or reframing. The whole print, with its paper margins, stays fully in view at the same size from the first frame to the last. Everything inside the picture is free to move.\n\nCONTINUITY: This is one continuous shot of this one place, with no cut, dissolve or transition to another scene. The picture keeps the same layout from the first frame to the last. Within that same place, everything is free to move as described below.\n\nKEEP: The carved outlines, the flat areas of printed colour, the palette and the paper texture stay exactly as printed. The people, animals and things already in the picture keep their size and their places in the frame.\n\nACTION: {SCENE}\n\nLIFE: Motion is clearly visible from the very first second and keeps going for the whole clip. The people and animals already in the picture move with readable, natural actions and stay in view; clothing, hair, branches, water and weather react to movement and wind. The number of people stays the same from start to finish.\n\nSTYLE: It still looks like a moving woodblock print: flat printed colour, carved outlines, paper texture and Kiyochika's palette. Everything belongs to 1870s-1880s Tokyo: period clothing, vehicles and buildings. No photorealism and no 3D rendering.",
    "scenes": {
     "1": "The rickshaw puller sprints toward the viewer, legs pumping, and the red-wheeled rickshaw rolls forward with its wheels spinning. The woman riding in it grips her parasol as her sleeves and the parasol flutter in the rush of air. Cherry blossom petals shake loose from the trees and drift across the brick avenue. In the background, the horse-drawn carriage trots away down the street, and pedestrians stroll under the colonnade of the Western-style buildings.",
     "2": "The chestnut horse gallops at full speed in front of the bridge in a flying gallop for the entire clip, as Kiyochika drew it mid-stride: its front and hind legs reach far out and snap back together in a fast, powerful rhythm, its body stretched long and low, mane and tail streaming straight back. The rider leans forward low over the horse's neck, the red plume on the hat whipping in the wind. The runner on the right sprints flat out, arms pumping, both feet leaving the ground with each stride. Spray flies up from the wet ground under the hooves, the moat water ripples, and the pines on the bank sway in the wind.",
@@ -2872,7 +2986,14 @@
     "37": "Locked-off static shot: no zoom, push-in or pan, and the whole print with its paper margins stays fully in view at the same size from the first frame to the last. A clear, bright afternoon at the gate of Zōjōji in Shiba. The great red two-storey gate stands in the middle behind the tall pines, and the two big pine trunks on the right, the pines on the left, the long stone wall on the right and the grassy bank at the bottom left stay where they are. The wind swings the long pine branches across the blue sky, and their needles shiver. The people remain small figures on the wide approach, in the same places: the man in the blue coat and straw hat standing on the right turns his head and lifts his hat; in the middle, the small figures walk slowly, the hooded rickshaw with its round white back rolls slowly, and the handcart is pulled a little; far back by the gate, the round yellow lanterns on their poles swing, and the small figures and rickshaws move. The low wooden box in the left foreground stays where it is.",
     "38": "Locked-off static shot: no zoom, push-in or pan, and the whole print with its paper margins stays fully in view at the same size from the first frame to the last. Dawn at the Yakumo Shrine in Kanda. The whole picture keeps its dim dawn colours: the dark green canopy of leaves across the top, the dark tree trunks, and the band of orange light low in the sky behind the fence. The huge dark tree trunk in the right foreground rises to the top of the picture and stays exactly where it is, and the red shrine building with its lattice windows behind it and the stone lantern on the far left stay where they are. The wind stirs the canopy of leaves overhead, and the leaves flutter and flicker against the pale sky. The orange light glints on the wet ground, and the long reflections of the trunks shimmer. Far away against the orange glow, the two small dark figures stay small: one stands and turns slowly, and the other moves its outstretched arm up and down.",
     "39": "Locked-off static shot: no zoom, push-in or pan, and the whole print with its paper margins stays fully in view at the same size from the first frame to the last. The carved outlines, the flat areas of printed colour, the pale palette and the paper texture stay exactly as printed. Snow at Ochanomizu. The whole picture keeps its soft snowy colours: the grey sky with the band of pale yellow light low behind the hills. A few fine snowflakes drift down across the picture. The snow-covered banks, the bare snowy trees on the left, the big snow-laden tree and the small snow-roofed hut on the right, and the wooden bridge across the river in the middle stay where they are. The green bushes on the banks stir in the wind, and the thin carved lines of the water move slowly under the bridge. The small flat boat moored by its two poles at the bottom rocks on the water. At the bottom right, the three people huddled together in the snow, two in light blue hoods and one in red, stay as small as they are now and keep their place in the corner; they lean close together and their shoulders and sleeves shift. Snow lies on the bridge rail and the bare branches, and the water glints as it flows.",
-    "40": "Locked-off static shot: no zoom, push-in or pan, and the whole print with its paper margins stays fully in view at the same size from the first frame to the last. The carved outlines, the flat areas of printed colour, the pale palette and the paper texture stay exactly as printed. A clear day on the open ground by Benkei Moat at Sakurada. The people stay as small as they are now, in the same places. The two tall pine trunks rising together in the middle stay exactly where they are, and their wide green branches sway in the wind. The pale apricot clouds drift slowly across the blue sky, and the yellow ginkgo on the left shivers in the breeze. On the left, the two riders in purple uniforms rein in their brown horses, and the horses toss their heads and paw the ground. On the right, the officer in purple at the front raises his hand, and the column of soldiers in purple uniforms, green caps and red packs, rifles on their shoulders, marches two more steps and halts. The grass in the foreground stirs. The buildings on the left, the long roof and the dark trees on the right stay where they are."
+    "40": "Locked-off static shot: no zoom, push-in or pan, and the whole print with its paper margins stays fully in view at the same size from the first frame to the last. The carved outlines, the flat areas of printed colour, the pale palette and the paper texture stay exactly as printed. A clear day on the open ground by Benkei Moat at Sakurada. The people stay as small as they are now, in the same places. The two tall pine trunks rising together in the middle stay exactly where they are, and their wide green branches sway in the wind. The pale apricot clouds drift slowly across the blue sky, and the yellow ginkgo on the left shivers in the breeze. On the left, the two riders in purple uniforms rein in their brown horses, and the horses toss their heads and paw the ground. On the right, the officer in purple at the front raises his hand, and the column of soldiers in purple uniforms, green caps and red packs, rifles on their shoulders, marches two more steps and halts. The grass in the foreground stirs. The buildings on the left, the long roof and the dark trees on the right stay where they are.",
+    "41": "A dark summer night by the water below Tennōji. The whole picture keeps its deep night colours: the trees and the bank stay almost black, and the only lights are the lit paper screen of the house, the small lantern on the right and the fireflies. Many fireflies drift and blink slowly over the dark grass and the water, rising and sinking in ones and twos. Inside the lit paper screen, the two seated silhouettes shift a little. The leaves of the big tree stir in the night air, the long pale reflections on the water at the bottom waver, and the small lantern on the right keeps its steady glow.",
+    "42": "A summer night on the river at Ryōgoku. The whole picture keeps its deep night colours: the sky stays dark at the edges and pale around the fireworks, and the people and boats stay dark silhouettes. The sparks of the fireworks drift and sink slowly across the pale sky. The rows of red paper lanterns on the roofed boat at the right and on the pole frames at the left sway and swing, and their red reflections waver on the water. The boats rock slowly on the ripples: on the left, the standing boatman leans on his pole and the seated passengers shift; on the right, the silhouetted people in the crowded boat turn their heads and raise their hands toward the sky. The water ripples all along the bottom of the picture.",
+    "43": "Evening at the thousand stakes by Ryōgoku Bridge. The rows of tall green stakes in the foreground and the long low bridge behind them stay exactly where they are. The dark clouds and the pink sky drift slowly, and the thin yellow line drawn across the sky stays where it is. In the middle of the water, the small boat rocks and the man at its stern leans on his pole. The reeds at the bottom left sway, the water ripples between the stakes, and the reflections of the bridge and the stakes waver. Far away on the right bank, the tiny figures by the houses move slowly.",
+    "44": "A bright, breezy day on the Ōkawa river. The white clouds drift slowly across the blue sky. In the foreground on the left, the boat with the three men rocks on the water: the man standing at the stern leans on his pole and the two seated men shift and turn. Further off, the second boat rocks on the ripples. The river ripples all across the picture and the reflections waver. On the right bank, the man in white walks slowly along the road, the bare branches of the tall tree sway, and the small figures near the houses move. The stacked straw bales and the dark pile beside them, the red-brown warehouse, the wooden fences and the moored boat stay where they are.",
+    "46": "A bright day at Mikura Bridge. The man in the dark coat and hat walking toward us on the bridge takes a few slow steps and taps his cane on the boards. On the bridge behind him, the two women in kimono walk slowly away from us, one of them bending forward. The big tree on the right sways and its leaves shiver in the wind, and the white clouds drift across the blue sky. The river on the left ripples and glints. Far away, the two small figures beyond the bridge post move slowly. The bridge railings, the wooden post with its sign, the small hut on the left bank and the bamboo fences stay where they are.",
+    "47": "A clear day on the road outside the Paper Money Bureau at Tokiwabashi. The white clouds drift slowly across the blue sky, and the telegraph wires between the tall poles sway in the wind. On the road, the rickshaw man pulls the red-wheeled rickshaw a few more steps and slows to a stop, and the passenger in blue sits upright; beside them the second red-wheeled rickshaw waits and its puller straightens up. The people walking along the road — the man under the umbrella, the man with the pole over his shoulder, and the small figures further back — take a few slow steps and turn. The brick building with its clock tower, the tall telegraph poles, the long fence, the trees behind it and the handcart at the far left stay where they are.",
+    "49": "Dusk after rain at Hashiba. The whole picture keeps its grey-blue evening colours. The rainbow arching up on the left stays where it is, and the grey clouds drift slowly across the sky. In the boat in the foreground, the man at the stern pushes on his oar with a slow rhythm, the standing man in blue shifts his weight, and the two seated figures turn their heads; the boat rocks gently in place and ripples spread out behind it. The reeds along the far bank sway, the leaves of the dark trees on the island stir, and the two small birds on the water at the left paddle slowly. The thatched hut on the island and the low far shore stay where they are."
    },
    "base_v1": "Bring this Japanese woodblock print to life as a vivid animated scene. It is a print of Meiji-era Tokyo by Kobayashi Kiyochika (1876-1881), placed on a plain beige background.\n\nCAMERA: The camera stays locked on the print for the whole clip, so the print's outer edges never move. Everything inside the picture is free to move.\n\nACTION: {SCENE}\n\nLIFE: Motion is clearly visible from the very first second and keeps going for the whole clip. People and animals move with readable, natural actions; clothing, hair, banners, branches, water and weather react to movement and wind. Figures may walk further, turn and interact, and other passers-by may move through the scene.\n\nSTYLE: It still looks like a moving woodblock print: flat printed colour, carved outlines, paper texture and Kiyochika's palette. Everything belongs to 1870s-1880s Tokyo: period clothing, vehicles and buildings. No photorealism and no 3D rendering.",
    "base_v1_note": "生動版第一版（2026-09-15 10:40）。p1.mp4（no.1）、p2.mp4（no.2）、p3.mp4（no.3）用的是這一版——上架時 clips[].prompt 要逐字記這一版，⛔ 不是現在的 base。",
@@ -2978,7 +3099,9 @@
    "base_v2": "Bring this Japanese woodblock print to life as a vivid animated scene. It is a print of Meiji-era Tokyo by Kobayashi Kiyochika (1876-1881), placed on a plain beige background.\n\nCAMERA: The camera stays locked on the print for the whole clip, so the print's outer edges never move. Everything inside the picture is free to move.\n\nCONTINUITY: This is one continuous shot of this one place, with no cut, dissolve or transition to another scene. The layout of the picture stays recognisable from start to finish: the same buildings, shoreline, trees and sky, and the printed title, cartouche, signature and seals stay where they are. Within that same place, everything is free to move as described below.\n\nACTION: {SCENE}\n\nLIFE: Motion is clearly visible from the very first second and keeps going for the whole clip. People and animals move with readable, natural actions; clothing, hair, banners, branches, water and weather react to movement and wind. Figures may walk further, turn and interact, and other passers-by may move through the scene.\n\nSTYLE: It still looks like a moving woodblock print: flat printed colour, carved outlines, paper texture and Kiyochika's palette. Everything belongs to 1870s-1880s Tokyo: period clothing, vehicles and buildings. No photorealism and no 3D rendering.",
    "base_v2_note": "生動版第二版（CONTINUITY 點名 title, cartouche, signature and seals）。線上 no.3（p3.mp4 21:01）用這一版；p2.mp4（23:38）與 Bring_this_Japanese_woodblock.mp4 也是。",
    "base_v3": "Bring this Japanese woodblock print to life as a vivid animated scene. It is a print of Meiji-era Tokyo by Kobayashi Kiyochika (1876-1881), placed on a plain beige background.\n\nCAMERA: The camera stays locked on the print for the whole clip, so the print's outer edges never move. Everything inside the picture is free to move.\n\nCONTINUITY: This is one continuous shot of this one place, with no cut, dissolve or transition to another scene. The picture keeps the same layout from the first frame to the last. Within that same place, everything is free to move as described below.\n\nACTION: {SCENE}\n\nLIFE: Motion is clearly visible from the very first second and keeps going for the whole clip. People and animals move with readable, natural actions; clothing, hair, banners, branches, water and weather react to movement and wind. Figures may walk further, turn and interact, and other passers-by may move through the scene.\n\nSTYLE: It still looks like a moving woodblock print: flat printed colour, carved outlines, paper texture and Kiyochika's palette. Everything belongs to 1870s-1880s Tokyo: period clothing, vehicles and buildings. No photorealism and no 3D rendering.",
-   "base_v3_note": "生動版第三版（CONTINUITY 不點名）。no.1–10 裡 2026-09-16 起生成的（p2-v4、p4、p5、p6、p7、p8、p9、p10）用這一版。"
+   "base_v3_note": "生動版第三版（CONTINUITY 不點名）。no.1–10 裡 2026-09-16 起生成的（p2-v4、p4、p5、p6、p7、p8、p9、p10）用這一版。",
+   "base_v4": "Bring this Japanese woodblock print to life as a vivid animated scene. It is a print of Meiji-era Tokyo by Kobayashi Kiyochika (1876-1881), placed on a plain beige background.\n\nCAMERA: The camera stays locked on the print for the whole clip, so the print's outer edges never move. Everything inside the picture is free to move.\n\nCONTINUITY: This is one continuous shot of this one place, with no cut, dissolve or transition to another scene. The picture keeps the same layout from the first frame to the last. Within that same place, everything is free to move as described below.\n\nACTION: {SCENE}\n\nLIFE: Motion is clearly visible from the very first second and keeps going for the whole clip. The people and animals already in the picture move with readable, natural actions and stay in view; clothing, hair, branches, water and weather react to movement and wind. The number of people stays the same from start to finish.\n\nSTYLE: It still looks like a moving woodblock print: flat printed colour, carved outlines, paper texture and Kiyochika's palette. Everything belongs to 1870s-1880s Tokyo: period clothing, vehicles and buildings. No photorealism and no 3D rendering.",
+   "base_v4_note": "第四版（no.11–40 用的）。第五版把鏡頭禁令、雕線與色塊維持原樣、人與物維持原大小三句併進模板。"
   }
  }
 }
