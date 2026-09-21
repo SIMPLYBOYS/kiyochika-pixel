@@ -1597,6 +1597,236 @@
    "v": "b7169b34"
   },
   {
+   "id": 41,
+   "kind": "reinterpretation",
+   "file": "assets/motion/41.webm",
+   "base": "assets/plate/41.jpg",
+   "source": "research/motion/p41.mp4（2026-09-20 23:56）",
+   "model": "Nano Banana（Google Flow；沿用 no.72 的標示，這一批 Aaron 未另外確認模型）",
+   "model_note": "⚠️ 同 no.72：Nano Banana 是 Google 的圖像模型，本身不出影片；檔案格式（1280×720・24fps・10.005s）與 C2PA 憑證（Created by Google Generative AI／SynthID）跟 Veo 片子相同，憑證沒寫模型名。待 Flow 介面確認。",
+   "date": "2026-09-21",
+   "prompt": "Bring this Japanese woodblock print to life as a vivid animated scene. It is a print of Meiji-era Tokyo by Kobayashi Kiyochika (1876-1881), placed on a plain beige background.\n\nCAMERA: Locked-off static shot for the whole clip: no zoom, push-in, pan or reframing. The whole print, with its paper margins, stays fully in view at the same size from the first frame to the last. Everything inside the picture is free to move.\n\nCONTINUITY: This is one continuous shot of this one place, with no cut, dissolve or transition to another scene. The picture keeps the same layout from the first frame to the last. Within that same place, everything is free to move as described below.\n\nKEEP: The carved outlines, the flat areas of printed colour, the palette and the paper texture stay exactly as printed. The people, animals and things already in the picture keep their size and their places in the frame.\n\nACTION: A dark summer night by the water below Tennōji. The whole picture keeps its deep night colours: the trees and the bank stay almost black, and the only lights are the lit paper screen of the house, the small lantern on the right and the fireflies. Many fireflies drift and blink slowly over the dark grass and the water, rising and sinking in ones and twos. Inside the lit paper screen, the two seated silhouettes shift a little. The leaves of the big tree stir in the night air, the long pale reflections on the water at the bottom waver, and the small lantern on the right keeps its steady glow.\n\nLIFE: Motion is clearly visible from the very first second and keeps going for the whole clip. The people and animals already in the picture move with readable, natural actions and stay in view; clothing, hair, branches, water and weather react to movement and wind. The number of people stays the same from start to finish.\n\nSTYLE: It still looks like a moving woodblock print: flat printed colour, carved outlines, paper texture and Kiyochika's palette. Everything belongs to 1870s-1880s Tokyo: period clothing, vehicles and buildings. No photorealism and no 3D rendering.",
+   "template": "_prompt_template.vivid.base（第五版）＋ scenes.41",
+   "first_frame": "research/motion/41-pad16x9.png（事後照 _pad.41 切回來）",
+   "moved": "螢火、水面、紙門裡的人影",
+   "differs": [
+    "整體色調從原畫偏綠的暗色轉成偏藍黑。",
+    "螢火在草叢與水面上明滅、飄移。",
+    "水面泛起一圈圈漣漪，倒影跟著晃動。",
+    "亮著的紙門裡，兩個人影微微移動。",
+    "右邊那顆四角星是生成模型的浮水印。不修掉，它正好提醒這不是清親的作品。"
+   ],
+   "differs_checked": "Aaron 2026-09-21 指示 41–50 全部部署；差異清單由 Claude 對照 research/motion/p123-review/p41-no41-天王寺下衣川.jpg 起草（右緣題字與出版資訊起訖一致（research/motion/p123-review/p41-49-右緣題字與浮水印起訖.jpg）），待 Aaron 確認",
+   "fade": 0.6,
+   "evidence": "research/motion/p123-review/p41-no41-天王寺下衣川.jpg",
+   "drift": {
+    "max": 6.7,
+    "at": 2.1,
+    "mean": 5.5,
+    "over_16": [],
+    "_": "每 0.3s 一格，跟原畫比邊的位置。只動光約 6，構圖動了 19 以上。"
+   },
+   "v": "f1e89dc5"
+  },
+  {
+   "id": 42,
+   "kind": "reinterpretation",
+   "file": "assets/motion/42.webm",
+   "base": "assets/plate/42.jpg",
+   "source": "research/motion/p42.mp4（2026-09-21 00:17，第二次，同名覆蓋第一次）",
+   "model": "Nano Banana（Google Flow；沿用 no.72 的標示，這一批 Aaron 未另外確認模型）",
+   "model_note": "⚠️ 同 no.72：Nano Banana 是 Google 的圖像模型，本身不出影片；檔案格式（1280×720・24fps・10.005s）與 C2PA 憑證（Created by Google Generative AI／SynthID）跟 Veo 片子相同，憑證沒寫模型名。待 Flow 介面確認。",
+   "date": "2026-09-21",
+   "prompt": "Bring this Japanese woodblock print to life as a vivid animated scene. It is a print of Meiji-era Tokyo by Kobayashi Kiyochika (1876-1881), placed on a plain beige background.\n\nCAMERA: Locked-off static shot for the whole clip: no zoom, push-in, pan or reframing. The whole print, with its paper margins, stays fully in view at the same size from the first frame to the last. Everything inside the picture is free to move.\n\nCONTINUITY: This is one continuous shot of this one place, with no cut, dissolve or transition to another scene. The picture keeps the same layout from the first frame to the last. Within that same place, everything is free to move as described below.\n\nKEEP: The carved outlines, the flat areas of printed colour, the palette and the paper texture stay exactly as printed. The people, animals and things already in the picture keep their size and their places in the frame.\n\nACTION: A summer night on the river at Ryōgoku. The whole picture keeps its deep night colours: the sky stays dark at the edges and pale around the fireworks. Every person in the picture stays a flat black silhouette against the pale sky, with no colours, no patterns and no faces, from the first frame to the last. The sparks of the fireworks drift and sink slowly across the pale sky. Further back on the right, the big roofed pleasure boat with its rows of red lanterns hung along the eaves rocks slowly and the lanterns sway. In the right foreground, the long open boat packed with silhouetted passengers rocks on the ripples, and the silhouettes turn their heads and raise their hands toward the sky. On the left, the second boat rocks: the standing boatman leans on his pole and the seated silhouettes shift. The red lanterns on the pole frames at the left sway, their red reflections waver on the water, and the water ripples all along the bottom of the picture.\n\nLIFE: Motion is clearly visible from the very first second and keeps going for the whole clip. The people and animals already in the picture move with readable, natural actions and stay in view; clothing, hair, branches, water and weather react to movement and wind. The number of people stays the same from start to finish.\n\nSTYLE: It still looks like a moving woodblock print: flat printed colour, carved outlines, paper texture and Kiyochika's palette. Everything belongs to 1870s-1880s Tokyo: period clothing, vehicles and buildings. No photorealism and no 3D rendering.",
+   "template": "_prompt_template.vivid.base（第五版）＋ scenes.42 第二版（剪影錨）",
+   "first_frame": "research/motion/42-pad16x9.png（事後照 _pad.42 切回來）",
+   "moved": "煙火火星、紅燈籠、剪影觀眾、船",
+   "differs": [
+    "整體色調從原畫偏綠的暗色轉成偏黑。",
+    "煙火的火星在天上慢慢飄落。",
+    "右前方船上的剪影觀眾轉頭、舉手指向天空。",
+    "左邊那條船的後半段多出頂棚，旁邊多了一組掛紅燈籠的竿架。",
+    "紅燈籠搖晃，水面上的紅色倒影跟著晃。",
+    "右邊那顆四角星是生成模型的浮水印。不修掉，它正好提醒這不是清親的作品。"
+   ],
+   "differs_checked": "Aaron 2026-09-21 指示 41–50 全部部署；差異清單由 Claude 對照 research/motion/p123-review/p42v2-no42-兩國花火-剪影保住.jpg 起草（右緣題字與出版資訊起訖一致（research/motion/p123-review/p41-49-右緣題字與浮水印起訖.jpg）），待 Aaron 確認",
+   "fade": 0.6,
+   "evidence": "research/motion/p123-review/p42v2-no42-兩國花火-剪影保住.jpg",
+   "drift": {
+    "max": 16.8,
+    "at": 9.0,
+    "mean": 13.9,
+    "over_16": [
+     8.4,
+     8.7,
+     9.0,
+     9.3,
+     9.6
+    ],
+    "_": "每 0.3s 一格，跟原畫比邊的位置。只動光約 6，構圖動了 19 以上。"
+   },
+   "v": "dc168ca0"
+  },
+  {
+   "id": 43,
+   "kind": "reinterpretation",
+   "file": "assets/motion/43.webm",
+   "base": "assets/plate/43.jpg",
+   "source": "research/motion/p43.mp4（2026-09-21 10:38）",
+   "model": "Nano Banana（Google Flow；沿用 no.72 的標示，這一批 Aaron 未另外確認模型）",
+   "model_note": "⚠️ 同 no.72：Nano Banana 是 Google 的圖像模型，本身不出影片；檔案格式（1280×720・24fps・10.005s）與 C2PA 憑證（Created by Google Generative AI／SynthID）跟 Veo 片子相同，憑證沒寫模型名。待 Flow 介面確認。",
+   "date": "2026-09-21",
+   "prompt": "Bring this Japanese woodblock print to life as a vivid animated scene. It is a print of Meiji-era Tokyo by Kobayashi Kiyochika (1876-1881), placed on a plain beige background.\n\nCAMERA: Locked-off static shot for the whole clip: no zoom, push-in, pan or reframing. The whole print, with its paper margins, stays fully in view at the same size from the first frame to the last. Everything inside the picture is free to move.\n\nCONTINUITY: This is one continuous shot of this one place, with no cut, dissolve or transition to another scene. The picture keeps the same layout from the first frame to the last. Within that same place, everything is free to move as described below.\n\nKEEP: The carved outlines, the flat areas of printed colour, the palette and the paper texture stay exactly as printed. The people, animals and things already in the picture keep their size and their places in the frame.\n\nACTION: Evening at the thousand stakes by Ryōgoku Bridge. The rows of tall green stakes in the foreground and the long low bridge behind them stay exactly where they are. The dark clouds and the pink sky drift slowly, and the thin yellow line drawn across the sky stays where it is. In the middle of the water, the small boat rocks and the man at its stern leans on his pole. The reeds at the bottom left sway, the water ripples between the stakes, and the reflections of the bridge and the stakes waver. Far away on the right bank, the tiny figures by the houses move slowly.\n\nLIFE: Motion is clearly visible from the very first second and keeps going for the whole clip. The people and animals already in the picture move with readable, natural actions and stay in view; clothing, hair, branches, water and weather react to movement and wind. The number of people stays the same from start to finish.\n\nSTYLE: It still looks like a moving woodblock print: flat printed colour, carved outlines, paper texture and Kiyochika's palette. Everything belongs to 1870s-1880s Tokyo: period clothing, vehicles and buildings. No photorealism and no 3D rendering.",
+   "template": "_prompt_template.vivid.base（第五版）＋ scenes.43",
+   "first_frame": "research/motion/43-pad16x9.png（事後照 _pad.43 切回來）",
+   "moved": "小船、雲、水面",
+   "differs": [
+    "撐篙的小船從蘆葦後面划到開闊的水面，人與船都變大一些。",
+    "雲慢慢飄動；水面起漣漪，木樁與橋的倒影跟著晃。",
+    "右邊那顆四角星是生成模型的浮水印。不修掉，它正好提醒這不是清親的作品。"
+   ],
+   "differs_checked": "Aaron 2026-09-21 指示 41–50 全部部署；差異清單由 Claude 對照 research/motion/p123-review/p43-no43-千本杭兩國橋.jpg 起草（右緣題字與出版資訊起訖一致（research/motion/p123-review/p41-49-右緣題字與浮水印起訖.jpg）），待 Aaron 確認",
+   "fade": 0.6,
+   "evidence": "research/motion/p123-review/p43-no43-千本杭兩國橋.jpg",
+   "known_flaw": "片尾小船已划到開闊處 ⇒ 每次接回開頭會瞬間跳回蘆葦後面。",
+   "drift": {
+    "max": 7.4,
+    "at": 1.5,
+    "mean": 7.0,
+    "over_16": [],
+    "_": "每 0.3s 一格，跟原畫比邊的位置。只動光約 6，構圖動了 19 以上。"
+   },
+   "v": "000f65c2"
+  },
+  {
+   "id": 44,
+   "kind": "reinterpretation",
+   "file": "assets/motion/44.webm",
+   "base": "assets/plate/44.jpg",
+   "source": "research/motion/p44.mp4（2026-09-21 11:19，第三次，同名覆蓋前兩次）",
+   "model": "Nano Banana（Google Flow；沿用 no.72 的標示，這一批 Aaron 未另外確認模型）",
+   "model_note": "⚠️ 同 no.72：Nano Banana 是 Google 的圖像模型，本身不出影片；檔案格式（1280×720・24fps・10.005s）與 C2PA 憑證（Created by Google Generative AI／SynthID）跟 Veo 片子相同，憑證沒寫模型名。待 Flow 介面確認。",
+   "date": "2026-09-21",
+   "prompt": "Animate this exact image. It is a Japanese woodblock print from the Meiji era (Kobayashi Kiyochika, 1876-1881), placed on a plain beige background.\n\nCAMERA: Locked-off static shot for the whole clip. No pan, tilt, zoom, push-in, parallax, rotation or reframing. The entire print stays in frame at the same size, including its paper margins and printed text. The plain background around the print stays plain and empty.\n\nKEEP IDENTICAL: The picture stays this same print from the first frame to the last. Every person, boat, vehicle, animal, building, bridge, tree, pole and sign keeps its position, size, shape, colours and number; nothing enters, leaves or appears. People stay in their places and poses, moving only their heads, hands, sleeves and hair a little. The carved outlines, the flat areas of printed colour, the overall colour tint and the paper texture stay exactly as printed.\n\nWHAT MOVES: The white clouds drift slowly across the blue sky. The river's surface ripples and glints across the whole picture, and the reflections of the boats and the far bank waver. The two boats rock gently in place on the water, and the man standing at the stern of the near boat moves his pole a little. The thin bare twigs of the tall leafless tree on the right tremble in the breeze. The man in white on the road stays where he is, moving his arms a little.\n\nSTYLE: The motion stays inside the woodblock look: flat printed colour, no photographic lighting, no 3D depth, no motion blur, no added grain, no colour grading. Movement is gentle, continuous and clearly visible. The clip loops seamlessly: the last frame matches the first frame.",
+   "template": "_prompt_template.close.base_v1 ＋ close.scenes.44",
+   "first_frame": "research/motion/44-pad16x9.png（事後照 _pad.44 切回來）",
+   "moved": "船上撐篙的人（很少）",
+   "differs": [
+    "整體色調從原畫的黃綠偏成藍色，天空變藍。",
+    "近處那條船的船尾，站著的人撐著篙，船在原地輕輕搖。",
+    "右邊那顆四角星是生成模型的浮水印。不修掉，它正好提醒這不是清親的作品。"
+   ],
+   "differs_checked": "Aaron 2026-09-21 指示 41–50 全部部署；差異清單由 Claude 對照 research/motion/p123-review/p44v4-no44-貼近原畫版-構圖保住色調偏藍.jpg 起草（右緣題字與出版資訊起訖一致（research/motion/p123-review/p41-49-右緣題字與浮水印起訖.jpg）），待 Aaron 確認",
+   "fade": 0.6,
+   "evidence": "research/motion/p123-review/p44v4-no44-貼近原畫版-構圖保住色調偏藍.jpg",
+   "known_flaw": "動作很少，接近靜止。",
+   "drift": {
+    "max": 7.5,
+    "at": 9.0,
+    "mean": 6.8,
+    "over_16": [],
+    "_": "每 0.3s 一格，跟原畫比邊的位置。只動光約 6，構圖動了 19 以上。"
+   },
+   "v": "2ff368e4"
+  },
+  {
+   "id": 46,
+   "kind": "reinterpretation",
+   "file": "assets/motion/46.webm",
+   "base": "assets/plate/46.jpg",
+   "source": "research/motion/p46.mp4（2026-09-21 11:25）",
+   "model": "Nano Banana（Google Flow；沿用 no.72 的標示，這一批 Aaron 未另外確認模型）",
+   "model_note": "⚠️ 同 no.72：Nano Banana 是 Google 的圖像模型，本身不出影片；檔案格式（1280×720・24fps・10.005s）與 C2PA 憑證（Created by Google Generative AI／SynthID）跟 Veo 片子相同，憑證沒寫模型名。待 Flow 介面確認。",
+   "date": "2026-09-21",
+   "prompt": "Animate this exact image. It is a Japanese woodblock print from the Meiji era (Kobayashi Kiyochika, 1876-1881), placed on a plain beige background.\n\nCAMERA: Locked-off static shot for the whole clip. No pan, tilt, zoom, push-in, parallax, rotation or reframing. The entire print stays in frame at the same size, including its paper margins and printed text. The plain background around the print stays plain and empty.\n\nKEEP IDENTICAL: The picture stays this same print from the first frame to the last. Every person, boat, vehicle, animal, building, bridge, tree, pole and sign keeps its position, size, shape, colours and number; nothing enters, leaves or appears. People stay in their places and poses, moving only their heads, hands, sleeves and hair a little. The carved outlines, the flat areas of printed colour, the overall colour tint and the paper texture stay exactly as printed.\n\nWHAT MOVES: The white clouds drift slowly across the blue sky. The leaves of the big tree on the right shiver and sway in the wind. The river on the left ripples and glints. On the bridge, the man in the dark coat and hat stays where he is, shifting his weight and moving his cane a little; the two women in kimono further along stay in their places, their sleeves stirring in the wind. The small figures far away stay where they are.\n\nSTYLE: The motion stays inside the woodblock look: flat printed colour, no photographic lighting, no 3D depth, no motion blur, no added grain, no colour grading. Movement is gentle, continuous and clearly visible. The clip loops seamlessly: the last frame matches the first frame.",
+   "template": "_prompt_template.close.base_v1 ＋ close.scenes_history.46[0]（第一版；之後的演出句已改寫，提示詞原文在此）",
+   "first_frame": "research/motion/46-pad16x9.png（事後照 _pad.46 切回來）",
+   "moved": "女子、雲、大樹",
+   "differs": [
+    "橋上兩位女子被畫成穿彩色和服；原畫是深色衣服。",
+    "右上多出一朵大白雲，天上的雲變成許多小朵。",
+    "遠處橋柱旁多出兩三個小人影。",
+    "拄杖的男子原地微動，右邊的大樹搖動。",
+    "右邊那顆四角星是生成模型的浮水印。不修掉，它正好提醒這不是清親的作品。"
+   ],
+   "differs_checked": "Aaron 2026-09-21 指示 41–50 全部部署；差異清單由 Claude 對照 research/motion/p123-review/p46-no46-貼近原畫版-女子上色多白雲.jpg 起草（右緣題字與出版資訊起訖一致（research/motion/p123-review/p41-49-右緣題字與浮水印起訖.jpg）），待 Aaron 確認",
+   "fade": 0.6,
+   "evidence": "research/motion/p123-review/p46-no46-貼近原畫版-女子上色多白雲.jpg",
+   "drift": {
+    "max": 15.4,
+    "at": 2.1,
+    "mean": 12.2,
+    "over_16": [],
+    "_": "每 0.3s 一格，跟原畫比邊的位置。只動光約 6，構圖動了 19 以上。"
+   },
+   "v": "65ef44e4"
+  },
+  {
+   "id": 47,
+   "kind": "reinterpretation",
+   "file": "assets/motion/47.webm",
+   "base": "assets/plate/47.jpg",
+   "source": "research/motion/p47.mp4（2026-09-21 17:00，第三次，同名覆蓋前兩次）",
+   "model": "Nano Banana（Google Flow；沿用 no.72 的標示，這一批 Aaron 未另外確認模型）",
+   "model_note": "⚠️ 同 no.72：Nano Banana 是 Google 的圖像模型，本身不出影片；檔案格式（1280×720・24fps・10.005s）與 C2PA 憑證（Created by Google Generative AI／SynthID）跟 Veo 片子相同，憑證沒寫模型名。待 Flow 介面確認。",
+   "date": "2026-09-21",
+   "prompt": "Animate this exact image. It is a Japanese woodblock print from the Meiji era (Kobayashi Kiyochika, 1876-1881), placed on a plain beige background.\n\nCAMERA: Locked-off static shot for the whole clip. No pan, tilt, zoom, push-in, parallax, rotation or reframing. The entire print stays in frame at the same size, including its paper margins and printed text. The plain background around the print stays plain and empty.\n\nKEEP IDENTICAL: The picture stays this same print from the first frame to the last. Every building, bridge, tree, pole, fence and sign keeps its size, shape, colours and place; boats and vehicles keep their size, shape and colours; nothing new enters or appears. The clouds keep their printed shapes. The carved outlines, the flat areas of printed colour, the overall colour tint and the paper texture stay exactly as printed.\n\nWHAT MOVES: A breezy, sunny day. The thin, flat white clouds drift steadily across the blue sky from left to right. The telegraph wires between the tall poles swing in the wind, and the rounded crowns of the dark green trees behind the long fence sway back and forth. On the road, the man under the yellow umbrella walks slowly toward the right, his umbrella bobbing with each step; the man with the pole over his shoulder walks slowly along the road; the rickshaw man beside the first red-wheeled rickshaw steps forward and back, adjusting the shafts; the man sitting on the shafts of the second rickshaw looks around and wipes his brow; and the small figures further along the road walk slowly in both directions, turning to one another.\n\nLIFE: The people already in the picture move naturally the whole time: they walk, turn, look around and gesture with readable, lifelike movements, keeping their size, clothes and colours, and the number of people stays the same. Branches, grass, clouds, water, clothing and hair react to the wind. Motion is clearly visible across the whole picture from the very first second.\n\nSTYLE: The motion stays inside the woodblock look: flat printed colour, no photographic lighting, no 3D depth, no motion blur, no added grain, no colour grading.",
+   "template": "_prompt_template.close.base（第三版）＋ close.scenes.47 第三版",
+   "first_frame": "research/motion/47-pad16x9.png（事後照 _pad.47 切回來）",
+   "moved": "行人、車伕、雲",
+   "differs": [
+    "撐黃傘的人沿著路往右走到人力車旁。",
+    "扛竿子的人、車伕與遠處的行人走動、轉身。",
+    "扁平的白雲慢慢飄動。",
+    "右邊那顆四角星是生成模型的浮水印。不修掉，它正好提醒這不是清親的作品。"
+   ],
+   "differs_checked": "Aaron 2026-09-21 指示 41–50 全部部署；差異清單由 Claude 對照 research/motion/p123-review/p47v3-no47-貼近原畫版三-人在走.jpg 起草（右緣題字與出版資訊起訖一致（research/motion/p123-review/p41-49-右緣題字與浮水印起訖.jpg）），待 Aaron 確認",
+   "fade": 0.6,
+   "evidence": "research/motion/p123-review/p47v3-no47-貼近原畫版三-人在走.jpg",
+   "known_flaw": "片尾行人都離開原位 ⇒ 每次接回開頭會瞬間跳回。",
+   "drift": {
+    "max": 7.9,
+    "at": 5.7,
+    "mean": 7.5,
+    "over_16": [],
+    "_": "每 0.3s 一格，跟原畫比邊的位置。只動光約 6，構圖動了 19 以上。"
+   },
+   "v": "756f5f92"
+  },
+  {
+   "id": 49,
+   "kind": "reinterpretation",
+   "file": "assets/motion/49.webm",
+   "base": "assets/plate/49.jpg",
+   "source": "research/motion/p49.mp4（2026-09-21 17:24）",
+   "model": "Nano Banana（Google Flow；沿用 no.72 的標示，這一批 Aaron 未另外確認模型）",
+   "model_note": "⚠️ 同 no.72：Nano Banana 是 Google 的圖像模型，本身不出影片；檔案格式（1280×720・24fps・10.005s）與 C2PA 憑證（Created by Google Generative AI／SynthID）跟 Veo 片子相同，憑證沒寫模型名。待 Flow 介面確認。",
+   "date": "2026-09-21",
+   "prompt": "Animate this exact image. It is a Japanese woodblock print from the Meiji era (Kobayashi Kiyochika, 1876-1881), placed on a plain beige background.\n\nCAMERA: Locked-off static shot for the whole clip. No pan, tilt, zoom, push-in, parallax, rotation or reframing. The entire print stays in frame at the same size, including its paper margins and printed text. The plain background around the print stays plain and empty.\n\nKEEP IDENTICAL: The picture stays this same print from the first frame to the last. Every building, bridge, tree, pole, fence and sign keeps its size, shape, colours and place; boats and vehicles keep their size, shape and colours; nothing new enters or appears. The clouds keep their printed shapes. The carved outlines, the flat areas of printed colour, the overall colour tint and the paper texture stay exactly as printed.\n\nWHAT MOVES: The grey clouds roll steadily across the sky, and the rainbow on the left stays exactly where it is. The water ripples and glints all across the picture, and the reflections of the trees and the boat waver. In the boat in the foreground, the man at the stern works his oar back and forth with a steady rhythm, the standing man in blue shifts his weight and looks around, and the seated passengers turn their heads and talk; the boat rocks on the water. The reeds along the far bank sway in the wind, the leaves of the dark trees on the island toss, and the two small birds on the water bob and paddle.\n\nLIFE: The people already in the picture move naturally the whole time: they walk, turn, look around and gesture with readable, lifelike movements, keeping their size, clothes and colours, and the number of people stays the same. Branches, grass, clouds, water, clothing and hair react to the wind. Motion is clearly visible across the whole picture from the very first second.\n\nSTYLE: The motion stays inside the woodblock look: flat printed colour, no photographic lighting, no 3D depth, no motion blur, no added grain, no colour grading.",
+   "template": "_prompt_template.close.base（第三版）＋ close.scenes.49",
+   "first_frame": "research/motion/49-pad16x9.png（事後照 _pad.49 切回來）",
+   "moved": "船、雲、水鳥",
+   "differs": [
+    "前景的船被重畫得更大、更精細，往右移了一些；船上變成四個人，其中一位穿粉紅色花紋和服。",
+    "右邊的雲變成一團團灰色的大積雲。",
+    "船尾的人划槳，船上的人轉頭交談。",
+    "兩隻水鳥在水面上漂動。",
+    "右邊那顆四角星是生成模型的浮水印。不修掉，它正好提醒這不是清親的作品。"
+   ],
+   "differs_checked": "Aaron 2026-09-21 指示 41–50 全部部署；差異清單由 Claude 對照 research/motion/p123-review/p49-no49-橋場-船被重畫雲變積雲.jpg 起草（右緣題字與出版資訊起訖一致（research/motion/p123-review/p41-49-右緣題字與浮水印起訖.jpg）），待 Aaron 確認",
+   "fade": 0.6,
+   "evidence": "research/motion/p123-review/p49-no49-橋場-船被重畫雲變積雲.jpg",
+   "known_flaw": "片尾船已經放大、移位 ⇒ 每次接回開頭會瞬間縮回原畫的小船。",
+   "drift": {
+    "max": 15.4,
+    "at": 7.2,
+    "mean": 12.6,
+    "over_16": [],
+    "_": "每 0.3s 一格，跟原畫比邊的位置。只動光約 6，構圖動了 19 以上。"
+   },
+   "v": "08e04a72"
+  },
+  {
    "id": 50,
    "kind": "reinterpretation",
    "file": "assets/motion/50.webm",
@@ -2839,7 +3069,7 @@
    "source": "research/motion/p42.mp4（2026-09-21 00:09）",
    "prompt": "base（第五版）＋ scenes.42 第一版（research/motion/42-prompt-v1.txt）",
    "model": "Nano Banana（Google Flow；沿用 no.72 的標示，這一批 Aaron 未另外確認模型）",
-   "verdict": "待 Aaron 決定（剪影被上色；第二版提示詞已備）",
+   "verdict": "✅ 收（Aaron 2026-09-21 指示 41–50 全部部署，見 clips）",
    "why": [
     "✅ 第一幀 2.0；✅ 沒有推近（100%）；煙火火星飄落、紅燈籠搖晃、水面倒影都有；沒有假字。",
     "右前方擠滿人的船上，黑色剪影被畫成穿彩色和服、看得見臉的人；那條船多出頂棚，後方的大屋形船被併進去。",
@@ -2867,7 +3097,7 @@
    "source": "research/motion/p41.mp4（2026-09-20 23:56）",
    "prompt": "base（第五版）＋ scenes.41",
    "model": "Nano Banana（Google Flow；沿用 no.72 的標示，這一批 Aaron 未另外確認模型）",
-   "verdict": "待 Aaron 決定（構圖保住；色調偏移）",
+   "verdict": "✅ 收（Aaron 2026-09-21 指示 41–50 全部部署，見 clips）",
    "why": [
     "✅ 構圖、紙門的燈光、螢火、水面漣漪都好；沒有推近、沒有假字。",
     "0.5 秒整體色調從原畫偏綠的暗色轉成偏藍黑（灰階差 2 → 20，之後平穩）。"
@@ -2880,7 +3110,7 @@
    "source": "research/motion/p42.mp4（2026-09-21 00:17，第二次，同名覆蓋第一次）",
    "prompt": "base（第五版）＋ scenes.42 第二版",
    "model": "Nano Banana（Google Flow；沿用 no.72 的標示，這一批 Aaron 未另外確認模型）",
-   "verdict": "待 Aaron 決定（剪影保住；色調偏移、左船小改）",
+   "verdict": "✅ 收（Aaron 2026-09-21 指示 41–50 全部部署，見 clips）",
    "why": [
     "✅ 第二版的剪影錨有效：右前方觀眾全程是黑色剪影，大屋形船保住；煙火火星、紅燈籠都有。",
     "0.5 秒整體色調偏綠轉偏黑；左邊的船後半段多出頂棚、多一組掛紅燈籠的竿架。"
@@ -2893,7 +3123,7 @@
    "source": "research/motion/p43.mp4（2026-09-21 10:38）",
    "prompt": "base（第五版）＋ scenes.43",
    "model": "Nano Banana（Google Flow；沿用 no.72 的標示，這一批 Aaron 未另外確認模型）",
-   "verdict": "待 Aaron 決定（構圖保住；小船變大）",
+   "verdict": "✅ 收（Aaron 2026-09-21 指示 41–50 全部部署，見 clips）",
    "why": [
     "✅ 木樁、橋、天上的黃線、雲都保住；沒有推近、沒有假字。",
     "撐篙的小船從蘆葦後面划到開闊水面，人與船都變大一些。"
@@ -2934,7 +3164,7 @@
    "source": "research/motion/p44.mp4（2026-09-21 11:19，第三次，貼近原畫版第一版）",
    "prompt": "close base 第一版＋scenes.44",
    "model": "Nano Banana（Google Flow；沿用 no.72 的標示，這一批 Aaron 未另外確認模型）",
-   "verdict": "待 Aaron 決定（構圖全保住；色調偏藍、動得少）",
+   "verdict": "✅ 收（Aaron 2026-09-21 指示 41–50 全部部署，見 clips）",
    "why": [
     "✅ **第一次沒有被重畫**：倉庫、草包、枯樹、兩艘船、題字全保住，沒有假字。",
     "0.5 秒整體色調從原畫的黃綠偏成藍（灰階差 3 → 7）；船上的人微動，其餘幾乎不動。"
@@ -2947,7 +3177,7 @@
    "source": "research/motion/p46.mp4（2026-09-21 11:25，貼近原畫版第一版）",
    "prompt": "close base 第一版＋scenes.46",
    "model": "Nano Banana（Google Flow；沿用 no.72 的標示，這一批 Aaron 未另外確認模型）",
-   "verdict": "待 Aaron 決定（構圖大致保住；女子上色、多白雲、多人影）",
+   "verdict": "✅ 收（Aaron 2026-09-21 指示 41–50 全部部署，見 clips）",
    "why": [
     "✅ 橋、欄杆、大樹、小屋、拄杖男子、題字都保住；最後回到接近原畫（灰階差 10 → 4）。",
     "橋上兩位女子被畫成彩色和服；右上多一朵大白雲、雲變成許多小朵；遠處多出兩三個小人影。"
@@ -3261,7 +3491,8 @@
    "why": [
     "2026-09-21 建立：p44 用生動版第五、第六版連續三次整幅重畫（第六版把開頭改回 Animate this exact image 也沒擋住——那個假說在 44 上被推翻）。九次整幅重畫全在生動版；忠實版骨架（KEEP IDENTICAL＋WHAT MOVES）從沒重畫過，缺點只是動得少。⇒ 取忠實版骨架，但 WHAT MOVES 不再是「Almost nothing moves」，而是每一幅寫好的原地動作；加回「首尾相接」——生動版拿掉它是為了讓動作走得遠，貼近原畫版正好要它把東西拉回原位。",
     "⚠️ 第二版（2026-09-21）：第一版在 44、46、47 **構圖全部保住**（沒有整幅重畫、沒有假字、沒有放大）——骨架有效。但 Aaron 看 p47：「沒有發揮動畫生成的優勢，裡面只有特定人物在移動」。原因在第一版自己：①人物只准動頭手衣袖（我寫死的）；②首尾相接把動作拉回原位；③雲、電線、樹用了 drift slowly／sway a little 這種弱動詞。⇒ 第二版：KEEP IDENTICAL 骨架不動（位置、大小、顏色、數量、不准多東西），人物改成『維持大小與衣著，可以走幾步、轉身、比手勢』；拿掉首尾相接（淡入淡出由 make-motion 的 fade 處理）；STYLE 改成『整個畫面從第一秒起就有明顯、持續的動作』。演出句用強一點的動詞（sail steadily、swing、toss、works his oar with a steady rhythm）。⚠️ 第一版還有兩個沒擋住的：44 整體色調從黃綠偏成藍；46 橋上女子被上色、多一朵大白雲、遠處多兩三個人。",
-    "🔴 第三版（2026-09-21）：Aaron 看 p47 第二次：「我希望的是畫中的人與樹或白雲都能自然地去動」。第二版的結果：人還是幾乎不動、樹變成滿天飛的黑色葉片（我寫了 toss）、扁平的雲長成積雲（我寫了 sail）。對照自然有動又沒被重畫的 32、36、40：它們的提示詞都有一段 **LIFE**（人從頭到尾自然地走動、轉身、張望；衣服、樹枝、水隨風反應），貼近原畫版少了這段；第二版的「they may walk」是**允許**，不是**要求**，模型照樣不動。⇒ 第三版：KEEP IDENTICAL 只綁建築、橋、樹、電線桿、圍牆、招牌（位置大小顏色）、船與車（大小顏色）、**雲保持印刷的形狀**；把人從 KEEP 移到新的 LIFE 段，用要求句（move naturally the whole time）。演出句：樹寫『樹冠來回搖』不寫 toss；雲寫『扁平的白雲穩穩飄過』。46 的兩位女子寫明『深灰色和服、倚著欄杆』（第一版被上色）。"
+    "🔴 第三版（2026-09-21）：Aaron 看 p47 第二次：「我希望的是畫中的人與樹或白雲都能自然地去動」。第二版的結果：人還是幾乎不動、樹變成滿天飛的黑色葉片（我寫了 toss）、扁平的雲長成積雲（我寫了 sail）。對照自然有動又沒被重畫的 32、36、40：它們的提示詞都有一段 **LIFE**（人從頭到尾自然地走動、轉身、張望；衣服、樹枝、水隨風反應），貼近原畫版少了這段；第二版的「they may walk」是**允許**，不是**要求**，模型照樣不動。⇒ 第三版：KEEP IDENTICAL 只綁建築、橋、樹、電線桿、圍牆、招牌（位置大小顏色）、船與車（大小顏色）、**雲保持印刷的形狀**；把人從 KEEP 移到新的 LIFE 段，用要求句（move naturally the whole time）。演出句：樹寫『樹冠來回搖』不寫 toss；雲寫『扁平的白雲穩穩飄過』。46 的兩位女子寫明『深灰色和服、倚著欄杆』（第一版被上色）。",
+    "✅ 第三版在 p47 成功（2026-09-21）：構圖、建築、題字全保住，行人真的在走（撐黃傘的人走到人力車旁），扁雲維持形狀、沒有落葉亂飛。⚠️ 同一版在 p49 仍把前景的船重畫得更大、多一個穿粉紅和服的人，右邊的雲變積雲——船是那幅的主體，KEEP 綁了『船的大小與顏色』但沒擋住。⚠️ 貼近原畫版上架時用 kind=reinterpretation：第三版要求人走動，已不是 atmosphere（只動光與空氣）的宣稱。"
    ],
    "base_v1": "Animate this exact image. It is a Japanese woodblock print from the Meiji era (Kobayashi Kiyochika, 1876-1881), placed on a plain beige background.\n\nCAMERA: Locked-off static shot for the whole clip. No pan, tilt, zoom, push-in, parallax, rotation or reframing. The entire print stays in frame at the same size, including its paper margins and printed text. The plain background around the print stays plain and empty.\n\nKEEP IDENTICAL: The picture stays this same print from the first frame to the last. Every person, boat, vehicle, animal, building, bridge, tree, pole and sign keeps its position, size, shape, colours and number; nothing enters, leaves or appears. People stay in their places and poses, moving only their heads, hands, sleeves and hair a little. The carved outlines, the flat areas of printed colour, the overall colour tint and the paper texture stay exactly as printed.\n\nWHAT MOVES: {SCENE}\n\nSTYLE: The motion stays inside the woodblock look: flat printed colour, no photographic lighting, no 3D depth, no motion blur, no added grain, no colour grading. Movement is gentle, continuous and clearly visible. The clip loops seamlessly: the last frame matches the first frame.",
    "base_v1_note": "第一版（44 第三次、46、47 用的）：人物只准動頭手衣袖、首尾相接 ⇒ 構圖全保住，但 47 只有少數人在動。",
