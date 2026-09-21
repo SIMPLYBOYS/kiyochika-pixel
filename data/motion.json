@@ -2913,6 +2913,46 @@
     "⇒ 第六版的開頭假說在這一幅被推翻；改用 _prompt_template.close。"
    ],
    "evidence": "research/motion/p123-review/p44v3-no44-第六版開頭仍整幅重畫.jpg"
+  },
+  {
+   "date": "2026-09-21",
+   "id": 47,
+   "source": "research/motion/p47.mp4（2026-09-21 11:30）",
+   "prompt": "close base 第一版＋scenes.47 第一版（research/motion/47-prompt-close1.txt）",
+   "model": "Nano Banana（Google Flow；沿用 no.72 的標示，這一批 Aaron 未另外確認模型）",
+   "verdict": "⛔ 不收（Aaron：沒有發揮動畫的優勢，只有特定人物在移動）",
+   "why": [
+    "✅ 構圖、題字、人物全部保住，沒有推近、沒有假字（首尾灰階差 3.2）。",
+    "只有撐傘的人與少數行人有細微動作；雲、電線、樹幾乎不動。",
+    "原因見 _prompt_template.close.why 第二版。"
+   ],
+   "evidence": "research/motion/p123-review/p47-no47-貼近原畫版-只有少數人動.jpg"
+  },
+  {
+   "date": "2026-09-21",
+   "id": 44,
+   "source": "research/motion/p44.mp4（2026-09-21 11:19，第三次，貼近原畫版第一版）",
+   "prompt": "close base 第一版＋scenes.44",
+   "model": "Nano Banana（Google Flow；沿用 no.72 的標示，這一批 Aaron 未另外確認模型）",
+   "verdict": "待 Aaron 決定（構圖全保住；色調偏藍、動得少）",
+   "why": [
+    "✅ **第一次沒有被重畫**：倉庫、草包、枯樹、兩艘船、題字全保住，沒有假字。",
+    "0.5 秒整體色調從原畫的黃綠偏成藍（灰階差 3 → 7）；船上的人微動，其餘幾乎不動。"
+   ],
+   "evidence": "research/motion/p123-review/p44v4-no44-貼近原畫版-構圖保住色調偏藍.jpg"
+  },
+  {
+   "date": "2026-09-21",
+   "id": 46,
+   "source": "research/motion/p46.mp4（2026-09-21 11:25，貼近原畫版第一版）",
+   "prompt": "close base 第一版＋scenes.46",
+   "model": "Nano Banana（Google Flow；沿用 no.72 的標示，這一批 Aaron 未另外確認模型）",
+   "verdict": "待 Aaron 決定（構圖大致保住；女子上色、多白雲、多人影）",
+   "why": [
+    "✅ 橋、欄杆、大樹、小屋、拄杖男子、題字都保住；最後回到接近原畫（灰階差 10 → 4）。",
+    "橋上兩位女子被畫成彩色和服；右上多一朵大白雲、雲變成許多小朵；遠處多出兩三個小人影。"
+   ],
+   "evidence": "research/motion/p123-review/p46-no46-貼近原畫版-女子上色多白雲.jpg"
   }
  ],
  "_decision": {
@@ -3197,16 +3237,27 @@
   },
   "close": {
    "_": "變體 D：貼近原畫版。🔴 2026-09-21 起的預設（Aaron：「請務必追求與原畫接近的原則去做動畫生成」）。骨架是忠實版 base（從沒被整幅重畫過），動作只寫**原地會動的東西**：雲、水面、倒影、樹葉、蘆葦、燈籠、原地搖晃的船；人物留在原位與原姿勢，只動頭、手、衣袖。上架一律 kind=atmosphere ⇒ make-motion 的位移門檻（< 16）就是『接近原畫』的客觀檢查。",
-   "base": "Animate this exact image. It is a Japanese woodblock print from the Meiji era (Kobayashi Kiyochika, 1876-1881), placed on a plain beige background.\n\nCAMERA: Locked-off static shot for the whole clip. No pan, tilt, zoom, push-in, parallax, rotation or reframing. The entire print stays in frame at the same size, including its paper margins and printed text. The plain background around the print stays plain and empty.\n\nKEEP IDENTICAL: The picture stays this same print from the first frame to the last. Every person, boat, vehicle, animal, building, bridge, tree, pole and sign keeps its position, size, shape, colours and number; nothing enters, leaves or appears. People stay in their places and poses, moving only their heads, hands, sleeves and hair a little. The carved outlines, the flat areas of printed colour, the overall colour tint and the paper texture stay exactly as printed.\n\nWHAT MOVES: {SCENE}\n\nSTYLE: The motion stays inside the woodblock look: flat printed colour, no photographic lighting, no 3D depth, no motion blur, no added grain, no colour grading. Movement is gentle, continuous and clearly visible. The clip loops seamlessly: the last frame matches the first frame.",
+   "base": "Animate this exact image. It is a Japanese woodblock print from the Meiji era (Kobayashi Kiyochika, 1876-1881), placed on a plain beige background.\n\nCAMERA: Locked-off static shot for the whole clip. No pan, tilt, zoom, push-in, parallax, rotation or reframing. The entire print stays in frame at the same size, including its paper margins and printed text. The plain background around the print stays plain and empty.\n\nKEEP IDENTICAL: The picture stays this same print from the first frame to the last. Every person, boat, vehicle, animal, building, bridge, tree, pole and sign keeps its size, shape, colours and number and stays in the same part of the picture; nothing enters, leaves or appears. People and animals keep their size, clothes and colours; they may walk a few slow steps, turn and gesture, and they stay in view. The carved outlines, the flat areas of printed colour, the overall colour tint and the paper texture stay exactly as printed.\n\nWHAT MOVES: {SCENE}\n\nSTYLE: The motion stays inside the woodblock look: flat printed colour, no photographic lighting, no 3D depth, no motion blur, no added grain, no colour grading. Movement is lively, continuous and clearly visible across the whole picture from the very first second.",
    "scenes": {
     "44": "The white clouds drift slowly across the blue sky. The river's surface ripples and glints across the whole picture, and the reflections of the boats and the far bank waver. The two boats rock gently in place on the water, and the man standing at the stern of the near boat moves his pole a little. The thin bare twigs of the tall leafless tree on the right tremble in the breeze. The man in white on the road stays where he is, moving his arms a little.",
     "46": "The white clouds drift slowly across the blue sky. The leaves of the big tree on the right shiver and sway in the wind. The river on the left ripples and glints. On the bridge, the man in the dark coat and hat stays where he is, shifting his weight and moving his cane a little; the two women in kimono further along stay in their places, their sleeves stirring in the wind. The small figures far away stay where they are.",
-    "47": "The white clouds drift slowly across the blue sky, and the telegraph wires between the tall poles sway a little in the wind. The leaves of the trees behind the long fence stir. The people on the road stay in their places and poses: the man under the umbrella tilts it a little, the rickshaw men shift their weight and their sleeves stir, and the small figures further back move their heads and hands. The rickshaws with their red wheels stay where they are.",
-    "49": "The grey clouds drift slowly across the sky, and the rainbow arching up on the left stays exactly where it is. The water ripples and glints all across the picture, and the reflections of the trees and the boat waver. The boat in the foreground rocks gently in place; the man at the stern moves his oar a little and the passengers move their heads. The reeds along the far bank sway, the leaves of the dark trees on the island stir, and the two small birds on the water bob."
+    "47": "A breezy, sunny day. The white clouds sail steadily across the blue sky, and the telegraph wires between the tall poles swing in the wind. The dark green trees behind the long fence toss and sway. On the road, the man under the umbrella walks a few slow steps, his umbrella bobbing; the man with the pole over his shoulder walks a few steps; the rickshaw man beside the red-wheeled rickshaw trots a few steps and stops; the man sitting on the shafts of the second rickshaw looks around and waves a hand; and the small figures further along the road walk slowly and turn. The brick building with its clock tower, the telegraph poles, the long fence and the handcart at the far left stay exactly as printed.",
+    "49": "The grey clouds roll steadily across the sky, and the rainbow on the left stays exactly where it is. The water ripples and glints all across the picture, and the reflections of the trees and the boat waver. In the boat in the foreground, the man at the stern works his oar back and forth with a steady rhythm, the standing man in blue shifts his weight and looks around, and the seated passengers turn their heads and talk; the boat rocks on the water. The reeds along the far bank sway in the wind, the leaves of the dark trees on the island toss, and the two small birds on the water bob and paddle."
    },
    "why": [
-    "2026-09-21 建立：p44 用生動版第五、第六版連續三次整幅重畫（第六版把開頭改回 Animate this exact image 也沒擋住——那個假說在 44 上被推翻）。九次整幅重畫全在生動版；忠實版骨架（KEEP IDENTICAL＋WHAT MOVES）從沒重畫過，缺點只是動得少。⇒ 取忠實版骨架，但 WHAT MOVES 不再是「Almost nothing moves」，而是每一幅寫好的原地動作；加回「首尾相接」——生動版拿掉它是為了讓動作走得遠，貼近原畫版正好要它把東西拉回原位。"
-   ]
+    "2026-09-21 建立：p44 用生動版第五、第六版連續三次整幅重畫（第六版把開頭改回 Animate this exact image 也沒擋住——那個假說在 44 上被推翻）。九次整幅重畫全在生動版；忠實版骨架（KEEP IDENTICAL＋WHAT MOVES）從沒重畫過，缺點只是動得少。⇒ 取忠實版骨架，但 WHAT MOVES 不再是「Almost nothing moves」，而是每一幅寫好的原地動作；加回「首尾相接」——生動版拿掉它是為了讓動作走得遠，貼近原畫版正好要它把東西拉回原位。",
+    "⚠️ 第二版（2026-09-21）：第一版在 44、46、47 **構圖全部保住**（沒有整幅重畫、沒有假字、沒有放大）——骨架有效。但 Aaron 看 p47：「沒有發揮動畫生成的優勢，裡面只有特定人物在移動」。原因在第一版自己：①人物只准動頭手衣袖（我寫死的）；②首尾相接把動作拉回原位；③雲、電線、樹用了 drift slowly／sway a little 這種弱動詞。⇒ 第二版：KEEP IDENTICAL 骨架不動（位置、大小、顏色、數量、不准多東西），人物改成『維持大小與衣著，可以走幾步、轉身、比手勢』；拿掉首尾相接（淡入淡出由 make-motion 的 fade 處理）；STYLE 改成『整個畫面從第一秒起就有明顯、持續的動作』。演出句用強一點的動詞（sail steadily、swing、toss、works his oar with a steady rhythm）。⚠️ 第一版還有兩個沒擋住的：44 整體色調從黃綠偏成藍；46 橋上女子被上色、多一朵大白雲、遠處多兩三個人。"
+   ],
+   "base_v1": "Animate this exact image. It is a Japanese woodblock print from the Meiji era (Kobayashi Kiyochika, 1876-1881), placed on a plain beige background.\n\nCAMERA: Locked-off static shot for the whole clip. No pan, tilt, zoom, push-in, parallax, rotation or reframing. The entire print stays in frame at the same size, including its paper margins and printed text. The plain background around the print stays plain and empty.\n\nKEEP IDENTICAL: The picture stays this same print from the first frame to the last. Every person, boat, vehicle, animal, building, bridge, tree, pole and sign keeps its position, size, shape, colours and number; nothing enters, leaves or appears. People stay in their places and poses, moving only their heads, hands, sleeves and hair a little. The carved outlines, the flat areas of printed colour, the overall colour tint and the paper texture stay exactly as printed.\n\nWHAT MOVES: {SCENE}\n\nSTYLE: The motion stays inside the woodblock look: flat printed colour, no photographic lighting, no 3D depth, no motion blur, no added grain, no colour grading. Movement is gentle, continuous and clearly visible. The clip loops seamlessly: the last frame matches the first frame.",
+   "base_v1_note": "第一版（44 第三次、46、47 用的）：人物只准動頭手衣袖、首尾相接 ⇒ 構圖全保住，但 47 只有少數人在動。",
+   "scenes_history": {
+    "47": [
+     "The white clouds drift slowly across the blue sky, and the telegraph wires between the tall poles sway a little in the wind. The leaves of the trees behind the long fence stir. The people on the road stay in their places and poses: the man under the umbrella tilts it a little, the rickshaw men shift their weight and their sleeves stir, and the small figures further back move their heads and hands. The rickshaws with their red wheels stay where they are."
+    ],
+    "49": [
+     "The grey clouds drift slowly across the sky, and the rainbow arching up on the left stays exactly where it is. The water ripples and glints all across the picture, and the reflections of the trees and the boat waver. The boat in the foreground rocks gently in place; the man at the stern moves his oar a little and the passengers move their heads. The reeds along the far bank sway, the leaves of the dark trees on the island stir, and the two small birds on the water bob."
+    ]
+   }
   }
  }
 }
