@@ -2653,6 +2653,54 @@
     1021
    ],
    "fill": "#C6B78D"
+  },
+  "52": {
+   "file": "research/motion/52-pad16x9.png",
+   "canvas": [
+    1812,
+    1019
+   ],
+   "plate_at": [
+    75,
+    0
+   ],
+   "plate_size": [
+    1662,
+    1019
+   ],
+   "fill": "#C3B084"
+  },
+  "58": {
+   "file": "research/motion/58-pad16x9.png",
+   "canvas": [
+    1760,
+    990
+   ],
+   "plate_at": [
+    38,
+    0
+   ],
+   "plate_size": [
+    1683,
+    990
+   ],
+   "fill": "#C1B389"
+  },
+  "59": {
+   "file": "research/motion/59-pad16x9.png",
+   "canvas": [
+    1784,
+    1004
+   ],
+   "plate_at": [
+    50,
+    0
+   ],
+   "plate_size": [
+    1684,
+    1004
+   ],
+   "fill": "#C0B286"
   }
  },
  "_attempts": [
@@ -3486,13 +3534,17 @@
     "44": "The white clouds drift slowly across the blue sky. The river's surface ripples and glints across the whole picture, and the reflections of the boats and the far bank waver. The two boats rock gently in place on the water, and the man standing at the stern of the near boat moves his pole a little. The thin bare twigs of the tall leafless tree on the right tremble in the breeze. The man in white on the road stays where he is, moving his arms a little.",
     "46": "The small white clouds drift slowly across the blue sky. The big tree on the right sways in the wind and its leaves shiver. The river on the left ripples and glints. On the bridge, the man in the dark coat and bowler hat walks slowly toward us, tapping his cane; further along, the two women in dark grey kimono lean on the railing, look out over the river and turn their heads to talk; and the two small figures far away beyond the bridge post walk slowly.",
     "47": "A breezy, sunny day. The thin, flat white clouds drift steadily across the blue sky from left to right. The telegraph wires between the tall poles swing in the wind, and the rounded crowns of the dark green trees behind the long fence sway back and forth. On the road, the man under the yellow umbrella walks slowly toward the right, his umbrella bobbing with each step; the man with the pole over his shoulder walks slowly along the road; the rickshaw man beside the first red-wheeled rickshaw steps forward and back, adjusting the shafts; the man sitting on the shafts of the second rickshaw looks around and wipes his brow; and the small figures further along the road walk slowly in both directions, turning to one another.",
-    "49": "The grey clouds roll steadily across the sky, and the rainbow on the left stays exactly where it is. The water ripples and glints all across the picture, and the reflections of the trees and the boat waver. In the boat in the foreground, the man at the stern works his oar back and forth with a steady rhythm, the standing man in blue shifts his weight and looks around, and the seated passengers turn their heads and talk; the boat rocks on the water. The reeds along the far bank sway in the wind, the leaves of the dark trees on the island toss, and the two small birds on the water bob and paddle."
+    "49": "The grey clouds roll steadily across the sky, and the rainbow on the left stays exactly where it is. The water ripples and glints all across the picture, and the reflections of the trees and the boat waver. In the boat in the foreground, the man at the stern works his oar back and forth with a steady rhythm, the standing man in blue shifts his weight and looks around, and the seated passengers turn their heads and talk; the boat rocks on the water. The reeds along the far bank sway in the wind, the leaves of the dark trees on the island toss, and the two small birds on the water bob and paddle.",
+    "52": "A breezy summer afternoon at the hexagonal teahouse in Ueno. The broad green crowns of the big trees sway back and forth in the wind, and their leaves shiver. On the left, the woman in the grey kimono holding the teal umbrella, seen from behind, walks slowly toward the teahouse, her umbrella bobbing with each step. Under the long open shed on the right, the seated person and the small child beside them turn and move their hands. The hexagonal teahouse with its pointed spire, the long shed with its round tables and benches, the fence and the far pagoda stay exactly as printed.",
+    "58": "A dark, wet night in front of Shinbashi Station. The whole picture keeps its dark night colours: the sky stays a dark grey-green, the only lights are the lit windows, the pink-lit entrance and the pale paper umbrellas, and every person, rickshaw and horse stays a flat dark silhouette with no faces or colours. The crowd in front of the station moves: the pale umbrellas bob and tilt as the silhouettes walk slowly in both directions, and the rickshaw men shift between their shafts. The long pale reflections on the wet ground shimmer and waver, and the dark trees beside the station sway in the night wind. The station building with its two towers and its lit windows stays exactly as printed.",
+    "59": "Night on Nihonbashi. The whole picture keeps its dim evening colours: the sky stays grey-blue, and every person, carriage and horse stays a flat dark silhouette with no faces or colours. The flames in the tall gas lamps flicker, and the small paper lanterns carried by the people swing and glow. The silhouettes walk slowly along the bridge in both directions and turn to one another. In the middle, the horse of the covered carriage steps in place and tosses its head, and the rickshaw beside it rolls a little. The dark houses with their lit windows, the bridge railings and the posts stay exactly as printed."
    },
    "why": [
     "2026-09-21 建立：p44 用生動版第五、第六版連續三次整幅重畫（第六版把開頭改回 Animate this exact image 也沒擋住——那個假說在 44 上被推翻）。九次整幅重畫全在生動版；忠實版骨架（KEEP IDENTICAL＋WHAT MOVES）從沒重畫過，缺點只是動得少。⇒ 取忠實版骨架，但 WHAT MOVES 不再是「Almost nothing moves」，而是每一幅寫好的原地動作；加回「首尾相接」——生動版拿掉它是為了讓動作走得遠，貼近原畫版正好要它把東西拉回原位。",
     "⚠️ 第二版（2026-09-21）：第一版在 44、46、47 **構圖全部保住**（沒有整幅重畫、沒有假字、沒有放大）——骨架有效。但 Aaron 看 p47：「沒有發揮動畫生成的優勢，裡面只有特定人物在移動」。原因在第一版自己：①人物只准動頭手衣袖（我寫死的）；②首尾相接把動作拉回原位；③雲、電線、樹用了 drift slowly／sway a little 這種弱動詞。⇒ 第二版：KEEP IDENTICAL 骨架不動（位置、大小、顏色、數量、不准多東西），人物改成『維持大小與衣著，可以走幾步、轉身、比手勢』；拿掉首尾相接（淡入淡出由 make-motion 的 fade 處理）；STYLE 改成『整個畫面從第一秒起就有明顯、持續的動作』。演出句用強一點的動詞（sail steadily、swing、toss、works his oar with a steady rhythm）。⚠️ 第一版還有兩個沒擋住的：44 整體色調從黃綠偏成藍；46 橋上女子被上色、多一朵大白雲、遠處多兩三個人。",
     "🔴 第三版（2026-09-21）：Aaron 看 p47 第二次：「我希望的是畫中的人與樹或白雲都能自然地去動」。第二版的結果：人還是幾乎不動、樹變成滿天飛的黑色葉片（我寫了 toss）、扁平的雲長成積雲（我寫了 sail）。對照自然有動又沒被重畫的 32、36、40：它們的提示詞都有一段 **LIFE**（人從頭到尾自然地走動、轉身、張望；衣服、樹枝、水隨風反應），貼近原畫版少了這段；第二版的「they may walk」是**允許**，不是**要求**，模型照樣不動。⇒ 第三版：KEEP IDENTICAL 只綁建築、橋、樹、電線桿、圍牆、招牌（位置大小顏色）、船與車（大小顏色）、**雲保持印刷的形狀**；把人從 KEEP 移到新的 LIFE 段，用要求句（move naturally the whole time）。演出句：樹寫『樹冠來回搖』不寫 toss；雲寫『扁平的白雲穩穩飄過』。46 的兩位女子寫明『深灰色和服、倚著欄杆』（第一版被上色）。",
-    "✅ 第三版在 p47 成功（2026-09-21）：構圖、建築、題字全保住，行人真的在走（撐黃傘的人走到人力車旁），扁雲維持形狀、沒有落葉亂飛。⚠️ 同一版在 p49 仍把前景的船重畫得更大、多一個穿粉紅和服的人，右邊的雲變積雲——船是那幅的主體，KEEP 綁了『船的大小與顏色』但沒擋住。⚠️ 貼近原畫版上架時用 kind=reinterpretation：第三版要求人走動，已不是 atmosphere（只動光與空氣）的宣稱。"
+    "✅ 第三版在 p47 成功（2026-09-21）：構圖、建築、題字全保住，行人真的在走（撐黃傘的人走到人力車旁），扁雲維持形狀、沒有落葉亂飛。⚠️ 同一版在 p49 仍把前景的船重畫得更大、多一個穿粉紅和服的人，右邊的雲變積雲——船是那幅的主體，KEEP 綁了『船的大小與顏色』但沒擋住。⚠️ 貼近原畫版上架時用 kind=reinterpretation：第三版要求人走動，已不是 atmosphere（只動光與空氣）的宣稱。",
+    "no.52、58、59 的演出句（2026-09-21，close 第三版）：58、59 是夜景剪影，照 no.42 的教訓把「每個人、車、馬都是平塗的深色剪影、沒有臉與顏色」寫成錨；58 題名沒寫雨，只寫地面倒影晃動、紙傘上下晃，⛔ 不寫雨絲（不點名畫上沒有的東西）。⛔ no.60–63 火災四幅：street 變體既有規矩「那是逃難的人，動起來就是替清親演一場災難」，close 第三版的 LIFE 要求人走動，正好撞上 ⇒ 待 Aaron 決定。"
    ],
    "base_v1": "Animate this exact image. It is a Japanese woodblock print from the Meiji era (Kobayashi Kiyochika, 1876-1881), placed on a plain beige background.\n\nCAMERA: Locked-off static shot for the whole clip. No pan, tilt, zoom, push-in, parallax, rotation or reframing. The entire print stays in frame at the same size, including its paper margins and printed text. The plain background around the print stays plain and empty.\n\nKEEP IDENTICAL: The picture stays this same print from the first frame to the last. Every person, boat, vehicle, animal, building, bridge, tree, pole and sign keeps its position, size, shape, colours and number; nothing enters, leaves or appears. People stay in their places and poses, moving only their heads, hands, sleeves and hair a little. The carved outlines, the flat areas of printed colour, the overall colour tint and the paper texture stay exactly as printed.\n\nWHAT MOVES: {SCENE}\n\nSTYLE: The motion stays inside the woodblock look: flat printed colour, no photographic lighting, no 3D depth, no motion blur, no added grain, no colour grading. Movement is gentle, continuous and clearly visible. The clip loops seamlessly: the last frame matches the first frame.",
    "base_v1_note": "第一版（44 第三次、46、47 用的）：人物只准動頭手衣袖、首尾相接 ⇒ 構圖全保住，但 47 只有少數人在動。",
