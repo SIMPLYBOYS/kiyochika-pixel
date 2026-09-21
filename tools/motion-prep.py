@@ -5,6 +5,8 @@
   research/motion/NN-prompt.txt         主模板（_prompt_template）＋ 依資料挑的 motion 句子
   research/motion/NN-prompt-street.txt  （--street 才有）變體 B 街景版：讓人動起來
   （--vivid 時 NN-prompt.txt 改寫成變體 C 生動版：每一幅寫好的動作指令，見 _prompt_template.vivid.scenes）
+  （--close 時改寫成變體 D 貼近原畫版：忠實版的骨架＋每一幅寫好的原地動作，見 _prompt_template.close.scenes）
+  🔴 2026-09-21 起預設用 --close（Aaron：務必追求與原畫接近）。生動版九次整幅重畫，忠實版骨架一次都沒有。
 
 並把墊邊的座標寫進 data/motion.json 的 _pad——make-motion.py 事後照這組數字切回原畫的框。
 
@@ -17,6 +19,7 @@
   python3 tools/motion-prep.py 1-10
   python3 tools/motion-prep.py --street 1 2 4 7
   python3 tools/motion-prep.py --vivid 1-10      # 生動版；沒寫過 scenes 的景會被擋下來
+  python3 tools/motion-prep.py --close 44 46     # 貼近原畫版；同樣要先寫好 scenes
 """
 import argparse, json, re
 from pathlib import Path
@@ -83,6 +86,7 @@ def main():
     ap.add_argument("ids", nargs="+", help="編號或範圍，例：1-10 50 72")
     ap.add_argument("--street", action="store_true", help="另外寫一份街景版（變體 B）")
     ap.add_argument("--vivid", action="store_true", help="NN-prompt.txt 改用生動版（變體 C）")
+    ap.add_argument("--close", action="store_true", help="NN-prompt.txt 改用貼近原畫版（變體 D，預設該用這個）")
     a = ap.parse_args()
 
     views = json.loads((ROOT / "data" / "views.json").read_text(encoding="utf-8"))
@@ -117,17 +121,18 @@ def main():
             png = OUT / f"{i:02d}-pad16x9.png"; canvas.save(png)
             data["_pad"][str(i)] = {"file": str(png.relative_to(ROOT)), "canvas": list(canvas.size),
                                     "plate_at": list(at), "plate_size": list(size), "fill": "#%02X%02X%02X" % fill}
-        if a.vivid:
-            scene = tpl["vivid"]["scenes"].get(str(i))
+        variant = "close" if a.close else "vivid" if a.vivid else None
+        if variant:
+            scene = tpl[variant]["scenes"].get(str(i))
             if not scene:
-                print(f"no.{i}  ⛔ 生動版還沒寫這一幅的 scenes（_prompt_template.vivid.scenes），⛔ 不用通用句子湊"); continue
-            prompt = tpl["vivid"]["base"].replace("{SCENE}", scene)
+                print(f"no.{i}  ⛔ {variant} 還沒寫這一幅的 scenes（_prompt_template.{variant}.scenes），⛔ 不用通用句子湊"); continue
+            prompt = tpl[variant]["base"].replace("{SCENE}", scene)
         else:
             prompt = tpl["base"].replace("{MOTION}", " ".join(tpl["motion"][k] for k in keys) or tpl["motion"]["default"])
         prompt = credit(prompt, v)
         (OUT / f"{i:02d}-prompt.txt").write_text(prompt + "\n", encoding="utf-8")
         note = (f"no.{i:<2} {v['title']['ja']}　墊 {canvas.size[0]}×{canvas.size[1]}（原畫在 {at}）　"
-                + ("生動版" if a.vivid else f"句子：{'＋'.join(keys) or 'default'}"))
+                + ({"close": "貼近原畫版", "vivid": "生動版"}[variant] if variant else f"句子：{'＋'.join(keys) or 'default'}"))
         if str(i) in (tpl.get("overrides") or {}):
             note += f"　⚠️ override：{tpl['overrides'][str(i)]['why']}"
         if a.street:
