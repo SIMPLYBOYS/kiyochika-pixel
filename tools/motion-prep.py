@@ -123,16 +123,24 @@ def main():
                                     "plate_at": list(at), "plate_size": list(size), "fill": "#%02X%02X%02X" % fill}
         variant = "close" if a.close else "vivid" if a.vivid else None
         if variant:
+            # 🔴 火災那 4 幅（60–63）畫的是逃難的人：人動起來就是替清親演一場災難。
+            # Aaron 2026-09-21 決定「只動火與煙，人不動」⇒ 換成 fire_base，寫在程式裡，換誰跑都不會忘。
+            fire = (v.get("conditions") or {}).get("weather") == "fire"
+            if fire and variant == "vivid":
+                print(f"no.{i}  ⛔ 火災畫不做生動版（人會動）⇒ 用 --close，會自動換成人不動的 fire_base"); continue
             scene = tpl[variant]["scenes"].get(str(i))
             if not scene:
                 print(f"no.{i}  ⛔ {variant} 還沒寫這一幅的 scenes（_prompt_template.{variant}.scenes），⛔ 不用通用句子湊"); continue
-            prompt = tpl[variant]["base"].replace("{SCENE}", scene)
+            base = tpl[variant]["base"]
+            if fire:
+                base = tpl["close"]["fire_base"]
+            prompt = base.replace("{SCENE}", scene)
         else:
             prompt = tpl["base"].replace("{MOTION}", " ".join(tpl["motion"][k] for k in keys) or tpl["motion"]["default"])
         prompt = credit(prompt, v)
         (OUT / f"{i:02d}-prompt.txt").write_text(prompt + "\n", encoding="utf-8")
         note = (f"no.{i:<2} {v['title']['ja']}　墊 {canvas.size[0]}×{canvas.size[1]}（原畫在 {at}）　"
-                + ({"close": "貼近原畫版", "vivid": "生動版"}[variant] if variant else f"句子：{'＋'.join(keys) or 'default'}"))
+                + (({"close": "貼近原畫版", "vivid": "生動版"}[variant] + ("（火災：人不動）" if fire else "")) if variant else f"句子：{'＋'.join(keys) or 'default'}"))
         if str(i) in (tpl.get("overrides") or {}):
             note += f"　⚠️ override：{tpl['overrides'][str(i)]['why']}"
         if a.street:

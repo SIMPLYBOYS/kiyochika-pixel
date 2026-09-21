@@ -2701,6 +2701,70 @@
     1004
    ],
    "fill": "#C0B286"
+  },
+  "60": {
+   "file": "research/motion/60-pad16x9.png",
+   "canvas": [
+    1862,
+    1047
+   ],
+   "plate_at": [
+    113,
+    0
+   ],
+   "plate_size": [
+    1635,
+    1047
+   ],
+   "fill": "#C6B992"
+  },
+  "61": {
+   "file": "research/motion/61-pad16x9.png",
+   "canvas": [
+    1716,
+    965
+   ],
+   "plate_at": [
+    59,
+    0
+   ],
+   "plate_size": [
+    1598,
+    965
+   ],
+   "fill": "#B29E78"
+  },
+  "62": {
+   "file": "research/motion/62-pad16x9.png",
+   "canvas": [
+    1772,
+    997
+   ],
+   "plate_at": [
+    48,
+    0
+   ],
+   "plate_size": [
+    1675,
+    997
+   ],
+   "fill": "#BAAB80"
+  },
+  "63": {
+   "file": "research/motion/63-pad16x9.png",
+   "canvas": [
+    1970,
+    1108
+   ],
+   "plate_at": [
+    168,
+    0
+   ],
+   "plate_size": [
+    1634,
+    1108
+   ],
+   "fill": "#C7B792"
   }
  },
  "_attempts": [
@@ -3537,7 +3601,11 @@
     "49": "The grey clouds roll steadily across the sky, and the rainbow on the left stays exactly where it is. The water ripples and glints all across the picture, and the reflections of the trees and the boat waver. In the boat in the foreground, the man at the stern works his oar back and forth with a steady rhythm, the standing man in blue shifts his weight and looks around, and the seated passengers turn their heads and talk; the boat rocks on the water. The reeds along the far bank sway in the wind, the leaves of the dark trees on the island toss, and the two small birds on the water bob and paddle.",
     "52": "A breezy summer afternoon at the hexagonal teahouse in Ueno. The broad green crowns of the big trees sway back and forth in the wind, and their leaves shiver. On the left, the woman in the grey kimono holding the teal umbrella, seen from behind, walks slowly toward the teahouse, her umbrella bobbing with each step. Under the long open shed on the right, the seated person and the small child beside them turn and move their hands. The hexagonal teahouse with its pointed spire, the long shed with its round tables and benches, the fence and the far pagoda stay exactly as printed.",
     "58": "A dark, wet night in front of Shinbashi Station. The whole picture keeps its dark night colours: the sky stays a dark grey-green, the only lights are the lit windows, the pink-lit entrance and the pale paper umbrellas, and every person, rickshaw and horse stays a flat dark silhouette with no faces or colours. The crowd in front of the station moves: the pale umbrellas bob and tilt as the silhouettes walk slowly in both directions, and the rickshaw men shift between their shafts. The long pale reflections on the wet ground shimmer and waver, and the dark trees beside the station sway in the night wind. The station building with its two towers and its lit windows stays exactly as printed.",
-    "59": "Night on Nihonbashi. The whole picture keeps its dim evening colours: the sky stays grey-blue, and every person, carriage and horse stays a flat dark silhouette with no faces or colours. The flames in the tall gas lamps flicker, and the small paper lanterns carried by the people swing and glow. The silhouettes walk slowly along the bridge in both directions and turn to one another. In the middle, the horse of the covered carriage steps in place and tosses its head, and the rickshaw beside it rolls a little. The dark houses with their lit windows, the bridge railings and the posts stay exactly as printed."
+    "59": "Night on Nihonbashi. The whole picture keeps its dim evening colours: the sky stays grey-blue, and every person, carriage and horse stays a flat dark silhouette with no faces or colours. The flames in the tall gas lamps flicker, and the small paper lanterns carried by the people swing and glow. The silhouettes walk slowly along the bridge in both directions and turn to one another. In the middle, the horse of the covered carriage steps in place and tosses its head, and the rickshaw beside it rolls a little. The dark houses with their lit windows, the bridge railings and the posts stay exactly as printed.",
+    "60": "The great sheets of red, pink and orange flame streak diagonally across the whole sky and flicker, and the dark trails of smoke drift upward and to the right with them. Sparks rise and swirl above the burning roofs on the right. The red glow on the river ripples and wavers, and the reflections under the stone bridge shimmer. The dark silhouettes of the buildings, the bridge, the tall leaning pole and the piles of goods on the right bank stay exactly as printed.",
+    "61": "The huge billows of dark smoke and red and orange flame roll across the sky from left to right and flicker, and the second fire on the far right bank flares and smokes. The small red sparks drift slowly through the pale sky over the river. The river's surface ripples and glints with the firelight. The hanging paper lantern and the glass street lamp on its bracket sway a little in the hot wind, and the pine branches on the roof stir. Everyone on the road stays exactly as printed.",
+    "62": "The towering cloud of dark smoke fills the night sky and rolls slowly upward, and the countless orange embers in it glow, flicker and drift. The firelight glows on the water under the bridge and on the scattered goods on the bank, and the reflections waver. The white paper lantern on the post at the right sways a little. The dense crowd in the foreground, the man on the ladder and the storehouses stay exactly as printed.",
+    "63": "The long dark bands of cloud drift slowly across the grey sky, and the thin column of smoke in the middle rises and wavers. The small pale scraps carried by the wind drift across the burnt ground. The flame in the glass of the tall street lamp flickers. The two charred tree trunks, the burnt brick building, the surviving storehouses and all the people walking through the ruins stay exactly as printed."
    },
    "why": [
     "2026-09-21 建立：p44 用生動版第五、第六版連續三次整幅重畫（第六版把開頭改回 Animate this exact image 也沒擋住——那個假說在 44 上被推翻）。九次整幅重畫全在生動版；忠實版骨架（KEEP IDENTICAL＋WHAT MOVES）從沒重畫過，缺點只是動得少。⇒ 取忠實版骨架，但 WHAT MOVES 不再是「Almost nothing moves」，而是每一幅寫好的原地動作；加回「首尾相接」——生動版拿掉它是為了讓動作走得遠，貼近原畫版正好要它把東西拉回原位。",
@@ -3561,7 +3629,9 @@
     ]
    },
    "base_v2": "Animate this exact image. It is a Japanese woodblock print from the Meiji era (Kobayashi Kiyochika, 1876-1881), placed on a plain beige background.\n\nCAMERA: Locked-off static shot for the whole clip. No pan, tilt, zoom, push-in, parallax, rotation or reframing. The entire print stays in frame at the same size, including its paper margins and printed text. The plain background around the print stays plain and empty.\n\nKEEP IDENTICAL: The picture stays this same print from the first frame to the last. Every person, boat, vehicle, animal, building, bridge, tree, pole and sign keeps its size, shape, colours and number and stays in the same part of the picture; nothing enters, leaves or appears. People and animals keep their size, clothes and colours; they may walk a few slow steps, turn and gesture, and they stay in view. The carved outlines, the flat areas of printed colour, the overall colour tint and the paper texture stay exactly as printed.\n\nWHAT MOVES: {SCENE}\n\nSTYLE: The motion stays inside the woodblock look: flat printed colour, no photographic lighting, no 3D depth, no motion blur, no added grain, no colour grading. Movement is lively, continuous and clearly visible across the whole picture from the very first second.",
-   "base_v2_note": "第二版（47 第二次用的）：人物『可以走幾步』、拿掉首尾相接 ⇒ 人還是幾乎不動，樹變成落葉亂飛，扁雲變積雲。"
+   "base_v2_note": "第二版（47 第二次用的）：人物『可以走幾步』、拿掉首尾相接 ⇒ 人還是幾乎不動，樹變成落葉亂飛，扁雲變積雲。",
+   "fire_base": "Animate this exact image. It is a Japanese woodblock print from the Meiji era (Kobayashi Kiyochika, 1876-1881), placed on a plain beige background.\n\nCAMERA: Locked-off static shot for the whole clip. No pan, tilt, zoom, push-in, parallax, rotation or reframing. The entire print stays in frame at the same size, including its paper margins and printed text. The plain background around the print stays plain and empty.\n\nKEEP IDENTICAL: The picture stays this same print from the first frame to the last. Every person in the picture stays completely still, exactly as printed, in the same pose and place for the whole clip. Every building, bridge, tree, pole, boat and sign keeps its size, shape, colours and place; nothing new enters or appears. The carved outlines, the flat areas of printed colour, the overall colour tint and the paper texture stay exactly as printed.\n\nWHAT MOVES: {SCENE}\n\nSTYLE: The motion stays inside the woodblock look: flat printed colour, no photographic lighting, no 3D depth, no motion blur, no added grain, no colour grading. The fire, smoke and sparks move clearly and continuously from the very first second.",
+   "fire_base_note": "火災四幅（60–63）專用。Aaron 2026-09-21：「只動火與煙，人不動」。沿用 street 變體的既有規矩——那是逃難的人，動起來就是替清親演一場災難。tools/motion-prep.py 看到 weather=fire 自動換成這一版，--vivid 直接拒絕。"
   }
  }
 }
