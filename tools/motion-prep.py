@@ -125,22 +125,25 @@ def main():
         if variant:
             # 🔴 火災那 4 幅（60–63）畫的是逃難的人：人動起來就是替清親演一場災難。
             # Aaron 2026-09-21 決定「只動火與煙，人不動」⇒ 換成 fire_base，寫在程式裡，換誰跑都不會忘。
+            # 2026-09-22 Aaron 改為 60–62 的人要動、依火勢而不同 ⇒ close.fire_people_move 裡的換成 fire_life_base；
+            # 其餘（63 焼跡）照舊人不動。
             fire = (v.get("conditions") or {}).get("weather") == "fire"
             if fire and variant == "vivid":
-                print(f"no.{i}  ⛔ 火災畫不做生動版（人會動）⇒ 用 --close，會自動換成人不動的 fire_base"); continue
+                print(f"no.{i}  ⛔ 火災畫不做生動版 ⇒ 用 --close（火災有專用模板：close.fire_people_move 裡的人依火勢動，其餘人不動）"); continue
             scene = tpl[variant]["scenes"].get(str(i))
             if not scene:
                 print(f"no.{i}  ⛔ {variant} 還沒寫這一幅的 scenes（_prompt_template.{variant}.scenes），⛔ 不用通用句子湊"); continue
             base = tpl[variant]["base"]
+            fire_people = fire and str(i) in tpl["close"].get("fire_people_move", [])
             if fire:
-                base = tpl["close"]["fire_base"]
+                base = tpl["close"]["fire_life_base" if fire_people else "fire_base"]
             prompt = base.replace("{SCENE}", scene)
         else:
             prompt = tpl["base"].replace("{MOTION}", " ".join(tpl["motion"][k] for k in keys) or tpl["motion"]["default"])
         prompt = credit(prompt, v)
         (OUT / f"{i:02d}-prompt.txt").write_text(prompt + "\n", encoding="utf-8")
         note = (f"no.{i:<2} {v['title']['ja']}　墊 {canvas.size[0]}×{canvas.size[1]}（原畫在 {at}）　"
-                + (({"close": "貼近原畫版", "vivid": "生動版"}[variant] + ("（火災：人不動）" if fire else "")) if variant else f"句子：{'＋'.join(keys) or 'default'}"))
+                + (({"close": "貼近原畫版", "vivid": "生動版"}[variant] + (("（火災：人依火勢動）" if fire_people else "（火災：人不動）") if fire else "")) if variant else f"句子：{'＋'.join(keys) or 'default'}"))
         if str(i) in (tpl.get("overrides") or {}):
             note += f"　⚠️ override：{tpl['overrides'][str(i)]['why']}"
         if a.street:
