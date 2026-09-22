@@ -2765,6 +2765,166 @@
     1108
    ],
    "fill": "#C7B792"
+  },
+  "64": {
+   "file": "research/motion/64-pad16x9.png",
+   "canvas": [
+    1952,
+    1098
+   ],
+   "plate_at": [
+    134,
+    0
+   ],
+   "plate_size": [
+    1684,
+    1098
+   ],
+   "fill": "#C4B189"
+  },
+  "67": {
+   "file": "research/motion/67-pad16x9.png",
+   "canvas": [
+    1956,
+    1100
+   ],
+   "plate_at": [
+    136,
+    0
+   ],
+   "plate_size": [
+    1684,
+    1100
+   ],
+   "fill": "#CBB995"
+  },
+  "68": {
+   "file": "research/motion/68-pad16x9.png",
+   "canvas": [
+    1810,
+    1018
+   ],
+   "plate_at": [
+    60,
+    0
+   ],
+   "plate_size": [
+    1690,
+    1018
+   ],
+   "fill": "#C4B58C"
+  },
+  "69": {
+   "file": "research/motion/69-pad16x9.png",
+   "canvas": [
+    1786,
+    1005
+   ],
+   "plate_at": [
+    50,
+    0
+   ],
+   "plate_size": [
+    1685,
+    1005
+   ],
+   "fill": "#C5B78E"
+  },
+  "70": {
+   "file": "research/motion/70-pad16x9.png",
+   "canvas": [
+    1782,
+    1002
+   ],
+   "plate_at": [
+    61,
+    0
+   ],
+   "plate_size": [
+    1660,
+    1002
+   ],
+   "fill": "#BFB288"
+  },
+  "71": {
+   "file": "research/motion/71-pad16x9.png",
+   "canvas": [
+    1898,
+    1068
+   ],
+   "plate_at": [
+    155,
+    0
+   ],
+   "plate_size": [
+    1587,
+    1068
+   ],
+   "fill": "#BDB38C"
+  },
+  "81": {
+   "file": "research/motion/81-pad16x9.png",
+   "canvas": [
+    2006,
+    1128
+   ],
+   "plate_at": [
+    159,
+    0
+   ],
+   "plate_size": [
+    1688,
+    1128
+   ],
+   "fill": "#C5C0A7"
+  },
+  "82": {
+   "file": "research/motion/82-pad16x9.png",
+   "canvas": [
+    1978,
+    1113
+   ],
+   "plate_at": [
+    172,
+    0
+   ],
+   "plate_size": [
+    1634,
+    1113
+   ],
+   "fill": "#CABE97"
+  },
+  "83": {
+   "file": "research/motion/83-pad16x9.png",
+   "canvas": [
+    1980,
+    1114
+   ],
+   "plate_at": [
+    171,
+    0
+   ],
+   "plate_size": [
+    1637,
+    1114
+   ],
+   "fill": "#CDC29C"
+  },
+  "84": {
+   "file": "research/motion/84-pad16x9.png",
+   "canvas": [
+    2010,
+    1131
+   ],
+   "plate_at": [
+    162,
+    0
+   ],
+   "plate_size": [
+    1685,
+    1131
+   ],
+   "fill": "#C9C4A9"
   }
  },
  "_attempts": [
@@ -3647,7 +3807,17 @@
     "60": "The fire and smoke keep the look of the print, drawn in Kiyochika's broken, streaky strokes, but they are alive the whole time: the flames surge, leap up and fall back and change shape at every moment, the smoke keeps billowing and rolling, and sparks and embers keep swirling. The great diagonal streaks of red, pink and orange flame across the whole sky surge and flicker as they sweep up toward the upper right, and the ragged dark blotches of smoke tumble along with them; tongues of fire leap up from the burning roofs on the right and fall back again. On the right bank, right under the fiercest flames, the crowd crouched among the piles of goods stirs and shifts: people haul their bundles toward the water's edge, bending low and turning away from the heat. Across the river at the bottom left, far from the fire, the dark silhouette of the onlooker stands watching and raises an arm toward the blaze. The red glow on the river flickers with the flames, and the reflections under the stone bridge shimmer.",
     "61": "The fire and smoke keep the look of the print, drawn in Kiyochika's broken, streaky strokes, but they are alive the whole time: the flames surge, leap up and fall back and change shape at every moment, the smoke keeps billowing and rolling, and sparks and embers keep swirling. The huge billows of dark smoke and red and orange flame roll across the sky from left to right, the second fire on the far right bank flares, and small red sparks swirl through the pale sky over the river. On the road, the people carrying bundles on their backs hurry along with bent backs and short, quick steps, glancing back over their shoulders at the fire. At the water's edge on the right, the two firemen, further from the blaze, stand watching the far bank: one stretches his hand toward the fire and the other turns his head. The hanging paper lantern and the glass street lamp sway in the hot wind, and the river flickers with the firelight.",
     "62": "A night fire seen from Hisamatsu-chō. The whole picture keeps its dark, muted brown-and-grey night colours: the only bright colours are the tiny orange embers in the smoke and the pale paper lanterns. The fire itself is hidden behind the buildings; what fills the sky is a vast cloud of dark brown smoke, drawn in fine streaky strokes and scattered with tiny orange embers. That smoke is alive the whole time: it keeps rolling and billowing upward and to the left, and the embers in it glow, flicker and drift. Every person in the crowd stays a flat dark-brown silhouette with no faces, no colours and no patterns. The crowd in the foreground, closest to the fire, sways and presses forward: heads turn back toward the smoke, shoulders shift, and the pale paper lanterns and the big round bundle bob and swing. On the roof of the storehouse at the right, the small silhouette of the fireman at the edge raises his arm. The dim firelight flickers on the water under the bridge. The storehouses, the ladder, the bridge, the tall lantern on its post and the scattered goods on the bank stay exactly as printed.",
-    "63": "The long dark bands of cloud drift slowly across the grey sky, and the thin column of smoke in the middle rises and wavers. The small pale scraps carried by the wind drift across the burnt ground. The flame in the glass of the tall street lamp flickers. The two charred tree trunks, the burnt brick building, the surviving storehouses and all the people walking through the ruins stay exactly as printed."
+    "63": "The long dark bands of cloud drift slowly across the grey sky, and the thin column of smoke in the middle rises and wavers. The small pale scraps carried by the wind drift across the burnt ground. The flame in the glass of the tall street lamp flickers. The two charred tree trunks, the burnt brick building, the surviving storehouses and all the people walking through the ruins stay exactly as printed.",
+    "64": "The pale clouds drift slowly across the blue sky. The bare twigs of the tall leafless tree on the right tremble in the breeze, and the grass on the banks stirs. The narrow canal under the wooden footbridge ripples, and the reflection of the bridge wavers. On the road at the right, the man in the black hat leans on his cane and takes a few slow steps, and the woman with the small child further along walks slowly. The red-brick building with its small tower, the white house, the wooden footbridge and the stone embankments stay exactly as printed.",
+    "67": "A summer night on the street at Asakusa Kuramae. The whole picture keeps its dark night colours: the sky stays a dark blue-green, and every person and rickshaw stays a flat dark silhouette with no faces or colours. The flames in the two gas lamps flicker, and the few small yellow star-shaped lights above the long wall on the right twinkle. The crowd of silhouettes on the wide street strolls slowly in both directions, heads turning; the two people in the foreground, seen from behind, shift and turn their heads toward each other; the rickshaw man on the right lifts his shafts and steps forward a little. The tall fire-lookout ladder, the dark buildings, the big rickshaw on the left and the long wall stay exactly as printed.",
+    "68": "A night market at Asakusa. The whole picture keeps its dark night colours: the sky stays a dark blue-grey, the crowd seen from behind stays dark silhouettes, and only the stall-keepers lit by the lamps on the left show their pale faces, as printed. The red and white globe lanterns hung on the branching stand at the right sway and glow, and the small flames of the lamps on the stalls flicker. The leaves of the big tree at the top left stir in the night breeze. The crowd moves slowly among the stalls, heads turning, and the stall-keepers lean forward and gesture to their customers. The red temple gate with its great paper lanterns, the tall pine, the five-storey pagoda and the long stall roof stay exactly as printed.",
+    "69": "Snow at Sensōji, seen from the red veranda of the main hall. Fine snow falls steadily across the grey sky and the white roofs. The small bell hanging from the eaves at the top sways a little. The snow-laden bare branches of the trees tremble, and a little powdery snow slips from them. At the red railing, the woman in the pale blue kimono with the white shawl turns her head and points out over the snowy grounds, and the small child beside her looks up and tugs at her sleeve. Far off, the small figure under the umbrella walks slowly through the snow. The hexagonal hall, the five-storey pagoda, the red railing and the eaves stay exactly as printed.",
+    "70": "A summer night by the river at Imado. The whole picture keeps its quiet evening colours: the dusky blue-green sky and water outside the window and the soft light inside the room. The full moon stays low above the row of dark trees, and the water below it glints. Inside, the woman in the lilac kimono plays her shamisen: her right hand strikes the strings with the plectrum, her left hand moves along the neck, and she sways gently to the music. The iris in the hanging basket on the pillar stirs, and the light of the lamp at the right flickers. The bonsai on the windowsill, the little red table with its potted plants, the sliding door and the pillar stay exactly as printed.",
+    "71": "Fireworks by the pond at Ikenohata. The whole picture keeps its deep night colours: the sky and the pond stay dark green, and every person stays a flat black silhouette with no faces or colours. The falling cascades of the fireworks in the upper right keep streaming down, their red, orange and yellow sparks glittering and trailing as they fall. The red-and-white paper lanterns strung on the rope across the middle sway gently, and the rows of small lights along the far shore and their long reflections on the pond shimmer. The row of silhouetted heads along the bottom turns and tilts up toward the fireworks, and the two boys climbing the crossed poles shift their grip and look up. The crossed poles and the dark far shore stay exactly as printed.",
+    "81": "Dusk at Asakusa Bridge. The whole picture keeps its evening colours: the grey-blue sky with dark clouds whose edges glow orange, and the pale light on the water under the arch. The clouds drift slowly. The small dark silhouettes crossing the top of the stone bridge walk slowly in both directions. The moored boats in the foreground rock on the ripples, and their tall masts sway. The water under the arch ripples and its bright reflection wavers, and the lit windows of the houses on both banks glow. The stone arched bridge, the houses and the white storehouse stay exactly as printed.",
+    "82": "A night of cherry blossoms at Shin-Yoshiwara. The whole picture keeps its dark night colours: the dark grey-green sky with long streaks of cloud, the dark figures, and the red glow of the rows of windows and lanterns. The streaks of cloud drift slowly. The pale blossoms on the cherry tree in the middle flutter in the night breeze. The rows of red windows and the round lanterns along the eaves glow and flicker. On the left, the rickshaw puller and the man with the red lantern run a few more steps and slow down, the lantern swinging. The dark figures standing and strolling in front of the long building on the right turn and walk slowly. The buildings, the tall dark post, the fence around the cherry tree and the lantern on its post stay exactly as printed.",
+    "83": "A bright, breezy day at the Kangyōba bazaar in Kyōbashi. The white clouds drift slowly across the blue sky. The long green fronds of the big willow in front sway in the wind, and the pines on the left stir. The paper lanterns hung at the entrances sway. The crowd in front of the building moves naturally: the woman in the purple kimono with the red sash walks slowly toward the entrance; the man in the bowler hat talks with the woman beside him; the children tug at the adults' sleeves; the man with the white parasol tilts it; the rickshaw man beside the red-seated rickshaw on the left straightens up and looks around; and the men in red caps at the far left turn their heads. The brick building with its sign, the white building on the right, the willow's trunk and the rickshaw stay exactly as printed.",
+    "84": "A clear day on the Kinokuni slope at Akasaka. The thin streaks of white cloud drift slowly across the blue sky. The leaves of the trees on the left stir, the plants along the top of the green embankment on the right sway in the breeze, and the telegraph wire swings a little. The two women in the foreground walk slowly down toward us, keeping their size, their sleeves swaying; further down the slope, the small figures, the man carrying a pole and the rickshaws move slowly. The green embankment with its fence, the stone posts along the road, the lamp post and the town below stay exactly as printed."
    },
    "why": [
     "2026-09-21 建立：p44 用生動版第五、第六版連續三次整幅重畫（第六版把開頭改回 Animate this exact image 也沒擋住——那個假說在 44 上被推翻）。九次整幅重畫全在生動版；忠實版骨架（KEEP IDENTICAL＋WHAT MOVES）從沒重畫過，缺點只是動得少。⇒ 取忠實版骨架，但 WHAT MOVES 不再是「Almost nothing moves」，而是每一幅寫好的原地動作；加回「首尾相接」——生動版拿掉它是為了讓動作走得遠，貼近原畫版正好要它把東西拉回原位。",
@@ -3658,7 +3828,8 @@
     "⚠️ no.59 演出句第二版（2026-09-21）：p59.mp4 前 2 秒大致忠於原畫，第 3 秒起：中間遠處的雙層馬車被換成西式箱型馬車、連馬一起放大拉到左前方；天空多出一條深色的雲；左邊欄杆上冒出一叢芒草；提燈的人變多；色調偏綠灰 → 偏藍灰。原因：①演出句把「馬踏步、甩頭」寫成焦點動作，模型就把馬車當主角放大重畫（跟 49 的船同一型：**主體寫了動作就會被放大**）；②天空只寫了「維持暗色」，沒寫它本來是一片平順的漸層，模型就補了雲。⇒ 第二版：馬車寫清楚是『遠處中央高高的雙層馬車，車頂棚下坐著乘客，維持小、待在原位，馬只動腳甩尾』；天空寫成『從上到下平順的灰藍漸層』（寫它是什麼，不寫它沒有什麼）；動感交給燈焰、提燈、行人。",
     "🔴 fire_base 第二版（2026-09-22）：p60 第 1 秒把整片火重畫成乾淨、造型化的大火舌（失去清親斷續的斜向筆觸與墨色煙斑），之後 1–7 秒幾乎凍住（灰階差平在 17）。Aaron：「火勢應該是每分每秒都有變化的」。原因是我寫的第一版自相矛盾：KEEP 綁住「雕線與平塗色塊維持原樣」，但這幅的主體就是那些筆觸——要它動又要它不變，模型先重畫一次再凍住（同 39 把雪畫成靜止的白點）。⇒ 第二版：KEEP 只綁建築、橋、樹、竿、船、招牌、貨物（含它們的雕線）與人；火與煙改由演出句要求『保留斷續筆觸的樣子，但從頭到尾都在變』；STYLE 改成『會動的東西保留木版的筆觸；從第一格到最後一格持續地動，沒有靜止的片刻』。⚠️ 只有 60–62 加『火活著』那段；63 焼跡畫裡沒有火，加了等於邀請模型在廢墟上補火，所以 63 維持只動煙、雲、碎屑。",
     "🔴 2026-09-22 Aaron：60–62 的人要動，動作依火勢而不同 ⇒ close.fire_life_base（fire_base 第二版拿掉「人完全靜止」、加 LIFE：離火越近越急——緊貼火場的人帶著包袱奔逃、回頭看；遠一點的人停下、觀望、指著火）。照原尺寸放大圖（research/motion/p123-review/no60-62-火災人物放大.jpg）寫：60 右岸貨物堆裡的人在最猛的火舌正下方 → 往水邊拖包袱、背過身躲熱；左下河對岸的剪影離火遠 → 站著看、舉手臂。61 路上背包袱的人 → 彎腰小步快走、回頭看（不寫跑遠，免得背景滑動）；水邊兩位消防員在對岸 → 站著觀望。62 前景人群緊貼火場 → 推擠前進、提燈晃；屋頂上的消防員舉臂向火。63 焼跡照舊人不動。",
-    "🔴 no.62 演出句第四版（2026-09-22）：p62.mp4 0.5 秒起**整幅重畫**成明亮的另一張火災圖——大片橘紅火舌、滾滾黑煙、人群變成穿彩色衣服看得見臉的人、右上假題箋、左下假署名與兩枚假紅印（灰階差 2 → 19 → 28）。原因全在我寫的演出句：①**畫裡沒有火舌**——這幅的火在房子後面，只看得到濃煙裡的細小火星，我卻把給 60 寫的「火舌竄起、落下」照搬過來（技巧 2：點名畫上沒有的東西＝邀請）；②**沒寫剪影**（no.42 已經學過）；③**沒寫色調**——整片暗褐色，是最容易被『修』成明亮畫面的那一類。⇒ 第四版：開頭錨住『暗褐與灰的夜色，唯一亮的是煙裡的細小火星與紙燈籠』；明寫『火本身藏在房子後面，天上是一大片細筆觸的暗褐濃煙』；『活著』只給煙與火星；人群寫成平塗的深褐色剪影、沒有臉與顏色；人群的動作收小（搖晃、往前擠、回頭、燈籠與大包袱晃）。⚠️ 61 有看得見的火焰，照舊；只有 62 改。"
+    "🔴 no.62 演出句第四版（2026-09-22）：p62.mp4 0.5 秒起**整幅重畫**成明亮的另一張火災圖——大片橘紅火舌、滾滾黑煙、人群變成穿彩色衣服看得見臉的人、右上假題箋、左下假署名與兩枚假紅印（灰階差 2 → 19 → 28）。原因全在我寫的演出句：①**畫裡沒有火舌**——這幅的火在房子後面，只看得到濃煙裡的細小火星，我卻把給 60 寫的「火舌竄起、落下」照搬過來（技巧 2：點名畫上沒有的東西＝邀請）；②**沒寫剪影**（no.42 已經學過）；③**沒寫色調**——整片暗褐色，是最容易被『修』成明亮畫面的那一類。⇒ 第四版：開頭錨住『暗褐與灰的夜色，唯一亮的是煙裡的細小火星與紙燈籠』；明寫『火本身藏在房子後面，天上是一大片細筆觸的暗褐濃煙』；『活著』只給煙與火星；人群寫成平塗的深褐色剪影、沒有臉與顏色；人群的動作收小（搖晃、往前擠、回頭、燈籠與大包袱晃）。⚠️ 61 有看得見的火焰，照舊；只有 62 改。",
+    "no.64–84 的演出句（2026-09-22，close 第三版）：夜景（67、68、71、82）與黃昏（81）開頭錨住色調並把人寫成剪影；68 前景的攤販原畫就被燈照亮、看得見臉 ⇒ 寫明『只有左邊被燈照到的攤販露出臉，照原畫』，其餘剪影；主體一律只做小動作、留在原位（70 彈三味線、69 母女在欄杆邊、71 爬竿的兩個孩子），動感放在煙火、燈籠、燈焰、落雪、水面、柳枝；70 的滿月『停在樹梢上方』（不寫升起，免得它變大變亮）；82 的車伕照 21／27『再跑幾步、放慢』。81–84 是井上安治，credit() 已補上 close 模板的畫師句型（Kobayashi Kiyochika, 1876-1881）。"
    ],
    "base_v1": "Animate this exact image. It is a Japanese woodblock print from the Meiji era (Kobayashi Kiyochika, 1876-1881), placed on a plain beige background.\n\nCAMERA: Locked-off static shot for the whole clip. No pan, tilt, zoom, push-in, parallax, rotation or reframing. The entire print stays in frame at the same size, including its paper margins and printed text. The plain background around the print stays plain and empty.\n\nKEEP IDENTICAL: The picture stays this same print from the first frame to the last. Every person, boat, vehicle, animal, building, bridge, tree, pole and sign keeps its position, size, shape, colours and number; nothing enters, leaves or appears. People stay in their places and poses, moving only their heads, hands, sleeves and hair a little. The carved outlines, the flat areas of printed colour, the overall colour tint and the paper texture stay exactly as printed.\n\nWHAT MOVES: {SCENE}\n\nSTYLE: The motion stays inside the woodblock look: flat printed colour, no photographic lighting, no 3D depth, no motion blur, no added grain, no colour grading. Movement is gentle, continuous and clearly visible. The clip loops seamlessly: the last frame matches the first frame.",
    "base_v1_note": "第一版（44 第三次、46、47 用的）：人物只准動頭手衣袖、首尾相接 ⇒ 構圖全保住，但 47 只有少數人在動。",

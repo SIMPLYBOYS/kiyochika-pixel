@@ -67,6 +67,7 @@ def credit(prompt, v):
     if v.get("attribution") != "inoue-yasuji":
         return prompt
     out = (prompt.replace("by Kobayashi Kiyochika (1876-1881)", "by Inoue Yasuji, a student of Kobayashi Kiyochika")
+                 .replace("(Kobayashi Kiyochika, 1876-1881)", "(Inoue Yasuji, a student of Kobayashi Kiyochika)")   # 忠實版／貼近原畫版的寫法
                  .replace("Kiyochika's palette", "the print's own palette")
                  .replace("as Kiyochika drew it", "as Yasuji drew it"))
     assert "Kiyochika" not in out.replace("a student of Kobayashi Kiyochika", ""), f"no.{v['id']} 的提示詞還有清親的名字"
