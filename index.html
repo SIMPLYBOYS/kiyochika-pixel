@@ -330,6 +330,21 @@
   }
 
   /* 事件卡與結局。壓在正中央，看完才回地圖——它們一場只出現一次 */
+  /* 結局卡的色帶：一列一年，每一格是一幅畫的取樣色（finale.js） */
+  .fin { margin:6px 0 4px }
+  .fin-h { font-size:13px; font-weight:normal; letter-spacing:.08em; opacity:.85; margin:14px 0 6px }
+  .fin-row { display:flex; align-items:center; gap:8px; margin:3px 0 }
+  .fin-year { flex:0 0 7.6em; text-align:right; font-size:11px; opacity:.7; white-space:nowrap }
+  /* 🔴 色塊固定寬度：**一列有多長就是那一年有幾幅**。第一版讓色帶撐滿整列（flex:1），
+     1876 的 1 幅跟 1880 的 16 幅畫出來一樣長——那是用版面說謊。 */
+  .fin-bar { flex:1; display:flex; height:15px; border-radius:2px; overflow:hidden;
+             justify-content:flex-start; align-content:flex-start }
+  .fin-bar i { flex:0 0 7px }
+  .fin-who { flex:0 0 4.6em; font-size:10px; opacity:.5; white-space:nowrap }
+  .fin-n { flex:0 0 1.8em; font-size:11px; opacity:.55; text-align:right }
+  .fin-note { font-size:11px; opacity:.6; line-height:1.7 }
+  .fin-act { margin-top:12px }
+  @media (max-width:520px) { .fin-year { flex-basis:6.4em; font-size:10px } }
   #card { position:fixed; inset:0; display:none; place-items:center; z-index:20;
           background:#0a1622d9; padding:20px }
   #card.on { display:grid }

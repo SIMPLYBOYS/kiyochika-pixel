@@ -76,6 +76,26 @@ ok(seen.length === YEARS.length && seen[0] === YEARS[0] && seen.at(-1) === YEARS
 const firstFire = log.find(l => fire.some(f => f.id === l.id));
 ok(firstFire && firstFire.year >= 1881, `大火四幅都在 1881 之後才收得到（第一幅在 ${firstFire?.year}）`);
 
+// ── 結局卡（src/finale.js）────────────────────────────────────
+// 🔴 收滿之後那張卡是這一局唯一的收束，而它**只有走到最後才看得到** ⇒ 沒有測試就等於沒驗過。
+// 這裡驗的是「色帶講的跟資料一致」：每一年一列、每一幅四格、年代未詳另外一列、
+// 1882 那列標明是安治。⛔ 不驗顏色好不好看。
+const palettes = JSON.parse(readFileSync(resolve(ROOT, 'data/palettes.json'), 'utf8'));
+const { finaleHtml } = await import('../src/finale.js');
+const html = finaleHtml({ views, yearOf, palettes, who: v => v.attribution, waits });
+const rows = html.match(/class="fin-row"/g)?.length ?? 0;
+const cells = html.match(/<i style="background:/g)?.length ?? 0;
+const yearsIn = [...new Set(views.map(yearOf).filter(y => y != null))];
+const noYear = views.filter(v => yearOf(v) == null).length;
+ok(rows === yearsIn.length + (noYear ? 1 : 0),
+   `結局卡：${rows} 列（${yearsIn.length} 個年份${noYear ? ' ＋ 年代未詳一列' : ''}）`);
+ok(cells === views.length * 4, `結局卡：${cells} 格色塊（${views.length} 幅 × 4）`);
+const yas = views.filter(v => v.attribution === 'inoue-yasuji');
+ok(!yas.length || /明治十五年[^<]*<\/span>\s*<span class="fin-bar">[^]*?井上安治|井上安治/.test(html),
+   `結局卡：安治那 ${yas.length} 幅有標明畫師`);
+ok(html.includes(`清親 ${views.length - yas.length} 幅`) && html.includes('data-act="emaki"'),
+   `結局卡：分開講清親與安治的幅數，並給得出「打開畫卷」`);
+
 console.log(`\n一場 ${state.step} 刻 ＝ ${Math.floor(state.step / 4)} 日（收 ${done} 景、等 ${waits} 刻）`);
 console.log(bad ? `${bad} 項不過` : '全過');
 process.exit(bad ? 1 : 0);

@@ -10,6 +10,7 @@ import { playIntro, startTicker, introSeen } from './intro.js';
 import { createMusic } from './audio.js';
 import { weather } from './weather.js';
 import { guideHtml } from './guide.js';
+import { finaleHtml } from './finale.js';
 
 const $ = id => document.getElementById(id);
 
@@ -393,11 +394,16 @@ function collect(v) {
   } else if (state.collected.length === views.length) {
     // 🔴 收錄了安治之後，「這是這位畫師畫下的整個東京」就不再是真的——照數字分開講。
     // 「接了下來」出自維基百科〈井上安治〉：清親明治十四年以後不畫光線畫，事実上これを引き継いでいる。
-    const yas = views.filter(x => x.attribution === 'inoue-yasuji').length;
-    card('光線畫到這裡為止', `明治十四年，清親不畫光線畫了。<br>
-      石版與照片進來，木版的風景賣不動了。清親 ${views.length - yas} 幅${
-        yas ? `；弟子井上安治接了下來，這裡收了他 ${yas} 幅` : ''}。<br>
-      <small>${yas ? '這是這對師徒畫下的東京。' : '這是這位畫師畫下的整個東京。'}</small>`);
+    // 結局卡的內容在 finale.js：五年的顏色（色帶取自 palettes.json，⛔ 不調色）。
+    card('光線畫到這裡為止', finaleHtml({
+      views, yearOf, palettes, who: v => v.attribution,
+      waits: Math.max(0, state.step - state.collected.length),
+    }));
+    // 讀完就去畫卷——收滿之後最想做的事就是從頭看一次。⚠️ 先關卡片，⛔ 不要兩層疊著
+    $('card-body').querySelector('[data-act="emaki"]')?.addEventListener('click', () => {
+      $('card').classList.remove('on');
+      $('emaki').click();
+    });
   }
 }
 
