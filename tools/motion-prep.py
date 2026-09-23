@@ -116,6 +116,14 @@ def main():
             # 已經有片子 ⇒ ⛔ 不重墊（線上那支切框用的是當時那組數字），只重寫提示詞——重生用
             cw, ch = old_pad["canvas"]; at = tuple(old_pad["plate_at"])
             canvas = type("C", (), {"size": (cw, ch)})
+            # 墊邊圖不進 git，只在本機；1–20 的檔案後來不見了。_pad 存著尺寸、位置與填色，
+            # 可以原樣重建——⛔ 不重新計算（線上那支切框用的是當時那組數字）。重生時 make-motion 要拿它比第一幀。
+            if not (ROOT / old_pad["file"]).exists():
+                im = Image.open(plate).convert("RGB")
+                fill = tuple(int(old_pad["fill"].lstrip("#")[k:k + 2], 16) for k in (0, 2, 4))
+                rebuilt = Image.new("RGB", (cw, ch), fill); rebuilt.paste(im, at)
+                rebuilt.save(ROOT / old_pad["file"])
+                print(f"no.{i}  ⚠️ 墊邊圖不在了，照 _pad 的數字原樣重建：{old_pad['file']}")
             print(f"no.{i}  已經有片子：沿用原本的墊邊 {old_pad['file']}，只重寫提示詞")
         else:
             canvas, at, size, fill = pad(plate)

@@ -3511,6 +3511,21 @@
     "原因見 _prompt_template.close.why 的 no.62 第四版。"
    ],
    "evidence": "research/motion/p123-review/p62-no62-久松町出火-整幅重畫假題箋假署名.jpg"
+  },
+  {
+   "date": "2026-09-23",
+   "id": 81,
+   "source": "research/motion/p81.mp4（2026-09-23 13:50）",
+   "prompt": "close base 第三版＋close.scenes.81（提示詞沒問題，不改）",
+   "model": "Nano Banana（Google Flow；沿用 no.72 的標示，這一批 Aaron 未另外確認模型）",
+   "verdict": "⛔ 不收（起始幀沒被吃到：第一幀就是另一張畫）",
+   "why": [
+    "🔴 第一幀 vs 墊邊圖 29.1（合格的 1.5–3），整支片子首尾只差 2.9 ⇒ 從第 0 格起就是另一張畫，不是從原畫開始的。",
+    "拿第一幀比對全部 44 張墊邊圖，最接近的仍是 81 自己（29.1），所以不是餵錯圖，是起始幀被當成參考圖。",
+    "畫面：構圖大致模仿原畫（石拱橋、船、房子）但整個重畫成乾淨的新版畫；右上假題箋、左邊假印與假字。",
+    "⇒ 提示詞不改；在 Flow 把 81-pad16x9.png 設成起始影格再生一次（同 no.9、no.10 第二次的狀況）。"
+   ],
+   "evidence": "research/motion/p123-review/p81-no81-淺草橋夕景-起始幀沒吃到.jpg"
   }
  ],
  "_decision": {
