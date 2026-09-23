@@ -34,9 +34,10 @@ function pickReel(views, yearOf) {
  * @param opts.src      取圖 (view) → 檔名
  * @param opts.topic    取解說 (名稱) → {title, text, url} 或 null
  * @param opts.total    畫帖收錄幾幅（⚠️ 不等於地圖上的幅數：10 幅沒查到座標）
+ * @param opts.clips    有 AI 重繪版的幅數（data/motion.json 的 clips）
  * @param opts.onDone   關掉之後要做的事
  */
-export function playIntro({ views, total, yearOf, src, topic, onDone }) {
+export function playIntro({ views, total, clips = 0, yearOf, src, topic, onDone }) {
   const reel = pickReel(views, yearOf);
   const yas = views.filter(v => v.attribution === 'inoue-yasuji').length;
   const who = topic('小林清親'), how = topic('光線画');
@@ -55,6 +56,9 @@ export function playIntro({ views, total, yearOf, src, topic, onDone }) {
       <p class="ifact">國立國會圖書館《清親畫帖》三冊・公有領域<br>
         收錄 ${total ?? views.length} 幅，地圖上 ${views.length} 幅——走過清親的五年${
           yas ? `<br>其中 ${yas} 幅是弟子井上安治的，清親停筆之後由他接下光線畫` : ''}</p>
+      ${clips ? `<p class="ifact">AI 重繪版　${clips} 幅各有一支生成的影片
+        <small>那是模型照著原畫重畫的另一件作品，不是清親的畫。永遠掛著「AI 重繪・非原作」，
+        每一支都把它跟原畫的差異一條一條印出來，也不算進收藏</small></p>` : ''}
       <p class="ifact">配樂　端唄・雅樂・尺八本曲・新內・追分
         <small>入場後開始播放，按 ♪ 或 M 可關</small></p>
       <p class="ifact">第一次玩？入場後按上方的「玩法」</p>

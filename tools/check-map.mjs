@@ -22,6 +22,8 @@ const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 // ⚠️ 地圖上該有幾個點**從資料算**，⛔ 不寫死：收錄井上安治四幅之後從 59 變 63，寫死的數字只會讓測試跟著資料一起錯
 const VIEWS = JSON.parse(readFileSync(resolve(ROOT, 'data/views.json'), 'utf8'));
 const MAPPED = VIEWS.filter(v => v.include && v.subject).length;
+// AI 重繪版有幾幅也**從資料算**：開場印的數字要跟 data/motion.json 對得上
+const CLIPS = JSON.parse(readFileSync(resolve(ROOT, 'data/motion.json'), 'utf8')).clips.length;
 const PORT = 8000;
 const sleep = ms => new Promise(r => setTimeout(r, ms));
 
@@ -49,10 +51,16 @@ for (const [name, size] of [['桌機 1440×900', { width: 1440, height: 900 }],
     if (!el) return null;
     return { reel: el.querySelectorAll('.ireel img').length,
              title: el.querySelector('h1')?.textContent,
-             src: /CC BY-SA/.test(el.textContent) };
+             src: /CC BY-SA/.test(el.textContent),
+             ai: (el.textContent.match(/AI 重繪版\s*(\d+) 幅/) || [])[1],
+             aiSays: /非原作/.test(el.textContent) && /差異/.test(el.textContent) };
   });
   ok(intro && intro.reel === 6 && intro.title === '東京名所圖' && intro.src,
      `開場：六幅依年份淡入、標題與出處都在`);
+  // 🔴 開場也要講 AI 重繪那一層，而且**數字從 data/motion.json 算**、⛔ 不寫死；
+  // 講法要跟面板一致：非原作、列出差異（⛔ 不能只說「有 AI 動畫」就算了）。
+  ok(intro && +intro.ai === CLIPS && intro.aiSays,
+     `開場講了 AI 重繪版 ${intro?.ai} 幅（motion.json 有 ${CLIPS}）、寫明非原作並會列出差異`);
   await page.locator('.intro [data-act="enter"]').click();
   await sleep(600);
   ok(await page.locator('.intro').count() === 0, '按「入場」關得掉開場');

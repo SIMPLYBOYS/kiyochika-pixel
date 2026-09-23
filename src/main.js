@@ -561,8 +561,8 @@ addEventListener('keydown', e => { if (e.key === 'g') guide(); });
 // ── 開場與跑馬燈 ──────────────────────────────────────────────
 // 開場只有第一次自己跳出來（存在 localStorage），之後從 HUD 的「開場」重看。
 const intro = () => playIntro({
-  views, total: views.length + unmapped.length, yearOf, src: v => thumb(v),
-  topic: name => topicOf(name),
+  views, total: views.length + unmapped.length, clips: (motion.clips ?? []).length,
+  yearOf, src: v => thumb(v), topic: name => topicOf(name),
   // ⛔ 開場關掉之後**什麼都不要動**。第一版順手叫了 map.fitAll()，那等於把開場視角
   // 從「框住江戶本體」換成「整張紙」——市中心的點會擠成一團互相蓋住（驗收腳本
   // 當場點不到標記）。開場是一層蓋在上面的東西，不該改遊戲的狀態。
