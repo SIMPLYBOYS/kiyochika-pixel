@@ -44,6 +44,9 @@ const ok = (cond, msg) => { console.log(`${cond ? '  ok  ' : '  ✗   '}${msg}`)
 // ⚠️ 這件事在畫面上完全看不出來（桌機快取一下就聽不到差別），所以只能在這裡量檔案本身。
 // 順便驗每首都有 v（內容雜湊）：/assets/audio/* 是 7 天快取而檔名不變，沒有它改了也沒人收得到。
 const TRACKS = JSON.parse(readFileSync(resolve(ROOT, 'data/audio-tracks.json'), 'utf8')).tracks ?? [];
+// 街景的金鑰有沒有填，決定下面驗哪一條路（見 data/config.json）
+const MAPS_KEY = (() => { try { return JSON.parse(readFileSync(resolve(ROOT, 'data/config.json'), 'utf8')).mapsKey || ''; }
+                          catch { return ''; } })();
 const atoms = file => {                      // 只走最外層的 box，夠判斷順序了
   const b = readFileSync(resolve(ROOT, file));
   const out = [];
@@ -319,7 +322,9 @@ for (const [name, size] of [['桌機 1440×900', { width: 1440, height: 900 }],
   // 現代地址與街景連結（derive-place.py 的產物；59/59 都該有）
   const hasHere = await page.locator('#panel dt', { hasText: '現在' }).count();
   ok(hasHere === 1, '面板有「現在」那一列（現代区名＋町名）');
-  const pano = await page.locator('#panel a[href*="map_action=pano"]').getAttribute('href').catch(() => null);
+  // ⚠️ .first()：有金鑰時這一列會有兩個街景連結（畫框裡換的那個＋「在 Google 地圖開啟 ↗」），
+  // 不加會踩到 Playwright 的 strict mode（兩個都中就整項失敗，訊息只說「沒有」）
+  const pano = await page.locator('#panel a[href*="map_action=pano"]').first().getAttribute('href').catch(() => null);
   ok(/viewpoint=35\.\d+,139\.\d+/.test(pano || ''), `街景連結帶得出座標 ${pano ? pano.slice(-24) : '（沒有）'}`);
   // 當時的市街圖：只連出去（reference-maps.json 說明為什麼不收進 repo）
   const ref = await page.locator('#hud #refmap').getAttribute('href').catch(() => null);
@@ -375,6 +380,35 @@ for (const [name, size] of [['桌機 1440×900', { width: 1440, height: 900 }],
     ok(gen.clips.every(c => c.kind === 'atmosphere' ? c.n === 0 : c.n > 0),
        `重繪版列得出差異（${gen.clips.map(c => `no.${c.id} ${c.kind} ${c.n} 條`).join('、')}）`);
   }
+  // 🔴 街景**不開新分頁**：同一個畫面上不能有兩個都寫著「街景」、行為卻不一樣的東西
+  // （edo-hyakkei 在那邊被問過兩次「為什麼點了會開新頁」）。有金鑰就在畫框裡換，
+  // 沒金鑰就只剩外連——那時畫面上要**明說會另開**，⛔ 不能讓人以為它會留在遊戲裡。
+  {
+    const before = page.context().pages().length;
+    const now = await page.evaluate(() => {
+      const dd = [...document.querySelectorAll('#panel dt')].find(d => d.textContent === '現在')?.nextElementSibling;
+      return { html: dd?.innerHTML ?? '', hasBtn: !!document.querySelector('#panel #today'),
+               sv: !!document.querySelector('#panel #nowsv') };
+    });
+    if (MAPS_KEY) {
+      await page.locator('#panel #today').click();
+      await sleep(700);
+      const f = await page.evaluate(() => {
+        const i = document.querySelector('#panel #art iframe');
+        return { src: i?.getAttribute('src') ?? '', on: document.querySelector('#panel #art').classList.contains('today'),
+                 label: document.querySelector('#panel #today').textContent };
+      });
+      ok(f.on && /maps\/embed\/v1\/streetview/.test(f.src) && page.context().pages().length === before
+         && /回到畫/.test(f.label) && now.sv,
+         `街景在畫框裡換（沒有開新分頁・鈕變成「${f.label.trim()}」）`);
+      await page.locator('#panel #today').click();
+      await sleep(400);
+    } else {
+      ok(!now.hasBtn && /target="_blank"/.test(now.html) && /另開分頁/.test(now.html),
+         '沒有金鑰：沒有「看今天」那顆鈕，而且畫面上明說外連會另開分頁');
+    }
+  }
+
   // 十六色：quantize.py 算出來的那 16 色，⚠️ palettes.json 產出至今沒人讀過
   ok(v0.pal === 16 && /平均明度 \d+/.test(v0.cap),
      `十六色色盤畫得出來（${v0.pal} 色・${(v0.cap.match(/平均明度 \d+/) || [''])[0]}）`);

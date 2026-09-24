@@ -23,7 +23,7 @@ const grab = async url => {
   return r.json();
 };
 
-const [all, world, ml, refmaps, topicMap, topicText, topicZh, audio, palettes, motion] = await Promise.all([
+const [all, world, ml, refmaps, topicMap, topicText, topicZh, audio, palettes, motion, cfg] = await Promise.all([
   grab('data/views.json'),
   grab('data/geo/modern.json'),
   // 地名只是裝飾，掛掉不該連地圖一起拖下水
@@ -37,6 +37,8 @@ const [all, world, ml, refmaps, topicMap, topicText, topicZh, audio, palettes, m
   // ⚠️ 讀精簡版：完整的 motion.json 有 480KB（提示詞與退件紀錄），玩家只用得到其中幾個欄位。
   // 兩份由 tools/make-motion.py 一起寫（--sync 可單獨重產），⛔ 不要在這裡改回讀 motion.json。
   grab('data/motion-clips.json').catch(e => (console.warn('動態版略過:', e), { clips: [] })),
+  // 街景要用的金鑰（沒有就沒有「看今天」，其餘照常）
+  grab('data/config.json').catch(() => ({})),
 ]);
 
 // 🔴 能玩的是**地圖上有的那些**。收錄 69 幅，其中 10 幅沒查到座標（空白是資訊，
@@ -117,19 +119,34 @@ addEventListener('resize', () => onResize());
 // ⚠️ 区與町可能不一致：44 大川富士見渡的點在河中央（那是渡船），
 // 落在墨田区，最近的町卻是對岸台東区的蔵前——兩個都對，所以兩個都寫。
 const KIND = { worship: '寺社', bridge: '橋', park: '公園', water: '水' };
+// 街景嵌入的網址。🔴 沒金鑰就回 null——呼叫端據此決定要不要給那顆鈕（同 edo-hyakkei/src/config.js）。
+// ⚠️ 金鑰在網頁上是公開的，藏不住：防護靠 Google Cloud Console 的限制（只准 Maps Embed API、
+// 只准自家網域的 referrer，而 Embed API 免費無配額）。說明寫在 data/config.json。
+const embedUrl = v => {
+  if (!cfg?.mapsKey || !v.subject) return null;
+  const p = [`key=${encodeURIComponent(cfg.mapsKey)}`,
+             `location=${v.subject.lat},${v.subject.lng}`, 'fov=90'];
+  if (v.bearing != null) p.push(`heading=${Math.round(v.bearing)}`, 'pitch=0');
+  return `https://www.google.com/maps/embed/v1/streetview?${p.join('&')}`;
+};
 function here(v) {
   const p = v.place ?? {}, n = v.now ?? {};
   if (!p.modern_ward) return '';
   const town = p.modern_town ? `${p.modern_town}<small>（${p.modern_town_km}km）</small>` : '';
   const pano = `https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=${v.subject.lat},${v.subject.lng}`;
+  const canEmbed = !!embedUrl(v);
   // 標高的「高い／低い」是拿同一畫帖的 59 個點排出來的，不是外面的說法
   const rank = n.elevation_rank;
   const tag = rank == null ? '' : rank >= 0.8 ? '<small>（這本畫帖裡偏高）</small>'
     : rank <= 0.2 ? '<small>（偏低）</small>' : '';
   return `
     <dt>現在</dt><dd>${p.modern_ward} ${town}${
-      n.elevation == null ? '' : `　標高 ${n.elevation}m ${tag}`}<br>
-      <a href="${pano}" target="_blank" rel="noopener">站到那裡看 ↗</a></dd>
+      n.elevation == null ? '' : `　標高 ${n.elevation}m ${tag}`}<br>${canEmbed
+      ? `<a href="${pano}" id="nowsv" rel="noopener">站到那裡看</a>
+         <small>在畫框裡換成今天的街景　·　
+         <a href="${pano}" target="_blank" rel="noopener">在 Google 地圖開啟 ↗</a></small>`
+      : `<a href="${pano}" target="_blank" rel="noopener">站到那裡看 ↗</a>
+         <small>（另開分頁）</small>`}</dd>
     ${n.station ? `<dt>最近車站</dt><dd>${n.station.name}　<small>${n.station.km} km</small></dd>` : ''}
     ${n.nearby?.length ? `<dt>今日周邊</dt><dd>${n.nearby.map(
         x => `${x.name}<small> ${KIND[x.kind] ?? ''} ${x.m}m</small>`).join('　')}</dd>` : ''}
@@ -255,6 +272,7 @@ function pick(v) {
     ${got ? `<button id="mark" class="wide">${marks ? '隱藏標註' : '顯示標註'}</button>
              <button id="flip" class="wide">16 色：看光的骨架</button>` : ''}
     ${clipOf(v) ? '<button id="anim" class="wide">AI 重繪版 <small>非原作</small></button>' : ''}
+    ${embedUrl(v) ? '<button id="today" class="wide">看今天 <small>街景</small></button>' : ''}
     <button id="big" class="wide">看原寸</button>
     ${!b ? '<button id="take" class="wide take">收入畫帖</button>'
         : b.why === 'got' ? ''          // 收過了不必再說一次，上面的提示已經在講這件事
@@ -322,6 +340,36 @@ function pick(v) {
     if (!on) anim.insertAdjacentHTML('beforeend', '<small>非原作</small>');
     fitArt(v);
   };
+  // 「看今天」：在同一個畫框裡換成這個地點的街景。
+  // 🔴 ⛔ 不開新分頁——同一個畫面上不能有兩個都寫著「街景」、行為卻不一樣的東西，
+  // 而看起來最像主要入口的「現在」那一行，做的偏偏是把人帶離遊戲
+  //（edo-hyakkei 在那邊被問過兩次「為什麼點了會開新頁」⇒ 這一作照它的做法）。
+  // ⚠️ iframe **按下去才建立**：沒按過的話，這一頁不會有任何請求送去 Google。
+  const today = $('today');
+  if (today) {
+    let frame = null;
+    const art = $('art');
+    today.onclick = () => {
+      const on = !art.classList.contains('today');
+      art.classList.toggle('today', on);
+      if (on && !frame) {
+        frame = document.createElement('iframe');
+        frame.title = '這個地點今天的街景';
+        // ⚠️ accelerometer／gyroscope 是街景在手機上「轉動機身環顧四周」要的；不給功能還在，
+        // 但主控台每次都會噴 Permissions policy violation。⚠️ referrerPolicy 不能是 no-referrer：
+        // 金鑰的防護就是靠 referrer，送不出去 Google 會直接回錯誤頁。
+        frame.allow = 'accelerometer; gyroscope; fullscreen';
+        frame.referrerPolicy = 'strict-origin-when-cross-origin';
+        frame.src = embedUrl(v);
+        art.append(frame);
+      }
+      today.innerHTML = on ? '回到畫' : '看今天 <small>街景</small>';
+      if ($('big')) $('big').disabled = on;        // 街景沒有「原寸」可言
+      fitArt(v);
+    };
+    // 「現在」那一行接到同一顆鈕：讀到「中央区 銀座」就想按下去，那是最自然的入口。
+    $('nowsv')?.addEventListener('click', e => { e.preventDefault(); today.click(); });
+  }
   const flip = $('flip');
   if (flip) {
     // 🔴 預設是**真跡**。像素版的資訊嚴格少於真跡（同一個框、少掉的只有色階），

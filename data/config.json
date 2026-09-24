@@ -1,0 +1,8 @@
+{
+ "_": "執行期設定。mapsKey 是 Google Maps 的金鑰，只給面板的「看今天」用（街景嵌在畫框裡）。",
+ "_key": "留空＝沒有那顆鈕，其餘功能照常；「現在」那一行會退回開新分頁的街景連結，並在畫面上明說會另開。",
+ "_public": "🔴 這把金鑰在網頁上是公開的，藏不住。防護靠 Google Cloud Console 的三道限制：只准 Maps Embed API、只准自家網域的 HTTP referrer、而 Maps Embed API 本身免費無配額——被抄走也生不出帳單。",
+ "_referrers": "要填之前先在 Google Cloud Console 把這兩個網域加進該金鑰的 referrer 清單：kiyochika-pixel.ferrari828.workers.dev/* 與 simplyboys.github.io/*（備援站）。⚠️ 沒加就填，iframe 會顯示 Google 的錯誤頁，比現在的外連還糟。",
+ "_why": "同 edo-hyakkei：同一個畫面上不能有兩個都寫著「街景」、行為卻不一樣的東西。看起來最像主要入口的「現在」，做的偏偏是把人帶離遊戲——那邊被問過兩次「為什麼點了會開新頁」。",
+ "mapsKey": ""
+}
