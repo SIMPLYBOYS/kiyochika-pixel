@@ -2406,31 +2406,33 @@
    "kind": "reinterpretation",
    "file": "assets/motion/82.webm",
    "base": "assets/plate/82.jpg",
-   "source": "research/motion/p82.mp4",
+   "source": "research/motion/p82.mp4（2026-09-24 11:26）",
    "model": "Nano Banana（Google Flow）",
    "model_note": "⚠️ 同 no.72：Nano Banana 是 Google 的圖像模型，本身不出影片；檔案格式（1280×720・24fps・10.005s）與 C2PA 憑證（Created by Google Generative AI／SynthID）跟 Veo 片子相同，憑證沒寫模型名。",
    "date": "2026-09-24",
-   "prompt": "Animate this exact image. It is a Japanese woodblock print from the Meiji era (Inoue Yasuji, a student of Kobayashi Kiyochika), placed on a plain beige background.\n\nCAMERA: Locked-off static shot for the whole clip. No pan, tilt, zoom, push-in, parallax, rotation or reframing. The entire print stays in frame at the same size, including its paper margins and printed text. The plain background around the print stays plain and empty.\n\nKEEP IDENTICAL: The picture stays this same print from the first frame to the last. Every building, bridge, tree, pole, fence and sign keeps its size, shape, colours and place; boats and vehicles keep their size, shape and colours; nothing new enters or appears. The clouds keep their printed shapes. The carved outlines, the flat areas of printed colour, the overall colour tint and the paper texture stay exactly as printed.\n\nWHAT MOVES: A night at Shin-Yoshiwara. The whole picture keeps its dark night colours: the dark grey-green sky with long streaks of cloud, and the red glow of the rows of windows and lanterns. Every person stays a flat dark silhouette with no faces, no colours and no patterns, and the number of people never changes. On the left there is exactly one rickshaw with exactly one puller between its shafts, and exactly one man carrying a single red paper lantern: that one lantern-carrier runs a few more steps and slows down, his lantern swinging, and no second lantern or second carrier ever appears. In front of the long building on the right, the same small group of silhouettes keeps its places and turns and walks slowly on the spot. The streaks of cloud drift slowly across the sky. The thin bare branches of the tree in the middle, with their few small pale blossoms, sway a little in the night breeze and keep exactly the blossoms they have. The rows of red windows and the round lanterns along the eaves glow and flicker, and the lamp on the post at the right flickers. The buildings, the tall dark post, the fence around the tree and the lamp post stay exactly as printed.\n\nLIFE: The people already in the picture move naturally the whole time: they walk, turn, look around and gesture with readable, lifelike movements, keeping their size, clothes and colours, and the number of people stays the same. Branches, grass, clouds, water, clothing and hair react to the wind. Motion is clearly visible across the whole picture from the very first second.\n\nSTYLE: The motion stays inside the woodblock look: flat printed colour, no photographic lighting, no 3D depth, no motion blur, no added grain, no colour grading.",
-   "template": "_prompt_template.close.base（第三版） ＋ close.scenes.82",
+   "prompt": "Animate this exact image. It is a Japanese woodblock print from the Meiji era (Inoue Yasuji, a student of Kobayashi Kiyochika), placed on a plain beige background.\n\nCAMERA: Locked-off static shot for the whole clip. No pan, tilt, zoom, push-in, parallax, rotation or reframing. The entire print stays in frame at the same size, including its paper margins and printed text. The plain background around the print stays plain and empty.\n\nKEEP IDENTICAL: The picture stays this same print from the first frame to the last. Every building, bridge, tree, pole, fence and sign keeps its size, shape, colours and place; boats and vehicles keep their size, shape and colours; nothing new enters or appears. The clouds keep their printed shapes. The carved outlines, the flat areas of printed colour, the overall colour tint and the paper texture stay exactly as printed.\n\nWHAT MOVES: A night at Shin-Yoshiwara. The whole picture keeps its dark night colours: the dark grey-green sky with long streaks of cloud, and the red glow of the rows of windows and lanterns. Every person stays a flat dark silhouette with no faces, no colours and no patterns, and the number of people never changes. On the left the whole rickshaw group is moving together: exactly one rickshaw with its two big spoked wheels, exactly one puller between the shafts, exactly one man pushing it from behind with both hands on it, and, a few steps ahead of them, exactly one man carrying a single red paper lantern. No second rickshaw, no second lantern and no second lantern-carrier ever appears, and nobody gets in or out of the rickshaw. They move a short way to the right and slow down, staying low in the lower left of the picture and keeping exactly the same size, never coming closer to the viewer and never leaving the frame: the spoked wheels turn, the rickshaw body rocks a little as it rolls, the puller keeps his forward-leaning running stride, the man behind keeps pushing, and the lantern-carrier runs a few more steps and slows down with his red lantern swinging in his hand. In front of the long building on the right, the same small group of silhouettes keeps its places and turns and walks slowly on the spot. The streaks of cloud drift slowly across the sky. The thin bare branches of the tree in the middle, with their few small pale blossoms, sway a little in the night breeze and keep exactly the blossoms they have. The rows of red windows and the round lanterns along the eaves glow and flicker, and the lamp on the post at the right flickers. The buildings, the tall dark post, the fence around the tree and the lamp post stay exactly as printed.\n\nLIFE: The people already in the picture move naturally the whole time: they walk, turn, look around and gesture with readable, lifelike movements, keeping their size, clothes and colours, and the number of people stays the same. Branches, grass, clouds, water, clothing and hair react to the wind. Motion is clearly visible across the whole picture from the very first second.\n\nSTYLE: The motion stays inside the woodblock look: flat printed colour, no photographic lighting, no 3D depth, no motion blur, no added grain, no colour grading.",
+   "template": "close 第三版＋close.scenes.82 第四版",
    "first_frame": "research/motion/82-pad16x9.png（事後照 _pad.82 切回來）",
    "moved": "提燈的人、紅窗、雲",
    "differs": [
-    "左邊提著紅燈籠的人跑了幾步後放慢，燈籠跟著擺盪。",
-    "長屋一整排的紅色窗光與屋簷下的圓燈籠明滅閃動。",
-    "中間那棵樹的細枝輕搖，天上的長條雲慢慢飄。",
+    "左邊那一組——人力車、車伕、後面推車的人、提紅燈籠的人——整組往右移動，車輪轉動、車身隨著晃。",
+    "⚠️ 約第 2 秒起，這一組被模型重畫得比原畫大約一倍，位置也往畫面前方靠；原畫裡他們比這小得多、也遠得多。",
+    "⚠️ 原畫裡在車後雙手推車的人，影片裡變成坐在車上的乘客，座位不再是空的。",
+    "長屋一整排的紅色窗光與屋簷下的圓燈籠明滅閃動，提燈人的紅燈籠跟著擺盪。",
+    "右邊那一群人原地走動轉身；中間那棵樹的細枝輕搖，天上的長條雲慢慢飄。",
     "右邊那顆四角星是生成模型的浮水印。不修掉，它正好提醒這不是清親的作品。"
    ],
-   "differs_checked": "Aaron 2026-09-24 指示全部部署；差異清單由 Claude 對照 research/motion/p123-review/p82-no82-上架版.jpg 起草（第 0–9.9 秒格圖逐格比對；右緣題字與出版資訊起訖一致），待 Aaron 確認",
+   "differs_checked": "2026-09-24（逐格看過 0／2／4／6／8／9.8 秒；放大與後押變乘客兩點由 Aaron 判斷可接受，照實列出）",
    "fade": 0.6,
    "evidence": "research/motion/p123-review/p82-no82-上架版.jpg",
    "drift": {
-    "max": 9.3,
-    "at": 9.3,
-    "mean": 9.0,
+    "max": 10.2,
+    "at": 4.5,
+    "mean": 9.8,
     "over_16": [],
     "_": "每 0.3s 一格，跟原畫比邊的位置。只動光約 6，構圖動了 19 以上。"
    },
-   "v": "176c0507"
+   "v": "436b504b"
   },
   {
    "id": 83,
@@ -4192,6 +4194,36 @@
     "原因見 _prompt_template.close.why 的 no.82 第三版。"
    ],
    "evidence": "research/motion/p123-review/p82v3-no82-提燈人被複製成兩個.jpg"
+  },
+  {
+   "date": "2026-09-24",
+   "id": 82,
+   "source": "research/motion/p82.mp4（2026-09-23 第四次，已上架的那一支）",
+   "prompt": "close base 第三版＋close.scenes.82 第三版（research/motion/82-prompt-v3.txt）",
+   "model": "Nano Banana（Google Flow）",
+   "verdict": "⛔ 重生（Aaron：只有提燈籠的人在動，後面人力車應該也要動起來）",
+   "why": [
+    "✅ 第三版要治的都治好了：提燈人只有一個、櫻花維持疏落、構圖與暗色調、紅窗、剪影都保住。",
+    "⛔ 人力車、車伕、後面推車的人整支不動——第三版為了擋複製把他們寫成清點句，動作只給了提燈人。",
+    "原因與改法見 _prompt_template.close.why 的 no.82 第四版。"
+   ]
+  },
+  {
+   "date": "2026-09-24",
+   "id": 82,
+   "source": "research/motion/p82.mp4（2026-09-24 11:26，第五次）",
+   "prompt": "close base 第三版＋close.scenes.82 第四版（research/motion/82-prompt-v4.txt）",
+   "model": "Nano Banana（Google Flow）",
+   "verdict": "✅ 收（Aaron 判斷：「我認為沒有問題，我相信我看到的」）——量到的差異照實寫進 differs",
+   "why": [
+    "✅ 機器三關都過：第一幀 2.4、灰階差曲線 2–3 平的（沒換場）、首尾不放大（100%）。人力車這次真的在動。",
+    "⛔ 0 秒的車與原畫同大小，2 秒起被重畫放大約一倍（同一條量測帶內輪圈 30px → 61px），位置往畫面前方推。",
+    "⛔ 原畫裡雙手推車的後押，在影片裡變成坐在車上的乘客，座位不再是空的。",
+    "🔑 機器的位移指標量的是全幅的邊，一組人局部放大它量不出來——這一關只能靠眼睛。",
+    "原因與改法見 _prompt_template.close.why 的 no.82 第五版。",
+    "⇒ 上架。放大與後押變乘客這兩點不隱藏：逐條寫進 differs，面板上跟著影片一起印給玩家看。🔑 量測結果是量測結果，收不收是作者的決定——同 no.50 當初把兩件事寫成同一句話的教訓。"
+   ],
+   "evidence": "0s／6s 對照（research/motion/review/p82-grid.jpg 同一支）"
   }
  ],
  "_decision": {
@@ -4496,7 +4528,7 @@
     "70": "A summer night by the river at Imado. The whole picture keeps its quiet evening colours: the dusky blue-green sky and water outside the window and the soft light inside the room. The full moon stays low above the row of dark trees, and the water below it glints. Inside, the woman in the lilac kimono plays her shamisen: her right hand strikes the strings with the plectrum, her left hand moves along the neck, and she sways gently to the music. The iris in the hanging basket on the pillar stirs, and the light of the lamp at the right flickers. The bonsai on the windowsill, the little red table with its potted plants, the sliding door and the pillar stay exactly as printed.",
     "71": "Fireworks by the pond at Ikenohata. The whole picture keeps its deep night colours: the sky and the pond stay dark green, and every person stays a flat black silhouette with no faces or colours. The falling cascades of the fireworks in the upper right keep streaming down, their red, orange and yellow sparks glittering and trailing as they fall. The red-and-white paper lanterns strung on the rope across the middle sway gently, and the rows of small lights along the far shore and their long reflections on the pond shimmer. The row of silhouetted heads along the bottom turns and tilts up toward the fireworks, and the two boys climbing the crossed poles shift their grip and look up. The crossed poles and the dark far shore stay exactly as printed.",
     "81": "Dusk at Asakusa Bridge. The whole picture keeps its evening colours: the grey-blue sky with dark clouds whose edges glow orange, and the pale light on the water under the arch. The clouds drift slowly. The small dark silhouettes crossing the top of the stone bridge walk slowly in both directions. The moored boats in the foreground rock on the ripples, and their tall masts sway. The water under the arch ripples and its bright reflection wavers, and the lit windows of the houses on both banks glow. The stone arched bridge, the houses and the white storehouse stay exactly as printed.",
-    "82": "A night at Shin-Yoshiwara. The whole picture keeps its dark night colours: the dark grey-green sky with long streaks of cloud, and the red glow of the rows of windows and lanterns. Every person stays a flat dark silhouette with no faces, no colours and no patterns, and the number of people never changes. On the left there is exactly one rickshaw with exactly one puller between its shafts, and exactly one man carrying a single red paper lantern: that one lantern-carrier runs a few more steps and slows down, his lantern swinging, and no second lantern or second carrier ever appears. In front of the long building on the right, the same small group of silhouettes keeps its places and turns and walks slowly on the spot. The streaks of cloud drift slowly across the sky. The thin bare branches of the tree in the middle, with their few small pale blossoms, sway a little in the night breeze and keep exactly the blossoms they have. The rows of red windows and the round lanterns along the eaves glow and flicker, and the lamp on the post at the right flickers. The buildings, the tall dark post, the fence around the tree and the lamp post stay exactly as printed.",
+    "82": "A night at Shin-Yoshiwara. The whole picture keeps its dark night colours: the dark grey-green sky with long streaks of cloud, and the red glow of the rows of windows and lanterns. Every person stays a flat dark silhouette with no faces, no colours and no patterns, and the number of people never changes. On the left the whole rickshaw group is moving together: exactly one rickshaw with its two big spoked wheels, exactly one puller between the shafts, exactly one man pushing it from behind with both hands on it, and, a few steps ahead of them, exactly one man carrying a single red paper lantern. No second rickshaw, no second lantern and no second lantern-carrier ever appears, and nobody gets in or out of the rickshaw. They move a short way to the right and slow down, staying low in the lower left of the picture and keeping exactly the same size, never coming closer to the viewer and never leaving the frame: the spoked wheels turn, the rickshaw body rocks a little as it rolls, the puller keeps his forward-leaning running stride, the man behind keeps pushing, and the lantern-carrier runs a few more steps and slows down with his red lantern swinging in his hand. In front of the long building on the right, the same small group of silhouettes keeps its places and turns and walks slowly on the spot. The streaks of cloud drift slowly across the sky. The thin bare branches of the tree in the middle, with their few small pale blossoms, sway a little in the night breeze and keep exactly the blossoms they have. The rows of red windows and the round lanterns along the eaves glow and flicker, and the lamp on the post at the right flickers. The buildings, the tall dark post, the fence around the tree and the lamp post stay exactly as printed.",
     "83": "A bright, breezy day at the Kangyōba bazaar in Kyōbashi. The white clouds drift slowly across the blue sky. The long green fronds of the big willow in front sway in the wind, and the pines on the left stir. The paper lanterns hung at the entrances sway. The crowd in front of the building moves naturally: the woman in the purple kimono with the red sash walks slowly toward the entrance; the man in the bowler hat talks with the woman beside him; the children tug at the adults' sleeves; the man with the white parasol tilts it; the rickshaw man beside the red-seated rickshaw on the left straightens up and looks around; and the men in red caps at the far left turn their heads. The brick building with its sign, the white building on the right, the willow's trunk and the rickshaw stay exactly as printed.",
     "84": "A clear day on the Kinokuni slope at Akasaka. The thin streaks of white cloud drift slowly across the blue sky. The leaves of the trees on the left stir, the plants along the top of the green embankment on the right sway in the breeze, and the telegraph wire swings a little. Everything stays at this same distance from us: the people on the road stay small figures in the wide view and keep their places. The two women side by side on the road take a few slow steps, their sleeves and hems swaying, and turn their heads to talk to each other. Further down the slope, the small figures, the man carrying a pole and the rickshaws move slowly, staying small. The green embankment with its fence, the stone posts along the road, the lamp post and the town below stay exactly as printed."
    },
@@ -4514,7 +4546,9 @@
     "🔴 no.60 演出句第三版（2026-09-23）：第二版（fire_base 第二版）讓火**真的在變**了，但整幅被重畫——清親斷續的斜向筆觸變成乾淨的大火舌、墨色煙斑變成滾滾黑煙、右岸的人被畫成有顏色看得見的人、建築重畫（灰階差 2 → 33–35）。⇒ 照 no.62 第四版有效的三招補上：①開頭錨住原畫的色調（粉塵色的天、暗褐的岸、灰色的河）；②人與貨物堆寫成平塗的深色剪影；③把火的**樣子**寫成錨（許多細長、斷續、往右上斜掃的紅粉筆觸＋墨色煙斑），再要求那些筆觸本身閃動、明滅、翻滾——動的是原畫的筆觸，不是另畫一把火。",
     "⚠️ no.82 演出句第二版（2026-09-23）：第二次生成起始幀吃到了（2.5），構圖、色調、剪影、紅窗全保住，車伕也有跑。三處細節跑掉：①**櫻花被畫多**——原畫枝條疏落、只有零星花朵，影片裡開滿花；②**滿畫面飄白點**（像落花或雪粒），原畫沒有；③中間偏右有一兩個人被打亮、看得見淺色和服。①②都是我寫的 “The pale blossoms … flutter in the night breeze” 引來的（技巧 2：點名花在飄＝邀請它開花、灑花）。⇒ 第二版：樹寫成『疏落的細枝加零星小白花，只輕輕搖，花維持原本的數量』，⛔ 不寫花瓣飄；剪影錨從『the dark figures』加強成『每個人都是平塗的深色剪影，沒有臉、沒有顏色、沒有花紋』（同 no.42）。",
     "🔴 no.84 演出句第二版（2026-09-23）：p84 的兩位女子從遠處的小人影**放大成佔滿下半畫面的大型美人圖**、衣著花紋全部重畫，中景還多出一個拄杖的男子（Aaron 說「人物複製」）。原因是我寫了 “walk slowly down **toward us**”——朝鏡頭走，畫面上必然越變越大；同句雖然也寫了 keeping their size，兩個要求互相矛盾時模型選了前者。同一機制第三次出現（no.39 三個取暖的人被放大兩倍半、no.43 撐篙的小船變大）。🔑 **不要寫『朝我們走來』**；要動就寫原地的動作（走幾步、轉頭、袖子擺），並在開頭錨住『距離不變、人維持小』（同 no.22 第三版、no.37）。",
-    "🔴 no.82 演出句第三版（2026-09-23）：第二版把櫻花與白點治好了，但出現**人物複製**——第 0 秒只有一個提紅燈籠的人，4 秒與 6 秒變成兩個一模一樣的提燈人並排，8 秒又變回一個；右邊人群也忽多忽少（Aaron 回報）。模板 LIFE 的『人數從頭到尾不變』是通則，擋不住畫面焦點被複製。⇒ 第三版在演出句裡**寫死數量**：『左邊剛好一輛人力車、剛好一位車伕、剛好一個提著一盞紅燈籠的人』，並正面寫出『不會出現第二盞燈或第二個提燈的人』；右邊人群寫成『同一小群剪影，維持原位、原地轉身走動』。🔑 **畫面焦點的數量要在演出句裡數出來**。"
+    "🔴 no.82 演出句第三版（2026-09-23）：第二版把櫻花與白點治好了，但出現**人物複製**——第 0 秒只有一個提紅燈籠的人，4 秒與 6 秒變成兩個一模一樣的提燈人並排，8 秒又變回一個；右邊人群也忽多忽少（Aaron 回報）。模板 LIFE 的『人數從頭到尾不變』是通則，擋不住畫面焦點被複製。⇒ 第三版在演出句裡**寫死數量**：『左邊剛好一輛人力車、剛好一位車伕、剛好一個提著一盞紅燈籠的人』，並正面寫出『不會出現第二盞燈或第二個提燈的人』；右邊人群寫成『同一小群剪影，維持原位、原地轉身走動』。🔑 **畫面焦點的數量要在演出句裡數出來**。",
+    "🔴 no.82 演出句第四版（2026-09-24，Aaron 回報）：第三版把人物複製治好了，但**只有提燈籠的人在動，後面的人力車整支不動**。看第三版的句子就知道為什麼——為了擋複製，人力車與車伕被寫成『剛好一輛、剛好一位』這種**清點句**，而唯一一個動詞（再跑幾步、放慢）只給了提燈人；第二版車伕會跑，是第三版改寫時連動作一起弄丟的。⇒ 第四版把整組寫成一起移動：輪子轉、車身微晃、車伕維持前傾的跑姿、後面推車的人繼續推、提燈人照舊。數量錨全部保留（剛好一輛車、一位車伕、一位推車的、一個提燈的、一盞燈），另補『沒有人上下車』。⛔ 不寫『朝我們過來』（no.84 的教訓）：改寫成『往右移動一小段、放慢，維持在畫面左下、大小不變』。🔑 **清點句擋得住複製，但它不會替角色動起來——數量與動作要分開各寫一句。**",
+    "⚪ no.82 演出句第五版（2026-09-24，寫好了但**沒有採用**——Aaron 看過影片後判斷現況可以接受，第四版留任）：第四版把人力車弄動了，但換來兩個更嚴重的問題——①**整組放大、朝我們過來**：0 秒的車輪跟原畫一樣小，2 秒之後輪圈在同一條量測帶裡從 30px 變成 61px，車子被重畫成一輛更大、更清楚的車；②**後面推車的人變成坐在車上的乘客**（原畫是雙手推車的後押，座位空著），脖子上還多出一塊紅色。⇒ 病根是第四版寫了『往右移動一小段』：一旦讓一組人在地面上位移，模型就會順手把他們重新擺到前景（同 no.84『朝我們走來』被放大）。『大小不變』這種否定句擋不住它，因為車子是被整個重畫的。🔑 **車子這種有體積的東西，動作要寫成原地使力**（腳蹬地、輪子原地轉、車轅與車身晃），⛔ 不寫位移；另外把座位空著、後押站著推、沒有人坐上去，全部正面寫死——第四版的『沒有人上下車』太弱，模型是直接把推車的人換成乘客，不算『上車』。 ⚠️ 第五版的句子留在 research/motion/82-prompt-v5.txt，下一幅有車有船的畫再撞到同一件事時直接拿來用。"
    ],
    "base_v1": "Animate this exact image. It is a Japanese woodblock print from the Meiji era (Kobayashi Kiyochika, 1876-1881), placed on a plain beige background.\n\nCAMERA: Locked-off static shot for the whole clip. No pan, tilt, zoom, push-in, parallax, rotation or reframing. The entire print stays in frame at the same size, including its paper margins and printed text. The plain background around the print stays plain and empty.\n\nKEEP IDENTICAL: The picture stays this same print from the first frame to the last. Every person, boat, vehicle, animal, building, bridge, tree, pole and sign keeps its position, size, shape, colours and number; nothing enters, leaves or appears. People stay in their places and poses, moving only their heads, hands, sleeves and hair a little. The carved outlines, the flat areas of printed colour, the overall colour tint and the paper texture stay exactly as printed.\n\nWHAT MOVES: {SCENE}\n\nSTYLE: The motion stays inside the woodblock look: flat printed colour, no photographic lighting, no 3D depth, no motion blur, no added grain, no colour grading. Movement is gentle, continuous and clearly visible. The clip loops seamlessly: the last frame matches the first frame.",
    "base_v1_note": "第一版（44 第三次、46、47 用的）：人物只准動頭手衣袖、首尾相接 ⇒ 構圖全保住，但 47 只有少數人在動。",
