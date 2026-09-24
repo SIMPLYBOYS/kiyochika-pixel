@@ -1,0 +1,81 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>promo cards</title>
+<style>
+  :root { --sea:#1b3a56; --land:#e9e1cf; --gold:#c9a227; --off:#101d29 }
+  * { margin:0; box-sizing:border-box }
+  html,body { width:1080px; height:1920px; overflow:hidden;
+              font-family:"Hiragino Mincho ProN","Yu Mincho",serif; color:var(--land) }
+  body { display:grid }
+  /* 整頁卡（不透明）*/
+  .card { background:var(--off); display:flex; flex-direction:column; justify-content:center;
+          align-items:center; gap:34px; padding:0 96px; text-align:center }
+  .card h1 { font-size:104px; letter-spacing:.22em; text-indent:.22em; color:var(--gold); font-weight:400 }
+  .card h2 { font-size:58px; letter-spacing:.16em; text-indent:.16em; color:var(--gold); font-weight:400; line-height:1.5 }
+  .card .sub { font-size:38px; line-height:1.9; opacity:.86; letter-spacing:.06em }
+  .card .tiny { font-size:25px; line-height:1.85; opacity:.5; letter-spacing:.04em; margin-top:18px }
+  .card .url { font-size:33px; white-space:nowrap; color:var(--gold); letter-spacing:.03em; border:2px solid #c9a22766;
+               padding:22px 40px; border-radius:6px; font-family:ui-monospace,Menlo,monospace }
+  .rule { width:140px; height:1px; background:#c9a22777 }
+  /* 字幕條（透明底，疊在畫面上）*/
+  .cap { align-self:end; width:100%; padding:0 76px 150px;
+         background:linear-gradient(to top,#050a10f2 0%,#050a10e0 52%,#050a1000 100%);
+         padding-top:210px; display:flex; flex-direction:column; gap:22px }
+  .cap b { font-size:62px; font-weight:400; line-height:1.4; letter-spacing:.05em; display:block }
+  .cap span { font-size:32px; line-height:1.7; opacity:.72; letter-spacing:.04em }
+  .cap em { font-style:normal; color:var(--gold) }
+  /* README 用的海報（16:9）：直式影片放在 README 裡太高，改用三格＋標題 */
+  .poster { background:var(--off); display:flex; flex-direction:column; align-items:center;
+            justify-content:center; gap:34px; height:900px }
+  .poster h1 { font-size:46px; color:var(--gold); letter-spacing:.2em; text-indent:.2em; font-weight:400 }
+  .poster .sub { font-size:22px; opacity:.75; letter-spacing:.08em; margin-top:-18px }
+  .poster .row { display:flex; gap:26px; align-items:center }
+  .poster .row img { width:270px; height:480px; object-fit:cover; border:1px solid #c9a22740; border-radius:4px }
+  .poster .play { display:flex; align-items:center; gap:14px; font-size:24px; color:var(--gold); letter-spacing:.06em }
+  .poster .play i { width:0; height:0; border-left:22px solid var(--gold); border-top:14px solid transparent;
+                    border-bottom:14px solid transparent; display:inline-block }
+</style>
+<body></body>
+<script>
+const CARDS = {
+  title: `<div class="card">
+      <h1>東京名所圖</h1><div class="rule"></div>
+      <div class="sub">小林清親的光線畫　明治九年–十四年<br>1876 — 1881</div>
+      <div class="sub" style="opacity:.95">把 63 幅畫<br>放回它們被畫的那個地點</div></div>`,
+  end: `<div class="card">
+      <h2>開網頁就能玩</h2>
+      <div class="url">kiyochika-pixel.ferrari828.workers.dev</div>
+      <div class="sub">免費・不用註冊・手機也能玩</div>
+      <div class="tiny">畫：国立国会図書館《清親畫帖》公有領域<br>
+        地圖：© OpenStreetMap contributors（ODbL）<br>
+        配樂：端唄「梅にも春」1931 年錄音・公有領域<br>
+        影片中的動態影像為 AI 重繪，非清親原作</div></div>`,
+  c1: cap('浮世繪最後一代的畫家<br>用西洋的明暗畫他每天走過的城市', '後人叫它「光線畫」'),
+  c2: cap('63 幅畫，放回它們被畫的地點', '1880 的東京 ⇄ 2026 的東京：同一組座標，兩層皮'),
+  c3: cap('點開一景<br>看清親畫了什麼、那裡今天長什麼樣', '標高・最近的車站・250m 內的社寺與碑，全部指得出出處'),
+  c4: cap('十六色<br>是光線畫被壓到極限剩下的顏色', '每一幅的色盤都從原畫本身算出來'),
+  c5: cap('63 幅<br>每一幅都有一支 <em>AI 重繪版</em>', '永遠掛著「AI 重繪・非原作」'),
+  c6: cap('而且逐條印出<br>它跟原畫差在哪裡', '⛔ 不進畫卷、不算收藏——重畫不是罪，冒充原作才是'),
+  c7: cap('真跡放大<br>看得到瓦斯燈的玻璃與暖簾上的字', '1527–1690px 的和紙掃描，滾輪就能推近'),
+  c8: cap('收滿的畫連成一卷', '1876 的銀座是晴天白日，到 1881 只剩火與夜'),
+  c9: cap('最後，是每一年的顏色', '收滿 63 幅才看得到'),
+};
+function cap(a, b) { return `<div class="cap"><b>${a}</b><span>${b}</span></div>`; }
+const q = new URL(location.href).searchParams;
+const which = q.get('c') || 'title';
+if (which === 'poster') {
+  // 三格由 make-promo.sh 從成片抽出來（⛔ 不另外排版，海報上看到的就是影片裡的畫面）
+  const dir = q.get('dir') || '.';
+  for (const el of [document.documentElement, document.body]) {
+    el.style.width = '1600px'; el.style.height = '900px';
+  }
+  document.body.innerHTML = `<div class="poster">
+      <h1>東京名所圖　宣傳影片</h1>
+      <div class="sub">39 秒・點圖播放</div>
+      <div class="row">${[1, 2, 3].map(i => `<img src="${dir}/f${i}.png">`).join('')}</div>
+      <div class="play"><i></i>63 幅光線畫，放回它們被畫的地點</div>
+    </div>`;
+} else {
+  document.body.innerHTML = CARDS[which];
+}
+</script>

@@ -11,6 +11,16 @@
 那地方今天長什麼樣。畫帖收 73 幅，其中 10 幅查不到座標：畫不到地圖上就不放進遊戲，
 理由見〈[兩條規則](#兩條規則)〉。
 
+**39 秒看完這一作**（點圖播放）：
+
+[![宣傳影片：63 幅光線畫，放回它們被畫的地點](docs/promo/poster.jpg)](docs/promo/kiyochika-promo-9x16.mp4)
+
+1080×1920 直式，給 Threads 這類手機動態用。⛔ 裡面沒有一張示意圖：畫面是跑真的遊戲截的
+（手機版面 540×960＠2x），原畫出自 `assets/plate`，動的那一段是 `assets/motion` 裡真的那一支，
+配樂是遊戲裡那首端唄「梅にも春」（1931 年錄音・公有領域）。片中的動態影像是 AI 重繪、非清親原作，
+片尾卡把四個出處寫齊——⛔ 不能只放網址。
+重做：`bash tools/make-promo.sh`（Playwright 截圖 ＋ ffmpeg 組裝，中間檔放 `research/promo/`）。
+
 系列前三作：[東海道五十三次](https://github.com/SIMPLYBOYS/tokaido-pixel)（線性旅程）、
 [名所江戶百景](https://github.com/SIMPLYBOYS/edo-hyakkei)（面狀＋四季）、東京二十景（川瀨巴水）。
 這一作與江戶百景共用同一套地圖做法——一套真實座標，兩層皮。江戶百景的滑桿兩端是 1858 與 2026，
@@ -499,7 +509,9 @@ assets/thumb/        面板用的 960px 和紙（6.9MB）。960 ＝ 像素版在
                      兩者同寬，切換「像素／真跡」時才不會跳。plate 等玩家按了才載
 assets/motion/       AI 重繪版 63 支，webm＋mp4（51MB）
 research/            不進 build：ndl/ 整頁 107MB、colophon/ 奧付裁切、motion/ 起始幀與提示詞、
-                     _subjects.png 目視驗收
+                     promo/ 宣傳片的截圖與中間檔、_subjects.png 目視驗收
+docs/promo/          宣傳影片（1080×1920・39.6 秒）與 README 用的海報。
+                     ⚠️ 不進網站：.assetsignore 擋掉整個 docs，玩家不必為了玩遊戲下載它
 ```
 
 ## 兩種「年份」不是同一種證據
@@ -737,6 +749,7 @@ hit-test——點下去會穿過去打到底下的地形圖。一半以上的標
 | 解說文字 | ウィキペディア日本語版 | CC BY-SA 4.0（繁中譯文為改作，面板標「譯自」並連回日文原文） |
 | 交叉比對 | Wikimedia Commons（LACMA／Honolulu／Rijksmuseum 掃描） | 公有領域 |
 | AI 重繪版 | Google Flow 生成，起始幀為上列公有領域原畫 | 生成內容，面板永久標示「AI 重繪・非原作」並逐條列出差異 |
+| 宣傳影片 | `docs/promo/`，由上列素材組成（原畫・遊戲畫面・AI 重繪片・1931 年公有領域錄音） | 各素材依其授權；轉貼請保留片尾那張出處卡 |
 | 程式 | | MIT |
 
 清親 1915 年歿、作品 1876–1884 年出版 ⇒ 日本、台灣、美國三地都已進入公有領域，
