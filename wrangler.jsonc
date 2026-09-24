@@ -1,12 +1,18 @@
-// Cloudflare（Workers 靜態資源）部署設定。沒有伺服器程式，只把整個網站當靜態檔案送到 Cloudflare 的節點。
+// Cloudflare（Workers 靜態資源）部署設定。整個網站是靜態檔案，前面只有一支 worker.js 補 byte-range。
 //
 // 🔴 這個檔一定要在 repo 裡：沒有它，`npx wrangler deploy` 會跑自動設定，把 wrangler 裝進專案的
 // node_modules/，而上傳目錄是根目錄 ⇒ 連 126 MB 的 workerd 執行檔一起當成網頁檔案上傳，超過 25 MB 上限失敗
 //（2026-09-17 第一次部署實際發生）。哪些檔案不上傳寫在 .assetsignore。
+//
+// 🔴 2026-09-24 起多了一支 worker.js：Workers 的靜態資源對 Range 請求一律回 200 與整個檔案，
+// 而 Safari 播媒體要靠 byte-range ⇒ 玩家在手機上聽不到配樂。那支程式只補 206，其餘照舊。
+// ⚠️ 有了 main 就要有 assets.binding，否則 worker 裡拿不到 env.ASSETS。
 {
   "name": "kiyochika-pixel",
   "compatibility_date": "2026-09-16",
+  "main": "worker.js",
   "assets": {
-    "directory": "."
+    "directory": ".",
+    "binding": "ASSETS"
   }
 }

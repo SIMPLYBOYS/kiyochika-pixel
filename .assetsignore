@@ -1,11 +1,13 @@
 # 不上傳到 Cloudflare 的檔案（語法同 .gitignore）。網站只需要 index.html、src/、data/、assets/。
-# 🔴 node_modules 一定要擋：部署環境會把 wrangler 裝在這裡，裡面有 126 MB 的執行檔（見 wrangler.jsonc）
+# 🔴 node_modules 一定要擋：部署環境會把 wrangler 裝在這裡，裡面有 126 MB 的執行檔（見 wrangler.jsonc
+worker.js          # 這是程式不是網頁檔案（wrangler 會自己打包它））
 node_modules
 .wrangler
 .git
 .gitignore
 .assetsignore
 wrangler.jsonc
+worker.js          # 這是程式不是網頁檔案（wrangler 會自己打包它）
 package.json
 bun.lock
 bun.lockb
