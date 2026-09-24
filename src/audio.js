@@ -45,7 +45,11 @@ export function createMusic(tracks, { onTrack } = {}) {
     i = (i + 1) % tracks.length;
     const t = tracks[i];
     el.preload = 'auto';            // 已經要播了，讓它盡量往前抓
-    el.src = url(t);
+    // 🔴 已經在載同一首就**不要再指派 src**：重新指派會再發一個請求，而第二個請求會卡在
+    // 第一個的 HTTP 快取鎖上 ⇒ 要等第一個把整首下載完才出得了聲。
+    // 實測 400kbps／RTT300：按下去到聽得到 18.5 秒，而其中 16 秒就是在等那個重複的請求。
+    const want = url(t);
+    if (!el.src.endsWith(want)) el.src = want;
     el.play().catch(() => { /* 還沒拿到使用者動作就先擱著 */ });
     onTrack?.(t);
     // 自己排下一首，⛔ 不用 loop 屬性：五首要輪流，而且要淡出再換

@@ -82,13 +82,39 @@ def drift_rows(plate, video, pre=None):
     return rows
 
 
+# 🔴 執行期只讀得到「玩家看得到的欄位」：data/motion.json 整份 372KB（gz 88KB），
+# 其中 136KB 是提示詞模板、28KB 是退件紀錄——那些是給做這件事的人看的，⛔ 不該讓每個玩家下載。
+# ⇒ 另寫一份 data/motion-clips.json（約 20KB），遊戲讀它（同 audio.json／audio-tracks.json 的分法）。
+# ⚠️ 玩家回報手機上配樂很久才出來，量到開場前傳了 1.9MB——這 88KB 就是其中一塊。
+FIELDS = ("id", "kind", "file", "v", "model", "date", "differs")
+
+
+def write_clips(data):
+    slim = {"_": "執行期用的精簡版，機器產生（完整紀錄與提示詞在 motion.json）。⛔ 不要手改。",
+            "clips": [{k: c[k] for k in FIELDS if k in c} for c in data["clips"]]}
+    dest = ROOT / "data" / "motion-clips.json"
+    dest.write_text(json.dumps(slim, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
+    return dest
+
+
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("id", type=int)
-    ap.add_argument("--video", required=True)
+    ap.add_argument("id", type=int, nargs="?")
+    ap.add_argument("--video")
+    ap.add_argument("--sync", action="store_true",
+                    help="只把 data/motion-clips.json 依 motion.json 重產一次")
     ap.add_argument("--fade", type=float, default=0.6)
     ap.add_argument("--check-only", action="store_true")
     a = ap.parse_args()
+    if a.sync:
+        data = json.loads((ROOT / "data" / "motion.json").read_text(encoding="utf-8"))
+        dest = write_clips(data)
+        print(f"{len(data['clips'])} 支 → {dest.relative_to(ROOT)}"
+              f"（{dest.stat().st_size / 1024:.0f}KB，完整紀錄 "
+              f"{(ROOT / 'data/motion.json').stat().st_size / 1024:.0f}KB）")
+        return
+    if a.id is None or not a.video:
+        ap.error("要 id 與 --video（或用 --sync 只重產精簡檔）")
 
     from PIL import Image
     plate = ROOT / "assets" / "plate" / f"{a.id:02d}.jpg"
@@ -183,7 +209,8 @@ def main():
     import hashlib
     clip["v"] = hashlib.sha1((OUT / f"{a.id:02d}.webm").read_bytes() + (OUT / f"{a.id:02d}.mp4").read_bytes()).hexdigest()[:8]
     mp.write_text(json.dumps(data, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
-    print(f"  版本碼 v={clip['v']}（寫回 data/motion.json）")
+    write_clips(data)      # ⚠️ 兩份要一起走，不然玩家看到的差異清單會跟紀錄對不上
+    print(f"  版本碼 v={clip['v']}（寫回 data/motion.json 與 motion-clips.json）")
     print("\n⛔ 最後一關是眼睛：循環接得順不順、有沒有多出東西、木版的味道還在不在")
 
 

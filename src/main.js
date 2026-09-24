@@ -34,7 +34,9 @@ const [all, world, ml, refmaps, topicMap, topicText, topicZh, audio, palettes, m
   grab('data/topics-zh.json').catch(e => (console.warn('解說譯文略過:', e), { items: {} })),
   grab('data/audio-tracks.json').catch(e => (console.warn('配樂略過:', e), { tracks: [] })),
   grab('data/palettes.json').catch(e => (console.warn('色盤略過:', e), {})),
-  grab('data/motion.json').catch(e => (console.warn('動態版略過:', e), { clips: [] })),
+  // ⚠️ 讀精簡版：完整的 motion.json 有 480KB（提示詞與退件紀錄），玩家只用得到其中幾個欄位。
+  // 兩份由 tools/make-motion.py 一起寫（--sync 可單獨重產），⛔ 不要在這裡改回讀 motion.json。
+  grab('data/motion-clips.json').catch(e => (console.warn('動態版略過:', e), { clips: [] })),
 ]);
 
 // 🔴 能玩的是**地圖上有的那些**。收錄 69 幅，其中 10 幅沒查到座標（空白是資訊，

@@ -23,7 +23,11 @@ const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const VIEWS = JSON.parse(readFileSync(resolve(ROOT, 'data/views.json'), 'utf8'));
 const MAPPED = VIEWS.filter(v => v.include && v.subject).length;
 // AI 重繪版有幾幅也**從資料算**：開場印的數字要跟 data/motion.json 對得上
-const CLIPS = JSON.parse(readFileSync(resolve(ROOT, 'data/motion.json'), 'utf8')).clips.length;
+const MOTION = JSON.parse(readFileSync(resolve(ROOT, 'data/motion.json'), 'utf8')).clips;
+const CLIPS = MOTION.length;
+// ⚠️ 遊戲讀的是精簡版（玩家不必下載 480KB 的提示詞與退件紀錄）⇒ 兩份必須同步，
+// 否則面板印的差異清單會跟紀錄對不上。tools/make-motion.py 會一起寫，這裡只驗它有一起走。
+const SLIM = JSON.parse(readFileSync(resolve(ROOT, 'data/motion-clips.json'), 'utf8')).clips;
 const PORT = 8000;
 const sleep = ms => new Promise(r => setTimeout(r, ms));
 
@@ -56,6 +60,10 @@ const slow = TRACKS.filter(t => { const a = atoms(t.file); return a.indexOf('moo
 ok(TRACKS.length > 0 && slow.length === 0,
    `配樂 ${TRACKS.length} 首都是 faststart（moov 在 mdat 前）${slow.length ? '：' + slow.map(t => t.file).join('、') : ''}`);
 ok(TRACKS.every(t => t.v), `配樂每首都有版本碼 v（${TRACKS.map(t => t.v).join('・')}）`);
+
+ok(SLIM.length === CLIPS && SLIM.every((c, k) => c.id === MOTION[k].id && c.v === MOTION[k].v
+     && (c.differs?.length ?? 0) === (MOTION[k].differs?.length ?? 0)),
+   `motion-clips.json 跟 motion.json 同步（${SLIM.length} 支）`);
 
 const browser = await chromium.launch();
 for (const [name, size] of [['桌機 1440×900', { width: 1440, height: 900 }],

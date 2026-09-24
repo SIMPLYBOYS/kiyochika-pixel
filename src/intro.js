@@ -45,7 +45,8 @@ export function playIntro({ views, total, clips = 0, yearOf, src, topic, onDone 
   el.className = 'intro';
   el.innerHTML = `
     <div class="ireel">${reel.map((v, i) => `
-      <img src="${src(v)}" alt="" style="animation-delay:${i * 3.4}s">`).join('')}</div>
+      <img ${i ? `data-src="${src(v)}"` : `src="${src(v)}" fetchpriority="high"`}
+           alt="" decoding="async" style="animation-delay:${i * 3.4}s">`).join('')}</div>
     <div class="iveil"></div>
     <div class="itext">
       <h1>東京名所圖</h1>
@@ -69,11 +70,26 @@ export function playIntro({ views, total, clips = 0, yearOf, src, topic, onDone 
     </div>`;
   document.body.append(el);
 
+  // 🔴 六張真跡**不要一次全抓**：實測開場到按下「入場」之間傳了 1.9MB，其中這六張就佔 705KB，
+  // 而它們跟配樂搶同一段頻寬 ⇒ 手機上「按了很久音樂才出來」（2026-09-24 玩家回報）。
+  // 每張間隔 3.4 秒才輪到，所以在輪到它之前 2.5 秒再開始抓就好；第一張照舊立刻抓。
+  // ⚠️ 關掉動態效果的人不跑輪播動畫，六張會同時疊著 ⇒ 那種情況照舊一次補齊。
+  const lazy = [...el.querySelectorAll('.ireel img[data-src]')];
+  const still = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  lazy.forEach((img, k) => {
+    // ⚠️ 計時器在開場關掉之後還是會到期 ⇒ 先看 data-src 還在不在，不然會變成 img.src = undefined，多打一個 404
+    const go = () => { if (!img.dataset.src) return; img.src = img.dataset.src; img.removeAttribute('data-src'); };
+    still ? go() : setTimeout(go, Math.max(0, (k + 1) * 3400 - 2500));
+  });
+  // 提早關掉開場的人：剩下的就別抓了，那幾百 KB 要留給地圖與配樂
+  el.addEventListener('intro-shut', () => lazy.forEach(i => i.removeAttribute('data-src')));
+
   // ⛔ 關掉動態效果的人不該被關在開場裡：直接把文字擺好，⛔ 不跑淡入與上捲。
   if (matchMedia('(prefers-reduced-motion: reduce)').matches) el.classList.add('still');
 
   const shut = () => {
     markSeen();
+    el.dispatchEvent(new Event('intro-shut'));
     el.classList.add('out');
     // 等淡出跑完再移除，⚠️ 但別靠 transitionend——被中斷就永遠不會觸發
     setTimeout(() => { el.remove(); removeEventListener('keydown', key); onDone?.(); }, 420);
