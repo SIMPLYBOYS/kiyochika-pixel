@@ -17,30 +17,29 @@
    "kind": "reinterpretation",
    "model": "Nano Banana（Google Flow）",
    "model_note": "⚠️ 同 no.72：Nano Banana 是 Google 的圖像模型，本身不出影片；檔案格式（1280×720・24fps・10.005s）與 C2PA 憑證（Created by Google Generative AI／visible watermark／SynthID）跟 Veo 片子相同，憑證沒寫模型名。",
-   "date": "2026-09-15",
+   "date": "2026-09-24",
    "fade": 0.6,
    "file": "assets/motion/01.webm",
    "base": "assets/plate/01.jpg",
-   "source": "research/motion/p1.mp4",
-   "prompt": "Bring this Japanese woodblock print to life as a vivid animated scene. It is a print of Meiji-era Tokyo by Kobayashi Kiyochika (1876-1881), placed on a plain beige background.\n\nCAMERA: The camera stays locked on the print for the whole clip, so the print's outer edges never move. Everything inside the picture is free to move.\n\nACTION: The rickshaw puller sprints toward the viewer, legs pumping, and the red-wheeled rickshaw rolls forward with its wheels spinning. The woman riding in it grips her parasol as her sleeves and the parasol flutter in the rush of air. Cherry blossom petals shake loose from the trees and drift across the brick avenue. In the background, the horse-drawn carriage trots away down the street, and pedestrians stroll under the colonnade of the Western-style buildings.\n\nLIFE: Motion is clearly visible from the very first second and keeps going for the whole clip. People and animals move with readable, natural actions; clothing, hair, banners, branches, water and weather react to movement and wind. Figures may walk further, turn and interact, and other passers-by may move through the scene.\n\nSTYLE: It still looks like a moving woodblock print: flat printed colour, carved outlines, paper texture and Kiyochika's palette. Everything belongs to 1870s-1880s Tokyo: period clothing, vehicles and buildings. No photorealism and no 3D rendering.",
-   "first_frame": "research/motion/01-pad16x9.png（事後照 _pad.1 切回來）",
-   "template": "_prompt_template.vivid.base_v1（生動版第一版）＋ scenes.1",
-   "moved": "人力車與車夫、乘客、背景的馬車與路人",
+   "source": "research/motion/p1.mp4（2026-09-24 14:53）",
+   "prompt": "Animate this exact image. It is a Japanese woodblock print from the Meiji era (Kobayashi Kiyochika, 1876-1881), placed on a plain beige background.\n\nCAMERA: Locked-off static shot for the whole clip. No pan, tilt, zoom, push-in, parallax, rotation or reframing. The entire print stays in frame at the same size, including its paper margins and printed text. The plain background around the print stays plain and empty.\n\nKEEP IDENTICAL: The picture stays this same print from the first frame to the last. Every building, bridge, tree, pole, fence and sign keeps its size, shape, colours and place; boats and vehicles keep their size, shape and colours; nothing new enters or appears. The clouds keep their printed shapes. The carved outlines, the flat areas of printed colour, the overall colour tint and the paper texture stay exactly as printed.\n\nWHAT MOVES: A clear spring afternoon on the new brick street in Ginza. The pale blue sky, the cream brick buildings with their green shutters, the pink cherry blossoms and the sandy road keep exactly their printed colours, and every person keeps the face, hair, hat and clothes they are printed with. In the foreground there is exactly one rickshaw, with its red lacquered body and its two red spoked wheels, exactly one puller between its shafts, and exactly one woman sitting in it holding one open grey umbrella; no second rickshaw, no second puller and no extra passenger ever appears. The puller is really pulling the rickshaw along the street, and the rickshaw really travels with him: over the clip the whole group moves steadily to the left along the road, covering about the width of one of the rickshaw's own wheels — a short distance, but plainly visible against the buildings and trees behind them, so that they pass the things they are printed beside. They travel along the street, never towards us: their size never changes and they never come closer to the viewer. Everything else in the picture stays exactly where it is printed. His physical action stays correct the whole time: both of his hands stay closed around the two shafts from the first frame to the last, the shafts stay attached to the rickshaw and stay level in his grip, and the rickshaw follows right behind him at exactly the same distance, so the gap between his back and the rickshaw never opens or closes. The two red wheels roll on the road without slipping: one full turn of a wheel carries the rickshaw forward by the distance around that wheel, so the speed of the turning spokes, the speed of his strides and the speed the group travels along the street are all the same speed, and the rickshaw is never dragged along without its wheels turning and never slides across the road while his feet stay in one place. His legs run in a complete, repeating cycle — each foot comes down on the road, takes his weight, pushes off behind him and swings forward again — so that he is always either pushing off or landing. His feet never slide along the road, never hang frozen in the air, never both leave the ground at once for more than an instant, and his body never drifts forward without his legs carrying him. The woman keeps her seat and her one umbrella, and her sleeves and the rim of the umbrella move a little with the running. The cherry branches and the young green leaves sway in the breeze and keep exactly the blossoms they are printed with. The few small figures already standing and walking on the pavement in front of the buildings keep their exact number, their places and their printed clothes, and only walk slowly and turn to one another where they already are. Far down the street on the right, the grey horse-drawn wagon keeps its printed shape, size and colour, stays small and distant, is never replaced by another vehicle and never comes closer. Nobody and nothing new ever enters the picture: no extra passers-by, no extra women in kimono walking in the street, no extra lamp post, no extra shopfront, gate or building in the distance, and no second wagon. The paper around the picture keeps exactly the marks it already has — the printed columns of text and the small faint red seal in the bottom corner — and nothing is ever added to it: no artist's signature, no signature column, no seal, no stamp, no title slip and no new characters of any kind appear on the paper or inside the picture.\n\nLIFE: The people already in the picture move naturally the whole time: they walk, turn, look around and gesture with readable, lifelike movements, keeping their size, clothes and colours, and the number of people stays the same. Branches, grass, clouds, water, clothing and hair react to the wind. Motion is clearly visible across the whole picture from the very first second.\n\nSTYLE: The motion stays inside the woodblock look: flat printed colour, no photographic lighting, no 3D depth, no motion blur, no added grain, no colour grading.",
+   "first_frame": "research/motion/01-pad16x9.png",
+   "template": "close 第三版＋close.scenes.1 第三版",
+   "moved": "車伕與人力車沿街前進、乘客的傘與衣袖、櫻花枝條、遠處的馬車",
    "differs": [
-    "車夫拉著人力車奔跑、車子前後移動；清親畫的是停住的一瞬間。",
-    "車上乘客的臉和髮型被重畫過，比原畫細緻。",
-    "背景那輛載著乘客、往遠處走的灰色馬車，約 3 秒後被換成一輛黑色洋式馬車，由戴高帽的車夫駕著朝觀眾駛來。",
-    "街上多出幾個原畫沒有的路人。",
-    "右邊紙邊的出版日期，有幾個字的字形被改動。",
+    "車伕拉著人力車沿街往左前進，兩手握著車轅、輪子跟著轉、每一步落地再蹬離；清親畫的是奔跑中的一瞬間停格。",
+    "⚠️ 前進的同時這一組被畫得比原畫大一些（紅色車身的面積從 13.9 千像素增到 16.1 千），位置也略往畫面前方靠。",
+    "⚠️ 約第 4 秒起，右邊人行道上多出三個原畫沒有的人——兩個和服女子與一個撐淺色陽傘的人。",
+    "遠處那輛灰色馬車被重畫過，後面的樹與建築細節跟著改變。",
+    "乘客的傘與衣袖隨著跑動輕晃，街邊的櫻花枝條在風裡搖。",
     "右邊紙邊那顆四角星是生成模型的浮水印。不修掉，它正好提醒這不是清親的作品。"
    ],
-   "differs_checked": "Claude 對照 research/motion/p123-review/ 起草；Aaron 要求直接上架，未逐條確認",
+   "differs_checked": "2026-09-24（逐格看過 0／1／…／9.8 秒，並量了紅色車身的重心與面積）",
    "drift": {
-    "max": 19.4,
-    "at": 7.8,
-    "mean": 17.4,
+    "max": 19.6,
+    "at": 6.3,
+    "mean": 17.6,
     "over_16": [
-     1.8,
      2.1,
      2.4,
      2.7,
@@ -70,7 +69,7 @@
     ],
     "_": "每 0.3s 一格，跟原畫比邊的位置。只動光約 6，構圖動了 19 以上。"
    },
-   "v": "ed145a1a"
+   "v": "667b9264"
   },
   {
    "id": 2,
@@ -4224,6 +4223,50 @@
     "⇒ 上架。放大與後押變乘客這兩點不隱藏：逐條寫進 differs，面板上跟著影片一起印給玩家看。🔑 量測結果是量測結果，收不收是作者的決定——同 no.50 當初把兩件事寫成同一句話的教訓。"
    ],
    "evidence": "0s／6s 對照（research/motion/review/p82-grid.jpg 同一支）"
+  },
+  {
+   "date": "2026-09-24",
+   "id": 1,
+   "source": "research/motion/p1.mp4（2026-09-15，已上架的那一支）",
+   "prompt": "vivid 第一版＋scenes.1（最早的一批，close 模板還沒出現）",
+   "model": "Nano Banana（Google Flow）",
+   "verdict": "⛔ 重生（Aaron：後半段明顯需要調整人物行為的物理性）",
+   "why": [
+    "後半段逐格看（5／6.5／8／9.5 秒）：車伕的手沒有握住車轅，車轅從身側浮過去、8 秒那格穿過身體；",
+    "腳不落地也不蹬地，維持大跨步在地面滑行，9.5 秒後腳整隻懸空；人與車脫鉤，車跟不上他。",
+    "⚠️ 這一支本來就是全套位移最高的（平均 17.4、最高 19.4），且背景馬車被換掉、街上多出路人——那些已經寫在 differs 裡，但物理性是新的一條。",
+    "⇒ 改用 close 模板重生，演出句見 _prompt_template.close.scenes.1。"
+   ]
+  },
+  {
+   "date": "2026-09-24",
+   "id": 1,
+   "source": "research/motion/p1.mp4（2026-09-24 12:30，close 第一版）",
+   "prompt": "close base 第三版＋close.scenes.1 第一版（research/motion/01-prompt-v1.txt）",
+   "model": "Nano Banana（Google Flow）",
+   "verdict": "⛔ 不收（物理性修好了，但忠實度掉到全套最差：假落款與假印、多出路人、背景被重畫）",
+   "why": [
+    "✅ 物理性全部達成：5.5／6.5／7.5／8.5／9.5 秒每一格手都握著雙轅、轅水平連在車上、車身跟在後面同一距離、腿有完整跑步循環。",
+    "✅ 第一幀 2.7；沒有推近（首尾 100%）。",
+    "⛔ 位移 平均 32.8／最高 38.4，比舊的 vivid 版（17.4／19.4）還差，也比左右鏡像（21.5）遠。",
+    "⛔ 右下紙邊多出假落款與假紅印；街上多出兩個和服女子與一盞街燈；遠處馬車重畫、多出一座門樓。",
+    "⇒ 物理那幾句留著不動，加兩條正面禁令重生。見 close.why 的 no.1 第二版。"
+   ]
+  },
+  {
+   "date": "2026-09-24",
+   "id": 1,
+   "source": "research/motion/p1.mp4（2026-09-24 14:36，close 第二版）",
+   "prompt": "close base 第三版＋close.scenes.1 第二版（research/motion/01-prompt-v2.txt）",
+   "model": "Nano Banana（Google Flow）",
+   "verdict": "⛔ 不收（Aaron：人力車幾乎沒有自然的移動，像在原地滑行）",
+   "why": [
+    "✅ 第二版的兩條禁令有效：紙邊沒有再生出落款或印章，街上沒有多出路人與街燈，背景沒有被重畫。",
+    "✅ 位移 平均 15.5／最高 16.8（第一版 32.8／38.4，原本上架的 vivid 版 17.4／19.4）；第一幀 2.6；沒有推近。",
+    "✅ 手握雙轅、轅連在車上、腿有跑步循環都還在。",
+    "⛔ 車子沒有前進：紅色車身重心十秒都在 x≈425 上下 ±14px（畫面寬 1080），面積也沒變 ⇒ 跑步機。",
+    "⇒ 把『沿街前進』與『不准朝鏡頭靠近』拆成兩件事重寫。見 close.why 的 no.1 第三版。"
+   ]
   }
  ],
  "_decision": {
@@ -4530,7 +4573,8 @@
     "81": "Dusk at Asakusa Bridge. The whole picture keeps its evening colours: the grey-blue sky with dark clouds whose edges glow orange, and the pale light on the water under the arch. The clouds drift slowly. The small dark silhouettes crossing the top of the stone bridge walk slowly in both directions. The moored boats in the foreground rock on the ripples, and their tall masts sway. The water under the arch ripples and its bright reflection wavers, and the lit windows of the houses on both banks glow. The stone arched bridge, the houses and the white storehouse stay exactly as printed.",
     "82": "A night at Shin-Yoshiwara. The whole picture keeps its dark night colours: the dark grey-green sky with long streaks of cloud, and the red glow of the rows of windows and lanterns. Every person stays a flat dark silhouette with no faces, no colours and no patterns, and the number of people never changes. On the left the whole rickshaw group is moving together: exactly one rickshaw with its two big spoked wheels, exactly one puller between the shafts, exactly one man pushing it from behind with both hands on it, and, a few steps ahead of them, exactly one man carrying a single red paper lantern. No second rickshaw, no second lantern and no second lantern-carrier ever appears, and nobody gets in or out of the rickshaw. They move a short way to the right and slow down, staying low in the lower left of the picture and keeping exactly the same size, never coming closer to the viewer and never leaving the frame: the spoked wheels turn, the rickshaw body rocks a little as it rolls, the puller keeps his forward-leaning running stride, the man behind keeps pushing, and the lantern-carrier runs a few more steps and slows down with his red lantern swinging in his hand. In front of the long building on the right, the same small group of silhouettes keeps its places and turns and walks slowly on the spot. The streaks of cloud drift slowly across the sky. The thin bare branches of the tree in the middle, with their few small pale blossoms, sway a little in the night breeze and keep exactly the blossoms they have. The rows of red windows and the round lanterns along the eaves glow and flicker, and the lamp on the post at the right flickers. The buildings, the tall dark post, the fence around the tree and the lamp post stay exactly as printed.",
     "83": "A bright, breezy day at the Kangyōba bazaar in Kyōbashi. The white clouds drift slowly across the blue sky. The long green fronds of the big willow in front sway in the wind, and the pines on the left stir. The paper lanterns hung at the entrances sway. The crowd in front of the building moves naturally: the woman in the purple kimono with the red sash walks slowly toward the entrance; the man in the bowler hat talks with the woman beside him; the children tug at the adults' sleeves; the man with the white parasol tilts it; the rickshaw man beside the red-seated rickshaw on the left straightens up and looks around; and the men in red caps at the far left turn their heads. The brick building with its sign, the white building on the right, the willow's trunk and the rickshaw stay exactly as printed.",
-    "84": "A clear day on the Kinokuni slope at Akasaka. The thin streaks of white cloud drift slowly across the blue sky. The leaves of the trees on the left stir, the plants along the top of the green embankment on the right sway in the breeze, and the telegraph wire swings a little. Everything stays at this same distance from us: the people on the road stay small figures in the wide view and keep their places. The two women side by side on the road take a few slow steps, their sleeves and hems swaying, and turn their heads to talk to each other. Further down the slope, the small figures, the man carrying a pole and the rickshaws move slowly, staying small. The green embankment with its fence, the stone posts along the road, the lamp post and the town below stay exactly as printed."
+    "84": "A clear day on the Kinokuni slope at Akasaka. The thin streaks of white cloud drift slowly across the blue sky. The leaves of the trees on the left stir, the plants along the top of the green embankment on the right sway in the breeze, and the telegraph wire swings a little. Everything stays at this same distance from us: the people on the road stay small figures in the wide view and keep their places. The two women side by side on the road take a few slow steps, their sleeves and hems swaying, and turn their heads to talk to each other. Further down the slope, the small figures, the man carrying a pole and the rickshaws move slowly, staying small. The green embankment with its fence, the stone posts along the road, the lamp post and the town below stay exactly as printed.",
+    "1": "A clear spring afternoon on the new brick street in Ginza. The pale blue sky, the cream brick buildings with their green shutters, the pink cherry blossoms and the sandy road keep exactly their printed colours, and every person keeps the face, hair, hat and clothes they are printed with. In the foreground there is exactly one rickshaw, with its red lacquered body and its two red spoked wheels, exactly one puller between its shafts, and exactly one woman sitting in it holding one open grey umbrella; no second rickshaw, no second puller and no extra passenger ever appears. The puller is really pulling the rickshaw along the street, and the rickshaw really travels with him: over the clip the whole group moves steadily to the left along the road, covering about the width of one of the rickshaw's own wheels — a short distance, but plainly visible against the buildings and trees behind them, so that they pass the things they are printed beside. They travel along the street, never towards us: their size never changes and they never come closer to the viewer. Everything else in the picture stays exactly where it is printed. His physical action stays correct the whole time: both of his hands stay closed around the two shafts from the first frame to the last, the shafts stay attached to the rickshaw and stay level in his grip, and the rickshaw follows right behind him at exactly the same distance, so the gap between his back and the rickshaw never opens or closes. The two red wheels roll on the road without slipping: one full turn of a wheel carries the rickshaw forward by the distance around that wheel, so the speed of the turning spokes, the speed of his strides and the speed the group travels along the street are all the same speed, and the rickshaw is never dragged along without its wheels turning and never slides across the road while his feet stay in one place. His legs run in a complete, repeating cycle — each foot comes down on the road, takes his weight, pushes off behind him and swings forward again — so that he is always either pushing off or landing. His feet never slide along the road, never hang frozen in the air, never both leave the ground at once for more than an instant, and his body never drifts forward without his legs carrying him. The woman keeps her seat and her one umbrella, and her sleeves and the rim of the umbrella move a little with the running. The cherry branches and the young green leaves sway in the breeze and keep exactly the blossoms they are printed with. The few small figures already standing and walking on the pavement in front of the buildings keep their exact number, their places and their printed clothes, and only walk slowly and turn to one another where they already are. Far down the street on the right, the grey horse-drawn wagon keeps its printed shape, size and colour, stays small and distant, is never replaced by another vehicle and never comes closer. Nobody and nothing new ever enters the picture: no extra passers-by, no extra women in kimono walking in the street, no extra lamp post, no extra shopfront, gate or building in the distance, and no second wagon. The paper around the picture keeps exactly the marks it already has — the printed columns of text and the small faint red seal in the bottom corner — and nothing is ever added to it: no artist's signature, no signature column, no seal, no stamp, no title slip and no new characters of any kind appear on the paper or inside the picture."
    },
    "why": [
     "2026-09-21 建立：p44 用生動版第五、第六版連續三次整幅重畫（第六版把開頭改回 Animate this exact image 也沒擋住——那個假說在 44 上被推翻）。九次整幅重畫全在生動版；忠實版骨架（KEEP IDENTICAL＋WHAT MOVES）從沒重畫過，缺點只是動得少。⇒ 取忠實版骨架，但 WHAT MOVES 不再是「Almost nothing moves」，而是每一幅寫好的原地動作；加回「首尾相接」——生動版拿掉它是為了讓動作走得遠，貼近原畫版正好要它把東西拉回原位。",
@@ -4548,7 +4592,10 @@
     "🔴 no.84 演出句第二版（2026-09-23）：p84 的兩位女子從遠處的小人影**放大成佔滿下半畫面的大型美人圖**、衣著花紋全部重畫，中景還多出一個拄杖的男子（Aaron 說「人物複製」）。原因是我寫了 “walk slowly down **toward us**”——朝鏡頭走，畫面上必然越變越大；同句雖然也寫了 keeping their size，兩個要求互相矛盾時模型選了前者。同一機制第三次出現（no.39 三個取暖的人被放大兩倍半、no.43 撐篙的小船變大）。🔑 **不要寫『朝我們走來』**；要動就寫原地的動作（走幾步、轉頭、袖子擺），並在開頭錨住『距離不變、人維持小』（同 no.22 第三版、no.37）。",
     "🔴 no.82 演出句第三版（2026-09-23）：第二版把櫻花與白點治好了，但出現**人物複製**——第 0 秒只有一個提紅燈籠的人，4 秒與 6 秒變成兩個一模一樣的提燈人並排，8 秒又變回一個；右邊人群也忽多忽少（Aaron 回報）。模板 LIFE 的『人數從頭到尾不變』是通則，擋不住畫面焦點被複製。⇒ 第三版在演出句裡**寫死數量**：『左邊剛好一輛人力車、剛好一位車伕、剛好一個提著一盞紅燈籠的人』，並正面寫出『不會出現第二盞燈或第二個提燈的人』；右邊人群寫成『同一小群剪影，維持原位、原地轉身走動』。🔑 **畫面焦點的數量要在演出句裡數出來**。",
     "🔴 no.82 演出句第四版（2026-09-24，Aaron 回報）：第三版把人物複製治好了，但**只有提燈籠的人在動，後面的人力車整支不動**。看第三版的句子就知道為什麼——為了擋複製，人力車與車伕被寫成『剛好一輛、剛好一位』這種**清點句**，而唯一一個動詞（再跑幾步、放慢）只給了提燈人；第二版車伕會跑，是第三版改寫時連動作一起弄丟的。⇒ 第四版把整組寫成一起移動：輪子轉、車身微晃、車伕維持前傾的跑姿、後面推車的人繼續推、提燈人照舊。數量錨全部保留（剛好一輛車、一位車伕、一位推車的、一個提燈的、一盞燈），另補『沒有人上下車』。⛔ 不寫『朝我們過來』（no.84 的教訓）：改寫成『往右移動一小段、放慢，維持在畫面左下、大小不變』。🔑 **清點句擋得住複製，但它不會替角色動起來——數量與動作要分開各寫一句。**",
-    "⚪ no.82 演出句第五版（2026-09-24，寫好了但**沒有採用**——Aaron 看過影片後判斷現況可以接受，第四版留任）：第四版把人力車弄動了，但換來兩個更嚴重的問題——①**整組放大、朝我們過來**：0 秒的車輪跟原畫一樣小，2 秒之後輪圈在同一條量測帶裡從 30px 變成 61px，車子被重畫成一輛更大、更清楚的車；②**後面推車的人變成坐在車上的乘客**（原畫是雙手推車的後押，座位空著），脖子上還多出一塊紅色。⇒ 病根是第四版寫了『往右移動一小段』：一旦讓一組人在地面上位移，模型就會順手把他們重新擺到前景（同 no.84『朝我們走來』被放大）。『大小不變』這種否定句擋不住它，因為車子是被整個重畫的。🔑 **車子這種有體積的東西，動作要寫成原地使力**（腳蹬地、輪子原地轉、車轅與車身晃），⛔ 不寫位移；另外把座位空著、後押站著推、沒有人坐上去，全部正面寫死——第四版的『沒有人上下車』太弱，模型是直接把推車的人換成乘客，不算『上車』。 ⚠️ 第五版的句子留在 research/motion/82-prompt-v5.txt，下一幅有車有船的畫再撞到同一件事時直接拿來用。"
+    "⚪ no.82 演出句第五版（2026-09-24，寫好了但**沒有採用**——Aaron 看過影片後判斷現況可以接受，第四版留任）：第四版把人力車弄動了，但換來兩個更嚴重的問題——①**整組放大、朝我們過來**：0 秒的車輪跟原畫一樣小，2 秒之後輪圈在同一條量測帶裡從 30px 變成 61px，車子被重畫成一輛更大、更清楚的車；②**後面推車的人變成坐在車上的乘客**（原畫是雙手推車的後押，座位空著），脖子上還多出一塊紅色。⇒ 病根是第四版寫了『往右移動一小段』：一旦讓一組人在地面上位移，模型就會順手把他們重新擺到前景（同 no.84『朝我們走來』被放大）。『大小不變』這種否定句擋不住它，因為車子是被整個重畫的。🔑 **車子這種有體積的東西，動作要寫成原地使力**（腳蹬地、輪子原地轉、車轅與車身晃），⛔ 不寫位移；另外把座位空著、後押站著推、沒有人坐上去，全部正面寫死——第四版的『沒有人上下車』太弱，模型是直接把推車的人換成乘客，不算『上車』。 ⚠️ 第五版的句子留在 research/motion/82-prompt-v5.txt，下一幅有車有船的畫再撞到同一件事時直接拿來用。",
+    "🔴 no.1 改用 close 模板（2026-09-24，Aaron：「後半段明顯需要調整人物行為的物理性」）：原本這一支是 2026-09-15 用 **vivid 第一版**生的——那是最早的一批，位移指標 平均 17.4／最高 19.4（全套最高），背景的灰色馬車中途被換成朝觀眾駛來的黑色洋馬車、街上多出路人、乘客的臉被重畫。逐格看後半段，車伕的問題有三個：①**手沒有握住車轅**（車轅從身側浮過去，8 秒那一格甚至穿過身體）；②**沒有跑步循環**——腳不落地、不蹬地，維持一個大跨步的姿勢在地面上滑行，9.5 秒後腳整隻懸空；③**人與車脫鉤**，車伕跑在前面、車身落在後面。⇒ close 版的演出句把物理寫成硬條件：兩手全程握住雙轅、轅保持水平且連在車上、車身維持同一段距離跟在後面、輪子轉速對得上地面、每一步都要落地承重再蹬離，⛔ 腳不准滑、不准懸在空中、身體不准脫離腿自己前進。位置與大小寫死在原地（no.82 的教訓：讓他在地面上位移，模型就會把他重新擺到前景）。🔑 **『動得自然』要寫成可檢查的物理條件**（手握著什麼、腳何時落地、兩者的相對距離），⛔ 不寫『跑得自然一點』——那句話模型沒有辦法照著做。",
+    "🔴 no.1 演出句第二版（2026-09-24）：第一版（close 模板）把**物理性治好了**——後半段每一格車伕都握著雙轅、轅保持水平連在車上、車身維持同一距離、腿有完整的跑步循環。但忠實度反而掉到全套最差：位移 平均 32.8／最高 38.4（校準表：整幅平移 12px＝19.0、左右鏡像＝21.5，也就是比鏡像還遠），而且 ①**右下紙邊生出一個假落款與一顆假紅印**（0 秒沒有，2 秒起出現）；②街上多出兩個穿藍白和服的女子與一盞街燈；③遠處馬車被重畫、後面多出一座原畫沒有的門樓。⇒ 第二版不動物理那幾句，只補兩條正面禁令：紙邊只保留它本來就有的印字與角落那顆淡紅印，**不准新增落款、印章、題箋或任何文字**；人行道上的人維持原有的人數、位置與衣著，並把上一次真的被加進來的東西一樣一樣點名禁止（多出來的和服女子、街燈、門樓、第二輛馬車）。🔑 **base 的通則（nothing new enters）擋不住具體的添加**——被加過什麼，就在演出句裡點名禁止什麼，同 no.82 用數量錨擋複製。⚠️ 假落款與假印不只是『多畫一個東西』：這幅是清親署名的作品，在紙邊補一個不存在的落款，等於偽造作者留在紙上的記號。",
+    "🔴 no.1 演出句第三版（2026-09-24，Aaron：「人力車幾乎沒有自然的移動，看起來像是在原地滑行」）：第二版把忠實度救回來了（位移 平均 15.5／最高 16.8，比原本上架的 vivid 版 17.4／19.4 還好；假落款、多出的路人、被重畫的背景全部消失），物理細節也還在，但**車子整整十秒沒有前進**——量紅色車身的重心，十秒都在 x≈425 上下晃 ±14px（畫面寬 1080），腿在跑、車不走，就是跑步機。⇒ 病根是我為了擋 no.82 那種『一位移就被重新擺到前景』，把『停在原地、大小不變』寫死了，連該有的前進一起擋掉。第三版把兩件事拆開：**沿著街道走**（給一個畫裡量得到的距離：約一個車輪的寬度，而且要看得出他們經過了背後的建築與樹）vs **不准朝我們過來**（大小不變、不靠近）。另外補上滾動條件：輪子在地上滾而不打滑——輪子轉一圈，車就前進那個輪子的周長，所以輻條的轉速、跨步的節奏、整組前進的速度是同一個速度。🔑 **『在原地』與『不靠近』是兩件事，寫成同一句就會得到跑步機**；要動的是沿著畫面走的位移，要擋的是往鏡頭方向的位移。"
    ],
    "base_v1": "Animate this exact image. It is a Japanese woodblock print from the Meiji era (Kobayashi Kiyochika, 1876-1881), placed on a plain beige background.\n\nCAMERA: Locked-off static shot for the whole clip. No pan, tilt, zoom, push-in, parallax, rotation or reframing. The entire print stays in frame at the same size, including its paper margins and printed text. The plain background around the print stays plain and empty.\n\nKEEP IDENTICAL: The picture stays this same print from the first frame to the last. Every person, boat, vehicle, animal, building, bridge, tree, pole and sign keeps its position, size, shape, colours and number; nothing enters, leaves or appears. People stay in their places and poses, moving only their heads, hands, sleeves and hair a little. The carved outlines, the flat areas of printed colour, the overall colour tint and the paper texture stay exactly as printed.\n\nWHAT MOVES: {SCENE}\n\nSTYLE: The motion stays inside the woodblock look: flat printed colour, no photographic lighting, no 3D depth, no motion blur, no added grain, no colour grading. Movement is gentle, continuous and clearly visible. The clip loops seamlessly: the last frame matches the first frame.",
    "base_v1_note": "第一版（44 第三次、46、47 用的）：人物只准動頭手衣袖、首尾相接 ⇒ 構圖全保住，但 47 只有少數人在動。",
