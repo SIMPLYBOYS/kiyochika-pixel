@@ -79,6 +79,8 @@ for t in 9.5 20.5 35; do
 done
 node "$ROOT/tools/promo-shots.mjs" poster "$P"
 $FF -i "$P/poster.png" -q:v 3 "$OUT/poster.jpg"
+# 直式封面：README 的 <video> 用它當 poster（16:9 那張拿來貼社群）
+$FF -ss 5 -i "$VIDEO" -frames:v 1 -q:v 3 "$OUT/poster-9x16.jpg"
 
 echo "完成 ${DUR}s"
 ls -la "$VIDEO" "$OUT/poster.jpg"
