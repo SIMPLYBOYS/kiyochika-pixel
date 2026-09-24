@@ -64,9 +64,13 @@ printf "file '%s'\n" "$SEG"/{a,b,c,d,e,f,g,h,i,j,k}.mp4 > "$SEG/list.txt"
 $FF -f concat -safe 0 -i "$SEG/list.txt" -c copy "$SEG/silent.mp4"
 DUR=$(ffprobe -v error -show_entries format=duration -of csv=p=0 "$SEG/silent.mp4")
 
-# 配樂：端唄「梅にも春」（1931，公有領域）。⚠️ 1931 年的蠟盤本來就小聲（mean −22.6 dB）
-# ⇒ 用 loudnorm 拉到社群平台的 −16 LUFS，⛔ 不要直接加增益（max 只有 −0.6 dB，會削頂）。
-$FF -i "$SEG/silent.mp4" -t "$DUR" -i "$ROOT/assets/audio/01.m4a" -filter_complex \
+# 配樂：雅樂「衣香」（宮內省樂部・Victor 13024，約 1930，公有領域）第 8 秒起。
+# 🔴 選曲與起點是量出來的，⛔ 不是挑好聽的：把五首各切成 40 秒窗口，取「窗內最低的 0.5 秒 RMS」
+# 最高的那一段——也就是最不會中斷的那一段。02 從 8s 起是 −25.8 dB；
+# 原本用的 01 端唄「梅にも春」從 0s 起是 −38.6 dB，句與句之間的間隙聽起來就像聲音斷掉（Aaron 回報）。
+# ⚠️ 1925–31 年的蠟盤本來就小聲 ⇒ 用 loudnorm 拉到社群平台的 −16 LUFS，
+# ⛔ 不要直接加增益（原檔 max 只有 −0.6 dB，會削頂）。
+$FF -i "$SEG/silent.mp4" -ss 8 -t "$DUR" -i "$ROOT/assets/audio/02.m4a" -filter_complex \
   "[0:v]fade=t=in:st=0:d=0.5,fade=t=out:st=$(python3 -c "print(round($DUR-0.8,2))"):d=0.8[v];\
    [1:a]afade=t=in:st=0:d=1.2,afade=t=out:st=$(python3 -c "print(round($DUR-2.5,2))"):d=2.5,\
         loudnorm=I=-16:TP=-1.5:LRA=11[a]" \
