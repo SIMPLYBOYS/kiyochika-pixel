@@ -11,17 +11,17 @@
 那地方今天長什麼樣。畫帖收 73 幅，其中 10 幅查不到座標：畫不到地圖上就不放進遊戲，
 理由見〈[兩條規則](#兩條規則)〉。
 
-**39 秒看完這一作**：
+**39 秒看完這一作**（點圖看完整影片）：
 
-<video src="https://raw.githubusercontent.com/SIMPLYBOYS/kiyochika-pixel/main/docs/promo/kiyochika-promo-9x16.mp4"
-       poster="https://raw.githubusercontent.com/SIMPLYBOYS/kiyochika-pixel/main/docs/promo/poster-9x16.jpg"
-       controls muted playsinline width="320">
-  <a href="docs/promo/kiyochika-promo-9x16.mp4">宣傳影片（39 秒・5.4MB）</a>
-</video>
+[<img src="docs/promo/preview.gif" width="300" alt="宣傳影片預覽：AI 重繪版在面板裡播放">](docs/promo/kiyochika-promo-9x16.mp4)
 
-⚠️ 播放器沒出現就是渲染器不支援 `<video>`（GitHub 以外的地方常見）：
-[直接開影片](docs/promo/kiyochika-promo-9x16.mp4)，或看這張三格海報
-[`docs/promo/poster.jpg`](docs/promo/poster.jpg)（貼社群用的 16:9 版）。
+上面這幾秒是片中 AI 重繪版那一段。完整版
+[`docs/promo/kiyochika-promo-9x16.mp4`](docs/promo/kiyochika-promo-9x16.mp4)（39 秒・5.4MB），
+另有貼社群用的 16:9 三格海報 [`docs/promo/poster.jpg`](docs/promo/poster.jpg)。
+
+🔴 **README 裡不要用 `<video>`**：GitHub 會把整個標籤清掉，只留一個空的 `<p></p>`——
+試過 `src` 指向 raw.githubusercontent 的絕對網址也一樣。它只認自己上傳附件的網址，
+而那個上傳端點沒有公開 API。⇒ 會動的預覽只能用 GIF。
 
 1080×1920 直式，給 Threads 這類手機動態用。⛔ 裡面沒有一張示意圖：畫面是跑真的遊戲截的
 （手機版面 540×960＠2x），原畫出自 `assets/plate`，動的那一段是 `assets/motion` 裡真的那一支，

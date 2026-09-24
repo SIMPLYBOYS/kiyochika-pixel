@@ -79,8 +79,15 @@ for t in 9.5 20.5 35; do
 done
 node "$ROOT/tools/promo-shots.mjs" poster "$P"
 $FF -i "$P/poster.png" -q:v 3 "$OUT/poster.jpg"
-# 直式封面：README 的 <video> 用它當 poster（16:9 那張拿來貼社群）
+# 直式封面（貼社群、當縮圖用）
 $FF -ss 5 -i "$VIDEO" -frames:v 1 -q:v 3 "$OUT/poster-9x16.jpg"
 
+# README 會動的預覽：🔴 GitHub 的 README **不吃 <video>**（整個標籤會被清掉，只剩空的 <p>），
+# 它只認自己上傳附件的網址，raw 連結也不行 ⇒ 用 GIF 才動得起來。
+# 取 AI 重繪版那一段（第 17 秒起 4.8 秒，全片唯一真的在動的畫面）。
+$FF -ss 17 -t 4.8 -i "$VIDEO" -vf "fps=12,scale=405:-1:flags=lanczos,palettegen=stats_mode=diff" "$P/pal.png"
+$FF -ss 17 -t 4.8 -i "$VIDEO" -i "$P/pal.png" \
+   -lavfi "fps=12,scale=405:-1:flags=lanczos[x];[x][1:v]paletteuse=dither=bayer:bayer_scale=3" "$OUT/preview.gif"
+
 echo "完成 ${DUR}s"
-ls -la "$VIDEO" "$OUT/poster.jpg"
+ls -la "$VIDEO" "$OUT/preview.gif" "$OUT/poster.jpg" "$OUT/poster-9x16.jpg"
