@@ -37,10 +37,15 @@ export function createMusic(tracks, { onTrack } = {}) {
     gain.gain.linearRampToValueAtTime(to, t + FADE);
   };
 
+  // ⚠️ 網址帶內容雜湊：/assets/audio/* 在 _headers 是 7 天快取而檔名不變，
+  // 重新轉檔（例如 2026-09-24 補 faststart）之後，沒有這個碼的人會繼續吃到舊檔。
+  const url = t => t.file + (t.v ? `?v=${t.v}` : '');
+
   const next = () => {
     i = (i + 1) % tracks.length;
     const t = tracks[i];
-    el.src = t.file;
+    el.preload = 'auto';            // 已經要播了，讓它盡量往前抓
+    el.src = url(t);
     el.play().catch(() => { /* 還沒拿到使用者動作就先擱著 */ });
     onTrack?.(t);
     // 自己排下一首，⛔ 不用 loop 屬性：五首要輪流，而且要淡出再換
@@ -52,17 +57,31 @@ export function createMusic(tracks, { onTrack } = {}) {
     ramp(0.55);
   };
 
+  const make = () => {
+    if (el) return;
+    el = new Audio();
+    el.preload = 'none';              // ⛔ 沒開配樂就別下載 7MB
+    el.crossOrigin = 'anonymous';
+    el.onended = next;                // seconds 對不上時的保險（⚠️ 不要只靠計時器）
+    // ⚠️ 掛進 DOM：`new Audio()` 不在文件裡，瀏覽器的媒體控制與驗收腳本都看不到它
+    //（第一版就是這樣，測試只能證明「按鈕變色」證明不了「有沒有在放」）。
+    el.hidden = true;
+    document.body.append(el);
+  };
+
+  // 🔴 手機上「聲音過很久才出現」的第二半（第一半是檔案本身沒有 faststart，見 fetch-audio.py）：
+  // preload='none' ⇒ 使用者按下去的那一刻才開始下載。配樂預設開著，所以先把**第一首的檔頭**
+  // 抓下來（faststart 之後 moov 在最前面，29–72KB），按下去時只剩音訊資料要補。
+  // ⛔ 不用 'auto'：那會在還沒人要聽的時候就拉滿 7MB。
+  const warm = () => {
+    if (!on || el) return;
+    make();
+    el.preload = 'metadata';
+    if (tracks[0]) el.src = url(tracks[0]);
+  };
+
   const start = () => {
-    if (!el) {
-      el = new Audio();
-      el.preload = 'none';            // ⛔ 沒開配樂就別下載 7MB
-      el.crossOrigin = 'anonymous';
-      el.onended = next;              // seconds 對不上時的保險（⚠️ 不要只靠計時器）
-      // ⚠️ 掛進 DOM：`new Audio()` 不在文件裡，瀏覽器的媒體控制與驗收腳本都看不到它
-      //（第一版就是這樣，測試只能證明「按鈕變色」證明不了「有沒有在放」）。
-      el.hidden = true;
-      document.body.append(el);
-    }
+    make();
     wire();
     ctx.resume?.();
     next();
@@ -73,6 +92,8 @@ export function createMusic(tracks, { onTrack } = {}) {
     ramp(0);
     setTimeout(() => el?.pause(), FADE * 1000);
   };
+
+  warm();
 
   return {
     get on() { return on; },

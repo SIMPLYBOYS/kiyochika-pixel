@@ -35,6 +35,28 @@ await sleep(700);
 let bad = 0;
 const ok = (cond, msg) => { console.log(`${cond ? '  ok  ' : '  ✗   '}${msg}`); if (!cond) bad++; };
 
+// 🔴 配樂檔要 **faststart**（moov 在 mdat 前面）：moov 是播放索引，寫在檔案最後面的話
+// 瀏覽器得把整首 1–3MB 下載完才出得了聲——手機上就是「按了很久音樂才出現」（2026-09-24 玩家回報）。
+// ⚠️ 這件事在畫面上完全看不出來（桌機快取一下就聽不到差別），所以只能在這裡量檔案本身。
+// 順便驗每首都有 v（內容雜湊）：/assets/audio/* 是 7 天快取而檔名不變，沒有它改了也沒人收得到。
+const TRACKS = JSON.parse(readFileSync(resolve(ROOT, 'data/audio-tracks.json'), 'utf8')).tracks ?? [];
+const atoms = file => {                      // 只走最外層的 box，夠判斷順序了
+  const b = readFileSync(resolve(ROOT, file));
+  const out = [];
+  for (let p = 0; p + 8 <= b.length && out.length < 8;) {
+    let sz = b.readUInt32BE(p);
+    out.push(b.toString('latin1', p + 4, p + 8));
+    if (sz === 1) sz = Number(b.readBigUInt64BE(p + 8));
+    if (sz < 8) break;
+    p += sz;
+  }
+  return out;
+};
+const slow = TRACKS.filter(t => { const a = atoms(t.file); return a.indexOf('moov') > a.indexOf('mdat'); });
+ok(TRACKS.length > 0 && slow.length === 0,
+   `配樂 ${TRACKS.length} 首都是 faststart（moov 在 mdat 前）${slow.length ? '：' + slow.map(t => t.file).join('、') : ''}`);
+ok(TRACKS.every(t => t.v), `配樂每首都有版本碼 v（${TRACKS.map(t => t.v).join('・')}）`);
+
 const browser = await chromium.launch();
 for (const [name, size] of [['桌機 1440×900', { width: 1440, height: 900 }],
                             ['直式手機 390×844', { width: 390, height: 844 }]]) {
@@ -220,7 +242,7 @@ for (const [name, size] of [['桌機 1440×900', { width: 1440, height: 900 }],
              src: a?.getAttribute('src'), label: document.querySelector('#nowplaying').textContent };
   });
   ok(snd.on && snd.ctx === 'running' && snd.gain > 0.2 && snd.paused === false && snd.t > 0.5
-     && /audio\/\d\d\.m4a$/.test(snd.src || '') && snd.label.startsWith('♪'),
+     && /audio\/\d\d\.m4a(\?v=[0-9a-f]{8})?$/.test(snd.src || '') && snd.label.startsWith('♪'),
      `配樂聽得到（${snd.src}　${snd.label}　增益 ${(snd.gain ?? 0).toFixed(2)}　${(snd.t ?? 0).toFixed(1)}s）`);
   await page.locator('#music').click();
   await sleep(300);

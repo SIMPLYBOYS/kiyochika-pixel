@@ -1,5 +1,5 @@
 {
- "_": "配樂清單，機器產生（選曲與理由在 audio.json）。🔴 1876–1881 沒有錄音存在，這些是 1925–31 年錄的**當時仍在演奏的曲目**。",
+ "_": "配樂清單，機器產生（選曲與理由在 audio.json）。🔴 1876–1881 沒有錄音存在，這些是 1925–31 年錄的**當時仍在演奏的曲目**。 ⚠️ v＝檔案內容雜湊，網址帶 ?v= 讓 7 天的快取不會卡住舊檔（同 motion.json）。",
  "tracks": [
   {
    "file": "assets/audio/01.m4a",
@@ -10,7 +10,8 @@
    "year": "1931",
    "seconds": 186.9,
    "license": "Public domain",
-   "source": "https://commons.wikimedia.org/wiki/File%3AHa-uta_Umenimo_haru_%281931%29.ogg"
+   "source": "https://commons.wikimedia.org/wiki/File%3AHa-uta_Umenimo_haru_%281931%29.ogg",
+   "v": "2a3ca907"
   },
   {
    "file": "assets/audio/02.m4a",
@@ -21,7 +22,8 @@
    "year": "約1930",
    "seconds": 159.3,
    "license": "Public domain",
-   "source": "https://commons.wikimedia.org/wiki/File%3AKoromogo-e_%28c._1930%29.ogg"
+   "source": "https://commons.wikimedia.org/wiki/File%3AKoromogo-e_%28c._1930%29.ogg",
+   "v": "4de2c0e3"
   },
   {
    "file": "assets/audio/03.m4a",
@@ -32,7 +34,8 @@
    "year": "1925–37",
    "seconds": 375.1,
    "license": "Public domain",
-   "source": "https://commons.wikimedia.org/wiki/File%3AShikanotoone.ogg"
+   "source": "https://commons.wikimedia.org/wiki/File%3AShikanotoone.ogg",
+   "v": "0fe71a22"
   },
   {
    "file": "assets/audio/04.m4a",
@@ -43,7 +46,8 @@
    "year": "1931",
    "seconds": 187.6,
    "license": "Public domain",
-   "source": "https://commons.wikimedia.org/wiki/File%3AShinnai_Sekitori_Senryonobori_%281931%29.ogg"
+   "source": "https://commons.wikimedia.org/wiki/File%3AShinnai_Sekitori_Senryonobori_%281931%29.ogg",
+   "v": "9a34b0aa"
   },
   {
    "file": "assets/audio/05.m4a",
@@ -54,7 +58,8 @@
    "year": "1931",
    "seconds": 180.9,
    "license": "Public domain",
-   "source": "https://commons.wikimedia.org/wiki/File%3AMatsumae--Oiwake_%281931%29.ogg"
+   "source": "https://commons.wikimedia.org/wiki/File%3AMatsumae--Oiwake_%281931%29.ogg",
+   "v": "5b1a957b"
   }
  ]
 }

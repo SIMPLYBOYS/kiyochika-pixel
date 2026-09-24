@@ -19,7 +19,7 @@ Gaisberg 來錄的。⇒ 這一層放的**不是當年的聲音，是當年就�
   python3 tools/fetch-audio.py            # 只查詢並報告（不寫檔）
   python3 tools/fetch-audio.py --write    # 下載、轉檔、寫出
 """
-import argparse, json, re, subprocess, sys, urllib.parse
+import argparse, hashlib, json, re, subprocess, sys, urllib.parse
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
@@ -91,8 +91,12 @@ def main():
             raw = OUT / f"_{i:02d}.src"
             # ⚠️ Commons 的音檔會回截斷的 body（實測 2.36/2.59MB 就斷）⇒ 對大小、對不上重抓
             download(m["url"], UA, raw, expect=m["bytes"])
+            # 🔴 -movflags +faststart 一定要加：預設 moov（播放索引）寫在檔案**最後面**，
+            # 瀏覽器得把整首 1–3MB 下載完才出得了聲——手機上就是「按了很久才有音樂」
+            # （2026-09-24 玩家回報，五首都是這樣，事後用 -c copy 重封裝修掉）。
             subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", str(raw),
-                            "-ac", "1", "-c:a", "aac", "-b:a", BITRATE, str(dest)], check=True)
+                            "-ac", "1", "-c:a", "aac", "-b:a", BITRATE,
+                            "-movflags", "+faststart", str(dest)], check=True)
             raw.unlink()
             mb = round(dest.stat().st_size / 1e6, 2)
             sec = seconds(dest)
@@ -100,9 +104,11 @@ def main():
             print(f"   → {dest.relative_to(ROOT)}　{mb}MB　{int(sec // 60)}:{int(sec % 60):02d}")
         else:
             sec, mb = None, None
+        # v＝內容雜湊，網址帶 ?v= 破 7 天快取（同 make-motion.py 寫進 motion.json 的那個）
+        v = hashlib.sha1(dest.read_bytes()).hexdigest()[:8] if dest.exists() else None
         rows.append({"file": f"assets/audio/{i:02d}.m4a", "title": t["title"], "note": t["note"],
                      "performer": t["performer"], "issue": t["issue"], "year": t["year"],
-                     "seconds": sec, "license": m["license"], "source": m["page"]})
+                     "seconds": sec, "v": v, "license": m["license"], "source": m["page"]})
 
     if not args.write:
         print("\n（這是查詢，沒有寫檔。要下載轉檔加 --write）")
