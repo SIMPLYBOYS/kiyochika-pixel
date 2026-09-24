@@ -13,6 +13,10 @@
   "main": "worker.js",
   "assets": {
     "directory": ".",
-    "binding": "ASSETS"
+    "binding": "ASSETS",
+    // 🔴 沒有這一行 worker.js 根本不會被叫到：靜態資源的路徑對得上時，Cloudflare 直接送檔案、
+    // 跳過 Worker（2026-09-24 實測，部署後 Range 仍然回 200）。只讓媒體檔先走 Worker，
+    // ⛔ 不要整站都走：那是每個請求多一次 Worker 呼叫，而且 worker 出錯會連網頁一起掛。
+    "run_worker_first": ["/assets/audio/*", "/assets/motion/*"]
   }
 }
