@@ -16,7 +16,7 @@ export function createMusic(tracks, { onTrack } = {}) {
   // 玩家入場之後什麼也沒聽到，只會以為壞了（Aaron 回報：「聲音並沒有出來」）。
   // ⚠️ 預設開不等於自動播放：仍然要等使用者動作（開場的「入場」那一下），
   // 而明確關過的人（存成 '0'）就維持關。
-  let i = -1, on = true, el = null, ctx = null, gain = null, timer = 0;
+  let i = -1, on = true, el = null, ctx = null, gain = null, timer = 0, started = false;
   try { const v = localStorage.getItem(KEY); if (v !== null) on = v === '1'; } catch { /* 無痕 */ }
 
   // ⚠️ WebAudio 的 GainNode 才做得出平順的淡入淡出（HTMLMediaElement.volume 在
@@ -85,6 +85,7 @@ export function createMusic(tracks, { onTrack } = {}) {
   };
 
   const start = () => {
+    started = true;
     make();
     wire();
     ctx.resume?.();
@@ -103,6 +104,9 @@ export function createMusic(tracks, { onTrack } = {}) {
     get on() { return on; },
     /** 使用者按下去才會呼叫到這裡 ⇒ autoplay policy 過得了。 */
     toggle() {
+      // 🔴 顯示「開著」但還沒響過（在等使用者第一次動作）時，按下去是**開始播**，⛔ 不是關掉。
+      // 不然玩家看到一顆亮著的 ♪、按下去卻是把它關掉——而且什麼都還沒聽到。
+      if (on && !started) { start(); return on; }
       on = !on;
       try { localStorage.setItem(KEY, on ? '1' : '0'); } catch { /* 無痕 */ }
       on ? start() : stop();
@@ -112,9 +116,15 @@ export function createMusic(tracks, { onTrack } = {}) {
      *  🔴 不能在載入時直接 play()：瀏覽器不准沒有使用者動作就出聲。
      *  ⚠️ 而且不能只靠開場的「入場」——回訪的人不會再看到開場，
      *  那樣按鈕顯示「開著」卻沒有聲音，玩家按下去反而變成關掉（實測到的狀況）。 */
-    armResume() {
+    armResume(ignore) {
       if (!on) return;
-      const go = () => { removeEventListener('pointerdown', go); removeEventListener('keydown', go); start(); };
+      const go = e => {
+        // 🔴 ⛔ 不要接那顆 ♪ 自己的那一下：pointerdown 先到這裡 start()，接著同一下的 click
+        // 走 toggle()，看到已經在播就把它**關掉** ⇒ 玩家聽到 1.6 秒（淡出時間）就沒聲音了，
+        // 再按一次才正常。2026-09-24 玩家回報「按下音符鍵響一兩秒就斷」就是這個。
+        if (ignore && e.target?.closest?.(ignore)) return;
+        removeEventListener('pointerdown', go); removeEventListener('keydown', go); start();
+      };
       addEventListener('pointerdown', go);
       addEventListener('keydown', go);
     },

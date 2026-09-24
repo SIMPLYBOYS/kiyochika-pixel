@@ -65,6 +65,26 @@ ok(SLIM.length === CLIPS && SLIM.every((c, k) => c.id === MOTION[k].id && c.v ==
      && (c.differs?.length ?? 0) === (MOTION[k].differs?.length ?? 0)),
    `motion-clips.json 跟 motion.json 同步（${SLIM.length} 支）`);
 
+// 🔴 回訪的玩家不會再看到開場，他的第一個動作常常就是按 ♪ ——而那顆鈕的 pointerdown 會先
+// 觸發 armResume 的「第一次動作就接著放」，接著同一下的 click 走 toggle()，看到已經在播就
+// 把它關掉 ⇒ 玩家聽到 1.6 秒（淡出）就沒聲音，再按一次才正常（2026-09-24 玩家回報）。
+// ⚠️ 上面那一輪是從開場「入場」進來的，走不到這條路 ⇒ 這裡另開一頁專門驗它。
+{
+  const page = await (await chromium.launch()).newPage({ viewport: { width: 390, height: 844 } });
+  await page.goto(`http://localhost:${PORT}/`, { waitUntil: 'domcontentloaded' });
+  await page.evaluate(() => { localStorage.setItem('kiyochika.intro.v1', '1');
+                              localStorage.removeItem('kiyochika.music.v1'); });
+  await page.goto(`http://localhost:${PORT}/`, { waitUntil: 'networkidle' });
+  await sleep(800);
+  await page.locator('#music').click();          // ← 全場第一個使用者動作就是這一下
+  await sleep(3200);                             // 淡出是 1.6 秒，撐過它才看得出有沒有被關掉
+  const m = await page.evaluate(() => ({ ...window.__music.debug(),
+                                         on: document.querySelector('#music').classList.contains('on') }));
+  ok(m.on && m.paused === false && m.gain > 0.2 && m.t > 1.5,
+     `回訪：第一個動作就按 ♪ 也會播（鈕 ${m.on ? '開' : '關'}・增益 ${(m.gain ?? 0).toFixed(2)}・${(m.t ?? 0).toFixed(1)}s）`);
+  await page.context().browser().close();
+}
+
 const browser = await chromium.launch();
 for (const [name, size] of [['桌機 1440×900', { width: 1440, height: 900 }],
                             ['直式手機 390×844', { width: 390, height: 844 }]]) {
