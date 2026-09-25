@@ -88,6 +88,37 @@ ok(SLIM.length === CLIPS && SLIM.every((c, k) => c.id === MOTION[k].id && c.v ==
   await page.context().browser().close();
 }
 
+// 🔴 **AudioContext 跑不起來時仍然要有聲音**。Safari 會把 context 停在 suspended／interrupted
+// （來電、系統中斷、政策），而 createMediaElementSource 一旦接上去，聲音就只從那張圖出來
+// ⇒ 圖沒在跑＝完全沒聲音，偏偏元素的 currentTime 照走，看起來像「在播」。
+// ⚠️ headless Chromium 不會自己走到這條路 ⇒ 這裡**把 AudioContext 換成永遠 suspended 的假物件**
+// 來逼出它：程式應該放棄接線、退回元素自己播（沒有淡入，但有聲音）。
+{
+  const page = await (await chromium.launch()).newPage({ viewport: { width: 1280, height: 800 } });
+  await page.addInitScript(() => {
+    // ⚠️ 這個假物件要**像真的一樣能接線**，不然程式是因為丟錯才退回元素播的，
+    // 那就測不到「有沒有先檢查 state」——拿掉那道檢查，測試仍然會過（實際踩到）。
+    const node = () => ({ connect() {}, disconnect() {},
+                          gain: { value: 0, cancelScheduledValues() {}, setValueAtTime() {},
+                                  linearRampToValueAtTime(v) { this.value = v; } } });
+    class Dead {                       // 永遠醒不過來的 AudioContext
+      constructor() { this.state = 'suspended'; this.currentTime = 0; this.destination = node(); }
+      resume() { return Promise.resolve(); }
+      close() {}
+      createGain() { return node(); }
+      createMediaElementSource() { return node(); }
+    }
+    window.AudioContext = Dead; window.webkitAudioContext = Dead;
+  });
+  await page.goto(`http://localhost:${PORT}/`, { waitUntil: 'networkidle' });
+  await page.locator('.intro [data-act="enter"]').click();
+  await sleep(3000);
+  const d = await page.evaluate(() => window.__music.debug());
+  ok(d.ctx === 'bypass' && d.paused === false && d.t > 0.5 && d.gain > 0.2,
+     `WebAudio 接不上時改用元素自己播（ctx=${d.ctx}・音量 ${(d.gain ?? 0).toFixed(2)}・${(d.t ?? 0).toFixed(1)}s）`);
+  await page.context().browser().close();
+}
+
 // 🔴 iOS 的自動播放政策**不吃 touchstart／pointerdown 那一階段**，只有 click／touchend 算數。
 // 舊版把「第一次動作就接著放」掛在 pointerdown 上 ⇒ 滑一下地圖就 start()、play() 被拒、
 // 旗標卻記成開過了，接著按 ♪ 反而是關掉它——玩家要按兩次才有聲音
