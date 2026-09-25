@@ -67,6 +67,10 @@ export function createMusic(tracks, { onTrack } = {}) {
     el.preload = 'none';              // ⛔ 沒開配樂就別下載 7MB
     el.crossOrigin = 'anonymous';
     el.onended = next;                // seconds 對不上時的保險（⚠️ 不要只靠計時器）
+    // 🔴 「開始播了嗎」只能由媒體元素自己說。⛔ 不要在 start() 裡樂觀設成 true——
+    // iOS 上 play() 很可能被拒（見 armResume），旗標卻已經記成開過了，
+    // 接著按 ♪ 就變成把它關掉，玩家要按兩次才有聲音。
+    el.addEventListener('playing', () => { started = true; });
     // ⚠️ 掛進 DOM：`new Audio()` 不在文件裡，瀏覽器的媒體控制與驗收腳本都看不到它
     //（第一版就是這樣，測試只能證明「按鈕變色」證明不了「有沒有在放」）。
     el.hidden = true;
@@ -85,8 +89,10 @@ export function createMusic(tracks, { onTrack } = {}) {
   };
 
   const start = () => {
-    started = true;
     make();
+    // ⚠️ iOS 16.4+ 才有：不設的話，手機側邊的靜音鍵一開就完全沒聲音——
+    // 而玩家通常不會想到是那個開關，只會覺得「這個網站沒聲音」。
+    try { if (navigator.audioSession) navigator.audioSession.type = 'playback'; } catch { /* 沒有就算了 */ }
     wire();
     ctx.resume?.();
     next();
@@ -118,14 +124,22 @@ export function createMusic(tracks, { onTrack } = {}) {
      *  那樣按鈕顯示「開著」卻沒有聲音，玩家按下去反而變成關掉（實測到的狀況）。 */
     armResume(ignore) {
       if (!on) return;
-      const go = e => {
-        // 🔴 ⛔ 不要接那顆 ♪ 自己的那一下：pointerdown 先到這裡 start()，接著同一下的 click
-        // 走 toggle()，看到已經在播就把它**關掉** ⇒ 玩家聽到 1.6 秒（淡出時間）就沒聲音了，
-        // 再按一次才正常。2026-09-24 玩家回報「按下音符鍵響一兩秒就斷」就是這個。
+      // 🔴 用 **click**，⛔ 不要用 pointerdown：iOS Safari 的自動播放政策不吃 touchstart 那一階段，
+      // 只有 click／touchend 才算「使用者啟用」。舊版掛在 pointerdown 上的後果是——
+      // 第一次觸碰（滑地圖、點任何東西）就 start()，play() 被拒而我們又 catch 掉，
+      // 旗標卻記成開過了 ⇒ 接著按 ♪ 反而是把它關掉，玩家要按兩次才有聲音
+      //（2026-09-25 回報：手機上要先長按跳出系統選單、再點一次才出聲）。
+      const off = () => { removeEventListener('click', go); removeEventListener('keydown', go); };
+      function go(e) {
+        // ⛔ 不要接那顆 ♪ 自己的那一下：它自己會處理，兩邊都接會變成「開始播又立刻關掉」。
         if (ignore && e.target?.closest?.(ignore)) return;
-        removeEventListener('pointerdown', go); removeEventListener('keydown', go); start();
-      };
-      addEventListener('pointerdown', go);
+        start();
+        // ⚠️ **成功了才拆掉**：第一次很可能是無效的手勢（被系統選單吃掉的那一下、
+        // 或政策還沒放行）。留著就會在下一次互動自動再試一次，
+        // ⛔ 不要讓玩家自己去按開關——他根本不知道要按。
+        setTimeout(() => { if (started) off(); }, 800);
+      }
+      addEventListener('click', go);
       addEventListener('keydown', go);
     },
     get track() { return i < 0 ? null : tracks[i]; },

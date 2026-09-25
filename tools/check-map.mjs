@@ -88,6 +88,30 @@ ok(SLIM.length === CLIPS && SLIM.every((c, k) => c.id === MOTION[k].id && c.v ==
   await page.context().browser().close();
 }
 
+// 🔴 iOS 的自動播放政策**不吃 touchstart／pointerdown 那一階段**，只有 click／touchend 算數。
+// 舊版把「第一次動作就接著放」掛在 pointerdown 上 ⇒ 滑一下地圖就 start()、play() 被拒、
+// 旗標卻記成開過了，接著按 ♪ 反而是關掉它——玩家要按兩次才有聲音
+//（2026-09-25 回報：手機上要先長按 ♪ 跳出系統選單、再點一次才出聲）。
+// 這一項把那個順序寫死：先來一個**只有 pointerdown 的互動**，再按 ♪，必須有聲音。
+{
+  const page = await (await chromium.launch()).newPage({ viewport: { width: 390, height: 844 } });
+  await page.goto(`http://localhost:${PORT}/`, { waitUntil: 'domcontentloaded' });
+  await page.evaluate(() => { localStorage.setItem('kiyochika.intro.v1', '1');
+                              localStorage.removeItem('kiyochika.music.v1'); });
+  await page.goto(`http://localhost:${PORT}/`, { waitUntil: 'networkidle' });
+  await sleep(800);
+  await page.evaluate(() => document.querySelector('#map')
+    .dispatchEvent(new PointerEvent('pointerdown', { bubbles: true })));   // ← 無效的那一下
+  await sleep(500);
+  await page.locator('#music').click();
+  await sleep(3200);
+  const m2 = await page.evaluate(() => ({ ...window.__music.debug(),
+                                          on: document.querySelector('#music').classList.contains('on') }));
+  ok(m2.on && m2.paused === false && m2.gain > 0.2 && m2.t > 1.5,
+     `無效手勢之後再按 ♪ 仍然會播（鈕 ${m2.on ? '開' : '關'}・增益 ${(m2.gain ?? 0).toFixed(2)}・${(m2.t ?? 0).toFixed(1)}s）`);
+  await page.context().browser().close();
+}
+
 const browser = await chromium.launch();
 for (const [name, size] of [['桌機 1440×900', { width: 1440, height: 900 }],
                             ['直式手機 390×844', { width: 390, height: 844 }]]) {

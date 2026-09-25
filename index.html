@@ -91,7 +91,10 @@
   #hud #open:disabled { opacity:.45; color:inherit; cursor:default }
   #hud button { pointer-events:auto; font-family:inherit; font-size:12px; cursor:pointer;
                 background:#ffffff14; color:var(--land); border:1px solid #ffffff33;
-                border-radius:5px; padding:3px 10px }
+                border-radius:5px; padding:3px 10px;
+                /* ⚠️ iOS 長按任何按鈕都會彈出系統的選單（拷貝／分享），而那一下會把手勢吃掉：
+                   玩家回報「要先長按 ♪ 跳出彈窗、再點一次才有聲音」。這兩行把那個選單關掉。 */
+                -webkit-touch-callout:none; -webkit-user-select:none; user-select:none }
   #hud button:hover { background:#ffffff24 }
   /* 面板開著時把 HUD 收短：留下要緊的（進度・時刻・等一刻），附註與外連收起來。
      「帶我去」也收：地圖大半被面板蓋著，滑過去了也看不到滑到哪。 */
