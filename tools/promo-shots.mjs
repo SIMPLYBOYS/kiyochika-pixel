@@ -8,6 +8,7 @@
 // 用法（通常由 tools/make-promo.sh 呼叫）：
 //   node tools/promo-shots.mjs shots  <輸出目錄>      遊戲截圖 ＋ 標題卡 ＋ 字幕條
 //   node tools/promo-shots.mjs poster <輸出目錄>      從成片抽出的三格 → 海報（README 用）
+//   node tools/promo-shots.mjs cards  <輸出目錄> <卡片key…> <字幕key…>   只出卡片與字幕條
 import { createRequire } from 'node:module';
 import { spawn } from 'node:child_process';
 import { mkdirSync } from 'node:fs';
@@ -32,6 +33,29 @@ if (mode === 'poster') {
   await p.screenshot({ path: `${OUT}/poster.png` });
   await b.close();
   console.log('poster done');
+  process.exit(0);
+}
+
+// ── 只出卡片與字幕條（第二支宣傳片用，⛔ 不必開遊戲）──
+//   node tools/promo-shots.mjs cards <輸出目錄> <整頁卡的 key…> <字幕條的 key…>
+if (mode === 'cards') {
+  const [full, caps] = process.argv.slice(4);
+  const b = await chromium.launch();
+  // 🔴 deviceScaleFactor 必須是 1：卡片的尺寸就是影片的尺寸（1080×1920）。
+  // 用 2 會截成 2160×3840，overlay 上去只看得到左上角那塊透明區——字幕會整批消失。
+  const p = await b.newPage({ viewport: { width: 1080, height: 1920 }, deviceScaleFactor: 1 });
+  for (const c of (full ?? '').split(',').filter(Boolean)) {
+    await p.goto(`file://${ROOT}/tools/promo-cards.html?c=${c}`);
+    await p.waitForTimeout(300);
+    await p.screenshot({ path: `${OUT}/card-${c}.png` });
+  }
+  for (const c of (caps ?? '').split(',').filter(Boolean)) {
+    await p.goto(`file://${ROOT}/tools/promo-cards.html?c=${c}`);
+    await p.waitForTimeout(250);
+    await p.screenshot({ path: `${OUT}/cap-${c}.png`, omitBackground: true });
+  }
+  await b.close();
+  console.log('cards done');
   process.exit(0);
 }
 
