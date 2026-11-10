@@ -654,9 +654,26 @@ for (const [name, size] of [['桌機 1440×900', { width: 1440, height: 900 }],
      && !/[ぁ-んァ-ヶ]/.test(guide.text),
      `玩法頁（? 叫得出來）：數字跟規則一致（${guide?.mapped} 幅・每 ${PER_YEAR} 幅一年）、`
      + `圖例三種點各實心空心、金點跟地圖同色（${guide?.legendGold}）、沒有日文`);
+  // 快捷鍵的閘（卡片正開著）：帶修飾鍵的不是我們的（Ctrl+F 是頁內搜尋，⛔ 不該進沈浸）；
+  // 卡片蓋著時 W 不該讓底下的時間走。
+  const nowBefore = await page.locator('#now').textContent();
+  await page.keyboard.press('w');
+  await page.keyboard.press('Control+f');
+  await page.keyboard.press('Meta+f');
+  await sleep(200);
+  ok(await page.locator('#now').textContent() === nowBefore
+     && await page.evaluate(() => !document.body.classList.contains('immersive')),
+     '快捷鍵：卡片蓋著時 W 不推進時間，Ctrl／Cmd+F 不進沈浸');
   await page.keyboard.press('Escape');
   await sleep(200);
   ok(await page.locator('#card.on').count() === 0, 'Esc 關得掉玩法頁');
+  // CapsLock 開著時 e.key 是大寫 ⇒ 大寫也要接得到（開了畫卷就關掉，⛔ 不留狀態）
+  await page.keyboard.press('E');
+  await sleep(400);
+  const upper = await page.locator('.scroll-view').count();
+  await page.keyboard.press('Escape');
+  await sleep(300);
+  ok(upper === 1 && await page.locator('.scroll-view').count() === 0, '快捷鍵：大寫 E 也叫得出畫卷');
 
   // 畫卷：收到的景連成一卷、由右往左展讀；沒收的留空格（卷長不隨進度變）
   // 🔴 先把面板打開再開畫卷：Esc 只該收卷、面板要留著（第一版的守衛漏了畫卷，
@@ -846,10 +863,12 @@ for (const [name, size] of [['桌機 1440×900', { width: 1440, height: 900 }],
     await sleep(300);
     const shown = await page.evaluate(() => ({
       art: document.querySelector('#panel #art img, #panel #art video')?.tagName,
+      poster: document.querySelector('#panel #art video')?.getAttribute('poster') ?? '',
       badge: document.querySelector('#panel #art .gen')?.textContent ?? '',
       items: document.querySelectorAll('#panel .differs li').length,
     }));
     ok(!before.got && before.anim && shown.art === 'VIDEO' && /非原作/.test(shown.badge)
+       && shown.poster.startsWith('assets/thumb/')      // 影片載到之前畫框不空
        && shown.items === (c.differs || []).length,
        `AI 重繪版 no.${c.id}：沒收過也有那顆鈕，按下去是影片、掛著「${shown.badge}」、印出 ${shown.items} 條差異`);
   }

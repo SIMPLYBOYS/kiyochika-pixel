@@ -1,13 +1,15 @@
 # 不上傳到 Cloudflare 的檔案（語法同 .gitignore）。網站只需要 index.html、src/、data/、assets/。
-# 🔴 node_modules 一定要擋：部署環境會把 wrangler 裝在這裡，裡面有 126 MB 的執行檔（見 wrangler.jsonc
-worker.js          # 這是程式不是網頁檔案（wrangler 會自己打包它））
+# 🔴 註解要自己一行：這個語法沒有行尾註解，寫在規則後面會變成檔名的一部分 ⇒ 規則安靜地失效
+#（worker.js 那一條原本就是這樣，線上 /worker.js 一直回 200）。
+# 🔴 node_modules 一定要擋：部署環境會把 wrangler 裝在這裡，裡面有 126 MB 的執行檔（見 wrangler.jsonc）
 node_modules
 .wrangler
 .git
 .gitignore
 .assetsignore
 wrangler.jsonc
-worker.js          # 這是程式不是網頁檔案（wrangler 會自己打包它）
+# 這是程式不是網頁檔案（wrangler 會自己打包它）
+worker.js
 package.json
 bun.lock
 bun.lockb
@@ -23,3 +25,5 @@ LICENSE
 .DS_Store
 # 根目錄的驗收截圖（沒進 git，只在本機）
 /*.png
+# 廢掉的「畫心」那一層（已不進 git；這一行擋的是從本機直接 wrangler deploy 的情況）
+assets/image

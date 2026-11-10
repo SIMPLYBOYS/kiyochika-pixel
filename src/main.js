@@ -309,6 +309,7 @@ function pick(v) {
   };
   // AI 重繪版：把 <img> 換成 <video>，並且**永遠**帶著那條標示與那份差異清單。
   // ⚠️ 網址帶 ?v=（影片內容雜湊）：_headers 讓瀏覽器快取影片 7 天，而重生的影片檔名不變。
+  // ⚠️ poster 是剛剛那張真跡：影片還沒載到時畫框不會空掉、也不會塌（第一幀本來就是原畫）。
   const clip = clipOf(v);
   const anim = $('anim');
   if (anim && clip) anim.onclick = () => {
@@ -318,7 +319,7 @@ function pick(v) {
     art.parentNode.querySelector('.differs')?.remove();
     if (on) {
       art.insertAdjacentHTML('afterbegin', `
-        <video autoplay loop muted playsinline>
+        <video autoplay loop muted playsinline poster="${thumb(v)}">
           <source src="${clip.file}?v=${clip.v ?? ''}" type="video/webm">
           <source src="${clip.file.replace(/\.webm$/, '.mp4')}?v=${clip.v ?? ''}" type="video/mp4">
         </video>
@@ -572,7 +573,6 @@ $('emaki').onclick = () => openScroll(
   v => { pick(v); map.goTo(v.id); },              // 從卷裡點進去，地圖也跟著移過去
   (v, mode) => (mode === 'pixel' ? pixel(v) : thumb(v)),
 );
-addEventListener('keydown', e => { if (e.key === 'e') $('emaki').click(); });
 
 // ── 帶我去 ────────────────────────────────────────────────────
 // 金點只有幾個、地圖卻是整個東京，「在哪裡」本身就是一道無謂的關卡
@@ -612,7 +612,6 @@ function guide() {
   }
 }
 $('open').onclick = guide;
-addEventListener('keydown', e => { if (e.key === 'g') guide(); });
 
 // ── 開場與跑馬燈 ──────────────────────────────────────────────
 // 開場只有第一次自己跳出來（存在 localStorage），之後從 HUD 的「開場」重看。
@@ -639,7 +638,6 @@ const paintMusic = on => {
   if (!on) $('nowplaying').textContent = '';
 };
 $('music').onclick = () => paintMusic(music.toggle());
-addEventListener('keydown', e => { if (e.key === 'm') $('music').click(); });
 paintMusic(music.on);
 // 上次開著就等第一次點擊／按鍵接著放（開場的「入場」也算那一下）
 // ⚠️ 要把 ♪ 那顆鈕排除掉：它自己會處理，兩邊都接會變成「開始播又立刻關掉」（見 audio.js）
@@ -678,7 +676,6 @@ $('full').onclick = async () => {
 addEventListener('fullscreenchange', () => {
   if (!document.fullscreenElement) setImmersive(false);
 });
-addEventListener('keydown', e => { if (e.key === 'f') $('full').click(); });
 if (!introSeen()) intro();
 
 // 手機上 HUD 會折行，跑馬燈得知道它多高才放得下去（⛔ 不要寫死）
@@ -716,9 +713,23 @@ $('how').onclick = () => {
   $('card-body').scrollTop = 0;
   $('card').classList.add('on');
 };
-addEventListener('keydown', e => { if (e.key === '?') $('how').click(); });
 
 $('wait').onclick = wait;
 $('card-close').onclick = () => $('card').classList.remove('on');
-addEventListener('keydown', e => { if (e.key === 'w') wait(); });
+
+// ── 快捷鍵 ────────────────────────────────────────────────────
+// 🔴 一個監聽、一道閘。原本六顆鍵各掛各的、只比 e.key ⇒ 三件事一起漏：
+//   · Cmd/Ctrl+F（頁內搜尋）會進沈浸全螢幕，Cmd+M／G／E 同理 ⇒ 帶修飾鍵的不是我們的
+//   · CapsLock 開著時 e.key 是大寫，G／W 全部沒反應 ⇒ 比小寫
+//   · 卡片蓋著時按 W，底下的時間照樣走 ⇒ 會動到底下那一層的，上面有東西就不接
+// ♪ 與沈浸是整場通用的開關，哪一層開著都接。⛔ 新增一層記得加進 covered 的選擇器（同上面 Esc 那條）。
+const ANYWHERE = { m: () => $('music').click(), f: () => $('full').click() };
+const UNCOVERED = { e: () => $('emaki').click(), g: guide, w: wait, '?': () => $('how').click() };
+const covered = () => document.querySelector('.lightbox, .scroll-view, .intro, #card.on');
+addEventListener('keydown', e => {
+  if (e.metaKey || e.ctrlKey || e.altKey) return;
+  const k = e.key?.toLowerCase();       // ⚠️ 瀏覽器自動填入送的 keydown 沒有 key
+  if (ANYWHERE[k]) ANYWHERE[k]();
+  else if (!covered()) UNCOVERED[k]?.();
+});
 paint();
