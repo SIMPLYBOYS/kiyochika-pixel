@@ -1,0 +1,32 @@
+# 推送時自動跑「走得完嗎」（tools/check-pub.mjs）。
+#
+# 🔴 這個機制唯一的災難是鎖死，而鎖死不會噴錯——只會讓玩家卡住（edo-hyakkei 卡在 89/118 過）。
+# 改了閘門數字或資料卻忘了跑那一支，就是這裡要接住的事。
+#
+# ⚠️ 它**擋不住部署**：Cloudflare 與 GitHub Pages 都是「推送到 main 就各自更新」，不等這裡的結果。
+# 這裡紅了的意思是「線上那一版可能走不完，趕快看」，⛔ 不是「沒上線」。
+#
+# ⛔ 不在這裡跑 check-map.mjs：那支要 Playwright 的 Chromium，而且有幾項驗的是本機才量得準的事。
+# 只跑零相依的這一支——用 runner 內建的 node，不裝任何東西。
+name: check
+on:
+  push:
+    branches: [main]
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  check-pub:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          # 只取這一支讀得到的三個目錄：整個 repo 有一百多 MB 的圖與影片，模擬用不到。
+          # ⚠️ 根目錄的檔案 sparse-checkout 一律會帶（package.json 的 "type":"module" 少不得：
+          # 沒有它，舊一點的 node 會把 src/*.js 當成 CommonJS）。
+          sparse-checkout: |
+            src
+            data
+            tools
+      - run: node --version && node tools/check-pub.mjs

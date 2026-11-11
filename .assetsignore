@@ -20,6 +20,7 @@ docs
 research
 .cache
 .claude
+.github
 README.md
 LICENSE
 .DS_Store

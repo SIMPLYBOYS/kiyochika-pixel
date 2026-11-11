@@ -57,6 +57,9 @@ node tools/check-map.mjs      # 畫面與玩法驗收（要 playwright 的 chrom
 node tools/check-pub.mjs      # 走得完嗎——這個機制唯一的災難是鎖死
 ```
 
+`check-pub` 在推送到 `main` 時也會由 GitHub Actions 自動跑（`.github/workflows/check.yml`）。
+⚠️ 它擋不住部署——Cloudflare 與 Pages 不等它；紅了的意思是「線上那一版可能走不完，趕快看」。
+
 完整的計畫與判斷記錄在 vault：`projects/2026-09-kiyochika-pixel/清親東京名所図-像素遊戲-Action-Plan.md`
 
 ## 目錄
