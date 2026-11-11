@@ -612,6 +612,22 @@ function guide() {
   }
 }
 $('open').onclick = guide;
+// Enter：打開「帶我去」剛帶到的那一幅。🔴 沒有它，只用鍵盤的人到得了金點卻打不開——
+// 地圖上的點是 SVG 的 <g>，沒有焦點可言，G 帶到之後只能拿滑鼠去點。
+// ⚠️ 焦點在按鈕／連結／<summary> 上時 Enter 是它自己的（瀏覽器會替它按下去），⛔ 這裡不接：
+// 用滑鼠按過「帶我去」之後焦點就留在那顆鈕上，兩邊都接的話一下 Enter 會同時開畫又跳到下一個。
+// 第二下 Enter 收景（G、Enter、Enter）：面板正開著那一幅時，再按一次就是「收入畫帖」。
+// 沒有這一下，打開之後還得按十幾次 Tab 才走得到那顆鈕。收不收得了仍由 collect() 自己把關
+//（光線不對、已經收過 ⇒ 什麼都不做）。⚠️ 按住不放的連發不算第二下，否則按久一點就自己收走了。
+function openLed(e) {
+  if (e?.repeat) return;
+  const f = document.activeElement;
+  if (f && f !== document.body && f.matches('a,button,input,select,textarea,summary')) return;
+  const v = views.find(x => x.id === lastLed);
+  if (!v || !map.at(v.id)) return;
+  if (shownId === v.id && $('panel').classList.contains('on')) collect(v);
+  else pick(v);
+}
 
 // ── 開場與跑馬燈 ──────────────────────────────────────────────
 // 開場只有第一次自己跳出來（存在 localStorage），之後從 HUD 的「開場」重看。
@@ -724,12 +740,13 @@ $('card-close').onclick = () => $('card').classList.remove('on');
 //   · 卡片蓋著時按 W，底下的時間照樣走 ⇒ 會動到底下那一層的，上面有東西就不接
 // ♪ 與沈浸是整場通用的開關，哪一層開著都接。⛔ 新增一層記得加進 covered 的選擇器（同上面 Esc 那條）。
 const ANYWHERE = { m: () => $('music').click(), f: () => $('full').click() };
-const UNCOVERED = { e: () => $('emaki').click(), g: guide, w: wait, '?': () => $('how').click() };
+const UNCOVERED = { e: () => $('emaki').click(), g: guide, w: wait, '?': () => $('how').click(),
+                    enter: openLed };
 const covered = () => document.querySelector('.lightbox, .scroll-view, .intro, #card.on');
 addEventListener('keydown', e => {
   if (e.metaKey || e.ctrlKey || e.altKey) return;
   const k = e.key?.toLowerCase();       // ⚠️ 瀏覽器自動填入送的 keydown 沒有 key
   if (ANYWHERE[k]) ANYWHERE[k]();
-  else if (!covered()) UNCOVERED[k]?.();
+  else if (!covered()) UNCOVERED[k]?.(e);
 });
 paint();

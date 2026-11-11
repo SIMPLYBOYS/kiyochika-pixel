@@ -88,7 +88,7 @@ export function guideHtml(o) {
   <h3>操作</h3>
   <table class="keys">
     <tr><th>地圖</th><td>拖曳移動・滾輪或兩指縮放・<kbd>＋</kbd><kbd>－</kbd> 縮放・<kbd>0</kbd> 全圖・方向鍵移動</td></tr>
-    <tr><th>快捷鍵</th><td><kbd>W</kbd> 等一刻・<kbd>G</kbd> 帶我去・<kbd>E</kbd> 畫卷・<kbd>F</kbd> 沈浸・<kbd>M</kbd> 配樂・<kbd>?</kbd> 玩法・<kbd>Esc</kbd> 關閉</td></tr>
+    <tr><th>快捷鍵</th><td><kbd>W</kbd> 等一刻・<kbd>G</kbd> 帶我去・<kbd>Enter</kbd> 打開剛帶到的那一幅，再按一次收入畫帖・<kbd>E</kbd> 畫卷・<kbd>F</kbd> 沈浸・<kbd>M</kbd> 配樂・<kbd>?</kbd> 玩法・<kbd>Esc</kbd> 關閉</td></tr>
     <tr><th>畫卷</th><td><kbd>←</kbd><kbd>→</kbd> 一次一幅・<kbd>Home</kbd><kbd>End</kbd> 卷首卷尾・<kbd>Space</kbd> 自動展卷・拖曳或滾輪</td></tr>
     <tr><th>原寸</th><td>拖曳或方向鍵移動（<kbd>Shift</kbd> 走快一點）・滾輪或 ＋－ 縮放</td></tr>
   </table>

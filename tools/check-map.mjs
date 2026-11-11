@@ -780,6 +780,34 @@ for (const [name, size] of [['桌機 1440×900', { width: 1440, height: 900 }],
   ok(led.every(Boolean) && new Set(led).size === led.length && String(c0) !== String(c1),
      `帶我去：連按四次走了四個不同的景（${led.join('・')}）`);
 
+  // 只用鍵盤也打得開：G 帶到、Enter 打開的就是剛帶到的那一幅（地圖上的點沒有焦點，Tab 走不到）。
+  // ⚠️ 上面是用滑鼠按 #open 的，焦點還留在那顆鈕上——那時 Enter 是鈕自己的（會再帶去下一個），
+  // ⇒ 先驗那一下**不會**開畫，再把焦點還給頁面驗真的打得開。
+  await page.keyboard.press('Escape');
+  await sleep(200);
+  await page.keyboard.press('Enter');
+  await sleep(800);
+  const onButton = await page.locator('#panel.on').count();
+  await page.evaluate(() => document.activeElement?.blur());
+  await page.keyboard.press('g');
+  await sleep(800);
+  const ledName = await page.locator('#map .mark.lead text').textContent().catch(() => null);
+  await page.keyboard.press('Enter');
+  await sleep(500);
+  const opened = await page.locator('#panel.on #body h2').textContent().catch(() => null);
+  ok(onButton === 0 && ledName && opened === ledName,
+     `鍵盤：焦點在「帶我去」上時 Enter 不開畫；G 帶到之後 Enter 打開的就是那一幅（${opened}）`);
+  // 第二下 Enter 收景；第三下不該再有事（已經收過）。⚠️ 這一項會改進度，放在這一頁關掉之前。
+  const countOf = async () => parseInt(await page.locator('#count').textContent(), 10);
+  const n0 = await countOf();
+  await page.keyboard.press('Enter');
+  await sleep(500);
+  const n1 = await countOf(), takeLeft = await page.locator('#panel #take').count();
+  await page.keyboard.press('Enter');
+  await sleep(300);
+  ok(n1 === n0 + 1 && takeLeft === 0 && await countOf() === n1,
+     `鍵盤：第二下 Enter 收景（${n0} → ${n1}），第三下不重複收`);
+
   await page.close();
 }
 
