@@ -68,6 +68,24 @@ ok(SLIM.length === CLIPS && SLIM.every((c, k) => c.id === MOTION[k].id && c.v ==
      && (c.differs?.length ?? 0) === (MOTION[k].differs?.length ?? 0)),
    `motion-clips.json 跟 motion.json 同步（${SLIM.length} 支）`);
 
+// 分享預覽與圖示：這些標籤壞了**在畫面上完全看不出來**（只有把連結貼出去才知道）⇒ 量檔案本身。
+// og:image 要絕對網址且指到正式網址、檔案真的在、尺寸跟標籤寫的一樣；圖示的檔案也要在。
+{
+  const html = readFileSync(resolve(ROOT, 'index.html'), 'utf8');
+  const meta = p => html.match(new RegExp(`<meta property="${p}" content="([^"]*)"`))?.[1] ?? '';
+  const SITE = 'https://kiyochika-pixel.ferrari828.workers.dev/';
+  const img = meta('og:image'), rel = img.replace(SITE, '');
+  const jpg = img.startsWith(SITE) ? (() => { try { return readFileSync(resolve(ROOT, rel)); } catch { return null; } })() : null;
+  // JPEG 的寬高在 SOF0／SOF2 段（FF C0／FF C2）：長度 2、精度 1、高 2、寬 2
+  const sof = jpg ? jpg.findIndex((b, k) => b === 0xff && (jpg[k + 1] === 0xc0 || jpg[k + 1] === 0xc2)) : -1;
+  const size = sof < 0 ? '' : `${jpg.readUInt16BE(sof + 7)}×${jpg.readUInt16BE(sof + 5)}`;
+  const icons = [...html.matchAll(/<link rel="(?:icon|apple-touch-icon)"[^>]*href="([^"]+)"/g)].map(m => m[1]);
+  const iconsOk = icons.length === 2 && icons.every(f => { try { return readFileSync(resolve(ROOT, f)).length > 0; } catch { return false; } });
+  ok(meta('og:url') === SITE && size === `${meta('og:image:width')}×${meta('og:image:height')}`
+     && meta('og:title') && meta('og:description') && !/\d+\s*幅/.test(meta('og:description')) && iconsOk,
+     `分享預覽：og:image 是正式網址的絕對路徑、檔案在（${size || '找不到'}）、說明不寫幅數；圖示 ${icons.length} 個檔案都在`);
+}
+
 // 🔴 回訪的玩家不會再看到開場，他的第一個動作常常就是按 ♪ ——而那顆鈕的 pointerdown 會先
 // 觸發 armResume 的「第一次動作就接著放」，接著同一下的 click 走 toggle()，看到已經在播就
 // 把它關掉 ⇒ 玩家聽到 1.6 秒（淡出）就沒聲音，再按一次才正常（2026-09-24 玩家回報）。

@@ -474,6 +474,7 @@ python3 tools/derive-now.py --write        # 標高（GSI）＋最寄り駅・�
 python3 tools/derive-details.py --sheet 4  # 細節候選（DoG，算在像素版上）＋ 判讀表
 python3 tools/apply-details.py --write     # 人工挑選 → views.json 的 details
 python3 tools/make-thumbs.py               # research/ndl 的整頁 → assets/thumb（面板用）
+python3 tools/make-share.py                # 分享預覽圖與網站圖示 → assets/share（index.html 的 og:image／icon）
 python3 tools/fetch-commons.py --sheet     # Commons 側交叉比對（不是主素材）
 python3 tools/motion-prep.py --close 1-84  # AI 重繪版：起始幀（墊成 16:9）＋ 提示詞
 python3 tools/motion-review.py <片> <編號>  # 生成片初審：第一幀、位移曲線、推近倍率、格圖
