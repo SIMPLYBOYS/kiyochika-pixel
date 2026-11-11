@@ -23,8 +23,10 @@
 用法：
   python3 tools/make-motion.py 50 --video research/motion/new_p50.mp4
   python3 tools/make-motion.py 50 --video ... --check-only     # 只驗不輸出
+  python3 tools/make-motion.py 68 --lock                       # 沒在動的地方換回原畫（見 tools/motion-lock.py）；
+                                                               # --video 省略時用 clips 裡記的 source
 """
-import argparse, json, subprocess, tempfile
+import argparse, importlib.util, json, re, subprocess, tempfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -90,9 +92,16 @@ def drift_rows(plate, video, pre=None):
 FIELDS = ("id", "kind", "file", "v", "model", "date", "differs")
 
 
+def slim_clip(c):
+    out = {k: c[k] for k in FIELDS if k in c}
+    if c.get("lock"):      # 面板只要兩件事：鎖回了多少、有沒有校色（那 12 個數字留在完整紀錄裡）
+        out["lock"] = {"still": c["lock"]["still"], "tone": bool(c["lock"].get("colour"))}
+    return out
+
+
 def write_clips(data):
     slim = {"_": "執行期用的精簡版，機器產生（完整紀錄與提示詞在 motion.json）。⛔ 不要手改。",
-            "clips": [{k: c[k] for k in FIELDS if k in c} for c in data["clips"]]}
+            "clips": [slim_clip(c) for c in data["clips"]]}
     dest = ROOT / "data" / "motion-clips.json"
     dest.write_text(json.dumps(slim, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
     return dest
@@ -106,6 +115,8 @@ def main():
                     help="只把 data/motion-clips.json 依 motion.json 重產一次")
     ap.add_argument("--fade", type=float, default=0.6)
     ap.add_argument("--check-only", action="store_true")
+    ap.add_argument("--lock", action="store_true",
+                    help="沒在動的地方換回原畫的像素（色調偏了會先校色）。⚠️ 收過一次就記在 clips 裡，之後重跑一律照做")
     a = ap.parse_args()
     if a.sync:
         data = json.loads((ROOT / "data" / "motion.json").read_text(encoding="utf-8"))
@@ -114,8 +125,8 @@ def main():
               f"（{dest.stat().st_size / 1024:.0f}KB，完整紀錄 "
               f"{(ROOT / 'data/motion.json').stat().st_size / 1024:.0f}KB）")
         return
-    if a.id is None or not a.video:
-        ap.error("要 id 與 --video（或用 --sync 只重產精簡檔）")
+    if a.id is None:
+        ap.error("要 id（或用 --sync 只重產精簡檔）")
 
     from PIL import Image
     plate = ROOT / "assets" / "plate" / f"{a.id:02d}.jpg"
@@ -129,8 +140,9 @@ def main():
     kind = clip.get("kind", "atmosphere")
     assert kind in ("atmosphere", "reinterpretation"), f"kind 只能是 atmosphere 或 reinterpretation：{kind}"
 
-    src = Path(a.video)
-    assert src.exists(), f"找不到影片：{src}"
+    # --video 省略 ⇒ 用 clips 裡記的那支來源片（source 欄位後面常帶著括號註記，只取路徑）
+    src = Path(a.video) if a.video else ROOT / re.split(r"[（(\s]", clip.get("source", ""))[0]
+    assert src.is_file(), f"找不到影片：{src}"
     vw, vh, dur = probe(src)
     pre, box = crop_of(data, a.id, vw)
     if pre:
@@ -195,6 +207,27 @@ def main():
     OUT.mkdir(parents=True, exist_ok=True)
     f = a.fade
     head = f"{pre}," if pre else ""
+    # 🔴 鎖回：沒在動的地方換回原畫的像素，只有真的在動的區域留模型的（理由與做法見 tools/motion-lock.py）。
+    # 三道關照樣是對**來源片**驗的（上面已經過了）；這裡先出一支鎖好的中間檔，下面的循環與壓縮改吃它。
+    # ⚠️ 收過一次（clips 裡有 lock）之後重跑一律照做——不然哪天重壓一次，鎖回就安靜地不見了。
+    # ⛔ 鎖了也還是 reinterpretation：動的部分仍是模型畫的。
+    tmp = None
+    if a.lock or clip.get("lock"):
+        assert kind == "reinterpretation", "鎖回只給 reinterpretation 用：atmosphere 本來就不該有東西要換回去"
+        spec = importlib.util.spec_from_file_location("motion_lock", ROOT / "tools" / "motion-lock.py")
+        ml = importlib.util.module_from_spec(spec); spec.loader.exec_module(ml)
+        tmp = tempfile.TemporaryDirectory()
+        mid = Path(tmp.name) / "locked.mp4"
+        clip["lock"] = ml.lock_for(data, clip, mid, src)
+        data.setdefault("_fields", {})["lock"] = (
+            "鎖回：沒在動的地方換回原畫的像素，只有真的在動的區域留模型的（tools/motion-lock.py；"
+            "make-motion.py --lock 寫入）。有這一筆的片子重跑時一律照做。各個數字的意思寫在那一筆自己的 _ 裡。"
+            "面板據此多印一句「沒在動的地方換回了原畫的像素」。⛔ 不要手改")
+        k = clip["lock"]
+        print(f"\n鎖回：靜止區 {k['still'] * 100:.1f}%｜靜止區離原畫 {k['tone']}"
+              + (f" → 校色後 {k['tone_fixed']}" if k["colour"] else "（沒校色）")
+              + f"｜全幅離原畫 {k['before']} → {k['after']}")
+        src, head, dur = mid, "", probe(mid)[2]
     vf = (f"[0:v]{head}scale={WIDTH}:-2,fps={FPS},split[body][pre];"
           f"[pre]trim=duration={f},format=yuva420p,fade=d={f}:alpha=1,setpts=PTS+({dur}-{f})/TB[tail];"
           f"[body]trim=start={f},setpts=PTS-STARTPTS[main];[main][tail]overlay,format=yuv420p[v]")

@@ -164,6 +164,13 @@ function here(v) {
 // （這個決定的來龍去脈記在 data/motion.json 的 _decision。）
 // ⚠️ 沒有片子就當這個功能不存在（⛔ 不要留一顆按了沒東西的鈕）。
 const clipOf = v => (motion.clips ?? []).find(c => c.id === v.id);
+// 鎖回過的片子（clip.lock，tools/make-motion.py --lock 寫的）：沒在動的地方已經換回原畫的像素。
+// 🔴 這句話要印給玩家：上面那份差異清單講的是「模型改了什麼」，而現在畫面上有一大塊**不是模型畫的**
+// ——不說清楚，玩家會以為整格都是重繪，或反過來以為整格都是原畫。兩個數字都是工具量的，⛔ 不是人寫的。
+// ⛔ 鎖了也不改標示：會動的部分仍是模型畫的，「AI 重繪・非原作」照掛。
+const lockNote = clip => !clip.lock ? '' : `<p class="lock">沒在動的地方（約佔畫面 ${
+  Math.round(clip.lock.still * 100)}%）換回了原畫的像素${
+  clip.lock.tone ? '；模型畫的部分校過色，對回原畫的色調' : ''}。會動的部分仍是模型畫的。</p>`;
 
 // ── 色盤：把光的骨架攤開 ──────────────────────────────────────
 // 🔴 像素化在這一作不是濾鏡，是**分析工具**：這一作叫光線畫，而 16 色量化留下來的
@@ -331,6 +338,7 @@ function pick(v) {
       art.insertAdjacentHTML('afterend', `<div class="differs">
         <b>這一段不是${whoOf(v)}畫的，差在這幾處</b>
         <ul>${(clip.differs ?? []).map(x => `<li>${x}</li>`).join('')}</ul>
+        ${lockNote(clip)}
         <small>${clip.model}・${clip.date}　位移量測見 data/motion.json</small></div>`);
       // ⛔ 標註在這一層關掉：生成的每一格未必跟原畫對得上，標在上面就是在替它背書
       art.classList.add('nomarks');

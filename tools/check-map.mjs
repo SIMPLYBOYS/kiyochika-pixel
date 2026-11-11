@@ -912,9 +912,15 @@ for (const [name, size] of [['桌機 1440×900', { width: 1440, height: 900 }],
       poster: document.querySelector('#panel #art video')?.getAttribute('poster') ?? '',
       badge: document.querySelector('#panel #art .gen')?.textContent ?? '',
       items: document.querySelectorAll('#panel .differs li').length,
+      lock: document.querySelector('#panel .differs .lock')?.textContent ?? '',
     }));
+    // 鎖回過的片子（c.lock）要多印一句「沒在動的地方換回了原畫的像素」，而且佔比要是資料裡那個數字；
+    // 沒鎖回的不該有那一句。⛔ 鎖了也照掛「非原作」——上面那個條件不因此放寬。
+    const lockOk = c.lock ? shown.lock.includes(`${Math.round(c.lock.still * 100)}%`) && shown.lock.includes('原畫的像素')
+                          : shown.lock === '';
     ok(!before.got && before.anim && shown.art === 'VIDEO' && /非原作/.test(shown.badge)
        && shown.poster.startsWith('assets/thumb/')      // 影片載到之前畫框不空
+       && lockOk
        && shown.items === (c.differs || []).length,
        `AI 重繪版 no.${c.id}：沒收過也有那顆鈕，按下去是影片、掛著「${shown.badge}」、印出 ${shown.items} 條差異`);
   }

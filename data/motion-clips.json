@@ -5,7 +5,7 @@
    "id": 1,
    "kind": "reinterpretation",
    "file": "assets/motion/01.webm",
-   "v": "667b9264",
+   "v": "f55695a2",
    "model": "Nano Banana（Google Flow）",
    "date": "2026-09-24",
    "differs": [
@@ -15,7 +15,11 @@
     "遠處那輛灰色馬車被重畫過，後面的樹與建築細節跟著改變。",
     "乘客的傘與衣袖隨著跑動輕晃，街邊的櫻花枝條在風裡搖。",
     "右邊紙邊那顆四角星是生成模型的浮水印。不修掉，它正好提醒這不是清親的作品。"
-   ]
+   ],
+   "lock": {
+    "still": 0.567,
+    "tone": false
+   }
   },
   {
    "id": 2,
@@ -137,7 +141,7 @@
    "id": 9,
    "kind": "reinterpretation",
    "file": "assets/motion/09.webm",
-   "v": "226f9f4e",
+   "v": "bcd26393",
    "model": "Nano Banana（Google Flow）",
    "date": "2026-09-17",
    "differs": [
@@ -146,7 +150,11 @@
     "畫面裡多出幾隻烏鴉飛來飛去。",
     "水窪裡濺起水花、泛起漣漪。",
     "右邊紙邊那顆四角星是生成模型的浮水印。不修掉，它正好提醒這不是清親的作品。"
-   ]
+   ],
+   "lock": {
+    "still": 0.438,
+    "tone": false
+   }
   },
   {
    "id": 10,
@@ -167,7 +175,7 @@
    "id": 11,
    "kind": "reinterpretation",
    "file": "assets/motion/11.webm",
-   "v": "4c0dcd16",
+   "v": "5350be70",
    "model": "Nano Banana（Google Flow）",
    "date": "2026-09-18",
    "differs": [
@@ -175,13 +183,17 @@
     "撐黑傘與黃傘的兩人沿著雪堤走動，最後走到左邊的立石旁；清親畫的是停住的一瞬間。",
     "約 3 秒起，石橋下的水面冒出兩個像人影的藍色倒影，一直留到最後；原畫的水面只有拱橋的倒影。",
     "右邊那顆四角星是生成模型的浮水印。不修掉，它正好提醒這不是清親的作品。"
-   ]
+   ],
+   "lock": {
+    "still": 0.523,
+    "tone": false
+   }
   },
   {
    "id": 13,
    "kind": "reinterpretation",
    "file": "assets/motion/13.webm",
-   "v": "b5b38724",
+   "v": "3e84e7ad",
    "model": "Nano Banana（Google Flow）",
    "date": "2026-09-18",
    "differs": [
@@ -190,13 +202,17 @@
     "右邊那位女子原本用紫色頭巾包住口鼻、只露出眼睛；約 2 秒起頭巾退到頭上，露出整張臉。",
     "左邊那位女子原本側身看著同伴，影片裡轉成面向觀眾，兩人並肩站著說話。",
     "右邊那顆四角星是生成模型的浮水印。不修掉，它正好提醒這不是清親的作品。"
-   ]
+   ],
+   "lock": {
+    "still": 0.447,
+    "tone": true
+   }
   },
   {
    "id": 14,
    "kind": "reinterpretation",
    "file": "assets/motion/14.webm",
-   "v": "f5f71cd0",
+   "v": "a685654f",
    "model": "Nano Banana（Google Flow）",
    "date": "2026-09-18",
    "differs": [
@@ -205,19 +221,27 @@
     "她腳邊原本那隻跳起來的黑白小狗，變成一隻白色的小狗，先坐著、再跟著她走。",
     "參道盡頭的遠方行人換了樣子，一度變成兩個人。",
     "右邊那顆四角星是生成模型的浮水印。不修掉，它正好提醒這不是清親的作品。"
-   ]
+   ],
+   "lock": {
+    "still": 0.449,
+    "tone": false
+   }
   },
   {
    "id": 15,
    "kind": "reinterpretation",
    "file": "assets/motion/15.webm",
-   "v": "97c96ec0",
+   "v": "59513212",
    "model": "Nano Banana（Google Flow）",
    "date": "2026-09-18",
    "differs": [
     "撐黃傘的女子與穿紅衣的小孩，原本背對觀眾、沿著小路往遠處的建築走去；影片裡兩人轉成面向觀眾，朝我們走來。",
     "右邊那顆四角星是生成模型的浮水印。不修掉，它正好提醒這不是清親的作品。"
-   ]
+   ],
+   "lock": {
+    "still": 0.904,
+    "tone": false
+   }
   },
   {
    "id": 16,
@@ -266,20 +290,24 @@
    "id": 19,
    "kind": "reinterpretation",
    "file": "assets/motion/19.webm",
-   "v": "d40c841b",
+   "v": "6414f49a",
    "model": "Nano Banana（Google Flow）",
    "date": "2026-09-18",
    "differs": [
     "大船旁那艘載著紅衣水手的小艇慢慢往左划，水面上的紅色倒影跟著移動。",
     "左邊桅杆上的旗子隨風擺動。",
     "右邊那顆四角星是生成模型的浮水印。不修掉，它正好提醒這不是清親的作品。"
-   ]
+   ],
+   "lock": {
+    "still": 0.558,
+    "tone": false
+   }
   },
   {
    "id": 20,
    "kind": "reinterpretation",
    "file": "assets/motion/20.webm",
-   "v": "e252240b",
+   "v": "83fa7e31",
    "model": "Nano Banana（Google Flow）",
    "date": "2026-09-18",
    "differs": [
@@ -288,7 +316,11 @@
     "撐黃傘的女子往坡下遠處走去，越走越小。",
     "遠處的行人換了位置、走動起來。",
     "右邊那顆四角星是生成模型的浮水印。不修掉，它正好提醒這不是清親的作品。"
-   ]
+   ],
+   "lock": {
+    "still": 0.782,
+    "tone": false
+   }
   },
   {
    "id": 21,
@@ -337,14 +369,18 @@
    "id": 24,
    "kind": "reinterpretation",
    "file": "assets/motion/24.webm",
-   "v": "61d13e89",
+   "v": "bd30d384",
    "model": "Nano Banana（Google Flow）",
    "date": "2026-09-19",
    "differs": [
     "天上多出幾條灰色的雲帶，慢慢飄過；原畫的天空是一片平的灰。",
     "中間交談的兩人、右邊撐傘的人與小孩只有些微的走動與轉身。",
     "右邊那顆四角星是生成模型的浮水印。不修掉，它正好提醒這不是清親的作品。"
-   ]
+   ],
+   "lock": {
+    "still": 0.749,
+    "tone": false
+   }
   },
   {
    "id": 25,
@@ -395,7 +431,7 @@
    "id": 29,
    "kind": "reinterpretation",
    "file": "assets/motion/29.webm",
-   "v": "bf27a49c",
+   "v": "8d769d95",
    "model": "Nano Banana（Google Flow）",
    "date": "2026-09-19",
    "differs": [
@@ -404,26 +440,34 @@
     "右邊白毛領的男子轉頭看她。",
     "橋上遠處的兩個小人影走動。",
     "右邊那顆四角星是生成模型的浮水印。不修掉，它正好提醒這不是清親的作品。"
-   ]
+   ],
+   "lock": {
+    "still": 0.778,
+    "tone": false
+   }
   },
   {
    "id": 30,
    "kind": "reinterpretation",
    "file": "assets/motion/30.webm",
-   "v": "fbf72b47",
+   "v": "3a873766",
    "model": "Nano Banana（Google Flow）",
    "date": "2026-09-19",
    "differs": [
     "兩個撐淡藍色傘的人背對我們，慢慢往橋上走。",
     "橋那頭的行人走動起來。",
     "右邊那顆四角星是生成模型的浮水印。不修掉，它正好提醒這不是清親的作品。"
-   ]
+   ],
+   "lock": {
+    "still": 0.859,
+    "tone": false
+   }
   },
   {
    "id": 32,
    "kind": "reinterpretation",
    "file": "assets/motion/32.webm",
-   "v": "4f7016d9",
+   "v": "23ca4f63",
    "model": "Nano Banana（Google Flow）",
    "date": "2026-09-20",
    "differs": [
@@ -431,13 +475,17 @@
     "披草蓑的人彎著腰往左涉水，撐綠傘的女子往右走，兩人都比原畫的位置走遠了一些。",
     "兩棵柳樹的長枝在風裡擺動。",
     "右邊那顆四角星是生成模型的浮水印。不修掉，它正好提醒這不是清親的作品。"
-   ]
+   ],
+   "lock": {
+    "still": 0.467,
+    "tone": false
+   }
   },
   {
    "id": 33,
    "kind": "reinterpretation",
    "file": "assets/motion/33.webm",
-   "v": "4a0db848",
+   "v": "6f15407a",
    "model": "Nano Banana（Google Flow）",
    "date": "2026-09-20",
    "differs": [
@@ -445,7 +493,11 @@
     "剪影的車伕把人力車往前拉了幾步後停下。",
     "岸邊的剪影走動、轉身；左邊背著包袱的女子沿著橋欄慢慢走。",
     "右邊那顆四角星是生成模型的浮水印。不修掉，它正好提醒這不是清親的作品。"
-   ]
+   ],
+   "lock": {
+    "still": 0.438,
+    "tone": false
+   }
   },
   {
    "id": 34,
@@ -465,7 +517,7 @@
    "id": 35,
    "kind": "reinterpretation",
    "file": "assets/motion/35.webm",
-   "v": "8d7ca33d",
+   "v": "9602dda5",
    "model": "Nano Banana（Google Flow）",
    "date": "2026-09-20",
    "differs": [
@@ -473,13 +525,17 @@
     "船頭的女子彎身把手伸進水裡。",
     "兩人的倒影隨著水面晃動。",
     "右邊那顆四角星是生成模型的浮水印。不修掉，它正好提醒這不是清親的作品。"
-   ]
+   ],
+   "lock": {
+    "still": 0.746,
+    "tone": false
+   }
   },
   {
    "id": 36,
    "kind": "reinterpretation",
    "file": "assets/motion/36.webm",
-   "v": "7b609672",
+   "v": "bccf46b6",
    "model": "Nano Banana（Google Flow）",
    "date": "2026-09-20",
    "differs": [
@@ -487,13 +543,17 @@
     "背著嬰兒的兩位女子與小孩沿著參道慢慢往樓門走。",
     "遠處的行人走動。",
     "右邊那顆四角星是生成模型的浮水印。不修掉，它正好提醒這不是清親的作品。"
-   ]
+   ],
+   "lock": {
+    "still": 0.403,
+    "tone": false
+   }
   },
   {
    "id": 37,
    "kind": "reinterpretation",
    "file": "assets/motion/37.webm",
-   "v": "ce476da9",
+   "v": "e2fcbc46",
    "model": "Nano Banana（Google Flow）",
    "date": "2026-09-20",
    "differs": [
@@ -501,20 +561,28 @@
     "參道上的行人與遠處的人力車走動。",
     "松枝在風裡微微擺動。",
     "右邊那顆四角星是生成模型的浮水印。不修掉，它正好提醒這不是清親的作品。"
-   ]
+   ],
+   "lock": {
+    "still": 0.409,
+    "tone": false
+   }
   },
   {
    "id": 38,
    "kind": "reinterpretation",
    "file": "assets/motion/38.webm",
-   "v": "d38130ba",
+   "v": "5f276c46",
    "model": "Nano Banana（Google Flow）",
    "date": "2026-09-20",
    "differs": [
     "遠處那兩個小人影換了姿勢、緩緩走動。",
     "樹冠的葉子輕輕閃動，濕地面上的倒影微微晃。",
     "右邊那顆四角星是生成模型的浮水印。不修掉，它正好提醒這不是清親的作品。"
-   ]
+   ],
+   "lock": {
+    "still": 0.58,
+    "tone": false
+   }
   },
   {
    "id": 39,
@@ -534,7 +602,7 @@
    "id": 40,
    "kind": "reinterpretation",
    "file": "assets/motion/40.webm",
-   "v": "b7169b34",
+   "v": "fc86ae00",
    "model": "Nano Banana（Google Flow）",
    "date": "2026-09-20",
    "differs": [
@@ -542,22 +610,29 @@
     "兩名騎兵勒住馬，馬轉身、低頭。",
     "松枝與草在風裡擺動，雲慢慢飄過。",
     "右邊那顆四角星是生成模型的浮水印。不修掉，它正好提醒這不是清親的作品。"
-   ]
+   ],
+   "lock": {
+    "still": 0.855,
+    "tone": false
+   }
   },
   {
    "id": 41,
    "kind": "reinterpretation",
    "file": "assets/motion/41.webm",
-   "v": "f1e89dc5",
+   "v": "ed2850f5",
    "model": "Nano Banana（Google Flow）",
    "date": "2026-09-21",
    "differs": [
-    "整體色調從原畫偏綠的暗色轉成偏藍黑。",
     "螢火在草叢與水面上明滅、飄移。",
     "水面泛起一圈圈漣漪，倒影跟著晃動。",
     "亮著的紙門裡，兩個人影微微移動。",
     "右邊那顆四角星是生成模型的浮水印。不修掉，它正好提醒這不是清親的作品。"
-   ]
+   ],
+   "lock": {
+    "still": 0.453,
+    "tone": true
+   }
   },
   {
    "id": 42,
@@ -579,27 +654,34 @@
    "id": 43,
    "kind": "reinterpretation",
    "file": "assets/motion/43.webm",
-   "v": "000f65c2",
+   "v": "6f231960",
    "model": "Nano Banana（Google Flow）",
    "date": "2026-09-21",
    "differs": [
     "撐篙的小船從蘆葦後面划到開闊的水面，人與船都變大一些。",
     "雲慢慢飄動；水面起漣漪，木樁與橋的倒影跟著晃。",
     "右邊那顆四角星是生成模型的浮水印。不修掉，它正好提醒這不是清親的作品。"
-   ]
+   ],
+   "lock": {
+    "still": 0.667,
+    "tone": false
+   }
   },
   {
    "id": 44,
    "kind": "reinterpretation",
    "file": "assets/motion/44.webm",
-   "v": "2ff368e4",
+   "v": "c27cda7e",
    "model": "Nano Banana（Google Flow）",
    "date": "2026-09-21",
    "differs": [
-    "整體色調從原畫的黃綠偏成藍色，天空變藍。",
     "近處那條船的船尾，站著的人撐著篙，船在原地輕輕搖。",
     "右邊那顆四角星是生成模型的浮水印。不修掉，它正好提醒這不是清親的作品。"
-   ]
+   ],
+   "lock": {
+    "still": 0.597,
+    "tone": true
+   }
   },
   {
    "id": 46,
@@ -620,7 +702,7 @@
    "id": 47,
    "kind": "reinterpretation",
    "file": "assets/motion/47.webm",
-   "v": "756f5f92",
+   "v": "3ed2c40a",
    "model": "Nano Banana（Google Flow）",
    "date": "2026-09-21",
    "differs": [
@@ -628,7 +710,11 @@
     "扛竿子的人、車伕與遠處的行人走動、轉身。",
     "扁平的白雲慢慢飄動。",
     "右邊那顆四角星是生成模型的浮水印。不修掉，它正好提醒這不是清親的作品。"
-   ]
+   ],
+   "lock": {
+    "still": 0.845,
+    "tone": false
+   }
   },
   {
    "id": 49,
@@ -665,7 +751,7 @@
    "id": 52,
    "kind": "reinterpretation",
    "file": "assets/motion/52.webm",
-   "v": "ba0d7236",
+   "v": "d4bee7b2",
    "model": "Nano Banana（Google Flow）",
    "date": "2026-09-24",
    "differs": [
@@ -673,13 +759,17 @@
     "長棚下坐著的人與小孩轉身、動手。",
     "大樹的樹冠在風裡微微搖動。",
     "右邊那顆四角星是生成模型的浮水印。不修掉，它正好提醒這不是清親的作品。"
-   ]
+   ],
+   "lock": {
+    "still": 0.518,
+    "tone": false
+   }
   },
   {
    "id": 58,
    "kind": "reinterpretation",
    "file": "assets/motion/58.webm",
-   "v": "be2413b8",
+   "v": "9b9d2c3f",
    "model": "Nano Banana（Google Flow）",
    "date": "2026-09-24",
    "differs": [
@@ -687,28 +777,36 @@
     "濕地面上長條的燈光倒影跟著晃動，站前的樹在夜風裡搖。",
     "⚠️ 約第 4.5 秒起，中景偏右有一個撐傘的行人被畫成穿粉色上衣、白色下擺的人；原畫裡那一帶每個人都是平塗的深色剪影。",
     "右邊那顆四角星是生成模型的浮水印。不修掉，它正好提醒這不是清親的作品。"
-   ]
+   ],
+   "lock": {
+    "still": 0.823,
+    "tone": false
+   }
   },
   {
    "id": 59,
    "kind": "reinterpretation",
    "file": "assets/motion/59.webm",
-   "v": "c38d250c",
+   "v": "e3ffc41b",
    "model": "Nano Banana（Google Flow）",
    "date": "2026-09-24",
    "differs": [
     "橋上的剪影來回走動，手上的提燈搖晃；煤氣燈的火焰閃動。",
     "遠處中央的雙層馬車維持原位，馬只動腳。",
     "約 6 秒起，畫面左右上角冒出原畫沒有的柳枝。",
-    "整體色調從偏綠的灰轉成偏藍的灰。",
+    "會動的那一帶（橋面與行人）色調比原畫偏藍灰。",
     "右邊那顆四角星是生成模型的浮水印。不修掉，它正好提醒這不是清親的作品。"
-   ]
+   ],
+   "lock": {
+    "still": 0.571,
+    "tone": false
+   }
   },
   {
    "id": 60,
    "kind": "reinterpretation",
    "file": "assets/motion/60.webm",
-   "v": "c0928cde",
+   "v": "948128e2",
    "model": "Nano Banana（Google Flow）",
    "date": "2026-09-24",
    "differs": [
@@ -717,7 +815,11 @@
     "左下河對岸的剪影舉起手臂看著火。",
     "河面的紅光跟著火勢閃動。",
     "右邊那顆四角星是生成模型的浮水印。不修掉，它正好提醒這不是清親的作品。"
-   ]
+   ],
+   "lock": {
+    "still": 0.504,
+    "tone": false
+   }
   },
   {
    "id": 61,
@@ -738,7 +840,7 @@
    "id": 62,
    "kind": "reinterpretation",
    "file": "assets/motion/62.webm",
-   "v": "28f053d6",
+   "v": "46e5e9ca",
    "model": "Nano Banana（Google Flow）",
    "date": "2026-09-24",
    "differs": [
@@ -747,13 +849,17 @@
     "前景的剪影人群推擠前進，提燈搖晃，有人回頭看火。",
     "橋下的水面映著火光閃動。",
     "右邊那顆四角星是生成模型的浮水印。不修掉，它正好提醒這不是清親的作品。"
-   ]
+   ],
+   "lock": {
+    "still": 0.42,
+    "tone": false
+   }
   },
   {
    "id": 63,
    "kind": "reinterpretation",
    "file": "assets/motion/63.webm",
-   "v": "872053ec",
+   "v": "6a0ff031",
    "model": "Nano Banana（Google Flow）",
    "date": "2026-09-24",
    "differs": [
@@ -761,13 +867,17 @@
     "被風吹起的白色碎屑飄過焼跡。",
     "天上的長條雲慢慢飄，街燈的火焰閃動。",
     "右邊那顆四角星是生成模型的浮水印。不修掉，它正好提醒這不是清親的作品。"
-   ]
+   ],
+   "lock": {
+    "still": 0.566,
+    "tone": false
+   }
   },
   {
    "id": 64,
    "kind": "reinterpretation",
    "file": "assets/motion/64.webm",
-   "v": "c3b10482",
+   "v": "fe0529c3",
    "model": "Nano Banana（Google Flow）",
    "date": "2026-09-24",
    "differs": [
@@ -775,13 +885,17 @@
     "木橋下的小河起漣漪，橋的倒影晃動。",
     "路上戴黑帽拄杖的男子走了幾步，遠處的人也在走動。",
     "右邊那顆四角星是生成模型的浮水印。不修掉，它正好提醒這不是清親的作品。"
-   ]
+   ],
+   "lock": {
+    "still": 0.817,
+    "tone": false
+   }
   },
   {
    "id": 67,
    "kind": "reinterpretation",
    "file": "assets/motion/67.webm",
-   "v": "8f67e3a9",
+   "v": "86a8f252",
    "model": "Nano Banana（Google Flow）",
    "date": "2026-09-24",
    "differs": [
@@ -790,21 +904,29 @@
     "⚠️ 約第 6 秒起，右邊那台原本在中景的小人力車與車伕被畫得愈來愈大，像是往畫面前方靠（那一區的暗色面積從 8.7 千像素長到 18.5 千）；原畫裡它一直是遠遠的一台小車。",
     "⚠️ 那台車其實沒有在地面上前進——量出來它的位置沒有移動，變大的是它本身，所以車輪也沒有真的在地上滾。",
     "右邊那顆四角星是生成模型的浮水印。不修掉，它正好提醒這不是清親的作品。"
-   ]
+   ],
+   "lock": {
+    "still": 0.714,
+    "tone": true
+   }
   },
   {
    "id": 68,
    "kind": "reinterpretation",
    "file": "assets/motion/68.webm",
-   "v": "df48e1f5",
+   "v": "fca229f6",
    "model": "Nano Banana（Google Flow）",
    "date": "2026-09-24",
    "differs": [
     "攤子上的紅白燈籠搖晃發亮，攤上的小燈火閃動。",
     "人群在攤子之間慢慢走動，被燈照亮的攤販向客人比手勢。",
-    "⚠️ 整體比原畫亮一些，人群的位置被重新排過。",
+    "⚠️ 人群的位置被重新排過。",
     "右邊那顆四角星是生成模型的浮水印。不修掉，它正好提醒這不是清親的作品。"
-   ]
+   ],
+   "lock": {
+    "still": 0.543,
+    "tone": true
+   }
   },
   {
    "id": 69,
@@ -824,7 +946,7 @@
    "id": 70,
    "kind": "reinterpretation",
    "file": "assets/motion/70.webm",
-   "v": "4d551b4a",
+   "v": "48192a07",
    "model": "Nano Banana（Google Flow）",
    "date": "2026-09-24",
    "differs": [
@@ -832,13 +954,17 @@
     "右邊的燈火閃動，柱子上吊籃裡的花草微動。",
     "⚠️ 水面多出一道月光的倒影，天上多出幾條細長的雲；原畫都沒有。",
     "右邊那顆四角星是生成模型的浮水印。不修掉，它正好提醒這不是清親的作品。"
-   ]
+   ],
+   "lock": {
+    "still": 0.689,
+    "tone": false
+   }
   },
   {
    "id": 71,
    "kind": "reinterpretation",
    "file": "assets/motion/71.webm",
-   "v": "9d97e694",
+   "v": "a074c3a9",
    "model": "Nano Banana（Google Flow）",
    "date": "2026-09-24",
    "differs": [
@@ -846,13 +972,17 @@
     "橫掛的紅白紙燈籠搖晃，對岸的燈火與水面的倒影跟著晃。",
     "底下一排剪影的頭轉動、抬頭看煙火，爬在竿上的兩個孩子換手、仰頭。",
     "右邊那顆四角星是生成模型的浮水印。不修掉，它正好提醒這不是清親的作品。"
-   ]
+   ],
+   "lock": {
+    "still": 0.453,
+    "tone": true
+   }
   },
   {
    "id": 72,
    "kind": "reinterpretation",
    "file": "assets/motion/72.webm",
-   "v": "2d6f6b95",
+   "v": "0f0b9697",
    "model": "Nano Banana（Google Flow，Aaron 在介面上看到的標示）",
    "date": "2026-09-15",
    "differs": [
@@ -862,15 +992,18 @@
     "人力車後面那輛白篷車，中段一度消失，最後又出現。",
     "右側撐傘的那群人，人數和隊形跟原畫不一樣，而且一路在變。",
     "人走開後露出的藍色店牆上，多出原畫沒有的字。",
-    "右邊紙邊的出版資訊（御屆日期、出版人福田熊次郎、畫工小林清親），從第一格起就被改成看不懂的假字。",
     "右邊紙邊那顆四角星是生成模型的浮水印。不修掉，它正好提醒這不是清親的作品。"
-   ]
+   ],
+   "lock": {
+    "still": 0.756,
+    "tone": false
+   }
   },
   {
    "id": 81,
    "kind": "reinterpretation",
    "file": "assets/motion/81.webm",
-   "v": "b2eb650b",
+   "v": "f0dd8caf",
    "model": "Nano Banana（Google Flow）",
    "date": "2026-09-24",
    "differs": [
@@ -878,7 +1011,11 @@
     "前景停泊的船在水波上搖晃，高高的桅杆跟著晃。",
     "拱橋下的水面起漣漪，明亮的倒影晃動；兩岸房子的窗火閃動，雲慢慢飄。",
     "右邊那顆四角星是生成模型的浮水印。不修掉，它正好提醒這不是清親的作品。"
-   ]
+   ],
+   "lock": {
+    "still": 0.747,
+    "tone": true
+   }
   },
   {
    "id": 82,
@@ -900,7 +1037,7 @@
    "id": 83,
    "kind": "reinterpretation",
    "file": "assets/motion/83.webm",
-   "v": "80f0c772",
+   "v": "db758c55",
    "model": "Nano Banana（Google Flow）",
    "date": "2026-09-24",
    "differs": [
@@ -908,13 +1045,17 @@
     "前面大柳樹的長枝在風裡擺動，門口的紙燈籠跟著搖。",
     "白雲慢慢飄過藍天。",
     "右邊那顆四角星是生成模型的浮水印。不修掉，它正好提醒這不是清親的作品。"
-   ]
+   ],
+   "lock": {
+    "still": 0.435,
+    "tone": true
+   }
   },
   {
    "id": 84,
    "kind": "reinterpretation",
    "file": "assets/motion/84.webm",
-   "v": "35f17531",
+   "v": "930fd144",
    "model": "Nano Banana（Google Flow）",
    "date": "2026-09-24",
    "differs": [
@@ -922,7 +1063,11 @@
     "坡下遠處的行人、挑夫與人力車緩緩移動。",
     "細長的白雲慢慢飄過藍天，土手上的草木搖動。",
     "右邊那顆四角星是生成模型的浮水印。不修掉，它正好提醒這不是清親的作品。"
-   ]
+   ],
+   "lock": {
+    "still": 0.864,
+    "tone": false
+   }
   }
  ]
 }

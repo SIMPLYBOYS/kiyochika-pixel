@@ -121,6 +121,9 @@ ok(html.includes(`清親 ${views.length - yas.length} 幅`) && html.includes('da
     `AI 重繪版 ${motion.clips.length} 幅`,
     `**${moving} / ${views.length}**`,
     `\`_attempts\`（${motion._attempts.length} 筆）`,
+    // 鎖回原畫那一節的表：幾支鎖回、其中幾支先校色（clips 裡有 lock／lock.colour 的）
+    `| 鎖回（靜止區佔四成以上） | **${motion.clips.filter(c => c.lock).length}** |`,
+    `| 　其中先校色再鎖 | ${motion.clips.filter(c => c.lock?.colour).length} |`,
   ];
   const missing = want.filter(s => !readme.includes(s));
   ok(missing.length === 0, `README 的數字跟資料一致（${want.length} 項）${missing.length ? '；對不上：' + missing.join('｜') : ''}`);
