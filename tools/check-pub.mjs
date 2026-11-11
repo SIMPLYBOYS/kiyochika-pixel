@@ -11,6 +11,7 @@ import { readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, resolve } from 'node:path';
 import { clockOf, collectable, blocked, yearOf, tick, newState, TIMES, WEATHERS, YEARS } from '../src/clock.js';
+import { LIGHT, BOLT } from '../src/weather.js';
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 // 🔴 模擬的世界要跟遊戲的世界**一模一樣**：能收的只有畫得到地圖上的（有 subject）。
@@ -95,6 +96,35 @@ ok(!yas.length || /明治十五年[^<]*<\/span>\s*<span class="fin-bar">[^]*?井
    `結局卡：安治那 ${yas.length} 幅有標明畫師`);
 ok(html.includes(`清親 ${views.length - yas.length} 幅`) && html.includes('data-act="emaki"'),
    `結局卡：分開講清親與安治的幅數，並給得出「打開畫卷」`);
+
+// ── README 上的數字 ────────────────────────────────────────────
+// 🔴 文件沒有測試在守：收錄安治時 README 的數字錯了一整輪；2026-11 又查到一批
+//（_attempts 寫 45 實際 53、程式層寫 24／63 而其中一幅根本不在地圖上）。
+// ⇒ 這裡把 README 開頭那張清單上**數得出來的**逐項跟資料對，改了資料沒改文件 CI 就會紅。
+// ⚠️ 只對得出現行事實的數字；「第一版 69 幅只中 10 幅」那種是當時的紀錄，⛔ 不在這裡管。
+{
+  const read = f => readFileSync(resolve(ROOT, f), 'utf8');
+  const readme = read('README.md');
+  const motion = JSON.parse(read('data/motion.json'));
+  const zh = Object.keys(JSON.parse(read('data/topics-zh.json')).items ?? {}).length;
+  const inc = all.filter(v => v.include);
+  const marks = inc.reduce((n, v) => n + (v.details?.length ?? 0), 0);
+  // 程式層會動的景：判定照抄 src/weather.js（天候是雪或雨、或有名字對得上的標註），只算地圖上的
+  const moving = views.filter(v => ['snow', 'rain'].includes(v.conditions?.weather)
+    || (v.details ?? []).some(d => LIGHT.test(d.label ?? '') || BOLT.test(d.label ?? ''))).length;
+  const want = [
+    `收錄 ${inc.length} 幅東京光線画（清親 ${inc.length - inc.filter(v => v.attribution === 'inoue-yasuji').length}・弟子井上安治 ${inc.filter(v => v.attribution === 'inoue-yasuji').length}）`,
+    `座標   ${views.length}/${inc.length}（`,
+    `標註   ${marks} 個`,
+    `導言 ${zh} 條繁中譯文`,
+    `程式層 ${moving} 幅`,
+    `AI 重繪版 ${motion.clips.length} 幅`,
+    `**${moving} / ${views.length}**`,
+    `\`_attempts\`（${motion._attempts.length} 筆）`,
+  ];
+  const missing = want.filter(s => !readme.includes(s));
+  ok(missing.length === 0, `README 的數字跟資料一致（${want.length} 項）${missing.length ? '；對不上：' + missing.join('｜') : ''}`);
+}
 
 console.log(`\n一場 ${state.step} 刻 ＝ ${Math.floor(state.step / 4)} 日（收 ${done} 景、等 ${waits} 刻）`);
 console.log(bad ? `${bad} 項不過` : '全過');

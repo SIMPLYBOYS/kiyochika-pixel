@@ -76,7 +76,7 @@ export function openScroll(views, got, onPick, src) {
     raf = requestAnimationFrame(step);
   };
   // ── 手動翻閱 ───────────────────────────────────────────────
-  // 🔑 一卷 59 幅、兩萬多像素長，**自動展卷只適合看，不適合找**。
+  // 🔑 一卷幾十幅、兩萬多像素長，**自動展卷只適合看，不適合找**。
   // 所以三條路都要通：鍵盤（← → 翻幅、Home/End 卷首卷尾）、滾輪（快轉）、拖曳（拉卷軸）。
   //
   // ⚠️ 一律用 getBoundingClientRect 算距離再 scrollBy，⛔ 不直接設 scrollLeft：

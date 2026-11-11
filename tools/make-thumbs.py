@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""assets/plate/NN.jpg（裁好的和紙）→ assets/thumb/NN.jpg（720px）
+"""assets/plate/NN.jpg（裁好的和紙）→ assets/thumb/NN.jpg（960px）
 
 **為什麼不直接連 NDL 的 IIIF**：試過，會被限流。實測面板的圖回 429——
 那是我們自己當天抓太多，但道理不變：**上線後每一個玩家開一次面板就打 NDL 一次**，

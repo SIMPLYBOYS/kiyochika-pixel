@@ -515,7 +515,7 @@ for (const [name, size] of [['桌機 1440×900', { width: 1440, height: 900 }],
   await page.locator('#panel #flip').click();
   await sleep(500);
 
-  // 原寸檢視：看的是 assets/plate（1527–1690px），不是面板裡的 720px 縮圖
+  // 原寸檢視：看的是 assets/plate（約 1500–1700px），不是面板裡的 960px 縮圖
   await page.locator('#panel #big').click();
   await sleep(900);
   const lb = await page.locator('.lightbox img').evaluate(
@@ -719,7 +719,7 @@ for (const [name, size] of [['桌機 1440×900', { width: 1440, height: 900 }],
   });
   ok(roll && roll.spans === MAPPED && roll.got >= 1 && roll.jiku === 2 && roll.rtl,
      `畫卷 ${roll?.spans} 格（收到的 ${roll?.got} 格有圖）、兩端有軸木、由右往左`);
-  // 🔑 一卷 59 幅、兩萬多像素，**自動展卷只適合看不適合找** ⇒ 手動三條路都要通。
+  // 🔑 一卷幾十幅、兩萬多像素，**自動展卷只適合看不適合找** ⇒ 手動三條路都要通。
   // ⚠️ 方向要對：這一卷右起，往下滾＝往左走（照瀏覽器預設會變成退回卷首）。
   const sx = () => page.evaluate(() => Math.round(document.querySelector('.sroll').scrollLeft));
   const seat = () => page.evaluate(() => {       // 右緣對齊的是第幾幅

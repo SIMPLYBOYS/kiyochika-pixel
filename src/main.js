@@ -41,10 +41,12 @@ const [all, world, ml, refmaps, topicMap, topicText, topicZh, audio, palettes, m
   grab('data/config.json').catch(() => ({})),
 ]);
 
-// 🔴 能玩的是**地圖上有的那些**。收錄 69 幅，其中 10 幅沒查到座標（空白是資訊，
+// 🔴 能玩的是**地圖上有的那些**。收錄的畫裡有一部分沒查到座標（空白是資訊，
 // 理由逐條寫在 places.json）——它們畫不到地圖上，就永遠點不到、收不了。
-// 原本進度分母寫 69：那個數字保證跑不完（最多 59/69），結局卡也因此永遠不會出現。
-// ⇒ 遊戲的世界＝有座標的那 59 幅，⛔ 不要用一個玩家達不到的分母。
+// 原本進度分母寫全部收錄數（當時 69 幅、其中 10 幅沒座標）：那個數字保證跑不完（最多 59/69），
+// 結局卡也因此永遠不會出現。
+// ⇒ 遊戲的世界＝有座標的那些，⛔ 不要用一個玩家達不到的分母。
+// ⚠️ 這裡不寫現在是幾幅：幅數會跟著資料變（收錄安治時就從 59 變 63），要看就看 views.length。
 const unmapped = all.filter(v => v.include && !v.subject);
 const views = all.filter(v => v.include && v.subject);
 
@@ -80,8 +82,8 @@ const map = createMap($('map'), views, world.layers, places, pick);
 // 直接連試過：回 429。那次是我們自己當天抓太多，但道理不變——
 // 上線之後每個玩家開一次面板就打 NDL 一次，既脆弱又不禮貌。
 const pad = v => String(v.id).padStart(2, '0');
-const thumb = v => `assets/thumb/${pad(v)}.jpg`;      // 真跡（和紙，含奧付）720px，面板用
-const plate = v => `assets/plate/${pad(v)}.jpg`;      // 同一張的 1527–1690px，原寸檢視用
+const thumb = v => `assets/thumb/${pad(v)}.jpg`;      // 真跡（和紙，含奧付）960px，面板用
+const plate = v => `assets/plate/${pad(v)}.jpg`;      // 同一張的原尺寸（約 1500–1700px），原寸檢視用
 const pixel = v => `assets/pixel/${pad(v)}.png`;      // 像素版（480px・16 色・Bayer）
 const REF_W = 480;                   // 像素畫布的寬度，73 幅都一樣
 const TIME_JA = { dawn: '曉', day: '晝', dusk: '夕', night: '夜' };
@@ -135,7 +137,7 @@ function here(v) {
   const town = p.modern_town ? `${p.modern_town}<small>（${p.modern_town_km}km）</small>` : '';
   const pano = `https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=${v.subject.lat},${v.subject.lng}`;
   const canEmbed = !!embedUrl(v);
-  // 標高的「高い／低い」是拿同一畫帖的 59 個點排出來的，不是外面的說法
+  // 標高的「高い／低い」是拿同一畫帖裡地圖上的那些點排出來的，不是外面的說法
   const rank = n.elevation_rank;
   const tag = rank == null ? '' : rank >= 0.8 ? '<small>（這本畫帖裡偏高）</small>'
     : rank <= 0.2 ? '<small>（偏低）</small>' : '';
@@ -389,7 +391,7 @@ function pick(v) {
 }
 
 // ── 標註：清親在這裡畫了什麼 ───────────────────────────────────
-// 205 個點的座標由 tools/derive-details.py 在**像素版**上算、人工逐幅挑過並命名
+// 這些點的座標由 tools/derive-details.py 在**像素版**上算、人工逐幅挑過並命名
 // （data/details.json）⇒ 標出來的必然是 480px／16 色之後還看得見的東西。
 // 🔴 這裡**不做「找線索」**：東海道那套是把名字藏起來讓玩家點，這一作的重點是
 // 知道自己在看什麼——所以名字直接標在原位，開關由玩家決定。

@@ -82,10 +82,11 @@ def drift_rows(plate, video, pre=None):
     return rows
 
 
-# 🔴 執行期只讀得到「玩家看得到的欄位」：data/motion.json 整份 372KB（gz 88KB），
-# 其中 136KB 是提示詞模板、28KB 是退件紀錄——那些是給做這件事的人看的，⛔ 不該讓每個玩家下載。
-# ⇒ 另寫一份 data/motion-clips.json（約 20KB），遊戲讀它（同 audio.json／audio-tracks.json 的分法）。
-# ⚠️ 玩家回報手機上配樂很久才出來，量到開場前傳了 1.9MB——這 88KB 就是其中一塊。
+# 🔴 執行期只讀得到「玩家看得到的欄位」：data/motion.json 有幾百 KB，其中一大塊是提示詞模板與
+# 退件紀錄——那些是給做這件事的人看的，⛔ 不該讓每個玩家下載。
+# ⇒ 另寫一份 data/motion-clips.json（不到完整檔的十分之一），遊戲讀它（同 audio.json／audio-tracks.json 的分法）。
+# ⚠️ 兩份現在各多大⛔ 不寫在這裡：會跟著片數與退件紀錄長大，`--sync` 每次都會印出當下的大小。
+# ⚠️ 起因（2026-09）：玩家回報手機上配樂很久才出來，量到開場前傳了 1.9MB——當時完整檔壓縮後佔其中 88KB。
 FIELDS = ("id", "kind", "file", "v", "model", "date", "differs")
 
 

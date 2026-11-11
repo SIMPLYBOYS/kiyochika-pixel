@@ -265,7 +265,7 @@ export function createMap(svg, views, geo, places, onPick) {
     if (!v.subject) continue;                  // 沒座標的景暫時上不了圖
     const [x, y] = project(v.subject.lng, v.subject.lat);
     const g = document.createElementNS(svg.namespaceURI, 'g');
-    // 座標的把握程度畫在點上。59 個座標裡有 32 個只定到「那一帶」（駅名／町名／
+    // 座標的把握程度畫在點上。一半以上的座標只定到「那一帶」（駅名／町名／
     // 線狀地物），把它們畫得跟查到本體的一樣實，等於在地圖上宣稱一件沒查證的事。
     // 依據記在 views.json 的 place.anchor.confidence，這裡只是把它畫出來。
     const conf = (v.place && v.place.anchor && v.place.anchor.confidence) || 'district';
