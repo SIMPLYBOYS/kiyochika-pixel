@@ -483,6 +483,8 @@ python3 tools/fetch-commons.py --sheet     # Commons 側交叉比對（不是主
 python3 tools/motion-prep.py --close 1-84  # AI 重繪版：起始幀（墊成 16:9）＋ 提示詞
 python3 tools/motion-review.py <片> <編號>  # 生成片初審：第一幀、位移曲線、推近倍率、格圖
 python3 tools/make-motion.py <編號> --video <片>  # 過三道關 → assets/motion（webm＋mp4）
+python3 tools/motion-lock.py --survey      # AI 重繪版「鎖回原畫」：量每一支沒在動的地方佔多少（只量、不動線上的片子）
+python3 tools/motion-lock.py <編號…>        # 出鎖回後的預覽與對照格圖 → research/motion/lock/（給人看過再決定）
 ```
 
 `fetch-ndl.py` 重跑不會洗掉座標——它只重建自己產生的欄位（題名／出處／頁碼／收錄與否），其餘原地帶過來。
